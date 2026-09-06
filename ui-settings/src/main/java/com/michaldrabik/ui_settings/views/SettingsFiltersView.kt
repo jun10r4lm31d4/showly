@@ -14,6 +14,7 @@ import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.BAC
 import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.GENERAL
 import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.MISC
 import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.NOTIFICATIONS
+import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.SCROB
 import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.SPOILERS
 import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.WIDGETS
 
@@ -35,6 +36,10 @@ class SettingsFiltersView : FrameLayout {
 
   private fun initView() {
     with(binding) {
+      scrobChip.onClick(safe = false) {
+        selectedFilter = if (selectedFilter == SCROB) null else SCROB
+        onFilterClick?.invoke(selectedFilter)
+      }
       generalChip.onClick(safe = false) {
         selectedFilter = if (selectedFilter == GENERAL) null else GENERAL
         onFilterClick?.invoke(selectedFilter)
@@ -76,6 +81,7 @@ class SettingsFiltersView : FrameLayout {
   enum class SettingsFilter {
     GENERAL,
     NOTIFICATIONS,
+    SCROB,
     SPOILERS,
     WIDGETS,
     BACKUP,

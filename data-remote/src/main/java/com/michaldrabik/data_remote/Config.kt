@@ -13,10 +13,16 @@ object Config {
   const val TMDB_BASE_URL = "https://api.themoviedb.org/3/"
   const val TMDB_API_KEY = BuildConfig.TMDB_API_KEY
 
-  const val OMDB_BASE_URL = "https://private.omdbapi.com/"
+  const val OMDB_BASE_URL = "https://www.omdbapi.com/"
   const val OMDB_API_KEY = BuildConfig.OMDB_API_KEY
 
   const val AWS_BASE_URL = "https://showly2.s3.eu-west-2.amazonaws.com/"
+
+  // Scrob is self-hosted, so there is no fixed base URL: the user provides their
+  // own server address on the login screen and it is stored locally afterwards.
+  // SCROB_API_KEY is the personal X-Api-Key for that server, set once in local.properties.
+  const val SCROB_API_KEY = BuildConfig.SCROB_API_KEY
+  const val SCROB_PLACEHOLDER_BASE_URL = "https://scrob.invalid/"
 
   fun traktUserAgent(
     buildVersion: String,

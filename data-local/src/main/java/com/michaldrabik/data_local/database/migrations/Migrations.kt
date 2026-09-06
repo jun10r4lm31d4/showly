@@ -5,7 +5,7 @@ import android.content.Context.MODE_PRIVATE
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-const val DATABASE_VERSION = 41
+const val DATABASE_VERSION = 42
 const val DATABASE_NAME = "SHOWLY2_DB_2"
 
 class Migrations(
@@ -778,6 +778,17 @@ class Migrations(
     }
   }
 
+  private val migration42 = object : Migration(41, 42) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+      with(database) {
+        // Scrob lists/items have no Trakt id, so they need their own identity column
+        // to be matched against on subsequent syncs without colliding with Trakt-origin rows.
+        execSQL("ALTER TABLE custom_lists ADD COLUMN id_scrob INTEGER")
+        execSQL("CREATE UNIQUE INDEX IF NOT EXISTS index_custom_lists_id_scrob ON custom_lists (id_scrob)")
+      }
+    }
+  }
+
   fun getAll() =
     listOf(
       migration2,
@@ -820,5 +831,6 @@ class Migrations(
       migration39,
       migration40,
       migration41,
+      migration42,
     )
 }

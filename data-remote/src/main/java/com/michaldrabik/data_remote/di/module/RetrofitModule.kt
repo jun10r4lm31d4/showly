@@ -2,6 +2,7 @@ package com.michaldrabik.data_remote.di.module
 
 import com.michaldrabik.data_remote.Config.AWS_BASE_URL
 import com.michaldrabik.data_remote.Config.OMDB_BASE_URL
+import com.michaldrabik.data_remote.Config.SCROB_PLACEHOLDER_BASE_URL
 import com.michaldrabik.data_remote.Config.TMDB_BASE_URL
 import com.michaldrabik.data_remote.Config.TRAKT_BASE_URL
 import com.squareup.moshi.Moshi
@@ -60,6 +61,20 @@ object RetrofitModule {
       .client(okHttpClient)
       .addConverterFactory(MoshiConverterFactory.create(moshi))
       .baseUrl(OMDB_BASE_URL)
+      .build()
+
+  @Provides
+  @Singleton
+  @Named("retrofitScrob")
+  fun providesScrobRetrofit(
+    @Named("okHttpScrob") okHttpClient: OkHttpClient,
+    moshi: Moshi,
+  ): Retrofit =
+    Retrofit
+      .Builder()
+      .client(okHttpClient)
+      .addConverterFactory(MoshiConverterFactory.create(moshi))
+      .baseUrl(SCROB_PLACEHOLDER_BASE_URL)
       .build()
 
   @Provides

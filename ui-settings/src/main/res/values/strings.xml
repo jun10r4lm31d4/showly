@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="textImagesCacheCleared">Images cache has been cleared.</string>
-    <string name="textSettings">Settings</string>
-    <string name="textSettingsGeneral"><![CDATA[General & UX]]></string>
+  <string name="textImagesCacheCleared">Images cache has been cleared.</string>
+  <string name="textSettings">Settings</string>
+  <string name="textSettingsGeneral"><![CDATA[General & UX]]></string>
+  <string name="textSettingsLogoutTitle">Scrob Sign Out</string>
+  <string name="textSettingsLogoutMessage">\nAre you sure you want to sign out?\n</string>
+  <string name="textSettingsScrob">Scrob</string>
+  <string name="textSettingsScrobAuthorizeTitle">Scrob Authorization</string>
+  <string name="textSettingsScrobAuthorizeSummarySignIn">Sign in to your self-hosted Scrob server to use it as a watched history/lists source.</string>
+  <string name="textSettingsScrobAuthorizeSummarySignOut">Signed in. Click to sign out.</string>
+  <string name="textSettingsScrobAuthorizeSummarySignOutUser">Signed in as %1$s. Click to sign out.</string>
+  <string name="textSettingsScrobSyncHistoryTitle">Sync Watched History</string>
+  <string name="textSettingsScrobSyncHistorySummary">Import watched movies and episodes from Scrob.</string>
+  <string name="textSettingsScrobSyncListsTitle">Sync Lists</string>
+  <string name="textSettingsScrobSyncListsSummary">Import your custom lists from Scrob.</string>
+  <string name="textScrobLoginTitle">Sign in to Scrob</string>
+  <string name="textScrobLoginUrlHint">Server URL</string>
+  <string name="textScrobLoginUsernameHint">Username</string>
+  <string name="textScrobLoginPasswordHint">Password</string>
+  <string name="textScrobLoginSuccess">You\'ve been successfully signed in to Scrob.</string>
+  <string name="textScrobLogoutSuccess">You\'ve been signed out of Scrob.</string>
+  <string name="textScrobSyncStarted">Sync started. You can safely leave this screen.</string>
+  <string name="errorScrobLoginFailed">Sign in failed. Check the server URL, username and password.</string>
+  <string name="errorScrobSyncFailed">Scrob sync failed. Please try again.</string>
+  <string name="errorScrobFieldsRequired">Fill in the server URL, username and password.</string>
   <string name="textSettingsRecentShowsTitle">Recently Added Amount</string>
   <string name="textSettingsRecentShowsSummary">Number of recent items to display in \'Collection\'.</string>
   <string name="textSettingsUpcomingSectionTitle">Upcoming Section</string>

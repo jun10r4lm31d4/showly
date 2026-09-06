@@ -33,6 +33,7 @@ android {
     buildConfigField("String", "TRAKT_CLIENT_ID", properties.getProperty("traktClientId"))
     buildConfigField("String", "TMDB_API_KEY", properties.getProperty("tmdbApiKey"))
     buildConfigField("String", "OMDB_API_KEY", properties.getProperty("omdbApiKey"))
+    buildConfigField("String", "SCROB_API_KEY", properties.getProperty("scrobApiKey", "\"\""))
     buildConfigField("String", "VER_NAME", "\"${versions.versionName}\"")
     buildConfigField("int", "VER_CODE", "${versions.versionCode}")
   }

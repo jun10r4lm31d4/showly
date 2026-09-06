@@ -99,18 +99,20 @@ class EpisodesManager @Inject constructor(
     seasonId: Long,
     showId: IdTrakt,
     customDate: ZonedDateTime?,
-  ) {
+  ): EpisodeBundle {
     val episodeDb = episodesLocalSource.getAllForSeason(seasonId).find { it.idTrakt == episodeId }!!
     val seasonDb = seasonsLocalSource.getById(seasonId)!!
     val show = showsRepository.myShows.load(showId)!!
+    val episodeBundle = EpisodeBundle(
+      episode = mappers.episode.fromDatabase(episodeDb),
+      season = mappers.season.fromDatabase(seasonDb),
+      show = show,
+    )
     setEpisodeWatched(
-      episodeBundle = EpisodeBundle(
-        episode = mappers.episode.fromDatabase(episodeDb),
-        season = mappers.season.fromDatabase(seasonDb),
-        show = show,
-      ),
+      episodeBundle = episodeBundle,
       customDate = customDate,
     )
+    return episodeBundle
   }
 
   suspend fun setEpisodeWatched(

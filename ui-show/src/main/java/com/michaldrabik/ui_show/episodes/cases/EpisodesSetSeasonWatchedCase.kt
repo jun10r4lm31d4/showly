@@ -1,20 +1,18 @@
 package com.michaldrabik.ui_show.episodes.cases
 
 import com.michaldrabik.repository.EpisodesManager
-import com.michaldrabik.repository.shows.ShowsRepository
+import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncManager
 import com.michaldrabik.ui_model.Season
 import com.michaldrabik.ui_model.SeasonBundle
 import com.michaldrabik.ui_model.Show
-import com.michaldrabik.ui_show.sections.seasons.helpers.SeasonsCache
 import dagger.hilt.android.scopes.ViewModelScoped
 import java.time.ZonedDateTime
 import javax.inject.Inject
 
 @ViewModelScoped
 class EpisodesSetSeasonWatchedCase @Inject constructor(
-  private val showsRepository: ShowsRepository,
   private val episodesManager: EpisodesManager,
-  private val seasonsCache: SeasonsCache,
+  private val scrobQuickSyncManager: ScrobQuickSyncManager,
 ) {
 
   suspend fun setSeasonWatched(
@@ -27,11 +25,19 @@ class EpisodesSetSeasonWatchedCase @Inject constructor(
 
     when {
       isChecked -> {
-        episodesManager.setSeasonWatched(bundle, customDate)
+        scrobQuickSyncManager.scheduleSeason(
+          showTmdbId = show.ids.tmdb.id,
+          seasonNumber = season.number,
+          customDate = customDate,
+        )
         return Result.SUCCESS
       }
       else -> {
         episodesManager.setSeasonUnwatched(bundle)
+        scrobQuickSyncManager.clearSeason(
+          showTmdbId = show.ids.tmdb.id,
+          seasonNumber = season.number,
+        )
         return Result.SUCCESS
       }
     }

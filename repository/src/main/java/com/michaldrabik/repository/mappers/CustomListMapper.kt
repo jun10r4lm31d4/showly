@@ -61,12 +61,14 @@ class CustomListMapper @Inject constructor() {
       likes = list.likes,
       createdAt = ZonedDateTime.ofInstant(Instant.ofEpochMilli(list.createdAt), ZoneId.of("UTC")),
       updatedAt = ZonedDateTime.ofInstant(Instant.ofEpochMilli(list.updatedAt), ZoneId.of("UTC")),
+      idScrob = list.idScrob,
     )
 
   fun toDatabase(list: CustomList) =
     CustomListDb(
       id = list.id,
       idTrakt = list.idTrakt,
+      idScrob = list.idScrob,
       idSlug = list.idSlug,
       name = list.name,
       description = list.description,

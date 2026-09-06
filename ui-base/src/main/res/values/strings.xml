@@ -124,4 +124,8 @@
   <string name="errorNoInternetConnection">No Internet. Please check your connection.</string>
   <string name="errorCouldNotFindApp" translatable="false">Sorry, we could not find app on this device that could handle this link.</string>
   <string name="errorAccountListsLimitsReached" translatable="false">Sorry, you have reached your Trakt account limit for personal lists!\n\nPlease contact us if you need more assistance.</string>
+  <string name="textScrobSync">Scrob Sync</string>
+  <string name="textScrobSyncRunning">Syncing with Scrob…</string>
+  <string name="textScrobSyncComplete">Scrob sync completed</string>
+  <string name="errorScrobSyncFailed" translatable="false">Scrob sync failed. Please try again.</string>
 </resources>

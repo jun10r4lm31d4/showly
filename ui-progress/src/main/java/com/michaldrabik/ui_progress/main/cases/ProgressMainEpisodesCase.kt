@@ -4,6 +4,7 @@ import com.michaldrabik.common.dispatchers.CoroutineDispatchers
 import com.michaldrabik.data_local.sources.EpisodesLocalDataSource
 import com.michaldrabik.repository.EpisodesManager
 import com.michaldrabik.repository.settings.SettingsSpoilersRepository
+import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncManager
 import com.michaldrabik.ui_model.Episode
 import com.michaldrabik.ui_model.EpisodeBundle
 import com.michaldrabik.ui_model.Show
@@ -16,6 +17,7 @@ import javax.inject.Inject
 class ProgressMainEpisodesCase @Inject constructor(
   private val dispatchers: CoroutineDispatchers,
   private val episodesManager: EpisodesManager,
+  private val scrobQuickSyncManager: ScrobQuickSyncManager,
   private val spoilersSettings: SettingsSpoilersRepository,
   private val localDataSource: EpisodesLocalDataSource,
 ) {
@@ -25,6 +27,17 @@ class ProgressMainEpisodesCase @Inject constructor(
     customDate: ZonedDateTime?,
   ) {
     episodesManager.setEpisodeWatched(bundle, customDate)
+    scrobQuickSyncManager.scheduleEpisodes(
+      showTmdbId = bundle.show.ids.tmdb.id,
+      episodes = listOf(
+        ScrobQuickSyncManager.EpisodeRef(
+          tmdbId = bundle.episode.ids.tmdb.id,
+          seasonNumber = bundle.season.number,
+          episodeNumber = bundle.episode.number,
+        ),
+      ),
+      customDate = customDate,
+    )
   }
 
   suspend fun isWatched(

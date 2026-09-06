@@ -25,6 +25,13 @@
       >
 
       <com.google.android.material.chip.Chip
+        android:id="@+id/scrobChip"
+        style="@style/ShowlyChip.Filter"
+        android:checkable="true"
+        android:text="@string/textSettingsScrob"
+        />
+
+      <com.google.android.material.chip.Chip
         android:id="@+id/generalChip"
         style="@style/ShowlyChip.Filter"
         android:checkable="true"

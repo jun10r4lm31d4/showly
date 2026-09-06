@@ -2,6 +2,9 @@ package com.michaldrabik.data_remote.di.module
 
 import com.michaldrabik.data_remote.BuildConfig
 import com.michaldrabik.data_remote.omdb.OmdbInterceptor
+import com.michaldrabik.data_remote.scrob.interceptors.ScrobApiKeyInterceptor
+import com.michaldrabik.data_remote.scrob.interceptors.ScrobAuthorizationInterceptor
+import com.michaldrabik.data_remote.scrob.interceptors.ScrobBaseUrlInterceptor
 import com.michaldrabik.data_remote.tmdb.TmdbInterceptor
 import com.michaldrabik.data_remote.trakt.interceptors.TraktHeadersInterceptor
 import com.michaldrabik.data_remote.trakt.interceptors.TraktRetryInterceptor
@@ -61,6 +64,22 @@ object OkHttpModule {
     .addInterceptor(omdbInterceptor)
     .addInterceptor(httpLoggingInterceptor)
     .build()
+
+  @Provides
+  @Singleton
+  @Named("okHttpScrob")
+  fun providesScrobOkHttp(
+    httpLoggingInterceptor: HttpLoggingInterceptor,
+    scrobBaseUrlInterceptor: ScrobBaseUrlInterceptor,
+    scrobApiKeyInterceptor: ScrobApiKeyInterceptor,
+    scrobAuthorizationInterceptor: ScrobAuthorizationInterceptor,
+  ): OkHttpClient =
+    createBaseOkHttpClient()
+      .addInterceptor(scrobBaseUrlInterceptor)
+      .addInterceptor(scrobApiKeyInterceptor)
+      .addInterceptor(scrobAuthorizationInterceptor)
+      .addInterceptor(httpLoggingInterceptor)
+      .build()
 
   @Provides
   @Singleton

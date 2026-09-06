@@ -51,6 +51,18 @@
       />
 
     <androidx.fragment.app.FragmentContainerView
+      android:id="@+id/settingsCategoryScrob"
+      android:name="com.michaldrabik.ui_settings.sections.scrob.SettingsScrobFragment"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toTopOf="@id/settingsCategoryGeneral"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/settingsFilters"
+      tools:layout="@layout/fragment_settings_scrob"
+      />
+
+    <androidx.fragment.app.FragmentContainerView
       android:id="@+id/settingsCategoryGeneral"
       android:name="com.michaldrabik.ui_settings.sections.general.SettingsGeneralFragment"
       android:layout_width="0dp"
@@ -58,7 +70,7 @@
       app:layout_constraintBottom_toTopOf="@+id/settingsCategoryNotifications"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/settingsFilters"
+      app:layout_constraintTop_toBottomOf="@id/settingsCategoryScrob"
       tools:layout="@layout/fragment_settings_general"
       />
 

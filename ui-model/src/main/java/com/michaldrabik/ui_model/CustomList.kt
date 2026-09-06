@@ -26,6 +26,7 @@ data class CustomList(
   val likes: Long,
   val createdAt: ZonedDateTime,
   val updatedAt: ZonedDateTime,
+  val idScrob: Long? = null,
 ) : Parcelable {
 
   companion object {
@@ -49,6 +50,7 @@ data class CustomList(
         likes = 0,
         createdAt = nowUtc(),
         updatedAt = nowUtc(),
+        idScrob = null,
       )
   }
 }

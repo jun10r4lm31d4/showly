@@ -20,6 +20,7 @@ import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.BAC
 import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.GENERAL
 import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.MISC
 import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.NOTIFICATIONS
+import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.SCROB
 import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.SPOILERS
 import com.michaldrabik.ui_settings.views.SettingsFiltersView.SettingsFilter.WIDGETS
 import dagger.hilt.android.AndroidEntryPoint
@@ -90,6 +91,7 @@ class SettingsFragment :
 
   private fun renderFiltered(filter: SettingsFilter?) {
     with(binding) {
+      settingsCategoryScrob.visibleIf(filter == SCROB || filter == null)
       settingsCategoryGeneral.visibleIf(filter == GENERAL || filter == null)
       settingsCategoryNotifications.visibleIf(filter == NOTIFICATIONS || filter == null)
       settingsCategorySpoilers.visibleIf(filter == SPOILERS || filter == null)

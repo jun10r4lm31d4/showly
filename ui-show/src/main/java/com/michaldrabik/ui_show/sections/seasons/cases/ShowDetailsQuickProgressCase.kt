@@ -1,6 +1,7 @@
 package com.michaldrabik.ui_show.sections.seasons.cases
 
 import com.michaldrabik.repository.EpisodesManager
+import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncManager
 import com.michaldrabik.ui_model.Episode
 import com.michaldrabik.ui_model.EpisodeBundle
 import com.michaldrabik.ui_model.SeasonBundle
@@ -15,6 +16,7 @@ import javax.inject.Inject
 @ViewModelScoped
 class ShowDetailsQuickProgressCase @Inject constructor(
   private val episodesManager: EpisodesManager,
+  private val scrobQuickSyncManager: ScrobQuickSyncManager,
 ) {
 
   suspend fun setQuickProgress(
@@ -45,5 +47,19 @@ class ShowDetailsQuickProgressCase @Inject constructor(
         episodesManager.setEpisodeWatched(bundle, customDate)
         episodesAdded.add(episode)
       }
+
+    // Local state was reset and re-marked up to the selected episode - mirror it on Scrob.
+    scrobQuickSyncManager.clearShow(show.ids.tmdb.id)
+    scrobQuickSyncManager.scheduleEpisodes(
+      showTmdbId = show.ids.tmdb.id,
+      episodes = episodesAdded.map { episode ->
+        ScrobQuickSyncManager.EpisodeRef(
+          tmdbId = episode.ids.tmdb.id,
+          seasonNumber = episode.season,
+          episodeNumber = episode.number,
+        )
+      },
+      customDate = customDate,
+    )
   }
 }

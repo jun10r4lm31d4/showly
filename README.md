@@ -66,6 +66,7 @@ The OSS version for Android available in this repo is completely free of all Goo
    traktClientId="your trakt client id"
    tmdbApiKey="your tmdb api key (v4)"
    omdbApiKey="your omdb api key"
+   scrobApiKey="your personal Scrob X-Api-Key (optional, only needed to use Scrob as a watched history/lists source)"
    ```
 
 5. Rebuild and start the app.

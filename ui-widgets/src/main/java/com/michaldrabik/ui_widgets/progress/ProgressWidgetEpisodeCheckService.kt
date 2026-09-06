@@ -6,6 +6,7 @@ import androidx.core.app.JobIntentService
 import com.michaldrabik.repository.EpisodesManager
 import com.michaldrabik.ui_base.Logger
 import com.michaldrabik.ui_base.common.WidgetsProvider
+import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncManager
 import com.michaldrabik.ui_model.IdTrakt
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -49,6 +50,7 @@ class ProgressWidgetEpisodeCheckService :
   override val coroutineContext = Job() + Dispatchers.Main
 
   @Inject lateinit var episodesManager: EpisodesManager
+  @Inject lateinit var scrobQuickSyncManager: ScrobQuickSyncManager
 
   override fun onHandleWork(intent: Intent) {
     val episodeId = intent.getLongExtra(EXTRA_EPISODE_ID, -1)
@@ -62,7 +64,17 @@ class ProgressWidgetEpisodeCheckService :
     }
 
     runBlocking {
-      episodesManager.setEpisodeWatched(episodeId, seasonId, IdTrakt(showId), null)
+      val bundle = episodesManager.setEpisodeWatched(episodeId, seasonId, IdTrakt(showId), null)
+      scrobQuickSyncManager.scheduleEpisodes(
+        showTmdbId = bundle.show.ids.tmdb.id,
+        episodes = listOf(
+          ScrobQuickSyncManager.EpisodeRef(
+            tmdbId = bundle.episode.ids.tmdb.id,
+            seasonNumber = bundle.season.number,
+            episodeNumber = bundle.episode.number,
+          ),
+        ),
+      )
       (applicationContext as WidgetsProvider).requestShowsWidgetsUpdate()
     }
   }
