@@ -7,7 +7,6 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
-import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
@@ -19,6 +18,7 @@ import com.michaldrabik.ui_model.ImageStatus
 import com.michaldrabik.ui_model.Season
 import com.michaldrabik.ui_progress.progress.cases.ProgressItemsCase
 import com.michaldrabik.ui_progress.progress.recycler.ProgressListItem
+import com.michaldrabik.ui_model.AppTheme
 import com.michaldrabik.ui_widgets.BaseWidgetProvider.Companion.EXTRA_SHOW_ID
 import com.michaldrabik.ui_widgets.R
 import com.michaldrabik.ui_widgets.progress.ProgressWidgetProvider.Companion.EXTRA_EPISODE_ID
@@ -184,7 +184,7 @@ class ProgressWidgetViewsFactory(
     }
 
   private fun getItemLayout(): Int {
-    val isLight = settingsRepository.widgets.widgetsTheme == MODE_NIGHT_NO
+    val isLight = settingsRepository.widgets.widgetsTheme == AppTheme.LIGHT
     return when {
       isLight -> R.layout.widget_progress_item_day
       else -> R.layout.widget_progress_item_night
@@ -192,7 +192,7 @@ class ProgressWidgetViewsFactory(
   }
 
   private fun getHeaderLayout(): Int {
-    val isLight = settingsRepository.widgets.widgetsTheme == MODE_NIGHT_NO
+    val isLight = settingsRepository.widgets.widgetsTheme == AppTheme.LIGHT
     return when {
       isLight -> R.layout.widget_header_day
       else -> R.layout.widget_header_night

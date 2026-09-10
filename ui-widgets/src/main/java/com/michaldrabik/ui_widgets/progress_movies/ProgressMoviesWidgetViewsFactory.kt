@@ -6,7 +6,6 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
-import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.core.os.bundleOf
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -17,6 +16,7 @@ import com.michaldrabik.ui_base.utilities.extensions.replace
 import com.michaldrabik.ui_model.ImageStatus
 import com.michaldrabik.ui_progress_movies.progress.cases.ProgressMoviesItemsCase
 import com.michaldrabik.ui_progress_movies.progress.recycler.ProgressMovieListItem
+import com.michaldrabik.ui_model.AppTheme
 import com.michaldrabik.ui_widgets.BaseWidgetProvider.Companion.EXTRA_MOVIE_ID
 import com.michaldrabik.ui_widgets.R
 import com.michaldrabik.ui_widgets.progress_movies.ProgressMoviesWidgetProvider.Companion.EXTRA_CHECK_MOVIE_ID
@@ -108,7 +108,7 @@ class ProgressMoviesWidgetViewsFactory(
   }
 
   private fun getItemLayout(): Int {
-    val isLight = settingsRepository.widgets.widgetsTheme == MODE_NIGHT_NO
+    val isLight = settingsRepository.widgets.widgetsTheme == AppTheme.LIGHT
     return when {
       isLight -> R.layout.widget_movies_progress_item_day
       else -> R.layout.widget_movies_progress_item_night

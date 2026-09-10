@@ -7,7 +7,6 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
-import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.core.os.bundleOf
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -22,6 +21,7 @@ import com.michaldrabik.ui_model.ImageStatus
 import com.michaldrabik.ui_progress_movies.calendar.cases.items.CalendarMoviesFutureCase
 import com.michaldrabik.ui_progress_movies.calendar.cases.items.CalendarMoviesRecentsCase
 import com.michaldrabik.ui_progress_movies.calendar.recycler.CalendarMovieListItem
+import com.michaldrabik.ui_model.AppTheme
 import com.michaldrabik.ui_widgets.BaseWidgetProvider
 import com.michaldrabik.ui_widgets.BaseWidgetProvider.Companion.EXTRA_MOVIE_ID
 import com.michaldrabik.ui_widgets.R
@@ -147,7 +147,7 @@ class CalendarMoviesWidgetViewsFactory(
   }
 
   private fun getItemLayout(): Int {
-    val isLight = settingsRepository.widgets.widgetsTheme == MODE_NIGHT_NO
+    val isLight = settingsRepository.widgets.widgetsTheme == AppTheme.LIGHT
     return when {
       isLight -> R.layout.widget_movies_calendar_item_day
       else -> R.layout.widget_movies_calendar_item_night
@@ -155,7 +155,7 @@ class CalendarMoviesWidgetViewsFactory(
   }
 
   private fun getHeaderLayout(): Int {
-    val isLight = settingsRepository.widgets.widgetsTheme == MODE_NIGHT_NO
+    val isLight = settingsRepository.widgets.widgetsTheme == AppTheme.LIGHT
     return when {
       isLight -> R.layout.widget_header_day
       else -> R.layout.widget_header_night

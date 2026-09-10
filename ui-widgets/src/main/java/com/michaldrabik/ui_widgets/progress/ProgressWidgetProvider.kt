@@ -17,10 +17,10 @@ import android.net.Uri
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.RemoteViews
-import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import com.michaldrabik.common.Config.HOST_ACTIVITY_NAME
 import com.michaldrabik.ui_base.utilities.extensions.dimenToPx
 import com.michaldrabik.ui_model.IdTrakt
+import com.michaldrabik.ui_model.AppTheme
 import com.michaldrabik.ui_widgets.BaseWidgetProvider
 import com.michaldrabik.ui_widgets.R
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,7 +47,7 @@ class ProgressWidgetProvider : BaseWidgetProvider() {
   }
 
   override fun getLayoutResId(): Int {
-    val isLight = settingsRepository.widgets.widgetsTheme == MODE_NIGHT_NO
+    val isLight = settingsRepository.widgets.widgetsTheme == AppTheme.LIGHT
     return when {
       isLight -> R.layout.widget_progress_day
       else -> R.layout.widget_progress_night
