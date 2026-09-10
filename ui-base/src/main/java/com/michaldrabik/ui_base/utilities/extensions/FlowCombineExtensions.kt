@@ -15,6 +15,23 @@ fun <T1, R> combine(
     transform(t1)
   }
 
+fun <T1, T2, T3, T4, T5, R> combine(
+  flow: Flow<T1>,
+  flow2: Flow<T2>,
+  flow3: Flow<T3>,
+  flow4: Flow<T4>,
+  flow5: Flow<T5>,
+  transform: suspend (T1, T2, T3, T4, T5) -> R,
+): Flow<R> =
+  combineKtx(
+    flow,
+    flow2,
+    flow3,
+    flow4,
+    flow5,
+    transform,
+  )
+
 fun <T1, T2, T3, T4, T5, T6, R> combine(
   flow: Flow<T1>,
   flow2: Flow<T2>,
