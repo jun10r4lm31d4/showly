@@ -90,4 +90,15 @@ class PreferencesModule {
       "PREFERENCES_SYNC",
       Context.MODE_PRIVATE,
     )
+
+  @Provides
+  @Singleton
+  @Named("scrobPreferences")
+  fun providesScrobPreferences(
+    @ApplicationContext context: Context,
+  ): SharedPreferences =
+    context.applicationContext.getSharedPreferences(
+      "PREFERENCES_SCROB",
+      Context.MODE_PRIVATE,
+    )
 }

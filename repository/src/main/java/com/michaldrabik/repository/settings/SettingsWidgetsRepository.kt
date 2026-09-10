@@ -1,10 +1,11 @@
 package com.michaldrabik.repository.settings
 
-import android.app.UiModeManager
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.michaldrabik.common.Mode
+import com.michaldrabik.repository.utilities.EnumPreference
 import com.michaldrabik.ui_model.CalendarMode
+import com.michaldrabik.ui_model.AppTheme
 import javax.inject.Inject
 import javax.inject.Named
 import javax.inject.Singleton
@@ -22,11 +23,7 @@ class SettingsWidgetsRepository @Inject constructor(
     private const val WIDGET_CALENDAR_MOVIES_MODE = "WIDGET_CALENDAR_MOVIES_MODE"
   }
 
-  var widgetsTheme: Int
-    get() {
-      return UiModeManager.MODE_NIGHT_YES
-    }
-    set(value) = preferences.edit(true) { putInt(THEME_WIDGET, value) }
+  var widgetsTheme by EnumPreference(preferences, THEME_WIDGET, AppTheme.SYSTEM, AppTheme::class.java)
 
   var widgetsTransparency: Int
     get() {

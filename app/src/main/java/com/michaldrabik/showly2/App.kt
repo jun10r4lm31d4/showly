@@ -4,6 +4,7 @@ import android.app.Application
 import android.app.NotificationChannel
 import android.os.Build
 import android.os.StrictMode
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
 import com.jakewharton.processphoenix.ProcessPhoenix
@@ -43,6 +44,11 @@ class App :
       .build()
 
   override fun onCreate() {
+    fun setupTheme() {
+      val theme = settingsRepository.theme
+      AppCompatDelegate.setDefaultNightMode(theme.code)
+    }
+
     fun setupSettings() =
       runBlocking {
         if (!settingsRepository.isInitialized()) {
@@ -98,6 +104,8 @@ class App :
     super.onCreate()
 
     if (ProcessPhoenix.isPhoenixProcess(this)) return
+
+    setupTheme()
 
     if (BuildConfig.DEBUG) {
       Timber.plant(Timber.DebugTree())

@@ -1,7 +1,5 @@
 package com.michaldrabik.common.errors
 
-import com.michaldrabik.common.errors.ShowlyError.AccountLimitsError
-import com.michaldrabik.common.errors.ShowlyError.AccountLockedError
 import com.michaldrabik.common.errors.ShowlyError.CoroutineCancellation
 import com.michaldrabik.common.errors.ShowlyError.ResourceConflictError
 import com.michaldrabik.common.errors.ShowlyError.ResourceNotFoundError
@@ -24,9 +22,7 @@ object ErrorHelper {
           in arrayOf(401, 403) -> UnauthorizedError(error.message)
           404 -> ResourceNotFoundError()
           409 -> ResourceConflictError()
-          420 -> AccountLimitsError()
           422 -> ValidationError()
-          423 -> AccountLockedError()
           else -> UnknownHttpError(error.message)
         }
       }

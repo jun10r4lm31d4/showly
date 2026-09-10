@@ -20,6 +20,7 @@ import com.michaldrabik.ui_model.ProgressNextEpisodeType
 import com.michaldrabik.ui_model.ProgressNextEpisodeType.LAST_WATCHED
 import com.michaldrabik.ui_model.ProgressType
 import com.michaldrabik.ui_model.Settings
+import com.michaldrabik.ui_model.AppTheme
 import kotlinx.coroutines.withContext
 import java.util.UUID
 import javax.inject.Inject
@@ -58,6 +59,7 @@ class SettingsRepository @Inject constructor(
     private const val PROGRESS_NEXT_EPISODE_TYPE = "PROGRESS_NEXT_EPISODE_TYPE"
     private const val PROGRESS_DATE_SELECTION_TYPE = "PROGRESS_DATE_SELECTION_TYPE"
     private const val LOCALE_INITIALISED = "LOCALE_INITIALISED"
+    private const val THEME = "KEY_THEME"
   }
 
   suspend fun isInitialized() =
@@ -105,6 +107,8 @@ class SettingsRepository @Inject constructor(
     ProgressDateSelectionType::class.java,
   )
   var isLocaleInitialised by BooleanPreference(preferences, LOCALE_INITIALISED, false)
+
+  var theme by EnumPreference(preferences, THEME, AppTheme.SYSTEM, AppTheme::class.java)
 
   var mode: Mode
     get() {

@@ -10,10 +10,6 @@ sealed class ShowlyError(
 
   class ResourceNotFoundError : ShowlyError("ResourceNotFoundError")
 
-  class AccountLockedError : ShowlyError("AccountLockedError")
-
-  class AccountLimitsError : ShowlyError("AccountLimitsError")
-
   data class UnauthorizedError(
     val errorMessage: String?,
   ) : ShowlyError(errorMessage)
