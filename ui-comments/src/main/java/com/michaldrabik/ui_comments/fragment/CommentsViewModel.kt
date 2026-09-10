@@ -122,39 +122,6 @@ class CommentsViewModel @Inject constructor(
     commentsState.update { currentComments }
   }
 
-  fun deleteComment(comment: Comment) {
-    var currentComments = uiState.value.comments?.toMutableList() ?: mutableListOf()
-    val target = currentComments.find { it.id == comment.id } ?: return
-
-    viewModelScope.launch {
-      try {
-        val copy = target.copy(isLoading = true)
-        currentComments.findReplace(copy) { it.id == target.id }
-        commentsState.value = currentComments
-
-        currentComments = uiState.value.comments?.toMutableList() ?: mutableListOf()
-        val targetIndex = currentComments.indexOfFirst { it.id == target.id }
-        if (targetIndex > -1) {
-          currentComments.removeAt(targetIndex)
-          if (target.isReply()) {
-            val parent = currentComments.first { it.id == target.parentId }
-            val repliesCount = currentComments.count { it.parentId == parent.id }.toLong()
-            currentComments.findReplace(parent.copy(replies = repliesCount)) { it.id == target.parentId }
-          }
-        }
-
-        commentsState.value = currentComments
-        messageChannel.send(MessageEvent.Info(R.string.textCommentDeleted))
-      } catch (t: Throwable) {
-        when (ErrorHelper.parse(t)) {
-          is ShowlyError.CoroutineCancellation -> rethrowCancellation(t)
-          is ShowlyError.ResourceConflictError -> messageChannel.send(MessageEvent.Error(R.string.errorCommentDelete))
-          else -> messageChannel.send(MessageEvent.Error(R.string.errorGeneral))
-        }
-      }
-    }
-  }
-
   val uiState = combine(
     commentsState,
     loadingState,
