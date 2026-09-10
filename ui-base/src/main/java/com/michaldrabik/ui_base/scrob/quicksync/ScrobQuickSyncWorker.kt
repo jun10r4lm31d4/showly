@@ -64,6 +64,7 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
     }
   }
 
+  //TODO: add retry logic and backoff strategy
   override suspend fun doWork(): Result {
     Timber.d("Initialized.")
 

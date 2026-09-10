@@ -74,7 +74,7 @@ class ScrobImportListsRunner @Inject constructor(
     remoteLists.forEach { remoteList ->
       Timber.d("Processing '${remoteList.name}'...")
       try {
-        val listId = upsertList(remoteList, localLists.find { it.idScrob == remoteList.id })
+        val listId = upsertList(remoteList, localLists.find { it.id == remoteList.id })
         importListItems(listId, remoteList.id)
       } catch (error: Throwable) {
         if (error !is CancellationException) {
@@ -101,7 +101,7 @@ class ScrobImportListsRunner @Inject constructor(
         itemCount = remoteList.itemCount.toLong(),
         createdAt = nowUtc(),
         updatedAt = nowUtc(),
-        idScrob = remoteList.id,
+        id = remoteList.id,
       )
       return localSource.customLists.insert(listOf(mappers.customList.toDatabase(list))).first()
     }
@@ -132,10 +132,7 @@ class ScrobImportListsRunner @Inject constructor(
         when {
           item.media.isMovie() && moviesEnabled -> {
             val tmdbId = item.media.tmdbId ?: return@forEach
-            val remoteMovie = traktCatalogSource
-              .fetchSearchId("tmdb", tmdbId.toString())
-              .firstOrNull { it.movie != null }
-              ?.movie ?: return@forEach
+            val remoteMovie = resolveMovie(tmdbId) ?: return@forEach
 
             val movie = mappers.movie.fromNetwork(remoteMovie)
             if (localItems.any { it.idTrakt == movie.traktId && it.type == Mode.MOVIES.type }) return@forEach
@@ -159,10 +156,7 @@ class ScrobImportListsRunner @Inject constructor(
 
           item.media.isEpisode() || item.media.isShowLevel() -> {
             val showTmdbId = item.media.showTmdbId ?: item.media.tmdbId ?: return@forEach
-            val remoteShow = traktCatalogSource
-              .fetchSearchId("tmdb", showTmdbId.toString())
-              .firstOrNull { it.show != null }
-              ?.show ?: return@forEach
+            val remoteShow = resolveShow(showTmdbId) ?: return@forEach
 
             val show = mappers.show.fromNetwork(remoteShow)
             if (localItems.any { it.idTrakt == show.traktId && it.type == Mode.SHOWS.type }) return@forEach
@@ -200,4 +194,24 @@ class ScrobImportListsRunner @Inject constructor(
   }
 
   private fun ScrobListItem.addedAtMillis(): Long? = parseTimestampMillis(addedAt)
+
+  private suspend fun resolveMovie(tmdbId: Long): com.michaldrabik.data_remote.trakt.model.Movie? {
+    val local = localSource.movies.getByTmdbId(tmdbId)
+    if (local != null) return mappers.movie.toNetwork(mappers.movie.fromDatabase(local))
+
+    return traktCatalogSource
+      .fetchSearchId("tmdb", tmdbId.toString())
+      .firstOrNull { it.movie != null }
+      ?.movie
+  }
+
+  private suspend fun resolveShow(tmdbId: Long): com.michaldrabik.data_remote.trakt.model.Show? {
+    val local = localSource.shows.getByTmdbId(tmdbId)
+    if (local != null) return mappers.show.toNetwork(mappers.show.fromDatabase(local))
+
+    return traktCatalogSource
+      .fetchSearchId("tmdb", tmdbId.toString())
+      .firstOrNull { it.show != null }
+      ?.show
+  }
 }

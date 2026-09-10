@@ -28,6 +28,7 @@ abstract class ScrobSyncRunner(
      */
     fun parseTimestampMillis(value: String?): Long? =
       value?.let { timestamp ->
+        if (timestamp.isBlank()) return@let null
         runCatching { ZonedDateTime.parse(timestamp).toInstant().toEpochMilli() }
           .recoverCatching { OffsetDateTime.parse(timestamp).toInstant().toEpochMilli() }
           .recoverCatching { LocalDateTime.parse(timestamp).toInstant(ZoneOffset.UTC).toEpochMilli() }

@@ -6,6 +6,7 @@ import com.michaldrabik.data_local.LocalDataSource
 import com.michaldrabik.data_local.database.model.MyMovie
 import com.michaldrabik.data_local.database.model.MyShow
 import com.michaldrabik.data_local.utilities.TransactionsProvider
+import com.michaldrabik.data_remote.scrob.ScrobProvider
 import com.michaldrabik.data_remote.scrob.ScrobRemoteDataSource
 import com.michaldrabik.data_remote.scrob.model.ScrobHistoryEvent
 import com.michaldrabik.data_remote.trakt.TraktRemoteDataSource
@@ -21,6 +22,8 @@ import com.michaldrabik.ui_model.ImageType.FANART
 import com.michaldrabik.ui_model.Movie
 import com.michaldrabik.ui_model.Show
 import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import timber.log.Timber
@@ -35,6 +38,7 @@ class ScrobImportWatchedRunner @Inject constructor(
   // Public, unauthenticated Trakt catalog lookups only - used purely to resolve a tmdb_id
   // into the Trakt-keyed show/movie metadata that Showly's local DB requires. This does not
   // need (and does not use) a Trakt account.
+  private val scrobProvider: ScrobProvider,
   private val traktCatalogSource: TraktRemoteDataSource,
   private val localSource: LocalDataSource,
   private val mappers: Mappers,
@@ -94,7 +98,7 @@ class ScrobImportWatchedRunner @Inject constructor(
       for (event in events) {
         when {
           event.media.isMovie() -> movieEvents += event
-          event.media.isEpisode() -> episodeEvents += event
+          event.media.isEpisode() || event.media.isShowLevel() -> episodeEvents += event
         }
         newestWatchedAtMillis = maxOf(newestWatchedAtMillis, event.watchedAtMillis() ?: -1L)
       }
@@ -102,9 +106,10 @@ class ScrobImportWatchedRunner @Inject constructor(
     }
 
     val remoteMovieTmdbIds = movieEvents.mapNotNullTo(mutableSetOf()) { it.media.tmdbId }
+    val showLevelWatchedIds = episodeEvents.filter { it.media.isShowLevel() }.mapNotNull { it.media.showTmdbId ?: it.media.tmdbId }.toSet()
     val remoteEpisodes = sortedMapOf<Long, MutableSet<Pair<Int, Int>>>()
     episodeEvents.forEach { event ->
-      val showTmdbId = event.media.showTmdbId ?: return@forEach
+      val showTmdbId = event.media.showTmdbId ?: event.media.tmdbId ?: return@forEach
       val seasonNumber = event.media.seasonNumber ?: return@forEach
       val episodeNumber = event.media.episodeNumber ?: return@forEach
       remoteEpisodes.getOrPut(showTmdbId) { mutableSetOf() } += seasonNumber to episodeNumber
@@ -112,14 +117,18 @@ class ScrobImportWatchedRunner @Inject constructor(
 
     Timber.d("Found ${movieEvents.size} movie events, ${episodeEvents.size} episode events.")
 
-    importMovies(movieEvents)
-    importEpisodes(episodeEvents)
+    coroutineScope {
+      val moviesJob = async { importMovies(movieEvents) }
+      val episodesJob = async { importEpisodes(episodeEvents) }
+      moviesJob.await()
+      episodesJob.await()
+    }
 
     removeMissingMovies(remoteMovieTmdbIds)
-    removeMissingEpisodes(remoteEpisodes)
+    removeMissingEpisodes(remoteEpisodes, showLevelWatchedIds)
 
     if (newestWatchedAtMillis > 0) {
-      settingsRepository.sync.activityScrobHistorySyncedAt = newestWatchedAtMillis
+      scrobProvider.setActivityScrobHistorySyncedAt(newestWatchedAtMillis)
     }
   }
 
@@ -131,20 +140,14 @@ class ScrobImportWatchedRunner @Inject constructor(
       .groupBy { it.media.tmdbId!! }
 
     val myMovies = localSource.myMovies.getAll()
-    val myMoviesIds = myMovies.map { it.idTrakt }.toSet()
     val myMoviesTmdbIds = myMovies.map { it.idTmdb }.toSet()
+    val myMoviesIds = myMovies.map { it.idTrakt }.toSet()
 
     byTmdbId.forEach { (tmdbId, movieEvents) ->
       try {
-        // Already collected locally - nothing new to insert. Avoids a Trakt lookup
-        // on every full-history sync.
         if (tmdbId in myMoviesTmdbIds) return@forEach
 
-        val remoteMovie = traktCatalogSource
-          .fetchSearchId("tmdb", tmdbId.toString())
-          .firstOrNull { it.movie != null }
-          ?.movie
-
+        val remoteMovie = resolveMovie(tmdbId)
         if (remoteMovie == null) {
           Timber.w("Could not resolve Scrob movie tmdb_id=$tmdbId on Trakt. Skipping.")
           return@forEach
@@ -174,50 +177,64 @@ class ScrobImportWatchedRunner @Inject constructor(
     if (events.isEmpty()) return
 
     val byShowTmdbId = events
-      .filter { it.media.showTmdbId != null && it.media.seasonNumber != null && it.media.episodeNumber != null }
-      .groupBy { it.media.showTmdbId!! }
+      .filter { it.media.showTmdbId != null || it.media.tmdbId != null }
+      .groupBy { it.media.showTmdbId ?: it.media.tmdbId!! }
 
-    val myShowsIds = localSource.myShows.getAllTraktIds()
+    val myShowsIds = localSource.myShows.getAllTraktIds().toSet()
 
     byShowTmdbId.forEach { (showTmdbId, showEvents) ->
       try {
-        val remoteShow = traktCatalogSource
-          .fetchSearchId("tmdb", showTmdbId.toString())
-          .firstOrNull { it.show != null }
-          ?.show
-
+        val remoteShow = resolveShow(showTmdbId)
         if (remoteShow == null) {
           Timber.w("Could not resolve Scrob show tmdb_id=$showTmdbId on Trakt. Skipping.")
           return@forEach
         }
 
         val show = mappers.show.fromNetwork(remoteShow)
-        val showId = show.traktId
+        val showTraktId = show.traktId
 
-        val watchedByEpisode = showEvents.associateBy(
-          keySelector = { it.media.seasonNumber!! to it.media.episodeNumber!! },
-          valueTransform = { it.watchedAtMillis() },
-        )
+        val watchedByEpisode = showEvents
+          .filter { it.media.seasonNumber != null && it.media.episodeNumber != null }
+          .associateBy(
+            keySelector = { it.media.seasonNumber!! to it.media.episodeNumber!! },
+            valueTransform = { it.watchedAtMillis() },
+          )
 
-        val remoteSeasons = traktCatalogSource.fetchSeasons(showId)
+        val hasShowLevelWatch = showEvents.any { it.media.isShowLevel() }
+        val newestWatchedMillis = showEvents.mapNotNull { it.watchedAtMillis() }.maxOrNull() ?: nowUtcMillis()
+
+        val showExists = showTraktId in myShowsIds
+        val localEpisodes = if (showExists) localSource.episodes.getAllByShowId(showTraktId) else emptyList()
+
+        val needsMetadata = !showExists || hasShowLevelWatch || watchedByEpisode.keys.any { key ->
+          val local = localEpisodes.find { it.seasonNumber == key.first && it.episodeNumber == key.second }
+          local == null || !local.isWatched
+        }
+
+        if (!needsMetadata) {
+          localSource.myShows.updateWatchedAt(showTraktId, newestWatchedMillis)
+          return@forEach
+        }
+
+        val remoteSeasons = traktCatalogSource.fetchSeasons(showTraktId)
         val seasons = remoteSeasons.map { mappers.season.fromNetwork(it) }
 
         val episodesDb = remoteSeasons.flatMap { remoteSeason ->
           val season = seasons.first { it.number == remoteSeason.number }
           remoteSeason.episodes.orEmpty().mapNotNull { remoteEpisode ->
             val key = remoteSeason.number to remoteEpisode.number
-            if (key.first == null || key.second == null || !watchedByEpisode.containsKey(key.first!! to key.second!!)) {
-              return@mapNotNull null
-            }
-            val watchedAtMillis = watchedByEpisode[key.first!! to key.second!!]
+            val isWatched = hasShowLevelWatch || watchedByEpisode.containsKey(key)
+            if (!isWatched) return@mapNotNull null
+
+            val watchedAtMillis = watchedByEpisode[key] ?: newestWatchedMillis
             val episode = mappers.episode.fromNetwork(remoteEpisode)
             mappers.episode.toDatabase(
               episode = episode,
               season = season,
-              showId = IdTrakt(showId),
+              showId = IdTrakt(showTraktId),
               isWatched = true,
               lastExportedAt = null,
-              lastWatchedAt = watchedAtMillis?.let { millisToZonedDateTime(it) },
+              lastWatchedAt = watchedAtMillis.let { millisToZonedDateTime(it) },
             )
           }
         }
@@ -228,29 +245,26 @@ class ScrobImportWatchedRunner @Inject constructor(
           val season = seasons.first { it.number == remoteSeason.number }
           val totalEpisodes = remoteSeason.episodes?.size ?: 0
           val watchedEpisodes = remoteSeason.episodes.orEmpty().count {
-            watchedByEpisode.containsKey(remoteSeason.number to it.number)
+            hasShowLevelWatch || watchedByEpisode.containsKey(remoteSeason.number to it.number)
           }
           mappers.season.toDatabase(
             season,
-            IdTrakt(showId),
-            isWatched =
-              totalEpisodes > 0 && watchedEpisodes == totalEpisodes,
+            IdTrakt(showTraktId),
+            isWatched = totalEpisodes > 0 && watchedEpisodes == totalEpisodes,
           )
         }
-
-        val newestWatchedMillis = watchedByEpisode.values.filterNotNull().maxOrNull() ?: nowUtcMillis()
 
         transactions.withTransaction {
           localSource.shows.upsert(listOf(mappers.show.toDatabase(show)))
           localSource.seasons.upsert(seasonsDb)
           localSource.episodes.upsert(episodesDb)
 
-          if (showId !in myShowsIds) {
+          if (!showExists) {
             localSource.myShows.insert(
-              listOf(MyShow.fromTraktId(showId, newestWatchedMillis, newestWatchedMillis, newestWatchedMillis)),
+              listOf(MyShow.fromTraktId(showTraktId, newestWatchedMillis, newestWatchedMillis, newestWatchedMillis)),
             )
           } else {
-            localSource.myShows.updateWatchedAt(showId, newestWatchedMillis)
+            localSource.myShows.updateWatchedAt(showTraktId, newestWatchedMillis)
           }
         }
         loadImage(show)
@@ -264,6 +278,8 @@ class ScrobImportWatchedRunner @Inject constructor(
       delay(SCROB_LOOKUP_DELAY_MS)
     }
   }
+
+
 
   /**
    * Removes movies from the local "My Movies" collection when they are no longer present
@@ -292,12 +308,15 @@ class ScrobImportWatchedRunner @Inject constructor(
    * the user's collection and matched by TMDB show id + season/episode numbers. Season 0
    * (specials) is never touched, as the server does not track them.
    */
-  private suspend fun removeMissingEpisodes(remoteEpisodesByShowTmdbId: Map<Long, Set<Pair<Int, Int>>>) {
+  private suspend fun removeMissingEpisodes(
+    remoteEpisodesByShowTmdbId: Map<Long, Set<Pair<Int, Int>>>,
+    showLevelWatchedIds: Set<Long> = emptySet(),
+  ) {
     val myShows = localSource.myShows.getAll()
 
     myShows.forEach { show ->
       try {
-        if (show.idTmdb <= 0) return@forEach
+        if (show.idTmdb <= 0 || show.idTmdb in showLevelWatchedIds) return@forEach
 
         val watchedEpisodes = localSource.episodes
           .getAllByShowId(show.idTrakt)
@@ -367,5 +386,25 @@ class ScrobImportWatchedRunner @Inject constructor(
       Timber.w(error)
       rethrowCancellation(error)
     }
+  }
+
+  private suspend fun resolveMovie(tmdbId: Long): com.michaldrabik.data_remote.trakt.model.Movie? {
+    val local = localSource.movies.getByTmdbId(tmdbId)
+    if (local != null) return mappers.movie.toNetwork(mappers.movie.fromDatabase(local))
+
+    return traktCatalogSource
+      .fetchSearchId("tmdb", tmdbId.toString())
+      .firstOrNull { it.movie != null }
+      ?.movie
+  }
+
+  private suspend fun resolveShow(tmdbId: Long): com.michaldrabik.data_remote.trakt.model.Show? {
+    val local = localSource.shows.getByTmdbId(tmdbId)
+    if (local != null) return mappers.show.toNetwork(mappers.show.fromDatabase(local))
+
+    return traktCatalogSource
+      .fetchSearchId("tmdb", tmdbId.toString())
+      .firstOrNull { it.show != null }
+      ?.show
   }
 }

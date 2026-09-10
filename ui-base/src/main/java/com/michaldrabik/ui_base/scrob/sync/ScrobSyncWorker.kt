@@ -57,6 +57,7 @@ class ScrobSyncWorker @AssistedInject constructor(
         .setConstraints(
           Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build(),
         ).setInputData(workDataOf(KEY_IMPORT_HISTORY to true))
+        .addTag(TAG_HISTORY)
         .build()
 
       workManager.enqueueUniqueWork(TAG_HISTORY, ExistingWorkPolicy.REPLACE, request)
@@ -68,6 +69,7 @@ class ScrobSyncWorker @AssistedInject constructor(
         .setConstraints(
           Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build(),
         ).setInputData(workDataOf(KEY_IMPORT_LISTS to true))
+        .addTag(TAG_LISTS)
         .build()
 
       workManager.enqueueUniqueWork(TAG_LISTS, ExistingWorkPolicy.REPLACE, request)
