@@ -1,190 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:id="@+id/settingsContent"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  tools:theme="@style/AppTheme"
-  >
-
-  <TextView
-    android:id="@+id/settingsCategoryScrob"
-    style="@style/Settings.Category"
-    android:layout_marginTop="@dimen/spaceNormal"
-    android:text="@string/textSettingsScrob"
-    app:layout_constraintBottom_toTopOf="@id/settingsScrobAuthorize"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0"
-    app:layout_constraintVertical_chainStyle="packed"
-    app:layout_goneMarginTop="@dimen/spaceBig"
-    />
-
-  <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/settingsScrobAuthorize"
-    style="@style/Settings.ItemLayout"
-    app:layout_constraintBottom_toTopOf="@id/settingsScrobSyncHistory"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/settingsCategoryScrob"
-    >
-
-    <androidx.constraintlayout.widget.Barrier
-      android:id="@+id/settingsScrobAuthorizeBarrier"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:barrierDirection="start"
-      app:constraint_referenced_ids="settingsScrobAuthorizeProgress, settingsScrobAuthorizeIcon"
-      />
-
-    <TextView
-      android:id="@+id/settingsScrobAuthorizeTitle"
-      style="@style/Settings.Title"
-      android:text="@string/textSettingsScrobAuthorizeTitle"
-      app:layout_constraintBottom_toTopOf="@id/settingsScrobAuthorizeSummary"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_chainStyle="packed"
-      />
-
-    <TextView
-      android:id="@+id/settingsScrobAuthorizeSummary"
-      style="@style/Settings.Summary"
-      android:layout_marginEnd="@dimen/spaceSmall"
-      app:layout_constrainedWidth="true"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toStartOf="@id/settingsScrobAuthorizeBarrier"
-      app:layout_constraintHorizontal_bias="0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/settingsScrobAuthorizeTitle"
-      tools:text="@tools:sample/lorem/random"
-      />
-
-    <ProgressBar
-      android:id="@+id/settingsScrobAuthorizeProgress"
-      style="@style/ProgressBar.Accent"
-      android:layout_width="24dp"
-      android:layout_height="24dp"
-      android:visibility="gone"
-      app:layout_constraintBottom_toBottomOf="@id/settingsScrobAuthorize"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@id/settingsScrobAuthorize"
-      tools:visibility="visible"
-      />
-
-    <ImageView
-      android:id="@+id/settingsScrobAuthorizeIcon"
-      android:layout_width="wrap_content"
-      android:layout_height="0dp"
-      android:visibility="gone"
-      app:layout_constraintBottom_toBottomOf="@id/settingsScrobAuthorize"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@id/settingsScrobAuthorize"
-      app:srcCompat="@drawable/ic_check"
-      app:tint="?attr/colorAccent"
-      tools:visibility="visible"
-      />
-
-  </androidx.constraintlayout.widget.ConstraintLayout>
-
-  <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/settingsScrobSyncHistory"
-    style="@style/Settings.ItemLayout"
-    android:visibility="gone"
-    app:layout_constraintBottom_toTopOf="@id/settingsScrobSyncLists"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/settingsScrobAuthorize"
-    tools:visibility="visible"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settingsContent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:theme="@style/AppTheme"
     >
 
     <TextView
-      android:id="@+id/settingsScrobSyncHistoryTitle"
-      style="@style/Settings.Title"
-      android:text="@string/textSettingsScrobSyncHistoryTitle"
-      app:layout_constraintBottom_toTopOf="@id/settingsScrobSyncHistoryDescription"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_chainStyle="packed"
-      />
+        android:id="@+id/settingsCategoryScrobLabel"
+        style="@style/Settings.Category"
+        android:text="@string/textSettingsScrob"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-      android:id="@+id/settingsScrobSyncHistoryDescription"
-      style="@style/Settings.Summary"
-      android:layout_marginEnd="@dimen/spaceSmall"
-      android:text="@string/textSettingsScrobSyncHistorySummary"
-      app:layout_constrainedWidth="true"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toStartOf="@id/settingsScrobSyncHistoryProgress"
-      app:layout_constraintHorizontal_bias="0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/settingsScrobSyncHistoryTitle"
-      tools:text="@tools:sample/lorem/random"
-      />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settingsScrobInstance"
+        style="@style/Settings.ItemLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsCategoryScrobLabel">
 
-    <ProgressBar
-      android:id="@+id/settingsScrobSyncHistoryProgress"
-      style="@style/ProgressBar.Accent"
-      android:layout_width="24dp"
-      android:layout_height="24dp"
-      android:visibility="gone"
-      app:layout_constraintBottom_toBottomOf="@id/settingsScrobSyncHistory"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@id/settingsScrobSyncHistory"
-      tools:visibility="visible"
-      />
+        <TextView
+            android:id="@+id/settingsScrobTitle"
+            style="@style/Settings.Title"
+            android:text="@string/textSettingsScrobTitle"
+            app:layout_constraintBottom_toTopOf="@id/settingsScrobDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/settingsScrobDescription"
+            style="@style/Settings.Summary"
+            android:text="@string/textSettingsScrobDescription"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@id/settingsScrobValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/settingsScrobTitle" />
 
-  <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/settingsScrobSyncLists"
-    style="@style/Settings.ItemLayout"
-    android:visibility="gone"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/settingsScrobSyncHistory"
-    tools:visibility="visible"
-    >
+        <TextView
+            android:id="@+id/settingsScrobValue"
+            style="@style/Settings.Summary"
+            android:ellipsize="middle"
+            android:maxLines="1"
+            android:textColor="?android:attr/textColorPrimary"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/settingsScrobDescription"
+            tools:text="https://scrob.example.com" />
 
-    <TextView
-      android:id="@+id/settingsScrobSyncListsTitle"
-      style="@style/Settings.Title"
-      android:text="@string/textSettingsScrobSyncListsTitle"
-      app:layout_constraintBottom_toTopOf="@id/settingsScrobSyncListsDescription"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_chainStyle="packed"
-      />
-
-    <TextView
-      android:id="@+id/settingsScrobSyncListsDescription"
-      style="@style/Settings.Summary"
-      android:layout_marginEnd="@dimen/spaceSmall"
-      android:text="@string/textSettingsScrobSyncListsSummary"
-      app:layout_constrainedWidth="true"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toStartOf="@id/settingsScrobSyncListsProgress"
-      app:layout_constraintHorizontal_bias="0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/settingsScrobSyncListsTitle"
-      tools:text="@tools:sample/lorem/random"
-      />
-
-    <ProgressBar
-      android:id="@+id/settingsScrobSyncListsProgress"
-      style="@style/ProgressBar.Accent"
-      android:layout_width="24dp"
-      android:layout_height="24dp"
-      android:visibility="gone"
-      app:layout_constraintBottom_toBottomOf="@id/settingsScrobSyncLists"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@id/settingsScrobSyncLists"
-      tools:visibility="visible"
-      />
-
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

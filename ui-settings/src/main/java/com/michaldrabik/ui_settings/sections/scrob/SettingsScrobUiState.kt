@@ -1,9 +1,10 @@
 package com.michaldrabik.ui_settings.sections.scrob
 
 data class SettingsScrobUiState(
-  val isSignedInScrob: Boolean = false,
-  val isSigningIn: Boolean = false,
-  val isSyncingHistory: Boolean = false,
-  val isSyncingLists: Boolean = false,
-  val scrobUsername: String = "",
-)
+  val scrobUrl: String = "",
+  val scrobApiKey: String = "",
+  val hasScrobApiKey: Boolean = false,
+) {
+  val isScrobConfigured: Boolean
+    get() = scrobUrl.isNotBlank() and hasScrobApiKey
+}
