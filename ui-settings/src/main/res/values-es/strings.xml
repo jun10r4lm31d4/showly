@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="textImagesCacheCleared">Se ha borrado la caché de imágenes.</string>
-    <string name="textSettings">Ajustes</string>
-    <string name="textSettingsGeneral"><![CDATA[General & UX]]></string>
+  <string name="textImagesCacheCleared">Se ha borrado la caché de imágenes.</string>
+  <string name="textSettings">Ajustes</string>
+  <string name="textSettingsGeneral"><![CDATA[General & UX]]></string>
   <string name="textSettingsRecentShowsTitle">Cantidad Añadidos Recientemente</string>
   <string name="textSettingsRecentShowsSummary">Número de elementos recientes que se mostrarán en \'Colección\'.</string>
   <string name="textSettingsUpcomingSectionTitle">Sección Próximamente</string>
@@ -31,7 +31,7 @@
   <string name="textSettingsRateAppSummary">¿Disfrutando de Showly? Escribe una reseña en PlayStore. ¡Gracias!</string>
   <string name="textSettingsDeleteCacheTitle">Borrar caché de imágenes</string>
   <string name="textSettingsDeleteCacheSummary">Haz clic para borrar la caché de imágenes locales. Esto puede ayudar si las imágenes de las series no se cargan correctamente.</string>
-    <string name="textSettingsMoviesEnabledTitle">Películas</string>
+  <string name="textSettingsMoviesEnabledTitle">Películas</string>
   <string name="textSettingsMoviesEnabledSummary">Habilitar/deshabilitar soporte de películas. La aplicación se reiniciará.</string>
   <string name="textSettingsWidgets">Widgets</string>
   <string name="textSettingsWidgetsLabelsTitle">Títulos</string>
@@ -41,7 +41,7 @@
   <string name="textSettingsStreamingServicesMessage">Mostrar datos de servicios de streaming.</string>
   <string name="textSettingsProgressNextEpisodeTitle">Siguiente Episodio</string>
   <string name="textSettingsProgressNextEpisodeMessage">Calcular el siguiente episodio usando:</string>
-    <string name="textSettingsDateSelectionMessage">Selecciona la opción de selección de fecha predeterminada.</string>
+  <string name="textSettingsDateSelectionMessage">Selecciona la opción de selección de fecha predeterminada.</string>
   <string name="textSettingsTabletColumnsTitle">Número de Columnas de Listas</string>
   <string name="textSettingsTabletColumnsSummary">Selecciona el número de columnas preferido para las listas.</string>
   <string name="textSettingsBackup"><![CDATA[Copia de Seguridad& Restaurar]]></string>
@@ -54,55 +54,75 @@
   <string name="textSettingsSpoilersShowsSummary">Administrar ajustes de spoiler para series.</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">Mis Series</string>
   <string name="textSettingsSpoilersShowsOverviewsMyDescription">Ocultar
+  
     <b>descripción</b> de las series añadidas a Mis Series</string>
   <string name="textSettingsSpoilersShowsRatingsMyDescription">Ocultar
+  
     <b>valoración</b> de series añadidas a Mis Series</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">Pendientes</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Ocultar
+  
     <b>descripción</b> de las series añadidas a Pendientes</string>
   <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Ocultar
+  
     <b>valoración</b> de series añadidas a Pendientes</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Ocultos</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Ocultar
+  
     <b>descripción</b> de las series añadidas a Ocultos</string>
   <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Ocultar
+  
     <b>valoración</b> de series añadidas a Ocultos</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">No Coleccionado</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Ocultar
+  
     <b>descripción</b> de series que no están en tu Colección</string>
   <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Ocultar
+  
     <b>valoración</b> de series que no están en tu Colección</string>
   <string name="textSettingsSpoilersMovies">Películas</string>
   <string name="textSettingsSpoilersMoviesSummary">Administrar ajustes de spoiler para películas.</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyTitle">Historial</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Ocultar
+  
     <b>descripción</b> de películas añadidas al historial</string>
   <string name="textSettingsSpoilersMoviesRatingsMyDescription">Ocultar
+  
     <b>valoración</b> de películas añadidas al historial</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">Pendientes</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Ocultar
+  
     <b>descripción</b> de películas añadidas a Pendientes</string>
   <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Ocultar
+  
     <b>valoración</b> de películas añadidas a Pendientes</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Ocultos</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Ocultar
+  
     <b>descripción</b> de películas añadidas a Ocultos</string>
   <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Ocultar
+  
     <b>valoración</b> de películas añadidas a Ocultos</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">No Coleccionado</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Ocultar
+  
     <b>descripción</b> de películas que no están en tu Colección</string>
   <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Ocultar
+  
     <b>calificación</b> de películas que no están en tu Colección</string>
   <string name="textSettingsSpoilersEpisodes">Episodios</string>
   <string name="textSettingsSpoilersEpisodesSummary">Administrar ajustes de spoiler para episodios.</string>
   <string name="textSettingsSpoilersEpisodesImage">Ocultar
+  
     <b>imagen</b> de los episodios no vistos.</string>
   <string name="textSettingsSpoilersEpisodesTitle">Ocultar
+  
     <b>título</b> de los episodios no vistos.</string>
   <string name="textSettingsSpoilersEpisodesDescription">Ocultar
+  
     <b>descripción</b> de los episodios no vistos.</string>
   <string name="textSettingsSpoilersEpisodesRating">Ocultar
+  
     <b>valoración</b> de los episodios no vistos.</string>
   <string name="textSettingsSpoilersTapToRevealTitle">Pulsar para revelar</string>
   <string name="textSettingsSpoilersTapToRevealDescription">Toca el contenido oculto para revelarlo temporalmente.</string>
@@ -110,6 +130,5 @@
   <string name="textNextEpisodeOldest">Episodio más antiguo no visto</string>
   <string name="textDateSelectionAsk">Preguntar siempre</string>
   <string name="textDateSelectionNow">Siempre \"Ahora\"</string>
-  <string name="textThemeDark">Oscuro</string>
-    <string name="textTransparency100">Opaco</string>
+  <string name="textTransparency100">Opaco</string>
 </resources>

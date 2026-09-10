@@ -13,7 +13,9 @@
   <string name="textDiscoverShows">Descubrir Series</string>
   <string name="textEpisodeInfo">Detalles</string>
   <string name="textProgressEmpty">Tu
+  
     <b>Progreso</b> actualmente está vacío.\n\nVisita la pestaña
+  
     <b>Descubrir</b> para añadir series o importar tu colección de Trakt.tv.</string>
   <string name="textNewSeason">Estreno</string>
   <string name="textPremieres">Estrenos</string>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AlertDialog" parent="@style/Theme.Material3.DayNight.Dialog">
+        <item name="android:textColorPrimary">@color/colorBlue</item>
+        <item name="android:textColorSecondary">@color/colorBlueLight</item>
+        <item name="android:textColor">@color/colorBlue</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AlertDialog.NegativeButton</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AlertDialog.PositiveButton</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="textColorAlertDialogListItem">@color/colorBlue</item>
+    </style>
+    <style name="AlertDialog.NegativeButton" parent="@style/Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorGrayLight</item>
+        <item name="cornerRadius">100.0dp</item>
+    </style>
+    <style name="AlertDialog.PositiveButton" parent="@style/Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="cornerRadius">100.0dp</item>
+    </style>
+    <style name="AppTheme" parent="@style/Theme.Material3.DayNight.NoActionBar">
+        <item name="android:textColorPrimary">@color/colorBlue</item>
+        <item name="android:textColorSecondary">@color/colorBlueLight</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorBackgroundChipSelected">#d9e2ec</item>
+        <item name="colorBackgroundChipSelectedLight">#d9e2ec</item>
+        <item name="colorBadgeBackground">@color/colorPrimaryDark</item>
+        <item name="colorBottomMenuBackground">@color/colorPrimary</item>
+        <item name="colorBottomMenuIndicator">@color/colorPrimaryDark</item>
+        <item name="colorBottomMenuItem">@color/colorBlueLight2x</item>
+        <item name="colorBottomMenuItemChecked">@color/colorBlue</item>
+        <item name="colorBottomMenuSeparator">@color/colorPrimaryDark</item>
+        <item name="colorCardBackground">@color/colorPrimaryDark</item>
+        <item name="colorChipButtonStroke">#6670767c</item>
+        <item name="colorErrorSnackbar">@color/colorError</item>
+        <item name="colorInfoSnackbar">@color/colorAccent</item>
+        <item name="colorPlaceholderBackground">@color/colorPrimaryDark</item>
+        <item name="colorPlaceholderIcon">@color/colorAccent</item>
+        <item name="colorPlaceholderStroke">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorProgressTrack">#d3d3d3</item>
+        <item name="colorSearchLocalViewBackground">@color/colorPrimaryDark</item>
+        <item name="colorSearchLocalViewControl">@color/colorBlue</item>
+        <item name="colorSearchViewBackground">@color/colorWhite</item>
+        <item name="colorSearchViewControl">@color/colorBlue</item>
+        <item name="colorSeparator">#dce1e6</item>
+        <item name="colorSheetBackground">@color/colorPrimary</item>
+        <item name="colorWidgetStatusBackground">@color/colorBlackTranslucentLight</item>
+        <item name="enableEdgeToEdge">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="switchStyle">@style/ShowlySwitch</item>
+        <item name="textColorChip">?android:textColorPrimary</item>
+        <item name="textColorChipSelected">?android:textColorPrimary</item>
+        <item name="textColorErrorSnackbar">@color/colorWhite</item>
+        <item name="textColorGridTitle">@color/colorBlue</item>
+        <item name="textColorInfoSnackbar">@color/colorWhite</item>
+        <item name="textColorOnSurface">@color/colorWhite</item>
+        <item name="textColorTab">@color/colorBlueLight2x</item>
+        <item name="textColorTabSelected">@color/colorBlue</item>
+        <item name="toolbarNavigationButtonStyle">@style/Toolbar.Button.Navigation.Tinted</item>
+    </style>
+
+    <style name="ProgressBar.Dark" parent="@style/ProgressBar">
+        <item name="android:indeterminateTint">@color/colorAccent</item>
+    </style>
+    <style name="ShowlyDatePicker" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="buttonBarNegativeButtonStyle">@style/ShowlyDatePicker.Button</item>
+        <item name="buttonBarPositiveButtonStyle">@style/ShowlyDatePicker.Button</item>
+        <item name="colorOnPrimary">?android:textColorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorSurface">@color/colorBackground</item>
+    </style>
+    <style name="ShowlySwitch.Overlay" parent="">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryContainer">#4d4b6383</item>
+    </style>
+    <style name="ShowlyTimePicker.Chip" parent="@style/Widget.MaterialComponents.TimePicker.Display">
+        <item name="android:textColor">@color/selector_timepicker_chip_text</item>
+        <item name="chipBackgroundColor">@color/colorBackground</item>
+        <item name="rippleColor">@color/colorTransparent</item>
+    </style>
+    <style name="ShowlyTimePicker.Clock" parent="@style/Widget.MaterialComponents.TimePicker.Clock">
+        <item name="clockFaceBackgroundColor">@color/colorPrimaryDark</item>
+        <item name="clockHandColor">@color/colorAccent</item>
+        <item name="clockNumberTextColor">@color/selector_timepicker_clock_text</item>
+    </style>
+</resources>

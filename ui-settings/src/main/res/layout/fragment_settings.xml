@@ -55,10 +55,12 @@
       android:name="com.michaldrabik.ui_settings.sections.scrob.SettingsScrobFragment"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/spaceTiny"
       app:layout_constraintBottom_toTopOf="@id/settingsCategoryGeneral"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/settingsFilters"
+      app:layout_goneMarginTop="0dp"
       tools:layout="@layout/fragment_settings_scrob"
       />
 

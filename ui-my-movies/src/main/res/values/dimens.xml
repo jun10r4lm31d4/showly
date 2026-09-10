@@ -5,14 +5,14 @@
   <dimen name="myMoviesSearchViewPadding">104dp</dimen>
   <dimen name="myMoviesTabsViewPadding">136dp</dimen>
 
-    <dimen name="myMoviesBottomPadding">92dp</dimen>
+  <dimen name="myMoviesBottomPadding">92dp</dimen>
   <dimen name="myMoviesFanartCorner">4dp</dimen>
   <dimen name="myMoviesFanartHeight">126dp</dimen>
 
   <dimen name="myMoviesSearchLocalViewPadding">150dp</dimen>
   <dimen name="myMoviesSearchLocalOffset">40dp</dimen>
 
-    <dimen name="collectionTabsViewPadding">148dp</dimen>
-    <dimen name="collectionImageHeight">120dp</dimen>
+  <dimen name="collectionTabsViewPadding">148dp</dimen>
+  <dimen name="collectionImageHeight">120dp</dimen>
   <dimen name="collectionImageWidth">80dp</dimen>
 </resources>

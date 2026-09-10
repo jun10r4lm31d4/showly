@@ -67,4 +67,7 @@
   <string name="textStreamingBuy">Comprar</string>
   <string name="textStreamingRent">Aluguel</string>
   <string name="textStreamingFree">Gratuito</string>
+  <string name="textThemeDark">Escuro</string>
+  <string name="textThemeLight">Claro</string>
+  <string name="textThemeSystem">Sistema</string>
 </resources>

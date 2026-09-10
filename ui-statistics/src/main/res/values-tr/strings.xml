@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatistics">İstatistikler</string>
-  <string name="textStatisticsEmpty">İstatistiklerin görüntülenebilmesi için
-    <b>Dizilerim</b>\nbölümünde en az bir dizinin bulunması gerekir.</string>
+  <string name="textStatisticsEmpty">İstatistiklerin görüntülenebilmesi için <b>Dizilerim</b>\nbölümünde en az bir dizinin bulunması gerekir.</string>
   <string name="textStatisticsMostWatchedShows">En Çok Görüntülenen Diziler</string>
   <string name="textStatisticsTotalTimeSpent">Harcanan Toplam Süre</string>
   <string name="textStatisticsTotalTimeItIs">ve</string>

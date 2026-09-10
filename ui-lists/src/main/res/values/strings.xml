@@ -2,7 +2,7 @@
 <resources>
   <string name="menuLists">Lists</string>
   <string name="menuList">List</string>
-    <string name="textListsEmpty">Your lists collection is currently empty.</string>
+  <string name="textListsEmpty">Your lists collection is currently empty.</string>
   <string name="textListEmpty">Your list is currently empty.</string>
   <string name="textCreateList">Create list</string>
   <string name="textCreateListDescription">Create a new custom list.</string>
@@ -18,7 +18,7 @@
   <string name="textManageLists">Manage lists</string>
   <string name="textManageListsShows">Manage your lists for this show.</string>
   <string name="textManageListsMovies">Manage your lists for this movie.</string>
-  <string name="errorCouldNotCreateList">We could not create new list in your Trakt account at this moment.\nPlease check internet connection and try again.</string>
-  <string name="errorCouldNotUpdateList">We could not update this list in your Trakt account at this moment.\nPlease check internet connection and try again.</string>
-  <string name="errorCouldNotDeleteList">We could not delete this list from your Trakt account at this moment.\nPlease check internet connection and try again.</string>
+  <string name="errorCouldNotCreateList">We could not create new list at this moment.</string>
+  <string name="errorCouldNotUpdateList">We could not update this list at this moment.</string>
+  <string name="errorCouldNotDeleteList">We could not delete this list at this moment.</string>
 </resources>

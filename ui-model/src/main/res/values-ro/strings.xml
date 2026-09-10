@@ -22,7 +22,7 @@
   <string name="textHeaderRecentlyAdded">Adăugate recent</string>
   <string name="textHeaderWatching">Vizionare</string>
   <string name="textHeaderFinished">Finalizat</string>
-  <string name="textHeaderReturning"><![CDATA[Revine & În curând]]></string>
+  <string name="textHeaderReturning">Revine &amp; În curând</string>
   <string name="textHeaderAll">Toate</string>
   <string name="textSettingsShowsNotificationsWhenTitle">Când să notifice</string>
   <string name="textSettingsShowsNotificationsWhenSummary">Când dorești să primești anunțuri privind episoadele.</string>
@@ -76,4 +76,7 @@
   <string name="textStreamingBuy">Cumpără</string>
   <string name="textStreamingRent">Închiriat</string>
   <string name="textStreamingFree">Gratuit</string>
+  <string name="textThemeDark">Întunecat</string>
+  <string name="textThemeLight">Luminos</string>
+  <string name="textThemeSystem">Sistem</string>
 </resources>

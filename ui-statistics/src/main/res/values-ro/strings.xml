@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatistics">Statistici</string>
-  <string name="textStatisticsEmpty">Cel puțin un film trebuie să fie prezent în
-    <b>Istoric</b>\nînainte ca statisticile să poată fi afișate.</string>
+  <string name="textStatisticsEmpty">Cel puțin un film trebuie să fie prezent în <b>Istoric</b>\nînainte ca statisticile să poată fi afișate.</string>
   <string name="textStatisticsMostWatchedShows">Cele mai vizionate seriale</string>
   <string name="textStatisticsTotalTimeSpent">Timpul total petrecut vizionând</string>
   <string name="textStatisticsTotalTimeItIs">și este</string>

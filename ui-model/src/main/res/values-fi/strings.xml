@@ -76,4 +76,7 @@
   <string name="textStreamingBuy">Osta</string>
   <string name="textStreamingRent">Vuokraa</string>
   <string name="textStreamingFree">Ilmaiseksi</string>
+  <string name="textThemeDark">Tumma</string>
+  <string name="textThemeLight">Vaalea</string>
+  <string name="textThemeSystem">Järjestelmä</string>
 </resources>

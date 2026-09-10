@@ -5,13 +5,13 @@
   <string name="textNo">Hayır</string>
   <string name="textApply">Uygula</string>
   <string name="textCancel">İptal</string>
-    <string name="textClose">Kapat</string>
+  <string name="textClose">Kapat</string>
   <string name="textShare">Paylaş</string>
   <string name="textNow">Şimdi</string>
-    <string name="textReleaseDay">Yayın günü</string>
+  <string name="textReleaseDay">Yayın günü</string>
   <string name="textNew">Yeni</string>
   <string name="textSelect">Seç</string>
-    <string name="textHide">Saklamak</string>
+  <string name="textHide">Saklamak</string>
   <string name="textRemove">Kaldır</string>
   <string name="textEmptyResults">Hiçbir sonuç bulunamadı…</string>
   <string name="textSearchFor">Ara</string>
@@ -53,7 +53,7 @@
   <string name="textDirector">Yönetmen</string>
   <string name="textWriting">Yazarlık</string>
   <string name="textScreenplay">Senaryo</string>
-    <string name="textMusic">Müzik</string>
+  <string name="textMusic">Müzik</string>
   <string name="textActing">Oyunculuk</string>
   <string name="textAiredAlready">Yayınlandı</string>
   <string name="textAirsNow">Şimdi Yayında</string>
@@ -76,7 +76,7 @@
   <string name="textThisMonth">Bu Ay</string>
   <string name="textNextMonth">Gelecek Ay</string>
   <string name="textThisYear">Bu Yıl</string>
-    <string name="textLater">Daha sonra</string>
+  <string name="textLater">Daha sonra</string>
   <string name="textYesterday">Dün</string>
   <string name="textLast7Days">Son 7 Gün</string>
   <string name="textLast30Days">Son 30 Gün</string>
@@ -89,7 +89,7 @@
   <string name="textAddToMyShows">Dizilerime Ekle</string>
   <string name="textAddToMyMovies">Geçmişe ekle</string>
   <string name="textAddToWatchlist">İzleme Listesine Ekle</string>
-    <string name="textMoveToMyShows">Dizilerime Taşı</string>
+  <string name="textMoveToMyShows">Dizilerime Taşı</string>
   <string name="textMoveToMyMovies">Geçmişe taşı</string>
   <string name="textMoveToWatchlist">İzleme Listesine Taşı</string>
   <string name="textMoveToHidden">Gizlenene Taşı</string>
@@ -102,16 +102,10 @@
   <string name="textNewAlwaysAtTop">Her zaman önce yeni bölümler</string>
   <string name="menuPin">En üste sabitle</string>
   <string name="menuUnpin">Sabitlemeyi kaldır</string>
-  <string
-    name="menuAddOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >\"Beklemeye\" sabitle</string>
-  <string
-    name="menuRemoveOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >\"Beklemeye\" sabitlemeyi kaldır</string>
+  <string name="menuAddOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">\"Beklemeye\" sabitle</string>
+  <string name="menuRemoveOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">\"Beklemeye\" sabitlemeyi kaldır</string>
   <string name="errorGeneral">Hay aksi… Bir şeyler ters gitti.\nBu sorun devam ederse lütfen bizimle iletişime geçin.</string>
-    <string name="errorSeasonsNotLoaded">Lütfen sezon verilerinin yüklenmesini bekleyin.</string>
+  <string name="errorSeasonsNotLoaded">Lütfen sezon verilerinin yüklenmesini bekleyin.</string>
   <string name="errorEpisodeNotAired">Bu bölüm henüz yayınlanmadı.</string>
   <string name="errorCouldNotLoadDiscover">Şu anda keşfet sayfasını yükleyemiyoruz.\nBu durum devam ederse lütfen bizimle iletişime geçin.</string>
   <string name="errorMalformedShow">Bu dizi artık Trakt.tv veritabanında yok veya çift girilmiş gibi görünüyor.\n\nUygulamadan da silmek için \'Tamam\'a dokunun.</string>
@@ -120,4 +114,8 @@
   <string name="errorCouldNotLoadMovie">Bu filmin ayrıntılarını şu anda yükleyemiyoruz.\nBu durum devam ederse lütfen bizimle iletişime geçin.</string>
   <string name="errorCouldNotLoadSearchResults">Şu anda arama sonuçlarını yükleyemiyoruz.\nBu durum devam ederse lütfen bizimle iletişime geçin.</string>
   <string name="errorNoInternetConnection">İnternet bağlantısı yok. Lütfen bağlantınızı kontrol edin.</string>
+  <string name="textScrobSync">Scrob Senkronizasyonu</string>
+  <string name="textScrobSyncRunning">Scrob ile senkronize ediliyor…</string>
+  <string name="textScrobSyncComplete">Scrob senkronizasyonu tamamlandı</string>
+  <string name="errorScrobSyncFailed">Scrob senkronizasyonu başarısız oldu. Lütfen tekrar deneyin.</string>
 </resources>

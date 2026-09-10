@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.michaldrabik.ui_base.utilities.extensions.SUBSCRIBE_STOP_TIMEOUT
 import com.michaldrabik.ui_model.Settings
-import com.michaldrabik.ui_settings.helpers.AppTheme
+import com.michaldrabik.ui_model.AppTheme
 import com.michaldrabik.ui_settings.helpers.WidgetTransparency
 import com.michaldrabik.ui_settings.sections.widgets.cases.SettingsWidgetsMainCase
 import dagger.hilt.android.lifecycle.HiltViewModel

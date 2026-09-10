@@ -3,6 +3,6 @@
   <string name="textAge" comment="Person&apos;s age">Alder:</string>
   <string name="textBorn" comment="For example - Born: 12 January 1990">Født:</string>
   <string name="textDied" comment="For example - Died: 12 January 2020">Død:</string>
-    <string name="textEpisodes">Afsnit</string>
+  <string name="textEpisodes">Afsnit</string>
   <string name="textGalleryEmpty">Ingen billeder tilgængelige</string>
 </resources>

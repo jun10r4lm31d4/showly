@@ -3,7 +3,7 @@
   <dimen name="addToButtonTextSize">14sp</dimen>
   <dimen name="dividerHorizontalList">8dp</dimen>
 
-    <dimen name="actorMovieTileCorner">4dp</dimen>
+  <dimen name="actorMovieTileCorner">4dp</dimen>
   <dimen name="actorMovieTilePlaceholder">20dp</dimen>
   <dimen name="actorMovieTileImageHeight">120dp</dimen>
   <dimen name="actorMovieTileImageWidth">80dp</dimen>

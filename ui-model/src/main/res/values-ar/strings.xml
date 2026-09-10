@@ -22,7 +22,7 @@
   <string name="textHeaderRecentlyAdded">أضيف مؤخراً</string>
   <string name="textHeaderWatching">يُشاهد حاليًا</string>
   <string name="textHeaderFinished">تمت مشاهدته</string>
-  <string name="textHeaderReturning"><![CDATA[قادم بموسم جديد & سيُعرض قريبًا]]></string>
+  <string name="textHeaderReturning">قادم بموسم جديد &amp; سيُعرض قريبًا</string>
   <string name="textHeaderAll">الكل</string>
   <string name="textSettingsShowsNotificationsWhenTitle">وقت استلام الإشعار</string>
   <string name="textSettingsShowsNotificationsWhenSummary">متى ترغب بتلقي إشعارات الحلقات الجديدة؟</string>
@@ -76,4 +76,7 @@
   <string name="textStreamingBuy">شراء</string>
   <string name="textStreamingRent">إيجار</string>
   <string name="textStreamingFree">مجانًا</string>
+  <string name="textThemeDark">داكن</string>
+  <string name="textThemeLight">فاتح</string>
+  <string name="textThemeSystem">إستخدم مظهر النظام</string>
 </resources>

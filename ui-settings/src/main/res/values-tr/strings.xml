@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="textImagesCacheCleared">Görüntü önbelleği temizlendi.</string>
-    <string name="textSettings">Ayarlar</string>
-    <string name="textSettingsGeneral">Genel ve Deneyim</string>
+  <string name="textImagesCacheCleared">Görüntü önbelleği temizlendi.</string>
+  <string name="textSettings">Ayarlar</string>
+  <string name="textSettingsGeneral">Genel ve Deneyim</string>
   <string name="textSettingsRecentShowsTitle">Son Eklenenler Miktarı</string>
   <string name="textSettingsRecentShowsSummary">\'Koleksiyon\'da görüntülenecek en son ögeler sayısı.</string>
   <string name="textSettingsUpcomingSectionTitle">Yaklaşan Bölümü</string>
@@ -31,7 +31,7 @@
   <string name="textSettingsRateAppSummary">Showly uygulamasından keyif alıyor musunuz? PlayStore\'da yorum yapabilirsiniz. Teşekkürler!</string>
   <string name="textSettingsDeleteCacheTitle">Görüntü Önbelleğini Temizle</string>
   <string name="textSettingsDeleteCacheSummary">Yerel görüntü önbelleğini temizlemek için dokunun. Bu, dizi görüntülerinin doğru yüklenmediğinde yardımcı olabilir.</string>
-    <string name="textSettingsMoviesEnabledTitle">Filmler</string>
+  <string name="textSettingsMoviesEnabledTitle">Filmler</string>
   <string name="textSettingsMoviesEnabledSummary">Film desteğini etkinleştirin/devre dışı bırakın. Uygulama yeniden başlatılacaktır.</string>
   <string name="textSettingsWidgets">Widget’lar</string>
   <string name="textSettingsWidgetsLabelsTitle">Başlıklar</string>
@@ -41,7 +41,7 @@
   <string name="textSettingsStreamingServicesMessage">Yayın hizmetleri verilerini görüntüleyin.</string>
   <string name="textSettingsProgressNextEpisodeTitle">Sonraki Bölüm</string>
   <string name="textSettingsProgressNextEpisodeMessage">Sonraki bölümü hesaplamakta şunu kullan:</string>
-    <string name="textSettingsDateSelectionMessage">Varsayılan tarih seçme seçeneğini seçin.</string>
+  <string name="textSettingsDateSelectionMessage">Varsayılan tarih seçme seçeneğini seçin.</string>
   <string name="textSettingsTabletColumnsTitle">Sütun Sayısını Listeler</string>
   <string name="textSettingsTabletColumnsSummary">Listeler için tercih edilen sütun sayısını seçin.</string>
   <string name="textSettingsBackup">Yedekleme ve Geri Yükleme</string>
@@ -54,55 +54,75 @@
   <string name="textSettingsSpoilersShowsSummary">Diziler için spoiler ayarlarını yönet.</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">Dizilerim</string>
   <string name="textSettingsSpoilersShowsOverviewsMyDescription">Dizilerim sekmesine eklenen diziler için
+  
     <b>açıklamayı</b> gizle</string>
   <string name="textSettingsSpoilersShowsRatingsMyDescription">Dizilerim sekmesine eklenen diziler için
+  
     <b>derecelendirmeyi</b> gizle</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">İstek Listesi</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">İzleme listesine eklenen diziler için
+  
     <b>açıklamayı</b> gizle</string>
   <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">İzleme listesine eklenen diziler için
+  
     <b>derecelendirmeyi</b> gizle</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Gizlenmiş</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Gizli bölümüne eklenen diziler için
+  
     <b>açıklamayı</b> gizle</string>
   <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Gizli bölümüne eklenen diziler için
+  
     <b>derecelendirmeyi</b> gizle</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">Listelerinizde Olmayanlar</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Listelerinizde olmayan diziler için
+  
     <b>açıklamayı</b> gizle</string>
   <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Listelerinizde olmayan diziler için
+  
     <b>derecelendirmeyi</b> gizle</string>
   <string name="textSettingsSpoilersMovies">Filmler</string>
   <string name="textSettingsSpoilersMoviesSummary">Filmler için spoiler ayarlarını yönet.</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyTitle">Tarih</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Geçmişe eklenen filmlerin
+  
     <b>açıklamasını</b> gizle</string>
   <string name="textSettingsSpoilersMoviesRatingsMyDescription">Geçmişe eklenen filmlerin
+  
     <b>puanını</b> gizle</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">İstek Listesi</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">İzleme listesine eklenen filmler için
+  
     <b>açıklamayı</b> gizle</string>
   <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">İzleme listesine eklenen filmler için
+  
     <b>derecelendirmeyi</b> gizle</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Gizlenmiş</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Gizli bölümüne eklenen filmler için
+  
     <b>açıklamayı</b> gizle</string>
   <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Gizli bölümüne eklenen filmler için
+  
     <b>derecelendirmeyi</b> gizle</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">Listelerinizde Olmayanlar</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Listelerinizde olmayan filmler için
+  
     <b>açıklamayı</b> gizle</string>
   <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Listelerinizde olmayan filmler için
+  
     <b>derecelendirmeyi</b> gizle</string>
   <string name="textSettingsSpoilersEpisodes">Bölüm</string>
   <string name="textSettingsSpoilersEpisodesSummary">Bölümler için spoiler ayarlarını yönet.</string>
   <string name="textSettingsSpoilersEpisodesImage">Seyredilmemiş bölümlerin
+  
     <b>görüntüsünü</b> saklayın.</string>
   <string name="textSettingsSpoilersEpisodesTitle">Seyredilmemiş bölümlerin
+  
     <b>başlığını</b> saklayın.</string>
   <string name="textSettingsSpoilersEpisodesDescription">Seyredilmemiş bölümlerin
+  
     <b>açıklamasını</b> saklayın.</string>
   <string name="textSettingsSpoilersEpisodesRating">Seyredilmemiş bölümlerin
+  
     <b>değerlendirmesini</b> saklayın.</string>
   <string name="textSettingsSpoilersTapToRevealTitle">Göstermek için Dokunun</string>
   <string name="textSettingsSpoilersTapToRevealDescription">Geçici olarak göstermek için gizlenen içeriğe dokunun.</string>
@@ -110,6 +130,5 @@
   <string name="textNextEpisodeOldest">İzlenmeyen en eski bölüm</string>
   <string name="textDateSelectionAsk">Her zaman sor</string>
   <string name="textDateSelectionNow">Her zaman \"Şimdi\"</string>
-  <string name="textThemeDark">Karanlık</string>
-    <string name="textTransparency100">Mat</string>
+  <string name="textTransparency100">Mat</string>
 </resources>

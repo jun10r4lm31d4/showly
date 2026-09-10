@@ -152,7 +152,6 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
       episodeDetailsCommentsButton.onClick {
         viewModel.loadComments(showIds.trakt, episode.season, episode.number)
       }
-      episodeDetailsPostCommentButton.onClick { openPostCommentSheet() }
       episodeDetailsLinksButton.onClick { openLinksSheet() }
     }
   }
@@ -190,18 +189,11 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
               if (it.replies > 0) {
                 onRepliesClickListener = { comment -> viewModel.loadCommentReplies(comment) }
               }
-              if (it.isSignedIn) {
-                onReplyClickListener = { comment -> openPostCommentSheet(comment) }
-              }
-              if (it.replies == 0L && it.isMe && it.isSignedIn) {
-                onDeleteClickListener = { comment -> openDeleteCommentDialog(comment) }
-              }
             }
             episodeDetailsComments.addView(view)
           }
           episodeDetailsComments.fadeIf(comments.isNotEmpty())
           episodeDetailsCommentsEmpty.fadeIf(comments.isEmpty())
-          episodeDetailsPostCommentButton.fadeIf(isSignedIn)
           episodeDetailsCommentsButton.isEnabled = false
           episodeDetailsCommentsButton.text = String.format(
             ENGLISH,
@@ -411,16 +403,6 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
     }
   }
 
-  private fun openDeleteCommentDialog(comment: Comment) {
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
-      .setTitle(R.string.textCommentConfirmDeleteTitle)
-      .setMessage(R.string.textCommentConfirmDelete)
-      .setPositiveButton(R.string.textYes) { _, _ -> viewModel.deleteComment(comment) }
-      .setNegativeButton(R.string.textNo) { _, _ -> }
-      .show()
-  }
-
   private fun openRateDialog() {
     setFragmentResultListener(NavigationArgs.REQUEST_RATING) { _, bundle ->
       when (bundle.optionalParcelable<Operation>(NavigationArgs.RESULT)) {
@@ -438,26 +420,6 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
       episodeNumber = options.episode.number,
     )
     navigateTo(R.id.actionEpisodeDetailsDialogToRate, bundle)
-  }
-
-  private fun openPostCommentSheet(comment: Comment? = null) {
-    setFragmentResultListener(REQUEST_COMMENT) { _, bundle ->
-      renderSnackbar(MessageEvent.Info(R.string.textCommentPosted))
-      when (bundle.getString(ARG_COMMENT_ACTION)) {
-        ACTION_NEW_COMMENT -> {
-          val newComment = bundle.getParcelable<Comment>(ARG_COMMENT)!!
-          viewModel.addNewComment(newComment)
-        }
-      }
-    }
-    val bundle = when {
-      comment != null -> bundleOf(
-        ARG_COMMENT_ID to comment.getReplyId(),
-        ARG_REPLY_USER to comment.user.username,
-      )
-      else -> bundleOf(ARG_EPISODE_ID to options.episode.ids.trakt.id)
-    }
-    navigateTo(R.id.actionEpisodeDetailsDialogToPostComment, bundle)
   }
 
   private fun openLinksSheet() {

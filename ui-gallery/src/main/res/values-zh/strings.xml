@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="textGalleryEmpty">暂未能获取图片</string>
-    <string name="textUrlDialogHint">图片 URL</string>
+  <string name="textGalleryEmpty">暂未能获取图片</string>
+  <string name="textUrlDialogHint">图片 URL</string>
 </resources>

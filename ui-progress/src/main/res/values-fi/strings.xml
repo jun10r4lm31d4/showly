@@ -14,6 +14,7 @@
   <string name="textEpisodeInfo">Tiedot</string>
   <string name="textProgressEmpty">
     <b>Katselutila</b> on tyhjä.\n\nLisää sarjoja
+  
     <b>Etsi</b>-osiosta tai tuo Trakt.tv-kokoelmasi.</string>
   <string name="textNewSeason">Kauden aloitus</string>
   <string name="textPremieres">Ensiesitykset</string>

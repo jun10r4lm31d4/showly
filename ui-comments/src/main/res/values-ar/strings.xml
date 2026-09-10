@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textComment">تعليق</string>
-    <string name="textComments2">التعليقات</string>
+  <string name="textComments2">التعليقات</string>
   <string name="textNoComments">لا توجد تعليقات.</string>
-    <string name="textCommentPosted">تم إرسال تعليقك.</string>
-  <string name="textCommentDeleted">تم حذف تعليقك.</string>
-  <string name="textCommentConfirmDeleteTitle">حذف التعليق</string>
-  <string name="textCommentConfirmDelete">أمتأكد أنك تريد حذف هذا التعليق؟</string>
-    <string name="errorCommentDelete">لا يُمكن حذف التعليق.</string>
 </resources>

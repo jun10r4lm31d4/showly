@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="textImagesCacheCleared">Billede cachen er blevet ryddet.</string>
-    <string name="textSettings">Indstillinger</string>
-    <string name="textSettingsGeneral"><![CDATA[General & UX]]></string>
+  <string name="textImagesCacheCleared">Billede cachen er blevet ryddet.</string>
+  <string name="textSettings">Indstillinger</string>
+  <string name="textSettingsGeneral"><![CDATA[General & UX]]></string>
   <string name="textSettingsRecentShowsTitle">Senest Tilføjet Antal</string>
   <string name="textSettingsRecentShowsSummary">Antallet af senest tilføjede elementer der vises i \'Samling\'.</string>
   <string name="textSettingsUpcomingSectionTitle">Kommende Sektion</string>
@@ -31,9 +31,9 @@
   <string name="textSettingsRateAppSummary">Kan du godt lide Showly? Giv os en anmeldelse på PlayStore. Tak!</string>
   <string name="textSettingsDeleteCacheTitle">Ryd Billede Cache</string>
   <string name="textSettingsDeleteCacheSummary">Klik for at rydde den lokale cache for billeder. Dette kan hjælpe hvis billeder ikke bliver indlæst korrekt.</string>
-    <string name="textSettingsMoviesEnabledTitle">Film</string>
+  <string name="textSettingsMoviesEnabledTitle">Film</string>
   <string name="textSettingsMoviesEnabledSummary">Aktiver/deaktiver film support. Appen vil genstarte.</string>
-    <string name="textSettingsWidgets">Widgets</string>
+  <string name="textSettingsWidgets">Widgets</string>
   <string name="textSettingsWidgetsLabelsTitle">Titler</string>
   <string name="textSettingsWidgetsLabelsSummary">Vis gennemsigtige widget titler.</string>
   <string name="textSettingsStreamingsDisclaimer">Streamingtjenester data er leveret af</string>
@@ -41,7 +41,7 @@
   <string name="textSettingsStreamingServicesMessage">Vis data for streamingtjenester.</string>
   <string name="textSettingsProgressNextEpisodeTitle">Næste Afsnit</string>
   <string name="textSettingsProgressNextEpisodeMessage">Beregn næste afsnit med:</string>
-    <string name="textSettingsDateSelectionMessage">Vælg standardindstilling for datovalg.</string>
+  <string name="textSettingsDateSelectionMessage">Vælg standardindstilling for datovalg.</string>
   <string name="textSettingsTabletColumnsTitle">Antal Kolonner i Lister</string>
   <string name="textSettingsTabletColumnsSummary">Vælg foretrukne antal kolonner i lister.</string>
   <string name="textSettingsBackup"><![CDATA[Backup & Gendan]]></string>
@@ -54,55 +54,75 @@
   <string name="textSettingsSpoilersShowsSummary">Administrer spoiler indstillinger for serier.</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">Mine Serier</string>
   <string name="textSettingsSpoilersShowsOverviewsMyDescription">Skjul
+  
     <b>beskrivelse</b> af serier føjet til Mine Serier</string>
   <string name="textSettingsSpoilersShowsRatingsMyDescription">Skjul
+  
     <b>bedømmelse</b> af serier føjet til Mine Serier</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">Se Senere</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Skjul
+  
     <b>beskrivelse</b> af serier føjet til Se Senere</string>
   <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Skjul
+  
     <b>bedømmelse</b> af serier føjet til Se Senere</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Skjult</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Skjul
+  
     <b>beskrivelse</b> af serier føjet til Skjult</string>
   <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Skjul
+  
     <b>bedømmelse</b> af serier føjet til Skjult</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">Ikke i Samling</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Skjul
+  
     <b>beskrivelse</b> af serier, der ikke er i din Samling</string>
   <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Skjul
+  
     <b>bedømmelse</b> af serier, der ikke er i din Samling</string>
   <string name="textSettingsSpoilersMovies">Film</string>
   <string name="textSettingsSpoilersMoviesSummary">Administrer spoiler indstillinger for film.</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyTitle">Historie</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Skjul
+  
     <b>beskrivelse</b> af film tilføjet til historik</string>
   <string name="textSettingsSpoilersMoviesRatingsMyDescription">Skjul
+  
     <b>bedømmelse</b> af film tilføjet til historik</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">Se Senere</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Skjul
+  
     <b>beskrivelse</b> af film føjet til Se Senere</string>
   <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Skjul
+  
     <b>bedømmelse</b> af film føjet til Se Senere</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Skjult</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Skjul
+  
     <b>beskrivelse</b> af film føjet til Skjult</string>
   <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Skjul
+  
     <b>bedømmelse</b> af film føjet til Skjult</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">Ikke i Samling</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Skjul
+  
     <b>beskrivelse</b> af film, der ikke er i din Samling</string>
   <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Skjul
+  
     <b>bedømmelse</b> af film, der ikke er i din Samling</string>
   <string name="textSettingsSpoilersEpisodes">Afsnit</string>
   <string name="textSettingsSpoilersEpisodesSummary">Administrer spoiler indstillinger for afsnit.</string>
   <string name="textSettingsSpoilersEpisodesImage">Skjul
+  
     <b>billede</b> af usete afsnit.</string>
   <string name="textSettingsSpoilersEpisodesTitle">Skjul
+  
     <b>titel</b> på usete afsnit.</string>
   <string name="textSettingsSpoilersEpisodesDescription">Skjul
+  
     <b>beskrivelse</b> af usete afsnit.</string>
   <string name="textSettingsSpoilersEpisodesRating">Skjul
+  
     <b>bedømmelse</b> af usete afsnit.</string>
   <string name="textSettingsSpoilersTapToRevealTitle">Tryk for at afsløre</string>
   <string name="textSettingsSpoilersTapToRevealDescription">Tryk på skjult indhold for at vise det midlertidigt.</string>
@@ -110,6 +130,5 @@
   <string name="textNextEpisodeOldest">Ældste usete afsnit</string>
   <string name="textDateSelectionAsk">Spørg altid</string>
   <string name="textDateSelectionNow">Altid \"Nu\"</string>
-  <string name="textThemeDark">Mørk</string>
-    <string name="textTransparency100">Uigennemsigtig</string>
+  <string name="textTransparency100">Uigennemsigtig</string>
 </resources>

@@ -6,6 +6,8 @@
   <string name="textMoviesCalendarRecentsEmpty">Il n\'y a aucun film récemment diffusé.</string>
   <string name="textDiscoverMovies">Découvrir des films</string>
   <string name="textMoviesProgressEmpty">Votre
+  
     <b>Progression</b> est présentement vide.\n\nVisitez l\'onglet
+  
     <b>Découvrir</b> pour ajouter des films ou importer votre collection Trakt.tv.</string>
 </resources>

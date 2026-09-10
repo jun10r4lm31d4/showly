@@ -327,23 +327,7 @@
 
   </androidx.core.widget.NestedScrollView>
 
-  <com.google.android.material.floatingactionbutton.FloatingActionButton
-    android:id="@+id/episodeDetailsPostCommentButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="@dimen/spaceNormal"
-    android:layout_marginBottom="@dimen/spaceNormal"
-    android:visibility="gone"
-    app:backgroundTint="?attr/colorAccent"
-    app:fabSize="mini"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:srcCompat="@drawable/ic_add_comment"
-    app:tint="?attr/textColorOnSurface"
-    tools:visibility="visible"
-    />
-
-  <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:id="@+id/episodeDetailsSnackbarHost"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

@@ -2,7 +2,7 @@
 <resources>
   <string name="menuLists">قوائم</string>
   <string name="menuList">قائمة</string>
-    <string name="textListsEmpty">لا توجد قوائم حاليًا.</string>
+  <string name="textListsEmpty">لا توجد قوائم حاليًا.</string>
   <string name="textListEmpty">قائمتك فارغة حاليًا.</string>
   <string name="textCreateList">إنشاء قائمة</string>
   <string name="textCreateListDescription">إنشاء قائمة جديدة.</string>

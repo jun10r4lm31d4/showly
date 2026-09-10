@@ -5,12 +5,12 @@
   <string name="textNo">Нет</string>
   <string name="textApply">Применить</string>
   <string name="textCancel">Отменить</string>
-    <string name="textClose">Закрыть</string>
+  <string name="textClose">Закрыть</string>
   <string name="textShare">Поделиться</string>
   <string name="textNow">Сейчас</string>
-    <string name="textNew">Новое</string>
+  <string name="textNew">Новое</string>
   <string name="textSelect">Выбрать</string>
-    <string name="textHide">Скрыть</string>
+  <string name="textHide">Скрыть</string>
   <string name="textRemove">Удалить</string>
   <string name="textEmptyResults">Ничего не найдено…</string>
   <string name="textSearchFor">Поиск</string>
@@ -49,12 +49,12 @@
     <item quantity="many">%d осталось</item>
     <item quantity="other">%d осталось</item>
   </plurals>
-  <string name="textPeople"><![CDATA[Актерский состав & Съемочная команда]]></string>
+  <string name="textPeople">Актерский состав &amp; Съемочная команда</string>
   <string name="textDirecting">Режиссура</string>
   <string name="textDirector">Режиссер</string>
   <string name="textWriting">Сценарий</string>
   <string name="textScreenplay">Сценарист</string>
-    <string name="textMusic">Музыка</string>
+  <string name="textMusic">Музыка</string>
   <string name="textActing">Фильмография</string>
   <string name="textAiredAlready">Вышло</string>
   <string name="textAirsNow">Уже вышло</string>
@@ -83,7 +83,7 @@
   <string name="textThisMonth">В этом месяце</string>
   <string name="textNextMonth">Следующий месяц</string>
   <string name="textThisYear">В этом году</string>
-    <string name="textLater">Позже</string>
+  <string name="textLater">Позже</string>
   <string name="textYesterday">Вчера</string>
   <string name="textLast7Days">Последние 7 дней</string>
   <string name="textLast30Days">Последние 30 дней</string>
@@ -96,7 +96,7 @@
   <string name="textAddToMyShows">Добавить в Мои Сериалы</string>
   <string name="textAddToMyMovies">Добавить в историю просмотров</string>
   <string name="textAddToWatchlist">Добавить в Буду Смотреть</string>
-    <string name="textMoveToMyShows">Переместить в Мои Сериалы</string>
+  <string name="textMoveToMyShows">Переместить в Мои Сериалы</string>
   <string name="textMoveToMyMovies">Переместить в историю просмотров</string>
   <string name="textMoveToWatchlist">Переместить в Буду Смотреть</string>
   <string name="textMoveToHidden">Переместить в Скрытое</string>
@@ -109,16 +109,10 @@
   <string name="textNewAlwaysAtTop">Новые серии всегда первыми</string>
   <string name="menuPin">Закрепить</string>
   <string name="menuUnpin">Открепить</string>
-  <string
-    name="menuAddOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >Закрепить в \'На паузе\'</string>
-  <string
-    name="menuRemoveOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >Открепить от \'На паузе\'</string>
+  <string name="menuAddOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Закрепить в \'На паузе\'</string>
+  <string name="menuRemoveOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Открепить от \'На паузе\'</string>
   <string name="errorGeneral">Ой,… Что-то пошло не так.\nПожалуйста, свяжитесь с нами, если это повторится.</string>
-    <string name="errorSeasonsNotLoaded">Пожалуйста, дождитесь загрузки данных сезонов.</string>
+  <string name="errorSeasonsNotLoaded">Пожалуйста, дождитесь загрузки данных сезонов.</string>
   <string name="errorEpisodeNotAired">Этот эпизод еще не вышел.</string>
   <string name="errorCouldNotLoadDiscover">Мы не смогли загрузить Открытия данный момент.\nПожалуйста, свяжитесь с нами, если это произойдет снова.</string>
   <string name="errorMalformedShow">Похоже, это шоу больше не существует в базе данных Trakt.tv или является дубликатом.\n\nНажмите \'OK\' для его удаления из приложения.</string>
@@ -127,4 +121,8 @@
   <string name="errorCouldNotLoadMovie">Мы не смогли загрузить детали этого фильма.\nПожалуйста, свяжитесь с нами, если это произойдет снова.</string>
   <string name="errorCouldNotLoadSearchResults">Мы не смогли загрузить результаты поиска.\nПожалуйста, свяжитесь с нами, если это произойдет снова.</string>
   <string name="errorNoInternetConnection">Нет интернет соединения. Проверьте своё подключение.</string>
+  <string name="textScrobSync">Синхронизация Scrob</string>
+  <string name="textScrobSyncRunning">Синхронизация со Scrob…</string>
+  <string name="textScrobSyncComplete">Синхронизация Scrob завершена</string>
+  <string name="errorScrobSyncFailed">Ошибка синхронизации Scrob. Пожалуйста, попробуйте еще раз.</string>
 </resources>

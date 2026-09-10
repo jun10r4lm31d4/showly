@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="textGalleryEmpty">No hay imágenes disponibles</string>
-    <string name="textUrlDialogHint">URL de la imagen</string>
+  <string name="textGalleryEmpty">No hay imágenes disponibles</string>
+  <string name="textUrlDialogHint">URL de la imagen</string>
 </resources>

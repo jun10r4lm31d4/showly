@@ -22,7 +22,7 @@
   <string name="textHeaderRecentlyAdded">Недавно добавленные</string>
   <string name="textHeaderWatching">Смотрю</string>
   <string name="textHeaderFinished">Завершенные</string>
-  <string name="textHeaderReturning"><![CDATA[Продолжающиеся & Предстоящие]]></string>
+  <string name="textHeaderReturning">Продолжающиеся &amp; Предстоящие</string>
   <string name="textHeaderAll">Все</string>
   <string name="textSettingsShowsNotificationsWhenTitle">Когда уведомлять</string>
   <string name="textSettingsShowsNotificationsWhenSummary">Когда вы хотели бы получать уведомления о эпизодах.</string>
@@ -76,4 +76,7 @@
   <string name="textStreamingBuy">Покупка</string>
   <string name="textStreamingRent">Аренда</string>
   <string name="textStreamingFree">Бесплатно</string>
+  <string name="textThemeDark">Темная</string>
+  <string name="textThemeLight">Светлая</string>
+  <string name="textThemeSystem">Системная</string>
 </resources>

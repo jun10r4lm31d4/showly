@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="textImagesCacheCleared">Bildcache wurde gelöscht.</string>
-    <string name="textSettings">Einstellungen</string>
-    <string name="textSettingsGeneral"><![CDATA[Allgemein & UX]]></string>
+  <string name="textImagesCacheCleared">Bildcache wurde gelöscht.</string>
+  <string name="textSettings">Einstellungen</string>
+  <string name="textSettingsGeneral"><![CDATA[Allgemein & UX]]></string>
   <string name="textSettingsRecentShowsTitle">Anzahl kürzlich Hinzugefügtes</string>
   <string name="textSettingsRecentShowsSummary">Anzahl an Einträgen, die unter \'Sammlung\' zu sehen sind.</string>
   <string name="textSettingsUpcomingSectionTitle">\'Demnächst\' Abschnitt</string>
@@ -31,7 +31,7 @@
   <string name="textSettingsRateAppSummary">Gefällt dir Showly? Hinterlass uns gerne ein Review im PlayStore. Danke!</string>
   <string name="textSettingsDeleteCacheTitle">Lösche Bildcache</string>
   <string name="textSettingsDeleteCacheSummary">Klicke hier, um den lokalen Bildcache zu löschen. Dies kann hilfreich sein, wenn Bilder nicht korrekt geladen werden.</string>
-    <string name="textSettingsMoviesEnabledTitle">Filme</string>
+  <string name="textSettingsMoviesEnabledTitle">Filme</string>
   <string name="textSettingsMoviesEnabledSummary">Aktiviere/Deaktiviere die Unterstützung für Filme. Die App wird neu gestartet.</string>
   <string name="textSettingsWidgets">Widgets</string>
   <string name="textSettingsWidgetsLabelsTitle">Titel</string>
@@ -41,7 +41,7 @@
   <string name="textSettingsStreamingServicesMessage">Streaming-Daten anzeigen.</string>
   <string name="textSettingsProgressNextEpisodeTitle">Nächste Folge</string>
   <string name="textSettingsProgressNextEpisodeMessage">Nächste Folge berechnen mit:</string>
-    <string name="textSettingsDateSelectionMessage">Wähle die Standard-Datumsauswahloption aus.</string>
+  <string name="textSettingsDateSelectionMessage">Wähle die Standard-Datumsauswahloption aus.</string>
   <string name="textSettingsTabletColumnsTitle">Anzahl der Spalten</string>
   <string name="textSettingsTabletColumnsSummary">Wählen Sie die bevorzugte Spaltenanzahl für Listen.</string>
   <string name="textSettingsBackup"><![CDATA[Sichern & Wiederherstellen]]></string>
@@ -110,6 +110,5 @@
   <string name="textNextEpisodeOldest">Älteste ungesehene Folge</string>
   <string name="textDateSelectionAsk">Immer fragen</string>
   <string name="textDateSelectionNow">Immer \"Jetzt\"</string>
-  <string name="textThemeDark">Dunkel</string>
-    <string name="textTransparency100">Undurchsichtig</string>
+  <string name="textTransparency100">Undurchsichtig</string>
 </resources>

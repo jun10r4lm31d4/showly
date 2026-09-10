@@ -7,12 +7,12 @@ import com.michaldrabik.ui_model.ProgressDateSelectionType
 import com.michaldrabik.ui_model.ProgressNextEpisodeType
 import com.michaldrabik.ui_model.Settings
 import com.michaldrabik.ui_settings.helpers.AppLanguage
-import com.michaldrabik.ui_settings.helpers.AppTheme
+import com.michaldrabik.ui_model.AppTheme
 
 data class SettingsGeneralUiState(
   val settings: Settings? = null,
   val language: AppLanguage = AppLanguage.ENGLISH,
-  val theme: AppTheme = AppTheme.DARK,
+  val theme: AppTheme = AppTheme.SYSTEM,
   val country: AppCountry? = null,
   val dateFormat: AppDateFormat? = null,
   val moviesEnabled: Boolean = true,

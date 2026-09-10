@@ -22,7 +22,7 @@
   <string name="textHeaderRecentlyAdded">Senest Tilføjet</string>
   <string name="textHeaderWatching">Ser</string>
   <string name="textHeaderFinished">Færdig</string>
-  <string name="textHeaderReturning"><![CDATA[Tilbagevendende & Kommende]]></string>
+  <string name="textHeaderReturning">Tilbagevendende &amp; Kommende</string>
   <string name="textHeaderAll">Alle</string>
   <string name="textSettingsShowsNotificationsWhenTitle">Hvornår der skal underrettes</string>
   <string name="textSettingsShowsNotificationsWhenSummary">Hvornår vil du modtage afsnit annonceringer.</string>
@@ -76,4 +76,7 @@
   <string name="textStreamingBuy">Køb</string>
   <string name="textStreamingRent">Lej</string>
   <string name="textStreamingFree">Gratis</string>
+  <string name="textThemeDark">Mørk</string>
+  <string name="textThemeLight">Lys</string>
+  <string name="textThemeSystem">System</string>
 </resources>

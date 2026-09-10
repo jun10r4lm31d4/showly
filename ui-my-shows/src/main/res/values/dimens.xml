@@ -11,9 +11,9 @@
   <dimen name="myShowsFanartCorner">4dp</dimen>
   <dimen name="myShowsFanartHeight">126dp</dimen>
 
-    <dimen name="archiveTabsViewPadding">148dp</dimen>
+  <dimen name="archiveTabsViewPadding">148dp</dimen>
 
-    <dimen name="collectionTabsViewPadding">148dp</dimen>
-    <dimen name="collectionImageHeight">120dp</dimen>
+  <dimen name="collectionTabsViewPadding">148dp</dimen>
+  <dimen name="collectionImageHeight">120dp</dimen>
   <dimen name="collectionImageWidth">80dp</dimen>
 </resources>

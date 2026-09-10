@@ -76,4 +76,7 @@
   <string name="textStreamingBuy">Achat</string>
   <string name="textStreamingRent">Location</string>
   <string name="textStreamingFree">Gratuit</string>
+  <string name="textThemeDark">Sombre</string>
+  <string name="textThemeLight">Clair</string>
+  <string name="textThemeSystem">Système</string>
 </resources>

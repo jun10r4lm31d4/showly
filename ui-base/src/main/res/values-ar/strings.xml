@@ -8,10 +8,10 @@
   <string name="textClose">إغلاق</string>
   <string name="textShare">مشاركة</string>
   <string name="textNow">الآن</string>
-    <string name="textReleaseDay">يوم الإصدار</string>
+  <string name="textReleaseDay">يوم الإصدار</string>
   <string name="textNew">جديد</string>
   <string name="textSelect">اختر</string>
-    <string name="textHide">إخفاء</string>
+  <string name="textHide">إخفاء</string>
   <string name="textRemove">حذف التقييم</string>
   <string name="textEmptyResults">لا توجد نتائج…</string>
   <string name="textSearchFor">البحث</string>
@@ -57,7 +57,7 @@
   <string name="textDirector">المخرج</string>
   <string name="textWriting">الكتابة</string>
   <string name="textScreenplay">النص السينمائي</string>
-    <string name="textMusic">موسيقى</string>
+  <string name="textMusic">موسيقى</string>
   <string name="textActing">التمثيل</string>
   <string name="textAiredAlready">بُثت</string>
   <string name="textAirsNow">يُبث الآن</string>
@@ -92,7 +92,7 @@
   <string name="textThisMonth">هذا الشهر</string>
   <string name="textNextMonth">الشهر القادم</string>
   <string name="textThisYear">هذه السنة</string>
-    <string name="textLater">لاحقًا</string>
+  <string name="textLater">لاحقًا</string>
   <string name="textYesterday">أمس</string>
   <string name="textLast7Days">آخر 7 أيام</string>
   <string name="textLast30Days">آخر 30 يوم</string>
@@ -105,7 +105,7 @@
   <string name="textAddToMyShows">إضافة إلى مسلسلاتي</string>
   <string name="textAddToMyMovies">إضافة إلى السجل</string>
   <string name="textAddToWatchlist">إضافة إلى قائمة المشاهدة</string>
-    <string name="textMoveToMyShows">نقل إلى مسلسلاتي</string>
+  <string name="textMoveToMyShows">نقل إلى مسلسلاتي</string>
   <string name="textMoveToMyMovies">نقل إلى السجل</string>
   <string name="textMoveToWatchlist">نقل إلى قائمة المشاهدة</string>
   <string name="textMoveToHidden">نقل إلى المخفية</string>
@@ -118,16 +118,10 @@
   <string name="textNewAlwaysAtTop">الحلقات الجديدة دائماً أولاً</string>
   <string name="menuPin">تثبيت في الأعلى</string>
   <string name="menuUnpin">إلغاء التثبيت من الأعلى</string>
-  <string
-    name="menuAddOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >إضافة إلى \"المعلقة\"</string>
-  <string
-    name="menuRemoveOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >إزالة من \"المعلقة\"</string>
+  <string name="menuAddOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">إضافة إلى \"المعلقة\"</string>
+  <string name="menuRemoveOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">إزالة من \"المعلقة\"</string>
   <string name="errorGeneral">عفواً… حدث خطأ ما.\nإذا استمرت المشكلة بالحدوث، رجاءً تواصل معنا.</string>
-    <string name="errorSeasonsNotLoaded">رجاءً إنتظر قليلاً حتى يكتمل تحميل بيانات المواسم.</string>
+  <string name="errorSeasonsNotLoaded">رجاءً إنتظر قليلاً حتى يكتمل تحميل بيانات المواسم.</string>
   <string name="errorEpisodeNotAired">لم تُعرض الحلقة حتى الآن.</string>
   <string name="errorCouldNotLoadDiscover">لم نستطع تحميل صفحة إكتشف.\nرجاءً تواصل معنا إذا استمرت هذه المشكلة بالحدوث.</string>
   <string name="errorMalformedShow">يبدو أن هذا المسلسل لم يعد موجودًا في قاعدة بيانات موقع Trakt.tv، أو أنه مُكرر.\n\nأنقر على زر \"موافق\" لِحذفه مِن التطبيق.</string>
@@ -136,4 +130,8 @@
   <string name="errorCouldNotLoadMovie">لم نستطع تحميل معلومات هذا الفيلم.\nرجاءً تواصل معنا إذا إستمرت هذه المشكلة بالحدوث.</string>
   <string name="errorCouldNotLoadSearchResults">لم نستطع تحميل نتائج البحث.\nرجاءً تواصل معنا إذا استمرت هذه المشكلة بالحدوث.</string>
   <string name="errorNoInternetConnection">لا يوجد إتصال بالإنترنت. رجاءً تحقق من إتصالك.</string>
+  <string name="textScrobSync">مزامنة Scrob</string>
+  <string name="textScrobSyncRunning">جاري المزامنة مع Scrob…</string>
+  <string name="textScrobSyncComplete">اكتملت مزامنة Scrob</string>
+  <string name="errorScrobSyncFailed">فشلت مزامنة Scrob. يرجى المحاولة مرة أخرى.</string>
 </resources>

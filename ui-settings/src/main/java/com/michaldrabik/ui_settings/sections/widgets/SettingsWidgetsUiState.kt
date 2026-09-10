@@ -1,7 +1,7 @@
 package com.michaldrabik.ui_settings.sections.widgets
 
 import com.michaldrabik.ui_model.Settings
-import com.michaldrabik.ui_settings.helpers.AppTheme
+import com.michaldrabik.ui_model.AppTheme
 import com.michaldrabik.ui_settings.helpers.WidgetTransparency
 
 data class SettingsWidgetsUiState(

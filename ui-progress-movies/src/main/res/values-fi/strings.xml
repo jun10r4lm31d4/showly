@@ -7,5 +7,6 @@
   <string name="textDiscoverMovies">Etsi elokuvia</string>
   <string name="textMoviesProgressEmpty">
     <b>Katselutila</b> on tyhjä.\n\nLisää elokuvia
+  
     <b>Etsi</b>-osiosta tai tuo Trakt.tv-kokoelmasi.</string>
 </resources>

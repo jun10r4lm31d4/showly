@@ -27,7 +27,7 @@ import com.michaldrabik.ui_model.Settings
 import com.michaldrabik.ui_settings.R
 import com.michaldrabik.ui_settings.databinding.FragmentSettingsGeneralBinding
 import com.michaldrabik.ui_settings.helpers.AppLanguage
-import com.michaldrabik.ui_settings.helpers.AppTheme
+import com.michaldrabik.ui_model.AppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -82,9 +82,6 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
         renderDateFormat(dateFormat, language)
         renderTabletColumns(tabletColumns)
 
-        settingsTheme.alpha = 1F
-        settingsThemeTitle.setCompoundDrawables(null, null, null, null)
-
         if (restartApp) restartApp()
       }
     }
@@ -107,7 +104,24 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
   private fun renderTheme(theme: AppTheme) {
     with(binding) {
       settingsThemeValue.setText(theme.displayName)
+      settingsTheme.onClick {
+        showThemeDialog(theme)
+      }
     }
+  }
+
+  private fun showThemeDialog(currentTheme: AppTheme) {
+    val options = AppTheme.values()
+    val selected = options.indexOf(currentTheme)
+
+    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
+      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+      .setSingleChoiceItems(options.map { getString(it.displayName) }.toTypedArray(), selected) { dialog, index ->
+        if (index != selected) {
+          viewModel.setTheme(options[index])
+        }
+        dialog.dismiss()
+      }.show()
   }
 
   private fun renderTabletColumns(columns: Int) {

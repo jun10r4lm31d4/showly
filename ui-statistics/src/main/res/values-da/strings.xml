@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatistics">Statistik</string>
-  <string name="textStatisticsEmpty">Der skal være mindst én serie i
-    <b>Mine Serier</b>\nfør statistik kan vises.</string>
+  <string name="textStatisticsEmpty">Der skal være mindst én serie i <b>Mine Serier</b>\nfør statistik kan vises.</string>
   <string name="textStatisticsMostWatchedShows">Mest Sete Serier</string>
   <string name="textStatisticsTotalTimeSpent">Samlet tid brugt på at se</string>
   <string name="textStatisticsTotalTimeItIs">og det er</string>

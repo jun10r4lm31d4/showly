@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatisticsMovies">الإحصائيات</string>
-  <string name="textStatisticsMoviesEmpty">يجب أن يكون هناك فيلم واحد على الأقل في
-    <b>السجل</b>\nقبل أن يمكن عرض الإحصائيات.</string>
+  <string name="textStatisticsMoviesEmpty">يجب أن يكون هناك فيلم واحد على الأقل في <b>السجل</b>\nقبل أن يمكن عرض الإحصائيات.</string>
   <string name="textStatisticsMoviesTotalTimeSpent">إجمالي الوقت المنقضي في المشاهدة</string>
   <string name="textStatisticsMoviesTotalTimeItIs">يساوي</string>
   <string name="textStatisticsMoviesTotalTimeSpentHours">%s ساعات</string>

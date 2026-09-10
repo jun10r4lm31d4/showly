@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textComment">Коментувати</string>
-    <string name="textComments2">Коментарі</string>
+  <string name="textComments2">Коментарі</string>
   <string name="textNoComments">Коментарі відсутні.</string>
-    <string name="textCommentPosted">Ваш коментар відправлено.</string>
-  <string name="textCommentDeleted">Ваш коментар видалено.</string>
-  <string name="textCommentConfirmDeleteTitle">Видалити коментар</string>
-  <string name="textCommentConfirmDelete">Ви дійсно бажаєте видалити цей коментар?</string>
-    <string name="errorCommentDelete">Цей коментар більше не можна видалити.</string>
 </resources>

@@ -16,6 +16,7 @@ import com.michaldrabik.ui_model.ProgressDateSelectionType
 import com.michaldrabik.ui_model.ProgressNextEpisodeType
 import com.michaldrabik.ui_model.Settings
 import com.michaldrabik.ui_settings.helpers.AppLanguage
+import com.michaldrabik.ui_model.AppTheme
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -141,4 +142,11 @@ class SettingsGeneralMainCase @Inject constructor(
   }
 
   fun getTabletsColumns(): Int = settingsRepository.viewMode.tabletGridSpanSize
+
+  fun getTheme(): AppTheme = settingsRepository.theme
+
+  fun setTheme(theme: AppTheme) {
+    settingsRepository.theme = theme
+    AppCompatDelegate.setDefaultNightMode(theme.code)
+  }
 }

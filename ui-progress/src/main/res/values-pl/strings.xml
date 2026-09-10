@@ -13,7 +13,9 @@
   <string name="textDiscoverShows">Odkrywaj Seriale</string>
   <string name="textEpisodeInfo">Szczegóły</string>
   <string name="textProgressEmpty">Twój
+  
     <b>Postęp</b> jest obecnie pusty.\n\nDodaj nowe seriale w zakładce
+  
     <b>Odkrywaj</b> lub zaimportuj swoją kolekcję z Trakt.tv.</string>
   <string name="textNewSeason">Premiera Sezonu</string>
   <string name="textPremieres">Premiery</string>

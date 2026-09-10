@@ -6,6 +6,8 @@
   <string name="textMoviesCalendarRecentsEmpty">Brak ostatnio emitowanych filmów.</string>
   <string name="textDiscoverMovies">Odkrywaj Filmy</string>
   <string name="textMoviesProgressEmpty">Twój
+  
     <b>Postęp</b> jest obecnie pusty.\n\nDodaj nowe filmy w zakładce
+  
     <b>Odkrywaj</b> lub zaimportuj swoją kolekcję z Trakt.tv.</string>
 </resources>

@@ -5,13 +5,13 @@
   <string name="textNo">Não</string>
   <string name="textApply">Aplicar</string>
   <string name="textCancel">Cancelar</string>
-    <string name="textClose">Fechar</string>
+  <string name="textClose">Fechar</string>
   <string name="textShare">Compartilhar</string>
   <string name="textNow">Agora</string>
-    <string name="textReleaseDay">Data de Lançamento</string>
+  <string name="textReleaseDay">Data de Lançamento</string>
   <string name="textNew">Novo</string>
   <string name="textSelect">Selecionar</string>
-    <string name="textHide">Esconder</string>
+  <string name="textHide">Esconder</string>
   <string name="textRemove">Remover</string>
   <string name="textEmptyResults">Não há resultados…</string>
   <string name="textSearchFor">Pesquisar</string>
@@ -53,7 +53,7 @@
   <string name="textDirector">Diretor</string>
   <string name="textWriting">Escrita</string>
   <string name="textScreenplay">Screenplay</string>
-    <string name="textMusic">Música</string>
+  <string name="textMusic">Música</string>
   <string name="textActing">Atuação</string>
   <string name="textAiredAlready">Exibido</string>
   <string name="textAirsNow">No ar agora</string>
@@ -76,7 +76,7 @@
   <string name="textThisMonth">Este mês</string>
   <string name="textNextMonth">Próximo mês</string>
   <string name="textThisYear">Este ano</string>
-    <string name="textLater">Mais tarde</string>
+  <string name="textLater">Mais tarde</string>
   <string name="textYesterday">Ontem</string>
   <string name="textLast7Days">Últimos 7 dias</string>
   <string name="textLast30Days">Últimos 30 dias</string>
@@ -89,7 +89,7 @@
   <string name="textAddToMyShows">Adicionar às minhas séries</string>
   <string name="textAddToMyMovies">Adicionar ao Histórico</string>
   <string name="textAddToWatchlist">Adicionar a Favoritos</string>
-    <string name="textMoveToMyShows">Mover para Minhas Séries</string>
+  <string name="textMoveToMyShows">Mover para Minhas Séries</string>
   <string name="textMoveToMyMovies">Mover para o Histórico</string>
   <string name="textMoveToWatchlist">Mover para Favoritos</string>
   <string name="textMoveToHidden">Mover para Oculto</string>
@@ -102,16 +102,10 @@
   <string name="textNewAlwaysAtTop">Novos episódios sempre primeiro</string>
   <string name="menuPin">Fixar no topo</string>
   <string name="menuUnpin">Desafixar do topo</string>
-  <string
-    name="menuAddOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >Fixar em \'Em espera\'</string>
-  <string
-    name="menuRemoveOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >Desafixar de \'Em Espera\'</string>
+  <string name="menuAddOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Fixar em \'Em espera\'</string>
+  <string name="menuRemoveOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Desafixar de \'Em Espera\'</string>
   <string name="errorGeneral">Ops… Algo deu errado.\nEntre em contato conosco se isto continuar acontecendo.</string>
-    <string name="errorSeasonsNotLoaded">Por favor, aguarde até que os dados da temporada sejam carregados.</string>
+  <string name="errorSeasonsNotLoaded">Por favor, aguarde até que os dados da temporada sejam carregados.</string>
   <string name="errorEpisodeNotAired">Este episódio ainda não foi exibido.</string>
   <string name="errorCouldNotLoadDiscover">Não foi possível carregar a página descoberta no momento.\nEntre em contato conosco se isso continuar acontecendo.</string>
   <string name="errorMalformedShow">Parece que esta série não existe mais no banco de dados do Trakt.tv ou é uma duplicação.\n\nToque em \'OK\' para removê-la do aplicativo.</string>
@@ -120,4 +114,8 @@
   <string name="errorCouldNotLoadMovie">Não foi possível carregar os detalhes deste filme no momento.\nPor favor, entre em contato conosco se isto continuar acontecendo.</string>
   <string name="errorCouldNotLoadSearchResults">Não foi possível carregar os resultados da pesquisa no momento.\nEntre em contato conosco se isso continuar acontecendo.</string>
   <string name="errorNoInternetConnection">Sem conexão com a internet. Por favor, verifique sua conexão.</string>
+  <string name="textScrobSync">Sincronização Scrob</string>
+  <string name="textScrobSyncRunning">Sincronizando com Scrob…</string>
+  <string name="textScrobSyncComplete">Sincronização Scrob concluída</string>
+  <string name="errorScrobSyncFailed">Falha na sincronização Scrob. Por favor, tente novamente.</string>
 </resources>

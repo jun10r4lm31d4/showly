@@ -7,5 +7,6 @@
   <string name="textDiscoverMovies">Filmleri Keşfet</string>
   <string name="textMoviesProgressEmpty">
     <b>İlerlemeniz</b> şu anda boştur.\n\nFilmler eklemek için
+  
     <b>Keşfet</b> sekmesini ziyaret edin veya Trakt.tv koleksiyonunuzdan aktarın.</string>
 </resources>

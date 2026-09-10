@@ -1,7 +1,7 @@
 <resources>
 
   <!-- Base app theme -->
-  <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
+  <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
     <item name="android:windowBackground">@color/colorBackground</item>
     <item name="switchStyle">@style/ShowlySwitch</item>
     <item name="enableEdgeToEdge">true</item>
@@ -111,7 +111,7 @@
 
   <!-- Dialogs -->
 
-  <style name="AlertDialog" parent="@style/Theme.Material3.Dark.Dialog">
+  <style name="AlertDialog" parent="@style/Theme.Material3.DayNight.Dialog">
     <item name="colorAccent">@color/colorAccent</item>
     <item name="colorPrimary">@color/colorAccent</item>
     <item name="buttonBarNegativeButtonStyle">@style/AlertDialog.NegativeButton</item>
@@ -124,7 +124,11 @@
 
   <!-- Toolbar -->
 
-    <style name="AlertDialog.SmallText" parent="AlertDialog">
+  <style name="Toolbar.Button.Navigation.Tinted" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+    <item name="tint">?android:attr/textColorPrimary</item>
+  </style>
+
+  <style name="AlertDialog.SmallText" parent="AlertDialog">
     <item name="android:textSize">13sp</item>
   </style>
 

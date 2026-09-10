@@ -22,7 +22,7 @@
   <string name="textHeaderRecentlyAdded">Aggiunti di Recente</string>
   <string name="textHeaderWatching">Visione in corso</string>
   <string name="textHeaderFinished">Finiti</string>
-  <string name="textHeaderReturning"><![CDATA[Rinnovate & in arrivo]]></string>
+  <string name="textHeaderReturning">Rinnovate &amp; in arrivo</string>
   <string name="textHeaderAll">Tutto</string>
   <string name="textSettingsShowsNotificationsWhenTitle">Quando ricevere notifiche</string>
   <string name="textSettingsShowsNotificationsWhenSummary">Quando ti piacerebbe ricevere notifiche sui nuovi episodi.</string>
@@ -76,4 +76,7 @@
   <string name="textStreamingBuy">Acquisto</string>
   <string name="textStreamingRent">Noleggio</string>
   <string name="textStreamingFree">Gratuito</string>
+  <string name="textThemeDark">Scuro</string>
+  <string name="textThemeLight">Chiaro</string>
+  <string name="textThemeSystem">Sistema</string>
 </resources>

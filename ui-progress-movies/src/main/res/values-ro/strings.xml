@@ -7,5 +7,6 @@
   <string name="textDiscoverMovies">Descoperă filme</string>
   <string name="textMoviesProgressEmpty">
     <b>Progresul</b> este în prezent gol.\n\nVizitează
+  
     <b>Descoperă</b> pentru a adăuga filme sau pentru a importa colecţia Trakt.tv.</string>
 </resources>

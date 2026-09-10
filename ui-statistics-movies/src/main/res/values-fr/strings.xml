@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatisticsMovies">Statistiques</string>
-  <string name="textStatisticsMoviesEmpty">Au moins un film doit être présent dans
-    <b>Historique</b>\navant que les statistiques puissent être affichées.</string>
+  <string name="textStatisticsMoviesEmpty">Au moins un film doit être présent dans <b>Historique</b>\navant que les statistiques puissent être affichées.</string>
   <string name="textStatisticsMoviesTotalTimeSpent">Temps total passé à visionner</string>
   <string name="textStatisticsMoviesTotalTimeItIs">ce qui correspond à</string>
   <string name="textStatisticsMoviesTotalTimeSpentHours">%s heures</string>

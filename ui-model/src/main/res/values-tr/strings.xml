@@ -76,4 +76,7 @@
   <string name="textStreamingBuy">Satın Al</string>
   <string name="textStreamingRent">Kirala</string>
   <string name="textStreamingFree">Ücretsiz</string>
+  <string name="textThemeDark">Karanlık</string>
+  <string name="textThemeLight">Aydınlık</string>
+  <string name="textThemeSystem">Sistem</string>
 </resources>

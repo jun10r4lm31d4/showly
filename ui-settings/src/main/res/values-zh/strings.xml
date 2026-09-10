@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="textImagesCacheCleared">图像缓存已清理。</string>
-    <string name="textSettings">设置</string>
-    <string name="textSettingsGeneral"><![CDATA[常规 & 用户体验]]></string>
+  <string name="textImagesCacheCleared">图像缓存已清理。</string>
+  <string name="textSettings">设置</string>
+  <string name="textSettingsGeneral"><![CDATA[常规 & 用户体验]]></string>
   <string name="textSettingsRecentShowsTitle">最近添加的数量</string>
   <string name="textSettingsRecentShowsSummary">「合集」中最近添加项目的展示数量。</string>
   <string name="textSettingsUpcomingSectionTitle">即将开播模块</string>
@@ -31,7 +31,7 @@
   <string name="textSettingsRateAppSummary">喜欢 Showly 吗？请在 PlayStore 上给我们留下评论。谢谢！</string>
   <string name="textSettingsDeleteCacheTitle">清理图片缓存</string>
   <string name="textSettingsDeleteCacheSummary">点击清除本地图片缓存。如果显示图片未正确加载，这可能会有帮助。</string>
-    <string name="textSettingsMoviesEnabledTitle">电影</string>
+  <string name="textSettingsMoviesEnabledTitle">电影</string>
   <string name="textSettingsMoviesEnabledSummary">启用/禁用电影模块。应用会重启。</string>
   <string name="textSettingsWidgets">桌面小部件</string>
   <string name="textSettingsWidgetsLabelsTitle">标题</string>
@@ -41,7 +41,7 @@
   <string name="textSettingsStreamingServicesMessage">显示流媒体服务数据。</string>
   <string name="textSettingsProgressNextEpisodeTitle">下一集</string>
   <string name="textSettingsProgressNextEpisodeMessage">使用该方式展示下一集：</string>
-    <string name="textSettingsDateSelectionMessage">选择默认日期。</string>
+  <string name="textSettingsDateSelectionMessage">选择默认日期。</string>
   <string name="textSettingsTabletColumnsTitle">列表列数</string>
   <string name="textSettingsTabletColumnsSummary">选择列表的首选列数。</string>
   <string name="textSettingsBackup"><![CDATA[备份 & 还原]]></string>
@@ -54,28 +54,35 @@
   <string name="textSettingsSpoilersShowsSummary">管理剧集剧透设置。</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">我的剧集</string>
   <string name="textSettingsSpoilersShowsOverviewsMyDescription">隐藏已添加至我的剧集的
+  
     <b>描述</b>
   </string>
   <string name="textSettingsSpoilersShowsRatingsMyDescription">隐藏已添加至我的剧集的
+  
     <b>评分</b>
   </string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">待看列表</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">隐藏已添加至关注列表中剧集的
+  
     <b>描述</b>
   </string>
   <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">隐藏已添加至待看列表中剧集的
+  
     <b>评分</b>
   </string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">已隐藏</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">隐藏已添加至隐藏剧集的
+  
     <b>描述</b>
   </string>
   <string name="textSettingsSpoilersShowsRatingsHiddenDescription">隐藏我的剧集列表的评分</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">未收藏</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">隐藏不在您收藏中的节目的
+  
     <b>描述</b>
   </string>
   <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">隐藏不在您收藏中的节目的
+  
     <b>评分</b>
   </string>
   <string name="textSettingsSpoilersMovies">电影</string>
@@ -85,36 +92,46 @@
   <string name="textSettingsSpoilersMoviesRatingsMyDescription">隐藏已添加至观看历史的电影评分</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">待看列表</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">隐藏添加到“观看列表”中的电影的
+  
     <b>描述</b>
   </string>
   <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">隐藏添加到“观看列表”中的电影的
+  
     <b>评分</b>
   </string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">已隐藏</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">隐藏添加到“隐藏”中的电影的
+  
     <b>描述</b>
   </string>
   <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">隐藏添加到“隐藏”中的电影的
+  
     <b>评分</b>
   </string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">未收藏</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">隐藏不在您收藏中的电影的
+  
     <b>描述</b>
   </string>
   <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">隐藏不在您收藏中的电影的
+  
     <b>评分</b>
   </string>
   <string name="textSettingsSpoilersEpisodes">集</string>
   <string name="textSettingsSpoilersEpisodesSummary">管理剧集的剧透设置。</string>
   <string name="textSettingsSpoilersEpisodesImage">隐藏未观看剧集的
+  
     <b>图像</b>。</string>
   <string name="textSettingsSpoilersEpisodesTitle">隐藏未观看剧集的
+  
     <b>标题</b>
   </string>
   <string name="textSettingsSpoilersEpisodesDescription">隐藏未观看剧集的
+  
     <b>描述</b>
   </string>
   <string name="textSettingsSpoilersEpisodesRating">隐藏未观看剧集的
+  
     <b>评分</b>。</string>
   <string name="textSettingsSpoilersTapToRevealTitle">点击以显示</string>
   <string name="textSettingsSpoilersTapToRevealDescription">点击隐藏内容以暂时显示它。</string>
@@ -122,6 +139,5 @@
   <string name="textNextEpisodeOldest">最早未观看的单集</string>
   <string name="textDateSelectionAsk">总是询问</string>
   <string name="textDateSelectionNow">总是“现在”</string>
-  <string name="textThemeDark">暗色</string>
-    <string name="textTransparency100">不透明</string>
+  <string name="textTransparency100">不透明</string>
 </resources>

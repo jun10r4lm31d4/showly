@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textComment">Yorum</string>
-    <string name="textComments2">Yorumlar</string>
+  <string name="textComments2">Yorumlar</string>
   <string name="textNoComments">Hiçbir yorum yok.</string>
-    <string name="textCommentPosted">Yorumunuz gönderildi.</string>
-  <string name="textCommentDeleted">Yorumunuz silindi.</string>
-  <string name="textCommentConfirmDeleteTitle">Yorumu Sil</string>
-  <string name="textCommentConfirmDelete">Bu yorumu silmek istediğinizden emin misiniz?</string>
-    <string name="errorCommentDelete">Bu yorum artık silinemez.</string>
 </resources>

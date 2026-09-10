@@ -22,7 +22,7 @@
   <string name="textHeaderRecentlyAdded">最近添加</string>
   <string name="textHeaderWatching">正在观看</string>
   <string name="textHeaderFinished">已完结</string>
-  <string name="textHeaderReturning"><![CDATA[即将回归 & 首播]]></string>
+  <string name="textHeaderReturning">即将回归 &amp; 首播</string>
   <string name="textHeaderAll">全部</string>
   <string name="textSettingsShowsNotificationsWhenTitle">显示通知时间</string>
   <string name="textSettingsShowsNotificationsWhenSummary">您想要何时收到剧集更新通知。</string>
@@ -76,4 +76,7 @@
   <string name="textStreamingBuy">购买</string>
   <string name="textStreamingRent">租看</string>
   <string name="textStreamingFree">免费</string>
+  <string name="textThemeDark">暗色</string>
+  <string name="textThemeLight">亮色</string>
+  <string name="textThemeSystem">跟随系统</string>
 </resources>

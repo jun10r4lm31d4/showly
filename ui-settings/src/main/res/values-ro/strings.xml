@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="textImagesCacheCleared">Cache-ul imaginilor a fost șters.</string>
-    <string name="textSettings">Setări</string>
-    <string name="textSettingsGeneral"><![CDATA[General & UX]]></string>
+  <string name="textImagesCacheCleared">Cache-ul imaginilor a fost șters.</string>
+  <string name="textSettings">Setări</string>
+  <string name="textSettingsGeneral"><![CDATA[General & UX]]></string>
   <string name="textSettingsRecentShowsTitle">Suma adăugată recent</string>
   <string name="textSettingsRecentShowsSummary">Numărul de articole recente care vor fi afișate în „Colecție”.</string>
   <string name="textSettingsUpcomingSectionTitle">Secțiunea urmează</string>
@@ -31,9 +31,9 @@
   <string name="textSettingsRateAppSummary">Îți place Showly? Lasă-ne un comentariu pe PlayStore. Mulțumim!</string>
   <string name="textSettingsDeleteCacheTitle">Șterge memoria cache a imaginilor</string>
   <string name="textSettingsDeleteCacheSummary">Selectează pentru a șterge memoria cache a imaginilor locale. Acest lucru poate fi util dacă imaginile nu se încarcă corect.</string>
-    <string name="textSettingsMoviesEnabledTitle">Filme</string>
+  <string name="textSettingsMoviesEnabledTitle">Filme</string>
   <string name="textSettingsMoviesEnabledSummary">Activează/dezactivează suportul pentru filme. Aplicația se va reporni.</string>
-    <string name="textSettingsWidgets">Widgeturi</string>
+  <string name="textSettingsWidgets">Widgeturi</string>
   <string name="textSettingsWidgetsLabelsTitle">Titluri</string>
   <string name="textSettingsWidgetsLabelsSummary">Afișează titlurile widgeturilor translucide.</string>
   <string name="textSettingsStreamingsDisclaimer">Datele privind serviciile de streaming sunt furnizate de</string>
@@ -41,10 +41,10 @@
   <string name="textSettingsStreamingServicesMessage">Afișează datele serviciilor de streaming.</string>
   <string name="textSettingsProgressNextEpisodeTitle">Următorul episod</string>
   <string name="textSettingsProgressNextEpisodeMessage">Calculează următorul episod folosind:</string>
-    <string name="textSettingsDateSelectionMessage">Selectează opțiunea implicită de selectare a datei.</string>
+  <string name="textSettingsDateSelectionMessage">Selectează opțiunea implicită de selectare a datei.</string>
   <string name="textSettingsTabletColumnsTitle">Liste Coloane Număr</string>
   <string name="textSettingsTabletColumnsSummary">Selectare numărul coloanelor preferate pentru liste.</string>
-    <string name="textSettingsBackup"><![CDATA[Copie de rezervă & Restaurare]]></string>
+  <string name="textSettingsBackup"><![CDATA[Copie de rezervă & Restaurare]]></string>
   <string name="textSettingsBackupExportTitle">Export</string>
   <string name="textSettingsBackupExportDescription">Exportarea datelor pentru a crea o copie de rezervă sau pentru a le transfera pe un dispozitiv nou.</string>
   <string name="textSettingsBackupImportTitle">Import</string>
@@ -54,55 +54,75 @@
   <string name="textSettingsSpoilersShowsSummary">Gestionează setările spoiler pentru seriale.</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">Serialele mele</string>
   <string name="textSettingsSpoilersShowsOverviewsMyDescription">Ascunde
+  
     <b>descrierea</b> serialelor adăugate la serialele mele</string>
   <string name="textSettingsSpoilersShowsRatingsMyDescription">Ascunde
+  
     <b>evaluarea</b> serialelor adăugate la seralele mele</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">Lista de urmărire</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Ascunde
+  
     <b>descrierea</b> serialelor adăugate la lista de urmărire</string>
   <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Ascunde
+  
     <b>evaluarea</b> serialelor adăugate la Lista de vizionare</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Ascuns</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Ascunde
+  
     <b>descrierea</b> serialelor adăugate la ascuns</string>
   <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Ascunde
+  
     <b>evaluarea</b> serialelor adăugate la ascuns</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">Necolectat</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Ascunde
+  
     <b>descrierea</b> serialelor care nu se află în colecția ta</string>
   <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Ascunde
+  
     <b>evaluarea</b> serialelor care nu se află în colecția ta</string>
   <string name="textSettingsSpoilersMovies">Filme</string>
   <string name="textSettingsSpoilersMoviesSummary">Gestionare setări spoiler pentru filme.</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyTitle">Istorie</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Ascunde
+  
     <b>descrierea</b> filmelor adăugate la istoric</string>
   <string name="textSettingsSpoilersMoviesRatingsMyDescription">Ascunde
+  
     <b>evaluarea</b> filmelor adăugate la istoric</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">Lista de urmărire</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Ascunde
+  
     <b>descrierea</b> filmelor adăugate la lista de vizionare</string>
   <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Ascunde
+  
     <b>evaluarea</b> filmelor adăugate la lista de urmărire</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Ascuns</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Ascunde
+  
     <b>descrierea</b> filmelor adăugate la ascuns</string>
   <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Ascunde
+  
     <b>evaluarea</b> filmelor adăugate la ascuns</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">Necolectat</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Ascunde
+  
     <b>descrierea</b> filmelor care nu se află în colecția ta</string>
   <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Ascunde
+  
     <b>evaluarea</b> filmelor care nu se află în colecția ta</string>
   <string name="textSettingsSpoilersEpisodes">Episoade</string>
   <string name="textSettingsSpoilersEpisodesSummary">Gestionare setări spoiler pentru episoade.</string>
   <string name="textSettingsSpoilersEpisodesImage">Ascunde
+  
     <b>imaginile</b> episoadelor nevizionate.</string>
   <string name="textSettingsSpoilersEpisodesTitle">Ascunde
+  
     <b>titlurile</b> episoadelor nevizionate.</string>
   <string name="textSettingsSpoilersEpisodesDescription">Ascunde
+  
     <b>descrierea</b> episoadelor nevizionate.</string>
   <string name="textSettingsSpoilersEpisodesRating">Ascunde
+  
     <b>evaluările</b> episoadelor nevizionate.</string>
   <string name="textSettingsSpoilersTapToRevealTitle">Atinge pentru a afișa</string>
   <string name="textSettingsSpoilersTapToRevealDescription">Atinge conținutul ascuns pentru a-l afișa temporar.</string>
@@ -110,6 +130,5 @@
   <string name="textNextEpisodeOldest">Cel mai vechi episod nevizionat</string>
   <string name="textDateSelectionAsk">Întreabă întotdeauna</string>
   <string name="textDateSelectionNow">Întotdeauna „Acum”</string>
-  <string name="textThemeDark">Întunecat</string>
-    <string name="textTransparency100">Opac</string>
+  <string name="textTransparency100">Opac</string>
 </resources>

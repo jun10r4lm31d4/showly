@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textComment">Komentarz</string>
-    <string name="textComments2">Opinie</string>
+  <string name="textComments2">Opinie</string>
   <string name="textNoComments">Brak opinii.</string>
-    <string name="textCommentPosted">Twój komentarz został zapisany.</string>
-  <string name="textCommentDeleted">Twój komentarz został usunięty.</string>
-  <string name="textCommentConfirmDeleteTitle">Usuń Komentarz</string>
-  <string name="textCommentConfirmDelete">Czy na pewno chcesz usunąć ten komentarz?</string>
-    <string name="errorCommentDelete">Ten komentarz nie może być już usunięty.</string>
 </resources>

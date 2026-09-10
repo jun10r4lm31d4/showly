@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatistics">Statystyki</string>
-  <string name="textStatisticsEmpty">Dodaj przynajmniej jeden serial do
-    <b>Kolekcji</b> aby zobaczyć statystyki</string>
+  <string name="textStatisticsEmpty">Dodaj przynajmniej jeden serial do <b>Kolekcji</b> aby zobaczyć statystyki</string>
   <string name="textStatisticsMostWatchedShows">Najwięcej Obejrzanych</string>
   <string name="textStatisticsTotalTimeSpent">Całkowity Czas</string>
   <string name="textStatisticsTotalTimeItIs">czyli</string>

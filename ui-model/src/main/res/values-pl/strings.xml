@@ -76,4 +76,7 @@
   <string name="textStreamingBuy">Kup</string>
   <string name="textStreamingRent">Wypożycz</string>
   <string name="textStreamingFree">Darmowy</string>
+  <string name="textThemeDark">Ciemny</string>
+  <string name="textThemeLight">Jasny</string>
+  <string name="textThemeSystem">Systemowy</string>
 </resources>

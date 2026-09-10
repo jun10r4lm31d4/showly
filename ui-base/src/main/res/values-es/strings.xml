@@ -8,10 +8,10 @@
   <string name="textClose">Cerrar</string>
   <string name="textShare">Compartir</string>
   <string name="textNow">Ahora</string>
-    <string name="textReleaseDay">Día de estreno</string>
+  <string name="textReleaseDay">Día de estreno</string>
   <string name="textNew">Nuevo</string>
   <string name="textSelect">Seleccionar</string>
-    <string name="textHide">Ocultar</string>
+  <string name="textHide">Ocultar</string>
   <string name="textRemove">Eliminar</string>
   <string name="textEmptyResults">No hay resultados...</string>
   <string name="textSearchFor">Buscar</string>
@@ -48,12 +48,12 @@
     <item quantity="one">%d restante</item>
     <item quantity="other">%d restantes</item>
   </plurals>
-  <string name="textPeople"><![CDATA[Reparto & Equipo]]></string>
+  <string name="textPeople">Reparto &amp; Equipo</string>
   <string name="textDirecting">Dirección</string>
   <string name="textDirector">Director</string>
   <string name="textWriting">Escritores</string>
   <string name="textScreenplay">Guión</string>
-    <string name="textMusic">Música</string>
+  <string name="textMusic">Música</string>
   <string name="textActing">Actuación</string>
   <string name="textAiredAlready">Emitido</string>
   <string name="textAirsNow">Se emite ahora</string>
@@ -76,7 +76,7 @@
   <string name="textThisMonth">Este Mes</string>
   <string name="textNextMonth">El Próximo Mes</string>
   <string name="textThisYear">Este Año</string>
-    <string name="textLater">Más Tarde</string>
+  <string name="textLater">Más Tarde</string>
   <string name="textYesterday">Ayer</string>
   <string name="textLast7Days">Últimos 7 Días</string>
   <string name="textLast30Days">Últimos 30 Días</string>
@@ -89,7 +89,7 @@
   <string name="textAddToMyShows">Añadir a Mis Series</string>
   <string name="textAddToMyMovies">Añadir al Historial</string>
   <string name="textAddToWatchlist">Añadir a Pendientes</string>
-    <string name="textMoveToMyShows">Mover a Mis Series</string>
+  <string name="textMoveToMyShows">Mover a Mis Series</string>
   <string name="textMoveToMyMovies">Mover al Historial</string>
   <string name="textMoveToWatchlist">Mover a Pendientes</string>
   <string name="textMoveToHidden">Mover a Ocultos</string>
@@ -102,16 +102,10 @@
   <string name="textNewAlwaysAtTop">Nuevos episodios siempre primero</string>
   <string name="menuPin">Anclar a la parte superior</string>
   <string name="menuUnpin">Desanclar de la parte superior</string>
-  <string
-    name="menuAddOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >Anclar a \"en espera\"</string>
-  <string
-    name="menuRemoveOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >Desanclar de \"en espera\"</string>
+  <string name="menuAddOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Anclar a \"en espera\"</string>
+  <string name="menuRemoveOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Desanclar de \"en espera\"</string>
   <string name="errorGeneral">Ups… Algo salió mal.\nPor favor, contáctanos si esto sigue sucediendo.</string>
-    <string name="errorSeasonsNotLoaded">Por favor, espera a que se carguen los datos de las temporadas.</string>
+  <string name="errorSeasonsNotLoaded">Por favor, espera a que se carguen los datos de las temporadas.</string>
   <string name="errorEpisodeNotAired">Este episodio aún no se ha emitido.</string>
   <string name="errorCouldNotLoadDiscover">No pudimos cargar los resultados de la página descubrir en este momento.\nPor favor, contáctanos si esto sigue sucediendo.</string>
   <string name="errorMalformedShow">Parece que esta serie ya no existe en la base de datos de Trakt.tv o está duplicada.\n\nPulsa \'OK\' para eliminarla de la aplicación.</string>
@@ -120,4 +114,8 @@
   <string name="errorCouldNotLoadMovie">No pudimos cargar los detalles de esta película en este momento.\nPor favor, contáctanos si esto sigue sucediendo.</string>
   <string name="errorCouldNotLoadSearchResults">No pudimos cargar los resultados de la búsqueda en este momento.\nPor favor, contáctanos si esto sigue sucediendo.</string>
   <string name="errorNoInternetConnection">Sin Internet. Por favor compruebe su conexión.</string>
+  <string name="textScrobSync">Sincronización de Scrob</string>
+  <string name="textScrobSyncRunning">Sincronizando con Scrob…</string>
+  <string name="textScrobSyncComplete">Sincronización de Scrob completada</string>
+  <string name="errorScrobSyncFailed">Falló la sincronización de Scrob. Por favor, inténtalo de nuevo.</string>
 </resources>

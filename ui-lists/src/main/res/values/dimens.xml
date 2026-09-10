@@ -14,7 +14,7 @@
   <dimen name="listsTripleImageWidth">120dp</dimen>
   <dimen name="listsMarginHorizontal">16dp</dimen>
 
-    <dimen name="listDetailsItemImageWidth">80dp</dimen>
+  <dimen name="listDetailsItemImageWidth">80dp</dimen>
   <dimen name="listDetailsItemImageHeight">120dp</dimen>
 
   <dimen name="listDetailsRecyclerTopPadding">54dp</dimen>

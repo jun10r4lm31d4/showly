@@ -5,13 +5,13 @@
   <string name="textNo">Nej</string>
   <string name="textApply">Anvend</string>
   <string name="textCancel">Annuller</string>
-    <string name="textClose">Luk</string>
+  <string name="textClose">Luk</string>
   <string name="textShare">Share</string>
   <string name="textNow">Nu</string>
-    <string name="textReleaseDay">Udgivelsesdag</string>
+  <string name="textReleaseDay">Udgivelsesdag</string>
   <string name="textNew">Ny</string>
   <string name="textSelect">Vælg</string>
-    <string name="textHide">Skjul</string>
+  <string name="textHide">Skjul</string>
   <string name="textRemove">Fjern</string>
   <string name="textEmptyResults">Der var ingen resultater…</string>
   <string name="textSearchFor">Søg</string>
@@ -53,9 +53,9 @@
   <string name="textDirector">Instruktør</string>
   <string name="textWriting">Forfatter</string>
   <string name="textScreenplay">Manuskript</string>
-    <string name="textMusic">Musik</string>
+  <string name="textMusic">Musik</string>
   <string name="textActing">Skuespil</string>
-    <string name="textAiredAlready">Sendt</string>
+  <string name="textAiredAlready">Sendt</string>
   <string name="textAirsNow">Sendes Nu</string>
   <plurals name="textDaysToAir">
     <item quantity="one">Sendes i morgen</item>
@@ -76,7 +76,7 @@
   <string name="textThisMonth">Denne Måned</string>
   <string name="textNextMonth">Næste Måned</string>
   <string name="textThisYear">I År</string>
-    <string name="textLater">Senere</string>
+  <string name="textLater">Senere</string>
   <string name="textYesterday">I Går</string>
   <string name="textLast7Days">Sidste 7 Dage</string>
   <string name="textLast30Days">Sidste 30 Dage</string>
@@ -89,7 +89,7 @@
   <string name="textAddToMyShows">Tilføj til Mine Serier</string>
   <string name="textAddToMyMovies">Tilføj til historik</string>
   <string name="textAddToWatchlist">Tilføj til Se Senere</string>
-    <string name="textMoveToMyShows">Flyt til Mine Serier</string>
+  <string name="textMoveToMyShows">Flyt til Mine Serier</string>
   <string name="textMoveToMyMovies">移动到观看历史</string>
   <string name="textMoveToWatchlist">Flyt til Se Senere</string>
   <string name="textMoveToHidden">Flyt til Skjulte</string>
@@ -102,16 +102,10 @@
   <string name="textNewAlwaysAtTop">Nye afsnit altid først</string>
   <string name="menuPin">Fastgør til toppen</string>
   <string name="menuUnpin">Frigør fra toppen</string>
-  <string
-    name="menuAddOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >Fastgør til \'på pause\'</string>
-  <string
-    name="menuRemoveOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >Frigør fra \'på pause\'</string>
+  <string name="menuAddOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Fastgør til \'på pause\'</string>
+  <string name="menuRemoveOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Frigør fra \'på pause\'</string>
   <string name="errorGeneral">Ups… Noget gik galt.\nKontakt os, hvis dette fortsætter med at ske.</string>
-    <string name="errorSeasonsNotLoaded">Vent venligst til sæson data er indlæst.</string>
+  <string name="errorSeasonsNotLoaded">Vent venligst til sæson data er indlæst.</string>
   <string name="errorEpisodeNotAired">Dette afsnit er ikke blevet sendt endnu.</string>
   <string name="errorCouldNotLoadDiscover">Vi kunne ikke indlæse opdag siden i øjeblikket.\nKontakt os venligst hvis dette fortsætter med at ske.</string>
   <string name="errorMalformedShow">Det ser ud til, at denne serie ikke længere findes i Trakt.tv database eller er en dublet.\n\nTryk \'OK\' for at fjerne den fra appen.</string>
@@ -120,4 +114,8 @@
   <string name="errorCouldNotLoadMovie">Vi kunne ikke indlæse denne films detaljer i øjeblikket.\nKontakt os venligst hvis dette fortsætter med at ske.</string>
   <string name="errorCouldNotLoadSearchResults">Vi kunne ikke indlæse søgeresultaterne i øjeblikket.\nKontakt os venligst hvis dette fortsætter med at ske.</string>
   <string name="errorNoInternetConnection">Ingen internetforbindelse. Tjek venligst din forbindelse.</string>
+  <string name="textScrobSync">Scrob-synkronisering</string>
+  <string name="textScrobSyncRunning">Synkroniserer med Scrob…</string>
+  <string name="textScrobSyncComplete">Scrob-synkronisering fuldført</string>
+  <string name="errorScrobSyncFailed">Scrob-synkronisering mislykkedes. Prøv venligst igen.</string>
 </resources>

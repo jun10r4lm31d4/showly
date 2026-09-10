@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="textGalleryEmpty">Ingen billeder tilgængelige</string>
-    <string name="textUrlDialogHint">Billedets URL</string>
+  <string name="textGalleryEmpty">Ingen billeder tilgængelige</string>
+  <string name="textUrlDialogHint">Billedets URL</string>
 </resources>

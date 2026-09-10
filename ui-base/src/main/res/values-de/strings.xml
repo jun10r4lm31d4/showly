@@ -8,10 +8,10 @@
   <string name="textClose">Schließen</string>
   <string name="textShare">Teilen</string>
   <string name="textNow">Jetzt</string>
-    <string name="textReleaseDay">Erscheinungstag</string>
+  <string name="textReleaseDay">Erscheinungstag</string>
   <string name="textNew">Neu</string>
   <string name="textSelect">Ausgewählt</string>
-    <string name="textHide">Verstecken</string>
+  <string name="textHide">Verstecken</string>
   <string name="textRemove">Löschen</string>
   <string name="textEmptyResults">Keine Ergebnisse…</string>
   <string name="textSearchFor">Suche</string>
@@ -52,7 +52,7 @@
   <string name="textDirector">Regisseur</string>
   <string name="textWriting">Drehbuchautor</string>
   <string name="textScreenplay">Drehbuch</string>
-    <string name="textMusic">Musik</string>
+  <string name="textMusic">Musik</string>
   <string name="textActing">Darsteller</string>
   <string name="textAiredAlready">Veröffentlicht</string>
   <string name="textAirsNow">Jetzt live</string>
@@ -75,7 +75,7 @@
   <string name="textThisMonth">Diesen Monat</string>
   <string name="textNextMonth">Nächsten Monat</string>
   <string name="textThisYear">Dieses Jahr</string>
-    <string name="textLater">Später</string>
+  <string name="textLater">Später</string>
   <string name="textYesterday">Gestern</string>
   <string name="textLast7Days">Letzten 7 Tage</string>
   <string name="textLast30Days">Letzten 30 Tage</string>
@@ -88,7 +88,7 @@
   <string name="textAddToMyShows">Zu Meine Serien</string>
   <string name="textAddToMyMovies">Zum Verlauf hinzufügen</string>
   <string name="textAddToWatchlist">Zu Watchlist</string>
-    <string name="textMoveToMyShows">Zu meinen Serien verschieben</string>
+  <string name="textMoveToMyShows">Zu meinen Serien verschieben</string>
   <string name="textMoveToMyMovies">Zum Verlauf verschieben</string>
   <string name="textMoveToWatchlist">Zur Watchlist verschieben</string>
   <string name="textMoveToHidden">In Versteckt verschieben</string>
@@ -101,16 +101,10 @@
   <string name="textNewAlwaysAtTop">Neue Folgen immer zuerst</string>
   <string name="menuPin">Oben anpinnen</string>
   <string name="menuUnpin">Pin von Oben lösen</string>
-  <string
-    name="menuAddOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >Pin auf \'Angehalten\'</string>
-  <string
-    name="menuRemoveOnHold"
-    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
-  >Pin von \'Angehalten\' lösen</string>
+  <string name="menuAddOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Pin auf \'Angehalten\'</string>
+  <string name="menuRemoveOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Pin von \'Angehalten\' lösen</string>
   <string name="errorGeneral">Hoppla… Da ging etwas schief.\nBitte kontaktiere uns, wenn dies weiterhin geschieht.</string>
-    <string name="errorSeasonsNotLoaded">Bitte warte bis die Staffelinformationen geladen sind.</string>
+  <string name="errorSeasonsNotLoaded">Bitte warte bis die Staffelinformationen geladen sind.</string>
   <string name="errorEpisodeNotAired">Diese Folge wurde bisher noch nicht veröffentlicht.</string>
   <string name="errorCouldNotLoadDiscover">Wir können die Entdecken Seite aktuell nicht laden.\nBitte kontaktiere uns, wenn dieser Fehler weiterhin besteht.</string>
   <string name="errorMalformedShow">Es sieht so aus als ob diese Sendung nicht länger in der Trakt.tv Datenbank existiert oder doppelt ist.\n\n Tippe auf \"OK\" um sie aus der App zu entfernen.</string>
@@ -119,4 +113,8 @@
   <string name="errorCouldNotLoadMovie">Wir können die Details zu diesem Filme aktuell nicht laden.\nBitte kontaktiere uns, wenn dieser Fehler weiterhin passiert.</string>
   <string name="errorCouldNotLoadSearchResults">Wir können die Suchergebnisse aktuell nicht laden.\nBitte schreib uns, wenn dieser Fehler weiterhin passiert.</string>
   <string name="errorNoInternetConnection">Kein Internet. Bitte überprüfe deine Verbindung.</string>
+  <string name="textScrobSync">Scrob-Synchronisierung</string>
+  <string name="textScrobSyncRunning">Synchronisierung mit Scrob…</string>
+  <string name="textScrobSyncComplete">Scrob-Synchronisierung abgeschlossen</string>
+  <string name="errorScrobSyncFailed">Scrob-Synchronisierung fehlgeschlagen. Bitte versuchen Sie es erneut.</string>
 </resources>
