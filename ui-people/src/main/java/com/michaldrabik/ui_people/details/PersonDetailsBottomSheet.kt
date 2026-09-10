@@ -132,8 +132,6 @@ class PersonDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_person_de
       },
     )
     with(binding.personDetailsRecycler) {
-      adapter = this@PersonDetailsBottomSheet.adapter
-      layoutManager = this@PersonDetailsBottomSheet.layoutManager
       (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
       removeOnScrollListener(recyclerScrollListener)
       addOnScrollListener(recyclerScrollListener)

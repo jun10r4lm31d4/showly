@@ -44,8 +44,7 @@ class ShowImagesProvider @Inject constructor(
     type: ImageType,
   ): Image =
     withContext(dispatchers.IO) {
-      val image = localSource.showImages.getByShowId(show.ids.tmdb.id, type.key)
-      when (image) {
+      when (val image = localSource.showImages.getByShowId(show.ids.tmdb.id, type.key)) {
         null -> {
           if (unavailableCache.contains(show.ids.trakt)) {
             Image.createUnavailable(type, SHOW)
@@ -122,8 +121,7 @@ class ShowImagesProvider @Inject constructor(
         }
       }
 
-      val remoteImage = findBestImage(typeImages, type)
-      val image = when (remoteImage) {
+      val image = when (val remoteImage = findBestImage(typeImages, type)) {
         null -> Image.createUnavailable(type)
         else -> Image.createAvailable(show.ids, type, SHOW, remoteImage.file_path, source)
       }

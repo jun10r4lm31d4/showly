@@ -5,10 +5,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.work.WorkManager
 import com.michaldrabik.common.Config
 import com.michaldrabik.repository.TranslationsRepository
-import com.michaldrabik.repository.UserTraktManager
 import com.michaldrabik.repository.images.ShowImagesProvider
 import com.michaldrabik.repository.settings.SettingsRepository
-import com.michaldrabik.ui_base.trakt.TraktSyncWorker
 import com.michaldrabik.ui_base.utilities.events.Event
 import com.michaldrabik.ui_base.utilities.extensions.SUBSCRIBE_STOP_TIMEOUT
 import com.michaldrabik.ui_base.utilities.extensions.findReplace
@@ -44,7 +42,6 @@ class ProgressViewModel @Inject constructor(
   private val sortOrderCase: ProgressSortOrderCase,
   private val filtersCase: ProgressFiltersCase,
   private val imagesProvider: ShowImagesProvider,
-  private val userTraktManager: UserTraktManager,
   private val workManager: WorkManager,
   private val translationsRepository: TranslationsRepository,
   private val settingsRepository: SettingsRepository,
@@ -84,7 +81,6 @@ class ProgressViewModel @Inject constructor(
       itemsState.value = items
       loadingState.value = false
       scrollState.value = Event(resetScroll)
-      overscrollState.value = userTraktManager.isAuthorized() && items.isNotEmpty()
 
       eventChannel.send(RequestWidgetsUpdate)
     }
@@ -164,15 +160,6 @@ class ProgressViewModel @Inject constructor(
   fun toggleHeaderCollapsed(headerType: ProgressListItem.Header.Type) {
     headersCase.toggleHeaderCollapsed(headerType)
     loadItems()
-  }
-
-  fun startTraktSync() {
-    TraktSyncWorker.scheduleOneOff(
-      workManager,
-      isImport = true,
-      isExport = true,
-      isSilent = false,
-    )
   }
 
   private fun updateItem(newItem: ProgressListItem) {

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatistics">الإحصائيات</string>
-  <string name="textStatisticsEmpty">أضف مسلسل واحد على الأقل في قائمة <b>مسلسلاتي</b>\nلعرض قائمة الإحصائيات.</string>
+  <string name="textStatisticsEmpty">أضف مسلسل واحد على الأقل في قائمة
+    <b>مسلسلاتي</b>\nلعرض قائمة الإحصائيات.</string>
   <string name="textStatisticsMostWatchedShows">المسلسلات الأكثر مشاهدة</string>
   <string name="textStatisticsTotalTimeSpent">إجمالي الوقت المنقضي في المشاهدة</string>
   <string name="textStatisticsTotalTimeItIs">يساوي</string>

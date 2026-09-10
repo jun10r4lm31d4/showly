@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore">Backup &amp; Ripristino</string>
+  <string name="textBackupAndRestore"><![CDATA[Backup & Ripristino]]></string>
   <string name="textBackupExport">Esporta dati</string>
   <string name="textBackupExportDescription">Esporta le tue serie e i tuoi film in un file per creare un backup o trasferirlo su un nuovo dispositivo.</string>
   <string name="textBackupImport">Importa dati</string>

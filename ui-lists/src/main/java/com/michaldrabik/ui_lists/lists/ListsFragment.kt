@@ -25,10 +25,7 @@ import com.michaldrabik.repository.settings.SettingsViewModeRepository
 import com.michaldrabik.ui_base.BaseFragment
 import com.michaldrabik.ui_base.common.OnTabReselectedListener
 import com.michaldrabik.ui_base.common.sheets.sort_order.SortOrderBottomSheet
-import com.michaldrabik.ui_base.events.Event
 import com.michaldrabik.ui_base.events.EventsManager
-import com.michaldrabik.ui_base.events.TraktListQuickSyncSuccess
-import com.michaldrabik.ui_base.events.TraktQuickSyncSuccess
 import com.michaldrabik.ui_base.utilities.ModeHost
 import com.michaldrabik.ui_base.utilities.extensions.add
 import com.michaldrabik.ui_base.utilities.extensions.dimenToPx
@@ -43,7 +40,6 @@ import com.michaldrabik.ui_base.utilities.extensions.hideKeyboard
 import com.michaldrabik.ui_base.utilities.extensions.launchAndRepeatStarted
 import com.michaldrabik.ui_base.utilities.extensions.navigateToSafe
 import com.michaldrabik.ui_base.utilities.extensions.onClick
-import com.michaldrabik.ui_base.utilities.extensions.showInfoSnackbar
 import com.michaldrabik.ui_base.utilities.extensions.showKeyboard
 import com.michaldrabik.ui_base.utilities.extensions.updateTopMargin
 import com.michaldrabik.ui_base.utilities.extensions.visible
@@ -110,7 +106,7 @@ class ListsFragment :
 
     launchAndRepeatStarted(
       { viewModel.uiState.collect { render(it) } },
-      { eventsManager.events.collect { handleEvent(it) } },
+      { eventsManager.events.collect { it } },
       doAfterLaunch = { viewModel.loadItems(resetScroll = false) },
     )
   }
@@ -324,10 +320,6 @@ class ListsFragment :
         sortOrder?.let {
           fragmentListsFilters.setSorting(it.first, it.second)
         }
-        isSyncing?.let {
-          fragmentListsSearchView.setTraktProgress(it)
-          fragmentListsSearchView.isEnabled = !it
-        }
       }
     }
   }
@@ -382,24 +374,6 @@ class ListsFragment :
           .setDuration(duration)
           .add(animations)
           ?.start()
-      }
-    }
-  }
-
-  private fun handleEvent(event: Event) {
-    when (event) {
-      is TraktListQuickSyncSuccess -> {
-        val text = resources.getQuantityString(R.plurals.textTraktQuickSyncComplete, 1, 1)
-        binding.fragmentListsSnackHost.showInfoSnackbar(text)
-      }
-
-      is TraktQuickSyncSuccess -> {
-        val text = resources.getQuantityString(R.plurals.textTraktQuickSyncComplete, event.count, event.count)
-        binding.fragmentListsSnackHost.showInfoSnackbar(text)
-      }
-
-      else -> {
-        Unit
       }
     }
   }

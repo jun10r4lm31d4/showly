@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore">备份 &amp; 还原</string>
+  <string name="textBackupAndRestore"><![CDATA[备份 & 还原]]></string>
   <string name="textBackupExport">导出数据</string>
   <string name="textBackupExportDescription">将您的节目和电影数据导出至文件，方便建立备份或传输到新设备。</string>
   <string name="textBackupImport">导入数据</string>

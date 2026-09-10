@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatistics">Статистика</string>
-  <string name="textStatisticsEmpty">Принаймні один серіал має бути присутній в <b>Мої Серіали</b>\nдля відображення статистики.</string>
+  <string name="textStatisticsEmpty">Принаймні один серіал має бути присутній в
+    <b>Мої Серіали</b>\nдля відображення статистики.</string>
   <string name="textStatisticsMostWatchedShows">Найпопулярніші серіали</string>
   <string name="textStatisticsTotalTimeSpent">Загальний час, витрачений на перегляд</string>
   <string name="textStatisticsTotalTimeItIs">тобто</string>

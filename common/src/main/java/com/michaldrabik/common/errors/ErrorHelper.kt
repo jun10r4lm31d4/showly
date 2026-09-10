@@ -22,16 +22,16 @@ object ErrorHelper {
       is HttpException -> {
         when (error.code()) {
           in arrayOf(401, 403) -> UnauthorizedError(error.message)
-          404 -> ResourceNotFoundError
-          409 -> ResourceConflictError
-          420 -> AccountLimitsError
-          422 -> ValidationError
-          423 -> AccountLockedError
+          404 -> ResourceNotFoundError()
+          409 -> ResourceConflictError()
+          420 -> AccountLimitsError()
+          422 -> ValidationError()
+          423 -> AccountLockedError()
           else -> UnknownHttpError(error.message)
         }
       }
       is CancellationException -> {
-        CoroutineCancellation
+        CoroutineCancellation()
       }
       else -> {
         UnknownError(error.message)

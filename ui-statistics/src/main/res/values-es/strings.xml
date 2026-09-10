@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatistics">Estadísticas</string>
-  <string name="textStatisticsEmpty">Al menos una serie debe estar presente en <b>Mis Series</b>\nantes de que se pueda mostrar las estadísticas.</string>
+  <string name="textStatisticsEmpty">Al menos una serie debe estar presente en
+    <b>Mis Series</b>\nantes de que se pueda mostrar las estadísticas.</string>
   <string name="textStatisticsMostWatchedShows">Series Más Vistas</string>
   <string name="textStatisticsTotalTimeSpent">Tiempo Total Utilizado Viendo</string>
   <string name="textStatisticsTotalTimeItIs">y es</string>

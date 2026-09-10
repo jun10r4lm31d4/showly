@@ -1,18 +1,13 @@
 package com.michaldrabik.ui_lists.details.cases
 
 import com.michaldrabik.common.dispatchers.CoroutineDispatchers
-import com.michaldrabik.common.errors.ErrorHelper
-import com.michaldrabik.common.errors.ShowlyError
 import com.michaldrabik.common.extensions.nowUtcMillis
 import com.michaldrabik.data_local.LocalDataSource
 import com.michaldrabik.data_local.database.model.CustomListItem
 import com.michaldrabik.data_local.utilities.TransactionsProvider
-import com.michaldrabik.data_remote.trakt.AuthorizedTraktRemoteDataSource
 import com.michaldrabik.repository.ListsRepository
-import com.michaldrabik.repository.UserTraktManager
 import com.michaldrabik.repository.settings.SettingsRepository
 import com.michaldrabik.ui_lists.details.recycler.ListDetailsItem
-import com.michaldrabik.ui_model.CustomList
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -21,11 +16,9 @@ import javax.inject.Inject
 class ListDetailsMainCase @Inject constructor(
   private val dispatchers: CoroutineDispatchers,
   private val localSource: LocalDataSource,
-  private val remoteSource: AuthorizedTraktRemoteDataSource,
   private val transactions: TransactionsProvider,
   private val listsRepository: ListsRepository,
   private val settingsRepository: SettingsRepository,
-  private val userTraktManager: UserTraktManager,
 ) {
 
   suspend fun loadDetails(id: Long) =
@@ -55,32 +48,10 @@ class ListDetailsMainCase @Inject constructor(
       updateItems
     }
 
-  suspend fun deleteList(
-    listId: Long,
-    removeFromTrakt: Boolean,
-  ) = withContext(dispatchers.IO) {
-    val isAuthorized = userTraktManager.isAuthorized()
-    val isQuickRemove = settingsRepository.load().traktQuickRemoveEnabled
-    val list = listsRepository.loadById(listId)
-    val listIdTrakt = list.idTrakt
-
-    if (isQuickRemove && isAuthorized && removeFromTrakt && listIdTrakt != null) {
-      userTraktManager.checkAuthorization()
-      try {
-        remoteSource.deleteList(listIdTrakt)
-      } catch (error: Throwable) {
-        when (ErrorHelper.parse(error)) {
-          is ShowlyError.ResourceNotFoundError -> Unit // NOOP List does not exist in Trakt.
-          else -> throw error
-        }
-      }
-    }
-
-    listsRepository.deleteList(listId)
-  }
-
-  suspend fun isQuickRemoveEnabled(list: CustomList) =
+  suspend fun deleteList(listId: Long) =
     withContext(dispatchers.IO) {
-      list.idTrakt != null && settingsRepository.load().traktQuickRemoveEnabled
+      val list = listsRepository.loadById(listId)
+
+      listsRepository.deleteList(listId)
     }
 }

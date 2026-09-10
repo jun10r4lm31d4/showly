@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textTraktLoginSuccess">تمت المصادقة بنجاح.</string>
-  <string name="textTraktLogoutSuccess">تم تسجيل خروجك.</string>
-  <string name="textImagesCacheCleared">تم مسح ذاكرة التخزين المؤقتة للصور.</string>
-  <string name="textTurnOff">إيقاف التشغيل</string>
-  <string name="textSettings">الإعدادات</string>
-  <string name="textSettingsTrakt">Trakt.tv</string>
-  <string name="textSettingsTraktAuthorizeTitle">مصادقة Trakt.tv</string>
-  <string name="textSettingsTraktAuthorizeSummarySignIn">إضغط لتسجيل الدخول لحسابك في Trakt.tv.</string>
-  <string name="textSettingsTraktAuthorizeSummarySignOut">تم تسجيل الدخول. انقر لتسجيل الخروج.</string>
-  <string name="textSettingsTraktAuthorizeSummarySignOutUser">تم تسجيل الدخول ك %1$s. إضغط لتسجيل الخروج.</string>
-  <string name="textSettingsTraktSyncTitle">مزامنة Trakt.tv</string>
-  <string name="textSettingsTraktSyncSummary">مزامنة البيانات بين Trakt.tv و Showly.</string>
-  <string name="textSettingsTraktQuickSyncTitle">الرفع الفوري ل Trakt.tv</string>
-  <string name="textSettingsTraktQuickSyncSummary">رفع فوري لبيانات المسلسلات والأفلام ل Trakt.tv بعد أن تقوم بإضافتهم في Showly.</string>
-  <string name="textSettingsTraktQuickRemoveTitle">الحذف الفوري في Trakt.tv</string>
-  <string name="textSettingsTraktQuickRemoveSummary">حذف فوري لبيانات المسلسلات والأفلام في Trakt.tv بعد أن تحذفهم في Showly.</string>
-  <string name="textSettingsTraktQuickRateTitle">التقييم السريع على Trakt.tv</string>
-  <string name="textSettingsTraktQuickRateSummary">قيّم الحلقات والأفلام كلما وضعت علامة على انك شاهدتهم في قسم \'مستوى التقدم\'.</string>
-  <string name="textSettingsGeneral">عام و واجهة المستخدم</string>
+    <string name="textImagesCacheCleared">تم مسح ذاكرة التخزين المؤقتة للصور.</string>
+    <string name="textSettings">الإعدادات</string>
+    <string name="textSettingsGeneral">عام و واجهة المستخدم</string>
   <string name="textSettingsRecentShowsTitle">عدد المحتويات الأخيرة</string>
   <string name="textSettingsRecentShowsSummary">عدد المسلسلات والأفلام الأخيرة التي تابعتها التي سيتم عرضها في صفحة \'المجموعة\'.</string>
   <string name="textSettingsUpcomingSectionTitle">المحتويات القادمة</string>
@@ -47,11 +31,7 @@
   <string name="textSettingsRateAppSummary">تستمتع بإستخدام Showly؟ أرسل لنا مراجعة في قوقل بلاي، وشكراً!</string>
   <string name="textSettingsDeleteCacheTitle">مسح بيانات الصور في الذاكرة المؤقتة</string>
   <string name="textSettingsDeleteCacheSummary">إضغط لتنفيذ الإجراء، إذا واجهتك مشكلة في تحميل الصور، جرب الضغط هنا.</string>
-  <string name="textSettingsQuickSyncConfirmationTitle">تعطيل المزامنة التلقائية</string>
-  <string name="textSettingsQuickSyncConfirmationMessage">\nيبدو أنك مفعل المزامنة التلقائية مسبقاً.\n\nأترغب في إطفاء المزامنة التلقائية لتفعيل المزامنة الفورية؟ (يُنصح به)\n</string>
-  <string name="textSettingsLogoutTitle">تسجيل الخروج من Trakt.tv</string>
-  <string name="textSettingsLogoutMessage">\nأترغب فِعلاً في تسجيل الخروج؟\n</string>
-  <string name="textSettingsMoviesEnabledTitle">أفلام</string>
+    <string name="textSettingsMoviesEnabledTitle">أفلام</string>
   <string name="textSettingsMoviesEnabledSummary">تفعيل/إلغاء تفعيل عرض الأفلام في التطبيق، سيتم إعادة تشغيله.</string>
   <string name="textSettingsWidgets">التطبيقات المصغّرة</string>
   <string name="textSettingsWidgetsLabelsTitle">العناوين</string>
@@ -61,8 +41,7 @@
   <string name="textSettingsStreamingServicesMessage">إظهار بيانات خدمات البث.</string>
   <string name="textSettingsProgressNextEpisodeTitle">الحلقة التالية</string>
   <string name="textSettingsProgressNextEpisodeMessage">حساب الحلقة التالية باِستخدام:</string>
-  <string name="textSettingsDateSelectionTitle">تحديد التاريخ</string>
-  <string name="textSettingsDateSelectionMessage">حدد خِيار تحديد التاريخ الافتراضي.</string>
+    <string name="textSettingsDateSelectionMessage">حدد خِيار تحديد التاريخ الافتراضي.</string>
   <string name="textSettingsTabletColumnsTitle">عدد أعمدة القوائم</string>
   <string name="textSettingsTabletColumnsSummary">حدد عدد الأعمدة المفضلة للقوائم.</string>
   <string name="textSettingsBackup">نسخة احتياطية واستعادة</string>
@@ -74,37 +53,57 @@
   <string name="textSettingsSpoilersShows">مسلسلات</string>
   <string name="textSettingsSpoilersShowsSummary">إدارة إعدادات الحرق للمسلسلات.</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">مسلسلاتي</string>
-  <string name="textSettingsSpoilersShowsOverviewsMyDescription">إخفاء <b>وصف</b> المسلسلات المضافة إلى مسلسلاتي</string>
-  <string name="textSettingsSpoilersShowsRatingsMyDescription">إخفاء <b>تقييم</b> المسلسلات المضافة إلى مسلسلاتي</string>
+  <string name="textSettingsSpoilersShowsOverviewsMyDescription">إخفاء
+    <b>وصف</b> المسلسلات المضافة إلى مسلسلاتي</string>
+  <string name="textSettingsSpoilersShowsRatingsMyDescription">إخفاء
+    <b>تقييم</b> المسلسلات المضافة إلى مسلسلاتي</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">قائمة المشاهدة</string>
-  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">إخفاء <b>وصف</b> المسلسلات المضافة إلى قائمة المشاهدة</string>
-  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">إخفاء <b>تقييم</b> المسلسلات المضافة إلى قائمة المشاهدة</string>
+  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">إخفاء
+    <b>وصف</b> المسلسلات المضافة إلى قائمة المشاهدة</string>
+  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">إخفاء
+    <b>تقييم</b> المسلسلات المضافة إلى قائمة المشاهدة</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">المخفية</string>
-  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">إخفاء <b>وصف</b> المسلسلات المضافة إلى المخفية</string>
-  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">إخفاء <b>تقييم</b> المسلسلات المضافة إلى المخفية</string>
+  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">إخفاء
+    <b>وصف</b> المسلسلات المضافة إلى المخفية</string>
+  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">إخفاء
+    <b>تقييم</b> المسلسلات المضافة إلى المخفية</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">ليست في المجموعة</string>
-  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">إخفاء <b>وصف</b> المسلسلات التي ليست في مجموعتك</string>
-  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">إخفاء <b>تقييم</b> المسلسلات التي ليست في مجموعتك</string>
+  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">إخفاء
+    <b>وصف</b> المسلسلات التي ليست في مجموعتك</string>
+  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">إخفاء
+    <b>تقييم</b> المسلسلات التي ليست في مجموعتك</string>
   <string name="textSettingsSpoilersMovies">أفلام</string>
   <string name="textSettingsSpoilersMoviesSummary">إدارة إعدادات الحرق للأفلام.</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyTitle">تاريخ</string>
-  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">إخفاء <b>وصف</b> الأفلام المضافة إلى السجل</string>
-  <string name="textSettingsSpoilersMoviesRatingsMyDescription">إخفاء <b>تقييم</b> الأفلام المضافة إلى السجل</string>
+  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">إخفاء
+    <b>وصف</b> الأفلام المضافة إلى السجل</string>
+  <string name="textSettingsSpoilersMoviesRatingsMyDescription">إخفاء
+    <b>تقييم</b> الأفلام المضافة إلى السجل</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">قائمة المشاهدة</string>
-  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">إخفاء <b>وصف</b> الأفلام المضافة إلى قائمة المشاهدة</string>
-  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">إخفاء <b>تقييم</b> الأفلام المضافة إلى قائمة المشاهدة</string>
+  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">إخفاء
+    <b>وصف</b> الأفلام المضافة إلى قائمة المشاهدة</string>
+  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">إخفاء
+    <b>تقييم</b> الأفلام المضافة إلى قائمة المشاهدة</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">المخفية</string>
-  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">إخفاء <b>وصف</b> الأفلام المضافة إلى المخفية</string>
-  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">إخفاء <b>تقييم</b> الأفلام المضافة إلى المخفية</string>
+  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">إخفاء
+    <b>وصف</b> الأفلام المضافة إلى المخفية</string>
+  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">إخفاء
+    <b>تقييم</b> الأفلام المضافة إلى المخفية</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">ليست في المجموعة</string>
-  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">إخفاء <b>وصف</b> الأفلام التي ليست في مجموعتك</string>
-  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">إخفاء <b>تقييم</b> الأفلام التي ليست في مجموعتك</string>
+  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">إخفاء
+    <b>وصف</b> الأفلام التي ليست في مجموعتك</string>
+  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">إخفاء
+    <b>تقييم</b> الأفلام التي ليست في مجموعتك</string>
   <string name="textSettingsSpoilersEpisodes">حلقات</string>
   <string name="textSettingsSpoilersEpisodesSummary">إدارة إعدادات الحرق للحلقات.</string>
-  <string name="textSettingsSpoilersEpisodesImage">إخفاء <b>صورة</b> الحلَقات التي لم تتم مشاهدتها.</string>
-  <string name="textSettingsSpoilersEpisodesTitle">إخفاء <b>عنوان</b> الحلَقات التي لم تتم مشاهدتها.</string>
-  <string name="textSettingsSpoilersEpisodesDescription">إخفاء <b>وصف</b> الحلَقات التي لم تتم مشاهدتها.</string>
-  <string name="textSettingsSpoilersEpisodesRating">إخفاء <b>تقييم</b> الحلَقات التي لم تتم مشاهدتها.</string>
+  <string name="textSettingsSpoilersEpisodesImage">إخفاء
+    <b>صورة</b> الحلَقات التي لم تتم مشاهدتها.</string>
+  <string name="textSettingsSpoilersEpisodesTitle">إخفاء
+    <b>عنوان</b> الحلَقات التي لم تتم مشاهدتها.</string>
+  <string name="textSettingsSpoilersEpisodesDescription">إخفاء
+    <b>وصف</b> الحلَقات التي لم تتم مشاهدتها.</string>
+  <string name="textSettingsSpoilersEpisodesRating">إخفاء
+    <b>تقييم</b> الحلَقات التي لم تتم مشاهدتها.</string>
   <string name="textSettingsSpoilersTapToRevealTitle">انقر للكَشف</string>
   <string name="textSettingsSpoilersTapToRevealDescription">انقر على المحتوى المخفي للكشف عنه مؤقتًا.</string>
   <string name="textNextEpisodeLastWatched">آخر حلقة شاهدتها</string>
@@ -112,7 +111,5 @@
   <string name="textDateSelectionAsk">اسأل دائماً</string>
   <string name="textDateSelectionNow">دائماً \"الآن\"</string>
   <string name="textThemeDark">داكن</string>
-  <string name="textThemeLight">فاتح</string>
-  <string name="textThemeSystem">إستخدم مظهر النظام</string>
-  <string name="textTransparency100">غير شفاف</string>
+    <string name="textTransparency100">غير شفاف</string>
 </resources>

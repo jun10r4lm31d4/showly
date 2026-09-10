@@ -1,12 +1,8 @@
 package com.michaldrabik.data_remote.trakt.api
 
 import com.michaldrabik.data_remote.Config
-import com.michaldrabik.data_remote.Config.TRAKT_CLIENT_ID
-import com.michaldrabik.data_remote.Config.TRAKT_CLIENT_SECRET
-import com.michaldrabik.data_remote.Config.TRAKT_REDIRECT_URL
 import com.michaldrabik.data_remote.tmdb.model.TmdbPerson
 import com.michaldrabik.data_remote.trakt.TraktRemoteDataSource
-import com.michaldrabik.data_remote.trakt.api.service.TraktAuthService
 import com.michaldrabik.data_remote.trakt.api.service.TraktCommentsService
 import com.michaldrabik.data_remote.trakt.api.service.TraktMoviesService
 import com.michaldrabik.data_remote.trakt.api.service.TraktPeopleService
@@ -17,18 +13,13 @@ import com.michaldrabik.data_remote.trakt.model.Episode
 import com.michaldrabik.data_remote.trakt.model.Ids
 import com.michaldrabik.data_remote.trakt.model.Movie
 import com.michaldrabik.data_remote.trakt.model.MovieCollection
-import com.michaldrabik.data_remote.trakt.model.OAuthResponse
 import com.michaldrabik.data_remote.trakt.model.PersonCredit
 import com.michaldrabik.data_remote.trakt.model.Show
-import com.michaldrabik.data_remote.trakt.model.request.OAuthRefreshRequest
-import com.michaldrabik.data_remote.trakt.model.request.OAuthRequest
-import com.michaldrabik.data_remote.trakt.model.request.OAuthRevokeRequest
 import java.lang.System.currentTimeMillis
 
 internal class TraktApi(
   private val showsService: TraktShowsService,
   private val moviesService: TraktMoviesService,
-  private val authService: TraktAuthService,
   private val commentsService: TraktCommentsService,
   private val searchService: TraktSearchService,
   private val peopleService: TraktPeopleService,
@@ -186,35 +177,6 @@ internal class TraktApi(
     } catch (t: Throwable) {
       emptyList()
     }
-
-  override suspend fun fetchAuthTokens(code: String): OAuthResponse {
-    val request = OAuthRequest(
-      code,
-      TRAKT_CLIENT_ID,
-      TRAKT_CLIENT_SECRET,
-      TRAKT_REDIRECT_URL,
-    )
-    return authService.fetchOAuthToken(request)
-  }
-
-  override suspend fun refreshAuthTokens(refreshToken: String): OAuthResponse {
-    val request = OAuthRefreshRequest(
-      refreshToken,
-      TRAKT_CLIENT_ID,
-      TRAKT_CLIENT_SECRET,
-      TRAKT_REDIRECT_URL,
-    )
-    return authService.refreshOAuthToken(request)
-  }
-
-  override suspend fun revokeAuthTokens(token: String) {
-    val request = OAuthRevokeRequest(
-      token,
-      TRAKT_CLIENT_ID,
-      TRAKT_CLIENT_SECRET,
-    )
-    authService.revokeOAuthToken(request)
-  }
 
   override suspend fun fetchMovieCollections(traktId: Long): List<MovieCollection> {
     val lists = moviesService.fetchMovieCollections(traktId)

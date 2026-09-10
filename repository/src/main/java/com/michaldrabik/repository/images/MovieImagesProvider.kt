@@ -41,8 +41,7 @@ class MovieImagesProvider @Inject constructor(
     type: ImageType,
   ): Image =
     withContext(dispatchers.IO) {
-      val image = localSource.movieImages.getByMovieId(movie.ids.tmdb.id, type.key)
-      when (image) {
+      when (val image = localSource.movieImages.getByMovieId(movie.ids.tmdb.id, type.key)) {
         null -> {
           if (unavailableCache.contains(movie.ids.trakt)) {
             Image.createUnavailable(type, MOVIE, TMDB)
@@ -78,8 +77,7 @@ class MovieImagesProvider @Inject constructor(
         else -> throw Error("Invalid type")
       }
 
-      val remoteImage = findBestImage(typeImages, type)
-      val image = when (remoteImage) {
+      val image = when (val remoteImage = findBestImage(typeImages, type)) {
         null -> Image.createUnavailable(type, MOVIE, TMDB)
         else -> Image.createAvailable(movie.ids, type, MOVIE, remoteImage.file_path, TMDB)
       }

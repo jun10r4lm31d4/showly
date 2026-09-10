@@ -98,7 +98,7 @@ class WatchlistFragment :
       upcomingChipClickListener = viewModel::toggleUpcomingFilter,
       missingImageListener = viewModel::loadMissingImage,
       missingTranslationListener = viewModel::loadMissingTranslation,
-      listViewChipClickListener = { (requireParentFragment() as? FollowedMoviesFragment)?.openPremium() },
+      listViewChipClickListener = {},
       listChangeListener = {
         binding.watchlistMoviesRecycler.scrollToPosition(0)
         (requireParentFragment() as FollowedMoviesFragment).resetTranslations()

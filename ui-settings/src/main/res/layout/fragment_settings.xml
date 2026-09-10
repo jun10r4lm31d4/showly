@@ -35,19 +35,6 @@
       app:title="@string/textSettings"
       />
 
-    <com.michaldrabik.ui_base.common.views.PremiumAdView
-      android:id="@+id/settingsPremium"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="@dimen/settingsPremiumAdMargin"
-      android:layout_marginTop="@dimen/spaceTiny"
-      android:layout_marginEnd="@dimen/settingsPremiumAdMargin"
-      android:background="@drawable/bg_premium_ad"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/settingsToolbar"
-      />
-
     <com.michaldrabik.ui_settings.views.SettingsFiltersView
       android:id="@+id/settingsFilters"
       android:layout_width="wrap_content"
@@ -57,25 +44,10 @@
       android:clipToPadding="false"
       android:paddingStart="@dimen/spaceNormal"
       android:paddingEnd="@dimen/spaceNormal"
-      app:layout_constraintBottom_toTopOf="@id/settingsCategoryTrakt"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/settingsPremium"
+      app:layout_constraintTop_toBottomOf="@id/settingsToolbar"
       app:layout_goneMarginTop="0dp"
-      />
-
-    <androidx.fragment.app.FragmentContainerView
-      android:id="@+id/settingsCategoryTrakt"
-      android:name="com.michaldrabik.ui_settings.sections.trakt.SettingsTraktFragment"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/spaceTiny"
-      app:layout_constraintBottom_toTopOf="@id/settingsCategoryGeneral"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/settingsFilters"
-      app:layout_goneMarginTop="0dp"
-      tools:layout="@layout/fragment_settings_trakt"
       />
 
     <androidx.fragment.app.FragmentContainerView
@@ -86,7 +58,7 @@
       app:layout_constraintBottom_toTopOf="@+id/settingsCategoryNotifications"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/settingsCategoryTrakt"
+      app:layout_constraintTop_toBottomOf="@id/settingsFilters"
       tools:layout="@layout/fragment_settings_general"
       />
 

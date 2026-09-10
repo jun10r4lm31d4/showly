@@ -3,7 +3,6 @@ package com.michaldrabik.ui_settings.sections.general
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
-import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jakewharton.processphoenix.ProcessPhoenix
@@ -18,7 +17,6 @@ import com.michaldrabik.ui_base.utilities.extensions.launchAndRepeatStarted
 import com.michaldrabik.ui_base.utilities.extensions.onClick
 import com.michaldrabik.ui_base.utilities.extensions.visibleIf
 import com.michaldrabik.ui_base.utilities.viewBinding
-import com.michaldrabik.ui_model.PremiumFeature
 import com.michaldrabik.ui_model.ProgressDateSelectionType
 import com.michaldrabik.ui_model.ProgressDateSelectionType.ALWAYS_ASK
 import com.michaldrabik.ui_model.ProgressDateSelectionType.NOW
@@ -26,7 +24,6 @@ import com.michaldrabik.ui_model.ProgressNextEpisodeType
 import com.michaldrabik.ui_model.ProgressNextEpisodeType.LAST_WATCHED
 import com.michaldrabik.ui_model.ProgressNextEpisodeType.OLDEST
 import com.michaldrabik.ui_model.Settings
-import com.michaldrabik.ui_navigation.java.NavigationArgs.ARG_ITEM
 import com.michaldrabik.ui_settings.R
 import com.michaldrabik.ui_settings.databinding.FragmentSettingsGeneralBinding
 import com.michaldrabik.ui_settings.helpers.AppLanguage
@@ -85,10 +82,8 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
         renderDateFormat(dateFormat, language)
         renderTabletColumns(tabletColumns)
 
-        settingsTheme.alpha = if (isPremium) 1F else 0.5F
-        if (isPremium) {
-          settingsThemeTitle.setCompoundDrawables(null, null, null, null)
-        }
+        settingsTheme.alpha = 1F
+        settingsThemeTitle.setCompoundDrawables(null, null, null, null)
 
         if (restartApp) restartApp()
       }
@@ -112,9 +107,6 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
   private fun renderTheme(theme: AppTheme) {
     with(binding) {
       settingsThemeValue.setText(theme.displayName)
-      settingsTheme.onClick {
-        onPremiumAction(tag)
-      }
     }
   }
 
@@ -182,17 +174,6 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
         .format(nowUtc().toLocalZone())
       settingsDateFormat.onClick { showDateFormatDialog(format, language) }
     }
-  }
-
-  private fun onPremiumAction(tag: Any?) {
-    val args = bundleOf()
-    if (tag != null) {
-      val feature = PremiumFeature.fromTag(requireContext(), tag.toString())
-      feature?.let {
-        args.putSerializable(ARG_ITEM, feature)
-      }
-    }
-    navigateTo(R.id.actionSettingsFragmentToPremium, args)
   }
 
   private fun showLanguageDialog(language: AppLanguage) {

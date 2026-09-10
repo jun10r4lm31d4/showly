@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatistics">统计信息</string>
-  <string name="textStatisticsEmpty"><b>我的剧集</b>\n中至少要有一部剧集，才能显示统计数据。</string>
+  <string name="textStatisticsEmpty">
+    <b>我的剧集</b>\n中至少要有一部剧集，才能显示统计数据。</string>
   <string name="textStatisticsMostWatchedShows">观看最多的剧</string>
   <string name="textStatisticsTotalTimeSpent">总观看时间</string>
   <string name="textStatisticsTotalTimeItIs">相当于</string>

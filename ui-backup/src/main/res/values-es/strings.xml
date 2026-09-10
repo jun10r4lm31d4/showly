@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore">Copia de Seguridad&amp; Restaurar</string>
+  <string name="textBackupAndRestore"><![CDATA[Copia de Seguridad& Restaurar]]></string>
   <string name="textBackupExport">Exportar datos</string>
   <string name="textBackupExportDescription">Exporta los datos de tus series y películas a un archivo para crear una copia de seguridad o transferirla a un nuevo dispositivo.</string>
   <string name="textBackupImport">Importar datos</string>

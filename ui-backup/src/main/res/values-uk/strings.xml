@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore">Резервне копіювання &amp; Відновлення</string>
+  <string name="textBackupAndRestore"><![CDATA[Резервне копіювання & Відновлення]]></string>
   <string name="textBackupExport">Експорт даних</string>
   <string name="textBackupExportDescription">Експортуйте дані серіалів та фільмів у файл, щоб створити резервну копію або перенести їх на новий пристрій.</string>
   <string name="textBackupImport">Імпорт даних</string>

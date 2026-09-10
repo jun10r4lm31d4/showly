@@ -5,16 +5,13 @@
   <string name="textNo">取消</string>
   <string name="textApply">应用</string>
   <string name="textCancel">取消</string>
-  <string name="textContinue">继续</string>
-  <string name="textClose">关闭</string>
+    <string name="textClose">关闭</string>
   <string name="textShare">分享</string>
   <string name="textNow">当前</string>
-  <string name="textNotNow">稍后​​​​​</string>
-  <string name="textReleaseDay">发布日期</string>
+    <string name="textReleaseDay">发布日期</string>
   <string name="textNew">新播</string>
   <string name="textSelect">选择</string>
-  <string name="textSubmit">提交</string>
-  <string name="textHide">隐藏</string>
+    <string name="textHide">隐藏</string>
   <string name="textRemove">移除</string>
   <string name="textEmptyResults">暂无结果…</string>
   <string name="textSearchFor">搜索</string>
@@ -50,13 +47,12 @@
   <plurals name="textEpisodesLeft" comment="Number of episodes left to see">
     <item quantity="other">剩余 %d 集</item>
   </plurals>
-  <string name="textPeople">演员&amp;工作人员</string>
+  <string name="textPeople"><![CDATA[演员&工作人员]]></string>
   <string name="textDirecting">导演</string>
   <string name="textDirector">导演</string>
   <string name="textWriting">编剧</string>
   <string name="textScreenplay">剧本</string>
-  <string name="textSound">声效</string>
-  <string name="textMusic">音乐</string>
+    <string name="textMusic">音乐</string>
   <string name="textActing">出演</string>
   <string name="textAiredAlready">已播出</string>
   <string name="textAirsNow">现已开播</string>
@@ -69,9 +65,6 @@
   <plurals name="textMinutesToAir">
     <item quantity="other">%d 分钟后开播</item>
   </plurals>
-  <plurals name="textTraktQuickSyncComplete">
-    <item quantity="other">已成功同步 %d 条记录。</item>
-  </plurals>
   <string name="textToday">今日</string>
   <string name="textTomorrow">明日</string>
   <string name="textThisWeek">本周</string>
@@ -79,8 +72,7 @@
   <string name="textThisMonth">本月</string>
   <string name="textNextMonth">下月</string>
   <string name="textThisYear">今年</string>
-  <string name="textNextYear">明年</string>
-  <string name="textLater">随后</string>
+    <string name="textLater">随后</string>
   <string name="textYesterday">昨日</string>
   <string name="textLast7Days">最近 7 天</string>
   <string name="textLast30Days">最近 30 天</string>
@@ -90,23 +82,10 @@
   <string name="textNewSeasonAvailable">新一季现已更新！</string>
   <string name="textNewSeasonAvailableSoon">新一季即将更新！</string>
   <string name="textNewMovieAvailable">电影已经上映！</string>
-  <string name="textTraktSync">Trakt.tv 同步</string>
-  <string name="textTraktSyncComplete">已成功同步。</string>
-  <string name="textTraktSyncRunning">运行中...</string>
-  <string name="textTraktSyncError">Trakt.tv 同步失败。</string>
-  <string name="textTraktSyncErrorFull">Trakt.tv 同步失败。请检查您的网络连接并重试，若该问题持续存在，请联系我们。</string>
-  <string name="textTraktQuickSyncError">即时同步失败。</string>
-  <string name="textTraktQuickSyncErrorFull">即时同步失败。下次打开应用时会自动重试。请检查您的网络连接。</string>
-  <string name="textTraktNotificationsRationale">请授予应用程序显示同步进度和结果信息的权限。\n\n现在要执行此操作吗？</string>
-  <string name="textRemoveFromTrakt">是否从 Trakt.tv 中移除？</string>
-  <string name="textRemoveFromTraktHidden">是否想要从您的 Trakt.tv「隐藏项目」中移除此项？</string>
-  <string name="textRemoveFromTraktWatchlist">是否想要从您的 Trakt.tv「观看列表」中移除此项？</string>
-  <string name="textRemoveFromTraktProgress">是否想要从您的 Trakt.tv「进行中」中移除此项？</string>
   <string name="textAddToMyShows">加入我的剧集</string>
   <string name="textAddToMyMovies">添加到观看历史</string>
   <string name="textAddToWatchlist">加入观看列表</string>
-  <string name="textAddToHidden">加入隐藏项目</string>
-  <string name="textMoveToMyShows">移至我的剧集</string>
+    <string name="textMoveToMyShows">移至我的剧集</string>
   <string name="textMoveToMyMovies">移动到观看历史</string>
   <string name="textMoveToWatchlist">移至观看列表</string>
   <string name="textMoveToHidden">移至隐藏项目</string>
@@ -117,15 +96,18 @@
   <string name="textWatchlist">待看列表</string>
   <string name="textWatchlistIncoming">即将到来</string>
   <string name="textNewAlwaysAtTop">始终置顶新剧集</string>
-  <string name="textPremiumAd">成为支持者并获得额外功能！点击查看更多信息。</string>
   <string name="menuPin">置顶</string>
   <string name="menuUnpin">取消置顶</string>
-  <string name="menuAddOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">设为「暂缓中」</string>
-  <string name="menuRemoveOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">取消「暂缓」</string>
+  <string
+    name="menuAddOnHold"
+    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
+  >设为「暂缓中」</string>
+  <string
+    name="menuRemoveOnHold"
+    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
+  >取消「暂缓」</string>
   <string name="errorGeneral">哎呀～ 出错了。\n如果这种情况持续发生，请联系我们。</string>
-  <string name="errorAuthorization">授权失败。如果这种情况持续发生，请联系我们。</string>
-  <string name="errorTraktAuthorization">Trakt 账号授权失败。\n请登录并重试。</string>
-  <string name="errorSeasonsNotLoaded">剧集数据加载中，请等待。</string>
+    <string name="errorSeasonsNotLoaded">剧集数据加载中，请等待。</string>
   <string name="errorEpisodeNotAired">该集尚未播出。</string>
   <string name="errorCouldNotLoadDiscover">当前暂时无法加载发现页面。\n如果这种情况持续发生，请联系我们。</string>
   <string name="errorMalformedShow">似乎 Trakt.tv 数据库中已不存在这部剧，或存在重复。\n\n点击 「确定」 将其移除。</string>
@@ -134,7 +116,4 @@
   <string name="errorCouldNotLoadMovie">当前暂时无法加载该电影详情。\n如果这种情况持续发生，请联系我们。</string>
   <string name="errorCouldNotLoadSearchResults">当前暂时无法加载搜索结果。\n如果这种情况持续发生，请联系我们。</string>
   <string name="errorNoInternetConnection">无互联网连接。请检查您的网络。</string>
-  <string name="errorTraktSyncGeneral">Trakt.tv 同步错误。\n请检查您的网络连接后重试。</string>
-  <string name="errorTraktLocked">您的 Trakt.tv 账号目前已被锁定。\n请在 https://support.trakt.tv/ 联系 Trakt.tv 客服解锁。</string>
-  <string name="errorSubscriptionsNotAvailable">Google Play 服务在此设备上无法使用。</string>
 </resources>

@@ -4,15 +4,15 @@ sealed class ShowlyError(
   errorMessage: String?,
 ) : Throwable(errorMessage) {
 
-  object ValidationError : ShowlyError("ValidationError")
+  class ValidationError : ShowlyError("ValidationError")
 
-  object ResourceConflictError : ShowlyError("ResourceConflictError")
+  class ResourceConflictError : ShowlyError("ResourceConflictError")
 
-  object ResourceNotFoundError : ShowlyError("ResourceNotFoundError")
+  class ResourceNotFoundError : ShowlyError("ResourceNotFoundError")
 
-  object AccountLockedError : ShowlyError("AccountLockedError")
+  class AccountLockedError : ShowlyError("AccountLockedError")
 
-  object AccountLimitsError : ShowlyError("AccountLimitsError")
+  class AccountLimitsError : ShowlyError("AccountLimitsError")
 
   data class UnauthorizedError(
     val errorMessage: String?,
@@ -26,5 +26,5 @@ sealed class ShowlyError(
     val errorMessage: String?,
   ) : ShowlyError(errorMessage)
 
-  object CoroutineCancellation : ShowlyError("")
+  class CoroutineCancellation : ShowlyError("")
 }

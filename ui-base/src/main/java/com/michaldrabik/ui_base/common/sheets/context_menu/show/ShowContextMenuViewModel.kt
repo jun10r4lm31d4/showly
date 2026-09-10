@@ -59,9 +59,6 @@ class ShowContextMenuViewModel @Inject constructor(
 
   fun loadShow(idTrakt: IdTrakt) {
     viewModelScope.launch {
-      showId = idTrakt
-      isQuickRemoveEnabled = settingsRepository.load().traktQuickRemoveEnabled
-
       try {
         loadingState.value = true
         val item = loadItemCase.loadItem(idTrakt)

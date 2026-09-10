@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textTraktLoginSuccess">Olet tunnistautunut.</string>
-  <string name="textTraktLogoutSuccess">Olet kirjautunut ulos.</string>
-  <string name="textImagesCacheCleared">Kuvavälimuisti tyhjennettiin.</string>
-  <string name="textTurnOff">Poista käytöstä</string>
-  <string name="textSettings">Asetukset</string>
-  <string name="textSettingsTrakt">Trakt.tv</string>
-  <string name="textSettingsTraktAuthorizeTitle">Trakt.tv-valtuutus</string>
-  <string name="textSettingsTraktAuthorizeSummarySignIn">Napauta kirjautuaksesi Trakt.tv-tilillesi.</string>
-  <string name="textSettingsTraktAuthorizeSummarySignOut">Kirjautuneena. Kirjaudu ulos napauttamalla.</string>
-  <string name="textSettingsTraktAuthorizeSummarySignOutUser">Kirjautuneena tunnuksella %1$s. Kirjaudu ulos napauttamalla.</string>
-  <string name="textSettingsTraktSyncTitle">Trakt.tv-synkronointi</string>
-  <string name="textSettingsTraktSyncSummary">Synkronoi tiedot Trakt.tv:n ja Showlyn välillä.</string>
-  <string name="textSettingsTraktQuickSyncTitle">Trakt.tv-pikalähetys</string>
-  <string name="textSettingsTraktQuickSyncSummary">Lähetä tiedot Trakt.tv-kokoelmaasi heti kun lisäät ne sovellukseen.</string>
-  <string name="textSettingsTraktQuickRemoveTitle">Poista tiedot Trakt.tv-tililtä</string>
-  <string name="textSettingsTraktQuickRemoveSummary">Tarjoa tietojen poistoa Trakt.tv-tililtäsi, kun olet poistanut ne sovelluksesta.</string>
-  <string name="textSettingsTraktQuickRateTitle">Trakt.tv-pika-arviointi</string>
-  <string name="textSettingsTraktQuickRateSummary">Arvioi jaksot ja elokuvat aina kun merkitset ne katsotuiksi Katselutila-osiossa.</string>
-  <string name="textSettingsGeneral">Yleiset ja käyttölittymä</string>
+    <string name="textImagesCacheCleared">Kuvavälimuisti tyhjennettiin.</string>
+    <string name="textSettings">Asetukset</string>
+    <string name="textSettingsGeneral">Yleiset ja käyttölittymä</string>
   <string name="textSettingsRecentShowsTitle">Hiljattain lisättyjen määrä</string>
   <string name="textSettingsRecentShowsSummary">Kokoelmassa näytettävien, hiljattain lisättyjen kohteiden määrä.</string>
   <string name="textSettingsUpcomingSectionTitle">Tulossa-osio</string>
@@ -47,11 +31,7 @@
   <string name="textSettingsRateAppSummary">Nautitko Showlysta? Arvostele se Play Kaupassa, kiitos!</string>
   <string name="textSettingsDeleteCacheTitle">Tyhjennä kuvavälimuisti</string>
   <string name="textSettingsDeleteCacheSummary">Tyhjennä paikallinen kuvavälimuisti napauttamalla. Tämä saattaa auttaa, jos sarjojen kuvat eivät lataudu oikein.</string>
-  <string name="textSettingsQuickSyncConfirmationTitle">Poista automaattinen synkronointi käytöstä</string>
-  <string name="textSettingsQuickSyncConfirmationMessage">\nAutomaattinen synkronointi näyttäisi olevan jo käytössä.\n\nHaluatko poistaa sen käytöstä ennen pikasynkronoinnin käyttöönottoa (suositeltavaa)?\n</string>
-  <string name="textSettingsLogoutTitle">Trakt.tv-uloskirjaus</string>
-  <string name="textSettingsLogoutMessage">\nHaluatko varmasti kirjautua ulos?\n</string>
-  <string name="textSettingsMoviesEnabledTitle">Elokuvat</string>
+    <string name="textSettingsMoviesEnabledTitle">Elokuvat</string>
   <string name="textSettingsMoviesEnabledSummary">Ota elokuvat käyttöön/poista ne käytöstä. Sovellus käynnistyy uudelleen.</string>
   <string name="textSettingsWidgets">Widgetit</string>
   <string name="textSettingsWidgetsLabelsTitle">Nimet</string>
@@ -61,8 +41,7 @@
   <string name="textSettingsStreamingServicesMessage">Näytä suoratoistopalveluiden tiedot.</string>
   <string name="textSettingsProgressNextEpisodeTitle">Seuraava jakso</string>
   <string name="textSettingsProgressNextEpisodeMessage">Seuraavan jakson laskentaperuste:</string>
-  <string name="textSettingsDateSelectionTitle">Päiväyksen valinta</string>
-  <string name="textSettingsDateSelectionMessage">Valitse päiväyksen oletusvalinta.</string>
+    <string name="textSettingsDateSelectionMessage">Valitse päiväyksen oletusvalinta.</string>
   <string name="textSettingsTabletColumnsTitle">Listausten sarakemäärä</string>
   <string name="textSettingsTabletColumnsSummary">Valitse listauksissa näytettävä sarakkeiden määrä.</string>
   <string name="textSettingsBackup">Varmuuskopiointi ja palautus</string>
@@ -74,37 +53,57 @@
   <string name="textSettingsSpoilersShows">Sarjat</string>
   <string name="textSettingsSpoilersShowsSummary">Hallitse sarjojen jounipaljastusasetuksia.</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">Omat sarjat</string>
-  <string name="textSettingsSpoilersShowsOverviewsMyDescription">Piilota omiin sarjoihin lisättyjen sarjojen <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersShowsRatingsMyDescription">Piilota omiin sarjoihin lisättyjen sarjojen <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersShowsOverviewsMyDescription">Piilota omiin sarjoihin lisättyjen sarjojen
+    <b>kuvaukset</b>.</string>
+  <string name="textSettingsSpoilersShowsRatingsMyDescription">Piilota omiin sarjoihin lisättyjen sarjojen
+    <b>arviot</b>.</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">Katselulista</string>
-  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Piilota katselulistalle lisättyjen sarjojen <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Piilota katselulistalle lisättyjen sarjojen <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Piilota katselulistalle lisättyjen sarjojen
+    <b>kuvaukset</b>.</string>
+  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Piilota katselulistalle lisättyjen sarjojen
+    <b>arviot</b>.</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Piilotetut</string>
-  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Piilota piilotettuihin lisättyjen sarjojen <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Piilota piilotettuihin lisättyjen sarjojen <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Piilota piilotettuihin lisättyjen sarjojen
+    <b>kuvaukset</b>.</string>
+  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Piilota piilotettuihin lisättyjen sarjojen
+    <b>arviot</b>.</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">Kokoelman ulkopuoliset</string>
-  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Piilota kokoelman ulkopuolisten sarjojen <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Piilota kokoelman ulkopuolisten sarjojen <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Piilota kokoelman ulkopuolisten sarjojen
+    <b>kuvaukset</b>.</string>
+  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Piilota kokoelman ulkopuolisten sarjojen
+    <b>arviot</b>.</string>
   <string name="textSettingsSpoilersMovies">Elokuvat</string>
   <string name="textSettingsSpoilersMoviesSummary">Hallitse elokuvien jounipaljastusasetuksia.</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyTitle">Historia</string>
-  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Piilota historiaan lisättyjen elokuvien <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersMoviesRatingsMyDescription">Piilota historiaan lisättyjen elokuvien <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Piilota historiaan lisättyjen elokuvien
+    <b>kuvaukset</b>.</string>
+  <string name="textSettingsSpoilersMoviesRatingsMyDescription">Piilota historiaan lisättyjen elokuvien
+    <b>arviot</b>.</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">Katselulista</string>
-  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Piilota katselulistalle lisättyjen elokuvien <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Piilota katselulistalle lisättyjen elokuvien <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Piilota katselulistalle lisättyjen elokuvien
+    <b>kuvaukset</b>.</string>
+  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Piilota katselulistalle lisättyjen elokuvien
+    <b>arviot</b>.</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Piilotetut</string>
-  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Piilota piilotettuihin lisättyjen elokuvien <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Piilota piilotettuihin lisättyjen elokuvien <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Piilota piilotettuihin lisättyjen elokuvien
+    <b>kuvaukset</b>.</string>
+  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Piilota piilotettuihin lisättyjen elokuvien
+    <b>arviot</b>.</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">Kokoelman ulkopuoliset</string>
-  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Piilota kokoelman ulkopuolisten elokuvien <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Piilota kokoelman ulkopuolisten elokuvien <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Piilota kokoelman ulkopuolisten elokuvien
+    <b>kuvaukset</b>.</string>
+  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Piilota kokoelman ulkopuolisten elokuvien
+    <b>arviot</b>.</string>
   <string name="textSettingsSpoilersEpisodes">Jaksot</string>
   <string name="textSettingsSpoilersEpisodesSummary">Hallitse jaksojen jounipaljastusasetuksia.</string>
-  <string name="textSettingsSpoilersEpisodesImage">Piilota katsomattomien jaksojen <b>kuva</b>.</string>
-  <string name="textSettingsSpoilersEpisodesTitle">Piilota katsomattomien jaksojen <b>nimi</b>.</string>
-  <string name="textSettingsSpoilersEpisodesDescription">Piilota katsomattomien jaksojen <b>kuvaus</b>.</string>
-  <string name="textSettingsSpoilersEpisodesRating">Piilota katsomattomien jaksojen <b>arvio</b>.</string>
+  <string name="textSettingsSpoilersEpisodesImage">Piilota katsomattomien jaksojen
+    <b>kuva</b>.</string>
+  <string name="textSettingsSpoilersEpisodesTitle">Piilota katsomattomien jaksojen
+    <b>nimi</b>.</string>
+  <string name="textSettingsSpoilersEpisodesDescription">Piilota katsomattomien jaksojen
+    <b>kuvaus</b>.</string>
+  <string name="textSettingsSpoilersEpisodesRating">Piilota katsomattomien jaksojen
+    <b>arvio</b>.</string>
   <string name="textSettingsSpoilersTapToRevealTitle">Paljasta napauttamalla</string>
   <string name="textSettingsSpoilersTapToRevealDescription">Paljasta piilotettu sisältö väliaikaisesti napauttamalla sitä.</string>
   <string name="textNextEpisodeLastWatched">Viimeksi katsottu jakso</string>
@@ -112,7 +111,5 @@
   <string name="textDateSelectionAsk">Kysy aina</string>
   <string name="textDateSelectionNow">Valitse \"Nyt\"</string>
   <string name="textThemeDark">Tumma</string>
-  <string name="textThemeLight">Vaalea</string>
-  <string name="textThemeSystem">Järjestelmä</string>
-  <string name="textTransparency100">Läpinäkymätön</string>
+    <string name="textTransparency100">Läpinäkymätön</string>
 </resources>

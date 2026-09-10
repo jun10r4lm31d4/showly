@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatistics">Estatísticas</string>
-  <string name="textStatisticsEmpty">Pelo menos uma série deve estar presente na aba <b>Minhas Séries</b>\nantes que as estatísticas possam ser exibidas.</string>
+  <string name="textStatisticsEmpty">Pelo menos uma série deve estar presente na aba
+    <b>Minhas Séries</b>\nantes que as estatísticas possam ser exibidas.</string>
   <string name="textStatisticsMostWatchedShows">Séries mais assistidas</string>
   <string name="textStatisticsTotalTimeSpent">Tempo total gasto assistindo</string>
   <string name="textStatisticsTotalTimeItIs">e é</string>

@@ -25,7 +25,7 @@ class ProgressHeaderView : LinearLayout {
   var headerClickListener: ((ProgressListItem.Header) -> Unit)? = null
 
   private lateinit var item: ProgressListItem.Header
-  private val isRtl by lazy { TextUtils.getLayoutDirectionFromLocale(Locale.getDefault()) == View.LAYOUT_DIRECTION_RTL }
+  private val isRtl by lazy { TextUtils.getLayoutDirectionFromLocale(Locale.getDefault()) == LAYOUT_DIRECTION_RTL }
 
   init {
     layoutParams = LayoutParams(WRAP_CONTENT, WRAP_CONTENT)

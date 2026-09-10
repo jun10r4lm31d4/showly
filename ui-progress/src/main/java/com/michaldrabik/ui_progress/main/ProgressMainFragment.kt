@@ -98,7 +98,7 @@ class ProgressMainFragment :
     setupInsets()
 
     launchAndRepeatStarted(
-      { viewModel.uiState.collect { render(it) } },
+      { viewModel.uiState.collect { it } },
       { viewModel.messageFlow.collect { showSnack(it) } },
       { viewModel.eventFlow.collect { handleEvent(it) } },
       doAfterLaunch = { viewModel.loadProgress() },
@@ -146,11 +146,9 @@ class ProgressMainFragment :
       with(progressMainSearchView) {
         hint = getString(R.string.textSearchFor)
         settingsIconVisible = true
-        traktIconVisible = true
         isClickable = false
         onClick { openMainSearch() }
         onSettingsClickListener = { openSettings() }
-        onTraktClickListener = { openTraktSync() }
       }
 
       with(progressMainSearchLocalView) {
@@ -233,12 +231,6 @@ class ProgressMainFragment :
           navigateToSafe(R.id.actionProgressFragmentToSearch)
         }.add(animations)
     }
-  }
-
-  fun openTraktSync() {
-    hideNavigation()
-    exitSearch()
-    navigateToSafe(R.id.actionProgressFragmentToTraktSyncFragment)
   }
 
   fun openShowDetails(show: Show) {
@@ -376,13 +368,6 @@ class ProgressMainFragment :
 
   private fun onScrollReset() =
     childFragmentManager.fragments.forEach { (it as? OnScrollResetListener)?.onScrollReset() }
-
-  private fun render(uiState: ProgressMainUiState) {
-    with(binding) {
-      progressMainSearchView.setTraktProgress(uiState.isSyncing, withIcon = true)
-      progressMainSearchView.isEnabled = !uiState.isSyncing
-    }
-  }
 
   private fun handleEvent(event: Event<*>) {
     when (event) {

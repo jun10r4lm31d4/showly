@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatisticsMovies">Статистика</string>
-  <string name="textStatisticsMoviesEmpty">Принаймні один фільм має бути присутній в <b>Історії</b>\nдля показу статистики.</string>
+  <string name="textStatisticsMoviesEmpty">Принаймні один фільм має бути присутній в
+    <b>Історії</b>\nдля показу статистики.</string>
   <string name="textStatisticsMoviesTotalTimeSpent">Загальний час, витрачений на перегляд</string>
   <string name="textStatisticsMoviesTotalTimeItIs">тобто</string>
   <string name="textStatisticsMoviesTotalTimeSpentHours">%s годин</string>

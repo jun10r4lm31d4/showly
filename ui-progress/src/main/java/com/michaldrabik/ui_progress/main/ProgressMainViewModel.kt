@@ -2,13 +2,8 @@ package com.michaldrabik.ui_progress.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import com.michaldrabik.ui_base.events.EventsManager
-import com.michaldrabik.ui_base.events.TraktSyncAuthError
-import com.michaldrabik.ui_base.events.TraktSyncError
-import com.michaldrabik.ui_base.events.TraktSyncSuccess
-import com.michaldrabik.ui_base.trakt.TraktSyncWorker
 import com.michaldrabik.ui_base.utilities.events.Event
 import com.michaldrabik.ui_base.utilities.events.MessageEvent
 import com.michaldrabik.ui_base.utilities.extensions.SUBSCRIBE_STOP_TIMEOUT
@@ -28,7 +23,6 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.time.ZonedDateTime
 import javax.inject.Inject
-import com.michaldrabik.ui_base.events.Event as EventSync
 
 @HiltViewModel
 class ProgressMainViewModel @Inject constructor(
@@ -42,16 +36,12 @@ class ProgressMainViewModel @Inject constructor(
   private val searchQueryState = MutableStateFlow<String?>(null)
   private val calendarModeState = MutableStateFlow<CalendarMode?>(null)
   private val scrollState = MutableStateFlow<Event<Boolean>?>(null)
-  private val syncingState = MutableStateFlow(false)
 
   private var calendarMode = CalendarMode.PRESENT_FUTURE
 
   init {
     viewModelScope.launch {
-      eventsManager.events.collect { onEvent(it) }
-    }
-    workManager.getWorkInfosByTagLiveData(TraktSyncWorker.TAG_ID).observeForever { work ->
-      syncingState.value = work.any { it.state == WorkInfo.State.RUNNING }
+      eventsManager.events.collect { it }
     }
   }
 
@@ -105,25 +95,17 @@ class ProgressMainViewModel @Inject constructor(
     }
   }
 
-  private fun onEvent(event: EventSync) {
-    if (event in arrayOf(TraktSyncError, TraktSyncAuthError, TraktSyncSuccess)) {
-      loadProgress()
-    }
-  }
-
   val uiState = combine(
     timestampState,
     searchQueryState,
     calendarModeState,
     scrollState,
-    syncingState,
-  ) { s1, s2, s3, s4, s5 ->
+  ) { s1, s2, s3, s4 ->
     ProgressMainUiState(
       timestamp = s1,
       searchQuery = s2,
       calendarMode = s3,
       resetScroll = s4,
-      isSyncing = s5,
     )
   }.stateIn(
     scope = viewModelScope,

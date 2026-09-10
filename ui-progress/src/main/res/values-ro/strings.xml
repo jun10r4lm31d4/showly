@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tabCalendar">Calendar</string>
-    <string name="tabProgress">Progres</string>
-    <string name="tabHistory">Istoric</string>
-    <string name="textCalendarEmpty">Nu urmează să apară episoade noi.</string>
-    <string name="textRecentsEmpty">Nu există episoade difuzate recent.</string>
-    <string name="textHistoryEmpty">Nu există nimic în istoricul tău.</string>
-    <string name="textOnHold" comment="This is a header for Progress subsection. It will contain pending shows marked by user.">În așteptare</string>
-    <string name="textDiscoverShows">Descoperă emisiuni</string>
-    <string name="textEpisodeInfo">Detalii</string>
-    <string name="textTraktSynchronize">Import din Trakt.tv</string>
-    <string name="textProgressEmpty"><b>Progresul</b> este în prezent gol.\n\nVizitează <b>Descoperă</b> pentru a adăuga seriale sau pentru a importa colecţia Trakt.tv.</string>
-    <string name="textNewSeason">Premiera sezonului</string>
-    <string name="textPremieres">Premiere</string>
+  <string name="tabCalendar">Calendar</string>
+  <string name="tabProgress">Progres</string>
+  <string name="tabHistory">Istoric</string>
+  <string name="textCalendarEmpty">Nu urmează să apară episoade noi.</string>
+  <string name="textRecentsEmpty">Nu există episoade difuzate recent.</string>
+  <string name="textHistoryEmpty">Nu există nimic în istoricul tău.</string>
+  <string
+    name="textOnHold"
+    comment="This is a header for Progress subsection. It will contain pending shows marked by user."
+  >În așteptare</string>
+  <string name="textDiscoverShows">Descoperă emisiuni</string>
+  <string name="textEpisodeInfo">Detalii</string>
+  <string name="textProgressEmpty">
+    <b>Progresul</b> este în prezent gol.\n\nVizitează
+    <b>Descoperă</b> pentru a adăuga seriale sau pentru a importa colecţia Trakt.tv.</string>
+  <string name="textNewSeason">Premiera sezonului</string>
+  <string name="textPremieres">Premiere</string>
 </resources>

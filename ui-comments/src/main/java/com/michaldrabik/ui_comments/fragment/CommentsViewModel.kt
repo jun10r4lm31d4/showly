@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import com.michaldrabik.common.Mode
 import com.michaldrabik.common.errors.ErrorHelper
 import com.michaldrabik.common.errors.ShowlyError
-import com.michaldrabik.repository.UserTraktManager
 import com.michaldrabik.ui_base.dates.DateFormatProvider
 import com.michaldrabik.ui_base.utilities.events.MessageEvent
 import com.michaldrabik.ui_base.utilities.extensions.SUBSCRIBE_STOP_TIMEOUT
@@ -16,7 +15,6 @@ import com.michaldrabik.ui_base.viewmodel.ChannelsDelegate
 import com.michaldrabik.ui_base.viewmodel.DefaultChannelsDelegate
 import com.michaldrabik.ui_comments.R
 import com.michaldrabik.ui_comments.fragment.CommentsFragment.Options
-import com.michaldrabik.ui_comments.fragment.cases.DeleteCommentCase
 import com.michaldrabik.ui_comments.fragment.cases.LoadCommentsCase
 import com.michaldrabik.ui_comments.fragment.cases.LoadRepliesCase
 import com.michaldrabik.ui_model.Comment
@@ -38,8 +36,6 @@ class CommentsViewModel @Inject constructor(
   savedStateHandle: SavedStateHandle,
   private val commentsCase: LoadCommentsCase,
   private val repliesCase: LoadRepliesCase,
-  private val deleteCase: DeleteCommentCase,
-  private val userManager: UserTraktManager,
   private val dateFormatProvider: DateFormatProvider,
 ) : ViewModel(),
   ChannelsDelegate by DefaultChannelsDelegate() {
@@ -58,7 +54,6 @@ class CommentsViewModel @Inject constructor(
 
   private fun loadInitialState() {
     viewModelScope.launch {
-      signedInState.update { userManager.isAuthorized() }
       dateFormatState.update { dateFormatProvider.loadFullHourFormat() }
     }
   }
@@ -136,8 +131,6 @@ class CommentsViewModel @Inject constructor(
         val copy = target.copy(isLoading = true)
         currentComments.findReplace(copy) { it.id == target.id }
         commentsState.value = currentComments
-
-        deleteCase.delete(target)
 
         currentComments = uiState.value.comments?.toMutableList() ?: mutableListOf()
         val targetIndex = currentComments.indexOfFirst { it.id == target.id }

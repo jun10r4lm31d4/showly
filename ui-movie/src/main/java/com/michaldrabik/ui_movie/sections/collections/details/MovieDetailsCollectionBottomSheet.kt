@@ -107,8 +107,6 @@ class MovieDetailsCollectionBottomSheet : BaseBottomSheetFragment(R.layout.view_
       onMissingTranslationListener = viewModel::loadMissingTranslation,
     )
     with(binding.itemsRecycler) {
-      adapter = this@MovieDetailsCollectionBottomSheet.adapter
-      layoutManager = this@MovieDetailsCollectionBottomSheet.layoutManager
       (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
       removeOnScrollListener(recyclerScrollListener)
       addOnScrollListener(recyclerScrollListener)

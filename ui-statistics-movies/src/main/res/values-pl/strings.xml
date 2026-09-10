@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatisticsMovies">Statystyki</string>
-  <string name="textStatisticsMoviesEmpty">Dodaj przynajmniej jeden film do <b>Historii</b>\naby zobaczyć statystyki.</string>
+  <string name="textStatisticsMoviesEmpty">Dodaj przynajmniej jeden film do
+    <b>Historii</b>\naby zobaczyć statystyki.</string>
   <string name="textStatisticsMoviesTotalTimeSpent">Całkowity Czas</string>
   <string name="textStatisticsMoviesTotalTimeItIs">czyli</string>
   <string name="textStatisticsMoviesTotalTimeSpentHours">%s godzin</string>

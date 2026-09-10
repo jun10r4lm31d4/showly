@@ -52,9 +52,6 @@ class MovieContextMenuViewModel @Inject constructor(
 
   fun loadMovie(idTrakt: IdTrakt) {
     viewModelScope.launch {
-      movieId = idTrakt
-      isQuickRemoveEnabled = settingsRepository.load().traktQuickRemoveEnabled
-
       try {
         loadingState.value = true
         val item = loadItemCase.loadItem(idTrakt)

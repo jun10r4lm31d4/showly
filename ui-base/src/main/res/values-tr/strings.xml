@@ -5,16 +5,13 @@
   <string name="textNo">Hayır</string>
   <string name="textApply">Uygula</string>
   <string name="textCancel">İptal</string>
-  <string name="textContinue">Sonraki</string>
-  <string name="textClose">Kapat</string>
+    <string name="textClose">Kapat</string>
   <string name="textShare">Paylaş</string>
   <string name="textNow">Şimdi</string>
-  <string name="textNotNow">Şimdi değil</string>
-  <string name="textReleaseDay">Yayın günü</string>
+    <string name="textReleaseDay">Yayın günü</string>
   <string name="textNew">Yeni</string>
   <string name="textSelect">Seç</string>
-  <string name="textSubmit">Gönder</string>
-  <string name="textHide">Saklamak</string>
+    <string name="textHide">Saklamak</string>
   <string name="textRemove">Kaldır</string>
   <string name="textEmptyResults">Hiçbir sonuç bulunamadı…</string>
   <string name="textSearchFor">Ara</string>
@@ -56,8 +53,7 @@
   <string name="textDirector">Yönetmen</string>
   <string name="textWriting">Yazarlık</string>
   <string name="textScreenplay">Senaryo</string>
-  <string name="textSound">Ses</string>
-  <string name="textMusic">Müzik</string>
+    <string name="textMusic">Müzik</string>
   <string name="textActing">Oyunculuk</string>
   <string name="textAiredAlready">Yayınlandı</string>
   <string name="textAirsNow">Şimdi Yayında</string>
@@ -73,10 +69,6 @@
     <item quantity="one">Şimdi yayında</item>
     <item quantity="other">%d dakika içinde yayında</item>
   </plurals>
-  <plurals name="textTraktQuickSyncComplete">
-    <item quantity="one">1 öge başarıyla eşitlendi.</item>
-    <item quantity="other">%d öge başarıyla senkronize edildi.</item>
-  </plurals>
   <string name="textToday">Bugün</string>
   <string name="textTomorrow">Yarın</string>
   <string name="textThisWeek">Bu Hafta</string>
@@ -84,8 +76,7 @@
   <string name="textThisMonth">Bu Ay</string>
   <string name="textNextMonth">Gelecek Ay</string>
   <string name="textThisYear">Bu Yıl</string>
-  <string name="textNextYear">Gelecek Yıl</string>
-  <string name="textLater">Daha sonra</string>
+    <string name="textLater">Daha sonra</string>
   <string name="textYesterday">Dün</string>
   <string name="textLast7Days">Son 7 Gün</string>
   <string name="textLast30Days">Son 30 Gün</string>
@@ -95,23 +86,10 @@
   <string name="textNewSeasonAvailable">Yeni sezon yayınlandı!</string>
   <string name="textNewSeasonAvailableSoon">Yeni sezon yakında yayınlanacak!</string>
   <string name="textNewMovieAvailable">Film yayınlandı!</string>
-  <string name="textTraktSync">Trakt.tv Eşitlemesi</string>
-  <string name="textTraktSyncComplete">Eşitleme başarıyla tamamlandı.</string>
-  <string name="textTraktSyncRunning">Çalışıyor…</string>
-  <string name="textTraktSyncError">Trakt.tv eşitlemesi başarısız.</string>
-  <string name="textTraktSyncErrorFull">Trakt.tv eşitlemesi başarısız oldu. Lütfen internet bağlantınızı kontrol edin ve tekrar deneyin veya bu sorun devam ederse bizimle iletişime geçin.</string>
-  <string name="textTraktQuickSyncError">Anlık Eşitleme başarısız.</string>
-  <string name="textTraktQuickSyncErrorFull">Anlık Eşitleme başarısız oldu. Uygulamayı bir sonraki başlattığınızda tekrar deneyeceğiz. Lütfen internet bağlantınızı kontrol edin.</string>
-  <string name="textTraktNotificationsRationale">Lütfen uygulamaya senkronizasyon ilerlemesi ve sonuçları hakkında bilgiler göstermesi için izin verin\n\nBunu şimdi yapmak ister misiniz?</string>
-  <string name="textRemoveFromTrakt">Trakt.tv\'den silinsin mi?</string>
-  <string name="textRemoveFromTraktHidden">Bu öğeyi Trakt.tv hesabınızdan \'Gizli\' kaldırmak ister misiniz?</string>
-  <string name="textRemoveFromTraktWatchlist">Bu öğeyi Trakt.tv hesabınızdaki \'Watchlist\' kaldırmak ister misiniz?</string>
-  <string name="textRemoveFromTraktProgress">Bu öğeyi Trakt.tv hesabınızdaki \'İlerleme\'den kaldırmak ister misiniz?</string>
   <string name="textAddToMyShows">Dizilerime Ekle</string>
   <string name="textAddToMyMovies">Geçmişe ekle</string>
   <string name="textAddToWatchlist">İzleme Listesine Ekle</string>
-  <string name="textAddToHidden">Gizlenene Ekle</string>
-  <string name="textMoveToMyShows">Dizilerime Taşı</string>
+    <string name="textMoveToMyShows">Dizilerime Taşı</string>
   <string name="textMoveToMyMovies">Geçmişe taşı</string>
   <string name="textMoveToWatchlist">İzleme Listesine Taşı</string>
   <string name="textMoveToHidden">Gizlenene Taşı</string>
@@ -122,15 +100,18 @@
   <string name="textWatchlist">İstek Listesi</string>
   <string name="textWatchlistIncoming">Yakında</string>
   <string name="textNewAlwaysAtTop">Her zaman önce yeni bölümler</string>
-  <string name="textPremiumAd">Destekçi olun ve bonus özelliklere erişin! Daha fazlasını görmek için dokunun.</string>
   <string name="menuPin">En üste sabitle</string>
   <string name="menuUnpin">Sabitlemeyi kaldır</string>
-  <string name="menuAddOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">\"Beklemeye\" sabitle</string>
-  <string name="menuRemoveOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">\"Beklemeye\" sabitlemeyi kaldır</string>
+  <string
+    name="menuAddOnHold"
+    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
+  >\"Beklemeye\" sabitle</string>
+  <string
+    name="menuRemoveOnHold"
+    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
+  >\"Beklemeye\" sabitlemeyi kaldır</string>
   <string name="errorGeneral">Hay aksi… Bir şeyler ters gitti.\nBu sorun devam ederse lütfen bizimle iletişime geçin.</string>
-  <string name="errorAuthorization">Yetkilendirme başarısız oldu. Bu durum devam ederse lütfen bizimle iletişime geçin.</string>
-  <string name="errorTraktAuthorization">Trakt hesabı yetkilendirmesi başarısız oldu.\nLütfen giriş yapın ve tekrar deneyin.</string>
-  <string name="errorSeasonsNotLoaded">Lütfen sezon verilerinin yüklenmesini bekleyin.</string>
+    <string name="errorSeasonsNotLoaded">Lütfen sezon verilerinin yüklenmesini bekleyin.</string>
   <string name="errorEpisodeNotAired">Bu bölüm henüz yayınlanmadı.</string>
   <string name="errorCouldNotLoadDiscover">Şu anda keşfet sayfasını yükleyemiyoruz.\nBu durum devam ederse lütfen bizimle iletişime geçin.</string>
   <string name="errorMalformedShow">Bu dizi artık Trakt.tv veritabanında yok veya çift girilmiş gibi görünüyor.\n\nUygulamadan da silmek için \'Tamam\'a dokunun.</string>
@@ -139,7 +120,4 @@
   <string name="errorCouldNotLoadMovie">Bu filmin ayrıntılarını şu anda yükleyemiyoruz.\nBu durum devam ederse lütfen bizimle iletişime geçin.</string>
   <string name="errorCouldNotLoadSearchResults">Şu anda arama sonuçlarını yükleyemiyoruz.\nBu durum devam ederse lütfen bizimle iletişime geçin.</string>
   <string name="errorNoInternetConnection">İnternet bağlantısı yok. Lütfen bağlantınızı kontrol edin.</string>
-  <string name="errorTraktSyncGeneral">Trakt.tv eşitleme hatası.\nLütfen internet bağlantınızı kontrol edin ve tekrar deneyin.</string>
-  <string name="errorTraktLocked">Trakt.tv hesabınız şu anda kilitli.\nHesabınızın kilidini açmak için lütfen https://support.trakt.tv/ adresinden Trakt.tv destek ekibi ile iletişime geçin.</string>
-  <string name="errorSubscriptionsNotAvailable">Google Play Abonelikleri bu cihazda kullanılamaz.</string>
 </resources>

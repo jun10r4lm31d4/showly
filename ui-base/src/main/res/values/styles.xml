@@ -124,11 +124,7 @@
 
   <!-- Toolbar -->
 
-  <style name="Toolbar.Button.Navigation.Tinted" parent="Widget.AppCompat.Toolbar.Button.Navigation">
-    <item name="tint">?android:attr/textColorPrimary</item>
-  </style>
-
-  <style name="AlertDialog.SmallText" parent="AlertDialog">
+    <style name="AlertDialog.SmallText" parent="AlertDialog">
     <item name="android:textSize">13sp</item>
   </style>
 
@@ -143,13 +139,7 @@
     <item name="android:ellipsize">end</item>
   </style>
 
-  <style name="ImageTitleGrid" parent="ImageTitle">
-    <item name="android:shadowColor">@color/colorBlack</item>
-    <item name="android:textColor">?attr/textColorGridTitle</item>
-    <item name="android:ellipsize">end</item>
-  </style>
-
-  <style name="ScrollableTabsStyle" parent="Widget.Design.TabLayout">
+    <style name="ScrollableTabsStyle" parent="Widget.Design.TabLayout">
     <item name="tabMode">scrollable</item>
     <item name="tabIndicatorColor">@color/colorAccent</item>
     <item name="tabPaddingStart">8dp</item>
@@ -400,7 +390,4 @@
     <item name="android:textColor">?android:textColorPrimary</item>
   </style>
 
-  <style name="ShowlyTimePicker.Button.Negative" parent="Widget.MaterialComponents.Button.TextButton">
-    <item name="android:textColor">?android:textColorSecondary</item>
-  </style>
 </resources>

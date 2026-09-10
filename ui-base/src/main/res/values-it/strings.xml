@@ -8,12 +8,10 @@
   <string name="textClose">Chiudi</string>
   <string name="textShare">Condividi</string>
   <string name="textNow">Adesso</string>
-  <string name="textNotNow">Non Ora</string>
-  <string name="textReleaseDay">Giorno di uscita</string>
+    <string name="textReleaseDay">Giorno di uscita</string>
   <string name="textNew">Nuovo</string>
   <string name="textSelect">Seleziona</string>
-  <string name="textSubmit">Invia</string>
-  <string name="textHide">Nascondi</string>
+    <string name="textHide">Nascondi</string>
   <string name="textRemove">Rimuovi</string>
   <string name="textEmptyResults">Non ci sono risultati...</string>
   <string name="textSearchFor">Cerca</string>
@@ -50,13 +48,12 @@
     <item quantity="one">Ancora %d</item>
     <item quantity="other">Ancora %d</item>
   </plurals>
-  <string name="textPeople">Attori &amp; troupe</string>
+  <string name="textPeople"><![CDATA[Attori & troupe]]></string>
   <string name="textDirecting">Regia</string>
   <string name="textDirector">Regista</string>
   <string name="textWriting">Scrittura</string>
   <string name="textScreenplay">Sceneggiatura</string>
-  <string name="textSound">Suono</string>
-  <string name="textMusic">Musica</string>
+    <string name="textMusic">Musica</string>
   <string name="textActing">Recitazione</string>
   <string name="textAiredAlready">Trasmesso</string>
   <string name="textAirsNow">Trasmesso ora</string>
@@ -72,10 +69,6 @@
     <item quantity="one">Trasmesso ora</item>
     <item quantity="other">Trasmesso tra %d minuti</item>
   </plurals>
-  <plurals name="textTraktQuickSyncComplete">
-    <item quantity="one">1 elemento sincronizzato correttamente.</item>
-    <item quantity="other">%d elementi sincronizzati correttamente.</item>
-  </plurals>
   <string name="textToday">Oggi</string>
   <string name="textTomorrow">Domani</string>
   <string name="textThisWeek">Questa settimana</string>
@@ -83,8 +76,7 @@
   <string name="textThisMonth">Questo mese</string>
   <string name="textNextMonth">Il mese prossimo</string>
   <string name="textThisYear">Quest\'anno</string>
-  <string name="textNextYear">L\'anno prossimo</string>
-  <string name="textLater">Più avanti</string>
+    <string name="textLater">Più avanti</string>
   <string name="textYesterday">Ieri</string>
   <string name="textLast7Days">Ultimi 7 giorni</string>
   <string name="textLast30Days">Ultimi 30 giorni</string>
@@ -94,23 +86,10 @@
   <string name="textNewSeasonAvailable">Nuova stagione disponibile ora!</string>
   <string name="textNewSeasonAvailableSoon">Nuova stagione disponibile a breve!</string>
   <string name="textNewMovieAvailable">Il film è uscito!</string>
-  <string name="textTraktSync">Sincronizzazione Trakt.tv</string>
-  <string name="textTraktSyncComplete">Sincronizzazione completata correttamente.</string>
-  <string name="textTraktSyncRunning">Eseguo...</string>
-  <string name="textTraktSyncError">Sincronizzazione Trakt.tv fallita.</string>
-  <string name="textTraktSyncErrorFull">Sincronizzazione Trakt.tv fallita. Per favore controlla la tua connessione internet e riprova oppure contattaci se il problema persiste.</string>
-  <string name="textTraktQuickSyncError">Sincronizzazione istantanea fallita.</string>
-  <string name="textTraktQuickSyncErrorFull">Sincronizzazione istantanea fallita. Per favore controlla la tua connessione internet e riprova oppure contattaci se il problema persiste.</string>
-  <string name="textTraktNotificationsRationale">È necessario concedere all\'applicazione il permesso di visualizzare le informazioni sui progressi e i risultati della sincronizzazione.\n\nVuoi farlo ora?</string>
-  <string name="textRemoveFromTrakt">Rimuovere da Trakt.tv?</string>
-  <string name="textRemoveFromTraktHidden">Vuoi rimuovere questo elemento dagli \"Elementi nascosti\" del tuo account Trakt.tv?</string>
-  <string name="textRemoveFromTraktWatchlist">Vuoi rimuovere questo elemento dalla lista \"Da vedere\" del tuo account Trakt.tv?</string>
-  <string name="textRemoveFromTraktProgress">Vuoi rimuovere questo elemento dai \"Progressi\" del tuo account Trakt.tv?</string>
   <string name="textAddToMyShows">Aggiungi a I miei show</string>
   <string name="textAddToMyMovies">Aggiungi alla cronologia</string>
   <string name="textAddToWatchlist">Aggiungi alla lista Da vedere</string>
-  <string name="textAddToHidden">Aggiungi a Nascosti</string>
-  <string name="textMoveToMyShows">Sposta in I miei show</string>
+    <string name="textMoveToMyShows">Sposta in I miei show</string>
   <string name="textMoveToMyMovies">Sposta nella cronologia</string>
   <string name="textMoveToWatchlist">Sposta nella lista Da vedere</string>
   <string name="textMoveToHidden">Sposta in Nascosti</string>
@@ -121,15 +100,18 @@
   <string name="textWatchlist">Da vedere</string>
   <string name="textWatchlistIncoming">In arrivo</string>
   <string name="textNewAlwaysAtTop">I nuovi episodi sempre per primi</string>
-  <string name="textPremiumAd">Diventa un sostenitore e ottieni l\'accesso alle funzionalità bonus! Clicca per saperne di più.</string>
   <string name="menuPin">Fissa in cima</string>
   <string name="menuUnpin">Rimuovi</string>
-  <string name="menuAddOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Aggiungi a \'In pausa\'</string>
-  <string name="menuRemoveOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Togli da \'In pausa\'</string>
+  <string
+    name="menuAddOnHold"
+    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
+  >Aggiungi a \'In pausa\'</string>
+  <string
+    name="menuRemoveOnHold"
+    comment="This is a button for Progress subsection. It will contain pending shows marked by user."
+  >Togli da \'In pausa\'</string>
   <string name="errorGeneral">Oops... Qualcosa è andato storto.\nPer favore contattaci se il problema persiste.</string>
-  <string name="errorAuthorization">Autorizzazione fallita. Per favore contattaci se il problema persiste.</string>
-  <string name="errorTraktAuthorization">Autorizzazione account Trakt fallita.\nPer favore accedi e prova di nuovo.</string>
-  <string name="errorSeasonsNotLoaded">Per favore attendi che i dati delle stagione siano scaricati.</string>
+    <string name="errorSeasonsNotLoaded">Per favore attendi che i dati delle stagione siano scaricati.</string>
   <string name="errorEpisodeNotAired">Questo episodio non è ancora stato trasmesso.</string>
   <string name="errorCouldNotLoadDiscover">Non siamo riusciti a caricare la pagina scopri.\nPer favore contattaci se il problema persiste.</string>
   <string name="errorMalformedShow">Sembra che questo show non sia più presente nel database di Trakt.tv oppure è un duplicato.\n\nPremi \"OK\" per rimuoverlo dall\'app.</string>
@@ -138,7 +120,4 @@
   <string name="errorCouldNotLoadMovie">Non siamo riusciti a scaricare i dettagli del film.\nPer favore contattaci se il problema persiste.</string>
   <string name="errorCouldNotLoadSearchResults">Non siamo riusciti a caricare i risultati di ricerca.\nPer favore contattaci se il problema persiste.</string>
   <string name="errorNoInternetConnection">Nessuna connessione. Per favore controlla la tua connessione internet.</string>
-  <string name="errorTraktSyncGeneral">Errore sincronizzazione Trakt.tv .\nPer favore controlla la tua connessione internet e prova di nuovo.</string>
-  <string name="errorTraktLocked">Il tuo account Trakt.tv è bloccato.\nPer favore contatta il supporto di Trakt.tv al link https://support.trakt.tv/ per sbloccare il tuo account.</string>
-  <string name="errorSubscriptionsNotAvailable">Gli abbonamenti tramite Google Play non sono disponibili su questo dispositivo.</string>
 </resources>

@@ -22,7 +22,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.withContext
 
-abstract class CalendarMoviesItemsCase constructor(
+abstract class CalendarMoviesItemsCase(
   private val dispatchers: CoroutineDispatchers,
   private val moviesRepository: MoviesRepository,
   private val translationsRepository: TranslationsRepository,

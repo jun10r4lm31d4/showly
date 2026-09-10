@@ -5,10 +5,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.work.WorkManager
 import com.michaldrabik.common.Config
 import com.michaldrabik.repository.TranslationsRepository
-import com.michaldrabik.repository.UserTraktManager
 import com.michaldrabik.repository.images.MovieImagesProvider
 import com.michaldrabik.repository.settings.SettingsRepository
-import com.michaldrabik.ui_base.trakt.TraktSyncWorker
 import com.michaldrabik.ui_base.utilities.events.Event
 import com.michaldrabik.ui_base.utilities.extensions.SUBSCRIBE_STOP_TIMEOUT
 import com.michaldrabik.ui_base.utilities.extensions.findReplace
@@ -42,7 +40,6 @@ class ProgressMoviesViewModel @Inject constructor(
   private val sortCase: ProgressMoviesSortCase,
   private val pinnedCase: ProgressMoviesPinnedCase,
   private val imagesProvider: MovieImagesProvider,
-  private val userTraktManager: UserTraktManager,
   private val workManager: WorkManager,
   private val settingsRepository: SettingsRepository,
   private val translationsRepository: TranslationsRepository,
@@ -89,7 +86,6 @@ class ProgressMoviesViewModel @Inject constructor(
       val items = itemsCase.loadItems(searchQuery ?: "")
       itemsState.value = items
       scrollState.value = Event(resetScroll)
-      overscrollState.value = userTraktManager.isAuthorized() && items.isNotEmpty()
       eventChannel.send(RequestWidgetsUpdate)
     }
   }
@@ -140,15 +136,6 @@ class ProgressMoviesViewModel @Inject constructor(
       pinnedCase.addPinnedItem(item.movie)
     }
     loadItems(resetScroll = item.isPinned)
-  }
-
-  fun startTraktSync() {
-    TraktSyncWorker.scheduleOneOff(
-      workManager,
-      isImport = true,
-      isExport = true,
-      isSilent = false,
-    )
   }
 
   private fun updateItem(newItem: ProgressMovieListItem.MovieItem) {

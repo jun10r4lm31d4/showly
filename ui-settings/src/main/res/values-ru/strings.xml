@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textTraktLoginSuccess">Вы успешно авторизовались.</string>
-  <string name="textTraktLogoutSuccess">Вы вышли.</string>
-  <string name="textImagesCacheCleared">Кэш изображений был очищен.</string>
-  <string name="textTurnOff">Выключить</string>
-  <string name="textSettings">Настройки</string>
-  <string name="textSettingsTrakt">Trakt.tv</string>
-  <string name="textSettingsTraktAuthorizeTitle">Авторизация Trakt.tv</string>
-  <string name="textSettingsTraktAuthorizeSummarySignIn">Нажмите, чтобы войти в свой аккаунт Trakt.tv.</string>
-  <string name="textSettingsTraktAuthorizeSummarySignOut">Вход выполнен. Нажмите, чтобы выйти.</string>
-  <string name="textSettingsTraktAuthorizeSummarySignOutUser">Вы вошли как %1$s. Нажмите, чтобы выйти.</string>
-  <string name="textSettingsTraktSyncTitle">Синхронизация Trakt.tv</string>
-  <string name="textSettingsTraktSyncSummary">Синхронизация данных между Trakt.tv и Showly.</string>
-  <string name="textSettingsTraktQuickSyncTitle">Мгновенная загрузка Trakt.tv</string>
-  <string name="textSettingsTraktQuickSyncSummary">Мгновенная загрузка данных в Trakt.tv после добавления их в приложении.</string>
-  <string name="textSettingsTraktQuickRemoveTitle">Удаление данных из Trakt.tv</string>
-  <string name="textSettingsTraktQuickRemoveSummary">Предложение удалить данные с вашего аккаунта Trakt.tv после удаления их в приложении.</string>
-  <string name="textSettingsTraktQuickRateTitle">Быстрый рейтинг Trakt.tv</string>
-  <string name="textSettingsTraktQuickRateSummary">Оцените эпизоды и фильмы, когда вы помечаете их как просмотренные на экране «Прогресс».</string>
-  <string name="textSettingsGeneral">Общие &amp; UX</string>
+    <string name="textImagesCacheCleared">Кэш изображений был очищен.</string>
+    <string name="textSettings">Настройки</string>
+    <string name="textSettingsGeneral"><![CDATA[Общие & UX]]></string>
   <string name="textSettingsRecentShowsTitle">Количество недавно добавленных</string>
   <string name="textSettingsRecentShowsSummary">Количество недавно добавленных для отображения в \'Коллекциях\'.</string>
   <string name="textSettingsUpcomingSectionTitle">Секция Предстоящие</string>
@@ -47,11 +31,7 @@
   <string name="textSettingsRateAppSummary">Понравилось Showly? Оставьте свой отзыв в PlayStore. Спасибо!</string>
   <string name="textSettingsDeleteCacheTitle">Очистить кеш изображений</string>
   <string name="textSettingsDeleteCacheSummary">Нажмите, чтобы очистить кэш локальных изображений. Это может помочь, если изображения загружаются некорректно.</string>
-  <string name="textSettingsQuickSyncConfirmationTitle">Отключить автоматическую синхронизацию</string>
-  <string name="textSettingsQuickSyncConfirmationMessage">\nпохоже, автоматическая синхронизация уже включена.\n\nХотите отключить ее перед включением мгновенной синхронизации (рекомендуется)?\n</string>
-  <string name="textSettingsLogoutTitle">Выход из Trakt.tv</string>
-  <string name="textSettingsLogoutMessage">\nВы уверены, что хотите выйти?\n</string>
-  <string name="textSettingsMoviesEnabledTitle">Фильмы</string>
+    <string name="textSettingsMoviesEnabledTitle">Фильмы</string>
   <string name="textSettingsMoviesEnabledSummary">Включить/отключить поддержку фильмов. Приложение будет перезапущено.</string>
   <string name="textSettingsWidgets">Виджеты</string>
   <string name="textSettingsWidgetsLabelsTitle">Названия</string>
@@ -61,8 +41,7 @@
   <string name="textSettingsStreamingServicesMessage">Отображать данные потоковых служб.</string>
   <string name="textSettingsProgressNextEpisodeTitle">Следующая серия</string>
   <string name="textSettingsProgressNextEpisodeMessage">Вычислить следующий эпизод с помощью:</string>
-  <string name="textSettingsDateSelectionTitle">Выбор даты</string>
-  <string name="textSettingsDateSelectionMessage">Выберите опцию выбора даты по умолчанию.</string>
+    <string name="textSettingsDateSelectionMessage">Выберите опцию выбора даты по умолчанию.</string>
   <string name="textSettingsTabletColumnsTitle">Число колонок списков</string>
   <string name="textSettingsTabletColumnsSummary">Выберите предпочтительный номер столбцов для списков.</string>
   <string name="textSettingsBackup">Резервное копирование и восстановление</string>
@@ -74,37 +53,55 @@
   <string name="textSettingsSpoilersShows">Сериалы</string>
   <string name="textSettingsSpoilersShowsSummary">Управление настройками спойлеров для сериалов.</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">Мои сериалы</string>
-  <string name="textSettingsSpoilersShowsOverviewsMyDescription">Скрыть <b>описание</b> сериалов, добавленных в Мои сериалы</string>
-  <string name="textSettingsSpoilersShowsRatingsMyDescription">Скрыть <b>рейтинг</b> сериалов, добавленных в Мои сериалы</string>
+  <string name="textSettingsSpoilersShowsOverviewsMyDescription">Скрыть
+    <b>описание</b> сериалов, добавленных в Мои сериалы</string>
+  <string name="textSettingsSpoilersShowsRatingsMyDescription">Скрыть
+    <b>рейтинг</b> сериалов, добавленных в Мои сериалы</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">Буду смотреть</string>
-  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Скрыть <b>описание</b> сериалов, добавленных в Хочу посмотреть</string>
-  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Скрыть <b>рейтинг</b> сериалов, добавленных в Хочу посмотреть</string>
+  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Скрыть
+    <b>описание</b> сериалов, добавленных в Хочу посмотреть</string>
+  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Скрыть
+    <b>рейтинг</b> сериалов, добавленных в Хочу посмотреть</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Скрытое</string>
-  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Скрыть <b>описание</b> сериалов, добавленных в Скрытое</string>
-  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Скрыть <b>рейтинг</b> сериалов, добавленных в Скрытое</string>
+  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Скрыть
+    <b>описание</b> сериалов, добавленных в Скрытое</string>
+  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Скрыть
+    <b>рейтинг</b> сериалов, добавленных в Скрытое</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">Не в коллекции</string>
-  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Скрыть <b>описание</b> сериалов, которых нет в Коллекции</string>
-  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Скрыть <b>рейтинг</b> сериалов, которых нет в Коллекции</string>
+  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Скрыть
+    <b>описание</b> сериалов, которых нет в Коллекции</string>
+  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Скрыть
+    <b>рейтинг</b> сериалов, которых нет в Коллекции</string>
   <string name="textSettingsSpoilersMovies">Фильмы</string>
   <string name="textSettingsSpoilersMoviesSummary">Управление настройками спойлеров для фильмов.</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyTitle">История</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Скрыть описание фильмов, добавленных в историю</string>
   <string name="textSettingsSpoilersMoviesRatingsMyDescription">Скрыть оценку фильмов, добавленных в историю</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">Буду смотреть</string>
-  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Скрыть <b>описание</b> фильмов, добавленных в Хочу посмотреть</string>
-  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Скрыть <b>рейтинг</b> фильмов, добавленных в Хочу посмотреть</string>
+  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Скрыть
+    <b>описание</b> фильмов, добавленных в Хочу посмотреть</string>
+  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Скрыть
+    <b>рейтинг</b> фильмов, добавленных в Хочу посмотреть</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Скрытое</string>
-  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Скрыть <b>описание</b> фильмов, добавленных в Скрытое</string>
-  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Скрыть <b>рейтинг</b> фильмов, добавленных в Скрытое</string>
+  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Скрыть
+    <b>описание</b> фильмов, добавленных в Скрытое</string>
+  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Скрыть
+    <b>рейтинг</b> фильмов, добавленных в Скрытое</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">Не в коллекции</string>
-  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Скрыть <b>описание</b> фильмов, которых нет в Коллекции</string>
-  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Скрыть <b>рейтинг</b> фильмов, которых нет в Коллекции</string>
+  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Скрыть
+    <b>описание</b> фильмов, которых нет в Коллекции</string>
+  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Скрыть
+    <b>рейтинг</b> фильмов, которых нет в Коллекции</string>
   <string name="textSettingsSpoilersEpisodes">Эпизоды</string>
   <string name="textSettingsSpoilersEpisodesSummary">Управление настройками спойлеров для серий.</string>
-  <string name="textSettingsSpoilersEpisodesImage">Скрыть <b>изображения</b> непросмотренных эпизодов.</string>
-  <string name="textSettingsSpoilersEpisodesTitle">Скрыть <b>название</b> из непросмотренных эпизодов.</string>
-  <string name="textSettingsSpoilersEpisodesDescription">Скрыть <b>описание</b> непросмотренных эпизодов.</string>
-  <string name="textSettingsSpoilersEpisodesRating">Скрыть <b>рейтинг </b> непросмотренных эпизодов.</string>
+  <string name="textSettingsSpoilersEpisodesImage">Скрыть
+    <b>изображения</b> непросмотренных эпизодов.</string>
+  <string name="textSettingsSpoilersEpisodesTitle">Скрыть
+    <b>название</b> из непросмотренных эпизодов.</string>
+  <string name="textSettingsSpoilersEpisodesDescription">Скрыть
+    <b>описание</b> непросмотренных эпизодов.</string>
+  <string name="textSettingsSpoilersEpisodesRating">Скрыть
+    <b>рейтинг</b> непросмотренных эпизодов.</string>
   <string name="textSettingsSpoilersTapToRevealTitle">Нажмите, чтобы показать</string>
   <string name="textSettingsSpoilersTapToRevealDescription">Нажмите на скрытый контент, чтобы временно его отобразить.</string>
   <string name="textNextEpisodeLastWatched">Последняя просмотренная серия</string>
@@ -112,7 +109,5 @@
   <string name="textDateSelectionAsk">Всегда спрашивать</string>
   <string name="textDateSelectionNow">Всегда «Сейчас»</string>
   <string name="textThemeDark">Темная</string>
-  <string name="textThemeLight">Светлая</string>
-  <string name="textThemeSystem">Системная</string>
-  <string name="textTransparency100">Непрозрачная</string>
+    <string name="textTransparency100">Непрозрачная</string>
 </resources>

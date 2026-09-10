@@ -29,9 +29,6 @@ data class Settings(
   @ColumnInfo(name = "discover_filter_genres", defaultValue = "") val discoverFilterGenres: String,
   @ColumnInfo(name = "discover_filter_networks", defaultValue = "") val discoverFilterNetworks: String,
   @ColumnInfo(name = "discover_filter_feed", defaultValue = "HOT") val discoverFilterFeed: String,
-  @ColumnInfo(name = "trakt_sync_schedule", defaultValue = "OFF") val traktSyncSchedule: String,
-  @ColumnInfo(name = "trakt_quick_sync_enabled", defaultValue = "0") val traktQuickSyncEnabled: Boolean,
-  @ColumnInfo(name = "trakt_quick_remove_enabled", defaultValue = "0") val traktQuickRemoveEnabled: Boolean,
   @ColumnInfo(name = "watchlist_sort_by", defaultValue = "NAME") val watchlistSortBy: String,
   @ColumnInfo(name = "archive_shows_sort_by", defaultValue = "NAME") val archiveShowsSortBy: String,
   @ColumnInfo(name = "archive_shows_include_statistics", defaultValue = "1") val archiveShowsIncludeStatistics: Boolean,
@@ -46,7 +43,6 @@ data class Settings(
   @ColumnInfo(name = "show_collection_movies", defaultValue = "1") val showCollectionMovies: Boolean,
   @ColumnInfo(name = "widgets_show_label", defaultValue = "1") val widgetsShowLabel: Boolean,
   @ColumnInfo(name = "my_movies_recent_is_enabled", defaultValue = "1") val myMoviesRecentIsEnabled: Boolean,
-  @ColumnInfo(name = "quick_rate_enabled", defaultValue = "0") val quickRateEnabled: Boolean,
   @ColumnInfo(name = "lists_sort_by", defaultValue = "DATE_UPDATED") val listsSortBy: String,
   @ColumnInfo(name = "progress_upcoming_enabled", defaultValue = "1") val progressUpcomingEnabled: Boolean,
 )

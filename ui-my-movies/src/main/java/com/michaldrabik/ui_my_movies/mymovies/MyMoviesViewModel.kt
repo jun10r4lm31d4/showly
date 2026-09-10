@@ -7,9 +7,6 @@ import com.michaldrabik.repository.settings.SettingsRepository
 import com.michaldrabik.ui_base.common.ListViewMode
 import com.michaldrabik.ui_base.events.EventsManager
 import com.michaldrabik.ui_base.events.ReloadData
-import com.michaldrabik.ui_base.events.TraktSyncAuthError
-import com.michaldrabik.ui_base.events.TraktSyncError
-import com.michaldrabik.ui_base.events.TraktSyncSuccess
 import com.michaldrabik.ui_base.utilities.events.Event
 import com.michaldrabik.ui_base.utilities.extensions.SUBSCRIBE_STOP_TIMEOUT
 import com.michaldrabik.ui_base.utilities.extensions.findReplace
@@ -230,9 +227,6 @@ class MyMoviesViewModel @Inject constructor(
 
   private fun onEvent(event: EventSync) =
     when (event) {
-      is TraktSyncSuccess -> loadMovies()
-      is TraktSyncError -> loadMovies()
-      is TraktSyncAuthError -> loadMovies()
       is ReloadData -> loadMovies()
       else -> Unit
     }

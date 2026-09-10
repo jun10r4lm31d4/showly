@@ -6,5 +6,4 @@ data class MovieDetailsMeta(
   val dateFormat: DateTimeFormatter,
   val commentsDateFormat: DateTimeFormatter,
   val watchedAtDateFormat: DateTimeFormatter,
-  val isSignedIn: Boolean,
 )

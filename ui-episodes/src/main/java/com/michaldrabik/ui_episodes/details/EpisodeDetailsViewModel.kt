@@ -9,7 +9,6 @@ import com.michaldrabik.common.errors.ShowlyError.ResourceConflictError
 import com.michaldrabik.repository.CommentsRepository
 import com.michaldrabik.repository.RatingsRepository
 import com.michaldrabik.repository.TranslationsRepository
-import com.michaldrabik.repository.UserTraktManager
 import com.michaldrabik.repository.images.EpisodeImagesProvider
 import com.michaldrabik.repository.settings.SettingsSpoilersRepository
 import com.michaldrabik.ui_base.dates.DateFormatProvider
@@ -53,7 +52,6 @@ class EpisodeDetailsViewModel @Inject constructor(
   private val ratingsRepository: RatingsRepository,
   private val translationsRepository: TranslationsRepository,
   private val commentsRepository: CommentsRepository,
-  private val userTraktManager: UserTraktManager,
 ) : ViewModel(),
   ChannelsDelegate by DefaultChannelsDelegate() {
 
@@ -147,18 +145,12 @@ class EpisodeDetailsViewModel @Inject constructor(
       try {
         commentsLoadingState.value = true
 
-        val isSignedIn = userTraktManager.isAuthorized()
-        val username = userTraktManager.getUsername()
         val comments = commentsRepository
           .loadEpisodeComments(idTrakt, season, episode)
           .map {
-            it.copy(
-              isMe = it.user.username == username,
-              isSignedIn = isSignedIn,
-            )
+            it.copy()
           }.partition { it.isMe }
 
-        signedInState.value = isSignedIn
         commentsState.value = comments.first + comments.second
         commentsLoadingState.value = false
         commentsDateFormatState.value = dateFormatProvider.loadFullHourFormat()
@@ -195,15 +187,10 @@ class EpisodeDetailsViewModel @Inject constructor(
           commentsState.value = current
         }
 
-        val isSignedIn = userTraktManager.isAuthorized()
-        val username = userTraktManager.getUsername()
         val replies = commentsRepository
           .loadReplies(comment.id)
           .map {
-            it.copy(
-              isSignedIn = isSignedIn,
-              isMe = it.user.username == username,
-            )
+            it.copy()
           }
 
         current = uiState.value.comments?.toMutableList() ?: mutableListOf()
@@ -244,8 +231,6 @@ class EpisodeDetailsViewModel @Inject constructor(
         val copy = target.copy(isLoading = true)
         current.findReplace(copy) { it.id == target.id }
         commentsState.value = current
-
-        commentsRepository.deleteComment(target.id)
 
         current = uiState.value.comments?.toMutableList() ?: mutableListOf()
         val targetIndex = current.indexOfFirst { it.id == target.id }

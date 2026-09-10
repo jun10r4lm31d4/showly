@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatisticsMovies">Tilastot</string>
-  <string name="textStatisticsMoviesEmpty"><b>Historiassa</b> on oltava ainakin yksi\nelokuva ennen kuin tilastoja voidaan näyttää.</string>
+  <string name="textStatisticsMoviesEmpty">
+    <b>Historiassa</b> on oltava ainakin yksi\nelokuva ennen kuin tilastoja voidaan näyttää.</string>
   <string name="textStatisticsMoviesTotalTimeSpent">Kokonaiskatseluaika on</string>
   <string name="textStatisticsMoviesTotalTimeItIs">joka on</string>
   <string name="textStatisticsMoviesTotalTimeSpentHours">%s tuntia</string>

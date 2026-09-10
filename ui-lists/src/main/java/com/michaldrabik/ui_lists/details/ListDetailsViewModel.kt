@@ -68,7 +68,6 @@ class ListDetailsViewModel @Inject constructor(
       listItemsState.value = listItems
       manageModeState.value = false
       filtersVisibleState.value = totalCount > 0
-      quickRemoveState.value = mainCase.isQuickRemoveEnabled(list)
 
       val tip = Tip.LIST_ITEM_SWIPE_DELETE
       if (listItems.isNotEmpty() && !tipsCase.isTipShown(tip)) {
@@ -184,16 +183,10 @@ class ListDetailsViewModel @Inject constructor(
     }
   }
 
-  fun deleteList(
-    listId: Long,
-    removeFromTrakt: Boolean,
-  ) {
+  fun deleteList(listId: Long) {
     viewModelScope.launch {
       try {
-        if (removeFromTrakt) {
-          loadingState.value = true
-        }
-        mainCase.deleteList(listId, removeFromTrakt)
+        mainCase.deleteList(listId)
         loadingState.value = false
         listDeleteState.value = Event(true)
       } catch (error: Throwable) {

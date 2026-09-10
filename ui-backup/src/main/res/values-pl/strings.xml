@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore">Import &amp; eksport</string>
+  <string name="textBackupAndRestore"><![CDATA[Import & eksport]]></string>
   <string name="textBackupExport">Eksportuj dane</string>
   <string name="textBackupExportDescription">Eksportuj swoje dane, aby utworzyć kopię zapasową lub przenieść je na nowe urządzenie.</string>
   <string name="textBackupImport">Importuj dane</string>

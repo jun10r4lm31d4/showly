@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatistics">Tilastot</string>
-  <string name="textStatisticsEmpty"><b>Omissa sarjoissa</b> on oltava ainakin\nyksi sarja ennen kuin tilastoja voidaan näyttää.</string>
+  <string name="textStatisticsEmpty">
+    <b>Omissa sarjoissa</b> on oltava ainakin\nyksi sarja ennen kuin tilastoja voidaan näyttää.</string>
   <string name="textStatisticsMostWatchedShows">Katsotuimmat sarjat</string>
   <string name="textStatisticsTotalTimeSpent">Kokonaiskatseluaika on</string>
   <string name="textStatisticsTotalTimeItIs">joka on</string>

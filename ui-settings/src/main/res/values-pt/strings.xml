@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textTraktLoginSuccess">Você foi autorizado com sucesso.</string>
-    <string name="textTraktVipLoginSuccess">Você foi autorizado com sucesso. Como um Trakt VIP, você agora pode usar todos os recursos do Showly Premium de graça!</string>
-  <string name="textTraktLogoutSuccess">Você foi desconectado.</string>
-  <string name="textImagesCacheCleared">O cache foi liberado.</string>
-  <string name="textTurnOff">Desativar</string>
-  <string name="textSettings">Configurações</string>
-  <string name="textSettingsTrakt">Trakt.tv</string>
-  <string name="textSettingsTraktAuthorizeTitle">Autorização de Trakt.tv</string>
-  <string name="textSettingsTraktAuthorizeSummarySignIn">Clique para entrar na sua conta Trakt.tv.</string>
-  <string name="textSettingsTraktAuthorizeSummarySignOut">Conectado. Clique para sair.</string>
-  <string name="textSettingsTraktAuthorizeSummarySignOutUser">Conectado como %1$s. Clique para sair.</string>
-  <string name="textSettingsTraktSyncTitle">Sincronizar Trakt.tv</string>
-  <string name="textSettingsTraktSyncSummary">Sincronizar dados entre Trakt.tv e Showly.</string>
-  <string name="textSettingsTraktQuickSyncTitle">Envio instantâneo de Trakt.tv</string>
-  <string name="textSettingsTraktQuickSyncSummary">Envie instantaneamente dados para Trakt.tv depois de adicioná-los no aplicativo.</string>
-  <string name="textSettingsTraktQuickRemoveTitle">Remoção de Dados Trakt.tv</string>
-  <string name="textSettingsTraktQuickRemoveSummary">Ofereça-se para remover dados da sua conta Trakt.tv após removê-los do aplicativo.</string>
-  <string name="textSettingsTraktQuickRateTitle">Avaliação rápida do Trakt.tv</string>
-  <string name="textSettingsTraktQuickRateSummary">Avalie episódios e filmes sempre que você marcá-los como assistidos na tela \'Progresso\'.</string>
-  <string name="textSettingsGeneral">Geral &amp; UX</string>
+    <string name="textImagesCacheCleared">O cache foi liberado.</string>
+    <string name="textSettings">Configurações</string>
+    <string name="textSettingsGeneral"><![CDATA[Geral & UX]]></string>
   <string name="textSettingsRecentShowsTitle">Quantidade adicionada recentemente</string>
   <string name="textSettingsRecentShowsSummary">Número de itens recentes a serem exibidos em \'Coleção\'.</string>
   <string name="textSettingsUpcomingSectionTitle">Próximos</string>
@@ -48,11 +31,7 @@
   <string name="textSettingsRateAppSummary">Gostando do Showly? Nos envie uma avaliação na PlayStore. Obrigado!</string>
   <string name="textSettingsDeleteCacheTitle">Limpar cache de imagens</string>
   <string name="textSettingsDeleteCacheSummary">Clique para limpar o cache de imagens locais. Isso pode ajudar se imagens não estão sendo carregadas corretamente.</string>
-  <string name="textSettingsQuickSyncConfirmationTitle">Desativar a sincronização automática</string>
-  <string name="textSettingsQuickSyncConfirmationMessage">\nParece que a sincronização automática já está ativada.\n\nVocê gostaria de desativá-la antes de ativar a sincronização instantânea (recomendada)?\n</string>
-  <string name="textSettingsLogoutTitle">Trakt.tv Sair</string>
-  <string name="textSettingsLogoutMessage">\nTem certeza de que quer sair?\n</string>
-  <string name="textSettingsMoviesEnabledTitle">Filmes</string>
+    <string name="textSettingsMoviesEnabledTitle">Filmes</string>
   <string name="textSettingsMoviesEnabledSummary">Ativar/desativar o suporte a filmes. O aplicativo reiniciará.</string>
   <string name="textSettingsWidgets">Widgets</string>
   <string name="textSettingsWidgetsLabelsTitle">Títulos</string>
@@ -62,50 +41,69 @@
   <string name="textSettingsStreamingServicesMessage">Exibir dados de serviços de streaming.</string>
   <string name="textSettingsProgressNextEpisodeTitle">Próximo Episódio</string>
   <string name="textSettingsProgressNextEpisodeMessage">Calcular próximo episódio usando:</string>
-  <string name="textSettingsDateSelectionTitle">Seleção de Data</string>
-  <string name="textSettingsDateSelectionMessage">Selecione a opção de seleção de data padrão.</string>
+    <string name="textSettingsDateSelectionMessage">Selecione a opção de seleção de data padrão.</string>
   <string name="textSettingsTabletColumnsTitle">Número das colunas das listas</string>
   <string name="textSettingsTabletColumnsSummary">Selecione o número desejado de colunas para as listas.</string>
-  <string name="textSettingsBackup">Backup &amp; restauração</string>
+  <string name="textSettingsBackup"><![CDATA[Backup & restauração]]></string>
   <string name="textSettingsBackupExportTitle">Exportar</string>
-    <string name="textSettingsBackupExportDescription">Exporte seus dados para criar um backup ou transferi-los para um novo dispositivo.</string>
+  <string name="textSettingsBackupExportDescription">Exporte seus dados para criar um backup ou transferi-los para um novo dispositivo.</string>
   <string name="textSettingsBackupImportTitle">Importar</string>
   <string name="textSettingsBackupImportDescription">Importe seu arquivo de backup para restaurar dados neste dispositivo.</string>
   <string name="textSettingsSpoilers">Spoilers</string>
   <string name="textSettingsSpoilersShows">Séries</string>
   <string name="textSettingsSpoilersShowsSummary">Gerenciar configurações de spoiler para séries.</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">Minhas Séries</string>
-  <string name="textSettingsSpoilersShowsOverviewsMyDescription">Ocultar <b>descrição</b> das séries adicionadas as Minhas Séries</string>
-  <string name="textSettingsSpoilersShowsRatingsMyDescription">Ocultar <b>avaliação</b> das séries adicionadas as Minhas Séries</string>
+  <string name="textSettingsSpoilersShowsOverviewsMyDescription">Ocultar
+    <b>descrição</b> das séries adicionadas as Minhas Séries</string>
+  <string name="textSettingsSpoilersShowsRatingsMyDescription">Ocultar
+    <b>avaliação</b> das séries adicionadas as Minhas Séries</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">Favoritos</string>
-  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Ocultar <b>descrição</b> de séries adicionadas aos Favoritos</string>
-  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Ocultar a <b>avaliação</b> das séries adicionadas aos Favoritos</string>
+  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Ocultar
+    <b>descrição</b> de séries adicionadas aos Favoritos</string>
+  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Ocultar a
+    <b>avaliação</b> das séries adicionadas aos Favoritos</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Oculto</string>
-  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Ocultar <b>descrição</b> das séries adicionadas à Oculto</string>
-  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Ocultar <b>avaliação</b> das séries adicionadas à Oculto</string>
+  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Ocultar
+    <b>descrição</b> das séries adicionadas à Oculto</string>
+  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Ocultar
+    <b>avaliação</b> das séries adicionadas à Oculto</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">Não coletado</string>
-  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Esconder <b>descrição</b> das séries que não estão na sua coleção</string>
-  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Ocultar <b>avaliação</b> das séries que não estão na sua coleção</string>
+  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Esconder
+    <b>descrição</b> das séries que não estão na sua coleção</string>
+  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Ocultar
+    <b>avaliação</b> das séries que não estão na sua coleção</string>
   <string name="textSettingsSpoilersMovies">Filmes</string>
   <string name="textSettingsSpoilersMoviesSummary">Gerenciar configurações de spoiler para filmes.</string>
   <string name="textSettingsSpoilersMoviesOverviewsMyTitle">Histórico</string>
-  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Ocultar <b>descrição</b> de filmes adicionados ao histórico</string>
-  <string name="textSettingsSpoilersMoviesRatingsMyDescription">Ocultar <b>avaliação</b> de filmes adicionados ao histórico</string>
+  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Ocultar
+    <b>descrição</b> de filmes adicionados ao histórico</string>
+  <string name="textSettingsSpoilersMoviesRatingsMyDescription">Ocultar
+    <b>avaliação</b> de filmes adicionados ao histórico</string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">Favoritos</string>
-  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Ocultar a <b>descrição</b> de filmes adicionados aos Favoritos</string>
-  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Ocultar <b>avaliação</b> de filmes adicionados aos Favoritos</string>
+  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Ocultar a
+    <b>descrição</b> de filmes adicionados aos Favoritos</string>
+  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Ocultar
+    <b>avaliação</b> de filmes adicionados aos Favoritos</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Oculto</string>
-  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Ocultar <b>descrição</b> de filmes adicionados a Escondidos</string>
-  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Ocultar <b>avaliação</b> de filmes adicionados a Escondidos</string>
+  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Ocultar
+    <b>descrição</b> de filmes adicionados a Escondidos</string>
+  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Ocultar
+    <b>avaliação</b> de filmes adicionados a Escondidos</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">Não coletado</string>
-  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Ocultar <b>descrição</b> de filmes que não estão na sua Coleção</string>
-  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Ocultar <b>avaliação</b> de filmes que não estão na sua Coleção</string>
+  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Ocultar
+    <b>descrição</b> de filmes que não estão na sua Coleção</string>
+  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Ocultar
+    <b>avaliação</b> de filmes que não estão na sua Coleção</string>
   <string name="textSettingsSpoilersEpisodes">Episódios</string>
   <string name="textSettingsSpoilersEpisodesSummary">Gerencie configurações de spoiler para episódios.</string>
-  <string name="textSettingsSpoilersEpisodesImage">Ocultar <b>imagem</b> de episódios não assistidos.</string>
-  <string name="textSettingsSpoilersEpisodesTitle">Ocultar <b>título</b> de episódios não assistidos.</string>
-  <string name="textSettingsSpoilersEpisodesDescription">Ocultar <b>descrição</b> de episódios não assistidos.</string>
-  <string name="textSettingsSpoilersEpisodesRating">Ocultar <b>avaliação</b> de episódios não assistidos.</string>
+  <string name="textSettingsSpoilersEpisodesImage">Ocultar
+    <b>imagem</b> de episódios não assistidos.</string>
+  <string name="textSettingsSpoilersEpisodesTitle">Ocultar
+    <b>título</b> de episódios não assistidos.</string>
+  <string name="textSettingsSpoilersEpisodesDescription">Ocultar
+    <b>descrição</b> de episódios não assistidos.</string>
+  <string name="textSettingsSpoilersEpisodesRating">Ocultar
+    <b>avaliação</b> de episódios não assistidos.</string>
   <string name="textSettingsSpoilersTapToRevealTitle">Toque para Revelar</string>
   <string name="textSettingsSpoilersTapToRevealDescription">Toque no conteúdo oculto para revelá-lo temporariamente.</string>
   <string name="textNextEpisodeLastWatched">Último episódio assistido</string>
@@ -113,7 +111,5 @@
   <string name="textDateSelectionAsk">Sempre perguntar</string>
   <string name="textDateSelectionNow">Sempre \"Agora\"</string>
   <string name="textThemeDark">Escuro</string>
-  <string name="textThemeLight">Claro</string>
-  <string name="textThemeSystem">Sistema</string>
-  <string name="textTransparency100">Opaco</string>
+    <string name="textTransparency100">Opaco</string>
 </resources>

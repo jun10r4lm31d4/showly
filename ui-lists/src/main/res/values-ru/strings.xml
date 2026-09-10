@@ -2,8 +2,7 @@
 <resources>
   <string name="menuLists">Списки</string>
   <string name="menuList">Список</string>
-  <string name="textFilters">Фильтры:</string>
-  <string name="textListsEmpty">Ваш список коллекций пуст.</string>
+    <string name="textListsEmpty">Ваш список коллекций пуст.</string>
   <string name="textListEmpty">Ваш список пуст.</string>
   <string name="textCreateList">Создать список</string>
   <string name="textCreateListDescription">Создать новый пользовательский список.</string>

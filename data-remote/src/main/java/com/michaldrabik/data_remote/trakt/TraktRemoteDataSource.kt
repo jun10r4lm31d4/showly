@@ -6,7 +6,6 @@ import com.michaldrabik.data_remote.trakt.model.Episode
 import com.michaldrabik.data_remote.trakt.model.Ids
 import com.michaldrabik.data_remote.trakt.model.Movie
 import com.michaldrabik.data_remote.trakt.model.MovieCollection
-import com.michaldrabik.data_remote.trakt.model.OAuthResponse
 import com.michaldrabik.data_remote.trakt.model.PersonCredit
 import com.michaldrabik.data_remote.trakt.model.SearchResult
 import com.michaldrabik.data_remote.trakt.model.Season
@@ -18,14 +17,6 @@ import com.michaldrabik.data_remote.trakt.model.Translation
  * Fetch/post remote resources via unauthorized Trakt API
  */
 interface TraktRemoteDataSource {
-
-  // Auth
-
-  suspend fun fetchAuthTokens(code: String): OAuthResponse
-
-  suspend fun refreshAuthTokens(refreshToken: String): OAuthResponse
-
-  suspend fun revokeAuthTokens(token: String)
 
   // Shows
 

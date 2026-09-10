@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore">Sichern &amp; Wiederherstellen</string>
+  <string name="textBackupAndRestore"><![CDATA[Sichern & Wiederherstellen]]></string>
   <string name="textBackupExport">Daten exportieren</string>
   <string name="textBackupExportDescription">Exportiere deine Serien- und Filmdaten in eine Datei, um ein Backup zu erstellen oder sie auf ein neues Gerät zu übertragen.</string>
   <string name="textBackupImport">Daten importieren</string>

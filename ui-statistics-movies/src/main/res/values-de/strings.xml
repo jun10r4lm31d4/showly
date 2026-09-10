@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatisticsMovies">Statistik</string>
-  <string name="textStatisticsMoviesEmpty">Es muss mindestens ein Film im <b>Verlauf</b>\n vorhanden sein, bevor deine Statistik angezeigt werden kann.</string>
+  <string name="textStatisticsMoviesEmpty">Es muss mindestens ein Film im
+    <b>Verlauf</b>\n vorhanden sein, bevor deine Statistik angezeigt werden kann.</string>
   <string name="textStatisticsMoviesTotalTimeSpent">Gesamtzeit</string>
   <string name="textStatisticsMoviesTotalTimeItIs">und das sind</string>
   <string name="textStatisticsMoviesTotalTimeSpentHours">%s Stunden</string>

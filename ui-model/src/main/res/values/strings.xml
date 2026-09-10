@@ -11,7 +11,6 @@
   <string name="textSortEpisodesLeft">Episodes Left</string>
   <string name="textSortRuntime">Runtime</string>
   <string name="textSortRandom">Random</string>
-
   <string name="textPeriodThisWeek">This week</string>
   <string name="textPeriodLastWeek">Last week</string>
   <string name="textPeriodThisMonth">This month</string>
@@ -20,13 +19,11 @@
   <string name="textPeriodLast90Days">Last 90 days</string>
   <string name="textPeriodLast365Days">Last 365 days</string>
   <string name="textPeriodAllTime">All time</string>
-
   <string name="textHeaderRecentlyAdded">Recently Added</string>
   <string name="textHeaderWatching">Watching</string>
   <string name="textHeaderFinished">Finished</string>
-  <string name="textHeaderReturning">Returning &amp; Upcoming</string>
+  <string name="textHeaderReturning"><![CDATA[Returning & Upcoming]]></string>
   <string name="textHeaderAll">All</string>
-
   <string name="textSettingsShowsNotificationsWhenTitle">When To Notify</string>
   <string name="textSettingsShowsNotificationsWhenSummary">When would you like to receive episodes announcements.</string>
   <string name="textSettingsShowsNotificationsWhenAvailable">When Available</string>
@@ -39,7 +36,6 @@
   <string name="textSettingsShowsNotificationsWhen12HoursBefore">12 Hours Before</string>
   <string name="textSettingsShowsNotificationsWhen12Hours">12 Hours After</string>
   <string name="textSettingsShowsNotificationsWhenNextDay">1 Day After</string>
-
   <string name="textTipDiscover">Double tap \'Discover\' menu button to quickly open search screen.</string>
   <string name="textTipMyShows">Double tap \'Collection\' menu button to quickly switch between tabs.</string>
   <string name="textTipShowDetailsGallery">Tap image to open gallery.</string>
@@ -47,7 +43,6 @@
   <string name="textTipBottomModeMenu">Swipe bottom menu left or right to quickly change mode.</string>
   <string name="textTipListSwipeToDelete">Swipe list items to remove them from the list.</string>
   <string name="textTipDefaultOption">Default option can be adjusted in Settings</string>
-
   <string name="textGenreAction">Action</string>
   <string name="textGenreAdventure">Adventure</string>
   <string name="textGenreAnimation">Animation</string>
@@ -64,51 +59,25 @@
   <string name="textGenreRomance">Romance</string>
   <string name="textGenreWar">War</string>
   <string name="textGenreWestern">Western</string>
-
-  <string name="textTraktSyncSchedule">Schedule</string>
-  <string name="textTraktSyncOptionOff">Off</string>
-  <string name="textTraktSyncOption1Hour">Every Hour</string>
-  <string name="textTraktSyncOption3Hours">Every 3 Hours</string>
-  <string name="textTraktSyncOption6Hours">Every 6 Hours</string>
-  <string name="textTraktSyncOptionDaily">Every Day</string>
-  <string name="textTraktSyncOption3Day">Every 3 Days</string>
-  <string name="textTraktSyncOptionWeekly">Every Week</string>
-  <string name="textTraktSyncOptionOffMessage">Sync will not run automatically.</string>
-  <string name="textTraktSyncOptionConfirmMessage">Automatic sync has been scheduled.</string>
-
-  <string name="textTraktSyncOptionHourButton">Scheduled to run every hour</string>
-  <string name="textTraktSyncOption3HoursButton">Scheduled to run every 3 hours</string>
-  <string name="textTraktSyncOption6HoursButton">Scheduled to run every 6 hours</string>
-  <string name="textTraktSyncOptionDailyButton">Scheduled to run every day</string>
-  <string name="textTraktSyncOption3DayButton">Scheduled to run every 3 days</string>
-  <string name="textTraktSyncOptionWeeklyButton">Scheduled to run every week</string>
-
   <string name="textShowStatusReturning">Returning Series</string>
   <string name="textShowStatusUpcoming">Upcoming</string>
   <string name="textShowStatusInProduction">In Production</string>
   <string name="textShowStatusPlanned">Planned</string>
   <string name="textShowStatusCanceled">Canceled</string>
   <string name="textShowStatusEnded">Ended</string>
-  <string name="textShowStatusUnknown" translatable="false" />
-
+  <string name="textShowStatusUnknown" translatable="false"/>
   <string name="textMovieStatusReleased">Released</string>
   <string name="textMovieStatusInProduction">In Production</string>
   <string name="textMovieStatusPostProduction">Post Production</string>
   <string name="textMovieStatusPlanned">Planned</string>
   <string name="textMovieStatusCanceled">Canceled</string>
   <string name="textMovieStatusRumored">Rumored</string>
-  <string name="textMovieStatusUnknown" translatable="false" />
-
+  <string name="textMovieStatusUnknown" translatable="false"/>
   <string name="textStreamingStream">Stream</string>
   <string name="textStreamingAds">Ads</string>
   <string name="textStreamingBuy">Buy</string>
   <string name="textStreamingRent">Rent</string>
   <string name="textStreamingFree">Free</string>
-
-  <string name="tagQuickRating" translatable="false">Quick Rating</string>
-  <string name="tagCustomImages" translatable="false">Custom Images</string>
-  <string name="tagTheme" translatable="false">Theme</string>
+    <string name="tagTheme" translatable="false">Theme</string>
   <string name="tagWidgetTransparency" translatable="false">Widget Transparency</string>
-  <string name="tagNews" translatable="false">News</string>
-  <string name="tagViewsTypes" translatable="false">List View Types</string>
 </resources>

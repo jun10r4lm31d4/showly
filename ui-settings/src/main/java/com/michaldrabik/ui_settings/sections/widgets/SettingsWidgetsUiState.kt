@@ -8,5 +8,4 @@ data class SettingsWidgetsUiState(
   val settings: Settings? = null,
   val themeWidgets: AppTheme? = AppTheme.DARK,
   val widgetsTransparency: WidgetTransparency = WidgetTransparency.SOLID,
-  val isPremium: Boolean = false,
 )

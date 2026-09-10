@@ -2,15 +2,10 @@ package com.michaldrabik.ui_lists.lists
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import com.michaldrabik.repository.images.MovieImagesProvider
 import com.michaldrabik.repository.images.ShowImagesProvider
 import com.michaldrabik.ui_base.events.EventsManager
-import com.michaldrabik.ui_base.events.TraktSyncAuthError
-import com.michaldrabik.ui_base.events.TraktSyncError
-import com.michaldrabik.ui_base.events.TraktSyncSuccess
-import com.michaldrabik.ui_base.trakt.TraktSyncWorker
 import com.michaldrabik.ui_base.utilities.events.Event
 import com.michaldrabik.ui_base.utilities.extensions.SUBSCRIBE_STOP_TIMEOUT
 import com.michaldrabik.ui_base.utilities.extensions.findReplace
@@ -29,7 +24,6 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import com.michaldrabik.ui_base.events.Event as EventSync
 
 @HiltViewModel
 class ListsViewModel @Inject constructor(
@@ -46,14 +40,10 @@ class ListsViewModel @Inject constructor(
   private val itemsState = MutableStateFlow<List<ListsItem>?>(null)
   private val scrollState = MutableStateFlow(Event(false))
   private val sortOrderState = MutableStateFlow<Pair<SortOrder, SortType>?>(null)
-  private val syncingState = MutableStateFlow(false)
 
   init {
     viewModelScope.launch {
-      eventsManager.events.collect { onEvent(it) }
-    }
-    workManager.getWorkInfosByTagLiveData(TraktSyncWorker.TAG_ID).observeForever { work ->
-      syncingState.value = work.any { it.state == WorkInfo.State.RUNNING }
+      eventsManager.events.collect { it }
     }
   }
 
@@ -114,23 +104,15 @@ class ListsViewModel @Inject constructor(
     itemsState.value = currentItems
   }
 
-  private fun onEvent(event: EventSync) {
-    if (event in arrayOf(TraktSyncError, TraktSyncAuthError, TraktSyncSuccess)) {
-      loadItems(resetScroll = true)
-    }
-  }
-
   val uiState = combine(
     itemsState,
     scrollState,
     sortOrderState,
-    syncingState,
-  ) { s1, s2, s3, s4 ->
+  ) { s1, s2, s3 ->
     ListsUiState(
       items = s1,
       resetScroll = s2,
       sortOrder = s3,
-      isSyncing = s4,
     )
   }.stateIn(
     scope = viewModelScope,
