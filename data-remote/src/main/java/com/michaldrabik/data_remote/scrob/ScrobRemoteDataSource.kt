@@ -10,25 +10,6 @@ import com.michaldrabik.data_remote.scrob.model.ScrobWatchRequest
 interface ScrobRemoteDataSource {
 
   /**
-   * Logs in against the given self-hosted Scrob server and persists the session on success.
-   * @throws ScrobAuthException if credentials are invalid, 2FA is required, or the server
-   * could not be reached.
-   */
-  suspend fun login(
-    baseUrl: String,
-    username: String,
-    password: String,
-  )
-
-  fun isLogged(): Boolean
-
-  fun logout()
-
-  fun getSessionUsername(): String?
-
-  fun getSessionBaseUrl(): String?
-
-  /**
    * Fetches one page of the user's completed watch history, newest first.
    * @param type optionally filters to "movie" or "episode".
    */
@@ -67,6 +48,10 @@ interface ScrobRemoteDataSource {
 
   /** Marks every episode of a show as unwatched. */
   suspend fun removeShowFromHistory(seriesTmdbId: Long)
+
+  /** Returns true if the user has configured the Scrob server connection. */
+  //TODO: change function to test connection with apk and url
+  fun isLogged(): Boolean
 }
 
 class ScrobAuthException(
