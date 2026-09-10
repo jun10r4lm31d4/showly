@@ -9,7 +9,6 @@ import androidx.work.WorkManager
 import com.michaldrabik.common.extensions.nowUtcMillis
 import com.michaldrabik.ui_backup.features.export.cases.CreateBackupJsonUseCase
 import com.michaldrabik.ui_backup.features.export.cases.CreateBackupSchemeFromJsonUseCase
-import com.michaldrabik.ui_backup.features.export.model.BackupExportSchedule
 import com.michaldrabik.ui_backup.features.export.workers.BackupExportScheduleWorker
 import com.michaldrabik.ui_backup.model.BackupScheme
 import com.michaldrabik.ui_base.Logger
@@ -36,9 +35,6 @@ class BackupExportViewModel @Inject constructor(
 ) : ViewModel() {
 
   private val initialState = BackupExportUiState(
-    backupExportSchedule = BackupExportSchedule.createFromName(
-      miscPreferences.getString(BackupExportScheduleWorker.KEY_BACKUP_EXPORT_SCHEDULE, null),
-    ),
     lastBackupExportTimestamp =
       miscPreferences.getLong(BackupExportScheduleWorker.KEY_LAST_LAST_BACKUP_EXPORT_TIMESTAMP, 0),
     dateFormat = dateFormatProvider.loadFullHourFormat(),
@@ -47,7 +43,6 @@ class BackupExportViewModel @Inject constructor(
   private val exportContentState = MutableStateFlow(initialState.exportContent)
   private val loadingState = MutableStateFlow(initialState.isLoading)
   private val errorState = MutableStateFlow(initialState.error)
-  private val backupExportScheduleState = MutableStateFlow(initialState.backupExportSchedule)
   private val lastBackupExportTimestampState = MutableStateFlow(initialState.lastBackupExportTimestamp)
   private val dateFormatState = MutableStateFlow(initialState.dateFormat)
 
@@ -113,44 +108,6 @@ class BackupExportViewModel @Inject constructor(
     lastBackupExportTimestampState.update { now }
   }
 
-  /**
-   * Set up automatic export schedule.
-   */
-  fun saveExportBackupSchedule(
-    directoryUri: Uri,
-    schedule: BackupExportSchedule,
-  ) {
-    viewModelScope.launch {
-      miscPreferences.edit { putString(BackupExportScheduleWorker.KEY_BACKUP_EXPORT_SCHEDULE, schedule.name) }
-      miscPreferences.edit {
-        putString(
-          BackupExportScheduleWorker.KEY_BACKUP_EXPORT_DIRECTORY_URI,
-          directoryUri.toString(),
-        )
-      }
-      BackupExportScheduleWorker.schedulePeriodic(
-        workManager = workManager,
-        directoryUri = directoryUri,
-        schedule = schedule,
-        cancelExisting = true,
-      )
-      backupExportScheduleState.value = schedule
-    }
-  }
-
-  /**
-   * Set schedule to OFF. This cancels ongoing schedules.
-   */
-  fun saveExportBackupScheduleOff() {
-    val offSchedule = BackupExportSchedule.OFF
-    viewModelScope.launch {
-      miscPreferences.edit { putString(BackupExportScheduleWorker.KEY_BACKUP_EXPORT_SCHEDULE, offSchedule.name) }
-      miscPreferences.edit { remove(BackupExportScheduleWorker.KEY_BACKUP_EXPORT_DIRECTORY_URI) }
-      BackupExportScheduleWorker.cancelAllPeriodic(workManager)
-      backupExportScheduleState.value = offSchedule
-    }
-  }
-
   fun clearOneOffState() {
     loadingState.update { false }
     exportContentState.update { null }
@@ -161,17 +118,15 @@ class BackupExportViewModel @Inject constructor(
     loadingState,
     exportContentState,
     errorState,
-    backupExportScheduleState,
     lastBackupExportTimestampState,
     dateFormatState,
-  ) { s1, s2, s3, s4, s5, s6 ->
+  ) { s1, s2, s3, s4, s5 ->
     BackupExportUiState(
       isLoading = s1,
       exportContent = s2,
       error = s3,
-      backupExportSchedule = s4,
-      lastBackupExportTimestamp = s5,
-      dateFormat = s6,
+      lastBackupExportTimestamp = s4,
+      dateFormat = s5,
     )
   }.stateIn(
     scope = viewModelScope,

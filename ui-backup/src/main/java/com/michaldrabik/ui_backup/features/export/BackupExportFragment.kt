@@ -18,7 +18,6 @@ import com.michaldrabik.ui_backup.R
 import com.michaldrabik.ui_backup.databinding.FragmentBackupExportBinding
 import com.michaldrabik.ui_backup.features.export.cases.ReadBackupJsonFromFileUseCase
 import com.michaldrabik.ui_backup.features.export.cases.WriteBackupJsonToFileUseCase
-import com.michaldrabik.ui_backup.features.export.model.BackupExportSchedule
 import com.michaldrabik.ui_base.BaseFragment
 import com.michaldrabik.ui_base.utilities.SnackbarHost
 import com.michaldrabik.ui_base.utilities.events.MessageEvent
@@ -47,29 +46,10 @@ class BackupExportFragment : BaseFragment<BackupExportViewModel>(R.layout.fragme
   override val viewModel by viewModels<BackupExportViewModel>()
   private val binding by viewBinding(FragmentBackupExportBinding::bind)
 
-  private var selectedSchedule: BackupExportSchedule? = null
-
   private val createFileContract =
     registerForActivityResult(CreateDocument("application/json")) { uri ->
       uri?.let {
         viewModel.runOneOffExport(uri)
-      }
-    }
-
-  /**
-   * For automatic backups we need access to a whole folder rather then just one file.
-   */
-  private val createFolderContract =
-    registerForActivityResult(OpenDocumentTree()) { directoryUri ->
-      directoryUri?.let {
-        // Take persistable permissions so you can use this URI across app restarts.
-        val permissionsFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-        requireActivity().contentResolver.takePersistableUriPermission(directoryUri, permissionsFlags)
-        selectedSchedule?.let {
-          selectedSchedule = null
-          viewModel.saveExportBackupSchedule(directoryUri, it)
-          showSnack(MessageEvent.Info(it.confirmationStringRes))
-        }
       }
     }
 
@@ -185,10 +165,6 @@ class BackupExportFragment : BaseFragment<BackupExportViewModel>(R.layout.fragme
         statusText.visibleIf(isLoading)
         exportButton.visibleIf(!isLoading, gone = false)
         exportButton.isEnabled = !isLoading
-        exportScheduleButton.visibleIf(!isLoading, gone = false)
-        exportScheduleButton.isEnabled = !isLoading
-        exportScheduleButton.setText(backupExportSchedule.buttonStringRes)
-        exportScheduleButton.onClick { showScheduleDialog(backupExportSchedule) }
         lastExportTimestamp.visibleIf(!isLoading && lastBackupExportTimestamp != 0L)
         if (lastBackupExportTimestamp != 0L) {
           val date = dateFormat?.format(dateFromMillis(lastBackupExportTimestamp).toLocalZone())?.capitalizeWords()
@@ -205,30 +181,5 @@ class BackupExportFragment : BaseFragment<BackupExportViewModel>(R.layout.fragme
         viewModel.clearOneOffState()
       }
     }
-  }
-
-  /**
-   * Displays a dialog to select the backup export schedule.
-   *
-   * @param currentSchedule The currently selected backup export schedule.
-   */
-  private fun showScheduleDialog(currentSchedule: BackupExportSchedule) {
-    val options = BackupExportSchedule.entries
-    val optionsStrings = options.map { getString(it.stringRes) }.toTypedArray()
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
-      .setSingleChoiceItems(optionsStrings, options.indexOf(currentSchedule)) { dialog, index ->
-        val newSchedule = options[index]
-        if (newSchedule == BackupExportSchedule.OFF) {
-          // For OFF schedule, we don't need a folder - directly save the schedule
-          viewModel.saveExportBackupScheduleOff()
-          showSnack(MessageEvent.Info(newSchedule.confirmationStringRes))
-        } else {
-          // For other schedules, ask for folder first
-          selectedSchedule = newSchedule
-          createFolderContract.launch(null)
-        }
-        dialog.dismiss()
-      }.show()
   }
 }
