@@ -5,7 +5,7 @@ import android.content.Context.MODE_PRIVATE
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-const val DATABASE_VERSION = 42
+const val DATABASE_VERSION = 43
 const val DATABASE_NAME = "SHOWLY2_DB_2"
 
 class Migrations(
@@ -789,6 +789,28 @@ class Migrations(
     }
   }
 
+  private val migration43 = object : Migration(42, 43) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+      with(database) {
+        // Durable outbox for QuickSync pushes to the Scrob server.
+        // Rows survive process death and offline periods until drained.
+        execSQL(
+          "CREATE TABLE IF NOT EXISTS `scrob_pending_ops` (" +
+            "`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+            "`op` TEXT NOT NULL, " +
+            "`watched` INTEGER NOT NULL, " +
+            "`tmdb_id` INTEGER NOT NULL, " +
+            "`show_tmdb_id` INTEGER NOT NULL DEFAULT -1, " +
+            "`season_number` INTEGER NOT NULL DEFAULT -1, " +
+            "`episode_number` INTEGER NOT NULL DEFAULT -1, " +
+            "`watched_at` INTEGER NOT NULL DEFAULT -1, " +
+            "`created_at` INTEGER NOT NULL)",
+        )
+        execSQL("CREATE INDEX IF NOT EXISTS index_scrob_pending_ops_created_at ON scrob_pending_ops (created_at)")
+      }
+    }
+  }
+
   fun getAll() =
     listOf(
       migration2,
@@ -832,5 +854,6 @@ class Migrations(
       migration40,
       migration41,
       migration42,
+      migration43,
     )
 }

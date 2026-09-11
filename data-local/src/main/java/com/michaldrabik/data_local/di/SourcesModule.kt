@@ -28,6 +28,7 @@ import com.michaldrabik.data_local.sources.RatingsLocalDataSource
 import com.michaldrabik.data_local.sources.RecentSearchLocalDataSource
 import com.michaldrabik.data_local.sources.RelatedMoviesLocalDataSource
 import com.michaldrabik.data_local.sources.RelatedShowsLocalDataSource
+import com.michaldrabik.data_local.sources.ScrobPendingOpsLocalDataSource
 import com.michaldrabik.data_local.sources.SeasonsLocalDataSource
 import com.michaldrabik.data_local.sources.SettingsLocalDataSource
 import com.michaldrabik.data_local.sources.ShowImagesLocalDataSource
@@ -166,6 +167,11 @@ class SourcesModule {
   @Provides
   @Singleton
   internal fun providesSeasons(database: AppDatabase): SeasonsLocalDataSource = database.seasonsDao()
+
+  @Provides
+  @Singleton
+  internal fun providesScrobPendingOps(database: AppDatabase): ScrobPendingOpsLocalDataSource =
+    database.scrobPendingOpsDao()
 
   @Provides
   @Singleton

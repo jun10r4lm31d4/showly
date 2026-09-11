@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import com.michaldrabik.data_remote.scrob.ScrobProvider
+import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncWorker
 import com.michaldrabik.ui_base.scrob.sync.ScrobSyncWorker
 import com.michaldrabik.ui_base.utilities.events.MessageEvent
 import com.michaldrabik.ui_base.viewmodel.ChannelsDelegate
@@ -66,6 +67,7 @@ class SettingsScrobViewModel
 
         ScrobSyncWorker.scheduleHistory(workManager)
         ScrobSyncWorker.scheduleLists(workManager)
+        ScrobQuickSyncWorker.scheduleDrain(workManager)
       }
       refresh()
     }

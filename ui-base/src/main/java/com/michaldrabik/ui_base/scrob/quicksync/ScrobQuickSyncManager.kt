@@ -4,6 +4,8 @@ import androidx.work.WorkManager
 import com.michaldrabik.common.extensions.nowUtcMillis
 import com.michaldrabik.common.extensions.toMillis
 import com.michaldrabik.common.extensions.toUtcZone
+import com.michaldrabik.data_local.LocalDataSource
+import com.michaldrabik.data_local.database.model.ScrobPendingOp
 import com.michaldrabik.data_remote.scrob.ScrobRemoteDataSource
 import timber.log.Timber
 import java.time.ZonedDateTime
@@ -11,35 +13,40 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
- * Schedules pushes of local watched-state changes to the user's Scrob server,
- * mirroring how [com.michaldrabik.ui_base.trakt.quicksync.QuickSyncManager] works for Trakt.
+ * Schedules pushes of local watched-state changes to the user's Scrob server.
+ *
+ * Every change is first persisted into the durable `scrob_pending_ops` outbox
+ * and only then a drain is signalled to [ScrobQuickSyncWorker]. Rows survive
+ * process death and offline periods, so no watched-state is lost on crash or
+ * without connectivity.
  */
 @Singleton
 class ScrobQuickSyncManager @Inject constructor(
   private val scrobRemoteSource: ScrobRemoteDataSource,
+  private val localSource: LocalDataSource,
   private val workManager: WorkManager,
 ) {
 
-  fun scheduleMoviesWatched(
+  suspend fun scheduleMoviesWatched(
     moviesTmdbIds: List<Long>,
     customDate: ZonedDateTime?,
   ) {
     if (!ensureLogged()) return
     val ops = moviesTmdbIds
       .filter { it > 0 }
-      .map { "${Op.MOVIE.slug}|1|$it" }
-    schedule(ops, timestamp(customDate))
+      .map { ScrobPendingOp(op = Op.MOVIE.slug, watched = true, tmdbId = it, watchedAtMillis = timestamp(customDate), createdAt = nowUtcMillis()) }
+    enqueue(ops)
   }
 
-  fun clearMovies(moviesTmdbIds: List<Long>) {
+  suspend fun clearMovies(moviesTmdbIds: List<Long>) {
     if (!ensureLogged()) return
     val ops = moviesTmdbIds
       .filter { it > 0 }
-      .map { "${Op.MOVIE.slug}|0|$it" }
-    schedule(ops, nowUtcMillis())
+      .map { ScrobPendingOp(op = Op.MOVIE.slug, watched = false, tmdbId = it, watchedAtMillis = nowUtcMillis(), createdAt = nowUtcMillis()) }
+    enqueue(ops)
   }
 
-  fun scheduleEpisodes(
+  suspend fun scheduleEpisodes(
     showTmdbId: Long,
     episodes: List<EpisodeRef>,
     customDate: ZonedDateTime? = null,
@@ -49,16 +56,29 @@ class ScrobQuickSyncManager @Inject constructor(
       Timber.d("Skipped Scrob episodes push. Missing show tmdb id.")
       return
     }
+    val watchedAt = timestamp(customDate)
+    val now = nowUtcMillis()
     val ops = episodes
       .filter { it.tmdbId > 0 }
-      .map { "${Op.EPISODE.slug}|1|$showTmdbId|${it.seasonNumber}|${it.episodeNumber}|${it.tmdbId}" }
+      .map {
+        ScrobPendingOp(
+          op = Op.EPISODE.slug,
+          watched = true,
+          tmdbId = it.tmdbId,
+          showTmdbId = showTmdbId,
+          seasonNumber = it.seasonNumber,
+          episodeNumber = it.episodeNumber,
+          watchedAtMillis = watchedAt,
+          createdAt = now,
+        )
+      }
     if (episodes.any { it.tmdbId <= 0 }) {
       Timber.w("Some episode refs are missing tmdb ids and were skipped. Show #$showTmdbId")
     }
-    schedule(ops, timestamp(customDate))
+    enqueue(ops)
   }
 
-  fun clearEpisodes(
+  suspend fun clearEpisodes(
     showTmdbId: Long,
     episodes: List<EpisodeRef>,
   ) {
@@ -67,13 +87,25 @@ class ScrobQuickSyncManager @Inject constructor(
       Timber.d("Skipped Scrob episodes removal. Missing show tmdb id.")
       return
     }
+    val now = nowUtcMillis()
     val ops = episodes
       .filter { it.tmdbId > 0 }
-      .map { "${Op.EPISODE.slug}|0|$showTmdbId|${it.seasonNumber}|${it.episodeNumber}|${it.tmdbId}" }
-    schedule(ops, nowUtcMillis())
+      .map {
+        ScrobPendingOp(
+          op = Op.EPISODE.slug,
+          watched = false,
+          tmdbId = it.tmdbId,
+          showTmdbId = showTmdbId,
+          seasonNumber = it.seasonNumber,
+          episodeNumber = it.episodeNumber,
+          watchedAtMillis = now,
+          createdAt = now,
+        )
+      }
+    enqueue(ops)
   }
 
-  fun scheduleSeason(
+  suspend fun scheduleSeason(
     showTmdbId: Long,
     seasonNumber: Int,
     customDate: ZonedDateTime? = null,
@@ -83,10 +115,14 @@ class ScrobQuickSyncManager @Inject constructor(
       Timber.d("Skipped Scrob season push. Missing show tmdb id.")
       return
     }
-    schedule(listOf("${Op.SEASON.slug}|1|$showTmdbId|$seasonNumber"), timestamp(customDate))
+    enqueue(
+      listOf(
+        ScrobPendingOp(op = Op.SEASON.slug, watched = true, tmdbId = showTmdbId, showTmdbId = showTmdbId, seasonNumber = seasonNumber, watchedAtMillis = timestamp(customDate), createdAt = nowUtcMillis()),
+      ),
+    )
   }
 
-  fun clearSeason(
+  suspend fun clearSeason(
     showTmdbId: Long,
     seasonNumber: Int,
   ) {
@@ -95,10 +131,14 @@ class ScrobQuickSyncManager @Inject constructor(
       Timber.d("Skipped Scrob season removal. Missing show tmdb id.")
       return
     }
-    schedule(listOf("${Op.SEASON.slug}|0|$showTmdbId|$seasonNumber"), nowUtcMillis())
+    enqueue(
+      listOf(
+        ScrobPendingOp(op = Op.SEASON.slug, watched = false, tmdbId = showTmdbId, showTmdbId = showTmdbId, seasonNumber = seasonNumber, watchedAtMillis = nowUtcMillis(), createdAt = nowUtcMillis()),
+      ),
+    )
   }
 
-  fun scheduleShow(
+  suspend fun scheduleShow(
     showTmdbId: Long,
     customDate: ZonedDateTime? = null,
   ) {
@@ -107,16 +147,24 @@ class ScrobQuickSyncManager @Inject constructor(
       Timber.d("Skipped Scrob show push. Missing show tmdb id.")
       return
     }
-    schedule(listOf("${Op.SHOW.slug}|1|$showTmdbId"), timestamp(customDate))
+    enqueue(
+      listOf(
+        ScrobPendingOp(op = Op.SHOW.slug, watched = true, tmdbId = showTmdbId, showTmdbId = showTmdbId, watchedAtMillis = timestamp(customDate), createdAt = nowUtcMillis()),
+      ),
+    )
   }
 
-  fun clearShow(showTmdbId: Long) {
+  suspend fun clearShow(showTmdbId: Long) {
     if (!ensureLogged()) return
     if (showTmdbId <= 0) {
       Timber.d("Skipped Scrob show removal. Missing show tmdb id.")
       return
     }
-    schedule(listOf("${Op.SHOW.slug}|0|$showTmdbId"), nowUtcMillis())
+    enqueue(
+      listOf(
+        ScrobPendingOp(op = Op.SHOW.slug, watched = false, tmdbId = showTmdbId, showTmdbId = showTmdbId, watchedAtMillis = nowUtcMillis(), createdAt = nowUtcMillis()),
+      ),
+    )
   }
 
   fun isLogged(): Boolean = scrobRemoteSource.isLogged()
@@ -131,16 +179,14 @@ class ScrobQuickSyncManager @Inject constructor(
 
   private fun timestamp(customDate: ZonedDateTime?) = customDate?.toUtcZone()?.toMillis() ?: nowUtcMillis()
 
-  private fun schedule(
-    operations: List<String>,
-    timestampMillis: Long,
-  ) {
+  private suspend fun enqueue(operations: List<ScrobPendingOp>) {
     if (operations.isEmpty()) return
-    Timber.d("Scheduling ${operations.size} Scrob sync operation(s).")
-    ScrobQuickSyncWorker.schedule(workManager, operations.toTypedArray(), timestampMillis)
+    Timber.d("Queueing ${operations.size} Scrob sync operation(s).")
+    localSource.scrobPendingOps.insert(operations)
+    ScrobQuickSyncWorker.scheduleDrain(workManager)
   }
 
-  private enum class Op(
+  internal enum class Op(
     val slug: String,
   ) {
     MOVIE("MOVIE"),

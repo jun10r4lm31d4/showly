@@ -29,6 +29,7 @@ import com.michaldrabik.data_local.database.dao.RatingsDao
 import com.michaldrabik.data_local.database.dao.RecentSearchDao
 import com.michaldrabik.data_local.database.dao.RelatedMoviesDao
 import com.michaldrabik.data_local.database.dao.RelatedShowsDao
+import com.michaldrabik.data_local.database.dao.ScrobPendingOpsDao
 import com.michaldrabik.data_local.database.dao.SeasonsDao
 import com.michaldrabik.data_local.database.dao.SettingsDao
 import com.michaldrabik.data_local.database.dao.ShowImagesDao
@@ -69,6 +70,7 @@ import com.michaldrabik.data_local.database.model.Rating
 import com.michaldrabik.data_local.database.model.RecentSearch
 import com.michaldrabik.data_local.database.model.RelatedMovie
 import com.michaldrabik.data_local.database.model.RelatedShow
+import com.michaldrabik.data_local.database.model.ScrobPendingOp
 import com.michaldrabik.data_local.database.model.Season
 import com.michaldrabik.data_local.database.model.Settings
 import com.michaldrabik.data_local.database.model.Show
@@ -124,6 +126,7 @@ import com.michaldrabik.data_local.database.model.WatchlistShow
     MovieStreaming::class,
     MovieCollection::class,
     MovieCollectionItem::class,
+    ScrobPendingOp::class,
   ],
   exportSchema = false,
 )
@@ -206,4 +209,6 @@ abstract class AppDatabase : RoomDatabase() {
   abstract fun customListsDao(): CustomListsDao
 
   abstract fun customListsItemsDao(): CustomListsItemsDao
+
+  abstract fun scrobPendingOpsDao(): ScrobPendingOpsDao
 }
