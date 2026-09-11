@@ -36,6 +36,10 @@ class ScrobImportListsRunner @Inject constructor(
   private val dispatchers: CoroutineDispatchers,
 ) : ScrobSyncRunner(scrobRemoteSource) {
 
+  companion object {
+    internal const val SCROB_LIST_SLUG_PREFIX = "scrob-"
+  }
+
   override suspend fun run(): Int {
     Timber.d("Initialized.")
     checkAuthorization()
@@ -85,6 +89,35 @@ class ScrobImportListsRunner @Inject constructor(
       }
       delay(SCROB_LOOKUP_DELAY_MS)
     }
+
+    removeMissingLists(remoteLists.map { it.id }.toSet())
+  }
+
+  /**
+   * Removes local Scrob-origin lists that no longer exist on the server.
+   * Only lists created by this import (idSlug "scrob-<remoteId>") are touched;
+   * user-created lists are left alone.
+   */
+  private suspend fun removeMissingLists(remoteIds: Set<Long>) {
+    val toRemove = localSource.customLists
+      .getAll()
+      .filter { it.idSlug.startsWith(SCROB_LIST_SLUG_PREFIX) }
+      .filter { list ->
+        val remoteId = list.idSlug.removePrefix(SCROB_LIST_SLUG_PREFIX).toLongOrNull()
+        remoteId == null || remoteId !in remoteIds
+      }
+    if (toRemove.isEmpty()) {
+      Timber.d("Scrob lists reconciliation: nothing to remove.")
+      return
+    }
+
+    transactions.withTransaction {
+      toRemove.forEach { list ->
+        localSource.customListsItems.deleteByList(list.id)
+        localSource.customLists.deleteById(list.id)
+      }
+    }
+    Timber.d("Scrob lists reconciliation: removed ${toRemove.size} lists missing from server.")
   }
 
   private suspend fun upsertList(
@@ -94,7 +127,7 @@ class ScrobImportListsRunner @Inject constructor(
     if (local == null) {
       Timber.d("Local list not found. Creating...")
       val list = CustomList.create().copy(
-        idSlug = "scrob-${remoteList.id}",
+        idSlug = "$SCROB_LIST_SLUG_PREFIX${remoteList.id}",
         name = remoteList.name,
         description = remoteList.description,
         privacy = if (remoteList.privacyLevel == "public") "public" else "private",
@@ -126,6 +159,7 @@ class ScrobImportListsRunner @Inject constructor(
     val nowMillis = nowUtcMillis()
 
     val remoteItems = scrobRemoteSource.fetchListItems(scrobListId)
+    val remoteKeys = mutableSetOf<Pair<Long, String>>()
 
     remoteItems.forEach { item ->
       try {
@@ -135,6 +169,7 @@ class ScrobImportListsRunner @Inject constructor(
             val remoteMovie = resolveMovie(tmdbId) ?: return@forEach
 
             val movie = mappers.movie.fromNetwork(remoteMovie)
+            remoteKeys += movie.traktId to Mode.MOVIES.type
             if (localItems.any { it.idTrakt == movie.traktId && it.type == Mode.MOVIES.type }) return@forEach
 
             transactions.withTransaction {
@@ -159,6 +194,7 @@ class ScrobImportListsRunner @Inject constructor(
             val remoteShow = resolveShow(showTmdbId) ?: return@forEach
 
             val show = mappers.show.fromNetwork(remoteShow)
+            remoteKeys += show.traktId to Mode.SHOWS.type
             if (localItems.any { it.idTrakt == show.traktId && it.type == Mode.SHOWS.type }) return@forEach
 
             transactions.withTransaction {
@@ -188,9 +224,30 @@ class ScrobImportListsRunner @Inject constructor(
       delay(SCROB_LOOKUP_DELAY_MS)
     }
 
+    removeMissingListItems(listId, remoteKeys)
+
     if (remoteItems.isNotEmpty()) {
       localSource.customLists.updateTimestamp(listId, nowMillis)
     }
+  }
+
+  /**
+   * Removes local items of a Scrob list that are no longer present on the server.
+   * Items whose media could not be resolved are skipped (fail-open).
+   */
+  private suspend fun removeMissingListItems(
+    listId: Long,
+    remoteKeys: Set<Pair<Long, String>>,
+  ) {
+    val toRemove = localSource.customListsItems
+      .getItemsById(listId)
+      .filter { (it.idTrakt to it.type) !in remoteKeys }
+    if (toRemove.isEmpty()) return
+
+    transactions.withTransaction {
+      toRemove.forEach { localSource.customListsItems.deleteItem(listId, it.idTrakt, it.type) }
+    }
+    Timber.d("Scrob list items reconciliation: removed ${toRemove.size} items missing from server (listId=$listId).")
   }
 
   private fun ScrobListItem.addedAtMillis(): Long? = parseTimestampMillis(addedAt)

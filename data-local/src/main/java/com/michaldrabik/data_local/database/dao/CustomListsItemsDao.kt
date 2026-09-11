@@ -58,4 +58,7 @@ interface CustomListsItemsDao : CustomListsItemsLocalDataSource {
     idTrakt: Long,
     type: String,
   )
+
+  @Query("DELETE FROM custom_list_item WHERE id_list = :idList")
+  override suspend fun deleteByList(idList: Long)
 }

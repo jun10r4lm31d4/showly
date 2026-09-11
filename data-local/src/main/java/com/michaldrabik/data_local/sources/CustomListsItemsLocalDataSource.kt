@@ -33,4 +33,6 @@ interface CustomListsItemsLocalDataSource {
     idTrakt: Long,
     type: String,
   )
+
+  suspend fun deleteByList(idList: Long)
 }

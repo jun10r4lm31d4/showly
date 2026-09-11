@@ -18,11 +18,13 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
+import com.michaldrabik.data_local.LocalDataSource
 import com.michaldrabik.data_remote.scrob.ScrobAuthException
 import com.michaldrabik.ui_base.Logger
 import com.michaldrabik.ui_base.R
 import com.michaldrabik.ui_base.scrob.imports.ScrobImportListsRunner
 import com.michaldrabik.ui_base.scrob.imports.ScrobImportWatchedRunner
+import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncWorker
 import com.michaldrabik.ui_base.utilities.extensions.notificationManager
 import com.michaldrabik.ui_base.utilities.extensions.rethrowCancellation
 import dagger.assisted.Assisted
@@ -36,6 +38,7 @@ class ScrobSyncWorker @AssistedInject constructor(
   @Assisted workerParams: WorkerParameters,
   private val importWatchedRunner: ScrobImportWatchedRunner,
   private val importListsRunner: ScrobImportListsRunner,
+  private val localSource: LocalDataSource,
 ) : CoroutineWorker(context, workerParams) {
 
   companion object {
@@ -44,6 +47,8 @@ class ScrobSyncWorker @AssistedInject constructor(
 
     const val TAG_HISTORY = "SCROB_SYNC_WORK_HISTORY"
     const val TAG_LISTS = "SCROB_SYNC_WORK_LISTS"
+
+    private const val MAX_DEFER_COUNT = 3
 
     private const val NOTIFICATION_PROGRESS_ID = 840
     private const val NOTIFICATION_HISTORY_ID = 841
@@ -88,6 +93,19 @@ class ScrobSyncWorker @AssistedInject constructor(
     val isImportHistory = inputData.getBoolean(KEY_IMPORT_HISTORY, false)
     val isImportLists = inputData.getBoolean(KEY_IMPORT_LISTS, false)
 
+    // No export sync exists, so the history import must never run while local
+    // watched-state pushes are still queued: the remote snapshot would miss them
+    // and reconciliation would wipe freshly watched items locally.
+    if (isImportHistory && hasPendingPushes()) {
+      if (runAttemptCount >= MAX_DEFER_COUNT) {
+        Timber.w("Scrob history import deferred too many times. Failing without importing.")
+        return Result.failure()
+      }
+      Timber.i("Scrob history import deferred: QuickSync outbox not empty. Signalling drain.")
+      ScrobQuickSyncWorker.scheduleDrain(WorkManager.getInstance(applicationContext))
+      return Result.retry()
+    }
+
     try {
       if (isImportHistory) runImportWatched()
       if (isImportLists) runImportLists()
@@ -114,6 +132,8 @@ class ScrobSyncWorker @AssistedInject constructor(
 
     return Result.success()
   }
+
+  private suspend fun hasPendingPushes(): Boolean = localSource.scrobPendingOps.count() > 0
 
   private suspend fun runImportWatched() {
     setProgressNotification("Syncing progress…")
