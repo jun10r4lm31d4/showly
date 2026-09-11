@@ -3,6 +3,10 @@ apply plugin: "kotlin-android"
 apply plugin: 'dagger.hilt.android.plugin'
 apply from: '../versions.gradle'
 
+// Version fields come from :app (git-semver plugin); this guarantees :app
+// is configured first regardless of settings.gradle order.
+evaluationDependsOn(':app')
+
 android {
   kotlinOptions { jvmTarget = "21" }
   compileOptions {
@@ -34,8 +38,9 @@ android {
     buildConfigField("String", "OMDB_API_KEY", properties.getProperty("omdbApiKey"))
     buildConfigField("String", "SCROB_API_KEY", "\"\"")
     buildConfigField("String", "SCROB_URL", "\"\"")
-    buildConfigField("String", "VER_NAME", "\"${versions.versionName}\"")
-    buildConfigField("int", "VER_CODE", "${versions.versionCode}")
+    // Computed in :app from the git-semver plugin (see evaluationDependsOn above).
+    buildConfigField("String", "VER_NAME", "\"${rootProject.ext.appVersionName}\"")
+    buildConfigField("int", "VER_CODE", "${rootProject.ext.appVersionCode}")
   }
 
   buildTypes {

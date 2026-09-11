@@ -17,6 +17,8 @@ buildscript {
 
 plugins {
   alias libs.plugins.devtools.ksp apply false
+
+  id 'com.github.jmongard.git-semver-plugin' version '0.16.1' apply false
 }
 
 allprojects {

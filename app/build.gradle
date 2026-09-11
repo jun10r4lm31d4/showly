@@ -3,9 +3,17 @@ plugins {
   id 'kotlin-android'
   id 'com.google.devtools.ksp'
   id 'dagger.hilt.android.plugin'
+  id 'com.github.jmongard.git-semver-plugin'
 }
 
 apply from: '../versions.gradle'
+
+// Single source of truth for the app version: derived from the git-semver
+// plugin (e.g. 3.59.0-SNAPSHOT). Libraries read these via rootProject.ext.
+def appVersionName = semver.version
+def appVersionCode = semver.versionValue.with { major * 1000000 + minor * 1000 + patch }
+rootProject.ext.appVersionName = appVersionName
+rootProject.ext.appVersionCode = appVersionCode
 
 android {
   kotlinOptions { jvmTarget = "21" }
@@ -28,12 +36,12 @@ android {
 
   defaultConfig {
     applicationId "io.github.jun10r4lm31d4.showly2"
+    versionCode appVersionCode
+    versionName appVersionName
     minSdkVersion versions.minSdk
     targetSdkVersion versions.targetSdk
     compileSdkVersion versions.compileSdk
     compileSdkVersion versions.compileSdk
-    versionCode versions.versionCode
-    versionName versions.versionName
 
     resourceConfigurations += ['en', 'ar', 'de', 'da', 'es', 'fi', 'fr', 'it', 'pl', 'pt', 'ro', 'ru', 'tr', 'zh', 'uk']
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -127,3 +135,29 @@ dependencies {
   //  debugImplementation "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary"
   coreLibraryDesugaring libs.android.desugar
 }
+
+semver {
+    defaultPreRelease = "SNAPSHOT"
+
+    releasePattern = "\\Arelease(?:\\([^()]+\\))?:"
+
+    majorPattern = "\\A\\w+(?:\\([^()]+\\))?!:|^BREAKING[ -]CHANGE:"
+    minorPattern = "\\Afeat(?:\\([^()]+\\))?:"
+    patchPattern = "\\Afix(?:\\([^()]+\\))?:"
+
+    releaseCommitTextFormat = "release: %s\n\n%s"
+
+    // Suas tags são 3.58.1, não v3.58.1
+    releaseTagNameFormat = "%s"
+
+    groupVersionIncrements = true
+    noDirtyCheck = false
+    noAutoBump = false
+
+    gitDirectory = project.projectDir
+
+    createReleaseCommit = true
+    createReleaseTag = true
+}
+
+version = semver.version
