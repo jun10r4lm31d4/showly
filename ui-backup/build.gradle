@@ -20,8 +20,7 @@ android {
 
   defaultConfig {
     minSdkVersion versions.minSdk
-    targetSdkVersion versions.targetSdk
-    compileSdkVersion versions.compileSdk
+      compileSdkVersion versions.compileSdk
 
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     consumerProguardFiles "consumer-rules.pro"
@@ -34,6 +33,12 @@ android {
   }
 
   namespace 'com.michaldrabik.ui_backup'
+    lint {
+        targetSdk 36
+    }
+    testOptions {
+        targetSdk 36
+    }
 }
 
 dependencies {
