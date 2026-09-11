@@ -15,6 +15,7 @@ internal class PreferencesScrobProvider(
     private const val URL = "SCROB_URL"
     private const val API_KEY = "SCROB_API_KEY"
     private const val ACTIVITY_SCROB_HISTORY_SYNCED_AT = "ACTIVITY_SCROB_HISTORY_SYNCED_AT"
+    private const val WATCHLIST_LIST_ID = "SCROB_WATCHLIST_LIST_ID"
   }
 
   private var url: String? = null
@@ -22,6 +23,18 @@ internal class PreferencesScrobProvider(
   private var apiKey: String? = null
 
   private var activityScrobHistorySyncedAt: Long? = null
+
+  private var watchlistListId: Long? = null
+
+  override fun getWatchlistListId(): Long {
+    watchlistListId?.let { return it }
+    return sharedPreferences.getLong(WATCHLIST_LIST_ID, -1).also { watchlistListId = it }
+  }
+
+  override fun setWatchlistListId(id: Long) {
+    watchlistListId = id
+    sharedPreferences.edit { putLong(WATCHLIST_LIST_ID, id) }
+  }
 
   override fun getActivityScrobHistorySyncedAt(): Long {
     activityScrobHistorySyncedAt?.let { return it }

@@ -5,6 +5,8 @@ data class SettingsScrobUiState(
   val scrobApiKey: String = "",
   val hasScrobApiKey: Boolean = false,
   val isSyncing: Boolean = false,
+  val watchlistListId: Long = -1,
+  val watchlistListName: String = "",
 ) {
   val isScrobConfigured: Boolean
     get() = scrobUrl.isNotBlank() and hasScrobApiKey

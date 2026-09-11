@@ -162,4 +162,9 @@
   <string name="textSettingsScrobSyncNowTitle">Sync now</string>
   <string name="textSettingsScrobSyncNowSummary">Import watched history and lists from Scrob.</string>
   <string name="textScrobSyncStarted">Sync started. You can safely leave this screen.</string>
+  <string name="textSettingsScrobWatchlistTitle">Watchlist list</string>
+  <string name="textSettingsScrobWatchlistSummary">Use a Scrob list as your watchlist</string>
+  <string name="textSettingsScrobWatchlistNotSelected">Not selected</string>
+  <string name="textSettingsScrobWatchlistDialogTitle">Select watchlist</string>
+  <string name="textSettingsScrobWatchlistNone">None</string>
 </resources>

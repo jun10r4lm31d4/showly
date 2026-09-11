@@ -23,4 +23,12 @@ interface ScrobProvider {
   fun hasUrl(): Boolean
 
   fun isConfigured(): Boolean
+
+  /**
+   * Remote id of the Scrob list used as the watchlist source.
+   * -1 means no list selected.
+   */
+  fun getWatchlistListId(): Long
+
+  fun setWatchlistListId(id: Long)
 }

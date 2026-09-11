@@ -6,7 +6,10 @@ import com.michaldrabik.common.extensions.nowUtc
 import com.michaldrabik.common.extensions.nowUtcMillis
 import com.michaldrabik.data_local.LocalDataSource
 import com.michaldrabik.data_local.database.model.CustomListItem
+import com.michaldrabik.data_local.database.model.WatchlistMovie
+import com.michaldrabik.data_local.database.model.WatchlistShow
 import com.michaldrabik.data_local.utilities.TransactionsProvider
+import com.michaldrabik.data_remote.scrob.ScrobProvider
 import com.michaldrabik.data_remote.scrob.ScrobRemoteDataSource
 import com.michaldrabik.data_remote.scrob.model.ScrobList
 import com.michaldrabik.data_remote.scrob.model.ScrobListItem
@@ -27,6 +30,7 @@ import javax.inject.Singleton
 @Singleton
 class ScrobImportListsRunner @Inject constructor(
   private val scrobRemoteSource: ScrobRemoteDataSource,
+  private val scrobProvider: ScrobProvider,
   // Public, unauthenticated Trakt catalog lookups only - see ScrobImportWatchedRunner.
   private val traktCatalogSource: TraktRemoteDataSource,
   private val localSource: LocalDataSource,
@@ -75,11 +79,13 @@ class ScrobImportListsRunner @Inject constructor(
       .getAll()
       .map { mappers.customList.fromDatabase(it) }
 
+    val watchlistListId = scrobProvider.getWatchlistListId()
+
     remoteLists.forEach { remoteList ->
       Timber.d("Processing '${remoteList.name}'...")
       try {
         val listId = upsertList(remoteList, localLists.find { it.id == remoteList.id })
-        importListItems(listId, remoteList.id)
+        importListItems(listId, remoteList.id, mirrorToWatchlist = remoteList.id == watchlistListId)
       } catch (error: Throwable) {
         if (error !is CancellationException) {
           Timber.w("Scrob list import failed for id=${remoteList.id}. Skipping... $error")
@@ -153,6 +159,7 @@ class ScrobImportListsRunner @Inject constructor(
   private suspend fun importListItems(
     listId: Long,
     scrobListId: Long,
+    mirrorToWatchlist: Boolean = false,
   ) {
     val moviesEnabled = settingsRepository.isMoviesEnabled
     val localItems = localSource.customListsItems.getItemsById(listId)
@@ -226,9 +233,49 @@ class ScrobImportListsRunner @Inject constructor(
 
     removeMissingListItems(listId, remoteKeys)
 
+    if (mirrorToWatchlist) {
+      mirrorWatchlistItems(remoteKeys)
+    }
+
     if (remoteItems.isNotEmpty()) {
       localSource.customLists.updateTimestamp(listId, nowMillis)
     }
+  }
+
+  /**
+   * Mirrors the selected watchlist list into the local watchlist tables, feeding
+   * the Progress tab. Additive-only (same as the old Trakt import): items already
+   * collected (watchlist, watched, archived) or manually added are never removed.
+   */
+  private suspend fun mirrorWatchlistItems(remoteKeys: Set<Pair<Long, String>>) {
+    val movieKeys = remoteKeys
+      .filter { it.second == Mode.MOVIES.type && settingsRepository.isMoviesEnabled }
+      .map { it.first }
+      .toSet()
+    val showKeys = remoteKeys
+      .filter { it.second == Mode.SHOWS.type }
+      .map { it.first }
+      .toSet()
+    if (movieKeys.isEmpty() && showKeys.isEmpty()) return
+
+    val knownMovieIds =
+      localSource.watchlistMovies.getAllTraktIds() +
+        localSource.myMovies.getAllTraktIds() +
+        localSource.archiveMovies.getAllTraktIds()
+    val knownShowIds =
+      localSource.watchlistShows.getAllTraktIds() +
+        localSource.myShows.getAllTraktIds() +
+        localSource.archiveShows.getAllTraktIds()
+    val newMovies = movieKeys.filter { it !in knownMovieIds }
+    val newShows = showKeys.filter { it !in knownShowIds }
+    if (newMovies.isEmpty() && newShows.isEmpty()) return
+
+    val now = nowUtcMillis()
+    transactions.withTransaction {
+      newMovies.forEach { localSource.watchlistMovies.insert(WatchlistMovie.fromTraktId(it, now)) }
+      newShows.forEach { localSource.watchlistShows.insert(WatchlistShow.fromTraktId(it, now)) }
+    }
+    Timber.d("Scrob watchlist mirror: added ${newMovies.size} movies, ${newShows.size} shows.")
   }
 
   /**

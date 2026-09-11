@@ -3,7 +3,9 @@ package com.michaldrabik.ui_settings.sections.scrob
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.michaldrabik.ui_base.BaseFragment
 import com.michaldrabik.ui_base.utilities.extensions.launchAndRepeatStarted
@@ -14,6 +16,7 @@ import com.michaldrabik.ui_settings.R
 import com.michaldrabik.ui_settings.databinding.FragmentSettingsScrobBinding
 import com.michaldrabik.ui_settings.databinding.ViewScrobInputBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SettingsScrobFragment : BaseFragment<SettingsScrobViewModel>(R.layout.fragment_settings_scrob) {
@@ -41,6 +44,7 @@ class SettingsScrobFragment : BaseFragment<SettingsScrobViewModel>(R.layout.frag
     with(binding) {
       settingsScrobInstance.onClick { showScrobDialog() }
       settingsScrobSync.onClick { viewModel.syncNow() }
+      settingsScrobWatchlist.onClick { showWatchlistDialog() }
     }
   }
 
@@ -53,6 +57,40 @@ class SettingsScrobFragment : BaseFragment<SettingsScrobViewModel>(R.layout.frag
         }
       settingsScrobSync.visibleIf(uiState.isScrobConfigured)
       settingsScrobSyncProgress.visibleIf(uiState.isSyncing)
+      settingsScrobWatchlist.visibleIf(uiState.isScrobConfigured)
+      settingsScrobWatchlistValue.text =
+        when {
+          uiState.watchlistListName.isNotBlank() -> uiState.watchlistListName
+          else -> getString(R.string.textSettingsScrobWatchlistNotSelected)
+        }
+    }
+  }
+
+  private fun showWatchlistDialog() {
+    lifecycleScope.launch {
+      val options =
+        try {
+          viewModel.loadWatchlistOptions()
+        } catch (error: Throwable) {
+          viewModel.onWatchlistOptionsError(error)
+          return@launch
+        }
+      if (!isAdded) return@launch
+
+      val selectedId = viewModel.uiState.value.watchlistListId
+      val labels = listOf(getString(R.string.textSettingsScrobWatchlistNone)) + options.map { it.name }
+      val checked = options.indexOfFirst { it.id == selectedId } + 1
+
+      MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
+        .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+        .setTitle(R.string.textSettingsScrobWatchlistDialogTitle)
+        .setSingleChoiceItems(labels.toTypedArray(), checked) { dialog, index ->
+          val id = options.getOrNull(index - 1)?.id ?: -1
+          if (id != selectedId) {
+            viewModel.saveWatchlistList(id)
+          }
+          dialog.dismiss()
+        }.show()
     }
   }
 

@@ -4,10 +4,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
+import com.michaldrabik.data_local.LocalDataSource
 import com.michaldrabik.data_remote.scrob.ScrobProvider
+import com.michaldrabik.data_remote.scrob.ScrobRemoteDataSource
+import com.michaldrabik.data_remote.scrob.model.ScrobList
+import com.michaldrabik.ui_base.Logger
 import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncWorker
 import com.michaldrabik.ui_base.scrob.sync.ScrobSyncWorker
 import com.michaldrabik.ui_base.utilities.events.MessageEvent
+import com.michaldrabik.ui_base.utilities.extensions.rethrowCancellation
 import com.michaldrabik.ui_base.viewmodel.ChannelsDelegate
 import com.michaldrabik.ui_base.viewmodel.DefaultChannelsDelegate
 import com.michaldrabik.ui_settings.R
@@ -24,6 +29,8 @@ class SettingsScrobViewModel
   @Inject
   constructor(
     private val scrobProvider: ScrobProvider,
+    private val scrobRemoteSource: ScrobRemoteDataSource,
+    private val localSource: LocalDataSource,
     private val workManager: WorkManager,
   ) : ViewModel(),
     ChannelsDelegate by DefaultChannelsDelegate() {
@@ -31,12 +38,18 @@ class SettingsScrobViewModel
     val uiState = state.asStateFlow()
 
     fun refresh() {
-      state.value =
-        state.value.copy(
-          hasScrobApiKey = scrobProvider.hasApiKey(),
-          scrobUrl = scrobProvider.getUrl(),
-          scrobApiKey = scrobProvider.getApiKey(),
-        )
+      viewModelScope.launch {
+        val watchlistListId = scrobProvider.getWatchlistListId()
+        val watchlistListName = resolveWatchlistName(watchlistListId)
+        state.value =
+          state.value.copy(
+            hasScrobApiKey = scrobProvider.hasApiKey(),
+            scrobUrl = scrobProvider.getUrl(),
+            scrobApiKey = scrobProvider.getApiKey(),
+            watchlistListId = watchlistListId,
+            watchlistListName = watchlistListName,
+          )
+      }
     }
 
     fun observeSyncing() {
@@ -79,5 +92,34 @@ class SettingsScrobViewModel
       viewModelScope.launch {
         messageChannel.send(MessageEvent.Info(R.string.textScrobSyncStarted))
       }
+    }
+
+    suspend fun loadWatchlistOptions(): List<ScrobList> = scrobRemoteSource.fetchLists()
+
+    fun saveWatchlistList(id: Long) {
+      scrobProvider.setWatchlistListId(id)
+      // Lists import mirrors the selected list into the local watchlist.
+      ScrobSyncWorker.scheduleLists(workManager)
+      refresh()
+      viewModelScope.launch {
+        messageChannel.send(MessageEvent.Info(R.string.textScrobSyncStarted))
+      }
+    }
+
+    fun onWatchlistOptionsError(error: Throwable) {
+      Logger.record(error, "SettingsScrobViewModel::loadWatchlistOptions()")
+      rethrowCancellation(error)
+      viewModelScope.launch {
+        messageChannel.send(MessageEvent.Error(R.string.errorScrobSyncFailed))
+      }
+    }
+
+    private suspend fun resolveWatchlistName(watchlistListId: Long): String {
+      if (watchlistListId <= 0) return ""
+      return localSource.customLists
+        .getAll()
+        .firstOrNull { it.id == watchlistListId }
+        ?.name
+        .orEmpty()
     }
   }
