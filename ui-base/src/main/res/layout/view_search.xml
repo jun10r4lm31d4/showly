@@ -92,6 +92,17 @@
         app:tint="?attr/colorSearchViewControl"
         />
 
+      <ProgressBar
+        android:id="@+id/searchSyncProgress"
+        style="@style/ProgressBar.Accent"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:padding="9dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
     </FrameLayout>
 
   </LinearLayout>
