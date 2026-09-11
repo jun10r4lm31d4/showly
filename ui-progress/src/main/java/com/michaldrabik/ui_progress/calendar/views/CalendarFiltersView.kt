@@ -43,12 +43,12 @@ internal class CalendarFiltersView : FrameLayout {
       premieresChip.isSelected = filters.premieres
       when (filters.mode) {
         CalendarMode.PRESENT_FUTURE -> {
-          modeChip.text = context.getText(R.string.textWatchlistIncoming)
-          modeChip.setChipIconResource(R.drawable.ic_calendar)
+          modeChip.text = context.getText(com.michaldrabik.ui_base.R.string.textWatchlistIncoming)
+          modeChip.setChipIconResource(com.michaldrabik.ui_base.R.drawable.ic_calendar)
         }
         CalendarMode.RECENTS -> {
-          modeChip.text = context.getText(R.string.textMovieStatusReleased)
-          modeChip.setChipIconResource(R.drawable.ic_history)
+          modeChip.text = context.getText(com.michaldrabik.ui_model.R.string.textMovieStatusReleased)
+          modeChip.setChipIconResource(com.michaldrabik.ui_base.R.drawable.ic_history)
         }
       }
     }

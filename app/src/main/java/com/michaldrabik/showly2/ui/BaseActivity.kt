@@ -60,9 +60,9 @@ abstract class BaseActivity : AppCompatActivity() {
       try {
         val isShow = key in arrayOf(EXTRA_SHOW_ID, FcmExtra.SHOW_ID.key)
         if (isShow) {
-          navigate(R.id.actionNavigateShowDetailsFragment, bundle)
+          navigate(com.michaldrabik.ui_navigation.R.id.actionNavigateShowDetailsFragment, bundle)
         } else {
-          navigate(R.id.actionNavigateMovieDetailsFragment, bundle)
+          navigate(com.michaldrabik.ui_navigation.R.id.actionNavigateMovieDetailsFragment, bundle)
         }
         extras.clear()
         action()

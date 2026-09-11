@@ -44,7 +44,7 @@ class PersonLinksBottomSheet : BaseBottomSheetFragment(R.layout.view_person_link
   private val name by lazy { options.name }
   private val website by lazy { options.website }
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,

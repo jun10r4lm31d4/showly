@@ -26,10 +26,10 @@ class MyMoviesRecentsView : FrameLayout {
     clipChildren = false
   }
 
-  private val itemMargin by lazy { context.dimenToPx(R.dimen.spaceTiny) }
+  private val itemMargin by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceTiny) }
   private val itemHeight by lazy { context.dimenToPx(R.dimen.myMoviesFanartHeight) }
   private val itemWidth by lazy {
-    val space = context.dimenToPx(R.dimen.screenMarginHorizontal) * 2
+    val space = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.screenMarginHorizontal) * 2
     ((screenWidth() - space) / 2) - itemMargin
   }
 

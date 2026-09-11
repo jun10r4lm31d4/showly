@@ -83,7 +83,7 @@ import java.util.Locale.ENGLISH
 @AndroidEntryPoint
 class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment_show_details) {
 
-  override val navigationId = R.id.showDetailsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.showDetailsFragment
   val binding by viewBinding(FragmentShowDetailsBinding::bind)
 
   override val viewModel by viewModels<ShowDetailsViewModel>()
@@ -97,8 +97,8 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
       screenWidth()
     }
   }
-  private val imageRatio by lazy { resources.getString(R.string.detailsImageRatio).toFloat() }
-  private val imagePadded by lazy { resources.getBoolean(R.bool.detailsImagePadded) }
+  private val imageRatio by lazy { resources.getString(com.michaldrabik.ui_base.R.string.detailsImageRatio).toFloat() }
+  private val imagePadded by lazy { resources.getBoolean(com.michaldrabik.ui_base.R.bool.detailsImagePadded) }
 
   override fun onViewCreated(
     view: View,
@@ -133,7 +133,7 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
           ARG_FAMILY to SHOW,
           ARG_TYPE to FANART,
         )
-        navigateToSafe(R.id.actionShowDetailsFragmentToArtGallery, bundle)
+        navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToArtGallery, bundle)
       }
       showDetailsTipGallery.onClick {
         it.gone()
@@ -149,13 +149,13 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
       showDetailsHideLabel.onClick { viewModel.addHiddenShow() }
       showDetailsTitle.onClick {
         requireContext().copyToClipboard(showDetailsTitle.text.toString())
-        showSnack(MessageEvent.Info(R.string.textCopiedToClipboard))
+        showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.textCopiedToClipboard))
       }
       showDetailsDescription.onLongClick {
         val text = showDetailsDescription.text.toString()
         if (text.count { it.toString() == SPOILERS_HIDE_SYMBOL } == 0) {
           requireContext().copyToClipboard(text)
-          showSnack(MessageEvent.Info(R.string.textCopiedToClipboard))
+          showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.textCopiedToClipboard))
         }
       }
     }
@@ -169,7 +169,7 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
           showDetailsMainLayout
             .updatePadding(top = inset.top)
         }
-        showDetailsMainContent.updatePadding(bottom = inset.bottom + dimenToPx(R.dimen.spaceNormal))
+        showDetailsMainContent.updatePadding(bottom = inset.bottom + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal))
         (showDetailsBackArrow.layoutParams as MarginLayoutParams).updateMargins(top = inset.top)
       }
     }
@@ -192,12 +192,12 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
             isEnabled = show.trailer.isNotBlank()
             alpha = if (isEnabled) 1.0F else 0.35F
             onClick {
-              openWebUrl(show.trailer) ?: showSnack(MessageEvent.Info(R.string.errorCouldNotFindApp))
+              openWebUrl(show.trailer) ?: showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorCouldNotFindApp))
             }
           }
           showDetailsActions.linksChip.onClick {
             val args = LinksBottomSheet.createBundle(show)
-            navigateToSafe(R.id.actionShowDetailsFragmentToLinks, args)
+            navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToLinks, args)
           }
           showDetailsActions.shareChip.run {
             isEnabled = show.ids.imdb.id
@@ -207,7 +207,7 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
           }
           showDetailsActions.commentsChip.onClick {
             val bundle = CommentsFragment.createBundle(show)
-            navigateToSafe(R.id.actionShowDetailsFragmentToComments, bundle)
+            navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToComments, bundle)
           }
           showDetailsAddButton.isEnabled = true
         }
@@ -300,7 +300,7 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
       year,
       country.uppercase(),
       "⏲ ${show.runtime}",
-      getString(R.string.textMinutesShort),
+      getString(com.michaldrabik.ui_base.R.string.textMinutesShort),
       genres,
     )
 
@@ -319,7 +319,7 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
       text = if (rating.hasRating()) {
         "${rating.userRating?.rating} / 10"
       } else {
-        getString(R.string.textRate)
+        getString(com.michaldrabik.ui_base.R.string.textRate)
       }
 
       onClick {
@@ -356,7 +356,7 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
   }
 
   private fun renderSnack(event: MessageEvent) {
-    if (event.textResId == R.string.errorMalformedShow) {
+    if (event.textResId == com.michaldrabik.ui_base.R.string.errorMalformedShow) {
       val host = (requireActivity() as SnackbarHost).provideSnackbarLayout()
       val snack = host.showInfoSnackbar(getString(event.textResId), length = Snackbar.LENGTH_INDEFINITE) {
         viewModel.removeMalformedShow(showId)
@@ -386,18 +386,18 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
   private fun openRateDialog() {
     setFragmentResultListener(NavigationArgs.REQUEST_RATING) { _, bundle ->
       when (bundle.getParcelable<RatingsBottomSheet.Options.Operation>(NavigationArgs.RESULT)) {
-        SAVE -> renderSnack(MessageEvent.Info(R.string.textRateSaved))
-        REMOVE -> renderSnack(MessageEvent.Info(R.string.textRateRemoved))
+        SAVE -> renderSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.textRateSaved))
+        REMOVE -> renderSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.textRateRemoved))
         else -> Timber.w("Unknown result")
       }
       viewModel.loadUserRating()
     }
     val bundle = RatingsBottomSheet.createBundle(showId, Type.SHOW)
-    navigateToSafe(R.id.actionShowDetailsFragmentToRating, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToRating, bundle)
   }
 
   private fun openListsDialog() {
-    if (findNavControl()?.currentDestination?.id != R.id.showDetailsFragment) {
+    if (findNavControl()?.currentDestination?.id != com.michaldrabik.ui_navigation.R.id.showDetailsFragment) {
       return
     }
     setFragmentResultListener(REQUEST_MANAGE_LISTS) { _, _ -> viewModel.loadListsCount() }
@@ -405,7 +405,7 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
       ARG_ID to showId.id,
       ARG_TYPE to Mode.SHOWS.type,
     )
-    navigateToSafe(R.id.actionShowDetailsFragmentToManageLists, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToManageLists, bundle)
   }
 
   fun showStreamingsView(animate: Boolean) {

@@ -57,14 +57,14 @@ class MovieFanartView : MovieView<DiscoverMovieListItem> {
   override fun loadImage(item: DiscoverMovieListItem) {
     super.loadImage(item)
     if (item.image.status == UNAVAILABLE) {
-      binding.movieFanartRoot.setBackgroundResource(R.drawable.bg_media_view_placeholder)
+      binding.movieFanartRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_placeholder)
     }
   }
 
   override fun onImageLoadFail(item: DiscoverMovieListItem) {
     super.onImageLoadFail(item)
     if (item.image.status == AVAILABLE) {
-      binding.movieFanartRoot.setBackgroundResource(R.drawable.bg_media_view_placeholder)
+      binding.movieFanartRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_placeholder)
     }
   }
 
@@ -73,7 +73,7 @@ class MovieFanartView : MovieView<DiscoverMovieListItem> {
       movieFanartTitle.text = ""
       movieFanartProgress.gone()
       movieFanartPlaceholder.gone()
-      movieFanartRoot.setBackgroundResource(R.drawable.bg_media_view_elevation)
+      movieFanartRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_elevation)
       movieFanartBadge.gone()
       Glide.with(this@MovieFanartView).clear(movieFanartImage)
     }

@@ -34,7 +34,7 @@ class CommentView : ConstraintLayout {
   private val colorTextPrimary by lazy { context.colorFromAttr(android.R.attr.textColorPrimary) }
   private val colorTextSecondary by lazy { context.colorFromAttr(android.R.attr.textColorSecondary) }
   private val colorTextAccent by lazy { context.colorFromAttr(android.R.attr.colorAccent) }
-  private val commentSpace by lazy { context.dimenToPx(R.dimen.commentViewSpace) }
+  private val commentSpace by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.commentViewSpace) }
 
   init {
     layoutParams = LayoutParams(MATCH_PARENT, WRAP_CONTENT)
@@ -66,7 +66,7 @@ class CommentView : ConstraintLayout {
 
     with(binding) {
       commentSpacer.setGuidelineBegin(if (comment.isReply()) commentSpace else 0)
-      commentHeader.text = context.getString(R.string.textCommentedOn, comment.user.username)
+      commentHeader.text = context.getString(com.michaldrabik.ui_base.R.string.textCommentedOn, comment.user.username)
       commentDate.text = comment.updatedAt?.toLocalZone()?.let { dateFormat?.format(it) }
 
       if (comment.isMe) {
@@ -84,7 +84,7 @@ class CommentView : ConstraintLayout {
 
       if (comment.hasSpoilers()) {
         with(commentText) {
-          text = context.getString(R.string.textSpoilersWarning)
+          text = context.getString(com.michaldrabik.ui_base.R.string.textSpoilersWarning)
           commentText.setTypeface(null, Typeface.BOLD_ITALIC)
           commentText.setTextColor(colorTextSecondary)
           setOnTouchListener { _, event ->
@@ -105,7 +105,7 @@ class CommentView : ConstraintLayout {
         Glide
           .with(this@CommentView)
           .load(comment.user.avatarUrl)
-          .placeholder(R.drawable.ic_person_placeholder)
+          .placeholder(com.michaldrabik.ui_base.R.drawable.ic_person_placeholder)
           .transform(CircleCrop())
           .into(commentImage)
       }

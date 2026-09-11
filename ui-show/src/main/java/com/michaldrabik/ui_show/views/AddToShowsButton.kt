@@ -61,13 +61,13 @@ class AddToShowsButton : FrameLayout {
           watchlistButton.fadeIn(duration, startDelay = startDelay, withHardware = true) { isAnimating = false }
         }
         State.IN_MY_SHOWS -> {
-          val color = context.colorFromAttr(R.attr.colorAccent)
-          val colorState = context.colorStateListFromAttr(R.attr.colorAccent)
+          val color = context.colorFromAttr(androidx.appcompat.R.attr.colorAccent)
+          val colorState = context.colorStateListFromAttr(androidx.appcompat.R.attr.colorAccent)
 
           addToMyShowsButton.fadeOut(duration, withHardware = true)
           watchlistButton.fadeOut(duration, withHardware = true)
           addedToButton.run {
-            setIconResource(R.drawable.ic_bookmark_full)
+            setIconResource(com.michaldrabik.ui_base.R.drawable.ic_bookmark_full)
             setText(R.string.textInMyShows)
             setTextColor(color)
             iconTint = colorState
@@ -83,7 +83,7 @@ class AddToShowsButton : FrameLayout {
           addToMyShowsButton.fadeOut(duration, withHardware = true)
           watchlistButton.fadeOut(duration, withHardware = true)
           addedToButton.run {
-            setIconResource(R.drawable.ic_bookmark_full)
+            setIconResource(com.michaldrabik.ui_base.R.drawable.ic_bookmark_full)
             setText(R.string.textInWatchlist)
             setTextColor(color)
             iconTint = colorState
@@ -100,7 +100,7 @@ class AddToShowsButton : FrameLayout {
             fadeOut(duration, withHardware = true) {
               val color = context.colorFromAttr(android.R.attr.textColorSecondary)
               val colorState = context.colorStateListFromAttr(android.R.attr.textColorSecondary)
-              setIconResource(R.drawable.ic_eye_no)
+              setIconResource(com.michaldrabik.ui_base.R.drawable.ic_eye_no)
               setText(R.string.textInHidden)
               setTextColor(color)
               iconTint = colorState

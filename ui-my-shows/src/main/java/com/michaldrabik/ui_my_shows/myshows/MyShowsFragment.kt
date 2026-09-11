@@ -64,7 +64,7 @@ class MyShowsFragment :
 
   @Inject lateinit var settings: SettingsViewModeRepository
 
-  override val navigationId = R.id.followedShowsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.followedShowsFragment
   private val binding by viewBinding(FragmentMyShowsBinding::bind)
 
   private val parentViewModel by viewModels<FollowedShowsViewModel>({ requireParentFragment() })
@@ -96,7 +96,7 @@ class MyShowsFragment :
       itemClickListener = { openShowDetails(it.show) },
       itemLongClickListener = { item -> openShowMenu(item.show) },
       onSortOrderClickListener = { section, order, type -> openSortOrderDialog(section, order, type) },
-      onTypeClickListener = { navigateToSafe(R.id.actionFollowedShowsFragmentToMyShowsFilters) },
+      onTypeClickListener = { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToMyShowsFilters) },
       onListViewModeClickListener = {},
       onNetworksClickListener = ::openNetworksDialog,
       onGenresClickListener = ::openGenresDialog,
@@ -114,14 +114,14 @@ class MyShowsFragment :
       layoutManager = this@MyShowsFragment.layoutManager
       (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
       setHasFixedSize(true)
-      addItemDecoration(MyShowsListItemDecoration(requireContext(), R.dimen.spaceSmall))
+      addItemDecoration(MyShowsListItemDecoration(requireContext(), com.michaldrabik.ui_base.R.dimen.spaceSmall))
     }
   }
 
   private fun setupInsets() {
     with(binding) {
       root.doOnApplyWindowInsets { view, insets, _, _ ->
-        val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+        val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val systemInset = insets.getInsets(WindowInsetsCompat.Type.systemBars())
         myShowsRoot.updatePadding(top = systemInset.top + tabletOffset)
         myShowsRecycler.updatePadding(
@@ -199,7 +199,7 @@ class MyShowsFragment :
         ?.let { viewModel.setSortOrder(sortOrder, sortType) }
     }
 
-    navigateTo(R.id.actionFollowedShowsFragmentToSortOrder, args)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToSortOrder, args)
   }
 
   private fun openNetworksDialog() {
@@ -208,7 +208,7 @@ class MyShowsFragment :
     }
 
     val bundle = CollectionFiltersNetworkBottomSheet.createBundle(MY_SHOWS)
-    navigateToSafe(R.id.actionFollowedShowsFragmentToNetworks, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToNetworks, bundle)
   }
 
   private fun openGenresDialog() {
@@ -217,7 +217,7 @@ class MyShowsFragment :
     }
 
     val bundle = CollectionFiltersGenreBottomSheet.createBundle(MY_SHOWS)
-    navigateToSafe(R.id.actionFollowedShowsFragmentToGenres, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToGenres, bundle)
   }
 
   override fun onEnterSearch() {

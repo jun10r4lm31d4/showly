@@ -99,7 +99,7 @@ class CommentsViewModel @Inject constructor(
         commentsState.value = currentComments
       } catch (t: Throwable) {
         commentsState.value = currentComments
-        messageChannel.send(MessageEvent.Error(R.string.errorGeneral))
+        messageChannel.send(MessageEvent.Error(com.michaldrabik.ui_base.R.string.errorGeneral))
       }
     }
   }

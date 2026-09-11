@@ -43,8 +43,8 @@ class MyShowAllView : ShowView<MyShowsItem> {
       collectionShowRoot.onClick { itemClickListener?.invoke(item) }
       collectionShowRoot.onLongClick { itemLongClickListener?.invoke(item) }
       collectionShowRoot.setOutboundRipple(
-        size = (context.dimenToPx(R.dimen.collectionItemRippleSpace)).toFloat(),
-        corner = context.dimenToPx(R.dimen.mediaTileCorner).toFloat(),
+        size = (context.dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionItemRippleSpace)).toFloat(),
+        corner = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner).toFloat(),
       )
     }
 
@@ -74,7 +74,7 @@ class MyShowAllView : ShowView<MyShowsItem> {
 
       collectionShowNetwork.text =
         if (item.show.year > 0) {
-          context.getString(R.string.textNetwork, item.show.network, item.show.year.toString())
+          context.getString(com.michaldrabik.ui_base.R.string.textNetwork, item.show.network, item.show.year.toString())
         } else {
           String.format("%s", item.show.network)
         }

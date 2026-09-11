@@ -37,7 +37,7 @@ class PeopleListItemView : FrameLayout {
 
   var onItemClickListener: ((Person) -> Unit)? = null
 
-  private val cornerRadius by lazy { context.dimenToPx(R.dimen.mediaTileCorner) }
+  private val cornerRadius by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner) }
   private val centerCropTransformation by lazy { CenterCrop() }
   private val cornersTransformation by lazy { RoundedCorners(cornerRadius) }
 
@@ -57,15 +57,15 @@ class PeopleListItemView : FrameLayout {
       viewPersonItemTitle.text = item.person.name
       val mainJob = item.person.jobs.firstOrNull { it != Job.UNKNOWN }
       viewPersonItemHeader.text = when (mainJob) {
-        Job.DIRECTOR -> context.getString(R.string.textDirector)
-        Job.WRITER, Job.STORY -> context.getString(R.string.textWriting)
-        Job.SCREENPLAY -> context.getString(R.string.textScreenplay)
-        Job.MUSIC, Job.ORIGINAL_MUSIC -> context.getString(R.string.textMusic)
+        Job.DIRECTOR -> context.getString(com.michaldrabik.ui_base.R.string.textDirector)
+        Job.WRITER, Job.STORY -> context.getString(com.michaldrabik.ui_base.R.string.textWriting)
+        Job.SCREENPLAY -> context.getString(com.michaldrabik.ui_base.R.string.textScreenplay)
+        Job.MUSIC, Job.ORIGINAL_MUSIC -> context.getString(com.michaldrabik.ui_base.R.string.textMusic)
         else -> when (item.person.department) {
-          Department.ACTING -> context.getString(R.string.textActing)
-          Department.DIRECTING -> context.getString(R.string.textDirector)
-          Department.WRITING -> context.getString(R.string.textWriting)
-          Department.SOUND -> context.getString(R.string.textMusic)
+          Department.ACTING -> context.getString(com.michaldrabik.ui_base.R.string.textActing)
+          Department.DIRECTING -> context.getString(com.michaldrabik.ui_base.R.string.textDirector)
+          Department.WRITING -> context.getString(com.michaldrabik.ui_base.R.string.textWriting)
+          Department.SOUND -> context.getString(com.michaldrabik.ui_base.R.string.textMusic)
           Department.UNKNOWN -> "-"
         }
       }

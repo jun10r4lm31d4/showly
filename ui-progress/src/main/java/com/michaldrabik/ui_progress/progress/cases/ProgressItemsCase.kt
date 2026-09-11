@@ -276,7 +276,7 @@ class ProgressItemsCase @Inject constructor(
           val isCollapsed = settingsRepository.isProgressUpcomingCollapsed
           val upcomingHeader = ProgressListItem.Header.create(
             Type.UPCOMING,
-            R.string.textWatchlistIncoming,
+            com.michaldrabik.ui_base.R.string.textWatchlistIncoming,
             isCollapsed,
           )
           addAll(listOf(upcomingHeader))

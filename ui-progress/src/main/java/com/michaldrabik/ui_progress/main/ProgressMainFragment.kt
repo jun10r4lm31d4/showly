@@ -65,7 +65,7 @@ class ProgressMainFragment :
     private const val TRANSLATION_DURATION = 225L
   }
 
-  override val navigationId = R.id.progressMainFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.progressMainFragment
 
   override val viewModel by viewModels<ProgressMainViewModel>()
   private val binding by viewBinding(FragmentProgressMainBinding::bind)
@@ -144,7 +144,7 @@ class ProgressMainFragment :
       }
 
       with(progressMainSearchView) {
-        hint = getString(R.string.textSearchFor)
+        hint = getString(com.michaldrabik.ui_base.R.string.textSearchFor)
         settingsIconVisible = true
         isClickable = false
         onClick { openMainSearch() }
@@ -183,7 +183,7 @@ class ProgressMainFragment :
   private fun setupInsets() {
     with(binding) {
       progressMainRoot.doOnApplyWindowInsets { _, insets, _, _ ->
-        val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+        val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val statusBarSize = insets.getInsets(WindowInsetsCompat.Type.systemBars()).top + tabletOffset
         val progressTabsMargin = if (moviesEnabled) {
           R.dimen.progressSearchViewPadding
@@ -194,11 +194,11 @@ class ProgressMainFragment :
         val progressMainSearchLocalMargin =
           if (moviesEnabled) R.dimen.progressSearchLocalViewPadding else R.dimen.progressSearchLocalViewPaddingNoModes
         (progressMainSearchView.layoutParams as ViewGroup.MarginLayoutParams)
-          .updateMargins(top = statusBarSize + dimenToPx(R.dimen.spaceMedium))
+          .updateMargins(top = statusBarSize + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium))
         (progressMainSearchLocalView.layoutParams as ViewGroup.MarginLayoutParams)
           .updateMargins(top = statusBarSize + dimenToPx(progressMainSearchLocalMargin))
         (progressMainPagerModeTabs.layoutParams as ViewGroup.MarginLayoutParams)
-          .updateMargins(top = statusBarSize + dimenToPx(R.dimen.collectionTabsMargin))
+          .updateMargins(top = statusBarSize + dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionTabsMargin))
         arrayOf(progressMainTabs, progressMainSideIcons).forEach {
           val margin = statusBarSize + dimenToPx(progressTabsMargin)
           (it.layoutParams as ViewGroup.MarginLayoutParams).updateMargins(top = margin)
@@ -228,7 +228,7 @@ class ProgressMainFragment :
       progressMainSideIcons.fadeOut(duration = 200).add(animations)
       progressMainPager
         .fadeOut(duration = 200) {
-          navigateToSafe(R.id.actionProgressFragmentToSearch)
+          navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionProgressFragmentToSearch)
         }.add(animations)
     }
   }
@@ -238,9 +238,9 @@ class ProgressMainFragment :
       hideNavigation()
       progressMainRoot
         .fadeOut(150) {
-          if (findNavControl()?.currentDestination?.id == R.id.progressMainFragment) {
+          if (findNavControl()?.currentDestination?.id == com.michaldrabik.ui_navigation.R.id.progressMainFragment) {
             val bundle = Bundle().apply { putLong(ARG_SHOW_ID, show.traktId) }
-            navigateToSafe(R.id.actionProgressFragmentToShowDetailsFragment, bundle)
+            navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionProgressFragmentToShowDetailsFragment, bundle)
             exitSearch()
           } else {
             showNavigation()
@@ -258,7 +258,7 @@ class ProgressMainFragment :
       clearFragmentResultListener(REQUEST_ITEM_MENU)
     }
     val bundle = ContextMenuBottomSheet.createBundle(show.ids.trakt, showPinButtons = true)
-    navigateToSafe(R.id.actionProgressFragmentToItemMenu, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionProgressFragmentToItemMenu, bundle)
   }
 
   fun openEpisodeDetails(
@@ -290,13 +290,13 @@ class ProgressMainFragment :
       }
     }
     val options = DateSelectionBottomSheet.createBundle(episodeBundle.episode.firstAired)
-    navigateToSafe(R.id.actionProgressFragmentToDateSelection, options)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionProgressFragmentToDateSelection, options)
   }
 
   private fun openSettings() {
     hideNavigation()
     exitSearch()
-    navigateToSafe(R.id.actionProgressFragmentToSettingsFragment)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionProgressFragmentToSettingsFragment)
   }
 
   private fun enterSearch() {
@@ -379,7 +379,7 @@ class ProgressMainFragment :
           isWatched = event.isWatched,
           showTabs = true,
         )
-        navigateToSafe(R.id.actionProgressFragmentToEpisodeDetails, bundle)
+        navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionProgressFragmentToEpisodeDetails, bundle)
       }
     }
   }

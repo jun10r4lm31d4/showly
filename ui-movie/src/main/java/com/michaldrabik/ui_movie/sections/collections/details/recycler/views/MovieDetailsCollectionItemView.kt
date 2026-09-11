@@ -44,12 +44,12 @@ class MovieDetailsCollectionItemView : FrameLayout {
   var onMissingImageListener: ((MovieDetailsCollectionItem, Boolean) -> Unit)? = null
   var onMissingTranslationListener: ((MovieDetailsCollectionItem) -> Unit)? = null
 
-  private val cornerRadius by lazy { context.dimenToPx(R.dimen.mediaTileCorner) }
+  private val cornerRadius by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner) }
   private val centerCropTransformation by lazy { CenterCrop() }
   private val cornersTransformation by lazy { RoundedCorners(cornerRadius) }
 
-  private val colorAccent by lazy { ContextCompat.getColor(context, R.color.colorAccent) }
-  private val colorGray by lazy { ContextCompat.getColor(context, R.color.colorGrayLight) }
+  private val colorAccent by lazy { ContextCompat.getColor(context, com.michaldrabik.ui_base.R.color.colorAccent) }
+  private val colorGray by lazy { ContextCompat.getColor(context, com.michaldrabik.ui_base.R.color.colorGrayLight) }
 
   private lateinit var item: MovieDetailsCollectionItem
 
@@ -84,7 +84,7 @@ class MovieDetailsCollectionItemView : FrameLayout {
       var description = when {
         item.translation?.overview?.isNotBlank() == true -> item.translation.overview
         item.movie.overview.isNotBlank() -> item.movie.overview
-        else -> context.getString(R.string.textNoDescription)
+        else -> context.getString(com.michaldrabik.ui_base.R.string.textNoDescription)
       }
 
       val isMyMovieHidden = item.spoilers.isMyMoviesHidden && item.isMyMovie

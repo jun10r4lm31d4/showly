@@ -38,7 +38,7 @@ class CalendarWidgetViewsFactory(
   private val settingsRepository: SettingsRepository,
 ) : RemoteViewsService.RemoteViewsFactory {
 
-  private val imageCorner by lazy { context.dimenToPx(R.dimen.mediaTileCorner) }
+  private val imageCorner by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner) }
   private val imageWidth by lazy { context.dimenToPx(R.dimen.widgetImageWidth) }
   private val imageHeight by lazy { context.dimenToPx(R.dimen.widgetImageHeight) }
   private var mode = PRESENT_FUTURE
@@ -72,8 +72,8 @@ class CalendarWidgetViewsFactory(
 
     if (showIcon) {
       when (mode) {
-        PRESENT_FUTURE -> setImageViewResource(R.id.progressWidgetHeaderIcon, R.drawable.ic_history)
-        RECENTS -> setImageViewResource(R.id.progressWidgetHeaderIcon, R.drawable.ic_calendar)
+        PRESENT_FUTURE -> setImageViewResource(R.id.progressWidgetHeaderIcon, com.michaldrabik.ui_base.R.drawable.ic_history)
+        RECENTS -> setImageViewResource(R.id.progressWidgetHeaderIcon, com.michaldrabik.ui_base.R.drawable.ic_calendar)
       }
       setViewVisibility(R.id.progressWidgetHeaderIcon, VISIBLE)
       val fillIntent = Intent().apply {
@@ -106,19 +106,19 @@ class CalendarWidgetViewsFactory(
       if (isNewSeason) {
         setTextViewText(
           R.id.calendarWidgetItemOverview,
-          String.format(Locale.ENGLISH, context.getString(R.string.textSeason), item.episode.season),
+          String.format(Locale.ENGLISH, context.getString(com.michaldrabik.ui_base.R.string.textSeason), item.episode.season),
         )
-        setTextViewText(R.id.calendarWidgetItemBadge, context.getString(R.string.textNewSeason))
+        setTextViewText(R.id.calendarWidgetItemBadge, context.getString(com.michaldrabik.ui_progress.R.string.textNewSeason))
       } else {
         val episodeTitle = when {
-          item.episode.title.isBlank() -> context.getString(R.string.textTba)
+          item.episode.title.isBlank() -> context.getString(com.michaldrabik.ui_base.R.string.textTba)
           item.translations
             ?.episode
             ?.title
             ?.isBlank() == false -> item.translations?.episode?.title
           item.episode.title == "Episode ${item.episode.number}" -> String.format(
             Locale.ENGLISH,
-            context.getString(R.string.textEpisode),
+            context.getString(com.michaldrabik.ui_base.R.string.textEpisode),
             item.episode.number,
           )
           else -> item.episode.title
@@ -126,7 +126,7 @@ class CalendarWidgetViewsFactory(
         val badgeTitle = String
           .format(
             Locale.ENGLISH,
-            context.getString(com.michaldrabik.ui_progress.R.string.textSeasonEpisode),
+            context.getString(com.michaldrabik.ui_base.R.string.textSeasonEpisode),
             item.episode.season,
             item.episode.number,
           ).plus(

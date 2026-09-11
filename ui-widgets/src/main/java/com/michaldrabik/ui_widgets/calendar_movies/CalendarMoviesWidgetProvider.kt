@@ -64,7 +64,7 @@ class CalendarMoviesWidgetProvider : BaseWidgetProvider() {
     appWidgetManager: AppWidgetManager,
     widgetId: Int,
   ) {
-    val spaceTiny = context.dimenToPx(R.dimen.spaceTiny)
+    val spaceTiny = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceTiny)
 
     val intent = Intent(context, CalendarMoviesWidgetService::class.java).apply {
       putExtra(EXTRA_APPWIDGET_ID, widgetId)
@@ -86,17 +86,17 @@ class CalendarMoviesWidgetProvider : BaseWidgetProvider() {
 
       when (settingsRepository.widgets.getWidgetCalendarMode(Mode.MOVIES, widgetId)) {
         CalendarMode.PRESENT_FUTURE -> {
-          setImageViewResource(R.id.calendarWidgetMoviesEmptyViewIcon, R.drawable.ic_history)
+          setImageViewResource(R.id.calendarWidgetMoviesEmptyViewIcon, com.michaldrabik.ui_base.R.drawable.ic_history)
           setTextViewText(
             R.id.calendarWidgetMoviesEmptyViewSubtitle,
-            context.getString(R.string.textMoviesCalendarEmpty),
+            context.getString(com.michaldrabik.ui_progress_movies.R.string.textMoviesCalendarEmpty),
           )
         }
         CalendarMode.RECENTS -> {
-          setImageViewResource(R.id.calendarWidgetMoviesEmptyViewIcon, R.drawable.ic_calendar)
+          setImageViewResource(R.id.calendarWidgetMoviesEmptyViewIcon, com.michaldrabik.ui_base.R.drawable.ic_calendar)
           setTextViewText(
             R.id.calendarWidgetMoviesEmptyViewSubtitle,
-            context.getString(R.string.textMoviesCalendarRecentsEmpty),
+            context.getString(com.michaldrabik.ui_progress_movies.R.string.textMoviesCalendarRecentsEmpty),
           )
         }
       }

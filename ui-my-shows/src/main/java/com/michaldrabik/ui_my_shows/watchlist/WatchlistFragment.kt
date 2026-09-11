@@ -62,7 +62,7 @@ class WatchlistFragment :
 
   @Inject lateinit var settings: SettingsViewModeRepository
 
-  override val navigationId = R.id.followedShowsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.followedShowsFragment
   private val binding by viewBinding(FragmentWatchlistBinding::bind)
 
   private val parentViewModel by viewModels<FollowedShowsViewModel>({ requireParentFragment() })
@@ -113,14 +113,14 @@ class WatchlistFragment :
       adapter = this@WatchlistFragment.adapter
       layoutManager = this@WatchlistFragment.layoutManager
       (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
-      addItemDecoration(CollectionShowListItemDecoration(requireContext(), R.dimen.spaceSmall))
+      addItemDecoration(CollectionShowListItemDecoration(requireContext(), com.michaldrabik.ui_base.R.dimen.spaceSmall))
     }
   }
 
   private fun setupInsets() {
     with(binding) {
       root.doOnApplyWindowInsets { _, insets, padding, _ ->
-        val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+        val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val inset = insets.getInsets(WindowInsetsCompat.Type.systemBars())
         watchlistContent.updatePadding(top = padding.top + inset.top + tabletOffset)
         watchlistRecycler.updatePadding(
@@ -191,7 +191,7 @@ class WatchlistFragment :
       viewModel.setSortOrder(sortOrder, sortType)
     }
 
-    navigateTo(R.id.actionFollowedShowsFragmentToSortOrder, args)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToSortOrder, args)
   }
 
   private fun openNetworksDialog() {
@@ -200,7 +200,7 @@ class WatchlistFragment :
     }
 
     val bundle = CollectionFiltersNetworkBottomSheet.createBundle(WATCHLIST_SHOWS)
-    navigateToSafe(R.id.actionFollowedShowsFragmentToNetworks, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToNetworks, bundle)
   }
 
   private fun openGenresDialog() {
@@ -209,7 +209,7 @@ class WatchlistFragment :
     }
 
     val bundle = CollectionFiltersGenreBottomSheet.createBundle(WATCHLIST_SHOWS)
-    navigateToSafe(R.id.actionFollowedShowsFragmentToGenres, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToGenres, bundle)
   }
 
   override fun onEnterSearch() {

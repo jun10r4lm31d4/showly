@@ -52,8 +52,8 @@ class CollectionShowFiltersView : FrameLayout {
   ) {
     with(binding) {
       val sortIcon = when (item.sortType) {
-        ASCENDING -> R.drawable.ic_arrow_alt_up
-        DESCENDING -> R.drawable.ic_arrow_alt_down
+        ASCENDING -> com.michaldrabik.ui_base.R.drawable.ic_arrow_alt_up
+        DESCENDING -> com.michaldrabik.ui_base.R.drawable.ic_arrow_alt_down
       }
 
       followedShowsCountText.text = "${item.count}"
@@ -63,14 +63,14 @@ class CollectionShowFiltersView : FrameLayout {
 
       followedShowsNetworksChip.isSelected = item.networks.isNotEmpty()
       followedShowsNetworksChip.text = when {
-        item.networks.isEmpty() -> context.getString(R.string.textNetworks).filter { it.isLetter() }
+        item.networks.isEmpty() -> context.getString(com.michaldrabik.ui_base.R.string.textNetworks).filter { it.isLetter() }
         item.networks.size == 1 -> item.networks[0].channels.first()
         else -> throw IllegalStateException()
       }
 
       followedShowsGenresChip.isSelected = item.genres.isNotEmpty()
       followedShowsGenresChip.text = when {
-        item.genres.isEmpty() -> context.getString(R.string.textGenres).filter { it.isLetter() }
+        item.genres.isEmpty() -> context.getString(com.michaldrabik.ui_base.R.string.textGenres).filter { it.isLetter() }
         item.genres.size == 1 -> context.getString(item.genres.first().displayName)
         item.genres.size == 2 -> "${context.getString(item.genres[0].displayName)}, " +
           context.getString(item.genres[1].displayName)
@@ -80,13 +80,13 @@ class CollectionShowFiltersView : FrameLayout {
 
       followedShowsUpcomingChip.isChecked = item.upcoming.isActive()
       followedShowsUpcomingChip.text = when (item.upcoming) {
-        UpcomingFilter.OFF -> context.getString(R.string.textWatchlistIncoming)
-        UpcomingFilter.UPCOMING -> context.getString(R.string.textWatchlistIncoming)
-        UpcomingFilter.RELEASED -> context.getString(R.string.textMovieStatusReleased)
+        UpcomingFilter.OFF -> context.getString(com.michaldrabik.ui_base.R.string.textWatchlistIncoming)
+        UpcomingFilter.UPCOMING -> context.getString(com.michaldrabik.ui_base.R.string.textWatchlistIncoming)
+        UpcomingFilter.RELEASED -> context.getString(com.michaldrabik.ui_model.R.string.textMovieStatusReleased)
       }
       followedShowsListViewChip.setChipIconResource(
         when (viewMode) {
-          LIST_NORMAL -> R.drawable.ic_view_list
+          LIST_NORMAL -> com.michaldrabik.ui_base.R.drawable.ic_view_list
         },
       )
 

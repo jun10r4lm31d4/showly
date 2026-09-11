@@ -22,7 +22,7 @@ class ShowDetailsStreamingsFragment :
     R.layout.fragment_show_details_streamings,
   ) {
 
-  override val navigationId = R.id.showDetailsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.showDetailsFragment
   private val binding by viewBinding(FragmentShowDetailsStreamingsBinding::bind)
 
   private val parentViewModel by viewModels<ShowDetailsViewModel>({ requireParentFragment() })

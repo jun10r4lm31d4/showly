@@ -49,7 +49,7 @@ class MyMovieHeaderView : FrameLayout {
 
       with(myMoviesSortListViewChip) {
         when (viewMode) {
-          LIST_NORMAL -> setChipIconResource(R.drawable.ic_view_list)
+          LIST_NORMAL -> setChipIconResource(com.michaldrabik.ui_base.R.drawable.ic_view_list)
         }
         onClick { listModeClickListener?.invoke() }
       }
@@ -60,8 +60,8 @@ class MyMovieHeaderView : FrameLayout {
           sortClickListener.invoke(sortOrder.first, sortOrder.second)
         }
         val sortIcon = when (sortOrder.second) {
-          SortType.ASCENDING -> R.drawable.ic_arrow_alt_up
-          SortType.DESCENDING -> R.drawable.ic_arrow_alt_down
+          SortType.ASCENDING -> com.michaldrabik.ui_base.R.drawable.ic_arrow_alt_up
+          SortType.DESCENDING -> com.michaldrabik.ui_base.R.drawable.ic_arrow_alt_down
         }
         myMoviesSortChip.closeIcon = ContextCompat.getDrawable(context, sortIcon)
       }
@@ -70,7 +70,7 @@ class MyMovieHeaderView : FrameLayout {
         myMoviesGenresChip.isSelected = genres.isNotEmpty()
         myMoviesGenresChip.onClick { genresClickListener.invoke() }
         myMoviesGenresChip.text = when {
-          genres.isEmpty() -> context.getString(R.string.textGenres).filter { it.isLetter() }
+          genres.isEmpty() -> context.getString(com.michaldrabik.ui_base.R.string.textGenres).filter { it.isLetter() }
           genres.size == 1 -> context.getString(genres.first().displayName)
           genres.size == 2 -> "${context.getString(genres[0].displayName)}, ${context.getString(genres[1].displayName)}"
           else -> "${context.getString(genres[0].displayName)}, " +

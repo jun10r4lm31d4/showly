@@ -65,7 +65,7 @@ class ShowDetailsEpisodesFragment :
       )
   }
 
-  override val navigationId = R.id.showDetailsEpisodesFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.showDetailsEpisodesFragment
   private val binding by viewBinding(FragmentShowDetailsEpisodesBinding::bind)
 
   override val viewModel by viewModels<ShowDetailsEpisodesViewModel>()
@@ -138,9 +138,9 @@ class ShowDetailsEpisodesFragment :
         season?.let {
           episodesTitle.text =
             if (it.season.isSpecial()) {
-              getString(R.string.textSpecials)
+              getString(com.michaldrabik.ui_base.R.string.textSpecials)
             } else {
-              String.format(Locale.ENGLISH, getString(R.string.textSeason), it.season.number)
+              String.format(Locale.ENGLISH, getString(com.michaldrabik.ui_base.R.string.textSeason), it.season.number)
             }
           episodesOverview.text = it.season.overview
           episodesOverview.visibleIf(it.season.overview.isNotBlank())
@@ -251,14 +251,14 @@ class ShowDetailsEpisodesFragment :
       isWatched = isWatched,
       showTabs = true,
     )
-    navigateToSafe(R.id.actionEpisodesFragmentToEpisodesDetails, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionEpisodesFragmentToEpisodesDetails, bundle)
   }
 
   private fun openRateSeasonDialog(season: Season) {
     setFragmentResultListener(NavigationArgs.REQUEST_RATING) { _, bundle ->
       when (bundle.optionalParcelable<Operation>(NavigationArgs.RESULT)) {
-        Operation.SAVE -> showSnack(MessageEvent.Info(R.string.textRateSaved))
-        Operation.REMOVE -> showSnack(MessageEvent.Info(R.string.textRateRemoved))
+        Operation.SAVE -> showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.textRateSaved))
+        Operation.REMOVE -> showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.textRateRemoved))
         else -> Timber.w("Unknown result")
       }
       viewModel.loadSeasonRating()
@@ -269,7 +269,7 @@ class ShowDetailsEpisodesFragment :
       type = Type.SEASON,
       seasonNumber = season.number,
     )
-    navigateToSafe(R.id.actionEpisodesFragmentToRating, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionEpisodesFragmentToRating, bundle)
   }
 
   private fun openDateSelectionDialog(episode: Episode) {
@@ -281,7 +281,7 @@ class ShowDetailsEpisodesFragment :
       }
     }
     val options = DateSelectionBottomSheet.createBundle(episode.firstAired)
-    navigateToSafe(R.id.actionEpisodesFragmentToDateSelection, options)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionEpisodesFragmentToDateSelection, options)
   }
 
   private fun openDateSelectionDialog(season: SeasonListItem) {
@@ -293,7 +293,7 @@ class ShowDetailsEpisodesFragment :
       }
     }
     val options = DateSelectionBottomSheet.createBundle(season.season.firstAired)
-    navigateToSafe(R.id.actionEpisodesFragmentToDateSelection, options)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionEpisodesFragmentToDateSelection, options)
   }
 
   override fun onDestroyView() {

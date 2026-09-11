@@ -57,7 +57,7 @@ class HiddenFragment :
 
   @Inject lateinit var settings: SettingsViewModeRepository
 
-  override val navigationId = R.id.followedMoviesFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.followedMoviesFragment
   private val binding by viewBinding(FragmentHiddenMoviesBinding::bind)
 
   private val parentViewModel by viewModels<FollowedMoviesViewModel>({ requireParentFragment() })
@@ -106,14 +106,14 @@ class HiddenFragment :
       adapter = this@HiddenFragment.adapter
       layoutManager = this@HiddenFragment.layoutManager
       (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
-      addItemDecoration(CollectionMovieListItemDecoration(requireContext(), R.dimen.spaceSmall))
+      addItemDecoration(CollectionMovieListItemDecoration(requireContext(), com.michaldrabik.ui_base.R.dimen.spaceSmall))
     }
   }
 
   private fun setupInsets() {
     with(binding) {
       root.doOnApplyWindowInsets { _, insets, padding, _ ->
-        val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+        val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val systemInset = insets.getInsets(WindowInsetsCompat.Type.systemBars())
         hiddenMoviesContent.updatePadding(top = padding.top + systemInset.top + tabletOffset)
         hiddenMoviesRecycler.updatePadding(
@@ -180,7 +180,7 @@ class HiddenFragment :
       viewModel.setSortOrder(sortOrder, sortType)
     }
 
-    navigateTo(R.id.actionFollowedMoviesFragmentToSortOrder, args)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionFollowedMoviesFragmentToSortOrder, args)
   }
 
   private fun openGenresDialog() {
@@ -189,7 +189,7 @@ class HiddenFragment :
     }
 
     val bundle = CollectionFiltersGenreBottomSheet.createBundle(HIDDEN_MOVIES)
-    navigateToSafe(R.id.actionFollowedMoviesFragmentToGenres, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedMoviesFragmentToGenres, bundle)
   }
 
   private fun openMovieDetails(movie: Movie) {

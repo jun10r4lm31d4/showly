@@ -31,7 +31,7 @@ class MyShowsFilterItemView : ConstraintLayout {
 
   init {
     layoutParams = LayoutParams(MATCH_PARENT, WRAP_CONTENT)
-    val paddingHorizontal = context.dimenToPx(R.dimen.spaceNormal)
+    val paddingHorizontal = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal)
     setPadding(paddingHorizontal, 0, paddingHorizontal, 0)
     addRipple()
     onClick(safe = false) { onItemClickListener?.invoke(sectionType) }

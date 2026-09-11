@@ -47,7 +47,7 @@ class ShowDetailsSeasonsFragment : BaseFragment<ShowDetailsSeasonsViewModel>(R.l
 
   @Inject lateinit var settings: SettingsViewModeRepository
 
-  override val navigationId = R.id.showDetailsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.showDetailsFragment
   private val binding by viewBinding(FragmentShowDetailsSeasonsBinding::bind)
 
   private val parentViewModel by viewModels<ShowDetailsViewModel>({ requireParentFragment() })
@@ -87,7 +87,7 @@ class ShowDetailsSeasonsFragment : BaseFragment<ShowDetailsSeasonsViewModel>(R.l
       layoutManager = SeasonsLayoutManagerProvider.provideLayoutManger(requireContext(), settings)
       itemAnimator = null
       if (layoutManager is GridLayoutManager) {
-        addItemDecoration(SeasonsGridItemDecoration(requireContext(), R.dimen.spaceBig))
+        addItemDecoration(SeasonsGridItemDecoration(requireContext(), com.michaldrabik.ui_base.R.dimen.spaceBig))
       }
     }
     binding.showDetailsSeasonsLabel.text = getString(R.string.textSeasons).replace(":", "")
@@ -152,7 +152,7 @@ class ShowDetailsSeasonsFragment : BaseFragment<ShowDetailsSeasonsViewModel>(R.l
       }
       is OpenSeasonEpisodes -> {
         val bundle = ShowDetailsEpisodesFragment.createBundle(event.showId, event.seasonId)
-        navigateToSafe(R.id.actionShowDetailsFragmentToEpisodes, bundle)
+        navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToEpisodes, bundle)
       }
       is RequestWidgetsUpdate -> {
         (requireAppContext() as WidgetsProvider).requestShowsWidgetsUpdate()
@@ -165,11 +165,11 @@ class ShowDetailsSeasonsFragment : BaseFragment<ShowDetailsSeasonsViewModel>(R.l
     val view = QuickSetupView(context).apply {
       bind(seasons)
     }
-    MaterialAlertDialogBuilder(context, R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(context, R.drawable.bg_dialog))
+    MaterialAlertDialogBuilder(context, com.michaldrabik.ui_base.R.style.AlertDialog)
+      .setBackground(ContextCompat.getDrawable(context, com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setView(view)
-      .setPositiveButton(R.string.textSelect) { _, _ -> viewModel.onQuickProgressSelected(view.getSelectedItem()) }
-      .setNegativeButton(R.string.textCancel) { _, _ -> }
+      .setPositiveButton(com.michaldrabik.ui_base.R.string.textSelect) { _, _ -> viewModel.onQuickProgressSelected(view.getSelectedItem()) }
+      .setNegativeButton(com.michaldrabik.ui_base.R.string.textCancel) { _, _ -> }
       .show()
   }
 
@@ -182,7 +182,7 @@ class ShowDetailsSeasonsFragment : BaseFragment<ShowDetailsSeasonsViewModel>(R.l
       }
     }
     val options = DateSelectionBottomSheet.createBundle(season.firstAired)
-    navigateToSafe(R.id.actionShowDetailsFragmentToDateSelection, options)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToDateSelection, options)
   }
 
   private fun openDateSelectionDialog(item: QuickSetupListItem) {
@@ -194,7 +194,7 @@ class ShowDetailsSeasonsFragment : BaseFragment<ShowDetailsSeasonsViewModel>(R.l
       }
     }
     val options = DateSelectionBottomSheet.createBundle(item.episode.firstAired)
-    navigateToSafe(R.id.actionShowDetailsFragmentToDateSelection, options)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToDateSelection, options)
   }
 
   override fun setupBackPressed() = Unit

@@ -78,8 +78,8 @@ class ListDetailsShowItemView : ListDetailsItemView {
         if (!item.isManageMode) itemClickListener?.invoke(item)
       }
       listDetailsShowRoot.setOutboundRipple(
-        size = (context.dimenToPx(R.dimen.collectionItemRippleSpace)).toFloat(),
-        corner = context.dimenToPx(R.dimen.mediaTileCorner).toFloat(),
+        size = (context.dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionItemRippleSpace)).toFloat(),
+        corner = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner).toFloat(),
       )
     }
   }
@@ -109,7 +109,7 @@ class ListDetailsShowItemView : ListDetailsItemView {
 
       listDetailsShowHeader.text =
         if (show.year > 0) {
-          context.getString(R.string.textNetwork, show.year.toString(), show.network)
+          context.getString(com.michaldrabik.ui_base.R.string.textNetwork, show.year.toString(), show.network)
         } else {
           String.format("%s", show.network)
         }
@@ -128,7 +128,7 @@ class ListDetailsShowItemView : ListDetailsItemView {
         val inCollection = item.isWatched || item.isWatchlist
         visibleIf(inCollection)
         if (inCollection) {
-          val color = if (item.isWatched) R.color.colorAccent else R.color.colorGrayLight
+          val color = if (item.isWatched) com.michaldrabik.ui_base.R.color.colorAccent else com.michaldrabik.ui_base.R.color.colorGrayLight
           imageTintList = ColorStateList.valueOf(ContextCompat.getColor(context, color))
         }
       }
@@ -143,7 +143,7 @@ class ListDetailsShowItemView : ListDetailsItemView {
   ) {
     var description = when {
       item.translation?.overview.isNullOrBlank() -> show.overview.ifBlank {
-        context.getString(R.string.textNoDescription)
+        context.getString(com.michaldrabik.ui_base.R.string.textNoDescription)
       }
       else -> item.translation?.overview
     }

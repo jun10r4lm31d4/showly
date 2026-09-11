@@ -81,8 +81,8 @@ class MainActivity :
   private val viewModel by viewModels<MainViewModel>()
   private lateinit var binding: ActivityMainBinding
 
-  private val navigationHeight by lazy { dimenToPx(R.dimen.bottomNavigationHeight) }
-  private val navigationPadding by lazy { dimenToPx(R.dimen.spaceMedium) }
+  private val navigationHeight by lazy { dimenToPx(com.michaldrabik.ui_base.R.dimen.bottomNavigationHeight) }
+  private val navigationPadding by lazy { dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) }
   private val decelerateInterpolator by lazy { DecelerateInterpolator(2F) }
 
   @Inject lateinit var workManager: WorkManager
@@ -95,7 +95,7 @@ class MainActivity :
     super.onCreate(savedInstanceState)
     enableEdgeToEdge(
       statusBarStyle = SystemBarStyle.auto(TRANSPARENT, TRANSPARENT),
-      navigationBarStyle = SystemBarStyle.dark(ContextCompat.getColor(this, R.color.colorBlackTranslucentMedium)),
+      navigationBarStyle = SystemBarStyle.dark(ContextCompat.getColor(this, com.michaldrabik.ui_base.R.color.colorBlackTranslucentMedium)),
     )
 
     binding = ActivityMainBinding.inflate(layoutInflater)
@@ -170,7 +170,7 @@ class MainActivity :
             .debounce(3.seconds)
             .collect {
               binding.statusView.visibleIf(!it)
-              binding.statusView.text = getString(R.string.errorNoInternetConnection)
+              binding.statusView.text = getString(com.michaldrabik.ui_base.R.string.errorNoInternetConnection)
             }
         }
       }
@@ -179,10 +179,10 @@ class MainActivity :
 
   private fun setupNavigation() {
     findNavControl()?.run {
-      val graph = navInflater.inflate(R.navigation.navigation_graph).apply {
+      val graph = navInflater.inflate(com.michaldrabik.ui_navigation.R.navigation.navigation_graph).apply {
         val destination = when (viewModel.getMode()) {
-          SHOWS -> R.id.progressMainFragment
-          MOVIES -> R.id.progressMoviesMainFragment
+          SHOWS -> com.michaldrabik.ui_navigation.R.id.progressMainFragment
+          MOVIES -> com.michaldrabik.ui_navigation.R.id.progressMoviesMainFragment
           else -> throw IllegalStateException()
         }
         setStartDestination(destination)
@@ -220,11 +220,11 @@ class MainActivity :
         }
         findNavControl()?.run {
           when (currentDestination?.id) {
-            R.id.discoverFragment,
-            R.id.discoverMoviesFragment,
-            R.id.followedShowsFragment,
-            R.id.followedMoviesFragment,
-            R.id.listsFragment,
+            com.michaldrabik.ui_navigation.R.id.discoverFragment,
+            com.michaldrabik.ui_navigation.R.id.discoverMoviesFragment,
+            com.michaldrabik.ui_navigation.R.id.followedShowsFragment,
+            com.michaldrabik.ui_navigation.R.id.followedMoviesFragment,
+            com.michaldrabik.ui_navigation.R.id.listsFragment,
             -> {
               bottomMenuView.binding.bottomNavigationView.selectedItemId = R.id.menuProgress
             }
@@ -429,8 +429,8 @@ class MainActivity :
       intent.extras?.containsKey("extraShortcutSearch") == true -> {
         binding.bottomMenuView.binding.bottomNavigationView.selectedItemId = R.id.menuDiscover
         val action = when (viewModel.getMode()) {
-          SHOWS -> R.id.actionDiscoverFragmentToSearchFragment
-          MOVIES -> R.id.actionDiscoverMoviesFragmentToSearchFragment
+          SHOWS -> com.michaldrabik.ui_navigation.R.id.actionDiscoverFragmentToSearchFragment
+          MOVIES -> com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToSearchFragment
           else -> throw IllegalStateException()
         }
         findNavControl()?.navigate(action)
@@ -442,15 +442,15 @@ class MainActivity :
     findNavHostFragment()?.findNavController()?.run {
       try {
         when (currentDestination?.id) {
-          R.id.searchFragment -> return@run
-          R.id.showDetailsFragment, R.id.movieDetailsFragment -> navigateUp()
+          com.michaldrabik.ui_navigation.R.id.searchFragment -> return@run
+          com.michaldrabik.ui_navigation.R.id.showDetailsFragment, com.michaldrabik.ui_navigation.R.id.movieDetailsFragment -> navigateUp()
         }
-        if (currentDestination?.id != R.id.discoverFragment) {
+        if (currentDestination?.id != com.michaldrabik.ui_navigation.R.id.discoverFragment) {
           binding.bottomMenuView.binding.bottomNavigationView.selectedItemId = R.id.menuDiscover
         }
         when (currentDestination?.id) {
-          R.id.discoverFragment -> navigate(R.id.actionDiscoverFragmentToSearchFragment)
-          R.id.discoverMoviesFragment -> navigate(R.id.actionDiscoverMoviesFragmentToSearchFragment)
+          com.michaldrabik.ui_navigation.R.id.discoverFragment -> navigate(com.michaldrabik.ui_navigation.R.id.actionDiscoverFragmentToSearchFragment)
+          com.michaldrabik.ui_navigation.R.id.discoverMoviesFragment -> navigate(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToSearchFragment)
         }
         bundle?.clear()
       } catch (error: Throwable) {
@@ -462,33 +462,33 @@ class MainActivity :
   private fun showWhatsNewDialog() {
     MaterialAlertDialogBuilder(
       this,
-      R.style.AlertDialog,
+      com.michaldrabik.ui_base.R.style.AlertDialog,
     ).setBackground(ContextCompat.getDrawable(this, R.drawable.bg_dialog))
       .setView(WhatsNewView(this))
       .setCancelable(false)
-      .setPositiveButton(R.string.textClose) { _, _ -> }
+      .setPositiveButton(com.michaldrabik.ui_base.R.string.textClose) { _, _ -> }
       .setNeutralButton("Twitter") { _, _ -> openWebUrl(Config.TWITTER_URL) }
       .show()
   }
 
   private fun getMenuDiscoverAction() =
     when (viewModel.getMode()) {
-      SHOWS -> R.id.actionNavigateDiscoverFragment
-      MOVIES -> R.id.actionNavigateDiscoverMoviesFragment
+      SHOWS -> com.michaldrabik.ui_navigation.R.id.actionNavigateDiscoverFragment
+      MOVIES -> com.michaldrabik.ui_navigation.R.id.actionNavigateDiscoverMoviesFragment
       else -> throw IllegalStateException()
     }
 
   private fun getMenuCollectionAction() =
     when (viewModel.getMode()) {
-      SHOWS -> R.id.actionNavigateFollowedShowsFragment
-      MOVIES -> R.id.actionNavigateFollowedMoviesFragment
+      SHOWS -> com.michaldrabik.ui_navigation.R.id.actionNavigateFollowedShowsFragment
+      MOVIES -> com.michaldrabik.ui_navigation.R.id.actionNavigateFollowedMoviesFragment
       else -> throw IllegalStateException()
     }
 
   private fun getMenuProgressAction() =
     when (viewModel.getMode()) {
-      SHOWS -> R.id.actionNavigateProgressFragment
-      MOVIES -> R.id.actionNavigateProgressMoviesFragment
+      SHOWS -> com.michaldrabik.ui_navigation.R.id.actionNavigateProgressFragment
+      MOVIES -> com.michaldrabik.ui_navigation.R.id.actionNavigateProgressMoviesFragment
       else -> throw IllegalStateException()
     }
 

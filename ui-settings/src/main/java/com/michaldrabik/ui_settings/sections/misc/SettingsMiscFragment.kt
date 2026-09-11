@@ -63,7 +63,7 @@ class SettingsMiscFragment : BaseFragment<SettingsMiscViewModel>(R.layout.fragme
   }
 
   private fun openWebLink(url: String) {
-    openWebUrl(url) ?: showSnack(MessageEvent.Info(R.string.errorCouldNotFindApp))
+    openWebUrl(url) ?: showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorCouldNotFindApp))
   }
 
   private fun openMailMessage() {

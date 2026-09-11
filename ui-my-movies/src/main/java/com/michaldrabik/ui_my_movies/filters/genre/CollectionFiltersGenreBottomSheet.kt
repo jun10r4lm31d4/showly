@@ -40,7 +40,7 @@ internal class CollectionFiltersGenreBottomSheet : BaseBottomSheetFragment(R.lay
   private val viewModel by viewModels<CollectionFiltersGenreViewModel>()
   private val binding by viewBinding(ViewFiltersGenresBinding::bind)
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,
@@ -109,10 +109,10 @@ internal class CollectionFiltersGenreBottomSheet : BaseBottomSheetFragment(R.lay
             .toBuilder()
             .setAllCornerSizes(100f)
             .build()
-          chipBackgroundColor = ContextCompat.getColorStateList(context, R.color.selector_discover_chip_background)
-          setChipStrokeColorResource(R.color.selector_discover_chip_stroke)
-          setChipStrokeWidthResource(R.dimen.discoverFilterChipStroke)
-          setTextColor(ContextCompat.getColorStateList(context, R.color.selector_discover_chip_text))
+          chipBackgroundColor = ContextCompat.getColorStateList(context, com.michaldrabik.ui_base.R.color.selector_discover_chip_background)
+          setChipStrokeColorResource(com.michaldrabik.ui_base.R.color.selector_discover_chip_stroke)
+          setChipStrokeWidthResource(com.michaldrabik.ui_base.R.dimen.discoverFilterChipStroke)
+          setTextColor(ContextCompat.getColorStateList(context, com.michaldrabik.ui_base.R.color.selector_discover_chip_text))
           isChecked = genre.name in genresNames
         }
         binding.genresChipGroup.addView(chip)

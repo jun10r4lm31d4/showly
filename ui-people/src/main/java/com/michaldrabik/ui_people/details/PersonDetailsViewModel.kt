@@ -73,7 +73,7 @@ class PersonDetailsViewModel @Inject constructor(
 
         loadCredits(details, personArgs)
       } catch (error: Throwable) {
-        messageChannel.send(MessageEvent.Error(R.string.errorGeneral))
+        messageChannel.send(MessageEvent.Error(com.michaldrabik.ui_base.R.string.errorGeneral))
         Timber.e(error)
         rethrowCancellation(error)
       } finally {
@@ -125,7 +125,7 @@ class PersonDetailsViewModel @Inject constructor(
           }
         }
       } catch (error: Throwable) {
-        messageChannel.send(MessageEvent.Error(R.string.errorGeneral))
+        messageChannel.send(MessageEvent.Error(com.michaldrabik.ui_base.R.string.errorGeneral))
         Timber.e(error)
         rethrowCancellation(error)
       } finally {

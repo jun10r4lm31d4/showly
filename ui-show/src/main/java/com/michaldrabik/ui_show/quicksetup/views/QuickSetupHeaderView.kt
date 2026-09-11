@@ -25,6 +25,6 @@ class QuickSetupHeaderView : FrameLayout {
 
   fun bind(season: Season) {
     binding.viewQuickSetupHeaderTitle.text =
-      String.format(Locale.ENGLISH, context.getString(R.string.textSeason), season.number)
+      String.format(Locale.ENGLISH, context.getString(com.michaldrabik.ui_base.R.string.textSeason), season.number)
   }
 }

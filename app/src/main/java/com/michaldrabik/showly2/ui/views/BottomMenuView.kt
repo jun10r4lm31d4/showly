@@ -48,8 +48,8 @@ class BottomMenuView : FrameLayout {
   var onModeSelected: ((Mode) -> Unit)? = null
 
   private val screenWidth by lazy { screenWidth() }
-  private val itemIdleColor by lazy { context.colorFromAttr(R.attr.colorBottomMenuItem) }
-  private val itemSelectedColor by lazy { context.colorFromAttr(R.attr.colorBottomMenuItemChecked) }
+  private val itemIdleColor by lazy { context.colorFromAttr(com.michaldrabik.ui_base.R.attr.colorBottomMenuItem) }
+  private val itemSelectedColor by lazy { context.colorFromAttr(com.michaldrabik.ui_base.R.attr.colorBottomMenuItemChecked) }
   private val animations = mutableListOf<ViewPropertyAnimator?>()
 
   private var touchX = 0F
@@ -59,7 +59,7 @@ class BottomMenuView : FrameLayout {
     rootView.doOnApplyWindowInsets { _, insets, _, _ ->
       val bottomInset = insets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom
       binding.bottomNavigationView.updateLayoutParams<MarginLayoutParams> {
-        height = context.dimenToPx(R.dimen.bottomNavigationHeight) + bottomInset
+        height = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.bottomNavigationHeight) + bottomInset
       }
     }
   }

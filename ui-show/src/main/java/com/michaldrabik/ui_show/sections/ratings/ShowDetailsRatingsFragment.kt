@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ShowDetailsRatingsFragment : BaseFragment<ShowDetailsRatingsViewModel>(R.layout.fragment_show_details_ratings) {
 
-  override val navigationId = R.id.showDetailsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.showDetailsFragment
   private val binding by viewBinding(FragmentShowDetailsRatingsBinding::bind)
 
   private val parentViewModel by viewModels<ShowDetailsViewModel>({ requireParentFragment() })
@@ -69,9 +69,9 @@ class ShowDetailsRatingsFragment : BaseFragment<ShowDetailsRatingsViewModel>(R.l
     country: AppCountry = AppCountry.UNITED_STATES,
   ) {
     if (link == ShowLink.IMDB) {
-      openImdbUrl(IdImdb(id)) ?: showSnack(MessageEvent.Info(R.string.errorCouldNotFindApp))
+      openImdbUrl(IdImdb(id)) ?: showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorCouldNotFindApp))
     } else {
-      openWebUrl(link.getUri(id, country)) ?: showSnack(MessageEvent.Info(R.string.errorCouldNotFindApp))
+      openWebUrl(link.getUri(id, country)) ?: showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorCouldNotFindApp))
     }
   }
 

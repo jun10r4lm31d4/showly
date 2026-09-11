@@ -84,6 +84,6 @@ class StatisticsMoviesFragment : BaseFragment<StatisticsMoviesViewModel>(R.layou
 
   private fun openMovieDetails(traktId: Long) {
     val bundle = bundleOf(ARG_MOVIE_ID to traktId)
-    navigateTo(R.id.actionStatisticsMoviesFragmentToMovieDetailsFragment, bundle)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionStatisticsMoviesFragmentToMovieDetailsFragment, bundle)
   }
 }

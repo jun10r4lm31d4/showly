@@ -35,7 +35,7 @@ class CalendarMoviesWidgetViewsFactory(
   private val settingsRepository: SettingsRepository,
 ) : RemoteViewsService.RemoteViewsFactory {
 
-  private val imageCorner by lazy { context.dimenToPx(R.dimen.mediaTileCorner) }
+  private val imageCorner by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner) }
   private val imageWidth by lazy { context.dimenToPx(R.dimen.widgetImageWidth) }
   private val imageHeight by lazy { context.dimenToPx(R.dimen.widgetImageHeight) }
   private var mode = CalendarMode.PRESENT_FUTURE
@@ -69,8 +69,8 @@ class CalendarMoviesWidgetViewsFactory(
 
     if (showIcon) {
       when (mode) {
-        CalendarMode.PRESENT_FUTURE -> setImageViewResource(R.id.progressWidgetHeaderIcon, R.drawable.ic_history)
-        CalendarMode.RECENTS -> setImageViewResource(R.id.progressWidgetHeaderIcon, R.drawable.ic_calendar)
+        CalendarMode.PRESENT_FUTURE -> setImageViewResource(R.id.progressWidgetHeaderIcon, com.michaldrabik.ui_base.R.drawable.ic_history)
+        CalendarMode.RECENTS -> setImageViewResource(R.id.progressWidgetHeaderIcon, com.michaldrabik.ui_base.R.drawable.ic_calendar)
       }
       setViewVisibility(R.id.progressWidgetHeaderIcon, VISIBLE)
       val fillIntent = Intent().apply {
@@ -103,7 +103,7 @@ class CalendarMoviesWidgetViewsFactory(
     val date = if (item.movie.released != null) {
       item.dateFormat?.format(item.movie.released)?.capitalizeWords()
     } else {
-      context.getString(R.string.textTba)
+      context.getString(com.michaldrabik.ui_base.R.string.textTba)
     }
 
     val remoteView = RemoteViews(context.packageName, getItemLayout()).apply {

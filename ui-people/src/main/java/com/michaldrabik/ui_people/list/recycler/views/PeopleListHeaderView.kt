@@ -29,10 +29,10 @@ class PeopleListHeaderView : FrameLayout {
     this.item = item
     with(binding) {
       viewPeopleListHeaderTitle.text = when (item.department) {
-        Person.Department.ACTING -> context.getString(R.string.textActing)
-        Person.Department.DIRECTING -> context.getString(R.string.textDirecting)
-        Person.Department.WRITING -> context.getString(R.string.textWriting)
-        Person.Department.SOUND -> context.getString(R.string.textMusic)
+        Person.Department.ACTING -> context.getString(com.michaldrabik.ui_base.R.string.textActing)
+        Person.Department.DIRECTING -> context.getString(com.michaldrabik.ui_base.R.string.textDirecting)
+        Person.Department.WRITING -> context.getString(com.michaldrabik.ui_base.R.string.textWriting)
+        Person.Department.SOUND -> context.getString(com.michaldrabik.ui_base.R.string.textMusic)
         else -> "-"
       }
       viewPeopleListHeaderSubtitle.text = item.mediaTitle

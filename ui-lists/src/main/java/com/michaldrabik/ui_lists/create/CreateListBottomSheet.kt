@@ -33,7 +33,7 @@ class CreateListBottomSheet : BaseBottomSheetFragment(R.layout.view_create_list)
 
   private val list: CustomList? by lazy { optionalParcelable(ARG_LIST) }
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,
@@ -62,7 +62,7 @@ class CreateListBottomSheet : BaseBottomSheetFragment(R.layout.view_create_list)
       if (isEditMode()) {
         viewCreateListTitle.setText(R.string.textEditList)
         viewCreateListSubtitle.setText(R.string.textEditListDescription)
-        viewCreateListButton.setText(R.string.textApply)
+        viewCreateListButton.setText(com.michaldrabik.ui_base.R.string.textApply)
       }
     }
   }
@@ -95,7 +95,7 @@ class CreateListBottomSheet : BaseBottomSheetFragment(R.layout.view_create_list)
           viewCreateListButton.isEnabled = !it
           viewCreateListButton.setText(
             when {
-              it -> R.string.textPleaseWait
+              it -> com.michaldrabik.ui_base.R.string.textPleaseWait
               !it && isEditMode() -> R.string.textEditList
               else -> R.string.textCreateList
             },

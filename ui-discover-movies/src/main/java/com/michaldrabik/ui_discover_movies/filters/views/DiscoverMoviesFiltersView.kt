@@ -54,10 +54,10 @@ class DiscoverMoviesFiltersView : FrameLayout {
   private fun bindFeed(feed: DiscoverFeed) {
     with(binding) {
       discoverMoviesFeedChip.text = when (feed) {
-        TRENDING -> context.getString(R.string.textFeedTrending)
-        POPULAR -> context.getString(R.string.textFeedPopular)
-        ANTICIPATED -> context.getString(R.string.textFeedAnticipated)
-        RECENT -> context.getString(R.string.textSortNewest)
+        TRENDING -> context.getString(com.michaldrabik.ui_base.R.string.textFeedTrending)
+        POPULAR -> context.getString(com.michaldrabik.ui_base.R.string.textFeedPopular)
+        ANTICIPATED -> context.getString(com.michaldrabik.ui_base.R.string.textFeedAnticipated)
+        RECENT -> context.getString(com.michaldrabik.ui_model.R.string.textSortNewest)
       }
     }
   }
@@ -67,7 +67,7 @@ class DiscoverMoviesFiltersView : FrameLayout {
       discoverMoviesGenresChip.isSelected = genres.isNotEmpty()
       discoverMoviesGenresChip.text = when {
         genres.isEmpty() -> {
-          context.getString(R.string.textGenres).filter { it.isLetter() }
+          context.getString(com.michaldrabik.ui_base.R.string.textGenres).filter { it.isLetter() }
         }
         genres.size == 1 -> {
           context.getString(genres.first().displayName)

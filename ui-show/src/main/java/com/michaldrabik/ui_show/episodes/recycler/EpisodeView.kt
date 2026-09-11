@@ -74,7 +74,7 @@ class EpisodeView : ConstraintLayout {
       if (!hasAired) {
         val date = item.episode.firstAired?.toLocalZone()
         val displayDate = date?.let { item.dateFormat?.format(it)?.capitalizeWords() }
-          ?: context.getString(R.string.textTba)
+          ?: context.getString(com.michaldrabik.ui_base.R.string.textTba)
         episodeTitle.text =
           String.format(ENGLISH, context.getString(R.string.textEpisodeDate), item.episode.number, displayDate)
       }
@@ -93,12 +93,12 @@ class EpisodeView : ConstraintLayout {
   private fun bindTitle(item: EpisodeListItem) {
     with(binding) {
       val titleText = String
-        .format(ENGLISH, context.getString(R.string.textEpisode), item.episode.number)
+        .format(ENGLISH, context.getString(com.michaldrabik.ui_base.R.string.textEpisode), item.episode.number)
         .plus(item.episode.numberAbs?.let { if (it > 0 && item.isAnime) " ($it)" else "" } ?: "")
 
       var overviewText = when {
         !item.translation?.title.isNullOrBlank() -> item.translation?.title
-        item.episode.title.isEmpty() -> context.getString(R.string.textTba)
+        item.episode.title.isEmpty() -> context.getString(com.michaldrabik.ui_base.R.string.textTba)
         item.episode.title == "Episode ${item.episode.number}" -> titleText
         else -> item.episode.title
       }

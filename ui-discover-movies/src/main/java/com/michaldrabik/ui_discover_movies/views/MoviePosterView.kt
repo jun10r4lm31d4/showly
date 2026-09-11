@@ -54,7 +54,7 @@ class MoviePosterView : MovieView<DiscoverMovieListItem> {
     if (item.image.status == UNAVAILABLE) {
       with(binding) {
         moviePosterTitle.visible()
-        moviePosterRoot.setBackgroundResource(R.drawable.bg_media_view_placeholder)
+        moviePosterRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_placeholder)
       }
     }
     super.loadImage(item)
@@ -65,7 +65,7 @@ class MoviePosterView : MovieView<DiscoverMovieListItem> {
     if (item.image.status == AVAILABLE) {
       with(binding) {
         moviePosterTitle.visible()
-        moviePosterRoot.setBackgroundResource(R.drawable.bg_media_view_placeholder)
+        moviePosterRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_placeholder)
       }
     }
   }
@@ -74,7 +74,7 @@ class MoviePosterView : MovieView<DiscoverMovieListItem> {
     with(binding) {
       moviePosterTitle.text = ""
       moviePosterTitle.gone()
-      moviePosterRoot.setBackgroundResource(R.drawable.bg_media_view_elevation)
+      moviePosterRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_elevation)
       moviePosterPlaceholder.gone()
       moviePosterProgress.gone()
       moviePosterBadge.gone()

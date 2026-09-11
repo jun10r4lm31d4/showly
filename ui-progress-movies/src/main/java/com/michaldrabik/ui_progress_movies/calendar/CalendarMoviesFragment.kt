@@ -101,7 +101,7 @@ class CalendarMoviesFragment :
 
   private fun setupInsets() {
     binding.progressMoviesCalendarRecycler.doOnApplyWindowInsets { view, insets, padding, _ ->
-      val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+      val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
       val inset = insets.getInsets(WindowInsetsCompat.Type.systemBars())
       view.updatePadding(
         top = inset.top + tabletOffset + dimenToPx(R.dimen.progressMoviesCalendarTabsViewPadding),

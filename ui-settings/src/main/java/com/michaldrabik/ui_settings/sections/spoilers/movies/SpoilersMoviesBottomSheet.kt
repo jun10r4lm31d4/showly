@@ -22,7 +22,7 @@ class SpoilersMoviesBottomSheet : BaseBottomSheetFragment(R.layout.sheet_spoiler
   private val viewModel by viewModels<SpoilersMoviesViewModel>()
   private val binding by viewBinding(SheetSpoilersMoviesBinding::bind)
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,

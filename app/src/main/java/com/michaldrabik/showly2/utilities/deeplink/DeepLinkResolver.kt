@@ -33,17 +33,17 @@ class DeepLinkResolver @Inject constructor() {
   )
 
   private val progressDestinations = arrayOf(
-    R.id.progressMainFragment,
-    R.id.progressMoviesMainFragment,
+    com.michaldrabik.ui_navigation.R.id.progressMainFragment,
+    com.michaldrabik.ui_navigation.R.id.progressMoviesMainFragment,
   )
 
   private val mainDestinations = arrayOf(
     *progressDestinations,
-    R.id.discoverFragment,
-    R.id.discoverMoviesFragment,
-    R.id.followedShowsFragment,
-    R.id.followedMoviesFragment,
-    R.id.listsFragment,
+    com.michaldrabik.ui_navigation.R.id.discoverFragment,
+    com.michaldrabik.ui_navigation.R.id.discoverMoviesFragment,
+    com.michaldrabik.ui_navigation.R.id.followedShowsFragment,
+    com.michaldrabik.ui_navigation.R.id.followedMoviesFragment,
+    com.michaldrabik.ui_navigation.R.id.listsFragment,
   )
 
   fun findSource(intent: Intent?): DeepLinkSource? {
@@ -61,8 +61,8 @@ class DeepLinkResolver @Inject constructor() {
 
       val navBundle = bundleOf(NavigationArgs.ARG_SHOW_ID to show.traktId)
       val actionId = when (navController.currentDestination?.id) {
-        R.id.progressMainFragment -> R.id.actionProgressFragmentToShowDetailsFragment
-        R.id.progressMoviesMainFragment -> R.id.actionProgressMoviesFragmentToShowDetailsFragment
+        com.michaldrabik.ui_navigation.R.id.progressMainFragment -> com.michaldrabik.ui_navigation.R.id.actionProgressFragmentToShowDetailsFragment
+        com.michaldrabik.ui_navigation.R.id.progressMoviesMainFragment -> com.michaldrabik.ui_navigation.R.id.actionProgressMoviesFragmentToShowDetailsFragment
         else -> error("Unknown actionId. ActionId: ${navController.currentDestination?.id}")
       }
       navController.navigate(actionId, navBundle)
@@ -81,8 +81,8 @@ class DeepLinkResolver @Inject constructor() {
 
       val navBundle = bundleOf(NavigationArgs.ARG_MOVIE_ID to movie.traktId)
       val actionId = when (navController.currentDestination?.id) {
-        R.id.progressMainFragment -> R.id.actionProgressFragmentToMovieDetailsFragment
-        R.id.progressMoviesMainFragment -> R.id.actionProgressMoviesFragmentToMovieDetailsFragment
+        com.michaldrabik.ui_navigation.R.id.progressMainFragment -> com.michaldrabik.ui_navigation.R.id.actionProgressFragmentToMovieDetailsFragment
+        com.michaldrabik.ui_navigation.R.id.progressMoviesMainFragment -> com.michaldrabik.ui_navigation.R.id.actionProgressMoviesFragmentToMovieDetailsFragment
         else -> error("Unknown actionId. ActionId: $navController.currentDestination?.id")
       }
       navController.navigate(actionId, navBundle)

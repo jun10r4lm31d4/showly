@@ -42,7 +42,7 @@ class SearchSuggestionView : ShowView<SearchListItem> {
     clear()
     this.item = item
     with(view) {
-      if (item.isMovie) suggestionPlaceholder.setImageResource(R.drawable.ic_film)
+      if (item.isMovie) suggestionPlaceholder.setImageResource(com.michaldrabik.ui_base.R.drawable.ic_film)
 
       val translationTitle = item.translation?.title
       suggestionTitle.text =
@@ -57,7 +57,7 @@ class SearchSuggestionView : ShowView<SearchListItem> {
       suggestionNetwork.text =
         if (item.isShow) {
           if (item.year > 0) {
-            context.getString(R.string.textNetwork, item.network, item.year.toString())
+            context.getString(com.michaldrabik.ui_base.R.string.textNetwork, item.network, item.year.toString())
           } else {
             String.format("%s", item.network)
           }
@@ -129,7 +129,7 @@ class SearchSuggestionView : ShowView<SearchListItem> {
       suggestionTitle.text = ""
       suggestionDescription.text = ""
       suggestionNetwork.text = ""
-      suggestionPlaceholder.setImageResource(R.drawable.ic_television)
+      suggestionPlaceholder.setImageResource(com.michaldrabik.ui_base.R.drawable.ic_television)
       suggestionPlaceholder.gone()
       Glide.with(this@SearchSuggestionView).clear(suggestionImage)
     }

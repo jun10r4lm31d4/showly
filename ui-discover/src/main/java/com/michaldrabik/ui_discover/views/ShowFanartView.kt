@@ -57,14 +57,14 @@ class ShowFanartView : ShowView<DiscoverListItem> {
   override fun loadImage(item: DiscoverListItem) {
     super.loadImage(item)
     if (item.image.status == UNAVAILABLE) {
-      binding.showFanartRoot.setBackgroundResource(R.drawable.bg_media_view_placeholder)
+      binding.showFanartRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_placeholder)
     }
   }
 
   override fun onImageLoadFail(item: DiscoverListItem) {
     super.onImageLoadFail(item)
     if (item.image.status == AVAILABLE) {
-      binding.showFanartRoot.setBackgroundResource(R.drawable.bg_media_view_placeholder)
+      binding.showFanartRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_placeholder)
     }
   }
 
@@ -73,7 +73,7 @@ class ShowFanartView : ShowView<DiscoverListItem> {
       showFanartTitle.text = ""
       showFanartProgress.gone()
       showFanartPlaceholder.gone()
-      showFanartRoot.setBackgroundResource(R.drawable.bg_media_view_elevation)
+      showFanartRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_elevation)
       showFanartBadge.gone()
       Glide.with(this@ShowFanartView).clear(showFanartImage)
     }

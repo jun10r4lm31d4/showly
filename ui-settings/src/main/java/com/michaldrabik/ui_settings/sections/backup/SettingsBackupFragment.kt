@@ -27,10 +27,10 @@ class SettingsBackupFragment : BaseFragment<SettingsBackupViewModel>(R.layout.fr
   private fun setupView() {
     with(binding) {
       settingsBackupExport.onClick {
-        navigateTo(R.id.actionSettingsFragmentToBackupExport)
+        navigateTo(com.michaldrabik.ui_navigation.R.id.actionSettingsFragmentToBackupExport)
       }
       settingsBackupImport.onClick {
-        navigateTo(R.id.actionSettingsFragmentToBackupImport)
+        navigateTo(com.michaldrabik.ui_navigation.R.id.actionSettingsFragmentToBackupImport)
       }
     }
   }

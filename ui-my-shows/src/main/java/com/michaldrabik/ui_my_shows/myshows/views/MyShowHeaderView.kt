@@ -60,7 +60,7 @@ class MyShowHeaderView : FrameLayout {
 
       with(myShowsSortListViewChip) {
         when (viewMode) {
-          LIST_NORMAL -> setChipIconResource(R.drawable.ic_view_list)
+          LIST_NORMAL -> setChipIconResource(com.michaldrabik.ui_base.R.drawable.ic_view_list)
         }
         onClick { listModeClickListener?.invoke() }
       }
@@ -71,8 +71,8 @@ class MyShowHeaderView : FrameLayout {
           sortClickListener?.invoke(item.section, sortOrder.first, sortOrder.second)
         }
         val sortIcon = when (sortOrder.second) {
-          SortType.ASCENDING -> R.drawable.ic_arrow_alt_up
-          SortType.DESCENDING -> R.drawable.ic_arrow_alt_down
+          SortType.ASCENDING -> com.michaldrabik.ui_base.R.drawable.ic_arrow_alt_up
+          SortType.DESCENDING -> com.michaldrabik.ui_base.R.drawable.ic_arrow_alt_down
         }
         myShowsSortChip.closeIcon = ContextCompat.getDrawable(context, sortIcon)
       }
@@ -81,7 +81,7 @@ class MyShowHeaderView : FrameLayout {
         myShowsNetworksChip.isSelected = networks.isNotEmpty()
         myShowsNetworksChip.onClick { networksClickListener?.invoke() }
         myShowsNetworksChip.text = when {
-          networks.isEmpty() -> context.getString(R.string.textNetworks).filter { it.isLetter() }
+          networks.isEmpty() -> context.getString(com.michaldrabik.ui_base.R.string.textNetworks).filter { it.isLetter() }
           networks.size == 1 -> networks[0].channels.first()
           else -> throw IllegalStateException()
         }
@@ -91,7 +91,7 @@ class MyShowHeaderView : FrameLayout {
         myShowsGenresChip.isSelected = genres.isNotEmpty()
         myShowsGenresChip.onClick { genresClickListener?.invoke() }
         myShowsGenresChip.text = when {
-          genres.isEmpty() -> context.getString(R.string.textGenres).filter { it.isLetter() }
+          genres.isEmpty() -> context.getString(com.michaldrabik.ui_base.R.string.textGenres).filter { it.isLetter() }
           genres.size == 1 -> context.getString(genres.first().displayName)
           genres.size == 2 -> "${context.getString(genres[0].displayName)}, ${context.getString(genres[1].displayName)}"
           else -> "${context.getString(genres[0].displayName)}, " +

@@ -48,7 +48,7 @@ internal class HistoryFragment :
 
   @Inject lateinit var settings: SettingsViewModeRepository
 
-  override val navigationId = R.id.progressMainFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.progressMainFragment
   private val binding by viewBinding(FragmentHistoryBinding::bind)
 
   override val viewModel by viewModels<HistoryViewModel>()
@@ -124,7 +124,7 @@ internal class HistoryFragment :
     }
 
     binding.recycler.doOnApplyWindowInsets { view, insets, padding, _ ->
-      val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+      val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
       val systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
       view.updatePadding(
         top = systemInsets.top + tabletOffset + dimenToPx(recyclerPadding),
@@ -174,7 +174,7 @@ internal class HistoryFragment :
       val selected = bundle.requireSerializable<HistoryPeriod>(ARG_SELECTED_FILTER)
       viewModel.setPeriod(selected)
     }
-    navigateToSafe(R.id.actionProgressFragmentToDatesFilter, args)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionProgressFragmentToDatesFilter, args)
   }
 
   override fun onScrollReset() = binding.recycler.smoothScrollToPosition(0)

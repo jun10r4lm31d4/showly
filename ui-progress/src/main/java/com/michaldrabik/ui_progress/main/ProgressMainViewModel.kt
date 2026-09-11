@@ -86,7 +86,7 @@ class ProgressMainViewModel @Inject constructor(
   ) {
     viewModelScope.launch {
       if (!bundle.episode.hasAired(bundle.season)) {
-        messageChannel.send(MessageEvent.Info(R.string.errorEpisodeNotAired))
+        messageChannel.send(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorEpisodeNotAired))
         return@launch
       }
       episodesCase.setEpisodeWatched(bundle, customDate)

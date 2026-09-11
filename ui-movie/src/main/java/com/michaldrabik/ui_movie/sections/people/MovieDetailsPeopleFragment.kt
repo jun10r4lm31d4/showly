@@ -38,7 +38,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MovieDetailsPeopleFragment : BaseFragment<MovieDetailsPeopleViewModel>(R.layout.fragment_movie_details_people) {
 
-  override val navigationId = R.id.movieDetailsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.movieDetailsFragment
 
   private val parentViewModel by viewModels<MovieDetailsViewModel>({ requireParentFragment() })
   override val viewModel by viewModels<MovieDetailsPeopleViewModel>()
@@ -65,7 +65,7 @@ class MovieDetailsPeopleFragment : BaseFragment<MovieDetailsPeopleViewModel>(R.l
       itemClickListener = { viewModel.loadPersonDetails(it) }
     }
     with(binding) {
-      movieDetailsActorsLabel.text = getString(R.string.textPeople).replace(":", "")
+      movieDetailsActorsLabel.text = getString(com.michaldrabik.ui_base.R.string.textPeople).replace(":", "")
       movieDetailsActorsRecycler.apply {
         setHasFixedSize(true)
         adapter = actorsAdapter
@@ -83,7 +83,7 @@ class MovieDetailsPeopleFragment : BaseFragment<MovieDetailsPeopleViewModel>(R.l
     handleSheetResult()
     val bundle = PersonDetailsBottomSheet.createBundle(person, movie.ids.trakt, personArgs)
     (requireParentFragment() as BaseFragment<*>)
-      .navigateToSafe(R.id.actionMovieDetailsFragmentToPerson, bundle)
+      .navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionMovieDetailsFragmentToPerson, bundle)
   }
 
   private fun openPeopleSheet(event: OpenPeopleSheet) {
@@ -101,7 +101,7 @@ class MovieDetailsPeopleFragment : BaseFragment<MovieDetailsPeopleViewModel>(R.l
       .binding.movieDetailsTitle.text
       .toString()
     val bundle = PeopleListBottomSheet.createBundle(movie.ids.trakt, title, Mode.MOVIES, department)
-    navigateToSafe(R.id.actionMovieDetailsFragmentToPeopleList, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionMovieDetailsFragmentToPeopleList, bundle)
   }
 
   private fun render(uiState: MovieDetailsPeopleUiState) {

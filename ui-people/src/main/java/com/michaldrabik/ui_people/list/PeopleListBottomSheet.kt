@@ -61,7 +61,7 @@ class PeopleListBottomSheet : BaseBottomSheetFragment(R.layout.view_people_list)
   private var adapter: PeopleListAdapter? = null
   private var layoutManager: LinearLayoutManager? = null
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,
@@ -105,7 +105,7 @@ class PeopleListBottomSheet : BaseBottomSheetFragment(R.layout.view_people_list)
   private fun openDetails(item: Person) {
     setFragmentResult(REQUEST_DETAILS, bundleOf(ARG_PERSON to item))
     val bundle = PersonDetailsBottomSheet.createBundle(item, mediaIdTrakt, null)
-    findNavController().navigate(R.id.actionPeopleListDialogToDetails, bundle)
+    findNavController().navigate(com.michaldrabik.ui_navigation.R.id.actionPeopleListDialogToDetails, bundle)
   }
 
   private fun render(uiState: PeopleListUiState) {

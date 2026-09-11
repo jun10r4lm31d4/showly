@@ -27,7 +27,7 @@ class PersonDetailsBioView : FrameLayout {
       personBioText.setInitialLines(5)
       personBioText.onLongClick {
         context.copyToClipboard(personBioText.text.toString())
-        snackbarLayout.showInfoSnackbar(context.getString(R.string.textCopiedToClipboard), length = 1250)
+        snackbarLayout.showInfoSnackbar(context.getString(com.michaldrabik.ui_base.R.string.textCopiedToClipboard), length = 1250)
       }
     }
   }
@@ -35,7 +35,7 @@ class PersonDetailsBioView : FrameLayout {
   fun bind(item: PersonDetailsItem.MainBio) {
     with(binding) {
       when {
-        item.biography.isNullOrBlank() -> personBioText.text = context.getString(R.string.textNoDescription)
+        item.biography.isNullOrBlank() -> personBioText.text = context.getString(com.michaldrabik.ui_base.R.string.textNoDescription)
         !item.biographyTranslation.isNullOrBlank() -> personBioText.text = item.biographyTranslation
         else -> personBioText.text = item.biography
       }

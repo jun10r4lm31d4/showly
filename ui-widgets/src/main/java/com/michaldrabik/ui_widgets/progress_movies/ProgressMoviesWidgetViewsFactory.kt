@@ -28,7 +28,7 @@ class ProgressMoviesWidgetViewsFactory(
   private val settingsRepository: SettingsRepository,
 ) : RemoteViewsService.RemoteViewsFactory {
 
-  private val imageCorner by lazy { context.dimenToPx(R.dimen.mediaTileCorner) }
+  private val imageCorner by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner) }
   private val imageWidth by lazy { context.dimenToPx(R.dimen.widgetImageWidth) }
   private val imageHeight by lazy { context.dimenToPx(R.dimen.widgetImageHeight) }
   private val adapterItems by lazy { mutableListOf<ProgressMovieListItem>() }

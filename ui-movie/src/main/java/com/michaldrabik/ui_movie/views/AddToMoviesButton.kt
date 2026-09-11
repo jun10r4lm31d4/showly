@@ -54,22 +54,22 @@ class AddToMoviesButton : FrameLayout {
     with(binding) {
       when (state) {
         ADD -> {
-          addToMyMoviesButton.setText(R.string.textAddToMyMovies)
+          addToMyMoviesButton.setText(com.michaldrabik.ui_base.R.string.textAddToMyMovies)
           checkButton.fadeOut(duration, withHardware = true)
           addedToButton.fadeOut(duration, withHardware = true)
           addToMyMoviesButton.fadeIn(duration, startDelay = startDelay, withHardware = true)
           watchlistButton.fadeIn(duration, startDelay = startDelay, withHardware = true) { isAnimating = false }
         }
         IN_MY_MOVIES -> {
-          val color = context.colorFromAttr(R.attr.colorAccent)
-          val colorState = context.colorStateListFromAttr(R.attr.colorAccent)
+          val color = context.colorFromAttr(androidx.appcompat.R.attr.colorAccent)
+          val colorState = context.colorStateListFromAttr(androidx.appcompat.R.attr.colorAccent)
 
           addToMyMoviesButton.fadeOut(duration, withHardware = true)
           watchlistButton.fadeOut(duration, withHardware = true)
           checkButton.fadeOut(duration, withHardware = true)
           addedToButton.fadeOut(duration, withHardware = true) {
             addedToButton.run {
-              setIconResource(R.drawable.ic_bookmark_full)
+              setIconResource(com.michaldrabik.ui_base.R.drawable.ic_bookmark_full)
               setText(R.string.textInMyMovies)
               setTextColor(color)
               iconTint = colorState
@@ -87,7 +87,7 @@ class AddToMoviesButton : FrameLayout {
           watchlistButton.fadeOut(duration, withHardware = true)
           checkButton.fadeIn(duration, startDelay = startDelay, withHardware = true)
           addedToButton.run {
-            setIconResource(R.drawable.ic_bookmark_full)
+            setIconResource(com.michaldrabik.ui_base.R.drawable.ic_bookmark_full)
             setText(R.string.textInMoviesWatchlist)
             setTextColor(color)
             iconTint = colorState
@@ -105,7 +105,7 @@ class AddToMoviesButton : FrameLayout {
             fadeOut(duration, withHardware = true) {
               val color = context.colorFromAttr(android.R.attr.textColorSecondary)
               val colorState = context.colorStateListFromAttr(android.R.attr.textColorSecondary)
-              setIconResource(R.drawable.ic_eye_no)
+              setIconResource(com.michaldrabik.ui_base.R.drawable.ic_eye_no)
               setText(R.string.textInHidden)
               setTextColor(color)
               iconTint = colorState

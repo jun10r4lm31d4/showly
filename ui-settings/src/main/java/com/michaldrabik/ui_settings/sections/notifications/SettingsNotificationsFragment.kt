@@ -59,8 +59,8 @@ class SettingsNotificationsFragment :
     val options = NotificationDelay.values()
     val default = options.indexOf(settings.episodesNotificationsDelay)
 
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+    MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog)
+      .setBackground(ContextCompat.getDrawable(requireContext(), com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setSingleChoiceItems(options.map { getString(it.stringRes) }.toTypedArray(), default) { dialog, index ->
         viewModel.setWhenToNotify(options[index])
         dialog.dismiss()
@@ -101,12 +101,12 @@ class SettingsNotificationsFragment :
   private fun showNotificationsRationaleDialog() {
     val context = requireContext()
     val view = NotificationsRationaleView(context)
-    MaterialAlertDialogBuilder(context, R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(context, R.drawable.bg_dialog))
+    MaterialAlertDialogBuilder(context, com.michaldrabik.ui_base.R.style.AlertDialog)
+      .setBackground(ContextCompat.getDrawable(context, com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setView(view)
-      .setPositiveButton(R.string.textYes) { _, _ ->
+      .setPositiveButton(com.michaldrabik.ui_base.R.string.textYes) { _, _ ->
         requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
-      }.setNegativeButton(R.string.textCancel) { _, _ -> }
+      }.setNegativeButton(com.michaldrabik.ui_base.R.string.textCancel) { _, _ -> }
       .show()
   }
 

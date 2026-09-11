@@ -51,10 +51,10 @@ internal class DiscoverMoviesFragment :
   private val binding by viewBinding(FragmentDiscoverMoviesBinding::bind)
 
   override val viewModel by viewModels<DiscoverMoviesViewModel>()
-  override val navigationId = R.id.discoverMoviesFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.discoverMoviesFragment
 
-  private val swipeRefreshStartOffset by lazy { requireContext().dimenToPx(R.dimen.swipeRefreshStartOffset) }
-  private val swipeRefreshEndOffset by lazy { requireContext().dimenToPx(R.dimen.swipeRefreshEndOffset) }
+  private val swipeRefreshStartOffset by lazy { requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshStartOffset) }
+  private val swipeRefreshEndOffset by lazy { requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshEndOffset) }
 
   private var adapter: DiscoverMoviesAdapter? = null
   private var layoutManager: GridLayoutManager? = null
@@ -124,7 +124,7 @@ internal class DiscoverMoviesFragment :
         onClick { openSearch() }
         onSettingsClickListener = {
           hideNavigation()
-          navigateToSafe(R.id.actionDiscoverMoviesFragmentToSettingsFragment)
+          navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToSettingsFragment)
         }
       }
       discoverMoviesTabsView.run {
@@ -134,8 +134,8 @@ internal class DiscoverMoviesFragment :
       }
       discoverMoviesFiltersView.run {
         translationY = filtersViewPosition
-        onGenresChipClick = { navigateToSafe(R.id.actionDiscoverMoviesFragmentToFiltersGenres) }
-        onFeedChipClick = { navigateToSafe(R.id.actionDiscoverMoviesFragmentToFiltersFeed) }
+        onGenresChipClick = { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToFiltersGenres) }
+        onFeedChipClick = { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToFiltersFeed) }
         onHideCollectionChipClick = { viewModel.toggleCollection() }
       }
     }
@@ -144,16 +144,16 @@ internal class DiscoverMoviesFragment :
   private fun setupInsets() {
     with(binding) {
       discoverMoviesRoot.doOnApplyWindowInsets { _, insets, _, _ ->
-        val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+        val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val statusBarSize = insets.getInsets(WindowInsetsCompat.Type.systemBars()).top + tabletOffset
         discoverMoviesRecycler
-          .updatePadding(top = statusBarSize + dimenToPx(R.dimen.discoverRecyclerPadding))
+          .updatePadding(top = statusBarSize + dimenToPx(com.michaldrabik.ui_base.R.dimen.discoverRecyclerPadding))
         (discoverMoviesSearchView.layoutParams as ViewGroup.MarginLayoutParams)
-          .updateMargins(top = statusBarSize + dimenToPx(R.dimen.spaceMedium))
+          .updateMargins(top = statusBarSize + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium))
         (discoverMoviesTabsView.layoutParams as ViewGroup.MarginLayoutParams)
-          .updateMargins(top = statusBarSize + dimenToPx(R.dimen.collectionTabsMargin))
+          .updateMargins(top = statusBarSize + dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionTabsMargin))
         (discoverMoviesFiltersView.layoutParams as ViewGroup.MarginLayoutParams)
-          .updateMargins(top = statusBarSize + dimenToPx(R.dimen.collectionFiltersMargin))
+          .updateMargins(top = statusBarSize + dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionFiltersMargin))
         discoverMoviesSwipeRefresh.setProgressViewOffset(
           true,
           swipeRefreshStartOffset + statusBarSize,
@@ -181,8 +181,8 @@ internal class DiscoverMoviesFragment :
 
   private fun setupSwipeRefresh() {
     binding.discoverMoviesSwipeRefresh.apply {
-      val color = requireContext().colorFromAttr(R.attr.colorAccent)
-      setProgressBackgroundColorSchemeColor(requireContext().colorFromAttr(R.attr.colorSearchViewBackground))
+      val color = requireContext().colorFromAttr(androidx.appcompat.R.attr.colorAccent)
+      setProgressBackgroundColorSchemeColor(requireContext().colorFromAttr(com.michaldrabik.ui_base.R.attr.colorSearchViewBackground))
       setColorSchemeColors(color, color, color)
       setOnRefreshListener {
         searchViewPosition = 0F
@@ -208,7 +208,7 @@ internal class DiscoverMoviesFragment :
       discoverMoviesFiltersView.fadeOut(duration = 200).add(animations)
       discoverMoviesRecycler
         .fadeOut(duration = 200) {
-          navigateToSafe(R.id.actionDiscoverMoviesFragmentToSearchFragment)
+          navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToSearchFragment)
         }.add(animations)
     }
   }
@@ -229,7 +229,7 @@ internal class DiscoverMoviesFragment :
       clearFragmentResultListener(NavigationArgs.REQUEST_ITEM_MENU)
     }
     val bundle = ContextMenuBottomSheet.createBundle(movie.ids.trakt)
-    navigateToSafe(R.id.actionDiscoverMoviesFragmentToItemMenu, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToItemMenu, bundle)
   }
 
   private fun animateItemsExit(item: DiscoverMovieListItem) {
@@ -259,7 +259,7 @@ internal class DiscoverMoviesFragment :
           endAction = {
             if (!isResumed) return@fadeOut
             val bundle = Bundle().apply { putLong(NavigationArgs.ARG_MOVIE_ID, item.movie.traktId) }
-            navigateToSafe(R.id.actionDiscoverMoviesFragmentToMovieDetailsFragment, bundle)
+            navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToMovieDetailsFragment, bundle)
           },
         ).add(animations)
     }

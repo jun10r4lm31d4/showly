@@ -49,7 +49,7 @@ class ManageListsBottomSheet : BaseBottomSheetFragment(R.layout.view_manage_list
 
   @Inject lateinit var eventsManager: EventsManager
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,
@@ -91,7 +91,7 @@ class ManageListsBottomSheet : BaseBottomSheetFragment(R.layout.view_manage_list
       viewManageListsButton.onClick { closeSheet() }
       viewManageListsCreateButton.onClick {
         setFragmentResultListener(REQUEST_CREATE_LIST) { _, _ -> viewModel.loadLists(itemId, itemType) }
-        navigateTo(R.id.actionManageListsDialogToCreateListDialog, Bundle.EMPTY)
+        navigateTo(com.michaldrabik.ui_navigation.R.id.actionManageListsDialogToCreateListDialog, Bundle.EMPTY)
       }
       if (itemType == Mode.MOVIES.type) {
         viewManageListsSubtitle.setText(R.string.textManageListsMovies)

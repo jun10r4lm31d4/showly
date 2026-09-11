@@ -67,7 +67,7 @@ fun View.hideKeyboard() {
 
 fun View.addRipple() =
   with(TypedValue()) {
-    context.theme.resolveAttribute(R.attr.selectableItemBackground, this, true)
+    context.theme.resolveAttribute(androidx.appcompat.R.attr.selectableItemBackground, this, true)
     setBackgroundResource(resourceId)
   }
 

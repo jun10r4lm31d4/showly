@@ -97,13 +97,13 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
   private val binding by viewBinding(ViewEpisodeDetailsBinding::bind)
 
   private val options by lazy { requireParcelable<Options>(ARG_OPTIONS) }
-  private val cornerRadius by lazy { dimenToPx(R.dimen.bottomSheetCorner).toFloat() }
+  private val cornerRadius by lazy { dimenToPx(com.michaldrabik.ui_base.R.dimen.bottomSheetCorner).toFloat() }
 
   private var spoilerTitle: String? = null
   private var spoilerDescription: String? = null
   private var spoilerRating: String? = null
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,
@@ -134,12 +134,12 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
       episodeDetailsTitle.text = when (episode.title) {
         "Episode ${episode.number}" -> String.format(
           ENGLISH,
-          requireContext().getString(R.string.textEpisode),
+          requireContext().getString(com.michaldrabik.ui_base.R.string.textEpisode),
           episode.number,
         )
         else -> episode.title
       }
-      episodeDetailsOverview.text = episode.overview.ifBlank { getString(R.string.textNoDescription) }
+      episodeDetailsOverview.text = episode.overview.ifBlank { getString(com.michaldrabik.ui_base.R.string.textNoDescription) }
       episodeDetailsRatingLayout.visibleIf(episode.votes > 0)
       episodeDetailsWatchedAt.visibleIf(episode.lastWatchedAt != null || isWatched)
       if (!showTabs) episodeDetailsTabs.gone()
@@ -164,7 +164,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
         dateFormat?.let {
           val millis = episode.firstAired?.toInstant()?.toEpochMilli() ?: -1
           val date = if (millis == -1L) {
-            getString(R.string.textTba)
+            getString(com.michaldrabik.ui_base.R.string.textTba)
           } else {
             it.format(dateFromMillis(millis).toLocalZone()).capitalizeWords()
           }
@@ -175,7 +175,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
             episode.number,
             date,
           )
-          val runtime = "${episode.runtime} ${getString(R.string.textMinutesShort)}"
+          val runtime = "${episode.runtime} ${getString(com.michaldrabik.ui_base.R.string.textMinutesShort)}"
           episodeDetailsName.text = if (episode.runtime > 0) "$name | $runtime" else name
         }
         isImageLoading.let { episodeDetailsProgress.visibleIf(it) }
@@ -209,7 +209,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
           if (state.hasRating()) {
             episodeDetailsRateButton.text = "${state.userRating?.rating} / 10"
           } else {
-            episodeDetailsRateButton.setText(R.string.textRate)
+            episodeDetailsRateButton.setText(com.michaldrabik.ui_base.R.string.textRate)
           }
         }
         spoilers?.let { renderRating(it) }
@@ -237,7 +237,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
         } else if (episodeDetailsTitle.text.isBlank()) {
           when (options.episode.title) {
             "Episode ${options.episode.number}" -> {
-              String.format(ENGLISH, requireContext().getString(R.string.textEpisode), options.episode.number)
+              String.format(ENGLISH, requireContext().getString(com.michaldrabik.ui_base.R.string.textEpisode), options.episode.number)
             }
             else -> {
               options.episode.title
@@ -279,7 +279,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
           translation.overview
         } else if (episodeDetailsOverview.text.isBlank()) {
           options.episode.overview.ifBlank {
-            getString(R.string.textNoDescription)
+            getString(com.michaldrabik.ui_base.R.string.textNoDescription)
           }
         } else {
           episodeDetailsOverview.text.toString()
@@ -347,7 +347,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
       if (!options.isWatched && spoilers?.isEpisodeImageHidden == true && !tapToReveal) {
         episodeDetailsImage.invisible()
         episodeDetailsImagePlaceholder.visible()
-        episodeDetailsImagePlaceholder.setImageResource(R.drawable.ic_eye_no)
+        episodeDetailsImagePlaceholder.setImageResource(com.michaldrabik.ui_base.R.drawable.ic_eye_no)
         if (spoilers.isTapToReveal) {
           episodeDetailsImagePlaceholder.onClick {
             renderImage(image, spoilers, tapToReveal = true)
@@ -364,7 +364,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
         .transition(DrawableTransitionOptions.withCrossFade(IMAGE_FADE_DURATION_MS))
         .withFailListener {
           episodeDetailsImagePlaceholder.visible()
-          episodeDetailsImagePlaceholder.setImageResource(R.drawable.ic_television)
+          episodeDetailsImagePlaceholder.setImageResource(com.michaldrabik.ui_base.R.drawable.ic_television)
           episodeDetailsImagePlaceholder.setOnClickListener(null)
         }.into(episodeDetailsImage)
     }
@@ -406,8 +406,8 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
   private fun openRateDialog() {
     setFragmentResultListener(NavigationArgs.REQUEST_RATING) { _, bundle ->
       when (bundle.optionalParcelable<Operation>(NavigationArgs.RESULT)) {
-        Operation.SAVE -> renderSnackbar(MessageEvent.Info(R.string.textRateSaved))
-        Operation.REMOVE -> renderSnackbar(MessageEvent.Info(R.string.textRateRemoved))
+        Operation.SAVE -> renderSnackbar(MessageEvent.Info(com.michaldrabik.ui_base.R.string.textRateSaved))
+        Operation.REMOVE -> renderSnackbar(MessageEvent.Info(com.michaldrabik.ui_base.R.string.textRateRemoved))
         else -> Timber.w("Unknown result.")
       }
       viewModel.loadRatings(options.episode)
@@ -419,7 +419,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
       seasonNumber = options.episode.season,
       episodeNumber = options.episode.number,
     )
-    navigateTo(R.id.actionEpisodeDetailsDialogToRate, bundle)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionEpisodeDetailsDialogToRate, bundle)
   }
 
   private fun openLinksSheet() {
@@ -427,7 +427,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
       showIds = options.showIds,
       episode = options.episode,
     )
-    navigateTo(R.id.actionEpisodeDetailsDialogToLink, bundle)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionEpisodeDetailsDialogToLink, bundle)
   }
 
   private val tabSelectedListener = object : TabLayout.OnTabSelectedListener {

@@ -81,8 +81,8 @@ class SettingsScrobFragment : BaseFragment<SettingsScrobViewModel>(R.layout.frag
       val labels = listOf(getString(R.string.textSettingsScrobWatchlistNone)) + options.map { it.name }
       val checked = options.indexOfFirst { it.id == selectedId } + 1
 
-      MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-        .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+      MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog)
+        .setBackground(ContextCompat.getDrawable(requireContext(), com.michaldrabik.ui_base.R.drawable.bg_dialog))
         .setTitle(R.string.textSettingsScrobWatchlistDialogTitle)
         .setSingleChoiceItems(labels.toTypedArray(), checked) { dialog, index ->
           val id = options.getOrNull(index - 1)?.id ?: -1
@@ -108,7 +108,7 @@ class SettingsScrobFragment : BaseFragment<SettingsScrobViewModel>(R.layout.frag
     }
 
     val dialog =
-      MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
+      MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog)
         .setView(inputBinding.root)
         .create()
 

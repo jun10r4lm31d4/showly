@@ -50,13 +50,13 @@ class CalendarRecentsGrouperTest : BaseMockTest() {
     val results = SUT.groupByTime(zonedNow, listOf(item1, item2, item3, item4))
 
     assertThat(results).hasSize(8)
-    assertThat((results[0] as CalendarMovieListItem.Header).textResId).isEqualTo(R.string.textYesterday)
+    assertThat((results[0] as CalendarMovieListItem.Header).textResId).isEqualTo(com.michaldrabik.ui_base.R.string.textYesterday)
     assertThat((results[1] as CalendarMovieListItem.MovieItem).movie).isEqualTo(movie1)
-    assertThat((results[2] as CalendarMovieListItem.Header).textResId).isEqualTo(R.string.textLast7Days)
+    assertThat((results[2] as CalendarMovieListItem.Header).textResId).isEqualTo(com.michaldrabik.ui_base.R.string.textLast7Days)
     assertThat((results[3] as CalendarMovieListItem.MovieItem).movie).isEqualTo(movie2)
-    assertThat((results[4] as CalendarMovieListItem.Header).textResId).isEqualTo(R.string.textLast30Days)
+    assertThat((results[4] as CalendarMovieListItem.Header).textResId).isEqualTo(com.michaldrabik.ui_base.R.string.textLast30Days)
     assertThat((results[5] as CalendarMovieListItem.MovieItem).movie).isEqualTo(movie3)
-    assertThat((results[6] as CalendarMovieListItem.Header).textResId).isEqualTo(R.string.textLast90Days)
+    assertThat((results[6] as CalendarMovieListItem.Header).textResId).isEqualTo(com.michaldrabik.ui_base.R.string.textLast90Days)
     assertThat((results[7] as CalendarMovieListItem.MovieItem).movie).isEqualTo(movie4)
   }
 

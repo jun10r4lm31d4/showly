@@ -69,7 +69,7 @@ class SearchFragment :
 
   @Inject lateinit var settings: SettingsViewModeRepository
 
-  override val navigationId = R.id.searchFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.searchFragment
 
   override val viewModel by viewModels<SearchViewModel>()
   private val binding by viewBinding(FragmentSearchBinding::bind)
@@ -79,8 +79,8 @@ class SearchFragment :
   private var layoutManager: LayoutManager? = null
   private var suggestionsLayoutManager: LayoutManager? = null
 
-  private val swipeRefreshEndOffset by lazy { requireContext().dimenToPx(R.dimen.swipeRefreshEndOffset) }
-  private val swipeRefreshStartOffset by lazy { requireContext().dimenToPx(R.dimen.swipeRefreshStartOffset) }
+  private val swipeRefreshEndOffset by lazy { requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshEndOffset) }
+  private val swipeRefreshStartOffset by lazy { requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshStartOffset) }
 
   private var headerTranslation = 0F
 
@@ -212,8 +212,8 @@ class SearchFragment :
 
       searchSwipeRefresh.apply {
         isEnabled = false
-        val color = requireContext().colorFromAttr(R.attr.colorAccent)
-        setProgressBackgroundColorSchemeColor(requireContext().colorFromAttr(R.attr.colorSearchViewBackground))
+        val color = requireContext().colorFromAttr(androidx.appcompat.R.attr.colorAccent)
+        setProgressBackgroundColorSchemeColor(requireContext().colorFromAttr(com.michaldrabik.ui_base.R.attr.colorSearchViewBackground))
         setColorSchemeColors(color, color, color)
         setProgressViewOffset(false, swipeRefreshStartOffset, swipeRefreshEndOffset)
       }
@@ -247,7 +247,7 @@ class SearchFragment :
   private fun setupInsets() {
     with(binding) {
       searchRoot.doOnApplyWindowInsets { view, insets, padding, _ ->
-        val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+        val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val inset = insets.getInsets(WindowInsetsCompat.Type.systemBars())
         view.updatePadding(top = inset.top + tabletOffset)
         searchRecycler.updatePadding(bottom = inset.bottom + padding.bottom)
@@ -281,7 +281,7 @@ class SearchFragment :
       viewModel.setSortOrder(sortOrder, sortType)
     }
 
-    navigateToSafe(R.id.actionSearchFragmentToSortOrder, args)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionSearchFragmentToSortOrder, args)
   }
 
   private fun openShowDetails(item: SearchListItem) {
@@ -295,10 +295,10 @@ class SearchFragment :
   private fun openDetails(item: SearchListItem) {
     if (item.isShow) {
       val bundle = Bundle().apply { putLong(ARG_SHOW_ID, item.show.traktId) }
-      navigateToSafe(R.id.actionSearchFragmentToShowDetailsFragment, bundle)
+      navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionSearchFragmentToShowDetailsFragment, bundle)
     } else if (item.isMovie) {
       val bundle = Bundle().apply { putLong(ARG_MOVIE_ID, item.movie.traktId) }
-      navigateToSafe(R.id.actionSearchFragmentToMovieDetailsFragment, bundle)
+      navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionSearchFragmentToMovieDetailsFragment, bundle)
     }
   }
 
@@ -311,10 +311,10 @@ class SearchFragment :
     }
     if (item.isShow) {
       val bundle = ContextMenuBottomSheet.createBundle(item.show.ids.trakt)
-      navigateToSafe(R.id.actionSearchFragmentToShowItemMenu, bundle)
+      navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionSearchFragmentToShowItemMenu, bundle)
     } else if (item.isMovie) {
       val bundle = ContextMenuBottomSheet.createBundle(item.movie.ids.trakt)
-      navigateToSafe(R.id.actionSearchFragmentToMovieItemMenu, bundle)
+      navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionSearchFragmentToMovieItemMenu, bundle)
     }
   }
 
@@ -373,8 +373,8 @@ class SearchFragment :
       searchRecentsClearButton.fadeIn()
       searchRecentsClearButton.onClick { viewModel.clearRecentSearches() }
 
-      val paddingH = requireContext().dimenToPx(R.dimen.screenMarginHorizontal)
-      val paddingV = requireContext().dimenToPx(R.dimen.spaceMedium)
+      val paddingH = requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.screenMarginHorizontal)
+      val paddingV = requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium)
 
       searchRecentsLayout.removeAllViews()
       it.forEach { item ->

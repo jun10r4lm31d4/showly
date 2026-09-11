@@ -31,8 +31,8 @@ class MyShowFanartView : FrameLayout {
   private val binding = ViewMyShowsFanartBinding.inflate(LayoutInflater.from(context), this)
 
   init {
-    setBackgroundResource(R.drawable.bg_media_view_elevation)
-    elevation = context.dimenToPx(R.dimen.elevationSmall).toFloat()
+    setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_elevation)
+    elevation = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.elevationSmall).toFloat()
   }
 
   private val cornerRadius by lazy { context.dimenToPx(R.dimen.myShowsFanartCorner) }
@@ -61,7 +61,7 @@ class MyShowFanartView : FrameLayout {
     with(binding) {
       if (image.status != ImageStatus.AVAILABLE) {
         myShowFanartPlaceholder.visible()
-        myShowFanartRoot.setBackgroundResource(R.drawable.bg_media_view_placeholder)
+        myShowFanartRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_placeholder)
         return
       }
       Glide

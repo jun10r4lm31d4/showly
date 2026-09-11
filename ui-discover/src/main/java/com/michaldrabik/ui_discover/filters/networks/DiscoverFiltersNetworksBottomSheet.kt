@@ -36,7 +36,7 @@ internal class DiscoverFiltersNetworksBottomSheet : BaseBottomSheetFragment(R.la
   @Inject
   lateinit var networkIconProvider: NetworkIconProvider
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,
@@ -104,10 +104,10 @@ internal class DiscoverFiltersNetworksBottomSheet : BaseBottomSheetFragment(R.la
           setEnsureMinTouchTargetSize(false)
           setChipIconResource(icon)
           chipBackgroundColor =
-            ContextCompat.getColorStateList(requireContext(), R.color.selector_discover_chip_background)
-          setChipStrokeColorResource(R.color.selector_discover_chip_stroke)
-          setChipStrokeWidthResource(R.dimen.discoverFilterChipStroke)
-          setTextColor(ContextCompat.getColorStateList(requireContext(), R.color.selector_discover_chip_text))
+            ContextCompat.getColorStateList(requireContext(), com.michaldrabik.ui_base.R.color.selector_discover_chip_background)
+          setChipStrokeColorResource(com.michaldrabik.ui_base.R.color.selector_discover_chip_stroke)
+          setChipStrokeWidthResource(com.michaldrabik.ui_base.R.dimen.discoverFilterChipStroke)
+          setTextColor(ContextCompat.getColorStateList(requireContext(), com.michaldrabik.ui_base.R.color.selector_discover_chip_text))
           isChecked = network.name in networksNames
         }
         binding.networksChipGroup.addView(chip)

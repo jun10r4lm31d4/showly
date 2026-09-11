@@ -38,8 +38,8 @@ class PersonDetailsCreditsItemView : FrameLayout {
   var onImageMissingListener: ((PersonDetailsItem, Boolean) -> Unit)? = null
   var onTranslationMissingListener: ((PersonDetailsItem) -> Unit)? = null
 
-  private val cornerRadius by lazy { context.dimenToPx(R.dimen.mediaTileCorner) }
-  private val spaceNano by lazy { context.dimenToPx(R.dimen.spaceNano).toFloat() }
+  private val cornerRadius by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner) }
+  private val spaceNano by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNano).toFloat() }
   private val centerCropTransformation by lazy { CenterCrop() }
   private val cornersTransformation by lazy { RoundedCorners(cornerRadius) }
 
@@ -59,13 +59,13 @@ class PersonDetailsCreditsItemView : FrameLayout {
       val year = if (item.show.year > 0) item.show.year.toString() else "TBA"
       viewPersonCreditsItemNetwork.text =
         if (item.show.network.isNotBlank()) {
-          context.getString(R.string.textNetwork, year, item.show.network)
+          context.getString(com.michaldrabik.ui_base.R.string.textNetwork, year, item.show.network)
         } else {
           String.format("%s", year)
         }
 
-      viewPersonCreditsItemPlaceholder.setImageResource(R.drawable.ic_television)
-      viewPersonCreditsItemIcon.setImageResource(R.drawable.ic_television)
+      viewPersonCreditsItemPlaceholder.setImageResource(com.michaldrabik.ui_base.R.drawable.ic_television)
+      viewPersonCreditsItemIcon.setImageResource(com.michaldrabik.ui_base.R.drawable.ic_television)
       viewPersonCreditsItemNetwork.translationY = spaceNano
       viewPersonCreditsItemBadge.visibleIf(item.isMy)
       viewPersonCreditsItemWatchlistBadge.visibleIf(item.isWatchlist)
@@ -81,8 +81,8 @@ class PersonDetailsCreditsItemView : FrameLayout {
 
     with(binding) {
       viewPersonCreditsItemNetwork.text = String.format("%s", item.movie.released?.year ?: "TBA")
-      viewPersonCreditsItemPlaceholder.setImageResource(R.drawable.ic_film)
-      viewPersonCreditsItemIcon.setImageResource(R.drawable.ic_film)
+      viewPersonCreditsItemPlaceholder.setImageResource(com.michaldrabik.ui_base.R.drawable.ic_film)
+      viewPersonCreditsItemIcon.setImageResource(com.michaldrabik.ui_base.R.drawable.ic_film)
       viewPersonCreditsItemNetwork.translationY = 0F
       viewPersonCreditsItemRoot.alpha = if (item.moviesEnabled) 1F else 0.45F
       viewPersonCreditsItemRoot.isEnabled = item.moviesEnabled
@@ -102,7 +102,7 @@ class PersonDetailsCreditsItemView : FrameLayout {
       var description = when {
         item.translation?.overview?.isNotBlank() == true -> item.translation.overview
         item.show.overview.isNotBlank() -> item.show.overview
-        else -> context.getString(R.string.textNoDescription)
+        else -> context.getString(com.michaldrabik.ui_base.R.string.textNoDescription)
       }
 
       val isMyHidden = item.spoilers.isMyShowsHidden && item.isMy
@@ -136,7 +136,7 @@ class PersonDetailsCreditsItemView : FrameLayout {
       var description = when {
         item.translation?.overview?.isNotBlank() == true -> item.translation.overview
         item.movie.overview.isNotBlank() -> item.movie.overview
-        else -> context.getString(R.string.textNoDescription)
+        else -> context.getString(com.michaldrabik.ui_base.R.string.textNoDescription)
       }
 
       val isMyHidden = item.spoilers.isMyMoviesHidden && item.isMy

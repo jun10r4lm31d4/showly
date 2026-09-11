@@ -77,7 +77,7 @@ class ProgressWidgetProvider : BaseWidgetProvider() {
       setRemoteAdapter(R.id.progressWidgetList, intent)
       setEmptyView(R.id.progressWidgetList, R.id.progressWidgetEmptyView)
 
-      val spaceTiny = context.dimenToPx(R.dimen.spaceTiny)
+      val spaceTiny = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceTiny)
       val paddingTop = if (settings.widgetsShowLabel) context.dimenToPx(R.dimen.widgetPaddingTop) else spaceTiny
       val labelVisibility = if (settings.widgetsShowLabel) VISIBLE else GONE
       setViewPadding(R.id.progressWidgetList, 0, paddingTop, 0, spaceTiny)

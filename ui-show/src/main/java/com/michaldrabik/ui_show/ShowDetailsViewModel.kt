@@ -121,11 +121,11 @@ class ShowDetailsViewModel @Inject constructor(
           }
           is ResourceNotFoundError -> {
             // Malformed Trakt data or duplicate show.
-            messageChannel.send(MessageEvent.Info(R.string.errorMalformedShow))
+            messageChannel.send(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorMalformedShow))
             Logger.record(error, "ShowDetailsViewModel::loadDetails(${id.id})")
           }
           else -> {
-            messageChannel.send(MessageEvent.Error(R.string.errorCouldNotLoadShow))
+            messageChannel.send(MessageEvent.Error(com.michaldrabik.ui_base.R.string.errorCouldNotLoadShow))
             Logger.record(error, "ShowDetailsViewModel::loadDetails(${id.id})")
           }
         }
@@ -265,7 +265,7 @@ class ShowDetailsViewModel @Inject constructor(
 
   private suspend fun checkSeasonsLoaded(): Boolean {
     if (!seasonsCache.hasSeasons(show.ids.trakt)) {
-      messageChannel.send(MessageEvent.Info(R.string.errorSeasonsNotLoaded))
+      messageChannel.send(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorSeasonsNotLoaded))
       return false
     }
     return true

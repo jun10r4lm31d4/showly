@@ -38,7 +38,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ShowDetailsPeopleFragment : BaseFragment<ShowDetailsPeopleViewModel>(R.layout.fragment_show_details_people) {
 
-  override val navigationId = R.id.showDetailsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.showDetailsFragment
   private val binding by viewBinding(FragmentShowDetailsPeopleBinding::bind)
 
   private val parentViewModel by viewModels<ShowDetailsViewModel>({ requireParentFragment() })
@@ -65,7 +65,7 @@ class ShowDetailsPeopleFragment : BaseFragment<ShowDetailsPeopleViewModel>(R.lay
       itemClickListener = { viewModel.loadPersonDetails(it) }
     }
     with(binding) {
-      showDetailsActorsLabel.text = getString(R.string.textPeople).replace(":", "")
+      showDetailsActorsLabel.text = getString(com.michaldrabik.ui_base.R.string.textPeople).replace(":", "")
       showDetailsActorsRecycler.apply {
         setHasFixedSize(true)
         adapter = actorsAdapter
@@ -83,7 +83,7 @@ class ShowDetailsPeopleFragment : BaseFragment<ShowDetailsPeopleViewModel>(R.lay
     handleSheetResult()
     val bundle = PersonDetailsBottomSheet.createBundle(person, show.ids.trakt, personArgs)
     (requireParentFragment() as BaseFragment<*>)
-      .navigateToSafe(R.id.actionShowDetailsFragmentToPerson, bundle)
+      .navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToPerson, bundle)
   }
 
   private fun openPeopleSheet(event: OpenPeopleSheet) {
@@ -101,7 +101,7 @@ class ShowDetailsPeopleFragment : BaseFragment<ShowDetailsPeopleViewModel>(R.lay
       .binding.showDetailsTitle.text
       .toString()
     val bundle = PeopleListBottomSheet.createBundle(show.ids.trakt, title, Mode.SHOWS, department)
-    navigateToSafe(R.id.actionShowDetailsFragmentToPeopleList, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToPeopleList, bundle)
   }
 
   private fun render(uiState: ShowDetailsPeopleUiState) {

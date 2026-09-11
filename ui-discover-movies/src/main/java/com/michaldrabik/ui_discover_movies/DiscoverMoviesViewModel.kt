@@ -149,7 +149,7 @@ internal class DiscoverMoviesViewModel @Inject constructor(
 
   private suspend fun onError(error: Throwable) {
     if (error !is CancellationException) {
-      messageChannel.send(MessageEvent.Error(R.string.errorCouldNotLoadDiscover))
+      messageChannel.send(MessageEvent.Error(com.michaldrabik.ui_base.R.string.errorCouldNotLoadDiscover))
       Timber.e(error)
     }
     rethrowCancellation(error)

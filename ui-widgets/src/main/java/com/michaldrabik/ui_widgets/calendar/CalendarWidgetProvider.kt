@@ -74,7 +74,7 @@ class CalendarWidgetProvider : BaseWidgetProvider() {
       setRemoteAdapter(R.id.calendarWidgetList, intent)
       setEmptyView(R.id.calendarWidgetList, R.id.calendarWidgetEmptyView)
 
-      val spaceTiny = context.dimenToPx(R.dimen.spaceTiny)
+      val spaceTiny = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceTiny)
       val paddingTop = if (settings.widgetsShowLabel) context.dimenToPx(R.dimen.widgetPaddingTop) else spaceTiny
       val labelVisibility = if (settings.widgetsShowLabel) VISIBLE else GONE
       setViewPadding(R.id.calendarWidgetList, 0, paddingTop, 0, spaceTiny)
@@ -86,12 +86,12 @@ class CalendarWidgetProvider : BaseWidgetProvider() {
 
       when (settingsRepository.widgets.getWidgetCalendarMode(Mode.SHOWS, widgetId)) {
         CalendarMode.PRESENT_FUTURE -> {
-          setImageViewResource(R.id.calendarWidgetEmptyViewIcon, R.drawable.ic_history)
-          setTextViewText(R.id.calendarWidgetEmptyViewSubtitle, context.getString(R.string.textCalendarEmpty))
+          setImageViewResource(R.id.calendarWidgetEmptyViewIcon, com.michaldrabik.ui_base.R.drawable.ic_history)
+          setTextViewText(R.id.calendarWidgetEmptyViewSubtitle, context.getString(com.michaldrabik.ui_progress.R.string.textCalendarEmpty))
         }
         CalendarMode.RECENTS -> {
-          setImageViewResource(R.id.calendarWidgetEmptyViewIcon, R.drawable.ic_calendar)
-          setTextViewText(R.id.calendarWidgetEmptyViewSubtitle, context.getString(R.string.textRecentsEmpty))
+          setImageViewResource(R.id.calendarWidgetEmptyViewIcon, com.michaldrabik.ui_base.R.drawable.ic_calendar)
+          setTextViewText(R.id.calendarWidgetEmptyViewSubtitle, context.getString(com.michaldrabik.ui_progress.R.string.textRecentsEmpty))
         }
       }
     }

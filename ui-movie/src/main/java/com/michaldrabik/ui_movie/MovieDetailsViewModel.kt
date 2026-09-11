@@ -132,11 +132,11 @@ class MovieDetailsViewModel @Inject constructor(
           }
           is ResourceNotFoundError -> {
             // Malformed Trakt data or duplicate show.
-            messageChannel.send(MessageEvent.Info(R.string.errorMalformedMovie))
+            messageChannel.send(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorMalformedMovie))
             Logger.record(error, "MovieDetailsViewModel::loadDetails(${id.id})")
           }
           else -> {
-            messageChannel.send(MessageEvent.Error(R.string.errorCouldNotLoadMovie))
+            messageChannel.send(MessageEvent.Error(com.michaldrabik.ui_base.R.string.errorCouldNotLoadMovie))
             Logger.record(error, "MovieDetailsViewModel::loadDetails(${id.id})")
           }
         }

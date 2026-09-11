@@ -33,7 +33,7 @@ internal class MyShowsFiltersBottomSheet : BaseBottomSheetFragment(R.layout.view
   private val viewModel by viewModels<MyShowsFiltersViewModel>()
   private val binding by viewBinding(ViewMyShowsTypeFiltersBinding::bind)
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,

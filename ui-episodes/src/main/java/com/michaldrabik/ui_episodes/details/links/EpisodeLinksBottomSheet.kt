@@ -54,7 +54,7 @@ class EpisodeLinksBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_li
   private val season by lazy { options.season }
   private val episodeNumber by lazy { options.episodeNumber }
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,

@@ -140,7 +140,7 @@ class BackupExportFragment : BaseFragment<BackupExportViewModel>(R.layout.fragme
     val host = (requireActivity() as SnackbarHost).provideSnackbarLayout()
     snackbar = host.showInfoSnackbar(
       message = getString(R.string.textBackupExportSuccess),
-      actionText = R.string.textShare,
+      actionText = com.michaldrabik.ui_base.R.string.textShare,
       length = 10.seconds.inWholeMilliseconds.toInt(),
       action = { shareNewExport(uri) },
     )
@@ -149,7 +149,7 @@ class BackupExportFragment : BaseFragment<BackupExportViewModel>(R.layout.fragme
   private fun showErrorSnack(error: Throwable) {
     val host = (requireActivity() as SnackbarHost).provideSnackbarLayout()
     snackbar = host.showErrorSnackbar(
-      message = error.localizedMessage ?: getString(R.string.errorGeneral),
+      message = error.localizedMessage ?: getString(com.michaldrabik.ui_base.R.string.errorGeneral),
     )
   }
 

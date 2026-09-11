@@ -24,10 +24,10 @@ class CalendarHeaderView : LinearLayout {
     layoutParams = LayoutParams(MATCH_PARENT, WRAP_CONTENT)
     orientation = HORIZONTAL
     updatePadding(
-      top = context.dimenToPx(R.dimen.spaceBig),
-      bottom = context.dimenToPx(R.dimen.spaceTiny),
-      left = context.dimenToPx(R.dimen.itemMarginHorizontal),
-      right = context.dimenToPx(R.dimen.itemMarginHorizontal),
+      top = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceBig),
+      bottom = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceTiny),
+      left = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.itemMarginHorizontal),
+      right = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.itemMarginHorizontal),
     )
   }
 
@@ -39,7 +39,7 @@ class CalendarHeaderView : LinearLayout {
       calendarHeaderText.setText(item.textResId)
     }
     updatePadding(
-      top = context.dimenToPx(if (position == 1) R.dimen.spaceMedium else R.dimen.spaceBig),
+      top = context.dimenToPx(if (position == 1) com.michaldrabik.ui_base.R.dimen.spaceMedium else com.michaldrabik.ui_base.R.dimen.spaceBig),
     )
   }
 }

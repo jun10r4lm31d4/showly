@@ -35,8 +35,8 @@ class RelatedShowView : ShowView<RelatedListItem> {
     onLongClick { itemLongClickListener?.invoke(item) }
   }
 
-  private val colorAccent by lazy { ContextCompat.getColor(context, R.color.colorAccent) }
-  private val colorGray by lazy { ContextCompat.getColor(context, R.color.colorGrayLight) }
+  private val colorAccent by lazy { ContextCompat.getColor(context, com.michaldrabik.ui_base.R.color.colorAccent) }
+  private val colorGray by lazy { ContextCompat.getColor(context, com.michaldrabik.ui_base.R.color.colorGrayLight) }
 
   override val imageView: ImageView = binding.relatedImage
   override val placeholderView: ImageView = binding.relatedPlaceholder

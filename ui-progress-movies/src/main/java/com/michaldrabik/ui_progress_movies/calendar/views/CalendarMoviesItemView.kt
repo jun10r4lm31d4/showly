@@ -63,7 +63,7 @@ class CalendarMoviesItemView : MovieView<CalendarMovieListItem.MovieItem> {
       if (item.movie.released != null) {
         progressMovieCalendarItemDate.text = item.dateFormat?.format(item.movie.released)?.capitalizeWords()
       } else {
-        progressMovieCalendarItemDate.text = context.getString(R.string.textTba)
+        progressMovieCalendarItemDate.text = context.getString(com.michaldrabik.ui_base.R.string.textTba)
       }
 
       loadImage(item)
@@ -75,7 +75,7 @@ class CalendarMoviesItemView : MovieView<CalendarMovieListItem.MovieItem> {
       val inCollection = item.isWatched || item.isWatchlist
       visibleIf(inCollection)
       if (inCollection) {
-        val color = if (item.isWatched) R.color.colorAccent else R.color.colorGrayLight
+        val color = if (item.isWatched) com.michaldrabik.ui_base.R.color.colorAccent else com.michaldrabik.ui_base.R.color.colorGrayLight
         imageTintList = ColorStateList.valueOf(ContextCompat.getColor(context, color))
       }
     }
@@ -83,7 +83,7 @@ class CalendarMoviesItemView : MovieView<CalendarMovieListItem.MovieItem> {
 
   private fun bindDescription(item: CalendarMovieListItem.MovieItem) {
     var description = if (item.translation?.overview.isNullOrBlank()) {
-      item.movie.overview.ifBlank { context.getString(R.string.textNoDescription) }
+      item.movie.overview.ifBlank { context.getString(com.michaldrabik.ui_base.R.string.textNoDescription) }
     } else {
       item.translation?.overview
     }

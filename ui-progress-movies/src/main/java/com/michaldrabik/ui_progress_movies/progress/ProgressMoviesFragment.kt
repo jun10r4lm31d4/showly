@@ -235,16 +235,16 @@ class ProgressMoviesFragment :
   private fun setupInsets() {
     with(binding) {
       root.doOnApplyWindowInsets { _, insets, padding, _ ->
-        val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+        val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
 
         statusBarHeight = systemInsets.top + tabletOffset
         progressMoviesMainRecycler.updatePadding(
           top = statusBarHeight + dimenToPx(R.dimen.progressMoviesTabsViewPadding),
-          bottom = systemInsets.bottom + dimenToPx(R.dimen.bottomNavigationHeightPadded),
+          bottom = systemInsets.bottom + dimenToPx(com.michaldrabik.ui_base.R.dimen.bottomNavigationHeightPadded),
         )
         (progressMoviesEmptyView.rootLayout.layoutParams as ViewGroup.MarginLayoutParams)
-          .updateMargins(top = statusBarHeight + dimenToPx(R.dimen.spaceBig))
+          .updateMargins(top = statusBarHeight + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceBig))
         (progressMoviesOverscroll.layoutParams as ViewGroup.MarginLayoutParams)
           .updateMargins(top = statusBarHeight + dimenToPx(R.dimen.progressMoviesOverscrollPadding))
       }
@@ -264,7 +264,7 @@ class ProgressMoviesFragment :
       viewModel.setSortOrder(sortOrder, sortType)
     }
 
-    navigateTo(R.id.actionProgressMoviesFragmentToSortOrder, args)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionProgressMoviesFragmentToSortOrder, args)
   }
 
   override fun onEnterSearch() {

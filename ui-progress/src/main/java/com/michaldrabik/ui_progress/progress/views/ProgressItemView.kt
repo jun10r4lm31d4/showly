@@ -81,7 +81,7 @@ class ProgressItemView : ShowView<ProgressListItem.Episode> {
       progressItemSubtitle.text = String
         .format(
           ENGLISH,
-          context.getString(R.string.textSeasonEpisode),
+          context.getString(com.michaldrabik.ui_base.R.string.textSeasonEpisode),
           item.episode?.season,
           item.episode?.number,
         ).plus(
@@ -104,7 +104,7 @@ class ProgressItemView : ShowView<ProgressListItem.Episode> {
   private fun bindEpisodeTitle(item: ProgressListItem.Episode) {
     var episodeTitle = when {
       item.episode?.title?.isBlank() == true -> {
-        context.getString(R.string.textTba)
+        context.getString(com.michaldrabik.ui_base.R.string.textTba)
       }
       item.translations
         ?.episode
@@ -113,7 +113,7 @@ class ProgressItemView : ShowView<ProgressListItem.Episode> {
         item.translations.episode.title
       }
       item.episode?.title == "Episode ${item.episode?.number}" -> {
-        String.format(ENGLISH, context.getString(R.string.textEpisode), item.episode.number)
+        String.format(ENGLISH, context.getString(com.michaldrabik.ui_base.R.string.textEpisode), item.episode.number)
       }
       else -> {
         item.episode?.title
@@ -197,7 +197,7 @@ class ProgressItemView : ShowView<ProgressListItem.Episode> {
         progressItemCheckButton.run {
           layoutParams = LinearLayout.LayoutParams(checkButtonWidth, checkButtonHeight)
           text = ""
-          setIconResource(R.drawable.ic_check)
+          setIconResource(com.michaldrabik.ui_base.R.drawable.ic_check)
           onClick { it.bump { checkClickListener?.invoke(item) } }
         }
       } else {
@@ -227,7 +227,7 @@ class ProgressItemView : ShowView<ProgressListItem.Episode> {
       if (episodesLeft <= 0) {
         progressItemProgressText.text = String.format(ENGLISH, "%d/%d", item.watchedCount, item.totalCount)
       } else {
-        val episodesLeftString = resources.getQuantityString(R.plurals.textEpisodesLeft, episodesLeft, episodesLeft)
+        val episodesLeftString = resources.getQuantityString(com.michaldrabik.ui_base.R.plurals.textEpisodesLeft, episodesLeft, episodesLeft)
         progressItemProgressText.text =
           String.format(ENGLISH, "%d/%d ($episodesLeftString)", item.watchedCount, item.totalCount)
       }

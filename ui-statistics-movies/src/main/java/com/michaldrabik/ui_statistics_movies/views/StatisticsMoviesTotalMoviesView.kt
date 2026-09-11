@@ -24,8 +24,8 @@ class StatisticsMoviesTotalMoviesView : MaterialCardView {
 
   init {
     layoutParams = LayoutParams(MATCH_PARENT, MATCH_PARENT)
-    setCardBackgroundColor(context.colorFromAttr(R.attr.colorCardBackground))
-    cardElevation = context.dimenToPx(R.dimen.elevationSmall).toFloat()
+    setCardBackgroundColor(context.colorFromAttr(com.michaldrabik.ui_base.R.attr.colorCardBackground))
+    cardElevation = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.elevationSmall).toFloat()
     strokeWidth = 0
   }
 

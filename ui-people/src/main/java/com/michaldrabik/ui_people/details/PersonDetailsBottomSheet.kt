@@ -73,7 +73,7 @@ class PersonDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_person_de
   private var adapter: PersonDetailsAdapter? = null
   private var layoutManager: LinearLayoutManager? = null
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,
@@ -152,14 +152,14 @@ class PersonDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_person_de
       val bundle = bundleOf(NavigationArgs.ARG_SHOW_ID to item.show.traktId)
       requireParentFragment()
         .findNavController()
-        .navigate(R.id.actionPersonDetailsDialogToShow, bundle)
+        .navigate(com.michaldrabik.ui_navigation.R.id.actionPersonDetailsDialogToShow, bundle)
     }
     if (item is PersonDetailsItem.CreditsMovieItem && item.movie.traktId != sourceId.id) {
       setFragmentResult(REQUEST_DETAILS, personBundle)
       val bundle = bundleOf(NavigationArgs.ARG_MOVIE_ID to item.movie.traktId)
       requireParentFragment()
         .findNavController()
-        .navigate(R.id.actionPersonDetailsDialogToMovie, bundle)
+        .navigate(com.michaldrabik.ui_navigation.R.id.actionPersonDetailsDialogToMovie, bundle)
     }
   }
 
@@ -169,12 +169,12 @@ class PersonDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_person_de
     val options = PersonGalleryFragment.createBundle(person)
     requireParentFragment()
       .findNavController()
-      .navigate(R.id.actionPersonDetailsDialogToGallery, options)
+      .navigate(com.michaldrabik.ui_navigation.R.id.actionPersonDetailsDialogToGallery, options)
   }
 
   private fun openLinksSheet(it: Person) {
     val options = PersonLinksBottomSheet.createBundle(it)
-    navigateTo(R.id.actionPersonDetailsDialogToLinks, options)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionPersonDetailsDialogToLinks, options)
   }
 
   @SuppressLint("SetTextI18n")

@@ -59,10 +59,10 @@ class DiscoverFiltersView : FrameLayout {
   private fun bindFeed(feed: DiscoverFeed) {
     with(binding) {
       discoverFeedChip.text = when (feed) {
-        TRENDING -> context.getString(R.string.textFeedTrending)
-        POPULAR -> context.getString(R.string.textFeedPopular)
-        ANTICIPATED -> context.getString(R.string.textFeedAnticipated)
-        RECENT -> context.getString(R.string.textSortNewest)
+        TRENDING -> context.getString(com.michaldrabik.ui_base.R.string.textFeedTrending)
+        POPULAR -> context.getString(com.michaldrabik.ui_base.R.string.textFeedPopular)
+        ANTICIPATED -> context.getString(com.michaldrabik.ui_base.R.string.textFeedAnticipated)
+        RECENT -> context.getString(com.michaldrabik.ui_model.R.string.textSortNewest)
       }
     }
   }
@@ -72,7 +72,7 @@ class DiscoverFiltersView : FrameLayout {
       discoverGenresChip.isSelected = genres.isNotEmpty()
       discoverGenresChip.text = when {
         genres.isEmpty() -> {
-          context.getString(R.string.textGenres).filter { it.isLetter() }
+          context.getString(com.michaldrabik.ui_base.R.string.textGenres).filter { it.isLetter() }
         }
         genres.size == 1 -> {
           context.getString(genres.first().displayName)
@@ -95,7 +95,7 @@ class DiscoverFiltersView : FrameLayout {
     with(binding) {
       discoverNetworksChip.isSelected = networks.isNotEmpty()
       discoverNetworksChip.text = when {
-        networks.isEmpty() -> context.getString(R.string.textNetworks).filter { it.isLetter() }
+        networks.isEmpty() -> context.getString(com.michaldrabik.ui_base.R.string.textNetworks).filter { it.isLetter() }
         networks.size == 1 -> networks[0].channels.first()
         else -> throw IllegalStateException()
       }

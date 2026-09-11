@@ -28,7 +28,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ShowDetailsRelatedFragment : BaseFragment<ShowDetailsRelatedViewModel>(R.layout.fragment_show_details_related) {
 
-  override val navigationId = R.id.showDetailsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.showDetailsFragment
   private val binding by viewBinding(FragmentShowDetailsRelatedBinding::bind)
 
   private val parentViewModel by viewModels<ShowDetailsViewModel>({ requireParentFragment() })
@@ -65,7 +65,7 @@ class ShowDetailsRelatedFragment : BaseFragment<ShowDetailsRelatedViewModel>(R.l
 
   private fun openDetails(item: RelatedListItem) {
     val bundle = Bundle().apply { putLong(ARG_SHOW_ID, item.show.traktId) }
-    navigateToSafe(R.id.actionShowDetailsFragmentToSelf, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToSelf, bundle)
   }
 
   private fun openContextMenu(item: RelatedListItem) {
@@ -78,7 +78,7 @@ class ShowDetailsRelatedFragment : BaseFragment<ShowDetailsRelatedViewModel>(R.l
       }
 
     val bundle = ContextMenuBottomSheet.createBundle(item.show.ids.trakt)
-    navigateToSafe(R.id.actionShowDetailsFragmentToContext, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToContext, bundle)
   }
 
   private fun render(uiState: ShowDetailsRelatedUiState) {

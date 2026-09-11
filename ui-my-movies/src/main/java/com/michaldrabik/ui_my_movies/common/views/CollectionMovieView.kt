@@ -46,8 +46,8 @@ class CollectionMovieView : MovieView<CollectionListItem.MovieItem> {
       collectionMovieRoot.onClick { itemClickListener?.invoke(item) }
       collectionMovieRoot.onLongClick { itemLongClickListener?.invoke(item) }
       collectionMovieRoot.setOutboundRipple(
-        size = (context.dimenToPx(R.dimen.collectionItemRippleSpace)).toFloat(),
-        corner = context.dimenToPx(R.dimen.mediaTileCorner).toFloat(),
+        size = (context.dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionItemRippleSpace)).toFloat(),
+        corner = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner).toFloat(),
       )
     }
 
@@ -111,7 +111,7 @@ class CollectionMovieView : MovieView<CollectionListItem.MovieItem> {
       if (item.movie.runtime > 0 && item.sortOrder == RUNTIME) {
         collectionMovieRuntimeIcon.visible()
         collectionMovieRuntime.visible()
-        collectionMovieRuntime.text = "${item.movie.runtime} ${context.getString(R.string.textMinutesShort)}"
+        collectionMovieRuntime.text = "${item.movie.runtime} ${context.getString(com.michaldrabik.ui_base.R.string.textMinutesShort)}"
       }
     }
 

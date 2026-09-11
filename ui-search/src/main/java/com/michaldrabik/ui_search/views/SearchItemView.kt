@@ -37,7 +37,7 @@ class SearchItemView : ShowView<SearchListItem> {
     }
   }
 
-  private val spaceNano by lazy { context.dimenToPx(R.dimen.spaceNano).toFloat() }
+  private val spaceNano by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNano).toFloat() }
 
   override val imageView: ImageView = view.showSearchImage
   override val placeholderView: ImageView = view.showSearchPlaceholder
@@ -60,7 +60,7 @@ class SearchItemView : ShowView<SearchListItem> {
       val year = if (item.year > 0) item.year.toString() else ""
       showSearchNetwork.text =
         if (item.network.isNotBlank()) {
-          context.getString(R.string.textNetwork, year, item.network)
+          context.getString(com.michaldrabik.ui_base.R.string.textNetwork, year, item.network)
         } else {
           String.format("%s", year)
         }
@@ -68,8 +68,8 @@ class SearchItemView : ShowView<SearchListItem> {
       showSearchBadge.visibleIf(item.isFollowed)
       showSearchWatchlistBadge.visibleIf(item.isWatchlist)
 
-      showSearchPlaceholder.setImageResource(if (item.isMovie) R.drawable.ic_film else R.drawable.ic_television)
-      showSearchIcon.setImageResource(if (item.isMovie) R.drawable.ic_film else R.drawable.ic_television)
+      showSearchPlaceholder.setImageResource(if (item.isMovie) com.michaldrabik.ui_base.R.drawable.ic_film else com.michaldrabik.ui_base.R.drawable.ic_television)
+      showSearchIcon.setImageResource(if (item.isMovie) com.michaldrabik.ui_base.R.drawable.ic_film else com.michaldrabik.ui_base.R.drawable.ic_television)
       showSearchNetwork.translationY = if (item.isMovie) 0F else spaceNano
       loadImage(item)
     }

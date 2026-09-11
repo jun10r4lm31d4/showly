@@ -33,11 +33,11 @@ class ProgressWidgetViewsFactory(
   private val settingsRepository: SettingsRepository,
 ) : RemoteViewsService.RemoteViewsFactory {
 
-  private val imageCorner by lazy { context.dimenToPx(R.dimen.mediaTileCorner) }
+  private val imageCorner by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner) }
   private val imageWidth by lazy { context.dimenToPx(R.dimen.widgetImageWidth) }
   private val imageHeight by lazy { context.dimenToPx(R.dimen.widgetImageHeight) }
   private val checkWidth by lazy { context.dimenToPx(R.dimen.widgetCheckButtonWidth) }
-  private val spaceMedium by lazy { context.dimenToPx(R.dimen.spaceMedium) }
+  private val spaceMedium by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) }
   private val adapterItems by lazy { mutableListOf<ProgressListItem>() }
   private val durationPrinter by lazy { DurationPrinter(context.applicationContext) }
 
@@ -83,16 +83,16 @@ class ProgressWidgetViewsFactory(
     val hasAired = item.episode?.hasAired(item.season ?: Season.EMPTY) == true
     val subtitle2 = when {
       item.episode?.title?.isBlank() == true -> {
-        context.getString(R.string.textTba)
+        context.getString(com.michaldrabik.ui_base.R.string.textTba)
       }
       item.translations
         ?.episode
         ?.title
         ?.isBlank() == false -> {
-        item.translations?.episode?.title ?: context.getString(R.string.textTba)
+        item.translations?.episode?.title ?: context.getString(com.michaldrabik.ui_base.R.string.textTba)
       }
       item.episode?.title == "Episode ${item.episode?.number}" -> {
-        String.format(ENGLISH, context.getString(R.string.textEpisode), item.episode?.number)
+        String.format(ENGLISH, context.getString(com.michaldrabik.ui_base.R.string.textEpisode), item.episode?.number)
       }
       else -> {
         item.episode?.title

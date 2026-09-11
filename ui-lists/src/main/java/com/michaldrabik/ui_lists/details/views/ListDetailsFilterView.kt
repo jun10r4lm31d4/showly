@@ -56,8 +56,8 @@ class ListDetailsFilterView : FrameLayout {
         onSortClickListener?.invoke(sortOrder, sortType)
       }
       val sortIcon = when (sortType) {
-        SortType.ASCENDING -> R.drawable.ic_arrow_alt_up
-        SortType.DESCENDING -> R.drawable.ic_arrow_alt_down
+        SortType.ASCENDING -> com.michaldrabik.ui_base.R.drawable.ic_arrow_alt_up
+        SortType.DESCENDING -> com.michaldrabik.ui_base.R.drawable.ic_arrow_alt_down
       }
       sortingChip.closeIcon = ContextCompat.getDrawable(context, sortIcon)
     }

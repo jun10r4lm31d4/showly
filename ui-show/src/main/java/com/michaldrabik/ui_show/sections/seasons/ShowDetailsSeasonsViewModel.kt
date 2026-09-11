@@ -158,7 +158,7 @@ class ShowDetailsSeasonsViewModel @Inject constructor(
 
   private suspend fun checkSeasonsLoaded(): Boolean {
     if (seasonsState.value == null) {
-      messageChannel.send(MessageEvent.Info(R.string.errorSeasonsNotLoaded))
+      messageChannel.send(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorSeasonsNotLoaded))
       return false
     }
     return true

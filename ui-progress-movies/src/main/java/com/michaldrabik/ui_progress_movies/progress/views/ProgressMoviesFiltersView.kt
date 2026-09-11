@@ -35,8 +35,8 @@ class ProgressMoviesFiltersView : FrameLayout {
   ) {
     with(binding) {
       val sortIcon = when (sortType) {
-        ASCENDING -> R.drawable.ic_arrow_alt_up
-        DESCENDING -> R.drawable.ic_arrow_alt_down
+        ASCENDING -> com.michaldrabik.ui_base.R.drawable.ic_arrow_alt_up
+        DESCENDING -> com.michaldrabik.ui_base.R.drawable.ic_arrow_alt_down
       }
       progressFiltersSortingChip.closeIcon = ContextCompat.getDrawable(context, sortIcon)
       progressFiltersSortingChip.text = context.getText(sortOrder.displayString)

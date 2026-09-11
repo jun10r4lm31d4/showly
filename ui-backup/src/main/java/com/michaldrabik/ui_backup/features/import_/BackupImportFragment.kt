@@ -108,7 +108,7 @@ class BackupImportFragment : BaseFragment<BackupImportViewModel>(R.layout.fragme
     }
     val host = (requireActivity() as SnackbarHost).provideSnackbarLayout()
     snackbar = host.showErrorSnackbar(
-      message = error.localizedMessage ?: getString(R.string.errorGeneral),
+      message = error.localizedMessage ?: getString(com.michaldrabik.ui_base.R.string.errorGeneral),
     )
   }
 

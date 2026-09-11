@@ -26,7 +26,7 @@ class PersonGalleryImageView : ConstraintLayout {
     layoutParams = LayoutParams(MATCH_PARENT, MATCH_PARENT)
   }
 
-  private val cornerRadius by lazy { context.dimenToPx(R.dimen.galleryImageCorner) }
+  private val cornerRadius by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.galleryImageCorner) }
   var onItemClickListener: (() -> Unit)? = null
 
   fun bind(image: Image) {

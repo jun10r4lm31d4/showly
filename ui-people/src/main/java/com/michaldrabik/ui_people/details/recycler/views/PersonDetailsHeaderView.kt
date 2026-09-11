@@ -27,7 +27,7 @@ class PersonDetailsHeaderView : FrameLayout {
       if (item.year != null) {
         item.year.toString()
       } else {
-        context.getString(R.string.textMovieStatusInProduction)
+        context.getString(com.michaldrabik.ui_model.R.string.textMovieStatusInProduction)
       }
   }
 }

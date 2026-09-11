@@ -33,8 +33,8 @@ class PersonDetailsInfoView : ConstraintLayout {
   private val binding = ViewPersonDetailsInfoBinding.inflate(LayoutInflater.from(context), this)
 
   private val topLeftCornerRadius by lazy { context.dimenToPx(R.dimen.personImageCorner).toFloat() }
-  private val cornerRadius by lazy { context.dimenToPx(R.dimen.mediaTileCorner).toFloat() }
-  private val spaceNormal by lazy { context.dimenToPx(R.dimen.spaceNormal) }
+  private val cornerRadius by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner).toFloat() }
+  private val spaceNormal by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal) }
 
   var onLinksClickListener: ((Person) -> Unit)? = null
   var onImageClickListener: (() -> Unit)? = null

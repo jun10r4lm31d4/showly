@@ -80,13 +80,13 @@ class ListDetailsFragment :
 
   @Inject lateinit var settings: SettingsViewModeRepository
 
-  override val navigationId = R.id.listDetailsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.listDetailsFragment
   override val viewModel by viewModels<ListDetailsViewModel>()
   private val binding by viewBinding(FragmentListDetailsBinding::bind)
 
   private val list by lazy { requireParcelable<CustomList>(ARG_LIST) }
 
-  private val recyclerPaddingBottom by lazy { requireContext().dimenToPx(R.dimen.spaceNormal) }
+  private val recyclerPaddingBottom by lazy { requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal) }
   private val recyclerPaddingTop by lazy { requireContext().dimenToPx(R.dimen.listDetailsRecyclerTopPadding) }
   private val recyclerPaddingGridTop by lazy { requireContext().dimenToPx(R.dimen.listDetailsRecyclerTopGridPadding) }
   private val tabletGridSpanSize by lazy { settings.tabletGridSpanSize }
@@ -206,7 +206,7 @@ class ListDetailsFragment :
       layoutManager = this@ListDetailsFragment.layoutManager
       (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
       setHasFixedSize(true)
-      addItemDecoration(ListDetailsListItemDecoration(requireContext(), R.dimen.spaceSmall))
+      addItemDecoration(ListDetailsListItemDecoration(requireContext(), com.michaldrabik.ui_base.R.dimen.spaceSmall))
     }
 
     val touchCallback = ReorderListCallback(adapter as ReorderListCallbackAdapter)
@@ -239,18 +239,18 @@ class ListDetailsFragment :
       viewModel.setSortOrder(list.id, sortOrder, sortType)
     }
 
-    navigateTo(R.id.actionListDetailsFragmentToSortOrder, args)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionListDetailsFragmentToSortOrder, args)
   }
 
   private fun openDeleteDialog() {
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
+    MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog)
       .apply {}
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+      .setBackground(ContextCompat.getDrawable(requireContext(), com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setTitle(R.string.textConfirmDeleteListTitle)
       .setMessage(R.string.textConfirmDeleteListSubtitle)
-      .setPositiveButton(R.string.textYes) { _, _ ->
+      .setPositiveButton(com.michaldrabik.ui_base.R.string.textYes) { _, _ ->
         viewModel.deleteList(list.id)
-      }.setNegativeButton(R.string.textNo) { _, _ -> }
+      }.setNegativeButton(com.michaldrabik.ui_base.R.string.textNo) { _, _ -> }
       .show()
   }
 
@@ -259,7 +259,7 @@ class ListDetailsFragment :
       viewModel.loadDetails(list.id)
     }
     val bundle = bundleOf(ARG_LIST to list)
-    navigateTo(R.id.actionListDetailsFragmentToEditListDialog, bundle)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionListDetailsFragmentToEditListDialog, bundle)
   }
 
   private fun openItemDetails(listItem: ListDetailsItem) {
@@ -272,8 +272,8 @@ class ListDetailsFragment :
         )
         val destination =
           when {
-            listItem.isShow() -> R.id.actionListDetailsFragmentToShowDetailsFragment
-            listItem.isMovie() -> R.id.actionListDetailsFragmentToMovieDetailsFragment
+            listItem.isShow() -> com.michaldrabik.ui_navigation.R.id.actionListDetailsFragmentToShowDetailsFragment
+            listItem.isMovie() -> com.michaldrabik.ui_navigation.R.id.actionListDetailsFragmentToMovieDetailsFragment
             else -> throw IllegalStateException()
           }
         navigateTo(destination, bundle)
@@ -325,7 +325,7 @@ class ListDetailsFragment :
             }
             fragmentListDetailsViewModeButton.setImageResource(
               when (it) {
-                LIST_NORMAL -> R.drawable.ic_view_list
+                LIST_NORMAL -> com.michaldrabik.ui_base.R.drawable.ic_view_list
               },
             )
           }
@@ -369,7 +369,7 @@ class ListDetailsFragment :
             fragmentListDetailsRecycler.doOnApplyWindowInsets { view, insets, _, _ ->
               val inset = insets.getInsets(WindowInsetsCompat.Type.systemBars())
               view.updatePadding(
-                top = if (layoutManager is GridLayoutManager) dimenToPx(R.dimen.spaceTiny) else 0,
+                top = if (layoutManager is GridLayoutManager) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceTiny) else 0,
                 bottom = inset.bottom + recyclerPaddingBottom,
               )
             }

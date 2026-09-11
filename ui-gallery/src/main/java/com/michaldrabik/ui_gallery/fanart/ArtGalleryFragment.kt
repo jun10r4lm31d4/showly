@@ -138,13 +138,13 @@ class ArtGalleryFragment : BaseFragment<ArtGalleryViewModel>(R.layout.fragment_a
         artGalleryBackArrow.updateTopMargin(inset.top)
         artGalleryBrowserIcon.updateTopMargin(inset.top)
         artGalleryPagerIndicator.updateLayoutParams<MarginLayoutParams> {
-          updateMargins(bottom = inset.bottom + dimenToPx(R.dimen.spaceNormal))
+          updateMargins(bottom = inset.bottom + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal))
         }
         artGalleryPagerIndicatorWhite.updateLayoutParams<MarginLayoutParams> {
-          updateMargins(bottom = inset.bottom + dimenToPx(R.dimen.spaceNormal))
+          updateMargins(bottom = inset.bottom + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal))
         }
         artGalleryImagesProgress.updateLayoutParams<MarginLayoutParams> {
-          updateMargins(bottom = inset.bottom + dimenToPx(R.dimen.spaceNormal))
+          updateMargins(bottom = inset.bottom + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal))
         }
       }
     }

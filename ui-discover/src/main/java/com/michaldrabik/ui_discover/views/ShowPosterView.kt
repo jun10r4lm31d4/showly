@@ -56,7 +56,7 @@ class ShowPosterView : ShowView<DiscoverListItem> {
     if (item.image.status == UNAVAILABLE) {
       with(binding) {
         showPosterTitle.visible()
-        showPosterRoot.setBackgroundResource(R.drawable.bg_media_view_placeholder)
+        showPosterRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_placeholder)
       }
     }
     super.loadImage(item)
@@ -67,7 +67,7 @@ class ShowPosterView : ShowView<DiscoverListItem> {
     if (item.image.status == AVAILABLE) {
       with(binding) {
         showPosterTitle.visible()
-        showPosterRoot.setBackgroundResource(R.drawable.bg_media_view_placeholder)
+        showPosterRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_placeholder)
       }
     }
   }
@@ -76,7 +76,7 @@ class ShowPosterView : ShowView<DiscoverListItem> {
     with(binding) {
       showPosterTitle.text = ""
       showPosterTitle.gone()
-      showPosterRoot.setBackgroundResource(R.drawable.bg_media_view_elevation)
+      showPosterRoot.setBackgroundResource(com.michaldrabik.ui_base.R.drawable.bg_media_view_elevation)
       showPosterPlaceholder.gone()
       showPosterProgress.gone()
       showPosterBadge.gone()

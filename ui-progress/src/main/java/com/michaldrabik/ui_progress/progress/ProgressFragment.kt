@@ -84,7 +84,7 @@ class ProgressFragment :
 
   @Inject lateinit var settings: SettingsViewModeRepository
 
-  override val navigationId = R.id.progressMainFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.progressMainFragment
   private val binding by viewBinding(FragmentProgressBinding::bind)
 
   private val parentViewModel by viewModels<ProgressMainViewModel>({ requireParentFragment() })
@@ -190,17 +190,17 @@ class ProgressFragment :
       }
 
       root.doOnApplyWindowInsets { _, insets, padding, _ ->
-        val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+        val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
         statusBarHeight = systemInsets.top + tabletOffset
 
         progressRecycler.updatePadding(
           top = statusBarHeight + dimenToPx(recyclerPadding),
-          bottom = systemInsets.bottom + dimenToPx(R.dimen.bottomNavigationHeightPadded),
+          bottom = systemInsets.bottom + dimenToPx(com.michaldrabik.ui_base.R.dimen.bottomNavigationHeightPadded),
         )
 
         (progressEmptyView.root.layoutParams as ViewGroup.MarginLayoutParams)
-          .updateMargins(top = statusBarHeight + dimenToPx(R.dimen.spaceBig))
+          .updateMargins(top = statusBarHeight + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceBig))
 
         (progressOverscroll.layoutParams as ViewGroup.MarginLayoutParams)
           .updateMargins(top = statusBarHeight + dimenToPx(overscrollPadding))
@@ -297,7 +297,7 @@ class ProgressFragment :
       viewModel.setSortOrder(sortOrder, sortType, newTop)
     }
 
-    navigateToSafe(R.id.actionProgressFragmentToSortOrder, args)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionProgressFragmentToSortOrder, args)
   }
 
   override fun onEnterSearch() {

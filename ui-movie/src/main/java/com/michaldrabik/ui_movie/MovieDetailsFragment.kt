@@ -94,7 +94,7 @@ import java.util.Locale.ROOT
 @AndroidEntryPoint
 class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragment_movie_details) {
 
-  override val navigationId = R.id.movieDetailsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.movieDetailsFragment
   val binding by viewBinding(FragmentMovieDetailsBinding::bind)
 
   override val viewModel by viewModels<MovieDetailsViewModel>()
@@ -108,8 +108,8 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
       screenWidth()
     }
   }
-  private val imageRatio by lazy { resources.getString(R.string.detailsImageRatio).toFloat() }
-  private val imagePadded by lazy { resources.getBoolean(R.bool.detailsImagePadded) }
+  private val imageRatio by lazy { resources.getString(com.michaldrabik.ui_base.R.string.detailsImageRatio).toFloat() }
+  private val imagePadded by lazy { resources.getBoolean(com.michaldrabik.ui_base.R.bool.detailsImagePadded) }
 
   override fun onViewCreated(
     view: View,
@@ -144,7 +144,7 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
           ARG_FAMILY to MOVIE,
           ARG_TYPE to FANART,
         )
-        navigateToSafe(R.id.actionMovieDetailsFragmentToArtGallery, bundle)
+        navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionMovieDetailsFragmentToArtGallery, bundle)
       }
       movieDetailsAddButton.run {
         isEnabled = false
@@ -156,11 +156,11 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
       movieDetailsHideLabel.onClick { viewModel.addToHidden() }
       movieDetailsTitle.onClick {
         requireContext().copyToClipboard(movieDetailsTitle.text.toString())
-        showSnack(MessageEvent.Info(R.string.textCopiedToClipboard))
+        showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.textCopiedToClipboard))
       }
       movieDetailsDescription.onLongClick {
         requireContext().copyToClipboard(movieDetailsDescription.text.toString())
-        showSnack(MessageEvent.Info(R.string.textCopiedToClipboard))
+        showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.textCopiedToClipboard))
       }
     }
   }
@@ -173,7 +173,7 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
           movieDetailsMainLayout
             .updatePadding(top = inset.top)
         }
-        movieDetailsMainContent.updatePadding(bottom = inset.bottom + dimenToPx(R.dimen.spaceNormal))
+        movieDetailsMainContent.updatePadding(bottom = inset.bottom + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal))
         (movieDetailsBackArrow.layoutParams as ViewGroup.MarginLayoutParams).updateMargins(top = inset.top)
       }
     }
@@ -190,18 +190,18 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
             isEnabled = movie.trailer.isNotBlank()
             alpha = if (isEnabled) 1.0F else 0.35F
             onClick {
-              openWebUrl(movie.trailer) ?: showSnack(MessageEvent.Info(R.string.errorCouldNotFindApp))
+              openWebUrl(movie.trailer) ?: showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorCouldNotFindApp))
             }
           }
           movieDetailsActions.linksChip.run {
             onClick {
               val args = LinksBottomSheet.createBundle(movie)
-              navigateToSafe(R.id.actionMovieDetailsFragmentToLinks, args)
+              navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionMovieDetailsFragmentToLinks, args)
             }
           }
           movieDetailsActions.commentsChip.onClick {
             val bundle = CommentsFragment.createBundle(movie)
-            navigateToSafe(R.id.actionMovieDetailsFragmentToComments, bundle)
+            navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionMovieDetailsFragmentToComments, bundle)
           }
           movieDetailsActions.shareChip.run {
             isEnabled = movie.ids.imdb.id
@@ -286,7 +286,7 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
       }
 
       movieDetailsTitle.text = title
-      movieDetailsDescription.text = description.ifBlank { getString(R.string.textNoDescription) }
+      movieDetailsDescription.text = description.ifBlank { getString(com.michaldrabik.ui_base.R.string.textNoDescription) }
     }
   }
 
@@ -314,7 +314,7 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
       releaseDate,
       country.uppercase(ROOT),
       "⏲ ${movie.runtime}",
-      getString(R.string.textMinutesShort),
+      getString(com.michaldrabik.ui_base.R.string.textMinutesShort),
       genres,
     )
 
@@ -369,7 +369,7 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
   }
 
   private fun renderSnack(event: MessageEvent) {
-    if (event.textResId == R.string.errorMalformedMovie) {
+    if (event.textResId == com.michaldrabik.ui_base.R.string.errorMalformedMovie) {
       event.consume()?.let {
         val host = (requireActivity() as SnackbarHost).provideSnackbarLayout()
         val snack = host.showInfoSnackbar(getString(it), length = Snackbar.LENGTH_INDEFINITE) {
@@ -399,7 +399,7 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
       }
     }
     val options = DateSelectionBottomSheet.createBundle(movie.released?.atStartOfDay(UTC))
-    navigateToSafe(R.id.actionMovieDetailsFragmentToDateSelection, options)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionMovieDetailsFragmentToDateSelection, options)
   }
 
   private fun openShareSheet(movie: Movie) {
@@ -421,14 +421,14 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
   private fun openRateDialog() {
     setFragmentResultListener(NavigationArgs.REQUEST_RATING) { _, bundle ->
       when (bundle.getParcelable<Operation>(NavigationArgs.RESULT)) {
-        Operation.SAVE -> renderSnack(MessageEvent.Info(R.string.textRateSaved))
-        Operation.REMOVE -> renderSnack(MessageEvent.Info(R.string.textRateRemoved))
+        Operation.SAVE -> renderSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.textRateSaved))
+        Operation.REMOVE -> renderSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.textRateRemoved))
         else -> Timber.w("Unknown result.")
       }
       viewModel.loadUserRating()
     }
     val bundle = RatingsBottomSheet.createBundle(movieId, Type.MOVIE)
-    navigateToSafe(R.id.actionMovieDetailsFragmentToRating, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionMovieDetailsFragmentToRating, bundle)
   }
 
   private fun openListsDialog() {
@@ -437,7 +437,7 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
       ARG_ID to movieId.id,
       ARG_TYPE to Mode.MOVIES.type,
     )
-    navigateToSafe(R.id.actionMovieDetailsFragmentToManageLists, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionMovieDetailsFragmentToManageLists, bundle)
   }
 
   fun showStreamingsView(animate: Boolean) {

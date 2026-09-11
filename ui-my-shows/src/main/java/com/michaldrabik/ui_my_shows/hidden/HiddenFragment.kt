@@ -61,7 +61,7 @@ class HiddenFragment :
 
   @Inject lateinit var settings: SettingsViewModeRepository
 
-  override val navigationId = R.id.followedShowsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.followedShowsFragment
   private val binding by viewBinding(FragmentHiddenBinding::bind)
 
   private val parentViewModel by viewModels<FollowedShowsViewModel>({ requireParentFragment() })
@@ -113,14 +113,14 @@ class HiddenFragment :
       adapter = this@HiddenFragment.adapter
       layoutManager = this@HiddenFragment.layoutManager
       (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
-      addItemDecoration(CollectionShowListItemDecoration(requireContext(), R.dimen.spaceSmall))
+      addItemDecoration(CollectionShowListItemDecoration(requireContext(), com.michaldrabik.ui_base.R.dimen.spaceSmall))
     }
   }
 
   private fun setupInsets() {
     with(binding) {
       root.doOnApplyWindowInsets { _, insets, padding, _ ->
-        val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+        val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val systemInset = insets.getInsets(WindowInsetsCompat.Type.systemBars())
         hiddenContent.updatePadding(top = padding.top + systemInset.top + tabletOffset)
         hiddenRecycler.updatePadding(
@@ -193,7 +193,7 @@ class HiddenFragment :
       viewModel.setSortOrder(sortOrder, sortType)
     }
 
-    navigateTo(R.id.actionFollowedShowsFragmentToSortOrder, args)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToSortOrder, args)
   }
 
   private fun openNetworksDialog() {
@@ -202,7 +202,7 @@ class HiddenFragment :
     }
 
     val bundle = CollectionFiltersNetworkBottomSheet.createBundle(HIDDEN_SHOWS)
-    navigateToSafe(R.id.actionFollowedShowsFragmentToNetworks, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToNetworks, bundle)
   }
 
   private fun openGenresDialog() {
@@ -211,7 +211,7 @@ class HiddenFragment :
     }
 
     val bundle = CollectionFiltersGenreBottomSheet.createBundle(HIDDEN_SHOWS)
-    navigateToSafe(R.id.actionFollowedShowsFragmentToGenres, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToGenres, bundle)
   }
 
   override fun onEnterSearch() {

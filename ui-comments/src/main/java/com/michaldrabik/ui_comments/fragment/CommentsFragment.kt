@@ -47,7 +47,7 @@ class CommentsFragment : BaseFragment<CommentsViewModel>(R.layout.fragment_comme
     fun createBundle(show: Show): Bundle = bundleOf(ARG_OPTIONS to Options(show.ids.trakt, Mode.SHOWS))
   }
 
-  override val navigationId = R.id.commentsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.commentsFragment
   override val viewModel by viewModels<CommentsViewModel>()
   private val binding by viewBinding(FragmentCommentsBinding::bind)
 

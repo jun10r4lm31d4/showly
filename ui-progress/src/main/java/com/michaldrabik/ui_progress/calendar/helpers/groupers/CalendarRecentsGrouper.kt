@@ -42,10 +42,10 @@ class CalendarRecentsGrouper @Inject constructor() : CalendarGrouper {
 
     val itemsMap = mutableMapOf<Int, List<CalendarListItem>>()
       .apply {
-        put(R.string.textYesterday, yesterdayItems)
-        put(R.string.textLast7Days, last7DaysItems)
-        put(R.string.textLast30Days, last30DaysItems)
-        put(R.string.textLast90Days, last90Days)
+        put(com.michaldrabik.ui_base.R.string.textYesterday, yesterdayItems)
+        put(com.michaldrabik.ui_base.R.string.textLast7Days, last7DaysItems)
+        put(com.michaldrabik.ui_base.R.string.textLast30Days, last30DaysItems)
+        put(com.michaldrabik.ui_base.R.string.textLast90Days, last90Days)
       }
 
     return itemsMap.entries.fold(mutableListOf()) { acc, entry ->

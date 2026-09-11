@@ -16,7 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SettingsSpoilersFragment : BaseFragment<SettingsSpoilersViewModel>(R.layout.fragment_settings_spoilers) {
 
-  override val navigationId = R.id.settingsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.settingsFragment
 
   override val viewModel by viewModels<SettingsSpoilersViewModel>()
   private val binding by viewBinding(FragmentSettingsSpoilersBinding::bind)
@@ -37,13 +37,13 @@ class SettingsSpoilersFragment : BaseFragment<SettingsSpoilersViewModel>(R.layou
   private fun setupView() {
     with(binding) {
       settingsSpoilersShows.onClick {
-        navigateToSafe(R.id.actionSettingsFragmentToSpoilersShows)
+        navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionSettingsFragmentToSpoilersShows)
       }
       settingsSpoilersMovies.onClick {
-        navigateToSafe(R.id.actionSettingsFragmentToSpoilersMovies)
+        navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionSettingsFragmentToSpoilersMovies)
       }
       settingsSpoilersEpisodes.onClick {
-        navigateToSafe(R.id.actionSettingsFragmentToSpoilersEpisodes)
+        navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionSettingsFragmentToSpoilersEpisodes)
       }
       settingsSpoilersTapToReveal.onClick {
         viewModel.setTapToReveal(!settingsSpoilersTapToRevealSwitch.isChecked)

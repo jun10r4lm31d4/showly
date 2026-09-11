@@ -31,7 +31,7 @@ class MovieDetailsRelatedFragment :
     R.layout.fragment_movie_details_related,
   ) {
 
-  override val navigationId = R.id.movieDetailsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.movieDetailsFragment
   private val binding by viewBinding(FragmentMovieDetailsRelatedBinding::bind)
 
   private val parentViewModel by viewModels<MovieDetailsViewModel>({ requireParentFragment() })
@@ -68,7 +68,7 @@ class MovieDetailsRelatedFragment :
 
   private fun openDetails(item: RelatedListItem) {
     val bundle = Bundle().apply { putLong(ARG_MOVIE_ID, item.movie.traktId) }
-    navigateToSafe(R.id.actionMovieDetailsFragmentToSelf, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionMovieDetailsFragmentToSelf, bundle)
   }
 
   private fun openContextMenu(item: RelatedListItem) {
@@ -81,7 +81,7 @@ class MovieDetailsRelatedFragment :
       }
 
     val bundle = ContextMenuBottomSheet.createBundle(item.movie.ids.trakt)
-    navigateToSafe(R.id.actionMovieDetailsFragmentToContext, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionMovieDetailsFragmentToContext, bundle)
   }
 
   private fun render(uiState: MovieDetailsRelatedUiState) {

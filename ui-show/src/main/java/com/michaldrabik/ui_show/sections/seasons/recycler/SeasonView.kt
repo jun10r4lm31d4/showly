@@ -43,9 +43,9 @@ class SeasonView : FrameLayout {
     with(binding) {
       seasonViewTitle.text =
         if (item.season.isSpecial()) {
-          context.getString(R.string.textSpecials)
+          context.getString(com.michaldrabik.ui_base.R.string.textSpecials)
         } else {
-          String.format(ENGLISH, context.getString(R.string.textSeason), item.season.number)
+          String.format(ENGLISH, context.getString(com.michaldrabik.ui_base.R.string.textSeason), item.season.number)
         }
 
       val progressCount = item.episodes.count { it.isWatched }

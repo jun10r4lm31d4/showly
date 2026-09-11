@@ -70,7 +70,7 @@ class ListsFragment :
     private const val TRANSLATION_DURATION = 225L
   }
 
-  override val navigationId = R.id.listsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.listsFragment
   override val viewModel by viewModels<ListsViewModel>()
   private val binding by viewBinding(FragmentListsBinding::bind)
 
@@ -136,7 +136,7 @@ class ListsFragment :
   private fun setupView() {
     with(binding) {
       fragmentListsSearchView.run {
-        hint = getString(R.string.textSearchFor)
+        hint = getString(com.michaldrabik.ui_base.R.string.textSearchFor)
         onSettingsClickListener = { openSettings() }
       }
       with(fragmentListsSearchLocalView) {
@@ -169,7 +169,7 @@ class ListsFragment :
   private fun setupInsets() {
     with(binding) {
       fragmentListsRoot.doOnApplyWindowInsets { _, insets, _, _ ->
-        val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+        val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val inset = insets.getInsets(WindowInsetsCompat.Type.systemBars())
         val statusBarSize = inset.top + tabletOffset
         fragmentListsRecycler
@@ -177,9 +177,9 @@ class ListsFragment :
             top = statusBarSize + dimenToPx(R.dimen.listsRecyclerPaddingTop),
             bottom = inset.bottom + dimenToPx(R.dimen.listsBottomPadding),
           )
-        fragmentListsSearchView.applyWindowInsetBehaviour(dimenToPx(R.dimen.spaceNormal) + statusBarSize)
-        fragmentListsSearchView.updateTopMargin(dimenToPx(R.dimen.spaceMedium) + statusBarSize)
-        fragmentListsModeTabs.updateTopMargin(dimenToPx(R.dimen.collectionTabsMargin) + statusBarSize)
+        fragmentListsSearchView.applyWindowInsetBehaviour(dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal) + statusBarSize)
+        fragmentListsSearchView.updateTopMargin(dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) + statusBarSize)
+        fragmentListsModeTabs.updateTopMargin(dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionTabsMargin) + statusBarSize)
         fragmentListsIcons.updateTopMargin(dimenToPx(R.dimen.listsIconsPadding) + statusBarSize)
         fragmentListsSearchLocalView.updateTopMargin(dimenToPx(R.dimen.listsSearchLocalViewPadding) + statusBarSize)
         fragmentListsEmptyView.root.updateTopMargin(statusBarSize)
@@ -304,7 +304,7 @@ class ListsFragment :
       viewModel.setSortOrder(order, type)
     }
 
-    navigateToSafe(R.id.actionListsFragmentToSortOrder, args)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionListsFragmentToSortOrder, args)
   }
 
   private fun render(uiState: ListsUiState) {
@@ -332,7 +332,7 @@ class ListsFragment :
       fragmentListsIcons.fadeOut(duration = 200).add(animations)
       fragmentListsRecycler
         .fadeOut(duration = 200) {
-          super.navigateTo(R.id.actionListsFragmentToSearch, null)
+          super.navigateTo(com.michaldrabik.ui_navigation.R.id.actionListsFragmentToSearch, null)
         }.add(animations)
     }
   }
@@ -343,7 +343,7 @@ class ListsFragment :
     binding.fragmentListsRoot
       .fadeOut(150) {
         val bundle = bundleOf(ARG_LIST to listItem.list)
-        navigateToSafe(R.id.actionListsFragmentToDetailsFragment, bundle)
+        navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionListsFragmentToDetailsFragment, bundle)
         exitSearch()
       }.add(animations)
   }
@@ -351,12 +351,12 @@ class ListsFragment :
   private fun openSettings() {
     hideNavigation()
     exitSearch()
-    navigateToSafe(R.id.actionListsFragmentToSettingsFragment)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionListsFragmentToSettingsFragment)
   }
 
   private fun openCreateList() {
     setFragmentResultListener(REQUEST_CREATE_LIST) { _, _ -> viewModel.loadItems(resetScroll = true) }
-    navigateToSafe(R.id.actionListsFragmentToCreateListDialog, bundleOf())
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionListsFragmentToCreateListDialog, bundleOf())
   }
 
   private fun resetTranslations(duration: Long = TRANSLATION_DURATION) {

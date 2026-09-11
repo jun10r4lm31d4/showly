@@ -40,9 +40,9 @@ class StatisticsMoviesRatingsView : MaterialCardView {
     layoutParams = LayoutParams(MATCH_PARENT, MATCH_PARENT)
     clipToPadding = false
     clipChildren = false
-    cardElevation = context.dimenToPx(R.dimen.elevationSmall).toFloat()
+    cardElevation = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.elevationSmall).toFloat()
     strokeWidth = 0
-    setCardBackgroundColor(context.colorFromAttr(R.attr.colorCardBackground))
+    setCardBackgroundColor(context.colorFromAttr(com.michaldrabik.ui_base.R.attr.colorCardBackground))
     setupRecycler()
   }
 

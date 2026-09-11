@@ -65,7 +65,7 @@ class MovieDetailsCollectionBottomSheet : BaseBottomSheetFragment(R.layout.view_
   private var adapter: MovieDetailsCollectionAdapter? = null
   private var layoutManager: LinearLayoutManager? = null
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,
@@ -126,7 +126,7 @@ class MovieDetailsCollectionBottomSheet : BaseBottomSheetFragment(R.layout.view_
     val argsBundle = bundleOf(ARG_MOVIE_ID to item.movie.traktId)
     requireParentFragment()
       .findNavController()
-      .navigate(R.id.actionMovieCollectionDialogToMovie, argsBundle)
+      .navigate(com.michaldrabik.ui_navigation.R.id.actionMovieCollectionDialogToMovie, argsBundle)
   }
 
   private fun openContextDetails(item: MovieDetailsCollectionItem) {
@@ -144,7 +144,7 @@ class MovieDetailsCollectionBottomSheet : BaseBottomSheetFragment(R.layout.view_
       idTrakt = item.movie.ids.trakt,
       detailsEnabled = false,
     )
-    navigateTo(R.id.actionMovieCollectionDialogToContextDialog, bundle)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionMovieCollectionDialogToContextDialog, bundle)
   }
 
   @SuppressLint("SetTextI18n")

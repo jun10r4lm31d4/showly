@@ -76,14 +76,14 @@ class CalendarItemView : ShowView<CalendarListItem.Episode> {
           ?.let { item.dateFormat?.format(it)?.capitalizeWords() }
 
       val episodeTitle = when {
-        item.episode.title.isBlank() -> context.getString(R.string.textTba)
+        item.episode.title.isBlank() -> context.getString(com.michaldrabik.ui_base.R.string.textTba)
         item.translations
           ?.episode
           ?.title
           ?.isBlank() == false -> item.translations.episode.title
         item.episode.title == "Episode ${item.episode.number}" -> String.format(
           ENGLISH,
-          context.getString(R.string.textEpisode),
+          context.getString(com.michaldrabik.ui_base.R.string.textEpisode),
           item.episode.number,
         )
         else -> item.episode.title
@@ -91,7 +91,7 @@ class CalendarItemView : ShowView<CalendarListItem.Episode> {
 
       val isNewSeason = item.episode.number == 1
       if (isNewSeason) {
-        val title = String.format(ENGLISH, context.getString(R.string.textSeason), item.episode.season)
+        val title = String.format(ENGLISH, context.getString(com.michaldrabik.ui_base.R.string.textSeason), item.episode.season)
         calendarItemSubtitle.text = context.getString(R.string.textNewSeason)
         calendarItemSubtitle2.text =
           if (item.isSpoilerHidden && item.spoilers?.isEpisodeTitleHidden == true) {
@@ -104,7 +104,7 @@ class CalendarItemView : ShowView<CalendarListItem.Episode> {
         calendarItemSubtitle.text = String
           .format(
             ENGLISH,
-            context.getString(R.string.textSeasonEpisode),
+            context.getString(com.michaldrabik.ui_base.R.string.textSeasonEpisode),
             item.episode.season,
             item.episode.number,
           ).plus(

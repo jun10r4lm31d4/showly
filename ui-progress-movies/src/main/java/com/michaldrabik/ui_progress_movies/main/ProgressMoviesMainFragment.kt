@@ -57,7 +57,7 @@ class ProgressMoviesMainFragment :
     private const val TRANSLATION_DURATION = 225L
   }
 
-  override val navigationId = R.id.progressMoviesMainFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.progressMoviesMainFragment
 
   override val viewModel by viewModels<ProgressMoviesMainViewModel>()
   private val binding by viewBinding(FragmentProgressMainMoviesBinding::bind)
@@ -123,7 +123,7 @@ class ProgressMoviesMainFragment :
       }
 
       with(progressMoviesSearchView) {
-        hint = getString(R.string.textSearchFor)
+        hint = getString(com.michaldrabik.ui_base.R.string.textSearchFor)
         settingsIconVisible = true
         isClickable = false
         onClick { openMainSearch() }
@@ -161,12 +161,12 @@ class ProgressMoviesMainFragment :
   private fun setupInsets() {
     with(binding) {
       progressMoviesRoot.doOnApplyWindowInsets { _, insets, _, _ ->
-        val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+        val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val statusBarSize = insets.getInsets(WindowInsetsCompat.Type.systemBars()).top + tabletOffset
         (progressMoviesSearchView.layoutParams as ViewGroup.MarginLayoutParams)
-          .updateMargins(top = statusBarSize + dimenToPx(R.dimen.spaceMedium))
+          .updateMargins(top = statusBarSize + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium))
         (progressMoviesModeTabs.layoutParams as ViewGroup.MarginLayoutParams)
-          .updateMargins(top = statusBarSize + dimenToPx(R.dimen.collectionTabsMargin))
+          .updateMargins(top = statusBarSize + dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionTabsMargin))
         (progressMoviesSearchLocalView.layoutParams as ViewGroup.MarginLayoutParams)
           .updateMargins(top = statusBarSize + dimenToPx(R.dimen.progressMoviesSearchLocalViewPadding))
         arrayOf(progressMoviesSideIcons, progressMoviesTabs).forEach {
@@ -194,7 +194,7 @@ class ProgressMoviesMainFragment :
     binding.progressMoviesRoot
       .fadeOut(150) {
         val bundle = Bundle().apply { putLong(ARG_MOVIE_ID, movie.ids.trakt.id) }
-        navigateTo(R.id.actionProgressMoviesFragmentToMovieDetailsFragment, bundle)
+        navigateTo(com.michaldrabik.ui_navigation.R.id.actionProgressMoviesFragmentToMovieDetailsFragment, bundle)
         exitSearch()
       }.add(animations)
   }
@@ -210,7 +210,7 @@ class ProgressMoviesMainFragment :
       clearFragmentResultListener(NavigationArgs.REQUEST_ITEM_MENU)
     }
     val bundle = ContextMenuBottomSheet.createBundle(movie.ids.trakt, showPinButtons)
-    navigateToSafe(R.id.actionProgressMoviesFragmentToItemMenu, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionProgressMoviesFragmentToItemMenu, bundle)
   }
 
   fun openDateSelectionDialog(movie: Movie) {
@@ -230,13 +230,13 @@ class ProgressMoviesMainFragment :
       }
     }
     val options = DateSelectionBottomSheet.createBundle(movie.released?.atStartOfDay(UTC))
-    navigateToSafe(R.id.actionProgressMoviesFragmentToDateSelection, options)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionProgressMoviesFragmentToDateSelection, options)
   }
 
   private fun openSettings() {
     hideNavigation()
     exitSearch()
-    navigateToSafe(R.id.actionProgressMoviesFragmentToSettingsFragment)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionProgressMoviesFragmentToSettingsFragment)
   }
 
   private fun openMainSearch() {
@@ -248,7 +248,7 @@ class ProgressMoviesMainFragment :
       progressMoviesSideIcons.fadeOut(duration = 200).add(animations)
       progressMoviesPager
         .fadeOut(duration = 200) {
-          navigateToSafe(R.id.actionProgressMoviesFragmentToSearch)
+          navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionProgressMoviesFragmentToSearch)
         }.add(animations)
     }
   }

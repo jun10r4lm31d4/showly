@@ -30,13 +30,13 @@ class QuickSetupItemView : FrameLayout {
     isChecked: Boolean,
     onItemClickListener: ((Episode, Boolean) -> Unit)?,
   ) {
-    val titleColor = if (isChecked) R.attr.colorAccent else android.R.attr.textColorSecondary
-    val subTitleColor = if (isChecked) R.attr.colorAccent else android.R.attr.textColorPrimary
+    val titleColor = if (isChecked) androidx.appcompat.R.attr.colorAccent else android.R.attr.textColorSecondary
+    val subTitleColor = if (isChecked) androidx.appcompat.R.attr.colorAccent else android.R.attr.textColorPrimary
 
     with(binding) {
       viewQuickSetupItemRadio.isChecked = isChecked
       viewQuickSetupItemTitle.run {
-        text = String.format(ENGLISH, context.getString(R.string.textEpisode), item.number)
+        text = String.format(ENGLISH, context.getString(com.michaldrabik.ui_base.R.string.textEpisode), item.number)
         setTextColor(context.colorFromAttr(titleColor))
       }
       viewQuickSetupItemSubtitle.run {

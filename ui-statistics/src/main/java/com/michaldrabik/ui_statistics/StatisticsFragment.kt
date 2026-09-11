@@ -93,6 +93,6 @@ class StatisticsFragment : BaseFragment<StatisticsViewModel>(R.layout.fragment_s
 
   private fun openShowDetails(traktId: Long) {
     val bundle = bundleOf(ARG_SHOW_ID to traktId)
-    navigateTo(R.id.actionStatisticsFragmentToShowDetailsFragment, bundle)
+    navigateTo(com.michaldrabik.ui_navigation.R.id.actionStatisticsFragmentToShowDetailsFragment, bundle)
   }
 }

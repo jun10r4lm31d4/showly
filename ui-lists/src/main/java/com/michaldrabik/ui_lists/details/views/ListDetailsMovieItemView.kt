@@ -78,8 +78,8 @@ class ListDetailsMovieItemView : ListDetailsItemView {
         if (item.isEnabled && !item.isManageMode) itemClickListener?.invoke(item)
       }
       listDetailsMovieRoot.setOutboundRipple(
-        size = (context.dimenToPx(R.dimen.collectionItemRippleSpace)).toFloat(),
-        corner = context.dimenToPx(R.dimen.mediaTileCorner).toFloat(),
+        size = (context.dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionItemRippleSpace)).toFloat(),
+        corner = context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner).toFloat(),
       )
     }
   }
@@ -121,7 +121,7 @@ class ListDetailsMovieItemView : ListDetailsItemView {
         val inCollection = item.isWatched || item.isWatchlist
         visibleIf(inCollection)
         if (inCollection) {
-          val color = if (item.isWatched) R.color.colorAccent else R.color.colorGrayLight
+          val color = if (item.isWatched) com.michaldrabik.ui_base.R.color.colorAccent else com.michaldrabik.ui_base.R.color.colorGrayLight
           imageTintList = ColorStateList.valueOf(ContextCompat.getColor(context, color))
         }
       }
@@ -139,7 +139,7 @@ class ListDetailsMovieItemView : ListDetailsItemView {
     var description =
       when {
         item.translation?.overview.isNullOrBlank() -> movie.overview.ifBlank {
-          context.getString(R.string.textNoDescription)
+          context.getString(com.michaldrabik.ui_base.R.string.textNoDescription)
         }
         else -> item.translation?.overview
       }

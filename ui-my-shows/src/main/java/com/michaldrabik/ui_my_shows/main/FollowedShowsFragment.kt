@@ -48,7 +48,7 @@ class FollowedShowsFragment :
     private const val TRANSLATION_DURATION = 225L
   }
 
-  override val navigationId = R.id.followedShowsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.followedShowsFragment
 
   override val viewModel by viewModels<FollowedShowsViewModel>()
   private val binding by viewBinding(FragmentFollowedShowsBinding::bind)
@@ -113,7 +113,7 @@ class FollowedShowsFragment :
   private fun setupView() {
     with(binding) {
       followedShowsSearchView.run {
-        hint = getString(R.string.textSearchFor)
+        hint = getString(com.michaldrabik.ui_base.R.string.textSearchFor)
         statsIconVisible = true
         onClick { openMainSearch() }
         onSettingsClickListener = { openSettings() }
@@ -124,7 +124,7 @@ class FollowedShowsFragment :
       }
       followedShowsModeTabs.run {
         onModeSelected = { mode = it }
-        onListsSelected = { navigateTo(R.id.actionNavigateListsFragment) }
+        onListsSelected = { navigateTo(com.michaldrabik.ui_navigation.R.id.actionNavigateListsFragment) }
         showMovies(moviesEnabled)
         showLists(true, anchorEnd = moviesEnabled)
         selectShows()
@@ -153,11 +153,11 @@ class FollowedShowsFragment :
   private fun setupInsets() {
     with(binding) {
       followedShowsRoot.doOnApplyWindowInsets { _, insets, _, _ ->
-        val tabletOffset = if (isTablet) dimenToPx(R.dimen.spaceMedium) else 0
+        val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val statusBarSize = insets.getInsets(WindowInsetsCompat.Type.systemBars()).top + tabletOffset
-        followedShowsSearchView.applyWindowInsetBehaviour(dimenToPx(R.dimen.spaceNormal) + statusBarSize)
-        followedShowsSearchView.updateTopMargin(dimenToPx(R.dimen.spaceMedium) + statusBarSize)
-        followedShowsModeTabs.updateTopMargin(dimenToPx(R.dimen.collectionTabsMargin) + statusBarSize)
+        followedShowsSearchView.applyWindowInsetBehaviour(dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal) + statusBarSize)
+        followedShowsSearchView.updateTopMargin(dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) + statusBarSize)
+        followedShowsModeTabs.updateTopMargin(dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionTabsMargin) + statusBarSize)
         followedShowsTabs.updateTopMargin(dimenToPx(R.dimen.myShowsSearchViewPadding) + statusBarSize)
         followedShowsIcons.updateTopMargin(dimenToPx(R.dimen.myShowsSearchViewPadding) + statusBarSize)
         followedShowsSearchLocalView.updateTopMargin(dimenToPx(R.dimen.myShowsSearchLocalViewPadding) + statusBarSize)
@@ -217,7 +217,7 @@ class FollowedShowsFragment :
       followedShowsIcons.fadeOut(duration = 200).add(animations)
       followedShowsPager
         .fadeOut(duration = 200) {
-          super.navigateTo(R.id.actionFollowedShowsFragmentToSearch, null)
+          super.navigateTo(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToSearch, null)
         }.add(animations)
     }
   }
@@ -228,7 +228,7 @@ class FollowedShowsFragment :
     binding.followedShowsRoot
       .fadeOut(150) {
         val bundle = Bundle().apply { putLong(ARG_SHOW_ID, show.traktId) }
-        navigateToSafe(R.id.actionFollowedShowsFragmentToShowDetailsFragment, bundle)
+        navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToShowDetailsFragment, bundle)
         exitSearch()
       }.add(animations)
   }
@@ -241,19 +241,19 @@ class FollowedShowsFragment :
       clearFragmentResultListener(REQUEST_ITEM_MENU)
     }
     val bundle = ContextMenuBottomSheet.createBundle(show.ids.trakt)
-    navigateToSafe(R.id.actionFollowedShowsFragmentToItemMenu, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToItemMenu, bundle)
   }
 
   private fun openSettings() {
     hideNavigation()
     exitSearch()
-    navigateToSafe(R.id.actionFollowedShowsFragmentToSettingsFragment)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToSettingsFragment)
   }
 
   private fun openStatistics() {
     hideNavigation()
     exitSearch()
-    navigateToSafe(R.id.actionFollowedShowsFragmentToStatisticsFragment)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToStatisticsFragment)
   }
 
   override fun onTabReselected() {

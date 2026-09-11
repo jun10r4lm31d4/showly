@@ -34,7 +34,7 @@ internal class DiscoverMoviesFiltersFeedBottomSheet :
   private val viewModel by viewModels<DiscoverMoviesFiltersFeedViewModel>()
   private val binding by viewBinding(ViewDiscoverMoviesFiltersFeedBinding::bind)
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,

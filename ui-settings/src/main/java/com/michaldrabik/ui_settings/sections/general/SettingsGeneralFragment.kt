@@ -114,8 +114,8 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
     val options = AppTheme.values()
     val selected = options.indexOf(currentTheme)
 
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+    MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog)
+      .setBackground(ContextCompat.getDrawable(requireContext(), com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setSingleChoiceItems(options.map { getString(it.displayName) }.toTypedArray(), selected) { dialog, index ->
         if (index != selected) {
           viewModel.setTheme(options[index])
@@ -145,9 +145,9 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
     if (progressUpcomingDays == null) return
     with(binding) {
       settingsUpcomingValue.text = if (progressUpcomingDays > 0L) {
-        getString(R.string.textDays, progressUpcomingDays)
+        getString(com.michaldrabik.ui_base.R.string.textDays, progressUpcomingDays)
       } else {
-        getString(R.string.textDisabled)
+        getString(com.michaldrabik.ui_base.R.string.textDisabled)
       }
       settingsUpcomingSection.onClick {
         showProgressUpcomingDialog(progressUpcomingDays)
@@ -194,8 +194,8 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
     val options = AppLanguage.values()
     val selected = options.indexOf(language)
 
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+    MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog)
+      .setBackground(ContextCompat.getDrawable(requireContext(), com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setSingleChoiceItems(options.map { getString(it.displayName) }.toTypedArray(), selected) { dialog, index ->
         if (index != selected) {
           viewModel.setLanguage(options[index])
@@ -208,17 +208,17 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
     val options = Config.PROGRESS_UPCOMING_OPTIONS
     val selected = options.indexOfFirst { it.toLong() == days }
 
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+    MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog)
+      .setBackground(ContextCompat.getDrawable(requireContext(), com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setSingleChoiceItems(
         options
           .map {
             if (it == 0) {
               getString(
-                R.string.textDisabled,
+                com.michaldrabik.ui_base.R.string.textDisabled,
               )
             } else {
-              getString(R.string.textDays, it)
+              getString(com.michaldrabik.ui_base.R.string.textDays, it)
             }
           }.toTypedArray(),
         selected,
@@ -233,8 +233,8 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
   private fun showTabletColumnsDialog(columns: Int) {
     val options = arrayOf(1, 2)
     val selected = options.indexOf(columns)
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+    MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog)
+      .setBackground(ContextCompat.getDrawable(requireContext(), com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setSingleChoiceItems(options.map { it.toString() }.toTypedArray(), selected) { dialog, index ->
         if (index != selected) {
           viewModel.setTabletColumns(options[index])
@@ -247,8 +247,8 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
     val options = AppCountry.values()
     val selected = options.indexOf(country)
 
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+    MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog)
+      .setBackground(ContextCompat.getDrawable(requireContext(), com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setSingleChoiceItems(options.map { it.displayName }.toTypedArray(), selected) { dialog, index ->
         if (index != selected) {
           viewModel.setCountry(options[index])
@@ -268,8 +268,8 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
     }
     val selected = options.indexOf(type)
 
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+    MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog)
+      .setBackground(ContextCompat.getDrawable(requireContext(), com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setSingleChoiceItems(displayOptions.toTypedArray(), selected) { dialog, index ->
         if (index != selected) {
           viewModel.setProgressType(options[index])
@@ -289,8 +289,8 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
     }
     val selected = options.indexOf(type)
 
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+    MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog)
+      .setBackground(ContextCompat.getDrawable(requireContext(), com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setSingleChoiceItems(displayOptions.toTypedArray(), selected) { dialog, index ->
         if (index != selected) {
           viewModel.setDateSelectionType(options[index])
@@ -306,8 +306,8 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
     val options = AppDateFormat.values()
     val selected = options.indexOf(format)
 
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog_SmallText)
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+    MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog_SmallText)
+      .setBackground(ContextCompat.getDrawable(requireContext(), com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setSingleChoiceItems(
         options
           .map {
@@ -328,8 +328,8 @@ class SettingsGeneralFragment : BaseFragment<SettingsGeneralViewModel>(R.layout.
     val options = Config.MY_SHOWS_RECENTS_OPTIONS.map { it.toString() }.toTypedArray()
     val default = options.indexOf(settings.myRecentsAmount.toString())
 
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-      .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.bg_dialog))
+    MaterialAlertDialogBuilder(requireContext(), com.michaldrabik.ui_base.R.style.AlertDialog)
+      .setBackground(ContextCompat.getDrawable(requireContext(), com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setSingleChoiceItems(options, default) { dialog, index ->
         viewModel.setRecentShowsAmount(options[index].toInt())
         dialog.dismiss()

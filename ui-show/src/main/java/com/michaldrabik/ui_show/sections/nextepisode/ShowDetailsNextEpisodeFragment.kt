@@ -29,7 +29,7 @@ class ShowDetailsNextEpisodeFragment :
     R.layout.fragment_show_details_next_episode,
   ) {
 
-  override val navigationId = R.id.showDetailsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.showDetailsFragment
   private val binding by viewBinding(FragmentShowDetailsNextEpisodeBinding::bind)
 
   private val parentViewModel by viewModels<ShowDetailsViewModel>({ requireParentFragment() })
@@ -105,7 +105,7 @@ class ShowDetailsNextEpisodeFragment :
       isWatched = episodeBundle.isWatched,
       showTabs = false,
     )
-    navigateToSafe(R.id.actionShowDetailsFragmentEpisodeDetails, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentEpisodeDetails, bundle)
   }
 
   override fun setupBackPressed() = Unit

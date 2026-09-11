@@ -31,7 +31,7 @@ class HistoryPeriodFilterBottomSheet : BaseBottomSheetFragment(R.layout.fragment
   private lateinit var initialPeriod: HistoryPeriod
   private lateinit var selectedPeriod: HistoryPeriod
 
-  override fun getTheme(): Int = R.style.CustomBottomSheetDialog
+  override fun getTheme(): Int = com.michaldrabik.ui_base.R.style.CustomBottomSheetDialog
 
   override fun onViewCreated(
     view: View,

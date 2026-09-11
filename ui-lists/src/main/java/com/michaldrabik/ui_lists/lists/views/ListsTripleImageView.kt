@@ -33,7 +33,7 @@ class ListsTripleImageView : FrameLayout {
 
   private val binding = ViewTripleImageBinding.inflate(LayoutInflater.from(context), this)
 
-  private val cornerRadius by lazy { context.dimenToPx(R.dimen.mediaTileCorner) }
+  private val cornerRadius by lazy { context.dimenToPx(com.michaldrabik.ui_base.R.dimen.mediaTileCorner) }
 
   var missingImageListener: ((ListsItemImage, Boolean) -> Unit)? = null
 

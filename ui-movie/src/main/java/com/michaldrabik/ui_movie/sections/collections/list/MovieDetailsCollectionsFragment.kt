@@ -34,7 +34,7 @@ class MovieDetailsCollectionsFragment :
     R.layout.fragment_movie_details_collection,
   ) {
 
-  override val navigationId = R.id.movieDetailsFragment
+  override val navigationId = com.michaldrabik.ui_navigation.R.id.movieDetailsFragment
 
   private val parentViewModel by viewModels<MovieDetailsViewModel>({ requireParentFragment() })
   override val viewModel by viewModels<MovieDetailsCollectionsViewModel>()
@@ -104,7 +104,7 @@ class MovieDetailsCollectionsFragment :
       collectionId = collection.id,
       sourceMovieId = movie.ids.trakt,
     )
-    navigateToSafe(R.id.actionMovieDetailsFragmentToCollection, bundle)
+    navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionMovieDetailsFragmentToCollection, bundle)
   }
 
   override fun setupBackPressed() = Unit

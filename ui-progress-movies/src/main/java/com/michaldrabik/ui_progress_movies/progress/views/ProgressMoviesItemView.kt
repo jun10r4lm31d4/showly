@@ -82,7 +82,7 @@ class ProgressMoviesItemView : MovieView<ProgressMovieListItem.MovieItem> {
 
   private fun bindDescription(item: ProgressMovieListItem.MovieItem) {
     var description = if (item.translation?.overview.isNullOrBlank()) {
-      item.movie.overview.ifBlank { context.getString(R.string.textNoDescription) }
+      item.movie.overview.ifBlank { context.getString(com.michaldrabik.ui_base.R.string.textNoDescription) }
     } else {
       item.translation?.overview
     }
@@ -153,7 +153,7 @@ class ProgressMoviesItemView : MovieView<ProgressMovieListItem.MovieItem> {
 
       progressMovieItemRuntimeIcon.visible()
       progressMovieItemRuntime.visible()
-      progressMovieItemRuntime.text = "${item.movie.runtime} ${context.getString(R.string.textMinutesShort)}"
+      progressMovieItemRuntime.text = "${item.movie.runtime} ${context.getString(com.michaldrabik.ui_base.R.string.textMinutesShort)}"
     }
   }
 
