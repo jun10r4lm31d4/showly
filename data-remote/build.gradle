@@ -33,14 +33,20 @@ android {
     buildConfigField("String", "TRAKT_CLIENT_ID", properties.getProperty("traktClientId"))
     buildConfigField("String", "TMDB_API_KEY", properties.getProperty("tmdbApiKey"))
     buildConfigField("String", "OMDB_API_KEY", properties.getProperty("omdbApiKey"))
-    buildConfigField("String", "SCROB_API_KEY", properties.getProperty("scrobApiKey"))
-    buildConfigField("String", "SCROB_URL", properties.getProperty("scrobUrl"))
+    buildConfigField("String", "SCROB_API_KEY", "\"\"")
+    buildConfigField("String", "SCROB_URL", "\"\"")
     buildConfigField("String", "VER_NAME", "\"${versions.versionName}\"")
     buildConfigField("int", "VER_CODE", "${versions.versionCode}")
   }
 
   buildTypes {
     debug {
+      Properties properties = new Properties()
+      properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+      buildConfigField("String", "SCROB_API_KEY", properties.getProperty("scrobApiKey"))
+      buildConfigField("String", "SCROB_URL", properties.getProperty("scrobUrl"))
+
       minifyEnabled false
     }
 
