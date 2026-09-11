@@ -8,6 +8,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.michaldrabik.ui_base.BaseFragment
 import com.michaldrabik.ui_base.utilities.extensions.launchAndRepeatStarted
 import com.michaldrabik.ui_base.utilities.extensions.onClick
+import com.michaldrabik.ui_base.utilities.extensions.visibleIf
 import com.michaldrabik.ui_base.utilities.viewBinding
 import com.michaldrabik.ui_settings.R
 import com.michaldrabik.ui_settings.databinding.FragmentSettingsScrobBinding
@@ -29,14 +30,17 @@ class SettingsScrobFragment : BaseFragment<SettingsScrobViewModel>(R.layout.frag
 
     launchAndRepeatStarted(
       { viewModel.uiState.collect { render(it) } },
+      { viewModel.messageFlow.collect { showSnack(it) } },
     )
 
     viewModel.refresh()
+    viewModel.observeSyncing()
   }
 
   private fun setupView() {
     with(binding) {
       settingsScrobInstance.onClick { showScrobDialog() }
+      settingsScrobSync.onClick { viewModel.syncNow() }
     }
   }
 
@@ -47,6 +51,8 @@ class SettingsScrobFragment : BaseFragment<SettingsScrobViewModel>(R.layout.frag
           uiState.isScrobConfigured -> uiState.scrobUrl
           else -> getString(R.string.textSettingsScrobNotConfigured)
         }
+      settingsScrobSync.visibleIf(uiState.isScrobConfigured)
+      settingsScrobSyncProgress.visibleIf(uiState.isSyncing)
     }
   }
 

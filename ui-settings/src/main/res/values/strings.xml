@@ -159,4 +159,7 @@
   <string name="textSettingsScrobDialogMessage">Enter the address of your Scrob instance and the credentials for it.</string>
   <string name="textSettingsScrobPasswordSetHint">API key</string>
   <string name="textSettingsScrobNotConfigured">Not configured</string>
+  <string name="textSettingsScrobSyncNowTitle">Sync now</string>
+  <string name="textSettingsScrobSyncNowSummary">Import watched history and lists from Scrob.</string>
+  <string name="textScrobSyncStarted">Sync started. You can safely leave this screen.</string>
 </resources>

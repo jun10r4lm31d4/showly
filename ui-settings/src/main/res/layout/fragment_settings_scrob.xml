@@ -19,6 +19,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/settingsScrobInstance"
         style="@style/Settings.ItemLayout"
+        app:layout_constraintBottom_toTopOf="@+id/settingsScrobSync"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,6 +54,50 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/settingsScrobDescription"
             tools:text="https://scrob.example.com" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settingsScrobSync"
+        style="@style/Settings.ItemLayout"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsScrobInstance"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/settingsScrobSyncTitle"
+            style="@style/Settings.Title"
+            android:text="@string/textSettingsScrobSyncNowTitle"
+            app:layout_constraintBottom_toTopOf="@id/settingsScrobSyncDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/settingsScrobSyncDescription"
+            style="@style/Settings.Summary"
+            android:layout_marginEnd="@dimen/spaceSmall"
+            android:text="@string/textSettingsScrobSyncNowSummary"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/settingsScrobSyncProgress"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/settingsScrobSyncTitle" />
+
+        <ProgressBar
+            android:id="@+id/settingsScrobSyncProgress"
+            style="@style/ProgressBar.Accent"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/settingsScrobSync"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/settingsScrobSync"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
