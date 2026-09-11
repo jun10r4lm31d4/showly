@@ -107,22 +107,22 @@ class SettingsScrobFragment : BaseFragment<SettingsScrobViewModel>(R.layout.frag
       inputBinding.scrobApiInputLayout.hint = getString(R.string.textSettingsScrobPasswordSetHint)
     }
 
-    MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
-      .setTitle(R.string.textSettingsScrobTitle)
-      .setMessage(R.string.textSettingsScrobDialogMessage)
-      .setView(inputBinding.root)
-      .setPositiveButton(R.string.textOk) { _, _ ->
+    val dialog =
+      MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialog)
+        .setView(inputBinding.root)
+        .create()
+
+    with(inputBinding) {
+      scrobOkButton.onClick {
         viewModel.saveConnection(
-          url =
-            inputBinding.scrobUrlInput.text
-              ?.toString()
-              .orEmpty(),
-          apikey =
-            inputBinding.scrobApiInput.text
-              ?.toString()
-              .orEmpty(),
+          url = scrobUrlInput.text?.toString().orEmpty(),
+          apikey = scrobApiInput.text?.toString().orEmpty(),
         )
-        }.setNegativeButton(R.string.textCancel) { _, _ -> }
-        .show()
+        dialog.dismiss()
+      }
+      scrobCancelButton.onClick { dialog.dismiss() }
+    }
+
+    dialog.show()
   }
 }
