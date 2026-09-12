@@ -5,7 +5,7 @@ import android.content.Context.MODE_PRIVATE
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-const val DATABASE_VERSION = 43
+const val DATABASE_VERSION = 44
 const val DATABASE_NAME = "SHOWLY2_DB_2"
 
 class Migrations(
@@ -811,6 +811,18 @@ class Migrations(
     }
   }
 
+  private val migration44 = object : Migration(43, 44) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+      with(database) {
+        // Remote list item id for Scrob list pushes (DELETE needs the server item id).
+        execSQL("ALTER TABLE custom_list_item ADD COLUMN id_scrob_item INTEGER NOT NULL DEFAULT -1")
+        // Target list + media type for QuickSync watchlist (list item) operations.
+        execSQL("ALTER TABLE scrob_pending_ops ADD COLUMN list_id INTEGER NOT NULL DEFAULT -1")
+        execSQL("ALTER TABLE scrob_pending_ops ADD COLUMN media_type TEXT NOT NULL DEFAULT ''")
+      }
+    }
+  }
+
   fun getAll() =
     listOf(
       migration2,
@@ -855,5 +867,6 @@ class Migrations(
       migration41,
       migration42,
       migration43,
+      migration44,
     )
 }

@@ -2,7 +2,9 @@ package com.michaldrabik.data_remote.scrob
 
 import com.michaldrabik.data_remote.scrob.model.ScrobHistoryEvent
 import com.michaldrabik.data_remote.scrob.model.ScrobList
+import com.michaldrabik.data_remote.scrob.model.ScrobListCreateRequest
 import com.michaldrabik.data_remote.scrob.model.ScrobListItem
+import com.michaldrabik.data_remote.scrob.model.ScrobListItemAddRequest
 import com.michaldrabik.data_remote.scrob.model.ScrobSeasonWatchRequest
 import com.michaldrabik.data_remote.scrob.model.ScrobShowWatchRequest
 import com.michaldrabik.data_remote.scrob.model.ScrobWatchRequest
@@ -22,8 +24,38 @@ interface ScrobRemoteDataSource {
   /** Fetches all of the user's custom lists (without items). */
   suspend fun fetchLists(): List<ScrobList>
 
+  /** Creates a remote list. Returns the created list. */
+  suspend fun createList(request: ScrobListCreateRequest): ScrobList
+
+  /** Renames/updates a remote list. */
+  suspend fun renameList(
+    listId: Long,
+    request: ScrobListCreateRequest,
+  )
+
+  /**
+   * Deletes a remote list. Already-deleted lists are treated
+   * as success so retries stay idempotent.
+   */
+  suspend fun deleteList(listId: Long)
+
   /** Fetches a single list's items. */
   suspend fun fetchListItems(listId: Long): List<ScrobListItem>
+
+  /** Adds an item to a list. Returns the created remote item. */
+  suspend fun addListItem(
+    listId: Long,
+    request: ScrobListItemAddRequest,
+  ): ScrobListItem
+
+  /**
+   * Removes an item from a list. Already-removed items are treated
+   * as success so retries stay idempotent.
+   */
+  suspend fun removeListItem(
+    listId: Long,
+    itemId: Long,
+  )
 
   /** Pushes a single movie or episode watch event ("mark as watched") to the Scrob server. */
   suspend fun addToHistory(request: ScrobWatchRequest)

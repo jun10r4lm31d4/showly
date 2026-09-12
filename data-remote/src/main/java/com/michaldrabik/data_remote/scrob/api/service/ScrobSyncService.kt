@@ -1,7 +1,11 @@
 package com.michaldrabik.data_remote.scrob.api.service
 
 import com.michaldrabik.data_remote.scrob.model.ScrobHistoryResponse
+import com.michaldrabik.data_remote.scrob.model.ScrobList
+import com.michaldrabik.data_remote.scrob.model.ScrobListCreateRequest
 import com.michaldrabik.data_remote.scrob.model.ScrobListDetailsResponse
+import com.michaldrabik.data_remote.scrob.model.ScrobListItem
+import com.michaldrabik.data_remote.scrob.model.ScrobListItemAddRequest
 import com.michaldrabik.data_remote.scrob.model.ScrobListsResponse
 import com.michaldrabik.data_remote.scrob.model.ScrobSeasonWatchRequest
 import com.michaldrabik.data_remote.scrob.model.ScrobShowWatchRequest
@@ -9,6 +13,7 @@ import com.michaldrabik.data_remote.scrob.model.ScrobWatchRequest
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -25,10 +30,38 @@ interface ScrobSyncService {
   @GET("api/proxy/lists")
   suspend fun fetchLists(): ScrobListsResponse
 
+  @POST("api/proxy/lists")
+  suspend fun createList(
+    @Body request: ScrobListCreateRequest,
+  ): ScrobList
+
+  @PATCH("api/proxy/lists/{listId}")
+  suspend fun renameList(
+    @Path("listId") listId: Long,
+    @Body request: ScrobListCreateRequest,
+  ): ScrobList
+
+  @DELETE("api/proxy/lists/{listId}")
+  suspend fun deleteList(
+    @Path("listId") listId: Long,
+  )
+
   @GET("api/proxy/lists/{listId}")
   suspend fun fetchListDetails(
     @Path("listId") listId: Long,
   ): ScrobListDetailsResponse
+
+  @POST("api/proxy/lists/{listId}/items")
+  suspend fun addListItem(
+    @Path("listId") listId: Long,
+    @Body request: ScrobListItemAddRequest,
+  ): ScrobListItem
+
+  @DELETE("api/proxy/lists/{listId}/items/{itemId}")
+  suspend fun removeListItem(
+    @Path("listId") listId: Long,
+    @Path("itemId") itemId: Long,
+  )
 
   @POST("api/proxy/history")
   suspend fun addToHistory(

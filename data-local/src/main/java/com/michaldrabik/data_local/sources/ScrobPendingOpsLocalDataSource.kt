@@ -8,6 +8,8 @@ interface ScrobPendingOpsLocalDataSource {
 
   suspend fun getOldest(limit: Int): List<ScrobPendingOp>
 
+  suspend fun getByOps(ops: List<String>): List<ScrobPendingOp>
+
   suspend fun deleteByIds(ids: List<Long>)
 
   suspend fun count(): Int

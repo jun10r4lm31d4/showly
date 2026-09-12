@@ -24,4 +24,6 @@ data class ScrobPendingOp(
   @ColumnInfo(name = "episode_number", defaultValue = "-1") val episodeNumber: Int = -1,
   @ColumnInfo(name = "watched_at", defaultValue = "-1") val watchedAtMillis: Long = -1,
   @ColumnInfo(name = "created_at") val createdAt: Long,
+  @ColumnInfo(name = "list_id", defaultValue = "-1") val listId: Long = -1,
+  @ColumnInfo(name = "media_type", defaultValue = "") val mediaType: String = "",
 )

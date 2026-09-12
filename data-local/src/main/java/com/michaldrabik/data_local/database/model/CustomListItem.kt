@@ -31,4 +31,5 @@ data class CustomListItem(
   @ColumnInfo(name = "listed_at") val listedAt: Long,
   @ColumnInfo(name = "created_at") val createdAt: Long,
   @ColumnInfo(name = "updated_at") val updatedAt: Long,
+  @ColumnInfo(name = "id_scrob_item", defaultValue = "-1") val idScrobItem: Long = -1,
 )
