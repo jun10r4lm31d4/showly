@@ -7,6 +7,7 @@ import com.michaldrabik.data_local.database.model.CustomListItem
 import com.michaldrabik.data_local.utilities.TransactionsProvider
 import com.michaldrabik.repository.ListsRepository
 import com.michaldrabik.repository.settings.SettingsRepository
+import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncManager
 import com.michaldrabik.ui_lists.details.recycler.ListDetailsItem
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.withContext
@@ -19,6 +20,7 @@ class ListDetailsMainCase @Inject constructor(
   private val transactions: TransactionsProvider,
   private val listsRepository: ListsRepository,
   private val settingsRepository: SettingsRepository,
+  private val scrobQuickSyncManager: ScrobQuickSyncManager,
 ) {
 
   suspend fun loadDetails(id: Long) =
@@ -50,8 +52,12 @@ class ListDetailsMainCase @Inject constructor(
 
   suspend fun deleteList(listId: Long) =
     withContext(dispatchers.IO) {
-      val list = listsRepository.loadById(listId)
+      listsRepository.loadById(listId)
+      val remoteId = scrobQuickSyncManager.remoteListId(listId)
 
       listsRepository.deleteList(listId)
+      if (remoteId != null) {
+        scrobQuickSyncManager.scheduleListDelete(remoteId)
+      }
     }
 }

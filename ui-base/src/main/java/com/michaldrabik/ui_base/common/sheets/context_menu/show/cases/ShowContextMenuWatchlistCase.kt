@@ -8,6 +8,7 @@ import com.michaldrabik.repository.PinnedItemsRepository
 import com.michaldrabik.repository.shows.ShowsRepository
 import com.michaldrabik.ui_base.common.sheets.context_menu.events.RemoveTraktUiEvent
 import com.michaldrabik.ui_base.notifications.AnnouncementManager
+import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncManager
 import com.michaldrabik.ui_model.IdTrakt
 import com.michaldrabik.ui_model.Ids
 import com.michaldrabik.ui_model.Show
@@ -25,6 +26,7 @@ class ShowContextMenuWatchlistCase @Inject constructor(
   private val showsRepository: ShowsRepository,
   private val pinnedItemsRepository: PinnedItemsRepository,
   private val announcementManager: AnnouncementManager,
+  private val scrobQuickSyncManager: ScrobQuickSyncManager,
 ) {
 
   suspend fun moveToWatchlist(
@@ -57,6 +59,7 @@ class ShowContextMenuWatchlistCase @Inject constructor(
 
     pinnedItemsRepository.removePinnedItem(show)
     announcementManager.refreshShowsAnnouncements()
+    scrobQuickSyncManager.scheduleWatchlistShow(traktId.id)
 
     RemoveTraktUiEvent(removeProgress = isMyShow, removeHidden = isHidden)
   }
@@ -65,5 +68,6 @@ class ShowContextMenuWatchlistCase @Inject constructor(
     withContext(dispatchers.IO) {
       showsRepository.watchlistShows.delete(traktId)
       announcementManager.refreshShowsAnnouncements()
+      scrobQuickSyncManager.clearWatchlistShow(traktId.id)
     }
 }

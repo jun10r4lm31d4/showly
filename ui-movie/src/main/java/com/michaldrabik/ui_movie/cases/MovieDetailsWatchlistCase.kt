@@ -4,6 +4,7 @@ import com.michaldrabik.common.dispatchers.CoroutineDispatchers
 import com.michaldrabik.repository.PinnedItemsRepository
 import com.michaldrabik.repository.movies.MoviesRepository
 import com.michaldrabik.ui_base.notifications.AnnouncementManager
+import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncManager
 import com.michaldrabik.ui_model.Movie
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.withContext
@@ -15,6 +16,7 @@ class MovieDetailsWatchlistCase @Inject constructor(
   private val moviesRepository: MoviesRepository,
   private val pinnedItemsRepository: PinnedItemsRepository,
   private val announcementManager: AnnouncementManager,
+  private val scrobQuickSyncManager: ScrobQuickSyncManager,
 ) {
 
   suspend fun isWatchlist(movie: Movie) =
@@ -27,6 +29,7 @@ class MovieDetailsWatchlistCase @Inject constructor(
       moviesRepository.watchlistMovies.insert(movie.ids.trakt)
       pinnedItemsRepository.removePinnedItem(movie)
       announcementManager.refreshMoviesAnnouncements()
+      scrobQuickSyncManager.scheduleWatchlistMovie(movie.ids.trakt.id)
     }
   }
 
@@ -34,6 +37,7 @@ class MovieDetailsWatchlistCase @Inject constructor(
     withContext(dispatchers.IO) {
       moviesRepository.watchlistMovies.delete(movie.ids.trakt)
       pinnedItemsRepository.removePinnedItem(movie)
+      scrobQuickSyncManager.clearWatchlistMovie(movie.ids.trakt.id)
     }
   }
 }

@@ -15,6 +15,7 @@ import com.michaldrabik.repository.images.ShowImagesProvider
 import com.michaldrabik.repository.mappers.Mappers
 import com.michaldrabik.repository.movies.MoviesRepository
 import com.michaldrabik.repository.settings.SettingsRepository
+import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncManager
 import com.michaldrabik.repository.shows.ShowsRepository
 import com.michaldrabik.ui_lists.details.helpers.ListDetailsSorter
 import com.michaldrabik.ui_lists.details.recycler.ListDetailsItem
@@ -52,6 +53,7 @@ class ListDetailsItemsCase @Inject constructor(
   private val ratingsRepository: RatingsRepository,
   private val settingsRepository: SettingsRepository,
   private val sorter: ListDetailsSorter,
+  private val scrobQuickSyncManager: ScrobQuickSyncManager,
 ) {
 
   suspend fun loadItems(list: CustomList): Pair<List<ListDetailsItem>, Int> =
@@ -263,5 +265,6 @@ class ListDetailsItemsCase @Inject constructor(
     itemType: Mode,
   ) = withContext(dispatchers.IO) {
     listsRepository.removeFromList(listId, itemTraktId, itemType.type)
+    scrobQuickSyncManager.scheduleListItemRemove(listId, itemTraktId.id, itemType.type)
   }
 }

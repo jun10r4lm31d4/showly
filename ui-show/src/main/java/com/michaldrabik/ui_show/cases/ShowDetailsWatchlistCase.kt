@@ -4,6 +4,7 @@ import com.michaldrabik.common.dispatchers.CoroutineDispatchers
 import com.michaldrabik.repository.PinnedItemsRepository
 import com.michaldrabik.repository.shows.ShowsRepository
 import com.michaldrabik.ui_base.notifications.AnnouncementManager
+import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncManager
 import com.michaldrabik.ui_model.Show
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.withContext
@@ -15,6 +16,7 @@ class ShowDetailsWatchlistCase @Inject constructor(
   private val showsRepository: ShowsRepository,
   private val pinnedItemsRepository: PinnedItemsRepository,
   private val announcementManager: AnnouncementManager,
+  private val scrobQuickSyncManager: ScrobQuickSyncManager,
 ) {
 
   suspend fun isWatchlist(show: Show) =
@@ -27,6 +29,7 @@ class ShowDetailsWatchlistCase @Inject constructor(
       showsRepository.watchlistShows.insert(show.ids.trakt)
       pinnedItemsRepository.removePinnedItem(show)
       announcementManager.refreshShowsAnnouncements()
+      scrobQuickSyncManager.scheduleWatchlistShow(show.ids.trakt.id)
     }
 
   suspend fun removeFromWatchlist(show: Show) =
@@ -34,5 +37,6 @@ class ShowDetailsWatchlistCase @Inject constructor(
       showsRepository.watchlistShows.delete(show.ids.trakt)
       pinnedItemsRepository.removePinnedItem(show)
       announcementManager.refreshShowsAnnouncements()
+      scrobQuickSyncManager.clearWatchlistShow(show.ids.trakt.id)
     }
 }
