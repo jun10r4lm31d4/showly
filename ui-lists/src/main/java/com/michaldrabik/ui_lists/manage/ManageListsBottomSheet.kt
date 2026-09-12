@@ -81,6 +81,8 @@ class ManageListsBottomSheet : BaseBottomSheetFragment(R.layout.view_manage_list
       },
     )
     binding.viewManageListsRecycler.apply {
+      layoutManager = this@ManageListsBottomSheet.layoutManager
+      adapter = this@ManageListsBottomSheet.adapter
       (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
       addItemDecoration(ManageListsDividerDecoration(requireContext()))
     }
