@@ -3,6 +3,7 @@
   <string name="textImagesCacheCleared">Kuvavälimuisti tyhjennettiin.</string>
   <string name="textSettings">Asetukset</string>
   <string name="textSettingsGeneral">Yleiset ja käyttölittymä</string>
+  <string name="errorScrobSyncFailed">Scrob-synkronointi epäonnistui. Yritä uudelleen.</string>
   <string name="textSettingsRecentShowsTitle">Hiljattain lisättyjen määrä</string>
   <string name="textSettingsRecentShowsSummary">Kokoelmassa näytettävien, hiljattain lisättyjen kohteiden määrä.</string>
   <string name="textSettingsUpcomingSectionTitle">Tulossa-osio</string>
@@ -131,4 +132,39 @@
   <string name="textDateSelectionAsk">Kysy aina</string>
   <string name="textDateSelectionNow">Valitse \"Nyt\"</string>
   <string name="textTransparency100">Läpinäkymätön</string>
+  <string name="textLanguageEnglish" translatable="false">English</string>
+  <string name="textLanguagePolish" translatable="false">Polski</string>
+  <string name="textLanguageRomanian" translatable="false">Română</string>
+  <string name="textLanguageArabic" translatable="false">العربية</string>
+  <string name="textLanguageChinese" translatable="false">中文简体</string>
+  <string name="textLanguageSpanish" translatable="false">Español</string>
+  <string name="textLanguageItalian" translatable="false">Italiano</string>
+  <string name="textLanguageFrench" translatable="false">Français</string>
+  <string name="textLanguageDanish" translatable="false">Dansk</string>
+  <string name="textLanguagePortugalBrasil" translatable="false">Português brasileiro</string>
+  <string name="textLanguageTurkish" translatable="false">Türkçe</string>
+  <string name="textLanguageUkrainian" translatable="false">Українська</string>
+  <string name="textLanguageGerman" translatable="false">Deutsch</string>
+  <string name="textLanguageRussian" translatable="false">Pусский</string>
+  <string name="textLanguageFinnish" translatable="false">Suomi</string>
+  <string name="textTransparency0" translatable="false">100%</string>
+  <string name="textTransparency25" translatable="false">25%</string>
+  <string name="textTransparency50" translatable="false">50%</string>
+  <string name="textTransparency75" translatable="false">75%</string>
+  <string name="textSettingsScrob">Scrob-synkronointi</string>
+  <string name="textSettingsScrobTitle">Scrob-kirjautumistiedot</string>
+  <string name="textSettingsScrobDescription">Synkronoi itse isännöidyn Scrob-instanssisi kanssa</string>
+  <string name="textSettingsScrobUrlHint">Scrob-URL</string>
+  <string name="textSettingsScrobApiKeyHint">Scrob-API-avain</string>
+  <string name="textSettingsScrobDialogMessage">Syötä Scrob-instanssisi osoite ja kirjautumistiedot.</string>
+  <string name="textSettingsScrobPasswordSetHint">API-avain</string>
+  <string name="textSettingsScrobNotConfigured">Ei määritetty</string>
+  <string name="textSettingsScrobSyncNowTitle">Synkronoi nyt</string>
+  <string name="textSettingsScrobSyncNowSummary">Tuo katseluhistoria ja listat Scrobista.</string>
+  <string name="textScrobSyncStarted">Synkronointi aloitettu. Voit poistua tästä näkymästä turvallisesti.</string>
+  <string name="textSettingsScrobWatchlistTitle">Katselulista</string>
+  <string name="textSettingsScrobWatchlistSummary">Käytä Scrob-listaa katselulistanasi</string>
+  <string name="textSettingsScrobWatchlistNotSelected">Ei valittu</string>
+  <string name="textSettingsScrobWatchlistDialogTitle">Valitse katselulista</string>
+  <string name="textSettingsScrobWatchlistNone">Ei mitään</string>
 </resources>

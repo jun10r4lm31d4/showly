@@ -3,6 +3,7 @@
   <string name="textImagesCacheCleared">Pamięć podręczna obrazków została wyczyszczona.</string>
   <string name="textSettings">Ustawienia</string>
   <string name="textSettingsGeneral">Ogólne</string>
+  <string name="errorScrobSyncFailed">Synchronizacja Scrob nie powiodła się. Spróbuj ponownie.</string>
   <string name="textSettingsRecentShowsTitle">Ilość Ostatnio Dodanych</string>
   <string name="textSettingsRecentShowsSummary">Liczba ostatnio dodanych elementów w zakładce \'Kolekcja\'.</string>
   <string name="textSettingsUpcomingSectionTitle">Sekcja \'Nadchodzące\'</string>
@@ -131,4 +132,39 @@
   <string name="textDateSelectionAsk">Zawsze pytaj</string>
   <string name="textDateSelectionNow">Zawsze \"Teraz\"</string>
   <string name="textTransparency100">Nieprzezroczysty</string>
+  <string name="textLanguageEnglish" translatable="false">English</string>
+  <string name="textLanguagePolish" translatable="false">Polski</string>
+  <string name="textLanguageRomanian" translatable="false">Română</string>
+  <string name="textLanguageArabic" translatable="false">العربية</string>
+  <string name="textLanguageChinese" translatable="false">中文简体</string>
+  <string name="textLanguageSpanish" translatable="false">Español</string>
+  <string name="textLanguageItalian" translatable="false">Italiano</string>
+  <string name="textLanguageFrench" translatable="false">Français</string>
+  <string name="textLanguageDanish" translatable="false">Dansk</string>
+  <string name="textLanguagePortugalBrasil" translatable="false">Português brasileiro</string>
+  <string name="textLanguageTurkish" translatable="false">Türkçe</string>
+  <string name="textLanguageUkrainian" translatable="false">Українська</string>
+  <string name="textLanguageGerman" translatable="false">Deutsch</string>
+  <string name="textLanguageRussian" translatable="false">Pусский</string>
+  <string name="textLanguageFinnish" translatable="false">Suomi</string>
+  <string name="textTransparency0" translatable="false">100%</string>
+  <string name="textTransparency25" translatable="false">25%</string>
+  <string name="textTransparency50" translatable="false">50%</string>
+  <string name="textTransparency75" translatable="false">75%</string>
+  <string name="textSettingsScrob">Synchronizacja Scrob</string>
+  <string name="textSettingsScrobTitle">Dane logowania Scrob</string>
+  <string name="textSettingsScrobDescription">Synchronizuj z własną instancją Scrob</string>
+  <string name="textSettingsScrobUrlHint">Adres URL Scrob</string>
+  <string name="textSettingsScrobApiKeyHint">Klucz API Scrob</string>
+  <string name="textSettingsScrobDialogMessage">Wprowadź adres swojej instancji Scrob oraz dane logowania.</string>
+  <string name="textSettingsScrobPasswordSetHint">Klucz API</string>
+  <string name="textSettingsScrobNotConfigured">Nieskonfigurowano</string>
+  <string name="textSettingsScrobSyncNowTitle">Synchronizuj teraz</string>
+  <string name="textSettingsScrobSyncNowSummary">Importuj historię oglądania oraz listy z Scrob.</string>
+  <string name="textScrobSyncStarted">Synchronizacja rozpoczęta. Możesz bezpiecznie opuścić ten ekran. </string>
+  <string name="textSettingsScrobWatchlistTitle">Lista "Na później"</string>
+  <string name="textSettingsScrobWatchlistSummary">Użyj listy Scrob jako listy "Na później"</string>
+  <string name="textSettingsScrobWatchlistNotSelected">Nie wybrano</string>
+  <string name="textSettingsScrobWatchlistDialogTitle">Wybierz listę "Na później"</string>
+  <string name="textSettingsScrobWatchlistNone">Brak</string>
 </resources>

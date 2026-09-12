@@ -3,6 +3,7 @@
   <string name="textImagesCacheCleared">图像缓存已清理。</string>
   <string name="textSettings">设置</string>
   <string name="textSettingsGeneral"><![CDATA[常规 & 用户体验]]></string>
+  <string name="errorScrobSyncFailed">Scrob 同步失败。请再试一次。</string>
   <string name="textSettingsRecentShowsTitle">最近添加的数量</string>
   <string name="textSettingsRecentShowsSummary">「合集」中最近添加项目的展示数量。</string>
   <string name="textSettingsUpcomingSectionTitle">即将开播模块</string>
@@ -140,4 +141,39 @@
   <string name="textDateSelectionAsk">总是询问</string>
   <string name="textDateSelectionNow">总是“现在”</string>
   <string name="textTransparency100">不透明</string>
+  <string name="textLanguageEnglish" translatable="false">English</string>
+  <string name="textLanguagePolish" translatable="false">Polski</string>
+  <string name="textLanguageRomanian" translatable="false">Română</string>
+  <string name="textLanguageArabic" translatable="false">العربية</string>
+  <string name="textLanguageChinese" translatable="false">中文简体</string>
+  <string name="textLanguageSpanish" translatable="false">Español</string>
+  <string name="textLanguageItalian" translatable="false">Italiano</string>
+  <string name="textLanguageFrench" translatable="false">Français</string>
+  <string name="textLanguageDanish" translatable="false">Dansk</string>
+  <string name="textLanguagePortugalBrasil" translatable="false">Português brasileiro</string>
+  <string name="textLanguageTurkish" translatable="false">Türkçe</string>
+  <string name="textLanguageUkrainian" translatable="false">Українська</string>
+  <string name="textLanguageGerman" translatable="false">Deutsch</string>
+  <string name="textLanguageRussian" translatable="false">Pусский</string>
+  <string name="textLanguageFinnish" translatable="false">Suomi</string>
+  <string name="textTransparency0" translatable="false">100%</string>
+  <string name="textTransparency25" translatable="false">25%</string>
+  <string name="textTransparency50" translatable="false">50%</string>
+  <string name="textTransparency75" translatable="false">75%</string>
+  <string name="textSettingsScrob">Scrob 同步</string>
+  <string name="textSettingsScrobTitle">Scrob 凭据</string>
+  <string name="textSettingsScrobDescription">与您的自托管 Scrob 实例同步</string>
+  <string name="textSettingsScrobUrlHint">Scrob URL</string>
+  <string name="textSettingsScrobApiKeyHint">Scrob API 密钥</string>
+  <string name="textSettingsScrobDialogMessage">输入您的 Scrob 实例地址及其凭据。</string>
+  <string name="textSettingsScrobPasswordSetHint">API 密钥</string>
+  <string name="textSettingsScrobNotConfigured">未配置</string>
+  <string name="textSettingsScrobSyncNowTitle">立即同步</string>
+  <string name="textSettingsScrobSyncNowSummary">从 Scrob 导入观看记录和列表。</string>
+  <string name="textScrobSyncStarted">同步已开始。您可以安全地离开此屏幕。</string>
+  <string name="textSettingsScrobWatchlistTitle">待看列表</string>
+  <string name="textSettingsScrobWatchlistSummary">使用 Scrob 列表作为您的待看列表</string>
+  <string name="textSettingsScrobWatchlistNotSelected">未选择</string>
+  <string name="textSettingsScrobWatchlistDialogTitle">选择待看列表</string>
+  <string name="textSettingsScrobWatchlistNone">无</string>
 </resources>

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textImagesCacheCleared">O cache foi liberado.</string>
+  <string name="textImagesCacheCleared">O cache de imagens foi limpo.</string>
   <string name="textSettings">Configurações</string>
   <string name="textSettingsGeneral"><![CDATA[Geral & UX]]></string>
-  <string name="textSettingsRecentShowsTitle">Quantidade adicionada recentemente</string>
+  <string name="errorScrobSyncFailed">Falha na sincronização Scrob. Por favor, tente novamente.</string>
+  <string name="textSettingsRecentShowsTitle">Quantidade de itens recentes</string>
   <string name="textSettingsRecentShowsSummary">Número de itens recentes a serem exibidos em \'Coleção\'.</string>
   <string name="textSettingsUpcomingSectionTitle">Próximos</string>
-  <string name="textSettingsUpcomingSectionSummary">Ativar/desativar a seção \'Em breve\' na aba \'Progresso\'.</string>
+  <string name="textSettingsUpcomingSectionSummary">Ativar/desativar a seção \'Próximos\' na aba \'Progresso\'.</string>
   <string name="textSettingsThemeTitle">Tema</string>
   <string name="textSettingsThemeSummary">Selecione o tema principal.</string>
   <string name="textSettingsThemeWidgetsTitle">Tema</string>
@@ -14,51 +15,51 @@
   <string name="textSettingsWidgetsTransparencyTitle">Plano de fundo</string>
   <string name="textSettingsWidgetsTransparencySummary">Nível de transparência de fundo dos Widgets.</string>
   <string name="textSettingsMyShowsCountryTitle">Região</string>
-  <string name="textSettingsMyShowsCountrySummary">Selecione uma região para usar com os dados de serviços de streaming.</string>
+  <string name="textSettingsMyShowsCountrySummary">Selecione uma região para usar com os dados dos serviços de streaming.</string>
   <string name="textSettingsMyShowsLanguageTitle">Idioma</string>
-  <string name="textSettingsMyShowsLanguageSummary">Descrições e títulos serão traduzidos quando disponível. O aplicativo será reiniciado.</string>
+  <string name="textSettingsMyShowsLanguageSummary">Títulos e descrições serão traduzidos quando disponíveis. O aplicativo será reiniciado.</string>
   <string name="textSettingsDateFormatTitle">Formato data/hora</string>
   <string name="textSettingsIncludeSpecialsTitle">Temporadas especiais</string>
   <string name="textSettingsIncludeSpecialsSummary">Exibir temporadas \'Especiais\' na tela de detalhes da série.</string>
   <string name="textSettingsNotifications">Notificações</string>
-  <string name="textSettingsPushNotificationsTitle">Notificações push</string>
-  <string name="textSettingsShowsNotificationsSummary">Receber notificações sobre novos filmes, episódios, temporadas para séries que você está seguindo.</string>
-  <string name="textSettingsShowsNotificationsRationale">Por favor, conceda permissão à aplicação para exibir notificações.\n\nGostaria de fazê-lo agora?</string>
+  <string name="textSettingsPushNotificationsTitle">Notificações Push</string>
+  <string name="textSettingsShowsNotificationsSummary">Receba notificações sobre novos filmes, episódios e temporadas das séries que você acompanha.</string>
+  <string name="textSettingsShowsNotificationsRationale">Por favor, conceda permissão ao aplicativo para exibir notificações.\n\nGostaria de fazer isso agora?</string>
   <string name="textSettingsMisc">Outros</string>
-  <string name="textSettingsContactDevsTitle">Contate os desenvolvedores</string>
-  <string name="textSettingsContactDevsSummary">Tem um problema? Clique para nos enviar um e-mail (showlyapp@gmail.com).</string>
-  <string name="textSettingsRateAppTitle">Dar feedback</string>
-  <string name="textSettingsRateAppSummary">Gostando do Showly? Nos envie uma avaliação na PlayStore. Obrigado!</string>
+  <string name="textSettingsContactDevsTitle">Contatar desenvolvedores</string>
+  <string name="textSettingsContactDevsSummary">Teve algum problema? Toque para nos enviar um e-mail (showlyapp@gmail.com).</string>
+  <string name="textSettingsRateAppTitle">Avaliar o aplicativo</string>
+  <string name="textSettingsRateAppSummary">Está gostando do Showly? Deixe uma avaliação na Play Store. Obrigado!</string>
   <string name="textSettingsDeleteCacheTitle">Limpar cache de imagens</string>
-  <string name="textSettingsDeleteCacheSummary">Clique para limpar o cache de imagens locais. Isso pode ajudar se imagens não estão sendo carregadas corretamente.</string>
+  <string name="textSettingsDeleteCacheSummary">Toque para limpar o cache de imagens locais. Isso pode ajudar se as imagens não estiverem sendo carregadas corretamente.</string>
   <string name="textSettingsMoviesEnabledTitle">Filmes</string>
   <string name="textSettingsMoviesEnabledSummary">Ativar/desativar o suporte a filmes. O aplicativo reiniciará.</string>
   <string name="textSettingsWidgets">Widgets</string>
   <string name="textSettingsWidgetsLabelsTitle">Títulos</string>
-  <string name="textSettingsWidgetsLabelsSummary">Exibir títulos de widgets translúcidos.</string>
+  <string name="textSettingsWidgetsLabelsSummary">Exibir títulos translúcidos nos widgets.</string>
   <string name="textSettingsStreamingsDisclaimer">Dados de serviços de streaming são fornecidos por</string>
   <string name="textSettingsStreamingServicesTitle">Serviços de streaming</string>
-  <string name="textSettingsStreamingServicesMessage">Exibir dados de serviços de streaming.</string>
+  <string name="textSettingsStreamingServicesMessage">Exibir dados dos serviços de streaming.</string>
   <string name="textSettingsProgressNextEpisodeTitle">Próximo Episódio</string>
   <string name="textSettingsProgressNextEpisodeMessage">Calcular próximo episódio usando:</string>
   <string name="textSettingsDateSelectionMessage">Selecione a opção de seleção de data padrão.</string>
-  <string name="textSettingsTabletColumnsTitle">Número das colunas das listas</string>
-  <string name="textSettingsTabletColumnsSummary">Selecione o número desejado de colunas para as listas.</string>
-  <string name="textSettingsBackup"><![CDATA[Backup & restauração]]></string>
+  <string name="textSettingsTabletColumnsTitle">Número de colunas nas listas</string>
+  <string name="textSettingsTabletColumnsSummary">Selecione o número de colunas desejado para as listas.</string>
+  <string name="textSettingsBackup"><![CDATA[Backup & Restauração]]></string>
   <string name="textSettingsBackupExportTitle">Exportar</string>
   <string name="textSettingsBackupExportDescription">Exporte seus dados para criar um backup ou transferi-los para um novo dispositivo.</string>
   <string name="textSettingsBackupImportTitle">Importar</string>
-  <string name="textSettingsBackupImportDescription">Importe seu arquivo de backup para restaurar dados neste dispositivo.</string>
+  <string name="textSettingsBackupImportDescription">Importe seu arquivo de backup para restaurar os dados neste dispositivo.</string>
   <string name="textSettingsSpoilers">Spoilers</string>
   <string name="textSettingsSpoilersShows">Séries</string>
   <string name="textSettingsSpoilersShowsSummary">Gerenciar configurações de spoiler para séries.</string>
-  <string name="textSettingsSpoilersShowsOverviewsMyTitle">Minhas Séries</string>
+  <string name="textSettingsSpoilersShowsOverviewsMyTitle">Minhas séries</string>
   <string name="textSettingsSpoilersShowsOverviewsMyDescription">Ocultar
   
-    <b>descrição</b> das séries adicionadas as Minhas Séries</string>
+    <b>descrição</b> das séries adicionadas às Minhas Séries</string>
   <string name="textSettingsSpoilersShowsRatingsMyDescription">Ocultar
   
-    <b>avaliação</b> das séries adicionadas as Minhas Séries</string>
+    <b>avaliação</b> das séries adicionadas às Minhas Séries</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">Favoritos</string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Ocultar
   
@@ -66,13 +67,13 @@
   <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Ocultar a
   
     <b>avaliação</b> das séries adicionadas aos Favoritos</string>
-  <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Oculto</string>
+  <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Ocultos</string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Ocultar
   
-    <b>descrição</b> das séries adicionadas à Oculto</string>
+    <b>descrição</b> das séries adicionadas aos Ocultos</string>
   <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Ocultar
   
-    <b>avaliação</b> das séries adicionadas à Oculto</string>
+    <b>avaliação</b> das séries adicionadas aos Ocultos</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">Não coletado</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Esconder
   
@@ -96,13 +97,13 @@
   <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Ocultar
   
     <b>avaliação</b> de filmes adicionados aos Favoritos</string>
-  <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Oculto</string>
+  <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Ocultos</string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Ocultar
   
-    <b>descrição</b> de filmes adicionados a Escondidos</string>
+    <b>descrição</b> de filmes adicionados aos Ocultos</string>
   <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Ocultar
   
-    <b>avaliação</b> de filmes adicionados a Escondidos</string>
+    <b>avaliação</b> de filmes adicionados aos Ocultos</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">Não coletado</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Ocultar
   
@@ -111,7 +112,7 @@
   
     <b>avaliação</b> de filmes que não estão na sua Coleção</string>
   <string name="textSettingsSpoilersEpisodes">Episódios</string>
-  <string name="textSettingsSpoilersEpisodesSummary">Gerencie configurações de spoiler para episódios.</string>
+  <string name="textSettingsSpoilersEpisodesSummary">Gerenciar configurações de spoiler para episodes.</string>
   <string name="textSettingsSpoilersEpisodesImage">Ocultar
   
     <b>imagem</b> de episódios não assistidos.</string>
@@ -131,4 +132,20 @@
   <string name="textDateSelectionAsk">Sempre perguntar</string>
   <string name="textDateSelectionNow">Sempre \"Agora\"</string>
   <string name="textTransparency100">Opaco</string>
+  <string name="textSettingsScrob">Sincronização Scrob</string>
+  <string name="textSettingsScrobTitle">Credenciais do Scrob</string>
+  <string name="textSettingsScrobDescription">Sincronize com sua instância auto-hospedada do Scrob</string>
+  <string name="textSettingsScrobUrlHint">URL do Scrob</string>
+  <string name="textSettingsScrobApiKeyHint">Chave de API do Scrob</string>
+  <string name="textSettingsScrobDialogMessage">Insira o endereço da sua instância do Scrob e as credenciais correspondentes.</string>
+  <string name="textSettingsScrobPasswordSetHint">Chave de API</string>
+  <string name="textSettingsScrobNotConfigured">Não configurado</string>
+  <string name="textSettingsScrobSyncNowTitle">Sincronizar agora</string>
+  <string name="textSettingsScrobSyncNowSummary">Importar histórico de reprodução e listas do Scrob.</string>
+  <string name="textScrobSyncStarted">Sincronização iniciada. Você pode sair desta tela com segurança.</string>
+  <string name="textSettingsScrobWatchlistTitle">Lista de Favoritos</string>
+  <string name="textSettingsScrobWatchlistSummary">Usar uma lista do Scrob como seus Favoritos</string>
+  <string name="textSettingsScrobWatchlistNotSelected">Não selecionada</string>
+  <string name="textSettingsScrobWatchlistDialogTitle">Selecionar lista de Favoritos</string>
+  <string name="textSettingsScrobWatchlistNone">Nenhuma</string>
 </resources>

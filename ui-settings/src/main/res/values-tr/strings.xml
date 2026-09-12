@@ -3,6 +3,7 @@
   <string name="textImagesCacheCleared">Görüntü önbelleği temizlendi.</string>
   <string name="textSettings">Ayarlar</string>
   <string name="textSettingsGeneral">Genel ve Deneyim</string>
+  <string name="errorScrobSyncFailed">Scrob senkronizasyonu başarısız oldu. Lütfen tekrar deneyin.</string>
   <string name="textSettingsRecentShowsTitle">Son Eklenenler Miktarı</string>
   <string name="textSettingsRecentShowsSummary">\'Koleksiyon\'da görüntülenecek en son ögeler sayısı.</string>
   <string name="textSettingsUpcomingSectionTitle">Yaklaşan Bölümü</string>
@@ -131,4 +132,39 @@
   <string name="textDateSelectionAsk">Her zaman sor</string>
   <string name="textDateSelectionNow">Her zaman \"Şimdi\"</string>
   <string name="textTransparency100">Mat</string>
+  <string name="textLanguageEnglish" translatable="false">English</string>
+  <string name="textLanguagePolish" translatable="false">Polski</string>
+  <string name="textLanguageRomanian" translatable="false">Română</string>
+  <string name="textLanguageArabic" translatable="false">العربية</string>
+  <string name="textLanguageChinese" translatable="false">中文简体</string>
+  <string name="textLanguageSpanish" translatable="false">Español</string>
+  <string name="textLanguageItalian" translatable="false">Italiano</string>
+  <string name="textLanguageFrench" translatable="false">Français</string>
+  <string name="textLanguageDanish" translatable="false">Dansk</string>
+  <string name="textLanguagePortugalBrasil" translatable="false">Português brasileiro</string>
+  <string name="textLanguageTurkish" translatable="false">Türkçe</string>
+  <string name="textLanguageUkrainian" translatable="false">Українська</string>
+  <string name="textLanguageGerman" translatable="false">Deutsch</string>
+  <string name="textLanguageRussian" translatable="false">Pусский</string>
+  <string name="textLanguageFinnish" translatable="false">Suomi</string>
+  <string name="textTransparency0" translatable="false">100%</string>
+  <string name="textTransparency25" translatable="false">25%</string>
+  <string name="textTransparency50" translatable="false">50%</string>
+  <string name="textTransparency75" translatable="false">75%</string>
+  <string name="textSettingsScrob">Scrob Senkronizasyonu</string>
+  <string name="textSettingsScrobTitle">Scrob kimlik bilgileri</string>
+  <string name="textSettingsScrobDescription">Kendi barındırdığınız Scrob örneğinizle senkronize edin</string>
+  <string name="textSettingsScrobUrlHint">Scrob URL\'si</string>
+  <string name="textSettingsScrobApiKeyHint">Scrob API anahtarı</string>
+  <string name="textSettingsScrobDialogMessage">Scrob örneğinizin adresini ve kimlik bilgilerini girin.</string>
+  <string name="textSettingsScrobPasswordSetHint">API anahtarı</string>
+  <string name="textSettingsScrobNotConfigured">Yapılandırılmadı</string>
+  <string name="textSettingsScrobSyncNowTitle">Şimdi senkronize et</string>
+  <string name="textSettingsScrobSyncNowSummary">İzleme geçmişini ve listeleri Scrob\'dan içe aktarın.</string>
+  <string name="textScrobSyncStarted">Senkronizasyon başladı. Bu ekrandan güvenle ayrılabilirsiniz.</string>
+  <string name="textSettingsScrobWatchlistTitle">İzleme listesi</string>
+  <string name="textSettingsScrobWatchlistSummary">Bir Scrob listesini izleme listeniz olarak kullanın</string>
+  <string name="textSettingsScrobWatchlistNotSelected">Seçilmedi</string>
+  <string name="textSettingsScrobWatchlistDialogTitle">İzleme listesini seçin</string>
+  <string name="textSettingsScrobWatchlistNone">Hiçbiri</string>
 </resources>

@@ -3,6 +3,7 @@
   <string name="textImagesCacheCleared">Кеш зображень очищено.</string>
   <string name="textSettings">Налаштування</string>
   <string name="textSettingsGeneral"><![CDATA[Загальні & UX]]></string>
+  <string name="errorScrobSyncFailed">Помилка синхронізації Scrob. Будь ласка, спробуйте ще раз.</string>
   <string name="textSettingsRecentShowsTitle">Кількість нещодавно доданих</string>
   <string name="textSettingsRecentShowsSummary">Кількість нещодавно доданих елементів для показу в розділі \'Колекція\'.</string>
   <string name="textSettingsUpcomingSectionTitle">Розділ Незабаром</string>
@@ -131,4 +132,39 @@
   <string name="textDateSelectionAsk">Завжди питати</string>
   <string name="textDateSelectionNow">Завжди \"Щойно\"</string>
   <string name="textTransparency100">Непрозорий</string>
+  <string name="textLanguageEnglish" translatable="false">English</string>
+  <string name="textLanguagePolish" translatable="false">Polski</string>
+  <string name="textLanguageRomanian" translatable="false">Română</string>
+  <string name="textLanguageArabic" translatable="false">العربية</string>
+  <string name="textLanguageChinese" translatable="false">中文简体</string>
+  <string name="textLanguageSpanish" translatable="false">Español</string>
+  <string name="textLanguageItalian" translatable="false">Italiano</string>
+  <string name="textLanguageFrench" translatable="false">Français</string>
+  <string name="textLanguageDanish" translatable="false">Dansk</string>
+  <string name="textLanguagePortugalBrasil" translatable="false">Português brasileiro</string>
+  <string name="textLanguageTurkish" translatable="false">Türkçe</string>
+  <string name="textLanguageUkrainian" translatable="false">Українська</string>
+  <string name="textLanguageGerman" translatable="false">Deutsch</string>
+  <string name="textLanguageRussian" translatable="false">Pусский</string>
+  <string name="textLanguageFinnish" translatable="false">Suomi</string>
+  <string name="textTransparency0" translatable="false">100%</string>
+  <string name="textTransparency25" translatable="false">25%</string>
+  <string name="textTransparency50" translatable="false">50%</string>
+  <string name="textTransparency75" translatable="false">75%</string>
+  <string name="textSettingsScrob">Синхронізація Scrob</string>
+  <string name="textSettingsScrobTitle">Облікові дані Scrob</string>
+  <string name="textSettingsScrobDescription">Синхронізація з вашим власним сервером Scrob</string>
+  <string name="textSettingsScrobUrlHint">URL-адреса Scrob</string>
+  <string name="textSettingsScrobApiKeyHint">API-ключ Scrob</string>
+  <string name="textSettingsScrobDialogMessage">Введіть адресу вашого сервера Scrob та облікові дані для нього. </string>
+  <string name="textSettingsScrobPasswordSetHint">API-ключ</string>
+  <string name="textSettingsScrobNotConfigured">Не налаштовано</string>
+  <string name="textSettingsScrobSyncNowTitle">Синхронізувати зараз</string>
+  <string name="textSettingsScrobSyncNowSummary">Імпорт історії переглядів та списків із Scrob.</string>
+  <string name="textScrobSyncStarted">Синхронізацію розпочато. Ви можете безпечно залишити цей екран.</string>
+  <string name="textSettingsScrobWatchlistTitle">Список «На потім»</string>
+  <string name="textSettingsScrobWatchlistSummary">Використовувати список Scrob як список «На потім»</string>
+  <string name="textSettingsScrobWatchlistNotSelected">Не вибрано</string>
+  <string name="textSettingsScrobWatchlistDialogTitle">Вибрати список «На потім»</string>
+  <string name="textSettingsScrobWatchlistNone">Немає</string>
 </resources>

@@ -3,6 +3,7 @@
   <string name="textImagesCacheCleared">Billede cachen er blevet ryddet.</string>
   <string name="textSettings">Indstillinger</string>
   <string name="textSettingsGeneral"><![CDATA[General & UX]]></string>
+  <string name="errorScrobSyncFailed">Scrob-synkronisering mislykkedes. Prøv venligst igen.</string>
   <string name="textSettingsRecentShowsTitle">Senest Tilføjet Antal</string>
   <string name="textSettingsRecentShowsSummary">Antallet af senest tilføjede elementer der vises i \'Samling\'.</string>
   <string name="textSettingsUpcomingSectionTitle">Kommende Sektion</string>
@@ -131,4 +132,39 @@
   <string name="textDateSelectionAsk">Spørg altid</string>
   <string name="textDateSelectionNow">Altid \"Nu\"</string>
   <string name="textTransparency100">Uigennemsigtig</string>
+  <string name="textLanguageEnglish" translatable="false">English</string>
+  <string name="textLanguagePolish" translatable="false">Polski</string>
+  <string name="textLanguageRomanian" translatable="false">Română</string>
+  <string name="textLanguageArabic" translatable="false">العربية</string>
+  <string name="textLanguageChinese" translatable="false">中文简体</string>
+  <string name="textLanguageSpanish" translatable="false">Español</string>
+  <string name="textLanguageItalian" translatable="false">Italiano</string>
+  <string name="textLanguageFrench" translatable="false">Français</string>
+  <string name="textLanguageDanish" translatable="false">Dansk</string>
+  <string name="textLanguagePortugalBrasil" translatable="false">Português brasileiro</string>
+  <string name="textLanguageTurkish" translatable="false">Türkçe</string>
+  <string name="textLanguageUkrainian" translatable="false">Українська</string>
+  <string name="textLanguageGerman" translatable="false">Deutsch</string>
+  <string name="textLanguageRussian" translatable="false">Pусский</string>
+  <string name="textLanguageFinnish" translatable="false">Suomi</string>
+  <string name="textTransparency0" translatable="false">100%</string>
+  <string name="textTransparency25" translatable="false">25%</string>
+  <string name="textTransparency50" translatable="false">50%</string>
+  <string name="textTransparency75" translatable="false">75%</string>
+  <string name="textSettingsScrob">Scrob-synkronisering</string>
+  <string name="textSettingsScrobTitle">Scrob-legitimationsoplysninger</string>
+  <string name="textSettingsScrobDescription">Synkroniser med din egen Scrob-instans</string>
+  <string name="textSettingsScrobUrlHint">Scrob-URL</string>
+  <string name="textSettingsScrobApiKeyHint">Scrob-API-nøgle</string>
+  <string name="textSettingsScrobDialogMessage">Indtast adressen på din Scrob-instans og legitimationsoplysningerne til den.</string>
+  <string name="textSettingsScrobPasswordSetHint">API-nøgle</string>
+  <string name="textSettingsScrobNotConfigured">Ikke konfigureret</string>
+  <string name="textSettingsScrobSyncNowTitle">Synkroniser nu</string>
+  <string name="textSettingsScrobSyncNowSummary">Importer set historik og lister fra Scrob.</string>
+  <string name="textScrobSyncStarted">Synkronisering startet. Du kan trygt forlade denne skærm.</string>
+  <string name="textSettingsScrobWatchlistTitle">Watchlist-liste</string>
+  <string name="textSettingsScrobWatchlistSummary">Brug en Scrob-liste som din watchlist</string>
+  <string name="textSettingsScrobWatchlistNotSelected">Ikke valgt</string>
+  <string name="textSettingsScrobWatchlistDialogTitle">Vælg watchlist</string>
+  <string name="textSettingsScrobWatchlistNone">Ingen</string>
 </resources>
