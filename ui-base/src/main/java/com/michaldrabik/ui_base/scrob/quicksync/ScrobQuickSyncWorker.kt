@@ -10,12 +10,17 @@ import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
+import com.michaldrabik.common.Mode
 import com.michaldrabik.common.extensions.dateIsoStringFromMillis
 import com.michaldrabik.common.extensions.nowUtcMillis
 import com.michaldrabik.data_local.LocalDataSource
 import com.michaldrabik.data_local.database.model.ScrobPendingOp
 import com.michaldrabik.data_remote.scrob.ScrobAuthException
 import com.michaldrabik.data_remote.scrob.ScrobRemoteDataSource
+import com.michaldrabik.data_remote.scrob.model.ScrobListCreateRequest
+import com.michaldrabik.data_remote.scrob.model.ScrobListItem
+import com.michaldrabik.data_remote.scrob.model.ScrobListItemAddRequest
+import com.michaldrabik.ui_base.scrob.imports.ScrobImportListsRunner
 import com.michaldrabik.data_remote.scrob.model.ScrobSeasonWatchRequest
 import com.michaldrabik.data_remote.scrob.model.ScrobShowWatchRequest
 import com.michaldrabik.data_remote.scrob.model.ScrobWatchRequest
@@ -28,7 +33,7 @@ import java.util.concurrent.TimeUnit.SECONDS
 
 /**
  * Drains the durable `scrob_pending_ops` outbox, pushing local watched-state
- * changes to the Scrob server.
+ * and list changes to the Scrob server.
  *
  * Rows are only deleted after a successful push, so crashes, offline periods
  * and transient server errors never lose data: the next drain resumes where
@@ -149,7 +154,7 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
       } catch (error: Throwable) {
         rethrowCancellation(error)
         Timber.w("Scrob sync operation failed. '$operation' $error")
-        retryable = error !is ScrobAuthException
+        retryable = error !is ScrobAuthException && error !is IllegalArgumentException
       }
     }
 
@@ -168,6 +173,8 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
       throw IllegalArgumentException("Unknown Scrob op '$slug'", error)
     }
 
+  private val listItemsCache = mutableMapOf<Long, MutableList<ScrobListItem>>()
+
   private suspend fun applyOp(op: ScrobPendingOp) {
     val watchedAt = dateIsoStringFromMillis(op.watchedAtMillis)
     when (parseOp(op.op)) {
@@ -183,6 +190,11 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
         )
       Operation.SEASON -> applySeason(op.showTmdbId, op.seasonNumber, op.watched, watchedAt)
       Operation.SHOW -> applyShow(op.showTmdbId, op.watched, watchedAt)
+      Operation.LIST_ADD -> applyListAdd(op)
+      Operation.LIST_REMOVE -> applyListRemove(op)
+      Operation.LIST_CREATE -> applyListCreate(op)
+      Operation.LIST_RENAME -> applyListRename(op)
+      Operation.LIST_DELETE -> applyListDelete(op)
     }
   }
 
@@ -196,6 +208,9 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
       Operation.EPISODE -> applyEpisode(parts[2].toLong(), parts[3].toInt(), parts[4].toInt(), parts[5].toLong(), parts[1] == "1", watchedAt)
       Operation.SEASON -> applySeason(parts[2].toLong(), parts[3].toInt(), parts[1] == "1", watchedAt)
       Operation.SHOW -> applyShow(parts[2].toLong(), parts[1] == "1", watchedAt)
+      Operation.LIST_ADD, Operation.LIST_REMOVE,
+      Operation.LIST_CREATE, Operation.LIST_RENAME, Operation.LIST_DELETE,
+      -> throw IllegalArgumentException("List ops are not supported in legacy payloads: '$operation'")
     }
   }
 
@@ -266,11 +281,161 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
     }
   }
 
+  /**
+   * Remote id for a list op. Item ops carry the LOCAL list id (stable across a
+   * pending LIST_CREATE); LIST_DELETE carries the REMOTE id (row is gone).
+   */
+  private suspend fun resolveRemoteListId(op: ScrobPendingOp): Long {
+    localSource.customLists.getById(op.listId)?.let { row ->
+      row.idScrob?.let { return it }
+      if (row.idSlug.startsWith(ScrobImportListsRunner.SCROB_LIST_SLUG_PREFIX)) return row.id
+      return -1
+    }
+    // No local row (e.g. watchlist ops enqueued by remote id, or deleted lists):
+    // fall back to treating the stored id as remote.
+    return op.listId
+  }
+
+  private suspend fun applyListAdd(op: ScrobPendingOp) {
+    require(op.tmdbId > 0) { "Invalid list op tmdbId=${op.tmdbId}" }
+    requireListMediaType(op.mediaType)
+    val remoteListId = resolveRemoteListId(op)
+    if (remoteListId <= 0) {
+      // Counterpart not created remotely yet (LIST_CREATE still queued) - retry later.
+      throw IllegalStateException("No remote counterpart for list id=${op.listId} yet.")
+    }
+
+    val existing = remoteListItems(remoteListId).firstOrNull { matchesMedia(it, op.tmdbId, op.mediaType) }
+    if (existing != null) {
+      // Already on the server (e.g. retried after a lost response) - just backfill the id.
+      backfillLocalItemId(op, existing.id)
+      return
+    }
+
+    val created = scrobRemoteSource.addListItem(
+      remoteListId,
+      ScrobListItemAddRequest(tmdbId = op.tmdbId, mediaType = op.mediaType),
+    )
+    listItemsCache[remoteListId]?.add(created)
+    backfillLocalItemId(op, created.id)
+  }
+
+  private suspend fun applyListRemove(op: ScrobPendingOp) {
+    require(op.tmdbId > 0) { "Invalid list op tmdbId=${op.tmdbId}" }
+    requireListMediaType(op.mediaType)
+    val remoteListId = resolveRemoteListId(op)
+    if (remoteListId <= 0) {
+      throw IllegalStateException("No remote counterpart for list id=${op.listId} yet.")
+    }
+
+    val itemId = localItemId(op).takeIf { it > 0 }
+      ?: remoteListItems(remoteListId).firstOrNull { matchesMedia(it, op.tmdbId, op.mediaType) }?.id
+        ?.also { backfillLocalItemId(op, it) }
+      ?: return // Already gone remotely - counts as applied.
+
+    scrobRemoteSource.removeListItem(remoteListId, itemId)
+    listItemsCache[remoteListId]?.removeAll { it.id == itemId }
+  }
+
+  private suspend fun applyListCreate(op: ScrobPendingOp) {
+    val row = localSource.customLists.getById(op.listId)
+    if (row == null) {
+      Timber.w("Dropping LIST_CREATE for missing local list id=${op.listId}.")
+      return
+    }
+    if (row.idScrob != null) return // Already pushed.
+
+    val created = scrobRemoteSource.createList(
+      ScrobListCreateRequest(
+        name = row.name,
+        description = row.description,
+        privacyLevel = row.privacy,
+      ),
+    )
+    localSource.customLists.update(listOf(row.copy(idScrob = created.id, updatedAt = nowUtcMillis())))
+  }
+
+  private suspend fun applyListRename(op: ScrobPendingOp) {
+    val row = localSource.customLists.getById(op.listId) ?: return
+    val remoteListId = resolveRemoteListId(op)
+    if (remoteListId <= 0) return // Purely local list.
+    scrobRemoteSource.renameList(
+      remoteListId,
+      ScrobListCreateRequest(
+        name = row.name,
+        description = row.description,
+        privacyLevel = row.privacy,
+      ),
+    )
+  }
+
+  private suspend fun applyListDelete(op: ScrobPendingOp) {
+    // LIST_DELETE carries the remote id: the local row is already gone.
+    if (op.listId <= 0) throw IllegalArgumentException("Invalid list delete op listId=${op.listId}")
+    scrobRemoteSource.deleteList(op.listId)
+  }
+
+  private suspend fun remoteListItems(listId: Long): MutableList<ScrobListItem> =
+    listItemsCache.getOrPut(listId) {
+      scrobRemoteSource.fetchListItems(listId).toMutableList()
+    }
+
+  private fun matchesMedia(
+    item: ScrobListItem,
+    tmdbId: Long,
+    mediaType: String,
+  ): Boolean =
+    when (mediaType) {
+      ScrobQuickSyncManager.MEDIA_TYPE_MOVIE -> item.media.isMovie() && item.media.tmdbId == tmdbId
+      ScrobQuickSyncManager.MEDIA_TYPE_SERIES -> item.media.isShowLevel() && (item.media.tmdbId == tmdbId || item.media.showTmdbId == tmdbId)
+      else -> false
+    }
+
+  private fun requireListMediaType(mediaType: String) {
+    require(
+      mediaType == ScrobQuickSyncManager.MEDIA_TYPE_MOVIE || mediaType == ScrobQuickSyncManager.MEDIA_TYPE_SERIES,
+    ) { "Unknown list media type '$mediaType'" }
+  }
+
+  private suspend fun localItemId(op: ScrobPendingOp): Long {
+    val traktId =
+      when (op.mediaType) {
+        ScrobQuickSyncManager.MEDIA_TYPE_MOVIE -> localSource.movies.getByTmdbId(op.tmdbId)?.idTrakt
+        else -> localSource.shows.getByTmdbId(op.tmdbId)?.idTrakt
+      } ?: return -1
+    // Scrob lists are stored locally with the remote id as primary key.
+    return localSource.customListsItems
+      .getItemsById(op.listId)
+      .firstOrNull { it.idTrakt == traktId }
+      ?.idScrobItem ?: -1
+  }
+
+  private suspend fun backfillLocalItemId(
+    op: ScrobPendingOp,
+    itemId: Long,
+  ) {
+    val traktId =
+      when (op.mediaType) {
+        ScrobQuickSyncManager.MEDIA_TYPE_MOVIE -> localSource.movies.getByTmdbId(op.tmdbId)?.idTrakt
+        else -> localSource.shows.getByTmdbId(op.tmdbId)?.idTrakt
+      } ?: return
+    val row = localSource.customListsItems
+      .getItemsById(op.listId)
+      .firstOrNull { it.idTrakt == traktId }
+      ?.takeIf { it.idScrobItem != itemId } ?: return
+    localSource.customListsItems.update(listOf(row.copy(idScrobItem = itemId)))
+  }
+
   private enum class Operation {
     MOVIE,
     EPISODE,
     SEASON,
     SHOW,
+    LIST_ADD,
+    LIST_REMOVE,
+    LIST_CREATE,
+    LIST_RENAME,
+    LIST_DELETE,
   }
 }
 

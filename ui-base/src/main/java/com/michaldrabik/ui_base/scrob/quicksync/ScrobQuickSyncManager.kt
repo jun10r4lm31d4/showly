@@ -6,7 +6,9 @@ import com.michaldrabik.common.extensions.toMillis
 import com.michaldrabik.common.extensions.toUtcZone
 import com.michaldrabik.data_local.LocalDataSource
 import com.michaldrabik.data_local.database.model.ScrobPendingOp
+import com.michaldrabik.data_remote.scrob.ScrobProvider
 import com.michaldrabik.data_remote.scrob.ScrobRemoteDataSource
+import com.michaldrabik.ui_base.scrob.imports.ScrobImportListsRunner
 import timber.log.Timber
 import java.time.ZonedDateTime
 import javax.inject.Inject
@@ -23,6 +25,7 @@ import javax.inject.Singleton
 @Singleton
 class ScrobQuickSyncManager @Inject constructor(
   private val scrobRemoteSource: ScrobRemoteDataSource,
+  private val scrobProvider: ScrobProvider,
   private val localSource: LocalDataSource,
   private val workManager: WorkManager,
 ) {
@@ -167,6 +170,92 @@ class ScrobQuickSyncManager @Inject constructor(
     )
   }
 
+  suspend fun scheduleWatchlistMovie(traktId: Long) {
+    enqueueWatchlistOp(traktId, mediaType = MEDIA_TYPE_MOVIE, watched = true)
+  }
+
+  suspend fun clearWatchlistMovie(traktId: Long) {
+    enqueueWatchlistOp(traktId, mediaType = MEDIA_TYPE_MOVIE, watched = false)
+  }
+
+  suspend fun scheduleWatchlistShow(traktId: Long) {
+    enqueueWatchlistOp(traktId, mediaType = MEDIA_TYPE_SERIES, watched = true)
+  }
+
+  suspend fun clearWatchlistShow(traktId: Long) {
+    enqueueWatchlistOp(traktId, mediaType = MEDIA_TYPE_SERIES, watched = false)
+  }
+
+  suspend fun scheduleListCreate(localListId: Long) {
+    if (!ensureLogged()) return
+    enqueue(
+      listOf(
+        ScrobPendingOp(
+          op = Op.LIST_CREATE.slug,
+          watched = true,
+          tmdbId = -1,
+          watchedAtMillis = nowUtcMillis(),
+          createdAt = nowUtcMillis(),
+          listId = localListId,
+        ),
+      ),
+    )
+  }
+
+  suspend fun scheduleListRename(localListId: Long) {
+    if (!ensureLogged()) return
+    if (remoteListId(localListId) == null) {
+      Timber.d("Skipped Scrob list rename. No remote counterpart for list id=$localListId.")
+      return
+    }
+    enqueue(
+      listOf(
+        ScrobPendingOp(
+          op = Op.LIST_RENAME.slug,
+          watched = true,
+          tmdbId = -1,
+          watchedAtMillis = nowUtcMillis(),
+          createdAt = nowUtcMillis(),
+          listId = localListId,
+        ),
+      ),
+    )
+  }
+
+  suspend fun scheduleListDelete(remoteListId: Long) {
+    if (!ensureLogged()) return
+    if (remoteListId <= 0) return
+    enqueue(
+      listOf(
+        ScrobPendingOp(
+          op = Op.LIST_DELETE.slug,
+          watched = false,
+          tmdbId = -1,
+          watchedAtMillis = nowUtcMillis(),
+          createdAt = nowUtcMillis(),
+          // No local row exists by drain time: this carries the REMOTE id.
+          listId = remoteListId,
+        ),
+      ),
+    )
+  }
+
+  suspend fun scheduleListItemAdd(
+    localListId: Long,
+    traktId: Long,
+    type: String,
+  ) {
+    enqueueListItemOp(localListId, traktId, type, watched = true)
+  }
+
+  suspend fun scheduleListItemRemove(
+    localListId: Long,
+    traktId: Long,
+    type: String,
+  ) {
+    enqueueListItemOp(localListId, traktId, type, watched = false)
+  }
+
   fun isLogged(): Boolean = scrobRemoteSource.isLogged()
 
   private fun ensureLogged(): Boolean =
@@ -186,6 +275,132 @@ class ScrobQuickSyncManager @Inject constructor(
     ScrobQuickSyncWorker.scheduleDrain(workManager)
   }
 
+  private suspend fun enqueueWatchlistOp(
+    traktId: Long,
+    mediaType: String,
+    watched: Boolean,
+  ) {
+    if (!ensureLogged()) return
+    val watchlistListId = scrobProvider.getWatchlistListId()
+    if (watchlistListId <= 0) {
+      Timber.d("No Scrob watchlist list selected. Skipping list push...")
+      return
+    }
+    // Watchlist ops carry the REMOTE list id; the row is looked up at drain time
+    // and falls back to treating it as remote when missing locally.
+    val tmdbId = resolveTmdbId(traktId, mediaType) ?: -1
+    if (tmdbId <= 0) {
+      Timber.d("Skipped Scrob list push. Missing tmdb id for trakt id=$traktId.")
+      return
+    }
+    val op = if (watched) Op.LIST_ADD else Op.LIST_REMOVE
+    enqueue(
+      listOf(
+        ScrobPendingOp(
+          op = op.slug,
+          watched = watched,
+          tmdbId = tmdbId,
+          watchedAtMillis = nowUtcMillis(),
+          createdAt = nowUtcMillis(),
+          listId = watchlistListId,
+          mediaType = mediaType,
+        ),
+      ),
+    )
+  }
+
+  /**
+   * Guarantees the list exists remotely, lazily queueing its creation when
+   * needed. This heals pre-existing user lists that were created before the
+   * Scrob push existed: touching such a list (add/remove item) first queues
+   * its LIST_CREATE, and FIFO order drains creation before the item ops.
+   * Returns false when there is nothing to push to.
+   */
+  private suspend fun ensureListPushed(localListId: Long): Boolean {
+    if (!ensureLogged()) return false
+    if (localSource.customLists.getById(localListId) == null) return false
+    if (remoteListId(localListId) != null) return true
+    val createQueued = localSource.scrobPendingOps
+      .getByOps(listOf(Op.LIST_CREATE.slug))
+      .any { it.listId == localListId }
+    if (!createQueued) {
+      enqueue(
+        listOf(
+          ScrobPendingOp(
+            op = Op.LIST_CREATE.slug,
+            watched = true,
+            tmdbId = -1,
+            watchedAtMillis = nowUtcMillis(),
+            createdAt = nowUtcMillis(),
+            listId = localListId,
+          ),
+        ),
+      )
+    }
+    return true
+  }
+
+  private suspend fun enqueueListItemOp(
+    localListId: Long,
+    traktId: Long,
+    type: String,
+    watched: Boolean,
+  ) {
+    if (!ensureListPushed(localListId)) return
+    val mediaType =
+      when (type) {
+        "movie" -> MEDIA_TYPE_MOVIE
+        "show" -> MEDIA_TYPE_SERIES
+        else -> {
+          Timber.d("Skipped Scrob list push. Unknown type '$type'.")
+          return
+        }
+      }
+    val tmdbId = resolveTmdbId(traktId, mediaType) ?: -1
+    if (tmdbId <= 0) {
+      Timber.d("Skipped Scrob list push. Missing tmdb id for trakt id=$traktId.")
+      return
+    }
+    val op = if (watched) Op.LIST_ADD else Op.LIST_REMOVE
+    enqueue(
+      listOf(
+        // LOCAL list id: resolved to the remote id at drain time, so items added
+        // before a pending LIST_CREATE drains still land on the right list.
+        ScrobPendingOp(
+          op = op.slug,
+          watched = watched,
+          tmdbId = tmdbId,
+          watchedAtMillis = nowUtcMillis(),
+          createdAt = nowUtcMillis(),
+          listId = localListId,
+          mediaType = mediaType,
+        ),
+      ),
+    )
+  }
+
+  private suspend fun resolveTmdbId(
+    traktId: Long,
+    mediaType: String,
+  ): Long? =
+    when (mediaType) {
+      MEDIA_TYPE_MOVIE -> localSource.movies.getById(traktId)?.idTmdb
+      MEDIA_TYPE_SERIES -> localSource.shows.getById(traktId)?.idTmdb
+      else -> null
+    }
+
+  /**
+   * Remote id of a local list, or null when it has no server counterpart.
+   * Imported lists use the remote id as primary key; pushed lists carry it
+   * in [ScrobPendingOp]-adjacent `idScrob`.
+   */
+  suspend fun remoteListId(localListId: Long): Long? {
+    val row = localSource.customLists.getById(localListId) ?: return null
+    row.idScrob?.let { return it }
+    if (row.idSlug.startsWith(ScrobImportListsRunner.SCROB_LIST_SLUG_PREFIX)) return row.id
+    return null
+  }
+
   internal enum class Op(
     val slug: String,
   ) {
@@ -193,6 +408,11 @@ class ScrobQuickSyncManager @Inject constructor(
     EPISODE("EPISODE"),
     SEASON("SEASON"),
     SHOW("SHOW"),
+    LIST_ADD("LIST_ADD"),
+    LIST_REMOVE("LIST_REMOVE"),
+    LIST_CREATE("LIST_CREATE"),
+    LIST_RENAME("LIST_RENAME"),
+    LIST_DELETE("LIST_DELETE"),
   }
 
   data class EpisodeRef(
@@ -200,4 +420,9 @@ class ScrobQuickSyncManager @Inject constructor(
     val seasonNumber: Int,
     val episodeNumber: Int,
   )
+
+  companion object {
+    internal const val MEDIA_TYPE_MOVIE = "movie"
+    internal const val MEDIA_TYPE_SERIES = "series"
+  }
 }

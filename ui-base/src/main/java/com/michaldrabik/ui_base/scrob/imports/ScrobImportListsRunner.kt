@@ -18,6 +18,7 @@ import com.michaldrabik.repository.mappers.Mappers
 import com.michaldrabik.repository.settings.SettingsRepository
 import com.michaldrabik.ui_base.Logger
 import com.michaldrabik.ui_base.scrob.ScrobSyncRunner
+import com.michaldrabik.ui_base.scrob.quicksync.ScrobQuickSyncManager
 import com.michaldrabik.ui_base.utilities.extensions.rethrowCancellation
 import com.michaldrabik.ui_model.CustomList
 import kotlinx.coroutines.CancellationException
@@ -84,7 +85,8 @@ class ScrobImportListsRunner @Inject constructor(
     remoteLists.forEach { remoteList ->
       Timber.d("Processing '${remoteList.name}'...")
       try {
-        val listId = upsertList(remoteList, localLists.find { it.id == remoteList.id })
+        val local = localLists.find { it.idScrob == remoteList.id } ?: localLists.find { it.id == remoteList.id }
+        val listId = upsertList(remoteList, local)
         importListItems(listId, remoteList.id, mirrorToWatchlist = remoteList.id == watchlistListId)
       } catch (error: Throwable) {
         if (error !is CancellationException) {
@@ -101,17 +103,28 @@ class ScrobImportListsRunner @Inject constructor(
 
   /**
    * Removes local Scrob-origin lists that no longer exist on the server.
-   * Only lists created by this import (idSlug "scrob-<remoteId>") are touched;
-   * user-created lists are left alone.
+   * Only lists with a remote counterpart (pushed `idScrob` or imported
+   * "scrob-<remoteId>" slug) are touched; purely local lists are left alone.
+   * Lists with a LIST_CREATE still queued are skipped: the server legitimately
+   * misses them until the push drains.
    */
   private suspend fun removeMissingLists(remoteIds: Set<Long>) {
+    val pendingCreates = localSource.scrobPendingOps
+      .getByOps(listOf(ScrobQuickSyncManager.Op.LIST_CREATE.slug))
+      .map { it.listId }
+      .toSet()
     val toRemove = localSource.customLists
       .getAll()
-      .filter { it.idSlug.startsWith(SCROB_LIST_SLUG_PREFIX) }
-      .filter { list ->
-        val remoteId = list.idSlug.removePrefix(SCROB_LIST_SLUG_PREFIX).toLongOrNull()
-        remoteId == null || remoteId !in remoteIds
+      .filter { it.id !in pendingCreates }
+      .mapNotNull { list ->
+        val remoteId = list.idScrob
+          ?: list.idSlug.removePrefix(SCROB_LIST_SLUG_PREFIX).toLongOrNull()
+            ?.takeIf { list.idSlug.startsWith(SCROB_LIST_SLUG_PREFIX) }
+          ?: return@mapNotNull null
+        list to remoteId
       }
+      .filter { (_, remoteId) -> remoteId !in remoteIds }
+      .map { (list, _) -> list }
     if (toRemove.isEmpty()) {
       Timber.d("Scrob lists reconciliation: nothing to remove.")
       return
@@ -151,6 +164,7 @@ class ScrobImportListsRunner @Inject constructor(
       privacy = if (remoteList.privacyLevel == "public") "public" else "private",
       itemCount = remoteList.itemCount.toLong(),
       updatedAt = nowUtc(),
+      idScrob = remoteList.id,
     )
     localSource.customLists.update(listOf(mappers.customList.toDatabase(updated)))
     return local.id
@@ -178,7 +192,11 @@ class ScrobImportListsRunner @Inject constructor(
 
             val movie = mappers.movie.fromNetwork(remoteMovie)
             remoteKeys += movie.traktId to Mode.MOVIES.type
-            if (localItems.any { it.idTrakt == movie.traktId && it.type == Mode.MOVIES.type }) return@forEach
+            localItems
+              .find { it.idTrakt == movie.traktId && it.type == Mode.MOVIES.type }
+              ?.takeIf { it.idScrobItem != item.id }
+              ?.let { localSource.customListsItems.update(listOf(it.copy(idScrobItem = item.id))) }
+              ?.let { return@forEach }
 
             transactions.withTransaction {
               localSource.movies.upsert(listOf(mappers.movie.toDatabase(movie)))
@@ -192,6 +210,7 @@ class ScrobImportListsRunner @Inject constructor(
                   listedAt = item.addedAtMillis() ?: nowMillis,
                   createdAt = nowMillis,
                   updatedAt = nowMillis,
+                  idScrobItem = item.id,
                 ),
               )
             }
@@ -203,7 +222,11 @@ class ScrobImportListsRunner @Inject constructor(
 
             val show = mappers.show.fromNetwork(remoteShow)
             remoteKeys += show.traktId to Mode.SHOWS.type
-            if (localItems.any { it.idTrakt == show.traktId && it.type == Mode.SHOWS.type }) return@forEach
+            localItems
+              .find { it.idTrakt == show.traktId && it.type == Mode.SHOWS.type }
+              ?.takeIf { it.idScrobItem != item.id }
+              ?.let { localSource.customListsItems.update(listOf(it.copy(idScrobItem = item.id))) }
+              ?.let { return@forEach }
 
             transactions.withTransaction {
               localSource.shows.upsert(listOf(mappers.show.toDatabase(show)))
@@ -217,6 +240,7 @@ class ScrobImportListsRunner @Inject constructor(
                   listedAt = item.addedAtMillis() ?: nowMillis,
                   createdAt = nowMillis,
                   updatedAt = nowMillis,
+                  idScrobItem = item.id,
                 ),
               )
             }
@@ -276,15 +300,23 @@ class ScrobImportListsRunner @Inject constructor(
     val newMovies = movieKeys.filter { it !in knownMovieIds }
     val newShows = showKeys.filter { it !in knownShowIds }
 
+    // Never remove entries with a LIST_ADD still queued: their push hasn't
+    // reached the server yet, so the remote snapshot legitimately misses them.
+    val pendingAdds =
+      if (allowRemoval) {
+        pendingListAddTraktIds()
+      } else {
+        emptySet()
+      }
     val staleMovies =
       if (allowRemoval && moviesEnabled) {
-        localSource.watchlistMovies.getAllTraktIds().filter { it !in movieKeys }
+        localSource.watchlistMovies.getAllTraktIds().filter { it !in movieKeys && it !in pendingAdds }
       } else {
         emptyList()
       }
     val staleShows =
       if (allowRemoval) {
-        localSource.watchlistShows.getAllTraktIds().filter { it !in showKeys }
+        localSource.watchlistShows.getAllTraktIds().filter { it !in showKeys && it !in pendingAdds }
       } else {
         emptyList()
       }
@@ -301,6 +333,18 @@ class ScrobImportListsRunner @Inject constructor(
       "Scrob watchlist mirror: added ${newMovies.size} movies, ${newShows.size} shows, " +
         "removed ${staleMovies.size} movies, ${staleShows.size} shows.",
     )
+  }
+
+  private suspend fun pendingListAddTraktIds(): Set<Long> {
+    val pending = localSource.scrobPendingOps.getByOps(listOf(ScrobQuickSyncManager.Op.LIST_ADD.slug))
+    if (pending.isEmpty()) return emptySet()
+    return pending.mapNotNullTo(mutableSetOf()) { op ->
+      when (op.mediaType) {
+        ScrobQuickSyncManager.MEDIA_TYPE_MOVIE -> localSource.movies.getByTmdbId(op.tmdbId)?.idTrakt
+        ScrobQuickSyncManager.MEDIA_TYPE_SERIES -> localSource.shows.getByTmdbId(op.tmdbId)?.idTrakt
+        else -> null
+      }
+    }
   }
 
   /**
