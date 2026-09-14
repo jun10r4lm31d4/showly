@@ -166,7 +166,6 @@ internal class DiscoverFragment :
       itemLongClickListener = { item -> openShowMenu(item.show) },
       missingImageListener = { ids, force -> viewModel.loadMissingImage(ids, force) },
       listChangeListener = { binding.discoverRecycler.scrollToPosition(0) },
-      twitterCancelClickListener = { viewModel.cancelTwitterAd() },
     ).apply {
       stateRestorationPolicy = StateRestorationPolicy.PREVENT_WHEN_EMPTY
     }
