@@ -78,7 +78,7 @@ class SettingsScrobViewModel
         scrobProvider.setUrl(url)
         scrobProvider.setApiKey(apikey)
 
-        ScrobSyncWorker.scheduleHistory(workManager)
+        ScrobSyncWorker.scheduleHistory(workManager, forceFull = true)
         ScrobSyncWorker.scheduleLists(workManager)
         ScrobQuickSyncWorker.scheduleDrain(workManager)
       }
@@ -87,7 +87,9 @@ class SettingsScrobViewModel
 
     fun syncNow() {
       if (!scrobProvider.isConfigured() || state.value.isSyncing) return
-      ScrobSyncWorker.scheduleHistory(workManager)
+      // Manual button always forces a full snapshot so remote un-watches are reconciled.
+      // Background/periodic runs use the cheap incremental path inside the runner (full 1x/day).
+      ScrobSyncWorker.scheduleHistory(workManager, forceFull = true)
       ScrobSyncWorker.scheduleLists(workManager)
       viewModelScope.launch {
         messageChannel.send(MessageEvent.Info(R.string.textScrobSyncStarted))

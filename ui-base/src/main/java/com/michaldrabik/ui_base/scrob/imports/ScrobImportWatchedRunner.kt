@@ -51,71 +51,71 @@ class ScrobImportWatchedRunner @Inject constructor(
 
   companion object {
     private const val PAGE_SIZE = 100
+
+    // Full snapshot (with unwatch reconciliation) runs at most 1x/day or when forced.
+    // Any other run uses the cheap incremental path below.
+    private const val FULL_SYNC_INTERVAL_MS = 24L * 60L * 60L * 1000L
+
+    // Overlap window re-fetched on incremental runs to tolerate clock skew and
+    // same-millis re-watches. Re-imports are idempotent (already-watched items are skipped).
+    private const val INCREMENTAL_OVERLAP_MS = 5L * 60L * 1000L
   }
 
-  override suspend fun run(): Int {
-    Timber.d("Initialized.")
+  override suspend fun run(): Int = run(forceFull = false)
+
+  suspend fun run(forceFull: Boolean): Int {
+    Timber.d("Initialized. forceFull=$forceFull")
     checkAuthorization()
 
     withContext(dispatchers.IO) {
       resetRetries()
-      runImport()
+      runImport(forceFull)
     }
 
     Timber.d("Finished with success.")
     return 0
   }
 
-  private suspend fun runImport() {
+  private suspend fun runImport(forceFull: Boolean) {
     try {
-      importHistory()
+      importHistory(forceFull)
     } catch (error: Throwable) {
       if (retryCount.getAndIncrement() < MAX_IMPORT_RETRY_COUNT) {
         Timber.w("Scrob history import failed. Will retry in ${RETRY_DELAY_MS}ms... $error")
         delay(RETRY_DELAY_MS)
-        runImport()
+        runImport(forceFull)
       } else {
         throw error
       }
     }
   }
 
-  private suspend fun importHistory() {
-    val movieEvents = mutableListOf<ScrobHistoryEvent>()
-    val episodeEvents = mutableListOf<ScrobHistoryEvent>()
-    var newestWatchedAtMillis = -1L
+  private suspend fun importHistory(forceFull: Boolean) {
+    val lastWatchedAt = scrobProvider.getActivityScrobHistorySyncedAt()
+    val lastFullAt = scrobProvider.getFullHistorySyncedAt()
+    val now = nowUtcMillis()
 
-    // The history endpoint is treated as a FULL SNAPSHOT of the remote watch state.
-    // Items absent from it are considered un-watched remotely and are removed locally
-    // during the reconciliation pass below.
-    Timber.d("Fetching full Scrob history...")
+    val isFull = forceFull || lastWatchedAt <= 0 || lastFullAt <= 0 ||
+      (now - lastFullAt) >= FULL_SYNC_INTERVAL_MS
+    // Incremental runs stop paginating once watched_at drops to/below this cutoff.
+    // The endpoint returns newest-first ordered by watched date, so everything after
+    // the cutoff was already imported.
+    val cutoffMillis = if (isFull) null else lastWatchedAt - INCREMENTAL_OVERLAP_MS
 
-    var page = 1
-    while (true) {
-      val events = scrobRemoteSource.fetchHistoryPage(page = page, pageSize = PAGE_SIZE)
-      if (events.isEmpty()) break
+    Timber.d(
+      "Fetching Scrob history... mode=${if (isFull) "FULL" else "INCREMENTAL"} " +
+        "lastWatchedAt=$lastWatchedAt lastFullAt=$lastFullAt forceFull=$forceFull",
+    )
 
-      for (event in events) {
-        when {
-          event.media.isMovie() -> movieEvents += event
-          event.media.isEpisode() || event.media.isShowLevel() -> episodeEvents += event
-        }
-        newestWatchedAtMillis = maxOf(newestWatchedAtMillis, event.watchedAtMillis() ?: -1L)
-      }
-      page++
-    }
+    val batch = fetchHistory(cutoffMillis)
+    val movieEvents = batch.movieEvents
+    val episodeEvents = batch.episodeEvents
+    val newestWatchedAtMillis = batch.newestWatchedAtMillis
 
-    val remoteMovieTmdbIds = movieEvents.mapNotNullTo(mutableSetOf()) { it.media.tmdbId }
-    val showLevelWatchedIds = episodeEvents.filter { it.media.isShowLevel() }.mapNotNull { it.media.showTmdbId ?: it.media.tmdbId }.toSet()
-    val remoteEpisodes = sortedMapOf<Long, MutableSet<Pair<Int, Int>>>()
-    episodeEvents.forEach { event ->
-      val showTmdbId = event.media.showTmdbId ?: event.media.tmdbId ?: return@forEach
-      val seasonNumber = event.media.seasonNumber ?: return@forEach
-      val episodeNumber = event.media.episodeNumber ?: return@forEach
-      remoteEpisodes.getOrPut(showTmdbId) { mutableSetOf() } += seasonNumber to episodeNumber
-    }
-
-    Timber.d("Found ${movieEvents.size} movie events, ${episodeEvents.size} episode events.")
+    Timber.d(
+      "Found ${movieEvents.size} movie events, ${episodeEvents.size} episode events " +
+        "(${batch.pagesFetched} pages).",
+    )
 
     coroutineScope {
       val moviesJob = async { importMovies(movieEvents) }
@@ -124,12 +124,77 @@ class ScrobImportWatchedRunner @Inject constructor(
       episodesJob.await()
     }
 
-    removeMissingMovies(remoteMovieTmdbIds)
-    removeMissingEpisodes(remoteEpisodes, showLevelWatchedIds)
+    if (isFull) {
+      // Only the full snapshot can detect remote un-watches: items absent from it are
+      // considered un-watched remotely and are removed locally during reconciliation.
+      val remoteMovieTmdbIds = movieEvents.mapNotNullTo(mutableSetOf()) { it.media.tmdbId }
+      val showLevelWatchedIds = episodeEvents
+        .filter { it.media.isShowLevel() }
+        .mapNotNull { it.media.showTmdbId ?: it.media.tmdbId }
+        .toSet()
+      val remoteEpisodes = sortedMapOf<Long, MutableSet<Pair<Int, Int>>>()
+      episodeEvents.forEach { event ->
+        val showTmdbId = event.media.showTmdbId ?: event.media.tmdbId ?: return@forEach
+        val seasonNumber = event.media.seasonNumber ?: return@forEach
+        val episodeNumber = event.media.episodeNumber ?: return@forEach
+        remoteEpisodes.getOrPut(showTmdbId) { mutableSetOf() } += seasonNumber to episodeNumber
+      }
 
-    if (newestWatchedAtMillis > 0) {
-      scrobProvider.setActivityScrobHistorySyncedAt(newestWatchedAtMillis)
+      removeMissingMovies(remoteMovieTmdbIds)
+      removeMissingEpisodes(remoteEpisodes, showLevelWatchedIds)
+
+      if (newestWatchedAtMillis > 0) {
+        scrobProvider.setActivityScrobHistorySyncedAt(newestWatchedAtMillis)
+      }
+      scrobProvider.setFullHistorySyncedAt(now)
+      Timber.d("Full history sync completed.")
+    } else {
+      // Incremental path: only newer watched events were fetched, so reconciliation
+      // is intentionally skipped (absent items were simply not fetched, not un-watched).
+      if (newestWatchedAtMillis > lastWatchedAt) {
+        scrobProvider.setActivityScrobHistorySyncedAt(newestWatchedAtMillis)
+      }
+      Timber.d("Incremental history sync completed.")
     }
+  }
+
+  private data class HistoryBatch(
+    val movieEvents: List<ScrobHistoryEvent>,
+    val episodeEvents: List<ScrobHistoryEvent>,
+    val newestWatchedAtMillis: Long,
+    val pagesFetched: Int,
+  )
+
+  private suspend fun fetchHistory(cutoffMillis: Long?): HistoryBatch {
+    val movieEvents = mutableListOf<ScrobHistoryEvent>()
+    val episodeEvents = mutableListOf<ScrobHistoryEvent>()
+    var newestWatchedAtMillis = -1L
+    var pagesFetched = 0
+
+    var page = 1
+    while (true) {
+      val events = scrobRemoteSource.fetchHistoryPage(page = page, pageSize = PAGE_SIZE)
+      if (events.isEmpty()) break
+      pagesFetched++
+
+      var reachedCutoff = false
+      for (event in events) {
+        val watchedAt = event.watchedAtMillis()
+        if (cutoffMillis != null && watchedAt != null && watchedAt <= cutoffMillis) {
+          reachedCutoff = true
+          break
+        }
+        when {
+          event.media.isMovie() -> movieEvents += event
+          event.media.isEpisode() || event.media.isShowLevel() -> episodeEvents += event
+        }
+        newestWatchedAtMillis = maxOf(newestWatchedAtMillis, watchedAt ?: -1L)
+      }
+      if (reachedCutoff) break
+      page++
+    }
+
+    return HistoryBatch(movieEvents, episodeEvents, newestWatchedAtMillis, pagesFetched)
   }
 
   private suspend fun importMovies(events: List<ScrobHistoryEvent>) {
@@ -221,10 +286,9 @@ class ScrobImportWatchedRunner @Inject constructor(
 
         val episodesDb = remoteSeasons.flatMap { remoteSeason ->
           val season = seasons.first { it.number == remoteSeason.number }
-          remoteSeason.episodes.orEmpty().mapNotNull { remoteEpisode ->
+          remoteSeason.episodes.orEmpty().map { remoteEpisode ->
             val key = remoteSeason.number to remoteEpisode.number
             val isWatched = hasShowLevelWatch || watchedByEpisode.containsKey(key)
-            if (!isWatched) return@mapNotNull null
 
             val watchedAtMillis = watchedByEpisode[key] ?: newestWatchedMillis
             val episode = mappers.episode.fromNetwork(remoteEpisode)
@@ -232,7 +296,7 @@ class ScrobImportWatchedRunner @Inject constructor(
               episode = episode,
               season = season,
               showId = IdTrakt(showTraktId),
-              isWatched = true,
+              isWatched = isWatched,
               lastExportedAt = null,
               lastWatchedAt = watchedAtMillis.let { millisToZonedDateTime(it) },
             )
