@@ -1,5 +1,7 @@
 ext.versions = [
-    minSdk     : 23,
-    compileSdk : 36,
-    targetSdk  : 36
+    minSdk      : 23,
+    compileSdk  : 36,
+    targetSdk   : 36,
+    versionCode : semver.versionValue.with { major * 1000000 + minor * 1000 + patch },
+    versionName : semver.version
 ]
