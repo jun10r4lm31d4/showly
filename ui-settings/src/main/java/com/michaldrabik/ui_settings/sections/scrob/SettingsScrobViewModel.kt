@@ -39,44 +39,49 @@ class SettingsScrobViewModel
 
     fun refresh() {
       viewModelScope.launch {
-        val watchlistListId = scrobProvider.getWatchlistListId()
-        val watchlistListName = resolveWatchlistName(watchlistListId)
-        state.value =
-          state.value.copy(
-            hasScrobApiKey = scrobProvider.hasApiKey(),
-            scrobUrl = scrobProvider.getUrl(),
-            scrobApiKey = scrobProvider.getApiKey(),
-            watchlistListId = watchlistListId,
-            watchlistListName = watchlistListName,
-          )
+        updateState()
       }
+    }
+
+    private suspend fun updateState() {
+      val watchlistListId = scrobProvider.getWatchlistListId()
+      state.value = state.value.copy(
+        hasScrobApiKey = scrobProvider.hasApiKey(),
+        scrobUrl = scrobProvider.getUrl(),
+        scrobApiKey = scrobProvider.getApiKey(),
+        watchlistListId = watchlistListId,
+        watchlistListName = resolveWatchlistName(watchlistListId),
+      )
     }
 
     fun observeSyncing() {
-      val isSyncingHistory =
-        workManager
-          .getWorkInfosForUniqueWorkFlow(ScrobSyncWorker.TAG_HISTORY)
-          .map { infos -> infos.any { it.state == WorkInfo.State.RUNNING || it.state == WorkInfo.State.ENQUEUED } }
-      val isSyncingLists =
-        workManager
-          .getWorkInfosForUniqueWorkFlow(ScrobSyncWorker.TAG_LISTS)
-          .map { infos -> infos.any { it.state == WorkInfo.State.RUNNING || it.state == WorkInfo.State.ENQUEUED } }
-
       viewModelScope.launch {
-        combine(isSyncingHistory, isSyncingLists) { history, lists -> history || lists }
-          .collect { syncing ->
-            state.value = state.value.copy(isSyncing = syncing)
-          }
+        combine(
+          isSyncingFor(ScrobSyncWorker.TAG_HISTORY),
+          isSyncingFor(ScrobSyncWorker.TAG_LISTS),
+        ) { history, lists ->
+          history || lists
+        }.collect { syncing ->
+          state.value = state.value.copy(isSyncing = syncing)
+        }
       }
     }
+
+    private fun isSyncingFor(tag: String) =
+      workManager.getWorkInfosForUniqueWorkFlow(tag).map { infos ->
+        infos.any { it.state == WorkInfo.State.RUNNING || it.state == WorkInfo.State.ENQUEUED }
+      }
 
     fun saveConnection(
       url: String,
       apikey: String,
     ) {
-      if (apikey.isNotBlank() && url.isNotBlank()) {
-        scrobProvider.setUrl(url)
-        scrobProvider.setApiKey(apikey)
+      val trimmedUrl = url.trim()
+      val trimmedApiKey = apikey.trim()
+
+      if (trimmedApiKey.isNotBlank() && trimmedUrl.isNotBlank()) {
+        scrobProvider.setUrl(trimmedUrl)
+        scrobProvider.setApiKey(trimmedApiKey)
 
         ScrobSyncWorker.scheduleHistory(workManager, forceFull = true)
         ScrobSyncWorker.scheduleLists(workManager)
@@ -91,9 +96,7 @@ class SettingsScrobViewModel
       // Background/periodic runs use the cheap incremental path inside the runner (full 1x/day).
       ScrobSyncWorker.scheduleHistory(workManager, forceFull = true)
       ScrobSyncWorker.scheduleLists(workManager)
-      viewModelScope.launch {
-        messageChannel.send(MessageEvent.Info(R.string.textScrobSyncStarted))
-      }
+      sendSyncStartedMessage()
     }
 
     suspend fun loadWatchlistOptions(): List<ScrobList> = scrobRemoteSource.fetchLists()
@@ -103,6 +106,10 @@ class SettingsScrobViewModel
       // Lists import mirrors the selected list into the local watchlist.
       ScrobSyncWorker.scheduleLists(workManager)
       refresh()
+      sendSyncStartedMessage()
+    }
+
+    private fun sendSyncStartedMessage() {
       viewModelScope.launch {
         messageChannel.send(MessageEvent.Info(R.string.textScrobSyncStarted))
       }
