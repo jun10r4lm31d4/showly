@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="menuMyMovies">Geschichte</string>
+  <string name="menuMyMovies">Historie</string>
   <string name="menuWatchlistMovies">Watchlist</string>
-  <string name="menuHidden">Versteckt</string>
-  <string name="textMyMoviesEmpty">Deine Filmsammlung ist derzeit leer.\n\nGehe auf den <b>Entdecken</b>Tab um deinen ersten Film hinzuzufügen.</string>
-  <string name="textWatchlistMoviesEmpty">Deine <b>Watchlist</b> ist zurzeit leer.\n\nGehe auf den <b>Entdecken</b> Tab um Filme hinzuzufügen, die du später anschauen möchtest.</string>
-  <string name="textHiddenEmpty">Deine <b>Versteckt</b> Liste ist derzeit leer.\n\n<b>Versteckt</b> ist eine Liste von Elementen, die dich nicht interessieren.\n\nVersteckte Elemente werden nicht mehr in <b>Fortschritt</b>, <b>Entdecke</b> und andere Abschnitte.</string>
+  <string name="menuHidden">Verborgen</string>
+  <string name="textMyMoviesEmpty">Deine Filmsammlung ist momentan leer.\n\nBesuche den <b>Entdecken</b>-Reiter, um deinen ersten Film hinzuzufügen.</string>
+  <string name="textWatchlistMoviesEmpty">Deine <b>Watchlist</b> ist momentan leer.\n\nBesuche den <b>Entdecken</b>-Reiter, um Filme hinzuzufügen, die du zukünftig sehen möchtest.</string>
+  <string name="textHiddenEmpty">Deine Liste <b>Verborgen</b> ist momentan leer.\n\n<b>Verborgen</b> ist eine Liste von Elementen, an denen du nicht interessiert bist.\n\nVerborgene Elemente erscheinen nicht mehr in <b>Fortschritt</b>, <b>Entdecken</b> und anderen Abschnitten.</string>
 </resources>

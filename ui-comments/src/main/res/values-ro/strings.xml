@@ -2,5 +2,5 @@
 <resources>
   <string name="textComment">Comentariu</string>
   <string name="textComments2">Comentarii</string>
-  <string name="textNoComments">Fără comentarii.</string>
+  <string name="textNoComments">Nu există comentarii.</string>
 </resources>

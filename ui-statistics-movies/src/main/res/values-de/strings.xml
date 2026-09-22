@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textStatisticsMovies">Statistik</string>
-  <string name="textStatisticsMoviesEmpty">Es muss mindestens ein Film im <b>Verlauf</b>\n vorhanden sein, bevor deine Statistik angezeigt werden kann.</string>
-  <string name="textStatisticsMoviesTotalTimeSpent">Gesamtzeit</string>
-  <string name="textStatisticsMoviesTotalTimeItIs">und das sind</string>
+  <string name="textStatisticsMovies">Statistiken</string>
+  <string name="textStatisticsMoviesEmpty">Mindestens ein Film muss in der <b>Historie</b> vorhanden sein,\nbevor Statistiken angezeigt werden können.</string>
+  <string name="textStatisticsMoviesTotalTimeSpent">Gesamte Sehzeit</string>
+  <string name="textStatisticsMoviesTotalTimeItIs">und es sind</string>
   <string name="textStatisticsMoviesTotalTimeSpentHours">%s Stunden</string>
   <string name="textStatisticsMoviesTotalTimeSpentMinutes">%s Minuten</string>
-  <string name="textStatisticsMoviesTotalTimeSpentDays">das sind ca. %s Tage.</string>
-  <string name="textStatisticsMoviesTotalMovies">Insgesamt geschaute Filme</string>
+  <string name="textStatisticsMoviesTotalTimeSpentDays">was etwa %s Tagen entspricht.</string>
+  <string name="textStatisticsMoviesTotalMovies">Insgesamt gesehene Filme</string>
   <string name="textStatisticsMoviesTotalMoviesCount">%s Filme</string>
-  <string name="textStatisticsMoviesTopGenre">Top Genre</string>
-  <string name="textStatisticsMoviesTopGenreSubValue">scheinen deine Sache zu sein. Tippe hier, um mehr anzuzeigen.</string>
-  <string name="textStatisticsMoviesTopGenreSubValue2">scheinen deine Sache zu sein.</string>
-  <string name="textStatisticsMoviesRatings">Zuletzt Bewertet</string>
+  <string name="textStatisticsMoviesTopGenre">Top-Genres</string>
+  <string name="textStatisticsMoviesTopGenreSubValue">scheinen dein Ding zu sein. Tippe für mehr.</string>
+  <string name="textStatisticsMoviesTopGenreSubValue2">scheinen dein Ding zu sein.</string>
+  <string name="textStatisticsMoviesRatings">Zuletzt bewertet</string>
 </resources>

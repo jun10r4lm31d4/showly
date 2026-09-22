@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore"><![CDATA[Sichern & Wiederherstellen]]></string>
+  <string name="textBackupAndRestore"><![CDATA[Backup & Wiederherstellung]]></string>
   <string name="textBackupExport">Daten exportieren</string>
   <string name="textBackupExportDescription">Exportiere deine Serien- und Filmdaten in eine Datei, um ein Backup zu erstellen oder sie auf ein neues Gerät zu übertragen.</string>
   <string name="textBackupImport">Daten importieren</string>
-  <string name="textBackupImportDescription">Importiere deine Serien- und Filmdaten aus einer Sicherungsdatei.\n\nDeine aktuelle Sammlung wird nicht entfernt, und nur fehlende Elemente werden hinzugefügt.</string>
+  <string name="textBackupImportDescription">Importiere deine Serien- und Filmdaten aus einer Backup-Datei.\n\nDeine aktuelle Sammlung wird nicht gelöscht und nur fehlende Elemente werden hinzugefügt.</string>
   <string name="textBackupExportSuccess">Daten erfolgreich exportiert.</string>
   <string name="textBackupImportSuccess">Daten erfolgreich importiert.</string>
   <string name="errorImportCancelled">Datenimport wurde abgebrochen.</string>
@@ -18,7 +18,7 @@
   <string name="textBackupExportOptionConfirmMessage">Automatisches Backup wurde geplant.</string>
   <string name="textBackupExportOption6HoursButton">Geplant für alle 6 Stunden</string>
   <string name="textBackupExportOptionDailyButton">Geplant für jeden Tag</string>
-  <string name="textBackupExportOption3DayButton">Geplant für alle 3 Tage.</string>
+  <string name="textBackupExportOption3DayButton">Geplant für alle 3 Tage</string>
   <string name="textBackupExportOptionWeeklyButton">Geplant für jede Woche</string>
   <string name="textBackupExportLastTimestamp">Letztes Backup: %s</string>
 </resources>

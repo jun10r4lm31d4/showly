@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
   <string name="menuProgress">进度</string>
   <string name="menuDiscover">发现</string>
-  <string name="menuCollection">合集</string>
-    <string name="textDisclaimerTitle">欢迎!</string>
-  <string name="textDisclaimerText">请注意您
-    <b>不能</b>使用此应用观看或下载剧集和电影。\n\n请使用
-    <b>Netflix</b> 等应用观看。</string>
-  <string name="textDisclaimerConfirmText">好的，我已了解</string>
+  <string name="menuCollection">收藏词</string>
+  <string name="textDisclaimerTitle">欢迎！</string>
+  <string name="textDisclaimerText">请注意，您 <b>无法</b> 使用此应用观看、流式传输或下载剧集和电影。\n\n请使用 <b>Netflix</b> 等应用进行流式传输和观看内容。</string>
+  <string name="textDisclaimerConfirmText">好的，我明白</string>
+
+
+
   <string name="textWhatsNewTitle">更新内容</string>
-  <string name="textWhatsNewSubtitle">版本：%s</string>
+  <string name="textWhatsNewSubtitle">版本 %s</string>
   <string name="shortcutDiscover">发现</string>
-  <string name="shortcutCollection">合集</string>
+  <string name="shortcutCollection">收藏词</string>
   <string name="shortcutSearch">搜索</string>
   <string name="shortcutProgress">进度</string>
 </resources>

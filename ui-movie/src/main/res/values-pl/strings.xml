@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textInMyMovies">W historii</string>
-  <string name="textInMoviesWatchlist">Na później</string>
+  <string name="textInMyMovies">Dodano do historii</string>
+  <string name="textInMoviesWatchlist">Dodano do listy życzeń</string>
   <string name="textInHidden">Ukryte</string>
-  <string name="textMovieActorsEmpty">Obsada niedostępna</string>
-  <string name="textMovieTrailer">Trailer</string>
+  <string name="textMovieActorsEmpty">Aktorzy nie są dostępni</string>
+  <string name="textMovieTrailer">Zwiastun</string>
   <string name="textMovieRate">Oceń</string>
-  <string name="textMovieComments2">Opinie</string>
-  <string name="textMovieYouMayAlsoLike">Zobacz również</string>
+  <string name="textMovieComments2">Komentarze</string>
+  <string name="textMovieYouMayAlsoLike">Może Ci się spodobać</string>
   <string name="textMovieCollections">Kolekcje</string>
   <string name="textMovieManageLists">Zarządzaj listami</string>
   <string name="textMovieManageListsCount">Zarządzaj listami (%d)</string>

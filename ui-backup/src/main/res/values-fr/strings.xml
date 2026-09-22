@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore"><![CDATA[Sauvegarder & Restaurer]]></string>
+  <string name="textBackupAndRestore"><![CDATA[Sauvegarde et Restauration]]></string>
   <string name="textBackupExport">Exporter les données</string>
-  <string name="textBackupExportDescription">Exportez les données de vos séries et films dans un fichier pour créer une sauvegarde ou la transférer vers un nouvel appareil.</string>
+  <string name="textBackupExportDescription">Exportez vos données de séries et de films dans un fichier pour créer une sauvegarde ou les transférer vers un nouvel appareil.</string>
   <string name="textBackupImport">Importer des données</string>
-  <string name="textBackupImportDescription">Importez vos données de séries et de films à partir d\'un fichier de sauvegarde.\n\nVotre collection actuelle ne sera pas supprimée et seuls les éléments manquants seront ajoutés.</string>
+  <string name="textBackupImportDescription">Importez vos données de séries et de films depuis un fichier de sauvegarde.\n\nVotre collection actuelle ne sera pas supprimée et seuls les éléments manquants seront ajoutés.</string>
   <string name="textBackupExportSuccess">Données exportées avec succès.</string>
   <string name="textBackupImportSuccess">Données importées avec succès.</string>
   <string name="errorImportCancelled">L\'importation des données a été annulée.</string>
-  <string name="textBackupExportSchedule">Planifier</string>
-  <string name="textBackupExportOptionOff">Off</string>
+  <string name="textBackupExportSchedule">Calendrier</string>
+  <string name="textBackupExportOptionOff">Désactivé</string>
   <string name="textBackupExportOption6Hours">Toutes les 6 heures</string>
-  <string name="textBackupExportOptionDaily">Quotidiennement</string>
+  <string name="textBackupExportOptionDaily">Chaque jour</string>
   <string name="textBackupExportOption3Day">Tous les 3 jours</string>
   <string name="textBackupExportOptionWeekly">Chaque semaine</string>
   <string name="textBackupExportOptionOffMessage">La sauvegarde ne s\'exécutera pas automatiquement.</string>
-  <string name="textBackupExportOptionConfirmMessage">La sauvegarde automatique a été planifiée.</string>
+  <string name="textBackupExportOptionConfirmMessage">La sauvegarde automatique a été programmée.</string>
   <string name="textBackupExportOption6HoursButton">Programmé pour s\'exécuter toutes les 6 heures</string>
-  <string name="textBackupExportOptionDailyButton">Programmé pour s\'exécuter tout les jours</string>
-  <string name="textBackupExportOption3DayButton">Programmé pour s\'exécuter tout les 3 jours</string>
+  <string name="textBackupExportOptionDailyButton">Programmé pour s\'exécuter chaque jour</string>
+  <string name="textBackupExportOption3DayButton">Programmé pour s\'exécuter tous les 3 jours</string>
   <string name="textBackupExportOptionWeeklyButton">Programmé pour s\'exécuter chaque semaine</string>
-  <string name="textBackupExportLastTimestamp">Dernière sauvegarde : %s</string>
+  <string name="textBackupExportLastTimestamp">Dernière sauvegarde : %s</string>
 </resources>

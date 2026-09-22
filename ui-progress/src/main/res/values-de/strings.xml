@@ -2,21 +2,14 @@
 <resources>
   <string name="tabCalendar">Kalender</string>
   <string name="tabProgress">Fortschritt</string>
-  <string name="tabHistory">Verlauf</string>
-  <string name="textCalendarEmpty">Es gibt keine neuen Folgen.</string>
-  <string name="textRecentsEmpty">Es gibt keine kürzlich ausgestrahlten Folgen.</string>
-  <string name="textHistoryEmpty">Es gibt nichts in deinem Verlauf.</string>
-  <string
-    name="textOnHold"
-    comment="This is a header for Progress subsection. It will contain pending shows marked by user."
-  >Angehalten</string>
-  <string name="textDiscoverShows">Shows entdecken</string>
+  <string name="tabHistory">Historie</string>
+  <string name="textCalendarEmpty">Keine neuen Episoden auf dem Weg.</string>
+  <string name="textRecentsEmpty">Keine kürzlich ausgestrahlten Episoden.</string>
+  <string name="textHistoryEmpty">In deiner Historie befindet sich nichts.</string>
+  <string name="textOnHold">In Warteschlange</string>
+  <string name="textDiscoverShows">Serien entdecken</string>
   <string name="textEpisodeInfo">Details</string>
-  <string name="textProgressEmpty">Dein
-  
-    <b>Fortschritt</b>ist aktuell leer.\n\nTippe auf den
-  
-    <b>Entdecken</b> Tab, um Serien hinzuzufügen oder deine Trakt.tv-Sammlung zu importieren.</string>
-  <string name="textNewSeason">Staffel Premiere</string>
+  <string name="textProgressEmpty">Dein <b>Fortschritt</b> ist momentan leer.\n\nBesuche den <b>Entdecken</b>-Reiter, um Serien hinzuzufügen oder deine Trakt.tv-Sammlung zu importieren.</string>
+  <string name="textNewSeason">Staffel-Premiere</string>
   <string name="textPremieres">Premieren</string>
 </resources>

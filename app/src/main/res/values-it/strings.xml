@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
   <string name="menuProgress">Progressi</string>
   <string name="menuDiscover">Scopri</string>
-  <string name="menuCollection">Raccolta</string>
-    <string name="textDisclaimerTitle">Benvenuto/a!</string>
-  <string name="textDisclaimerText">Si prega di notare che
-    <b>NON È POSSIBILE</b> guardare, riprodurre o scaricare show e film con questa app.\n\nUsa app come
-    <b>Netflix</b> per riprodurre e guardare i contenuti.</string>
+  <string name="menuCollection">Collezione</string>
+  <string name="textDisclaimerTitle">Benvenuto!</string>
+  <string name="textDisclaimerText">Tieni presente che <b>NON PUOI</b> guardare, trasmettere in streaming o scaricare serie e film con questa app.\n\nUtilizza app come <b>Netflix</b> per trasmettere in streaming e guardare contenuti.</string>
   <string name="textDisclaimerConfirmText">OK, ho capito</string>
+
+
+
   <string name="textWhatsNewTitle">Novità</string>
   <string name="textWhatsNewSubtitle">Versione %s</string>
   <string name="shortcutDiscover">Scopri</string>
-  <string name="shortcutCollection">Raccolta</string>
+  <string name="shortcutCollection">Collezione</string>
   <string name="shortcutSearch">Cerca</string>
   <string name="shortcutProgress">Progressi</string>
 </resources>

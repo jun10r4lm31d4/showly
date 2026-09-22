@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="menuMyShows">Мої Серіали</string>
-  <string name="menuWatchlist">На потім</string>
-  <string name="menuHidden">Приховане</string>
-  <string name="textMyShowsEmpty">Ваша колекція серіалів наразі порожня.\n\nВідвідайте <b>Огляд</b>, щоб додати свій перший серіал.</string>
-  <string name="textWatchlistEmpty">Ваш список <b>На потім</b> зараз порожній.\n\nВідвідайте вкладку <b>Огляд</b>, щоб додати серіали, які ви хочете переглянути у майбутньому.</string>
-  <string name="textHiddenEmpty">Наразі Ваш список <b>Приховане</b> порожній.\n\n<b>Приховане</b> це список елементів, які вас не цікавлять.\n\nПриховані елементи більше не з\'являтимуться в <b>Прогрес</b>, <b>Огляд</b> та інших розділах.</string>
+  <string name="menuMyShows">Мої серіали</string>
+  <string name="menuWatchlist">Список очікування</string>
+  <string name="menuHidden">Приховані</string>
+  <string name="textMyShowsEmpty">Ваша колекція серіалів наразі порожня.\n\nВідвідайте вкладку <b>Огляд</b>, щоб додати свій перший серіал.</string>
+  <string name="textWatchlistEmpty">Ваш <b>Список очікування</b> наразі порожній.\n\nВідвідайте вкладку <b>Огляд</b>, щоб додати серіали, які ви захочете подивитися в майбутньому.</string>
+  <string name="textHiddenEmpty">Ваш список <b>Прихованих</b> наразі порожній.\n\n<b>Приховані</b> — це список елементів, які вам не цікаві.\n\nПриховані елементи більше не з\'являтимуться в розділах <b>Прогрес</b>, <b>Огляд</b> та інших.</string>
 </resources>

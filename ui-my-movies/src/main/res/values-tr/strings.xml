@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="menuMyMovies">Tarih</string>
-  <string name="menuWatchlistMovies">İstek Listesi</string>
-  <string name="menuHidden">Gizlenmiş</string>
-  <string name="textMyMoviesEmpty">Film koleksiyonunuz şu anda boştur.\n\nİlk filminizi eklemek için <b>Keşfet</b> sekmesini ziyaret edin.</string>
-  <string name="textWatchlistMoviesEmpty"><b>İstek Listeniz</b> şu anda boştur.\n\nGelecekte izlemek istediğiniz filmleri eklemek için <b>Keşfet</b> sekmesini ziyaret edin.</string>
-  <string name="textHiddenEmpty">&lt;b&gt;Gizli&lt;/b&gt; listeniz şu anda boş.\n\n&lt;b&gt;Gizli&lt;/b&gt;, ilgilenmediğiniz öğelerin listesidir.\n\nGizli öğeler artık &lt;b içinde görünmeyecek &gt;İlerleme&lt;/b&gt;, &lt;b&gt;Keşfet&lt;/b&gt; ve diğer bölümler.</string>
+  <string name="menuMyMovies">Geçmiş</string>
+  <string name="menuWatchlistMovies">İzleme Listesi</string>
+  <string name="menuHidden">Gizlenenler</string>
+  <string name="textMyMoviesEmpty">Film koleksiyonunuz şu anda boş.\n\nİlk filminizi eklemek için <b>Keşfet</b> sekmesini ziyaret edin.</string>
+  <string name="textWatchlistMoviesEmpty"><b>İzleme Listesi</b> şu anda boş.\n\nGelecekte izlemek istediğiniz filmleri eklemek için <b>Keşfet</b> sekmesini ziyaret edin.</string>
+  <string name="textHiddenEmpty"><b>Gizlenenler</b> listeniz şu anda boş.\n\n<b>Gizlenenler</b>, ilgilenmediğiniz öğelerin listesidir.\n\nGizlenen öğeler artık <b>İlerleme</b>, <b>Keşfet</b> ve diğer bölümlerde görünmeyecektir.</string>
 </resources>

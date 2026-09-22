@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
   <string name="menuProgress">Progreso</string>
   <string name="menuDiscover">Descubrir</string>
   <string name="menuCollection">Colección</string>
-    <string name="textDisclaimerTitle">Bienvenido!</string>
-  <string name="textDisclaimerText">Ten en cuenta que
-    <b>NO PUEDES</b> ver, transmitir o descargar series y películas con esta aplicación.\n\nUsa aplicaciones como
-    <b>Netflix</b> para transmitir y ver el contenido.</string>
-  <string name="textDisclaimerConfirmText">Vale, lo entiendo</string>
+  <string name="textDisclaimerTitle">¡Bienvenido!</string>
+  <string name="textDisclaimerText">Tenga en cuenta que <b>NO PUEDE</b> ver, transmitir ni descargar series y películas con esta aplicación.\n\nUtilice aplicaciones como <b>Netflix</b> para transmitir y ver contenido.</string>
+  <string name="textDisclaimerConfirmText">OK, entiendo</string>
+
+
+
   <string name="textWhatsNewTitle">Novedades</string>
   <string name="textWhatsNewSubtitle">Versión %s</string>
   <string name="shortcutDiscover">Descubrir</string>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textInMyMovies">إضافة إلى السجل</string>
+  <string name="textInMyMovies">تمت الإضافة إلى السجل</string>
   <string name="textInMoviesWatchlist">تمت الإضافة إلى قائمة المشاهدة</string>
-  <string name="textInHidden">المخفية</string>
-  <string name="textMovieActorsEmpty">قائمة الممثلين غير متاحة</string>
-  <string name="textMovieTrailer">العرض الدعائي</string>
-  <string name="textMovieRate">قيم</string>
-  <string name="textMovieComments2">التعليقات</string>
-  <string name="textMovieYouMayAlsoLike">قد تعجبك أيضاً</string>
-  <string name="textMovieCollections">مجموعات</string>
+  <string name="textInHidden">مخفي</string>
+  <string name="textMovieActorsEmpty">الممثلون غير متاحين</string>
+  <string name="textMovieTrailer">الإعلان</string>
+  <string name="textMovieRate">تقييم</string>
+  <string name="textMovieComments2">تعليقات</string>
+  <string name="textMovieYouMayAlsoLike">قد يعجبك أيضاً</string>
+  <string name="textMovieCollections">المجموعات</string>
   <string name="textMovieManageLists">إدارة القوائم</string>
   <string name="textMovieManageListsCount">إدارة القوائم (%d)</string>
 </resources>

@@ -2,12 +2,8 @@
 <resources>
   <string name="tabMoviesCalendar">Calendario</string>
   <string name="tabMoviesProgress">Progressi</string>
-  <string name="textMoviesCalendarEmpty">Non ci sono nuovi film in arrivo a breve.</string>
-  <string name="textMoviesCalendarRecentsEmpty">Non sono stati trasmessi film di recente.</string>
+  <string name="textMoviesCalendarEmpty">Non ci sono nuovi film in arrivo.</string>
+  <string name="textMoviesCalendarRecentsEmpty">Non ci sono film trasmessi di recente.</string>
   <string name="textDiscoverMovies">Scopri film</string>
-  <string name="textMoviesProgressEmpty">La tua pagina
-  
-    <b>Progressi</b> è vuota.\n\nVisita la pagina
-  
-    <b>Scopri</b> per aggiungere film o importa la tua raccolta Trak.tv.</string>
+  <string name="textMoviesProgressEmpty">I tuoi <b>Progressi</b> sono attualmente vuoti.\n\nVisita la scheda <b>Scopri</b> per aggiungere film o importare la tua collezione da Trakt.tv.</string>
 </resources>

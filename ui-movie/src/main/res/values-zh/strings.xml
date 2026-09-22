@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textInMyMovies">已添加到观看历史</string>
-  <string name="textInMoviesWatchlist">已加入待看列表</string>
+  <string name="textInMyMovies">已添加到历史记录</string>
+  <string name="textInMoviesWatchlist">已添加到稍后观看</string>
   <string name="textInHidden">已隐藏</string>
-  <string name="textMovieActorsEmpty">暂无演职人员信息</string>
+  <string name="textMovieActorsEmpty">演员信息不可用</string>
   <string name="textMovieTrailer">预告片</string>
   <string name="textMovieRate">评分</string>
   <string name="textMovieComments2">评论</string>
-  <string name="textMovieYouMayAlsoLike">您还可能喜欢</string>
-  <string name="textMovieCollections">系列</string>
+  <string name="textMovieYouMayAlsoLike">您可能也喜欢</string>
+  <string name="textMovieCollections">集合</string>
   <string name="textMovieManageLists">管理列表</string>
   <string name="textMovieManageListsCount">管理列表 (%d)</string>
 </resources>

@@ -2,8 +2,8 @@
 <resources>
   <string name="menuLists">Listes</string>
   <string name="menuList">Liste</string>
-  <string name="textListsEmpty">Votre collection de listes est vide pour le moment.</string>
-  <string name="textListEmpty">Votre liste est vide pour le moment.</string>
+  <string name="textListsEmpty">Votre collection de listes est actuellement vide.</string>
+  <string name="textListEmpty">Votre liste est actuellement vide.</string>
   <string name="textCreateList">Créer une liste</string>
   <string name="textCreateListDescription">Créer une nouvelle liste personnalisée.</string>
   <string name="textName">Nom</string>
@@ -12,13 +12,13 @@
   <string name="textEditList">Modifier la liste</string>
   <string name="textEditListDescription">Mettre à jour votre liste personnalisée.</string>
   <string name="textConfirmDeleteListTitle">Supprimer la liste</string>
-  <string name="textConfirmDeleteListSubtitle">Êtes-vous sûr de vouloir supprimer cette liste ?</string>
-  <string name="textChangeRanks">Modifier le classement</string>
-  <string name="textChangeRanksSubtitle">Glisser-déposer l\'élément de la liste pour changer son rang</string>
+  <string name="textConfirmDeleteListSubtitle">Êtes-vous sûr de vouloir supprimer cette liste ?</string>
+  <string name="textChangeRanks">Changer les rangs</string>
+  <string name="textChangeRanksSubtitle">Glissez-déposez un élément pour changer son rang</string>
   <string name="textManageLists">Gérer les listes</string>
-  <string name="textManageListsShows">Gérer vos listes pour cette série.</string>
-  <string name="textManageListsMovies">Gérer vos listes pour ce film.</string>
-  <string name="errorCouldNotCreateList">Nous n\'avons pas pu créer une nouvelle liste dans votre compte Trakt pour le moment.\nVeuillez vérifier la connexion Internet et réessayer.</string>
-  <string name="errorCouldNotUpdateList">Nous n\'avons pas pu mettre à jour cette liste dans votre compte Trakt pour le moment.\nVeuillez vérifier la connexion internet et réessayer.</string>
-  <string name="errorCouldNotDeleteList">Nous n\'avons pas pu supprimer cette liste de votre compte Trakt pour le moment.\nVeuillez vérifier la connexion internet et réessayer.</string>
+  <string name="textManageListsShows">Gérez vos listes pour cette série.</string>
+  <string name="textManageListsMovies">Gérez vos listes pour ce film.</string>
+  <string name="errorCouldNotCreateList">Impossible de créer une nouvelle liste pour le moment.</string>
+  <string name="errorCouldNotUpdateList">Impossible de mettre à jour cette liste pour le moment.</string>
+  <string name="errorCouldNotDeleteList">Impossible de supprimer cette liste pour le moment.</string>
 </resources>

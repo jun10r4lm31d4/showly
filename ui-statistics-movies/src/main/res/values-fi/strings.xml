@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatisticsMovies">Tilastot</string>
-  <string name="textStatisticsMoviesEmpty"><b>Historiassa</b> on oltava ainakin yksi\nelokuva ennen kuin tilastoja voidaan näyttää.</string>
-  <string name="textStatisticsMoviesTotalTimeSpent">Kokonaiskatseluaika on</string>
-  <string name="textStatisticsMoviesTotalTimeItIs">joka on</string>
+  <string name="textStatisticsMoviesEmpty">Vähintään yksi elokuva on oltava <b>Historiassa</b>\nennen kuin tilastoja voidaan näyttää.</string>
+  <string name="textStatisticsMoviesTotalTimeSpent">Katseluun käytetty kokonaisaika</string>
+  <string name="textStatisticsMoviesTotalTimeItIs">ja se on</string>
   <string name="textStatisticsMoviesTotalTimeSpentHours">%s tuntia</string>
   <string name="textStatisticsMoviesTotalTimeSpentMinutes">%s minuuttia</string>
-  <string name="textStatisticsMoviesTotalTimeSpentDays">eli noin %s päivää.</string>
-  <string name="textStatisticsMoviesTotalMovies">Elokuvia katsottu</string>
+  <string name="textStatisticsMoviesTotalTimeSpentDays">mikä on noin %s päivää.</string>
+  <string name="textStatisticsMoviesTotalMovies">Katsotut elokuvat yhteensä</string>
   <string name="textStatisticsMoviesTotalMoviesCount">%s elokuvaa</string>
-  <string name="textStatisticsMoviesTopGenre">Suosituimmat tyylilajit</string>
-  <string name="textStatisticsMoviesTopGenreSubValue">näyttävät olevan juttusi. Napauta nähdäksesi lisää.</string>
-  <string name="textStatisticsMoviesTopGenreSubValue2">näyttävät olevan juttusi.</string>
-  <string name="textStatisticsMoviesRatings">Viimeksi arvioidut</string>
+  <string name="textStatisticsMoviesTopGenre">Suosituimmat genret</string>
+  <string name="textStatisticsMoviesTopGenreSubValue">näyttävät olevan makuusi. Napauta nähdäksesi lisää.</string>
+  <string name="textStatisticsMoviesTopGenreSubValue2">näyttävät olevan makuusi.</string>
+  <string name="textStatisticsMoviesRatings">Viimeksi arvostellut</string>
 </resources>

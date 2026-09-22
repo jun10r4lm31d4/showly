@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textSortOrderMovies">ترتيب حسب:</string>
-  <string name="textDiscoverFilterCollectionMovies">إخفاء محتويات المجموعة</string>
+  <string name="textSortOrderMovies">الخلاصة:</string>
+  <string name="textDiscoverFilterCollectionMovies">إخفاء المجموعة</string>
 </resources>

@@ -3,20 +3,13 @@
   <string name="tabCalendar">Календар</string>
   <string name="tabProgress">Прогрес</string>
   <string name="tabHistory">Історія</string>
-  <string name="textCalendarEmpty">Немає нових серій.</string>
+  <string name="textCalendarEmpty">Нових серій поки немає.</string>
   <string name="textRecentsEmpty">Немає нещодавно випущених серій.</string>
   <string name="textHistoryEmpty">У вашій історії нічого немає.</string>
-  <string
-    name="textOnHold"
-    comment="This is a header for Progress subsection. It will contain pending shows marked by user."
-  >Призупинено</string>
+  <string name="textOnHold">В очікуванні</string>
   <string name="textDiscoverShows">Знайти серіали</string>
-  <string name="textEpisodeInfo">Подробиці</string>
-  <string name="textProgressEmpty">Ваш
-  
-    <b>Прогрес</b> зараз порожній.\n\nВідвідайте вкладку
-  
-    <b>Огляд</b>, щоб додати серіали або імпортуйте колекцію з Trakt.tv.</string>
+  <string name="textEpisodeInfo">Деталі</string>
+  <string name="textProgressEmpty">Ваш <b>Прогрес</b> наразі порожній.\n\nВідвідайте вкладку <b>Огляд</b>, щоб додати серіали або імпортувати свою колекцію з Trakt.tv.</string>
   <string name="textNewSeason">Прем\'єра сезону</string>
   <string name="textPremieres">Прем\'єри</string>
 </resources>

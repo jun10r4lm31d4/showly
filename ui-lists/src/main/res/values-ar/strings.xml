@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="menuLists">قوائم</string>
-  <string name="menuList">قائمة</string>
-  <string name="textListsEmpty">لا توجد قوائم حاليًا.</string>
-  <string name="textListEmpty">قائمتك فارغة حاليًا.</string>
+  <string name="menuLists">القوائم</string>
+  <string name="menuList">القائمة</string>
+  <string name="textListsEmpty">مجموعة القوائم الخاصة بك فارغة حالياً.</string>
+  <string name="textListEmpty">قائمتك فارغة حالياً.</string>
   <string name="textCreateList">إنشاء قائمة</string>
-  <string name="textCreateListDescription">إنشاء قائمة جديدة.</string>
-  <string name="textName">اسم القائمة</string>
-  <string name="textDescription">وصف القائمة (اختياري)</string>
+  <string name="textCreateListDescription">إنشاء قائمة مخصصة جديدة.</string>
+  <string name="textName">الاسم</string>
+  <string name="textDescription">الوصف (اختياري)</string>
   <string name="textDeleteList">حذف القائمة</string>
   <string name="textEditList">تعديل القائمة</string>
-  <string name="textEditListDescription">تحديث قائمتك الخاصة.</string>
+  <string name="textEditListDescription">تحديث قائمتك المخصصة.</string>
   <string name="textConfirmDeleteListTitle">حذف القائمة</string>
-  <string name="textConfirmDeleteListSubtitle">أتريد فعلًا حذف القائمة؟</string>
-  <string name="textChangeRanks">تغيير ترتيب العناصر</string>
-  <string name="textChangeRanksSubtitle">اِسحب وأسقط أحد العناصر لتغيير ترتيبه</string>
+  <string name="textConfirmDeleteListSubtitle">هل أنت متأكد أنك تريد حذف هذه القائمة؟</string>
+  <string name="textChangeRanks">تغيير الترتيب</string>
+  <string name="textChangeRanksSubtitle">قم بسحب وإفلات عنصر القائمة لتغيير ترتيبه</string>
   <string name="textManageLists">إدارة القوائم</string>
-  <string name="textManageListsShows">إدارة قوائمك المتعلقة بهذا المسلسل.</string>
-  <string name="textManageListsMovies">إدارة قوائمك المتعلقة بهذا الفيلم.</string>
-  <string name="errorCouldNotCreateList">تعذر إنشاء قائمة جديدة في حسابك على موقع Trakt.tv.\nالرجاء التأكد من اتصالك بالإنترنت وحاول مرة أخرى.</string>
-  <string name="errorCouldNotUpdateList">تعذر تحديث القائمة في حسابك على موقع Trakt.tv.\nالرجاء التأكد من اتصالك بالإنترنت وحاول مرة أخرى.</string>
-  <string name="errorCouldNotDeleteList">تعذر حذف القائمة من حسابك على موقع Trakt.tv.\nالرجاء التأكد من اتصالك بالإنترنت وحاول مرة أخرى.</string>
+  <string name="textManageListsShows">إدارة قوائمك لهذا المسلسل.</string>
+  <string name="textManageListsMovies">إدارة قوائمك لهذا الفيلم.</string>
+  <string name="errorCouldNotCreateList">لم نتمكن من إنشاء قائمة جديدة حالياً.</string>
+  <string name="errorCouldNotUpdateList">لم نتمكن من تحديث هذه القائمة حالياً.</string>
+  <string name="errorCouldNotDeleteList">لم نتمكن من حذف هذه القائمة حالياً.</string>
 </resources>

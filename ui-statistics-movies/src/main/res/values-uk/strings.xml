@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatisticsMovies">Статистика</string>
-  <string name="textStatisticsMoviesEmpty">Принаймні один фільм має бути присутній в <b>Історії</b>\nдля показу статистики.</string>
-  <string name="textStatisticsMoviesTotalTimeSpent">Загальний час, витрачений на перегляд</string>
-  <string name="textStatisticsMoviesTotalTimeItIs">тобто</string>
-  <string name="textStatisticsMoviesTotalTimeSpentHours">%s годин</string>
-  <string name="textStatisticsMoviesTotalTimeSpentMinutes">%s хвилин</string>
-  <string name="textStatisticsMoviesTotalTimeSpentDays">це приблизно %s днів.</string>
-  <string name="textStatisticsMoviesTotalMovies">Загалом переглянуто фільмів</string>
-  <string name="textStatisticsMoviesTotalMoviesCount">%s Фільмів</string>
-  <string name="textStatisticsMoviesTopGenre">Топ жанрів</string>
-  <string name="textStatisticsMoviesTopGenreSubValue">здається це ваші фаворити. Торкніться, щоб переглянути більше.</string>
-  <string name="textStatisticsMoviesTopGenreSubValue2">здається це ваші фаворити.</string>
-  <string name="textStatisticsMoviesRatings">Нещодавно оцінені</string>
+  <string name="textStatisticsMoviesEmpty">У <b>Історії</b> має бути принаймні один фільм,\nперш ніж статистика зможе бути відображена.</string>
+  <string name="textStatisticsMoviesTotalTimeSpent">Всього часу за переглядом</string>
+  <string name="textStatisticsMoviesTotalTimeItIs">і це</string>
+  <string name="textStatisticsMoviesTotalTimeSpentHours">%s год.</string>
+  <string name="textStatisticsMoviesTotalTimeSpentMinutes">%s хв.</string>
+  <string name="textStatisticsMoviesTotalTimeSpentDays">що становить близько %s дн.</string>
+  <string name="textStatisticsMoviesTotalMovies">Всього переглянуто фільмів</string>
+  <string name="textStatisticsMoviesTotalMoviesCount">%s фільмів</string>
+  <string name="textStatisticsMoviesTopGenre">Найкращі жанри</string>
+  <string name="textStatisticsMoviesTopGenreSubValue">схоже, у вашому смаку. Натисніть, щоб побачити більше.</string>
+  <string name="textStatisticsMoviesTopGenreSubValue2">схоже, у вашому смаку.</string>
+  <string name="textStatisticsMoviesRatings">Нещодавні оцінки</string>
 </resources>

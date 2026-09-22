@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatisticsMovies">الإحصائيات</string>
-  <string name="textStatisticsMoviesEmpty">يجب أن يكون هناك فيلم واحد على الأقل في <b>السجل</b>\nقبل أن يمكن عرض الإحصائيات.</string>
-  <string name="textStatisticsMoviesTotalTimeSpent">إجمالي الوقت المنقضي في المشاهدة</string>
-  <string name="textStatisticsMoviesTotalTimeItIs">يساوي</string>
-  <string name="textStatisticsMoviesTotalTimeSpentHours">%s ساعات</string>
-  <string name="textStatisticsMoviesTotalTimeSpentMinutes">%s دقائق</string>
-  <string name="textStatisticsMoviesTotalTimeSpentDays">وهو حوالي %s أيام.</string>
-  <string name="textStatisticsMoviesTotalMovies">إجمالي الأفلام التي تمت مشاهدتها</string>
-  <string name="textStatisticsMoviesTotalMoviesCount">%s أفلام</string>
-  <string name="textStatisticsMoviesTopGenre">أعلى التصنيفات</string>
-  <string name="textStatisticsMoviesTopGenreSubValue">يبدو أنهم تصنيفاتك المفضلة. انقر للمزيد.</string>
-  <string name="textStatisticsMoviesTopGenreSubValue2">يبدو أنهم تصنيفاتك المفضلة.</string>
-  <string name="textStatisticsMoviesRatings">تم تقييمه مؤخراً</string>
+  <string name="textStatisticsMoviesEmpty">يجب أن يتوفر فيلم واحد على الأقل في <b>السجل</b>\nقبل عرض الإحصائيات.</string>
+  <string name="textStatisticsMoviesTotalTimeSpent">إجمالي الوقت المستغرق في المشاهدة</string>
+  <string name="textStatisticsMoviesTotalTimeItIs">وهي تعادل</string>
+  <string name="textStatisticsMoviesTotalTimeSpentHours">%s ساعة</string>
+  <string name="textStatisticsMoviesTotalTimeSpentMinutes">%s دقيقة</string>
+  <string name="textStatisticsMoviesTotalTimeSpentDays">أي حوالي %s يوم.</string>
+  <string name="textStatisticsMoviesTotalMovies">إجمالي الأفلام المشاهدة</string>
+  <string name="textStatisticsMoviesTotalMoviesCount">%s فيلم</string>
+  <string name="textStatisticsMoviesTopGenre">الأنواع المفضلة</string>
+  <string name="textStatisticsMoviesTopGenreSubValue">تبدو ذوقك المفضل. اضغط للمزيد.</string>
+  <string name="textStatisticsMoviesTopGenreSubValue2">تبدو ذوقك المفضل.</string>
+  <string name="textStatisticsMoviesRatings">المقيمة حديثاً</string>
 </resources>

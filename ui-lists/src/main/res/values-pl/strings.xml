@@ -7,18 +7,18 @@
   <string name="textCreateList">Utwórz listę</string>
   <string name="textCreateListDescription">Utwórz nową własną listę.</string>
   <string name="textName">Nazwa</string>
-  <string name="textDescription">Opis (opcjonalny)</string>
+  <string name="textDescription">Opis (opcjonalnie)</string>
   <string name="textDeleteList">Usuń listę</string>
   <string name="textEditList">Edytuj listę</string>
-  <string name="textEditListDescription">Aktualizuj swoją listę.</string>
+  <string name="textEditListDescription">Zaktualizuj swoją listę.</string>
   <string name="textConfirmDeleteListTitle">Usuń listę</string>
   <string name="textConfirmDeleteListSubtitle">Czy na pewno chcesz usunąć tę listę?</string>
-  <string name="textChangeRanks">Zmień rangi</string>
-  <string name="textChangeRanksSubtitle">Przeciągnij element listy aby zmienić jego rangę</string>
+  <string name="textChangeRanks">Zmień kolejność</string>
+  <string name="textChangeRanksSubtitle">Przeciągnij i upuść element, aby zmienić jego miejsce na liście</string>
   <string name="textManageLists">Zarządzaj listami</string>
-  <string name="textManageListsShows">Zarządzaj listami dla tego serialu.</string>
-  <string name="textManageListsMovies">Zarządzaj listami dla tego filmu.</string>
-  <string name="errorCouldNotCreateList">W tej chwili nie mogliśmy utworzyć nowej listy na Twoim koncie Trakt.\nSprawdź połączenie internetowe i spróbuj ponownie.</string>
-  <string name="errorCouldNotUpdateList">W tej chwili nie udało się zaktualizować tej listy na Twoim koncie Trakt.\nSprawdź połączenie internetowe i spróbuj ponownie.</string>
-  <string name="errorCouldNotDeleteList">W tej chwili nie można usunąć tej listy z Twojego konta Trakt.\nSprawdź połączenie internetowe i spróbuj ponownie.</string>
+  <string name="textManageListsShows">Zarządzaj swoimi listami dla tego serialu.</string>
+  <string name="textManageListsMovies">Zarządzaj swoimi listami dla tego filmu.</string>
+  <string name="errorCouldNotCreateList">Nie udało się utworzyć nowej listy w tej chwili.</string>
+  <string name="errorCouldNotUpdateList">Nie udało się zaktualizować tej listy w tej chwili.</string>
+  <string name="errorCouldNotDeleteList">Nie udało się usunąć tej listy w tej chwili.</string>
 </resources>

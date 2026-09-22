@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore"><![CDATA[备份 & 还原]]></string>
+  <string name="textBackupAndRestore"><![CDATA[备份与恢复]]></string>
   <string name="textBackupExport">导出数据</string>
-  <string name="textBackupExportDescription">将您的节目和电影数据导出至文件，方便建立备份或传输到新设备。</string>
+  <string name="textBackupExportDescription">将您的剧集和电影数据导出到文件中，以创建备份或将其传输到新设备。</string>
   <string name="textBackupImport">导入数据</string>
-  <string name="textBackupImportDescription">从备份文件导入节目和电影数据。\n\n您当前的收藏将保留，系统会添加缺失的项目。</string>
-  <string name="textBackupExportSuccess">数据成功导出。</string>
-  <string name="textBackupImportSuccess">数据成功导入。</string>
+  <string name="textBackupImportDescription">从备份文件中导入您的剧集和电影数据。\n\n您当前的收藏词将不会被移除，仅会添加缺少的项目。</string>
+  <string name="textBackupExportSuccess">数据导出成功。</string>
+  <string name="textBackupImportSuccess">数据导入成功。</string>
   <string name="errorImportCancelled">数据导入已取消。</string>
-  <string name="textBackupExportSchedule">定时同步时间</string>
+  <string name="textBackupExportSchedule">计划</string>
   <string name="textBackupExportOptionOff">关闭</string>
-  <string name="textBackupExportOption6Hours">每隔 6 小时</string>
-  <string name="textBackupExportOptionDaily">每隔 1 天</string>
-  <string name="textBackupExportOption3Day">每隔 3 天</string>
-  <string name="textBackupExportOptionWeekly">每隔 1 周</string>
-  <string name="textBackupExportOptionOffMessage">备份不会自动运行。</string>
-  <string name="textBackupExportOptionConfirmMessage">自动备份已排定。</string>
-  <string name="textBackupExportOption6HoursButton">已设置每隔 6 小时运行</string>
-  <string name="textBackupExportOptionDailyButton">已设置每隔 1 天运行</string>
-  <string name="textBackupExportOption3DayButton">已设置每隔 3 天运行</string>
-  <string name="textBackupExportOptionWeeklyButton">已设置每隔 1 周运行</string>
-  <string name="textBackupExportLastTimestamp">上次备份: %s</string>
+  <string name="textBackupExportOption6Hours">每 6 小时</string>
+  <string name="textBackupExportOptionDaily">每天</string>
+  <string name="textBackupExportOption3Day">每 3 天</string>
+  <string name="textBackupExportOptionWeekly">每周</string>
+  <string name="textBackupExportOptionOffMessage">备份将不会自动运行。</string>
+  <string name="textBackupExportOptionConfirmMessage">自动备份已计划。</string>
+  <string name="textBackupExportOption6HoursButton">已计划每 6 小时运行一次</string>
+  <string name="textBackupExportOptionDailyButton">已计划每天运行一次</string>
+  <string name="textBackupExportOption3DayButton">已计划每 3 天运行一次</string>
+  <string name="textBackupExportOptionWeeklyButton">已计划每周运行一次</string>
+  <string name="textBackupExportLastTimestamp">上次备份：%s</string>
 </resources>

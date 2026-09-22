@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore">Yedekleme ve Geri Yükleme</string>
+  <string name="textBackupAndRestore"><![CDATA[Yedekle ve Geri Yükle]]></string>
   <string name="textBackupExport">Verileri dışa aktar</string>
-  <string name="textBackupExportDescription">Dizileriniz ve filmlerinizle ilgili verileri bir dosyaya dışa aktararak yedek oluşturun veya başka bir cihaza aktarın.</string>
+  <string name="textBackupExportDescription">Yedek oluşturmak veya yeni bir cihaza aktarmak için dizi ve film verilerinizi bir dosyaya aktarın.</string>
   <string name="textBackupImport">Verileri içe aktar</string>
-  <string name="textBackupImportDescription">Yedekleme dosyasından dizi ve film verilerinizi içe aktarın.\n\nMevcut koleksiyonunuz silinmeyecek, yalnızca eksik öğeler eklenecek.</string>
+  <string name="textBackupImportDescription">Dizi ve film verilerinizi bir yedek dosyasından içe aktarın.\n\nMevcut koleksiyonunuz kaldırılmayacak ve yalnızca eksik öğeler eklenecektir.</string>
   <string name="textBackupExportSuccess">Veriler başarıyla dışa aktarıldı.</string>
   <string name="textBackupImportSuccess">Veriler başarıyla içe aktarıldı.</string>
-  <string name="errorImportCancelled">Veri içe aktarma iptal edildi.</string>
+  <string name="errorImportCancelled">Veri içe aktarma işlemi iptal edildi.</string>
+  <string name="textBackupExportSchedule">Zamanlama</string>
+  <string name="textBackupExportOptionOff">Kapalı</string>
+  <string name="textBackupExportOption6Hours">Her 6 Saatte Bir</string>
+  <string name="textBackupExportOptionDaily">Her Gün</string>
+  <string name="textBackupExportOption3Day">Her 3 Günde Bir</string>
+  <string name="textBackupExportOptionWeekly">Her Hafta</string>
+  <string name="textBackupExportOptionOffMessage">Yedekleme otomatik olarak çalışmayacaktır.</string>
+  <string name="textBackupExportOptionConfirmMessage">Otomatik yedekleme zamanlandı.</string>
+  <string name="textBackupExportOption6HoursButton">Her 6 saatte bir çalışacak şekilde zamanlandı</string>
+  <string name="textBackupExportOptionDailyButton">Her gün çalışacak şekilde zamanlandı</string>
+  <string name="textBackupExportOption3DayButton">Her 3 günde bir çalışacak şekilde zamanlandı</string>
+  <string name="textBackupExportOptionWeeklyButton">Her hafta çalışacak şekilde zamanlandı</string>
+  <string name="textBackupExportLastTimestamp">Son Yedekleme: %s</string>
 </resources>

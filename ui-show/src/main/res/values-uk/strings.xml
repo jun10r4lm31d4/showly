@@ -2,20 +2,20 @@
 <resources>
   <string name="textNextEpisode">Наступна серія:</string>
   <string name="textInMyShows">Додано до моїх серіалів</string>
-  <string name="textInWatchlist">Додано в \'На потім\'</string>
-  <string name="textInHidden">Приховане</string>
+  <string name="textInWatchlist">Додано до списку очікування</string>
+  <string name="textInHidden">Приховано</string>
   <string name="textShowQuickProgressTitle">Швидкий прогрес</string>
-  <string name="textShowQuickProgressSubTitle">Виберіть останню переглянуту серію, щоб швидко відмітити попередні.</string>
-  <string name="textShowQuickProgressDone">Ваш прогрес було оновлено.</string>
+  <string name="textShowQuickProgressSubTitle">Виберіть останню переглянуту серію, щоб швидко оновити ваш прогрес.</string>
+  <string name="textShowQuickProgressDone">Ваш прогрес був оновлений.</string>
   <string name="textEpisodeDate">Серія %1$d | %2$s</string>
   <string name="textEpisodeTitle">S.%02d E.%02d - \'%s\'</string>
   <string name="textActorsEmpty">Актори недоступні</string>
   <string name="textSeasons">Сезони:</string>
   <string name="textSeasonsEmpty">Сезони недоступні.</string>
   <string name="textTrailer">Трейлер</string>
-  <string name="textYouMayAlsoLike">Вам також може сподобатись</string>
-  <string name="textRuntimeLeftHours">~%sг %sхв залишилось</string>
-  <string name="textRuntimeLeftMinutes">~%sхв залишилось</string>
-  <string name="textShowManageLists">Керування списками</string>
-  <string name="textShowManageListsCount">Керування списками (%d)</string>
+  <string name="textYouMayAlsoLike">Вам також може сподобатися</string>
+  <string name="textRuntimeLeftHours">~залишилося %sh %sm</string>
+  <string name="textRuntimeLeftMinutes">~залишилося %sm</string>
+  <string name="textShowManageLists">Керувати списками</string>
+  <string name="textShowManageListsCount">Керувати списками (%d)</string>
 </resources>

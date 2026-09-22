@@ -1,166 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textImagesCacheCleared">Кэш изображений был очищен.</string>
+  <string name="textImagesCacheCleared">Кэш изображений очищен.</string>
   <string name="textSettings">Настройки</string>
-  <string name="textSettingsGeneral"><![CDATA[Общие & UX]]></string>
-  <string name="errorScrobSyncFailed">Синхронизация Scrob не удалась. Пожалуйста, попробуйте еще раз.</string>
+  <string name="textSettingsGeneral"><![CDATA[Общие и UX]]></string>
+  <string name="errorScrobSyncFailed">Синхронизация со Scrob не удалась. Пожалуйста, попробуйте еще раз.</string>
   <string name="textSettingsRecentShowsTitle">Количество недавно добавленных</string>
-  <string name="textSettingsRecentShowsSummary">Количество недавно добавленных для отображения в \'Коллекциях\'.</string>
-  <string name="textSettingsUpcomingSectionTitle">Секция Предстоящие</string>
-  <string name="textSettingsUpcomingSectionSummary">Включить/выключить раздел «Предстоящие» на вкладке «Прогресс».</string>
+  <string name="textSettingsRecentShowsSummary">Количество недавних элементов для отображения в разделе \'Коллекция\'.</string>
+  <string name="textSettingsUpcomingSectionTitle">Раздел \'Скоро\'</string>
+  <string name="textSettingsUpcomingSectionSummary">Включить/выключить раздел \'Скоро\' во вкладке \'Прогресс\'.</string>
   <string name="textSettingsThemeTitle">Тема</string>
-  <string name="textSettingsThemeSummary">Выберите главную тему.</string>
+  <string name="textSettingsThemeSummary">Выберите основную тему.</string>
   <string name="textSettingsThemeWidgetsTitle">Тема</string>
   <string name="textSettingsThemeWidgetsSummary">Выберите тему виджетов.</string>
   <string name="textSettingsWidgetsTransparencyTitle">Фон</string>
-  <string name="textSettingsWidgetsTransparencySummary">Установить уровень прозрачности фона виджетов.</string>
+  <string name="textSettingsWidgetsTransparencySummary">Установите уровень прозрачности фона виджетов.</string>
   <string name="textSettingsMyShowsCountryTitle">Регион</string>
-  <string name="textSettingsMyShowsCountrySummary">Выберите регион для использования с данными потоковых сервисов.</string>
+  <string name="textSettingsMyShowsCountrySummary">Выберите регион для получения данных о стриминговых сервисах.</string>
   <string name="textSettingsMyShowsLanguageTitle">Язык</string>
-  <string name="textSettingsMyShowsLanguageSummary">Описания и названия будут переведены, когда будут доступны. Приложение будет перезапущено.</string>
-  <string name="textSettingsDateFormatTitle">Формат даты/времени</string>
-  <string name="textSettingsIncludeSpecialsTitle">Специальные сезоны</string>
-  <string name="textSettingsIncludeSpecialsSummary">Отображать \"Специальные\" сезоны в экране деталей сериала.</string>
+  <string name="textSettingsMyShowsLanguageSummary">Описания и названия будут переведены, если это возможно. Приложение будет перезапущено.</string>
+  <string name="textSettingsDateFormatTitle">Формат даты / времени</string>
+  <string name="textSettingsIncludeSpecialsTitle">Спецвыпуски</string>
+  <string name="textSettingsIncludeSpecialsSummary">Показывать спецвыпуски в деталях сериала.</string>
   <string name="textSettingsNotifications">Уведомления</string>
   <string name="textSettingsPushNotificationsTitle">Push-уведомления</string>
-  <string name="textSettingsShowsNotificationsSummary">Получать уведомления о новых фильмах, эпизодах, сезонах для сериалов, на которые вы подписаны.</string>
-  <string name="textSettingsShowsNotificationsRationale">Пожалуйста, предоставьте приложению разрешение на отображение уведомлений.\n\nХотели бы вы сделать это сейчас?</string>
-  <string name="textSettingsMisc">Прочее</string>
+  <string name="textSettingsShowsNotificationsSummary">Получать уведомления о новых фильмах, сериях и сезонах для сериалов, на которые вы подписаны.</string>
+  <string name="textSettingsShowsNotificationsRationale">Пожалуйста, предоставьте приложению разрешение на показ уведомлений.\n\nХотите сделать это сейчас?</string>
+  <string name="textSettingsMisc">Разное</string>
   <string name="textSettingsContactDevsTitle">Связаться с разработчиками</string>
-  <string name="textSettingsContactDevsSummary">Возникли проблемы? Нажмите, чтобы отправить нам письмо (showlyapp@gmail.com).</string>
+  <string name="textSettingsContactDevsSummary">Есть проблема? Нажмите, чтобы отправить нам письмо (showlyapp@gmail.com).</string>
   <string name="textSettingsRateAppTitle">Оставить отзыв</string>
-  <string name="textSettingsRateAppSummary">Понравилось Showly? Оставьте свой отзыв в PlayStore. Спасибо!</string>
-  <string name="textSettingsDeleteCacheTitle">Очистить кеш изображений</string>
-  <string name="textSettingsDeleteCacheSummary">Нажмите, чтобы очистить кэш локальных изображений. Это может помочь, если изображения загружаются некорректно.</string>
+  <string name="textSettingsRateAppSummary">Нравится Showly? Оставьте нам отзыв в PlayStore. Спасибо!</string>
+  <string name="textSettingsDeleteCacheTitle">Очистить кэш изображений</string>
+  <string name="textSettingsDeleteCacheSummary">Нажмите, чтобы очистить локальный кэш изображений. Это может помочь, если изображения сериалов не загружаются правильно.</string>
   <string name="textSettingsMoviesEnabledTitle">Фильмы</string>
-  <string name="textSettingsMoviesEnabledSummary">Включить/отключить поддержку фильмов. Приложение будет перезапущено.</string>
+  <string name="textSettingsMoviesEnabledSummary">Включить/выключить поддержку фильмов. Приложение будет перезапущено.</string>
   <string name="textSettingsWidgets">Виджеты</string>
-  <string name="textSettingsWidgetsLabelsTitle">Названия</string>
-  <string name="textSettingsWidgetsLabelsSummary">Отображение полупрозрачных заголовков виджетов.</string>
-  <string name="textSettingsStreamingsDisclaimer">Данные сервисов вещания предоставляются</string>
+  <string name="textSettingsWidgetsLabelsTitle">Заголовки</string>
+  <string name="textSettingsWidgetsLabelsSummary">Показывать полупрозрачные заголовки виджетов.</string>
+  <string name="textSettingsStreamingsDisclaimer">Данные о стриминговых сервисах предоставлены</string>
   <string name="textSettingsStreamingServicesTitle">Стриминговые сервисы</string>
-  <string name="textSettingsStreamingServicesMessage">Отображать данные потоковых служб.</string>
+  <string name="textSettingsStreamingServicesMessage">Показывать данные о стриминговых сервисах.</string>
   <string name="textSettingsProgressNextEpisodeTitle">Следующая серия</string>
-  <string name="textSettingsProgressNextEpisodeMessage">Вычислить следующий эпизод с помощью:</string>
-  <string name="textSettingsDateSelectionMessage">Выберите опцию выбора даты по умолчанию.</string>
-  <string name="textSettingsTabletColumnsTitle">Число колонок списков</string>
-  <string name="textSettingsTabletColumnsSummary">Выберите предпочтительный номер столбцов для списков.</string>
-  <string name="textSettingsBackup">Резервное копирование и восстановление</string>
+  <string name="textSettingsProgressNextEpisodeMessage">Рассчитывать следующую серию на основе:</string>
+  <string name="textSettingsDateSelectionMessage">Выберите вариант выбора даты по умолчанию.</string>
+  <string name="textSettingsTabletColumnsTitle">Количество колонок в списках</string>
+  <string name="textSettingsTabletColumnsSummary">Выберите предпочтительное количество колонок для списков.</string>
+  <string name="textSettingsBackup"><![CDATA[Резервное копирование и восстановление]]></string>
   <string name="textSettingsBackupExportTitle">Экспорт</string>
-  <string name="textSettingsBackupExportDescription">Экспортируйте данные, чтобы создать резервную копию или перенести их на новое устройство.</string>
+  <string name="textSettingsBackupExportDescription">Экспортируйте свои данные, чтобы создать резервную копию или перенести их на новое устройство.</string>
   <string name="textSettingsBackupImportTitle">Импорт</string>
   <string name="textSettingsBackupImportDescription">Импортируйте файл резервной копии, чтобы восстановить данные на этом устройстве.</string>
   <string name="textSettingsSpoilers">Спойлеры</string>
   <string name="textSettingsSpoilersShows">Сериалы</string>
   <string name="textSettingsSpoilersShowsSummary">Управление настройками спойлеров для сериалов.</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">Мои сериалы</string>
-  <string name="textSettingsSpoilersShowsOverviewsMyDescription">Скрыть
-  
-    <b>описание</b> сериалов, добавленных в Мои сериалы</string>
-  <string name="textSettingsSpoilersShowsRatingsMyDescription">Скрыть
-  
-    <b>рейтинг</b> сериалов, добавленных в Мои сериалы</string>
-  <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">Буду смотреть</string>
-  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Скрыть
-  
-    <b>описание</b> сериалов, добавленных в Хочу посмотреть</string>
-  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Скрыть
-  
-    <b>рейтинг</b> сериалов, добавленных в Хочу посмотреть</string>
-  <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Скрытое</string>
-  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Скрыть
-  
-    <b>описание</b> сериалов, добавленных в Скрытое</string>
-  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Скрыть
-  
-    <b>рейтинг</b> сериалов, добавленных в Скрытое</string>
+  <string name="textSettingsSpoilersShowsOverviewsMyDescription">Скрывать <b>описание</b> сериалов, добавленных в Мои сериалы</string>
+  <string name="textSettingsSpoilersShowsRatingsMyDescription">Скрывать <b>рейтинг</b> сериалов, добавленных в Мои сериалы</string>
+  <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">Список ожидания</string>
+  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Скрывать <b>описание</b> сериалов, добавленных в список ожидания</string>
+  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Скрывать <b>рейтинг</b> сериалов, добавленных в список ожидания</string>
+  <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Скрытые</string>
+  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Скрывать <b>описание</b> сериалов, добавленных в скрытые</string>
+  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Скрывать <b>рейтинг</b> сериалов, добавленных в скрытые</string>
   <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">Не в коллекции</string>
-  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Скрыть
-  
-    <b>описание</b> сериалов, которых нет в Коллекции</string>
-  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Скрыть
-  
-    <b>рейтинг</b> сериалов, которых нет в Коллекции</string>
+  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Скрывать <b>описание</b> сериалов, которых нет в вашей коллекции</string>
+  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Скрывать <b>рейтинг</b> сериалов, которых нет в вашей коллекции</string>
   <string name="textSettingsSpoilersMovies">Фильмы</string>
-  <string name="textSettingsSpoilersMoviesSummary">Управление настройками спойлеров для фильмов.</string>
+  <string name="textSettingsSpoilersMoviesSummary">Управление настройками спойлеров для фильмов. </string>
   <string name="textSettingsSpoilersMoviesOverviewsMyTitle">История</string>
-  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Скрыть описание фильмов, добавленных в историю</string>
-  <string name="textSettingsSpoilersMoviesRatingsMyDescription">Скрыть оценку фильмов, добавленных в историю</string>
-  <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">Буду смотреть</string>
-  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Скрыть
-  
-    <b>описание</b> фильмов, добавленных в Хочу посмотреть</string>
-  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Скрыть
-  
-    <b>рейтинг</b> фильмов, добавленных в Хочу посмотреть</string>
-  <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Скрытое</string>
-  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Скрыть
-  
-    <b>описание</b> фильмов, добавленных в Скрытое</string>
-  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Скрыть
-  
-    <b>рейтинг</b> фильмов, добавленных в Скрытое</string>
+  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Скрывать <b>описание</b> фильмов, добавленных в историю</string>
+  <string name="textSettingsSpoilersMoviesRatingsMyDescription">Скрывать <b>рейтинг</b> фильмов, добавленных в историю</string>
+  <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">Список ожидания</string>
+  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Скрывать <b>описание</b> фильмов, добавленных в список ожидания</string>
+  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Скрывать <b>рейтинг</b> фильмов, добавленных в список ожидания</string>
+  <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Скрытые</string>
+  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Скрывать <b>описание</b> фильмов, добавленных в скрытые</string>
+  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Скрывать <b>рейтинг</b> фильмов, добавленных в скрытые</string>
   <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">Не в коллекции</string>
-  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Скрыть
-  
-    <b>описание</b> фильмов, которых нет в Коллекции</string>
-  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Скрыть
-  
-    <b>рейтинг</b> фильмов, которых нет в Коллекции</string>
-  <string name="textSettingsSpoilersEpisodes">Эпизоды</string>
-  <string name="textSettingsSpoilersEpisodesSummary">Управление настройками спойлеров для серий.</string>
-  <string name="textSettingsSpoilersEpisodesImage">Скрыть
-  
-    <b>изображения</b> непросмотренных эпизодов.</string>
-  <string name="textSettingsSpoilersEpisodesTitle">Скрыть
-  
-    <b>название</b> из непросмотренных эпизодов.</string>
-  <string name="textSettingsSpoilersEpisodesDescription">Скрыть
-  
-    <b>описание</b> непросмотренных эпизодов.</string>
-  <string name="textSettingsSpoilersEpisodesRating">Скрыть
-  
-    <b>рейтинг</b> непросмотренных эпизодов.</string>
+  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Скрывать <b>описание</b> фильмов, которых нет в вашей коллекции</string>
+  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Скрывать <b>рейтинг</b> фильмов, которых нет в вашей коллекции</string>
+  <string name="textSettingsSpoilersEpisodes">Серии</string>
+  <string name="textSettingsSpoilersEpisodesSummary">Управление настройками спойлеров для серий. </string>
+  <string name="textSettingsSpoilersEpisodesImage">Скрывать <b>изображение</b> непросмотренных серий.</string>
+  <string name="textSettingsSpoilersEpisodesTitle">Скрывать <b>название</b> непросмотренных серий.</string>
+  <string name="textSettingsSpoilersEpisodesDescription">Скрывать <b>описание</b> непросмотренных серий.</string>
+  <string name="textSettingsSpoilersEpisodesRating">Скрывать <b>рейтинг</b> непросмотренных серий.</string>
   <string name="textSettingsSpoilersTapToRevealTitle">Нажмите, чтобы показать</string>
-  <string name="textSettingsSpoilersTapToRevealDescription">Нажмите на скрытый контент, чтобы временно его отобразить.</string>
+  <string name="textSettingsSpoilersTapToRevealDescription">Нажмите на скрытый контент, чтобы временно показать его.</string>
   <string name="textNextEpisodeLastWatched">Последняя просмотренная серия</string>
-  <string name="textNextEpisodeOldest">Ранее непросмотренная серия</string>
+  <string name="textNextEpisodeOldest">Самая старая непросмотренная серия</string>
   <string name="textDateSelectionAsk">Всегда спрашивать</string>
-  <string name="textDateSelectionNow">Всегда «Сейчас»</string>
-  <string name="textTransparency100">Непрозрачная</string>
-  <string name="textLanguageEnglish" translatable="false">English</string>
-  <string name="textLanguagePolish" translatable="false">Polski</string>
-  <string name="textLanguageRomanian" translatable="false">Română</string>
-  <string name="textLanguageArabic" translatable="false">العربية</string>
-  <string name="textLanguageChinese" translatable="false">中文简体</string>
-  <string name="textLanguageSpanish" translatable="false">Español</string>
-  <string name="textLanguageItalian" translatable="false">Italiano</string>
-  <string name="textLanguageFrench" translatable="false">Français</string>
-  <string name="textLanguageDanish" translatable="false">Dansk</string>
-  <string name="textLanguagePortugalBrasil" translatable="false">Português brasileiro</string>
-  <string name="textLanguageTurkish" translatable="false">Türkçe</string>
-  <string name="textLanguageUkrainian" translatable="false">Українська</string>
-  <string name="textLanguageGerman" translatable="false">Deutsch</string>
-  <string name="textLanguageRussian" translatable="false">Pусский</string>
-  <string name="textLanguageFinnish" translatable="false">Suomi</string>
-  <string name="textTransparency0" translatable="false">100%</string>
-  <string name="textTransparency25" translatable="false">25%</string>
-  <string name="textTransparency50" translatable="false">50%</string>
-  <string name="textTransparency75" translatable="false">75%</string>
+  <string name="textDateSelectionNow">Всегда \"Сейчас\"</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <string name="textTransparency100">Непрозрачный</string>
   <string name="textSettingsScrob">Синхронизация Scrob</string>
   <string name="textSettingsScrobTitle">Учетные данные Scrob</string>
   <string name="textSettingsScrobDescription">Синхронизация с вашим собственным сервером Scrob</string>
-  <string name="textSettingsScrobUrlHint">URL-адрес Scrob</string>
+  <string name="textSettingsScrobUrlHint">URL Scrob</string>
   <string name="textSettingsScrobApiKeyHint">API-ключ Scrob</string>
-  <string name="textSettingsScrobDialogMessage">Введите адрес вашего сервера Scrob и учетные данные для него.</string>
+  <string name="textSettingsScrobDialogMessage">Введите адрес вашего сервера Scrob и учетные данные.</string>
   <string name="textSettingsScrobPasswordSetHint">API-ключ</string>
   <string name="textSettingsScrobNotConfigured">Не настроено</string>
   <string name="textSettingsScrobSyncNowTitle">Синхронизировать сейчас</string>
-  <string name="textSettingsScrobSyncNowSummary">Импорт истории просмотров и списков из Scrob.</string>
+  <string name="textSettingsScrobSyncNowSummary">Импортировать историю просмотров и списки из Scrob.</string>
   <string name="textScrobSyncStarted">Синхронизация запущена. Вы можете спокойно покинуть этот экран.</string>
-  <string name="textSettingsScrobWatchlistTitle">Список «Буду смотреть»</string>
-  <string name="textSettingsScrobWatchlistSummary">Использовать список Scrob в качестве списка «Буду смотреть»</string>
-  <string name="textSettingsScrobWatchlistNotSelected">Не выбрано</string>
-  <string name="textSettingsScrobWatchlistDialogTitle">Выбрать список «Буду смотреть»</string>
+  <string name="textSettingsScrobWatchlistTitle">Список ожидания</string>
+  <string name="textSettingsScrobWatchlistSummary">Использовать список Scrob как список ожидания</string>
+  <string name="textSettingsScrobWatchlistNotSelected">Не выбран</string>
+  <string name="textSettingsScrobWatchlistDialogTitle">Выберите список ожидания</string>
   <string name="textSettingsScrobWatchlistNone">Нет</string>
 </resources>

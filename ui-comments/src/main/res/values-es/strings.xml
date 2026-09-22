@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textComment">Comentar</string>
+  <string name="textComment">Comentario</string>
   <string name="textComments2">Comentarios</string>
   <string name="textNoComments">Sin comentarios.</string>
 </resources>

@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
   <string name="menuProgress">Progres</string>
   <string name="menuDiscover">Descoperă</string>
   <string name="menuCollection">Colecție</string>
-    <string name="textDisclaimerTitle">Bine ai venit!</string>
-  <string name="textDisclaimerText">Te rugăm să reții că
-    <b>NU POȚI</b> viziona, transmite în flux sau descărca seriale și filme cu această aplicație.\n\nUtilizează aplicații precum
-    <b>Netflix</b> pentru a transmite în flux și viziona conținut.</string>
-  <string name="textDisclaimerConfirmText">Bine, înțeleg</string>
+  <string name="textDisclaimerTitle">Bun venit!</string>
+  <string name="textDisclaimerText">Vă rugăm să rețineți că <b>NU PUTEȚI</b> viziona, transmite sau descărca seriale și filme cu această aplicație.\n\nUtilizați aplicații precum <b>Netflix</b> pentru a transmite și viziona conținut.</string>
+  <string name="textDisclaimerConfirmText">OK, înțeleg</string>
+
+
+
   <string name="textWhatsNewTitle">Ce e nou</string>
   <string name="textWhatsNewSubtitle">Versiunea %s</string>
   <string name="shortcutDiscover">Descoperă</string>

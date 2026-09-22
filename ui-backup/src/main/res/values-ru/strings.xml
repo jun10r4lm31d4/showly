@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore">Резервное копирование и восстановление</string>
+  <string name="textBackupAndRestore"><![CDATA[Резервное копирование и восстановление]]></string>
   <string name="textBackupExport">Экспорт данных</string>
-  <string name="textBackupExportDescription">Экспортируйте данные о сериалах и фильмах в файл, чтобы создать резервную копию или перенести их на новое устройство.</string>
+  <string name="textBackupExportDescription">Экспортируйте данные о своих сериалах и фильмах в файл, чтобы создать резервную копию или перенести их на новое устройство.</string>
   <string name="textBackupImport">Импорт данных</string>
-  <string name="textBackupImportDescription">Импортируйте данные о сериалах и фильмах из файла резервной копии.\n\nВаша текущая коллекция не будет удалена, будут добавлены только отсутствующие элементы.</string>
+  <string name="textBackupImportDescription">Импортируйте данные о своих сериалах и фильмах из файла резервной копии.\n\nВаша текущая коллекция не будет удалена, будут добавлены только недостающие элементы.</string>
   <string name="textBackupExportSuccess">Данные успешно экспортированы.</string>
   <string name="textBackupImportSuccess">Данные успешно импортированы.</string>
   <string name="errorImportCancelled">Импорт данных был отменен.</string>
+  <string name="textBackupExportSchedule">Расписание</string>
+  <string name="textBackupExportOptionOff">Выкл.</string>
+  <string name="textBackupExportOption6Hours">Каждые 6 часов</string>
+  <string name="textBackupExportOptionDaily">Каждый день</string>
+  <string name="textBackupExportOption3Day">Каждые 3 дня</string>
+  <string name="textBackupExportOptionWeekly">Каждую неделю</string>
+  <string name="textBackupExportOptionOffMessage">Резервное копирование не будет запускаться автоматически.</string>
+  <string name="textBackupExportOptionConfirmMessage">Автоматическое резервное копирование запланировано.</string>
+  <string name="textBackupExportOption6HoursButton">Запланировано каждые 6 часов</string>
+  <string name="textBackupExportOptionDailyButton">Запланировано каждый день</string>
+  <string name="textBackupExportOption3DayButton">Запланировано каждые 3 дня</string>
+  <string name="textBackupExportOptionWeeklyButton">Запланировано каждую неделю</string>
+  <string name="textBackupExportLastTimestamp">Последняя копия: %s</string>
 </resources>

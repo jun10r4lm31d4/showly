@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textInMyMovies">Adicionado ao Histórico</string>
-  <string name="textInMoviesWatchlist">Adicionado aos Favoritos</string>
+  <string name="textInMyMovies">Adicionado ao histórico</string>
+  <string name="textInMoviesWatchlist">Adicionado à lista de desejos</string>
   <string name="textInHidden">Oculto</string>
-  <string name="textMovieActorsEmpty">Atores não estão disponíveis</string>
+  <string name="textMovieActorsEmpty">Atores não disponíveis</string>
   <string name="textMovieTrailer">Trailer</string>
   <string name="textMovieRate">Avaliar</string>
   <string name="textMovieComments2">Comentários</string>

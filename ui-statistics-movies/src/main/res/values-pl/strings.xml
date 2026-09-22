@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatisticsMovies">Statystyki</string>
-  <string name="textStatisticsMoviesEmpty">Dodaj przynajmniej jeden film do <b>Historii</b>\naby zobaczyć statystyki.</string>
-  <string name="textStatisticsMoviesTotalTimeSpent">Całkowity Czas</string>
-  <string name="textStatisticsMoviesTotalTimeItIs">czyli</string>
+  <string name="textStatisticsMoviesEmpty">Przynajmniej jeden film musi znajdować się w <b>Historii</b>\nzanim statystyki będą mogły zostać wyświetlone.</string>
+  <string name="textStatisticsMoviesTotalTimeSpent">Całkowity czas spędzony na oglądaniu</string>
+  <string name="textStatisticsMoviesTotalTimeItIs">i jest to</string>
   <string name="textStatisticsMoviesTotalTimeSpentHours">%s godzin</string>
   <string name="textStatisticsMoviesTotalTimeSpentMinutes">%s minut</string>
   <string name="textStatisticsMoviesTotalTimeSpentDays">co daje około %s dni.</string>
-  <string name="textStatisticsMoviesTotalMovies">Całkowita Ilość Filmów</string>
-  <string name="textStatisticsMoviesTotalMoviesCount">%s Filmów</string>
-  <string name="textStatisticsMoviesTopGenre">Ulubione Gatunki</string>
-  <string name="textStatisticsMoviesTopGenreSubValue">zdają się być ulubionymi. Kliknij po więcej.</string>
-  <string name="textStatisticsMoviesTopGenreSubValue2">zdają się być ulubionymi.</string>
-  <string name="textStatisticsMoviesRatings">Niedawno Ocenione</string>
+  <string name="textStatisticsMoviesTotalMovies">Wszystkich obejrzanych filmów</string>
+  <string name="textStatisticsMoviesTotalMoviesCount">%s filmów</string>
+  <string name="textStatisticsMoviesTopGenre">Najlepsze gatunki</string>
+  <string name="textStatisticsMoviesTopGenreSubValue">wydają się być w Twoim guście. Dotknij, aby zobaczyć więcej.</string>
+  <string name="textStatisticsMoviesTopGenreSubValue2">wydają się być w Twoim guście.</string>
+  <string name="textStatisticsMoviesRatings">Ostatnio ocenione</string>
 </resources>

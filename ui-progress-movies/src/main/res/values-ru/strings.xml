@@ -2,12 +2,8 @@
 <resources>
   <string name="tabMoviesCalendar">Календарь</string>
   <string name="tabMoviesProgress">Прогресс</string>
-  <string name="textMoviesCalendarEmpty">Нет новых фильмов.</string>
-  <string name="textMoviesCalendarRecentsEmpty">Недавно вышедших фильмов нет.</string>
+  <string name="textMoviesCalendarEmpty">Новых фильмов пока нет.</string>
+  <string name="textMoviesCalendarRecentsEmpty">Нет недавно вышедших фильмов.</string>
   <string name="textDiscoverMovies">Найти фильмы</string>
-  <string name="textMoviesProgressEmpty">Ваш
-  
-    <b>Прогресс</b> в настоящее время пуст.\n\nПосетите вкладку
-  
-    <b>Открытия</b>, чтобы добавить сериалы или импортировать вашу коллекцию Trakt.tv.</string>
+  <string name="textMoviesProgressEmpty">Ваш <b>Прогресс</b> в данный момент пуст.\n\nПосетите вкладку <b>Обзор</b>, чтобы добавить фильмы или импортировать свою коллекцию из Trakt.tv.</string>
 </resources>

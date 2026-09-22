@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textInMyMovies">Geçmişe eklendi</string>
-  <string name="textInMoviesWatchlist">İstek listesine eklendi</string>
-  <string name="textInHidden">Gizlenmiş</string>
-  <string name="textMovieActorsEmpty">Oyuncular mevcut değil</string>
+  <string name="textInMoviesWatchlist">İzleme listesine eklendi</string>
+  <string name="textInHidden">Gizlendi</string>
+  <string name="textMovieActorsEmpty">Oyuncu bilgisi mevcut değil</string>
   <string name="textMovieTrailer">Fragman</string>
-  <string name="textMovieRate">Oy Ver</string>
+  <string name="textMovieRate">Puanla</string>
   <string name="textMovieComments2">Yorumlar</string>
-  <string name="textMovieYouMayAlsoLike">Bunlar da hoşunuza gidebilir</string>
+  <string name="textMovieYouMayAlsoLike">Şunları da beğenebilirsiniz</string>
   <string name="textMovieCollections">Koleksiyonlar</string>
   <string name="textMovieManageLists">Listeleri Yönet</string>
   <string name="textMovieManageListsCount">Listeleri Yönet (%d)</string>

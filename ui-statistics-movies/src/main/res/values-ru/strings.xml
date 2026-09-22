@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatisticsMovies">Статистика</string>
-  <string name="textStatisticsMoviesEmpty">В истории просмотров должен быть хотя бы один фильм,
-чтобы отобразить статистику.</string>
-  <string name="textStatisticsMoviesTotalTimeSpent">Общее время, потраченное на просмотр</string>
-  <string name="textStatisticsMoviesTotalTimeItIs">это</string>
-  <string name="textStatisticsMoviesTotalTimeSpentHours">%s часов</string>
-  <string name="textStatisticsMoviesTotalTimeSpentMinutes">%s минут</string>
-  <string name="textStatisticsMoviesTotalTimeSpentDays">которые составляют около %s дней.</string>
-  <string name="textStatisticsMoviesTotalMovies">Количество просмотренных фильмов</string>
-  <string name="textStatisticsMoviesTotalMoviesCount">%s Фильмов</string>
-  <string name="textStatisticsMoviesTopGenre">Топ жанров</string>
-  <string name="textStatisticsMoviesTopGenreSubValue">кажется, это ваша чашка чая. Нажмите, чтобы увидеть больше.</string>
-  <string name="textStatisticsMoviesTopGenreSubValue2">кажется, это ваша чашка чая.</string>
-  <string name="textStatisticsMoviesRatings">Недавно оцененные</string>
+  <string name="textStatisticsMoviesEmpty">В <b>Истории</b> должен быть хотя бы один фильм,\nпрежде чем статистика сможет быть отображена.</string>
+  <string name="textStatisticsMoviesTotalTimeSpent">Всего времени за просмотром</string>
+  <string name="textStatisticsMoviesTotalTimeItIs">и это</string>
+  <string name="textStatisticsMoviesTotalTimeSpentHours">%s ч.</string>
+  <string name="textStatisticsMoviesTotalTimeSpentMinutes">%s мин.</string>
+  <string name="textStatisticsMoviesTotalTimeSpentDays">что составляет около %s дн.</string>
+  <string name="textStatisticsMoviesTotalMovies">Всего просмотрено фильмов</string>
+  <string name="textStatisticsMoviesTotalMoviesCount">%s фильмов</string>
+  <string name="textStatisticsMoviesTopGenre">Лучшие жанры</string>
+  <string name="textStatisticsMoviesTopGenreSubValue">похоже, в вашем вкусе. Нажмите, чтобы увидеть больше.</string>
+  <string name="textStatisticsMoviesTopGenreSubValue2">похоже, в вашем вкусе.</string>
+  <string name="textStatisticsMoviesRatings">Недавние оценки</string>
 </resources>

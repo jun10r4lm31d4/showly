@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
   <string name="menuProgress">Fremskridt</string>
   <string name="menuDiscover">Opdag</string>
   <string name="menuCollection">Samling</string>
-    <string name="textDisclaimerTitle">Velkommen!</string>
-  <string name="textDisclaimerText">Bemærk venligst, at du
-    <b>IKKE</b> kan se, streame eller downloade serier og film med denne app.\n\nBrug apps som
-    <b>Netflix</b> til at streame og se indhold.</string>
+  <string name="textDisclaimerTitle">Velkommen!</string>
+  <string name="textDisclaimerText">Bemærk venligst, at du <b>KAN IKKE</b> se, streame eller downloade serier og film med denne app.\n\nBrug apps som <b>Netflix</b> til at streame og se indhold.</string>
   <string name="textDisclaimerConfirmText">OK, jeg forstår</string>
+
+
+
   <string name="textWhatsNewTitle">Hvad er nyt</string>
   <string name="textWhatsNewSubtitle">Version %s</string>
   <string name="shortcutDiscover">Opdag</string>

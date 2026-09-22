@@ -1,179 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textImagesCacheCleared">图像缓存已清理。</string>
+  <string name="textImagesCacheCleared">图片缓存已清除。</string>
   <string name="textSettings">设置</string>
-  <string name="textSettingsGeneral"><![CDATA[常规 & 用户体验]]></string>
-  <string name="errorScrobSyncFailed">Scrob 同步失败。请再试一次。</string>
-  <string name="textSettingsRecentShowsTitle">最近添加的数量</string>
-  <string name="textSettingsRecentShowsSummary">「合集」中最近添加项目的展示数量。</string>
-  <string name="textSettingsUpcomingSectionTitle">即将开播模块</string>
-  <string name="textSettingsUpcomingSectionSummary">在「进度」选项卡中启用/禁用「即将开播」模块。</string>
+  <string name="textSettingsGeneral"><![CDATA[通用与 UX]]></string>
+  <string name="errorScrobSyncFailed">Scrob 同步失败。请重试。</string>
+  <string name="textSettingsRecentShowsTitle">最近添加数量</string>
+  <string name="textSettingsRecentShowsSummary">在“收藏”中显示的最近项目数量。</string>
+  <string name="textSettingsUpcomingSectionTitle">即将到来部分</string>
+  <string name="textSettingsUpcomingSectionSummary">在“进度”选项卡中启用/禁用“即将到来”部分。</string>
   <string name="textSettingsThemeTitle">主题</string>
-  <string name="textSettingsThemeSummary">选择首要主题。</string>
+  <string name="textSettingsThemeSummary">选择主主题。</string>
   <string name="textSettingsThemeWidgetsTitle">主题</string>
-  <string name="textSettingsThemeWidgetsSummary">选择桌面小部件主题。</string>
+  <string name="textSettingsThemeWidgetsSummary">选择小部件主题。</string>
   <string name="textSettingsWidgetsTransparencyTitle">背景</string>
-  <string name="textSettingsWidgetsTransparencySummary">设置桌面小部件背景透明度。</string>
+  <string name="textSettingsWidgetsTransparencySummary">设置小部件背景透明度。</string>
   <string name="textSettingsMyShowsCountryTitle">地区</string>
   <string name="textSettingsMyShowsCountrySummary">选择用于流媒体服务数据的地区。</string>
   <string name="textSettingsMyShowsLanguageTitle">语言</string>
-  <string name="textSettingsMyShowsLanguageSummary">详情和标题将在可用时会被翻译。应用将重启。</string>
-  <string name="textSettingsDateFormatTitle">日期 / 时间格式</string>
+  <string name="textSettingsMyShowsLanguageSummary">简介和标题将在可用时进行翻译。应用将重新启动。</string>
+  <string name="textSettingsDateFormatTitle">日期/时间格式</string>
   <string name="textSettingsIncludeSpecialsTitle">特别季</string>
-  <string name="textSettingsIncludeSpecialsSummary">在节目详细页面上显示 「特别」季。</string>
+  <string name="textSettingsIncludeSpecialsSummary">在剧集详情屏幕中显示“特别”季。</string>
   <string name="textSettingsNotifications">通知</string>
-  <string name="textSettingsPushNotificationsTitle">通知推送</string>
-  <string name="textSettingsShowsNotificationsSummary">接到关于您正在关注电影、剧集的更新通知。</string>
-  <string name="textSettingsShowsNotificationsRationale">请授予应用程序显示通知的权限。\n\n您想现在就启用吗？</string>
+  <string name="textSettingsPushNotificationsTitle">推送通知</string>
+  <string name="textSettingsShowsNotificationsSummary">接收关于您关注的剧集的新电影、剧集和季度的通知。</string>
+  <string name="textSettingsShowsNotificationsRationale">请授予应用显示通知的权限。\n\n您现在要这样做吗？</string>
   <string name="textSettingsMisc">杂项</string>
   <string name="textSettingsContactDevsTitle">联系开发者</string>
-  <string name="textSettingsContactDevsSummary">遇到了问题？点击后向我们发送邮件 (showlyapp@gmail.com)。</string>
+  <string name="textSettingsContactDevsSummary">有问题？点击向我们发送电子邮件 (showlyapp@gmail.com)。</string>
   <string name="textSettingsRateAppTitle">提供反馈</string>
-  <string name="textSettingsRateAppSummary">喜欢 Showly 吗？请在 PlayStore 上给我们留下评论。谢谢！</string>
-  <string name="textSettingsDeleteCacheTitle">清理图片缓存</string>
-  <string name="textSettingsDeleteCacheSummary">点击清除本地图片缓存。如果显示图片未正确加载，这可能会有帮助。</string>
+  <string name="textSettingsRateAppSummary">喜欢 Showly 吗？在 PlayStore 上给我们好评。谢谢！</string>
+  <string name="textSettingsDeleteCacheTitle">清除图片缓存</string>
+  <string name="textSettingsDeleteCacheSummary">点击清除本地图片缓存。如果剧集图片加载不正确，这可能会有所帮助。</string>
   <string name="textSettingsMoviesEnabledTitle">电影</string>
-  <string name="textSettingsMoviesEnabledSummary">启用/禁用电影模块。应用会重启。</string>
-  <string name="textSettingsWidgets">桌面小部件</string>
+  <string name="textSettingsMoviesEnabledSummary">启用/禁用电影支持。应用将重新启动。</string>
+  <string name="textSettingsWidgets">小部件</string>
   <string name="textSettingsWidgetsLabelsTitle">标题</string>
-  <string name="textSettingsWidgetsLabelsSummary">显示半透明的桌面小部件标题。</string>
-  <string name="textSettingsStreamingsDisclaimer">流媒体服务数据提供方</string>
+  <string name="textSettingsWidgetsLabelsSummary">显示半透明的小部件标题。</string>
+  <string name="textSettingsStreamingsDisclaimer">流媒体服务数据由以下提供：</string>
   <string name="textSettingsStreamingServicesTitle">流媒体服务</string>
   <string name="textSettingsStreamingServicesMessage">显示流媒体服务数据。</string>
   <string name="textSettingsProgressNextEpisodeTitle">下一集</string>
-  <string name="textSettingsProgressNextEpisodeMessage">使用该方式展示下一集：</string>
-  <string name="textSettingsDateSelectionMessage">选择默认日期。</string>
+  <string name="textSettingsProgressNextEpisodeMessage">计算下一集使用：</string>
+  <string name="textSettingsDateSelectionMessage">选择默认日期选择选项。</string>
   <string name="textSettingsTabletColumnsTitle">列表列数</string>
   <string name="textSettingsTabletColumnsSummary">选择列表的首选列数。</string>
-  <string name="textSettingsBackup"><![CDATA[备份 & 还原]]></string>
+  <string name="textSettingsBackup"><![CDATA[备份与恢复]]></string>
   <string name="textSettingsBackupExportTitle">导出</string>
-  <string name="textSettingsBackupExportDescription">导出您的数据以创建备份或传输到新设备。</string>
+  <string name="textSettingsBackupExportDescription">导出您的数据以创建备份或将其传输到新设备。</string>
   <string name="textSettingsBackupImportTitle">导入</string>
-  <string name="textSettingsBackupImportDescription">导入您的备份文件以恢复设备上的数据。</string>
+  <string name="textSettingsBackupImportDescription">导入您的备份文件以在此设备上恢复数据。</string>
   <string name="textSettingsSpoilers">剧透</string>
   <string name="textSettingsSpoilersShows">剧集</string>
-  <string name="textSettingsSpoilersShowsSummary">管理剧集剧透设置。</string>
+  <string name="textSettingsSpoilersShowsSummary">管理剧集的剧透设置。</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">我的剧集</string>
-  <string name="textSettingsSpoilersShowsOverviewsMyDescription">隐藏已添加至我的剧集的
-  
-    <b>描述</b>
-  </string>
-  <string name="textSettingsSpoilersShowsRatingsMyDescription">隐藏已添加至我的剧集的
-  
-    <b>评分</b>
-  </string>
-  <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">待看列表</string>
-  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">隐藏已添加至关注列表中剧集的
-  
-    <b>描述</b>
-  </string>
-  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">隐藏已添加至待看列表中剧集的
-  
-    <b>评分</b>
-  </string>
+  <string name="textSettingsSpoilersShowsOverviewsMyDescription">隐藏添加到“我的剧集”中的剧集的 <b>简介</b></string>
+  <string name="textSettingsSpoilersShowsRatingsMyDescription">隐藏添加到“我的剧集”中的剧集的 <b>评分</b></string>
+  <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">稍后观看</string>
+  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">隐藏添加到“稍后观看”中的剧集的 <b>简介</b></string>
+  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">隐藏添加到“稍后观看”中的剧集的 <b>评分</b></string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">已隐藏</string>
-  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">隐藏已添加至隐藏剧集的
-  
-    <b>描述</b>
-  </string>
-  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">隐藏我的剧集列表的评分</string>
-  <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">未收藏</string>
-  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">隐藏不在您收藏中的节目的
-  
-    <b>描述</b>
-  </string>
-  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">隐藏不在您收藏中的节目的
-  
-    <b>评分</b>
-  </string>
+  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">隐藏添加到“已隐藏”中的剧集的 <b>简介</b></string>
+  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">隐藏添加到“已隐藏”中的剧集的 <b>评分</b></string>
+  <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">未收藏词</string>
+  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">隐藏不在您的收藏词中的剧集的 <b>简介</b></string>
+  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">隐藏不在您的收藏词中的剧集的 <b>评分</b></string>
   <string name="textSettingsSpoilersMovies">电影</string>
-  <string name="textSettingsSpoilersMoviesSummary">管理影片的剧透设置。</string>
-  <string name="textSettingsSpoilersMoviesOverviewsMyTitle">历史</string>
-  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">隐藏已添加至观看历史的电影简介</string>
-  <string name="textSettingsSpoilersMoviesRatingsMyDescription">隐藏已添加至观看历史的电影评分</string>
-  <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">待看列表</string>
-  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">隐藏添加到“观看列表”中的电影的
-  
-    <b>描述</b>
-  </string>
-  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">隐藏添加到“观看列表”中的电影的
-  
-    <b>评分</b>
-  </string>
+  <string name="textSettingsSpoilersMoviesSummary">管理电影的剧透设置。</string>
+  <string name="textSettingsSpoilersMoviesOverviewsMyTitle">历史记录</string>
+  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">隐藏添加到历史记录中的电影的 <b>简介</b></string>
+  <string name="textSettingsSpoilersMoviesRatingsMyDescription">隐藏添加到历史记录中的电影的 <b>评分</b></string>
+  <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">稍后观看</string>
+  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">隐藏添加到“稍后观看”中的电影的 <b>简介</b></string>
+  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">隐藏添加到“稍后观看”中的电影的 <b>评分</b></string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">已隐藏</string>
-  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">隐藏添加到“隐藏”中的电影的
-  
-    <b>描述</b>
-  </string>
-  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">隐藏添加到“隐藏”中的电影的
-  
-    <b>评分</b>
-  </string>
-  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">未收藏</string>
-  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">隐藏不在您收藏中的电影的
-  
-    <b>描述</b>
-  </string>
-  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">隐藏不在您收藏中的电影的
-  
-    <b>评分</b>
-  </string>
-  <string name="textSettingsSpoilersEpisodes">集</string>
+  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">隐藏添加到“已隐藏”中的电影的 <b>简介</b></string>
+  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">隐藏添加到“已隐藏”中的电影的 <b>评分</b></string>
+  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">未收藏词</string>
+  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">隐藏不在您的收藏词中的电影的 <b>简介</b></string>
+  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">隐藏不在您的收藏词中的电影的 <b>评分</b></string>
+  <string name="textSettingsSpoilersEpisodes">剧集</string>
   <string name="textSettingsSpoilersEpisodesSummary">管理剧集的剧透设置。</string>
-  <string name="textSettingsSpoilersEpisodesImage">隐藏未观看剧集的
-  
-    <b>图像</b>。</string>
-  <string name="textSettingsSpoilersEpisodesTitle">隐藏未观看剧集的
-  
-    <b>标题</b>
-  </string>
-  <string name="textSettingsSpoilersEpisodesDescription">隐藏未观看剧集的
-  
-    <b>描述</b>
-  </string>
-  <string name="textSettingsSpoilersEpisodesRating">隐藏未观看剧集的
-  
-    <b>评分</b>。</string>
-  <string name="textSettingsSpoilersTapToRevealTitle">点击以显示</string>
-  <string name="textSettingsSpoilersTapToRevealDescription">点击隐藏内容以暂时显示它。</string>
-  <string name="textNextEpisodeLastWatched">最近观看的单集</string>
-  <string name="textNextEpisodeOldest">最早未观看的单集</string>
+  <string name="textSettingsSpoilersEpisodesImage">隐藏未观看剧集的 <b>图片</b>。</string>
+  <string name="textSettingsSpoilersEpisodesTitle">隐藏未观看剧集的 <b>标题</b>。</string>
+  <string name="textSettingsSpoilersEpisodesDescription">隐藏未观看剧集的 <b>简介</b>。</string>
+  <string name="textSettingsSpoilersEpisodesRating">隐藏未观看剧集的 <b>评分</b>。</string>
+  <string name="textSettingsSpoilersTapToRevealTitle">点击显示</string>
+  <string name="textSettingsSpoilersTapToRevealDescription">点击隐藏内容可暂时显示。</string>
+  <string name="textNextEpisodeLastWatched">最近观看的剧集</string>
+  <string name="textNextEpisodeOldest">最早未观看剧集</string>
   <string name="textDateSelectionAsk">总是询问</string>
   <string name="textDateSelectionNow">总是“现在”</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <string name="textTransparency100">不透明</string>
-  <string name="textLanguageEnglish" translatable="false">English</string>
-  <string name="textLanguagePolish" translatable="false">Polski</string>
-  <string name="textLanguageRomanian" translatable="false">Română</string>
-  <string name="textLanguageArabic" translatable="false">العربية</string>
-  <string name="textLanguageChinese" translatable="false">中文简体</string>
-  <string name="textLanguageSpanish" translatable="false">Español</string>
-  <string name="textLanguageItalian" translatable="false">Italiano</string>
-  <string name="textLanguageFrench" translatable="false">Français</string>
-  <string name="textLanguageDanish" translatable="false">Dansk</string>
-  <string name="textLanguagePortugalBrasil" translatable="false">Português brasileiro</string>
-  <string name="textLanguageTurkish" translatable="false">Türkçe</string>
-  <string name="textLanguageUkrainian" translatable="false">Українська</string>
-  <string name="textLanguageGerman" translatable="false">Deutsch</string>
-  <string name="textLanguageRussian" translatable="false">Pусский</string>
-  <string name="textLanguageFinnish" translatable="false">Suomi</string>
-  <string name="textTransparency0" translatable="false">100%</string>
-  <string name="textTransparency25" translatable="false">25%</string>
-  <string name="textTransparency50" translatable="false">50%</string>
-  <string name="textTransparency75" translatable="false">75%</string>
   <string name="textSettingsScrob">Scrob 同步</string>
   <string name="textSettingsScrobTitle">Scrob 凭据</string>
   <string name="textSettingsScrobDescription">与您的自托管 Scrob 实例同步</string>
   <string name="textSettingsScrobUrlHint">Scrob URL</string>
   <string name="textSettingsScrobApiKeyHint">Scrob API 密钥</string>
-  <string name="textSettingsScrobDialogMessage">输入您的 Scrob 实例地址及其凭据。</string>
+  <string name="textSettingsScrobDialogMessage">输入您的 Scrob 实例地址和凭据。</string>
   <string name="textSettingsScrobPasswordSetHint">API 密钥</string>
   <string name="textSettingsScrobNotConfigured">未配置</string>
   <string name="textSettingsScrobSyncNowTitle">立即同步</string>
-  <string name="textSettingsScrobSyncNowSummary">从 Scrob 导入观看记录和列表。</string>
+  <string name="textSettingsScrobSyncNowSummary">从 Scrob 导入观看历史和列表。</string>
   <string name="textScrobSyncStarted">同步已开始。您可以安全地离开此屏幕。</string>
-  <string name="textSettingsScrobWatchlistTitle">待看列表</string>
-  <string name="textSettingsScrobWatchlistSummary">使用 Scrob 列表作为您的待看列表</string>
+  <string name="textSettingsScrobWatchlistTitle">稍后观看列表</string>
+  <string name="textSettingsScrobWatchlistSummary">使用 Scrob 列表作为您的稍后观看列表</string>
   <string name="textSettingsScrobWatchlistNotSelected">未选择</string>
-  <string name="textSettingsScrobWatchlistDialogTitle">选择待看列表</string>
+  <string name="textSettingsScrobWatchlistDialogTitle">选择稍后观看</string>
   <string name="textSettingsScrobWatchlistNone">无</string>
 </resources>

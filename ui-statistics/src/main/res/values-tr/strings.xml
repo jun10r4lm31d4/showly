@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textStatistics">İstatistikler</string>
-  <string name="textStatisticsEmpty">İstatistiklerin görüntülenebilmesi için <b>Dizilerim</b>\nbölümünde en az bir dizinin bulunması gerekir.</string>
-  <string name="textStatisticsMostWatchedShows">En Çok Görüntülenen Diziler</string>
-  <string name="textStatisticsTotalTimeSpent">Harcanan Toplam Süre</string>
-  <string name="textStatisticsTotalTimeItIs">ve</string>
+  <string name="textStatisticsEmpty">İstatistiklerin görüntülenebilmesi için <b>Dizilerim</b> bölümünde en az bir dizi olmalıdır.</string>
+  <string name="textStatisticsMostWatchedShows">En Çok İzlenen Diziler</string>
+  <string name="textStatisticsTotalTimeSpent">Toplam İzleme Süresi</string>
+  <string name="textStatisticsTotalTimeItIs">ve bu süre</string>
   <string name="textStatisticsTotalTimeSpentHours">%s saat</string>
   <string name="textStatisticsTotalTimeSpentMinutes">%s dakika</string>
-  <string name="textStatisticsTotalTimeSpentDays">yaklaşık %s güne karşılık gelmektedir.</string>
-  <string name="textStatisticsTotalEpisodes">İzlenen Toplam Bölüm Sayısı</string>
+  <string name="textStatisticsTotalTimeSpentDays">yaklaşık %s güne denk geliyor.</string>
+  <string name="textStatisticsTotalEpisodes">Toplam İzlenen Bölüm</string>
   <string name="textStatisticsTotalEpisodesCount">%s bölüm</string>
-  <string name="textStatisticsTotalEpisodesShowsCount">%s diziye yayılmıştır.</string>
-  <string name="textStatisticsTopGenre">En Popüler Türler</string>
-  <string name="textStatisticsTopGenreSubValue">tam sizin zevkinize uygun görünüyor. Daha fazlasını görmek için dokunun.</string>
-  <string name="textStatisticsTopGenreSubValue2">tam sizin zevkinize uygun görünüyor.</string>
-  <string name="textStatisticsShowMore">Daha Fazlasını Göster</string>
-  <string name="textStatisticsRatings">En Son Derecelendirilenler</string>
+  <string name="textStatisticsTotalEpisodesShowsCount">%s diziye yayılmış durumda.</string>
+  <string name="textStatisticsTopGenre">En Çok İzlenen Türler</string>
+  <string name="textStatisticsTopGenreSubValue">sizin tarzınız gibi görünüyor. Daha fazlasını görmek için dokunun.</string>
+  <string name="textStatisticsTopGenreSubValue2">sizin tarzınız gibi görünüyor.</string>
+  <string name="textStatisticsShowMore">Daha Fazla Göster</string>
+  <string name="textStatisticsRatings">Son Puanlananlar</string>
   <string name="textStatisticsHours">Saat</string>
   <string name="textStatisticsEpisodes">Bölüm</string>
   <string name="textStatisticsSeasons">Sezon</string>

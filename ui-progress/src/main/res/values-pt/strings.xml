@@ -2,18 +2,14 @@
 <resources>
   <string name="tabCalendar">Calendário</string>
   <string name="tabProgress">Progresso</string>
+  <string name="tabHistory">Histórico</string>
   <string name="textCalendarEmpty">Não há novos episódios a caminho.</string>
-  <string name="textRecentsEmpty">Não há episódios recentes.</string>
-  <string
-    name="textOnHold"
-    comment="This is a header for Progress subsection. It will contain pending shows marked by user."
-  >Em Espera</string>
-  <string name="textDiscoverShows">Descubra séries</string>
+  <string name="textRecentsEmpty">Não há episódios exibidos recentemente.</string>
+  <string name="textHistoryEmpty">Não há nada no seu histórico.</string>
+  <string name="textOnHold">Em Espera</string>
+  <string name="textDiscoverShows">Descobrir Séries</string>
   <string name="textEpisodeInfo">Detalhes</string>
-  <string name="textProgressEmpty">Seu
-  
-    <b>Progresso</b> está vazio atualmente.\n\nVisite a guia
-  
-    <b>Explorar</b> para adicionar séries ou importar seu acervo de Trakt.tv.</string>
-  <string name="textNewSeason">Pré estreia</string>
+  <string name="textProgressEmpty">Seu <b>Progresso</b> está vazio no momento.\n\nVisite a aba <b>Descobrir</b> para adicionar séries ou importar sua coleção do Trakt.tv.</string>
+  <string name="textNewSeason">Estreia da Temporada</string>
+  <string name="textPremieres">Estreias</string>
 </resources>

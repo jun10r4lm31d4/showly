@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textInMyMovies">Ajouté à l\'historique</string>
-  <string name="textInMoviesWatchlist">Ajouté à la Watchlist</string>
-  <string name="textInHidden">Masqué</string>
+  <string name="textInMoviesWatchlist">Ajouté à la liste de suivi</string>
+  <string name="textInHidden">Caché</string>
   <string name="textMovieActorsEmpty">Acteurs non disponibles</string>
-  <string name="textMovieTrailer">Bande Annonce</string>
+  <string name="textMovieTrailer">Bande-annonce</string>
   <string name="textMovieRate">Noter</string>
   <string name="textMovieComments2">Commentaires</string>
   <string name="textMovieYouMayAlsoLike">Vous pourriez aussi aimer</string>

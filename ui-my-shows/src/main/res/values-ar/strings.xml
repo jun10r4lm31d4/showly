@@ -3,7 +3,7 @@
   <string name="menuMyShows">مسلسلاتي</string>
   <string name="menuWatchlist">قائمة المشاهدة</string>
   <string name="menuHidden">المخفية</string>
-  <string name="textMyShowsEmpty">مجموعة مسلسلاتك فارغة حالياً.\n\nإذهب إلى صفحة <b>إكتشف</b> وأضف مسلسلك الأول.</string>
-  <string name="textWatchlistEmpty">مجموعة <b>قائمة المشاهدة</b> فارغة حالياً.\n\nإذهب إلى صفحة <b>إكتشف</b> وأضف ما قد ترغب بمشاهدته في المستقبل.</string>
-  <string name="textHiddenEmpty">قائمة <b>المخفية</b> فارغة حاليًا.\n\n<b>المخفية</b> هي قائمة تحتوى على محتويات أنت لا تهتم بها.\n\nالمحتويات المخفية لن تظهر في قوائم <b>مستوى التقدم</b> و <b>اكتشف</b> وفي القوائم الأخرى.</string>
+  <string name="textMyShowsEmpty">مجموعة المسلسلات الخاصة بك فارغة حالياً.\n\nقم بزيارة تبويب <b>اكتشف</b> لإضافة أول مسلسل لك.</string>
+  <string name="textWatchlistEmpty"><b>قائمة المشاهدة</b> الخاصة بك فارغة حالياً.\n\nقم بزيارة تبويب <b>اكتشف</b> لإضافة مسلسلات تود مشاهدتها مستقبلاً.</string>
+  <string name="textHiddenEmpty">قائمة <b>المخفية</b> الخاصة بك فارغة حالياً.\n\n<b>المخفية</b> هي قائمة بالعناصر التي لا تهمك.\n\nلن تظهر العناصر المخفية بعد الآن في <b>التقدم</b> و <b>اكتشف</b> والأقسام الأخرى.</string>
 </resources>

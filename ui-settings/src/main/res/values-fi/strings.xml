@@ -1,167 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textImagesCacheCleared">Kuvavälimuisti tyhjennettiin.</string>
+  <string name="textImagesCacheCleared">Kuvavälimuisti on tyhjennetty.</string>
   <string name="textSettings">Asetukset</string>
-  <string name="textSettingsGeneral">Yleiset ja käyttölittymä</string>
-  <string name="errorScrobSyncFailed">Scrob-synkronointi epäonnistui. Yritä uudelleen.</string>
-  <string name="textSettingsRecentShowsTitle">Hiljattain lisättyjen määrä</string>
-  <string name="textSettingsRecentShowsSummary">Kokoelmassa näytettävien, hiljattain lisättyjen kohteiden määrä.</string>
-  <string name="textSettingsUpcomingSectionTitle">Tulossa-osio</string>
-  <string name="textSettingsUpcomingSectionSummary">Ota Katselutilan Tulossa-osio käyttöön/poista se käytöstä.</string>
+  <string name="textSettingsGeneral"><![CDATA[Yleiset & UX]]></string>
+  <string name="errorScrobSyncFailed">Scrob-synkronointi epäonnistui. Ole hyvä ja yritä uudelleen.</string>
+  <string name="textSettingsRecentShowsTitle">Viimeksi lisättyjen määrä</string>
+  <string name="textSettingsRecentShowsSummary">Viimeksi lisättyjen kohteiden määrä \'Kokoelma\'-välilehdellä.</string>
+  <string name="textSettingsUpcomingSectionTitle">Tulevat-osio</string>
+  <string name="textSettingsUpcomingSectionSummary">Ota käyttöön/poista käytöstä \'Tulevat\'-osio \'Edistyminen\'-välilehdellä.</string>
   <string name="textSettingsThemeTitle">Teema</string>
   <string name="textSettingsThemeSummary">Valitse pääteema.</string>
   <string name="textSettingsThemeWidgetsTitle">Teema</string>
-  <string name="textSettingsThemeWidgetsSummary">Valitse widgettien teema.</string>
+  <string name="textSettingsThemeWidgetsSummary">Valitse widgetien teema.</string>
   <string name="textSettingsWidgetsTransparencyTitle">Tausta</string>
-  <string name="textSettingsWidgetsTransparencySummary">Aseta widgettien taustan läpinäkyvyys.</string>
-  <string name="textSettingsMyShowsCountryTitle">Sijainti</string>
-  <string name="textSettingsMyShowsCountrySummary">Valitse suoratoistopalveluiden tiedoille käytettävä sijainti.</string>
+  <string name="textSettingsWidgetsTransparencySummary">Aseta widgetien taustan läpinäkyvyystaso.</string>
+  <string name="textSettingsMyShowsCountryTitle">Alue</string>
+  <string name="textSettingsMyShowsCountrySummary">Valitse alue suoratoistopalveluiden tietoja varten.</string>
   <string name="textSettingsMyShowsLanguageTitle">Kieli</string>
-  <string name="textSettingsMyShowsLanguageSummary">Kuvaukset ja otsikot käännetään kun saatavilla. Sovellus käynnistyy uudelleen.</string>
-  <string name="textSettingsDateFormatTitle">Päiväysten ja kellonaikojen esitys</string>
-  <string name="textSettingsIncludeSpecialsTitle">Erikoiskaudet</string>
-  <string name="textSettingsIncludeSpecialsSummary">Näytä erikoistuotantokaudet sarjojen tiedoissa.</string>
+  <string name="textSettingsMyShowsLanguageSummary">Kuvaukset ja otsikot käännetään, jos mahdollista. Sovellus käynnistyy uudelleen.</string>
+  <string name="textSettingsDateFormatTitle">Päivämäärän / ajan muoto</string>
+  <string name="textSettingsIncludeSpecialsTitle">Erityiskaudet</string>
+  <string name="textSettingsIncludeSpecialsSummary">Näytä \'Erityiskaudet\' sarjan tiedoissa.</string>
   <string name="textSettingsNotifications">Ilmoitukset</string>
   <string name="textSettingsPushNotificationsTitle">Push-ilmoitukset</string>
-  <string name="textSettingsShowsNotificationsSummary">Vastaanota ilmoituksia uusista elokuvista sekä seuraamiesi sarjojen jaksoista ja tuotantokausista.</string>
-  <string name="textSettingsShowsNotificationsRationale">Myönnä sovellukselle ilmoitusten näyttöoikeus.\n\nHaluatko tämän nyt?</string>
-  <string name="textSettingsMisc">Sekalaiset</string>
+  <string name="textSettingsShowsNotificationsSummary">Vastaanota ilmoituksia seuraamiesi sarjojen uusista elokuvista, jaksoista ja kausista.</string>
+  <string name="textSettingsShowsNotificationsRationale">Anna sovellukselle lupa näyttää ilmoituksia.\n\nHaluatko tehdä sen nyt?</string>
+  <string name="textSettingsMisc">Muuta</string>
   <string name="textSettingsContactDevsTitle">Ota yhteyttä kehittäjiin</string>
-  <string name="textSettingsContactDevsSummary">Onko ongelmia? Lähetä meille sähköpostia napauttamalla (showlyapp@gmail.com).</string>
+  <string name="textSettingsContactDevsSummary">Ongelmia? Napauta lähettääksesi meille sähköpostia (showlyapp@gmail.com).</string>
   <string name="textSettingsRateAppTitle">Anna palautetta</string>
-  <string name="textSettingsRateAppSummary">Nautitko Showlysta? Arvostele se Play Kaupassa, kiitos!</string>
+  <string name="textSettingsRateAppSummary">Pidätkö Showlysta? Jätä arvostelu PlayStoressa. Kiitos!</string>
   <string name="textSettingsDeleteCacheTitle">Tyhjennä kuvavälimuisti</string>
-  <string name="textSettingsDeleteCacheSummary">Tyhjennä paikallinen kuvavälimuisti napauttamalla. Tämä saattaa auttaa, jos sarjojen kuvat eivät lataudu oikein.</string>
+  <string name="textSettingsDeleteCacheSummary">Napauta tyhjentääksesi paikallisen kuvavälimuistin. Tämä voi auttaa, jos sarjojen kuvat eivät lataudu oikein.</string>
   <string name="textSettingsMoviesEnabledTitle">Elokuvat</string>
-  <string name="textSettingsMoviesEnabledSummary">Ota elokuvat käyttöön/poista ne käytöstä. Sovellus käynnistyy uudelleen.</string>
+  <string name="textSettingsMoviesEnabledSummary">Ota käyttöön/poista käytöstä elokuvien tuki. Sovellus käynnistyy uudelleen.</string>
   <string name="textSettingsWidgets">Widgetit</string>
-  <string name="textSettingsWidgetsLabelsTitle">Nimet</string>
-  <string name="textSettingsWidgetsLabelsSummary">Näytä läpikuultavat widgettien otsikot.</string>
+  <string name="textSettingsWidgetsLabelsTitle">Otsikot</string>
+  <string name="textSettingsWidgetsLabelsSummary">Näytä widgetien otsikot läpikuultavina.</string>
   <string name="textSettingsStreamingsDisclaimer">Suoratoistopalveluiden tiedot tarjoaa</string>
   <string name="textSettingsStreamingServicesTitle">Suoratoistopalvelut</string>
   <string name="textSettingsStreamingServicesMessage">Näytä suoratoistopalveluiden tiedot.</string>
   <string name="textSettingsProgressNextEpisodeTitle">Seuraava jakso</string>
-  <string name="textSettingsProgressNextEpisodeMessage">Seuraavan jakson laskentaperuste:</string>
-  <string name="textSettingsDateSelectionMessage">Valitse päiväyksen oletusvalinta.</string>
-  <string name="textSettingsTabletColumnsTitle">Listausten sarakemäärä</string>
-  <string name="textSettingsTabletColumnsSummary">Valitse listauksissa näytettävä sarakkeiden määrä.</string>
-  <string name="textSettingsBackup">Varmuuskopiointi ja palautus</string>
-  <string name="textSettingsBackupExportTitle">Vienti</string>
-  <string name="textSettingsBackupExportDescription">Vie tietosi tiedostoon varmuuskopioidaksesi tai siirtääksesi ne uuteen laitteeseen.</string>
-  <string name="textSettingsBackupImportTitle">Tuonti</string>
-  <string name="textSettingsBackupImportDescription">Palauta tietosi tälle laitteelle tuomalla aiemmin luotu varmuuskopio.</string>
+  <string name="textSettingsProgressNextEpisodeMessage">Laske seuraava jakso käyttäen:</string>
+  <string name="textSettingsDateSelectionMessage">Valitse oletusarvoinen päivämäärän valinta.</string>
+  <string name="textSettingsTabletColumnsTitle">Listojen sarakkeiden määrä</string>
+  <string name="textSettingsTabletColumnsSummary">Valitse listojen sarakkeiden määrä.</string>
+  <string name="textSettingsBackup"><![CDATA[Varmuuskopiointi & palautus]]></string>
+  <string name="textSettingsBackupExportTitle">Vie</string>
+  <string name="textSettingsBackupExportDescription">Vie tietosi varmuuskopion luomiseksi tai siirtämiseksi uuteen laitteeseen.</string>
+  <string name="textSettingsBackupImportTitle">Tuo</string>
+  <string name="textSettingsBackupImportDescription">Tuo varmuuskopiotiedosto palauttaaksesi tiedot tähän laitteeseen.</string>
   <string name="textSettingsSpoilers">Juonipaljastukset</string>
   <string name="textSettingsSpoilersShows">Sarjat</string>
-  <string name="textSettingsSpoilersShowsSummary">Hallitse sarjojen jounipaljastusasetuksia.</string>
+  <string name="textSettingsSpoilersShowsSummary">Hallitse sarjojen juonipaljastusasetuksia.</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">Omat sarjat</string>
-  <string name="textSettingsSpoilersShowsOverviewsMyDescription">Piilota omiin sarjoihin lisättyjen sarjojen
-  
-    <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersShowsRatingsMyDescription">Piilota omiin sarjoihin lisättyjen sarjojen
-  
-    <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersShowsOverviewsMyDescription">Piilota omiin sarjoihin lisättyjen sarjojen <b>kuvaus</b></string>
+  <string name="textSettingsSpoilersShowsRatingsMyDescription">Piilota omiin sarjoihin lisättyjen sarjojen <b>arvostelu</b></string>
   <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">Katselulista</string>
-  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Piilota katselulistalle lisättyjen sarjojen
-  
-    <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Piilota katselulistalle lisättyjen sarjojen
-  
-    <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">Piilota katselulistalle lisättyjen sarjojen <b>kuvaus</b></string>
+  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">Piilota katselulistalle lisättyjen sarjojen <b>arvostelu</b></string>
   <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Piilotetut</string>
-  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Piilota piilotettuihin lisättyjen sarjojen
-  
-    <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Piilota piilotettuihin lisättyjen sarjojen
-  
-    <b>arviot</b>.</string>
-  <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">Kokoelman ulkopuoliset</string>
-  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Piilota kokoelman ulkopuolisten sarjojen
-  
-    <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Piilota kokoelman ulkopuolisten sarjojen
-  
-    <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Piilota piilotettuihin lisättyjen sarjojen <b>kuvaus</b></string>
+  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Piilota piilotettuihin lisättyjen sarjojen <b>arvostelu</b></string>
+  <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">Ei kokoelmassa</string>
+  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Piilota sarjojen <b>kuvaus</b>, jotka eivät ole kokoelmassasi</string>
+  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Piilota sarjojen <b>arvostelu</b>, jotka eivät ole kokoelmassasi</string>
   <string name="textSettingsSpoilersMovies">Elokuvat</string>
-  <string name="textSettingsSpoilersMoviesSummary">Hallitse elokuvien jounipaljastusasetuksia.</string>
+  <string name="textSettingsSpoilersMoviesSummary">Hallitse elokuvien juonipaljastusasetuksia. </string>
   <string name="textSettingsSpoilersMoviesOverviewsMyTitle">Historia</string>
-  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Piilota historiaan lisättyjen elokuvien
-  
-    <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersMoviesRatingsMyDescription">Piilota historiaan lisättyjen elokuvien
-  
-    <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Piilota historiaan lisättyjen elokuvien <b>kuvaus</b></string>
+  <string name="textSettingsSpoilersMoviesRatingsMyDescription">Piilota historiaan lisättyjen elokuvien <b>arvostelu</b></string>
   <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">Katselulista</string>
-  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Piilota katselulistalle lisättyjen elokuvien
-  
-    <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Piilota katselulistalle lisättyjen elokuvien
-  
-    <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">Piilota katselulistalle lisättyjen elokuvien <b>kuvaus</b></string>
+  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">Piilota katselulistalle lisättyjen elokuvien <b>arvostelu</b></string>
   <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Piilotetut</string>
-  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Piilota piilotettuihin lisättyjen elokuvien
-  
-    <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Piilota piilotettuihin lisättyjen elokuvien
-  
-    <b>arviot</b>.</string>
-  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">Kokoelman ulkopuoliset</string>
-  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Piilota kokoelman ulkopuolisten elokuvien
-  
-    <b>kuvaukset</b>.</string>
-  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Piilota kokoelman ulkopuolisten elokuvien
-  
-    <b>arviot</b>.</string>
+  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Piilota piilotettuihin lisättyjen elokuvien <b>kuvaus</b></string>
+  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Piilota piilotettuihin lisättyjen elokuvien <b>arvostelu</b></string>
+  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">Ei kokoelmassa</string>
+  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Piilota elokuvien <b>kuvaus</b>, jotka eivät ole kokoelmassasi</string>
+  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Piilota elokuvien <b>arvostelu</b>, jotka eivät ole kokoelmassasi</string>
   <string name="textSettingsSpoilersEpisodes">Jaksot</string>
-  <string name="textSettingsSpoilersEpisodesSummary">Hallitse jaksojen jounipaljastusasetuksia.</string>
-  <string name="textSettingsSpoilersEpisodesImage">Piilota katsomattomien jaksojen
-  
-    <b>kuva</b>.</string>
-  <string name="textSettingsSpoilersEpisodesTitle">Piilota katsomattomien jaksojen
-  
-    <b>nimi</b>.</string>
-  <string name="textSettingsSpoilersEpisodesDescription">Piilota katsomattomien jaksojen
-  
-    <b>kuvaus</b>.</string>
-  <string name="textSettingsSpoilersEpisodesRating">Piilota katsomattomien jaksojen
-  
-    <b>arvio</b>.</string>
-  <string name="textSettingsSpoilersTapToRevealTitle">Paljasta napauttamalla</string>
-  <string name="textSettingsSpoilersTapToRevealDescription">Paljasta piilotettu sisältö väliaikaisesti napauttamalla sitä.</string>
+  <string name="textSettingsSpoilersEpisodesSummary">Hallitse jaksojen juonipaljastusasetuksia.</string>
+  <string name="textSettingsSpoilersEpisodesImage">Piilota katsomattomien jaksojen <b>kuva</b>.</string>
+  <string name="textSettingsSpoilersEpisodesTitle">Piilota katsomattomien jaksojen <b>otsikko</b>.</string>
+  <string name="textSettingsSpoilersEpisodesDescription">Piilota katsomattomien jaksojen <b>kuvaus</b>.</string>
+  <string name="textSettingsSpoilersEpisodesRating">Piilota katsomattomien jaksojen <b>arvostelu</b>.</string>
+  <string name="textSettingsSpoilersTapToRevealTitle">Napauta paljastaaksesi</string>
+  <string name="textSettingsSpoilersTapToRevealDescription">Napauta piilotettua sisältöä paljastaaksesi sen tilapäisesti.</string>
   <string name="textNextEpisodeLastWatched">Viimeksi katsottu jakso</string>
   <string name="textNextEpisodeOldest">Vanhin katsomaton jakso</string>
   <string name="textDateSelectionAsk">Kysy aina</string>
-  <string name="textDateSelectionNow">Valitse \"Nyt\"</string>
+  <string name="textDateSelectionNow">Aina \"Nyt\"</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <string name="textTransparency100">Läpinäkymätön</string>
-  <string name="textLanguageEnglish" translatable="false">English</string>
-  <string name="textLanguagePolish" translatable="false">Polski</string>
-  <string name="textLanguageRomanian" translatable="false">Română</string>
-  <string name="textLanguageArabic" translatable="false">العربية</string>
-  <string name="textLanguageChinese" translatable="false">中文简体</string>
-  <string name="textLanguageSpanish" translatable="false">Español</string>
-  <string name="textLanguageItalian" translatable="false">Italiano</string>
-  <string name="textLanguageFrench" translatable="false">Français</string>
-  <string name="textLanguageDanish" translatable="false">Dansk</string>
-  <string name="textLanguagePortugalBrasil" translatable="false">Português brasileiro</string>
-  <string name="textLanguageTurkish" translatable="false">Türkçe</string>
-  <string name="textLanguageUkrainian" translatable="false">Українська</string>
-  <string name="textLanguageGerman" translatable="false">Deutsch</string>
-  <string name="textLanguageRussian" translatable="false">Pусский</string>
-  <string name="textLanguageFinnish" translatable="false">Suomi</string>
-  <string name="textTransparency0" translatable="false">100%</string>
-  <string name="textTransparency25" translatable="false">25%</string>
-  <string name="textTransparency50" translatable="false">50%</string>
-  <string name="textTransparency75" translatable="false">75%</string>
   <string name="textSettingsScrob">Scrob-synkronointi</string>
   <string name="textSettingsScrobTitle">Scrob-kirjautumistiedot</string>
-  <string name="textSettingsScrobDescription">Synkronoi itse isännöidyn Scrob-instanssisi kanssa</string>
-  <string name="textSettingsScrobUrlHint">Scrob-URL</string>
-  <string name="textSettingsScrobApiKeyHint">Scrob-API-avain</string>
+  <string name="textSettingsScrobDescription">Synkronoi oman Scrob-instanssisi kanssa</string>
+  <string name="textSettingsScrobUrlHint">Scrob URL</string>
+  <string name="textSettingsScrobApiKeyHint">Scrob API-avain</string>
   <string name="textSettingsScrobDialogMessage">Syötä Scrob-instanssisi osoite ja kirjautumistiedot.</string>
   <string name="textSettingsScrobPasswordSetHint">API-avain</string>
   <string name="textSettingsScrobNotConfigured">Ei määritetty</string>
   <string name="textSettingsScrobSyncNowTitle">Synkronoi nyt</string>
   <string name="textSettingsScrobSyncNowSummary">Tuo katseluhistoria ja listat Scrobista.</string>
-  <string name="textScrobSyncStarted">Synkronointi aloitettu. Voit poistua tästä näkymästä turvallisesti.</string>
+  <string name="textScrobSyncStarted">Synkronointi aloitettu. Voit poistua tästä näkymästä.</string>
   <string name="textSettingsScrobWatchlistTitle">Katselulista</string>
   <string name="textSettingsScrobWatchlistSummary">Käytä Scrob-listaa katselulistanasi</string>
   <string name="textSettingsScrobWatchlistNotSelected">Ei valittu</string>

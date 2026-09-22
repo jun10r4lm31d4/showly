@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textNextEpisode">Следующий эпизод:</string>
+  <string name="textNextEpisode">Следующая серия:</string>
   <string name="textInMyShows">Добавлено в мои сериалы</string>
-  <string name="textInWatchlist">Добавлено в Буду смотреть</string>
-  <string name="textInHidden">Скрытое</string>
+  <string name="textInWatchlist">Добавлено в список ожидания</string>
+  <string name="textInHidden">Скрыто</string>
   <string name="textShowQuickProgressTitle">Быстрый прогресс</string>
-  <string name="textShowQuickProgressSubTitle">Выберите последний просмотренный эпизод, чтобы быстро отметить эпизоды.</string>
+  <string name="textShowQuickProgressSubTitle">Выберите последнюю просмотренную серию, чтобы быстро обновить ваш прогресс.</string>
   <string name="textShowQuickProgressDone">Ваш прогресс был обновлен.</string>
-  <string name="textEpisodeDate">Эпизод %1$d | %2$s</string>
+  <string name="textEpisodeDate">Серия %1$d | %2$s</string>
   <string name="textEpisodeTitle">S.%02d E.%02d - \'%s\'</string>
   <string name="textActorsEmpty">Актеры недоступны</string>
   <string name="textSeasons">Сезоны:</string>
   <string name="textSeasonsEmpty">Сезоны недоступны.</string>
   <string name="textTrailer">Трейлер</string>
   <string name="textYouMayAlsoLike">Вам также может понравиться</string>
-  <string name="textRuntimeLeftHours">~%sч %sм осталось</string>
-  <string name="textRuntimeLeftMinutes">~%sм осталось</string>
+  <string name="textRuntimeLeftHours">~осталось %sh %sm</string>
+  <string name="textRuntimeLeftMinutes">~осталось %sm</string>
   <string name="textShowManageLists">Управление списками</string>
   <string name="textShowManageListsCount">Управление списками (%d)</string>
 </resources>

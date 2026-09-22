@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textSortOrderMovies">Сортировать по:</string>
+  <string name="textSortOrderMovies">Лента:</string>
   <string name="textDiscoverFilterCollectionMovies">Скрыть коллекцию</string>
 </resources>

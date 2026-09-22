@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="menuMyMovies">Historique</string>
-  <string name="menuWatchlistMovies">Watchlist</string>
-  <string name="menuHidden">Masqué</string>
-  <string name="textMyMoviesEmpty">Votre collection de films est présentement vide.\n\nVisitez l\'onglet <b>Découvrir</b> pour ajouter votre premier film.</string>
-  <string name="textWatchlistMoviesEmpty">Votre liste <b>Watchlist</b> est présentement vide.\n\nVisitez l\'onglet <b>Découvrir</b> pour ajouter des films que vous souhaitez visionner plus tard.</string>
-  <string name="textHiddenEmpty">Votre liste <b>masqué</b> est actuellement vide.\n\n<b>Masqué</b> est une liste d\'éléments qui ne vous intéressent pas.\n\nLes éléments masqués n\'apparaîtront plus dans <b>Progression</b>, <b>Découvrir</b> et d\'autres sections.</string>
+  <string name="menuWatchlistMovies">Liste de suivi</string>
+  <string name="menuHidden">Cachés</string>
+  <string name="textMyMoviesEmpty">Votre collection de films est actuellement vide.\n\nVisitez l\'onglet <b>Découvrir</b> pour ajouter votre premier film.</string>
+  <string name="textWatchlistMoviesEmpty">Votre <b>Liste de suivi</b> est actuellement vide.\n\nVisitez l\'onglet <b>Découvrir</b> pour ajouter des films à regarder plus tard.</string>
+  <string name="textHiddenEmpty">Votre liste de <b>Cachés</b> est actuellement vide.\n\n<b>Cachés</b> est une liste d\'éléments qui ne vous intéressent pas.\n\nLes éléments cachés n\'apparaîtront plus dans <b>Progrès</b>, <b>Découvrir</b> et autres sections.</string>
 </resources>

@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="tabMoviesCalendar">تقويم الأفلام</string>
-  <string name="tabMoviesProgress">مستوى التقدم</string>
-  <string name="textMoviesCalendarEmpty">لا توجد أي أفلام جديدة قريياً.</string>
-  <string name="textMoviesCalendarRecentsEmpty">لا يُوجد أي أفلام جديدة.</string>
-  <string name="textDiscoverMovies">إكتشف أفلام</string>
-  <string name="textMoviesProgressEmpty">قائمة
-  
-    <b>مستوى التقدم</b> فارغة حالياً.\n\nإذهب إلى صفحة
-  
-    <b>إكتشف</b> لإضافة أفلام، أو اِستورد البيانات من Trakt.tv.</string>
+  <string name="tabMoviesCalendar">التقويم</string>
+  <string name="tabMoviesProgress">التقدم</string>
+  <string name="textMoviesCalendarEmpty">لا توجد أفلام جديدة قادمة.</string>
+  <string name="textMoviesCalendarRecentsEmpty">لا توجد أفلام عرضت مؤخراً.</string>
+  <string name="textDiscoverMovies">اكتشف الأفلام</string>
+  <string name="textMoviesProgressEmpty"><b>التقدم</b> الخاص بك فارغ حالياً.\n\nقم بزيارة تبويب <b>اكتشف</b> لإضافة أفلام أو استيراد مجموعتك من Trakt.tv.</string>
 </resources>

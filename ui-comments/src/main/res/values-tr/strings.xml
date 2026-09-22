@@ -2,5 +2,5 @@
 <resources>
   <string name="textComment">Yorum</string>
   <string name="textComments2">Yorumlar</string>
-  <string name="textNoComments">Hiçbir yorum yok.</string>
+  <string name="textNoComments">Yorum yok.</string>
 </resources>

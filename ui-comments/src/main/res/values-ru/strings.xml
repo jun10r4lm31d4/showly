@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textComment">Комментировать</string>
-  <string name="textComments2">Мнения</string>
-  <string name="textNoComments">Нет комментариев.</string>
+  <string name="textComment">Комментарий</string>
+  <string name="textComments2">Комментарии</string>
+  <string name="textNoComments">Комментариев нет.</string>
 </resources>

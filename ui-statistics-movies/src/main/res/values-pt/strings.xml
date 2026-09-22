@@ -2,15 +2,15 @@
 <resources>
   <string name="textStatisticsMovies">Estatísticas</string>
   <string name="textStatisticsMoviesEmpty">Pelo menos um filme deve estar presente no <b>Histórico</b>\nantes que as estatísticas possam ser exibidas.</string>
-  <string name="textStatisticsMoviesTotalTimeSpent">Tempo total gasto assistindo</string>
+  <string name="textStatisticsMoviesTotalTimeSpent">Tempo Total Gasto Assistindo</string>
   <string name="textStatisticsMoviesTotalTimeItIs">e é</string>
   <string name="textStatisticsMoviesTotalTimeSpentHours">%s horas</string>
   <string name="textStatisticsMoviesTotalTimeSpentMinutes">%s minutos</string>
-  <string name="textStatisticsMoviesTotalTimeSpentDays">que é aproximadamente %s dias.</string>
-  <string name="textStatisticsMoviesTotalMovies">Total de filmes assistidos</string>
+  <string name="textStatisticsMoviesTotalTimeSpentDays">o que dá cerca de %s dias.</string>
+  <string name="textStatisticsMoviesTotalMovies">Total de Filmes Assistidos</string>
   <string name="textStatisticsMoviesTotalMoviesCount">%s Filmes</string>
-  <string name="textStatisticsMoviesTopGenre">Top Gêneros</string>
-  <string name="textStatisticsMoviesTopGenreSubValue">Seus favoritos. Toque para ver mais.</string>
-  <string name="textStatisticsMoviesTopGenreSubValue2">Seus favoritos</string>
-  <string name="textStatisticsMoviesRatings">Avaliado recentemente</string>
+  <string name="textStatisticsMoviesTopGenre">Melhores Gêneros</string>
+  <string name="textStatisticsMoviesTopGenreSubValue">parecem ser a sua praia. Toque para ver mais.</string>
+  <string name="textStatisticsMoviesTopGenreSubValue2">parecem ser a sua praia.</string>
+  <string name="textStatisticsMoviesRatings">Avaliados Recentemente</string>
 </resources>

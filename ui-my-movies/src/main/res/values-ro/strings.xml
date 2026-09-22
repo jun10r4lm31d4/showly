@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="menuMyMovies">Istorie</string>
-  <string name="menuWatchlistMovies">Lista de urmărire</string>
-  <string name="menuHidden">Ascuns</string>
-  <string name="textMyMoviesEmpty">Colecția ta de filme este momentan goală.\n\nVizitează <b>Descoperă</b> tab pentru a adăuga primul tău film.</string>
-  <string name="textWatchlistMoviesEmpty">Lista ta de filme preferate <b>Watchlist</b> este momentan goală.\n\nVizitează <b>Descoperă</b> pentru a adăuga filme pe care vrei să le vezi în viitor.</string>
-  <string name="textHiddenEmpty">Lista ta <b>Ascuns</b> este momentan goală.\n\n<b>Ascuns</b> este o listă de articole care nu te interesează.\n\nArticolele ascunse nu vor mai apărea în <b>Progres</b>, <b>Descoperă</b> și alte secțiuni.</string>
+  <string name="menuMyMovies">Istoric</string>
+  <string name="menuWatchlistMovies">Listă de vizionare</string>
+  <string name="menuHidden">Ascunse</string>
+  <string name="textMyMoviesEmpty">Colecția ta de filme este momentan goală.\n\nVizitează fila <b>Descoperă</b> pentru a adăuga primul tău film.</string>
+  <string name="textWatchlistMoviesEmpty"><b>Lista ta de vizionare</b> este momentan goală.\n\nVizitează fila <b>Descoperă</b> pentru a adăuga filme pe care dorești să le vezi în viitor.</string>
+  <string name="textHiddenEmpty">Lista ta de <b>Ascunse</b> este momentan goală.\n\n<b>Ascunse</b> este o listă de elemente care nu te interesează.\n\nElementele ascunse nu vor mai apărea în <b>Progres</b>, <b>Descoperă</b> și alte secțiuni.</string>
 </resources>

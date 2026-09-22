@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="tabCalendar">تقويم المسلسلات</string>
-  <string name="tabProgress">مستوى التقدم</string>
-  <string name="tabHistory">تاريخ</string>
-  <string name="textCalendarEmpty">لا توجد أي حلقات جديدة قريباً.</string>
-  <string name="textRecentsEmpty">لا تُوجد أي حلقات جديدة.</string>
-  <string name="textHistoryEmpty">لا يوجد شيء في تاريخك.</string>
-  <string
-    name="textOnHold"
-    comment="This is a header for Progress subsection. It will contain pending shows marked by user."
-  >المعلقة</string>
-  <string name="textDiscoverShows">إكتشف مسلسلات</string>
-  <string name="textEpisodeInfo">تفاصيل الحلقة</string>
-  <string name="textProgressEmpty">قائمة
-  
-    <b>مستوى التقدم</b> فارغة حالياً.\n\nإذهب إلى صفحة
-  
-    <b>إكتشف</b> لإضافة مسلسلات، أو اِستورد البيانات من Trakt.tv.</string>
-  <string name="textNewSeason">إفتتاحية الموسم</string>
+  <string name="tabCalendar">التقويم</string>
+  <string name="tabProgress">التقدم</string>
+  <string name="tabHistory">السجل</string>
+  <string name="textCalendarEmpty">لا توجد حلقات جديدة قادمة.</string>
+  <string name="textRecentsEmpty">لا توجد حلقات عرضت مؤخراً.</string>
+  <string name="textHistoryEmpty">لا يوجد شيء في سجلك.</string>
+  <string name="textOnHold">قيد الانتظار</string>
+  <string name="textDiscoverShows">اكتشف المسلسلات</string>
+  <string name="textEpisodeInfo">تفاصيل</string>
+  <string name="textProgressEmpty"><b>التقدم</b> الخاص بك فارغ حالياً.\n\nقم بزيارة تبويب <b>اكتشف</b> لإضافة مسلسلات أو استيراد مجموعتك من Trakt.tv.</string>
+  <string name="textNewSeason">العرض الأول للموسم</string>
   <string name="textPremieres">العروض الأولى</string>
 </resources>

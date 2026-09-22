@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore"><![CDATA[Резервне копіювання & Відновлення]]></string>
+  <string name="textBackupAndRestore"><![CDATA[Резервне копіювання та відновлення]]></string>
   <string name="textBackupExport">Експорт даних</string>
-  <string name="textBackupExportDescription">Експортуйте дані серіалів та фільмів у файл, щоб створити резервну копію або перенести їх на новий пристрій.</string>
+  <string name="textBackupExportDescription">Експортуйте дані про свої серіали та фільми у файл, щоб створити резервну копію або перенести їх на новий пристрій.</string>
   <string name="textBackupImport">Імпорт даних</string>
-  <string name="textBackupImportDescription">Імпортуйте ваші дані серіалів та фільмів з файлу резервної копії.\n\nВаша поточна колекція не буде видалена, будуть додані тільки відсутні елементи.</string>
-  <string name="textBackupExportSuccess">Дані успішно експортовано.</string>
-  <string name="textBackupImportSuccess">Дані успішно імпортовано.</string>
-  <string name="errorImportCancelled">Імпорт даних скасовано.</string>
+  <string name="textBackupImportDescription">Імпортуйте дані про свої серіали та фільми з файлу резервної копії.\n\nВаша поточна колекція не буде видалена, будуть додані лише відсутні елементи.</string>
+  <string name="textBackupExportSuccess">Дані успішно експортовані.</string>
+  <string name="textBackupImportSuccess">Дані успішно імпортовані.</string>
+  <string name="errorImportCancelled">Імпорт даних було скасовано.</string>
   <string name="textBackupExportSchedule">Розклад</string>
-  <string name="textBackupExportOptionOff">Вимкнено</string>
+  <string name="textBackupExportOptionOff">Вимк.</string>
   <string name="textBackupExportOption6Hours">Кожні 6 годин</string>
   <string name="textBackupExportOptionDaily">Щодня</string>
   <string name="textBackupExportOption3Day">Кожні 3 дні</string>
   <string name="textBackupExportOptionWeekly">Щотижня</string>
-  <string name="textBackupExportOptionOffMessage">Резервне копіювання не буде запущене автоматично.</string>
-  <string name="textBackupExportOptionConfirmMessage">Автоматичне резервне копіювання було заплановане.</string>
-  <string name="textBackupExportOption6HoursButton">Заплановано запускати кожні 6 годин</string>
-  <string name="textBackupExportOptionDailyButton">Заплановано запускати кожен день</string>
-  <string name="textBackupExportOption3DayButton">Заплановано запускати кожні 3 дні</string>
-  <string name="textBackupExportOptionWeeklyButton">Заплановано запускати кожен тиждень</string>
-  <string name="textBackupExportLastTimestamp">Остання резервна копія: %s</string>
+  <string name="textBackupExportOptionOffMessage">Резервне копіювання не буде запускатися автоматично.</string>
+  <string name="textBackupExportOptionConfirmMessage">Автоматичне резервне копіювання заплановано.</string>
+  <string name="textBackupExportOption6HoursButton">Заплановано кожні 6 годин</string>
+  <string name="textBackupExportOptionDailyButton">Заплановано щодня</string>
+  <string name="textBackupExportOption3DayButton">Заплановано кожні 3 дні</string>
+  <string name="textBackupExportOptionWeeklyButton">Заплановано щотижня</string>
+  <string name="textBackupExportLastTimestamp">Остання копія: %s</string>
 </resources>

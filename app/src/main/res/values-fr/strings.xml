@@ -1,19 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="menuProgress">Progression</string>
+
+  <string name="menuProgress">Progrès</string>
   <string name="menuDiscover">Découvrir</string>
   <string name="menuCollection">Collection</string>
-    <string name="textDisclaimerTitle">Bienvenue !</string>
-  <string name="textDisclaimerText">Veuillez prendre note que vous
-  
-    <b>NE POUVEZ PAS</b> regarder ou télécharger des séries ou des films avec cette application.\n\nUtilisez des applications telles que
-  
-    <b>Netflix</b> pour regarder du contenu.</string>
-  <string name="textDisclaimerConfirmText">Compris</string>
+  <string name="textDisclaimerTitle">Bienvenue !</string>
+  <string name="textDisclaimerText">Veuillez noter que vous <b>NE POUVEZ PAS</b> regarder, diffuser ou télécharger des séries et des films avec cette application.\n\nUtilisez des applications comme <b>Netflix</b> pour diffuser et regarder du contenu.</string>
+  <string name="textDisclaimerConfirmText">OK, je comprends</string>
+
+
+
   <string name="textWhatsNewTitle">Quoi de neuf</string>
   <string name="textWhatsNewSubtitle">Version %s</string>
   <string name="shortcutDiscover">Découvrir</string>
   <string name="shortcutCollection">Collection</string>
-  <string name="shortcutSearch">Recherche</string>
-  <string name="shortcutProgress">Progression</string>
+  <string name="shortcutSearch">Rechercher</string>
+  <string name="shortcutProgress">Progrès</string>
 </resources>

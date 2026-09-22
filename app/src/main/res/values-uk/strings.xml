@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
   <string name="menuProgress">Прогрес</string>
   <string name="menuDiscover">Огляд</string>
   <string name="menuCollection">Колекція</string>
-    <string name="textDisclaimerTitle">Вітаємо!</string>
-  <string name="textDisclaimerText">Будь ласка, зверніть увагу, що ви
-    <b>НЕ МОЖЕТЕ</b> дивитися або завантажувати серіали та фільми з цим додатком.\n\nВикористовуйте додатки, такі як
-    <b>Netflix</b> для завантаження та перегляду вмісту.</string>
-  <string name="textDisclaimerConfirmText">ОК, зрозуміло</string>
+  <string name="textDisclaimerTitle">Ласкаво просимо!</string>
+  <string name="textDisclaimerText">Будь ласка, зверніть увагу, що ви <b>НЕ МОЖЕТЕ</b> дивитися, транслювати або завантажувати серіали та фільми за допомогою цієї програми.\n\nВикористовуйте такі програми, як <b>Netflix</b>, для трансляції та перегляду контенту.</string>
+  <string name="textDisclaimerConfirmText">Добре, я розумію</string>
+
+
+
   <string name="textWhatsNewTitle">Що нового</string>
-  <string name="textWhatsNewSubtitle">Версія: %s</string>
+  <string name="textWhatsNewSubtitle">Версія %s</string>
   <string name="shortcutDiscover">Огляд</string>
   <string name="shortcutCollection">Колекція</string>
   <string name="shortcutSearch">Пошук</string>

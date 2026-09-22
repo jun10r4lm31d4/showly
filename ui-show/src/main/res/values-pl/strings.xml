@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textNextEpisode">Następny Odcinek:</string>
-  <string name="textInMyShows">W moich serialach</string>
-  <string name="textInWatchlist">Na później</string>
+  <string name="textNextEpisode">Następny odcinek:</string>
+  <string name="textInMyShows">Dodano do moich seriali</string>
+  <string name="textInWatchlist">Dodano do listy życzeń</string>
   <string name="textInHidden">Ukryte</string>
-  <string name="textShowQuickProgressTitle">Szybki Postęp</string>
-  <string name="textShowQuickProgressSubTitle">Wybierz ostatni obejrzany odcinek aby zaktualizować swój postęp.</string>
-  <string name="textShowQuickProgressDone">Postęp został zaktualizowany.</string>
+  <string name="textShowQuickProgressTitle">Szybki postęp</string>
+  <string name="textShowQuickProgressSubTitle">Wybierz ostatnio obejrzany odcinek, aby szybko zaktualizować swój postęp.</string>
+  <string name="textShowQuickProgressDone">Twój postęp został zaktualizowany.</string>
   <string name="textEpisodeDate">Odcinek %1$d | %2$s</string>
   <string name="textEpisodeTitle">S.%02d E.%02d - \'%s\'</string>
-  <string name="textActorsEmpty">Obsada niedostępna</string>
+  <string name="textActorsEmpty">Aktorzy nie są dostępni</string>
   <string name="textSeasons">Sezony:</string>
-  <string name="textSeasonsEmpty">Sezony niedostępne</string>
-  <string name="textTrailer">Trailer</string>
-  <string name="textYouMayAlsoLike">Zobacz również</string>
-  <string name="textRuntimeLeftHours">~%sg %sm do obejrzenia</string>
-  <string name="textRuntimeLeftMinutes">~%sm do obejrzenia</string>
+  <string name="textSeasonsEmpty">Sezony nie są dostępne.</string>
+  <string name="textTrailer">Zwiastun</string>
+  <string name="textYouMayAlsoLike">Może Ci się spodobać</string>
+  <string name="textRuntimeLeftHours">~pozostało %sh %sm</string>
+  <string name="textRuntimeLeftMinutes">~pozostało %sm</string>
   <string name="textShowManageLists">Zarządzaj listami</string>
   <string name="textShowManageListsCount">Zarządzaj listami (%d)</string>
 </resources>

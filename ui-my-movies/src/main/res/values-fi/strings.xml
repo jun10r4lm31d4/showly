@@ -3,7 +3,7 @@
   <string name="menuMyMovies">Historia</string>
   <string name="menuWatchlistMovies">Katselulista</string>
   <string name="menuHidden">Piilotetut</string>
-  <string name="textMyMoviesEmpty">Elokuvakoelmasi on tyhjä.\n\nLisää ensimmäinen elokuvasi <b>Etsi</b>-osiosta.</string>
-  <string name="textWatchlistMoviesEmpty"><b>Katselulista</b> on tyhjä.\n\nLisää <b>Etsi</b>-osiosta elokuvia, joita haluat katsella tulevaisuudessa.</string>
-  <string name="textHiddenEmpty"><b>Piilotetut</b>-lista on tyhjä.\n\n<b>Piilotetut</b> on lista kohteista, joista et ole kiinnostunut.\n\nPiilotettuja kohteita ei enää näytetä mm. <b>Katselutila</b>- ja <b>Etsi</b>-osioissa.</string>
+  <string name="textMyMoviesEmpty">Elokuvakokoelmasi on tällä hetkellä tyhjä.\n\nKäy <b>Löydä</b>-välilehdellä lisätäksesi ensimmäisen elokuvasi.</string>
+  <string name="textWatchlistMoviesEmpty"><b>Katselulistasi</b> on tällä hetkellä tyhjä.\n\nKäy <b>Löydä</b>-välilehdellä lisätäksesi elokuvia, jotka haluat katsoa tulevaisuudessa.</string>
+  <string name="textHiddenEmpty"><b>Piilotetut</b>-listasi on tällä hetkellä tyhjä.\n\n<b>Piilotetut</b> on lista kohteista, joista et ole kiinnostunut.\n\nPiilotetut kohteet eivät enää näy <b>Edistyminen</b>-, <b>Löydä</b>- ja muissa osioissa.</string>
 </resources>

@@ -1,170 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textImagesCacheCleared">Görüntü önbelleği temizlendi.</string>
+  <string name="textImagesCacheCleared">Resim önbelleği temizlendi.</string>
   <string name="textSettings">Ayarlar</string>
-  <string name="textSettingsGeneral">Genel ve Deneyim</string>
+  <string name="textSettingsGeneral"><![CDATA[Genel ve UX]]></string>
   <string name="errorScrobSyncFailed">Scrob senkronizasyonu başarısız oldu. Lütfen tekrar deneyin.</string>
-  <string name="textSettingsRecentShowsTitle">Son Eklenenler Miktarı</string>
-  <string name="textSettingsRecentShowsSummary">\'Koleksiyon\'da görüntülenecek en son ögeler sayısı.</string>
-  <string name="textSettingsUpcomingSectionTitle">Yaklaşan Bölümü</string>
-  <string name="textSettingsUpcomingSectionSummary">\'İlerleme\' sekmesinde \'Yaklaşan\' bölümünü etkinleştir/devre dışı bırak.</string>
+  <string name="textSettingsRecentShowsTitle">Son Eklenen Miktarı</string>
+  <string name="textSettingsRecentShowsSummary">\'Koleksiyon\'da görüntülenecek son öğelerin sayısı.</string>
+  <string name="textSettingsUpcomingSectionTitle">Gelecek Bölümü</string>
+  <string name="textSettingsUpcomingSectionSummary">\'İlerleme\' sekmesindeki \'Gelecek\' bölümünü etkinleştir/devre dışı bırak.</string>
   <string name="textSettingsThemeTitle">Tema</string>
   <string name="textSettingsThemeSummary">Ana temayı seçin.</string>
   <string name="textSettingsThemeWidgetsTitle">Tema</string>
-  <string name="textSettingsThemeWidgetsSummary">Widget\'ların temasını seçin.</string>
+  <string name="textSettingsThemeWidgetsSummary">Widget temasını seçin.</string>
   <string name="textSettingsWidgetsTransparencyTitle">Arka Plan</string>
-  <string name="textSettingsWidgetsTransparencySummary">Widget\'ların arka plan şeffaflık düzeyini ayarlayın.</string>
+  <string name="textSettingsWidgetsTransparencySummary">Widget arka plan şeffaflık seviyesini ayarlayın.</string>
   <string name="textSettingsMyShowsCountryTitle">Bölge</string>
-  <string name="textSettingsMyShowsCountrySummary">Akış hizmetleri verileriyle kullanılacak bölgeyi seçin.</string>
+  <string name="textSettingsMyShowsCountrySummary">Akış hizmetleri verileri için kullanılacak bölgeyi seçin.</string>
   <string name="textSettingsMyShowsLanguageTitle">Dil</string>
-  <string name="textSettingsMyShowsLanguageSummary">Mevcut olduğunda başlıklar ve açıklamalar tercüme edilecektir. Uygulama yeniden başlatılacaktır.</string>
-  <string name="textSettingsDateFormatTitle">Tarih/Saat Biçimi</string>
+  <string name="textSettingsMyShowsLanguageSummary">Açıklamalar ve başlıklar uygun olduğunda çevrilecektir. Uygulama yeniden başlatılacaktır.</string>
+  <string name="textSettingsDateFormatTitle">Tarih / Saat Formatı</string>
   <string name="textSettingsIncludeSpecialsTitle">Özel Sezonlar</string>
-  <string name="textSettingsIncludeSpecialsSummary">Dizinin ayrıntılar ekranında \'Özel\' sezonları görüntüleyin.</string>
+  <string name="textSettingsIncludeSpecialsSummary">Dizinin ayrıntılar ekranında \'Özel\' sezonları göster.</string>
   <string name="textSettingsNotifications">Bildirimler</string>
   <string name="textSettingsPushNotificationsTitle">Anlık Bildirimler</string>
-  <string name="textSettingsShowsNotificationsSummary">Takip ettiğiniz dizilerin yeni bölümleri/sezonları ve yeni filmler hakkında bildirimler alın.</string>
-  <string name="textSettingsShowsNotificationsRationale">Lütfen uygulamaya bildirim göstermesi için izin verin\n\nBunu şimdi yapmak ister misiniz?</string>
+  <string name="textSettingsShowsNotificationsSummary">Takip ettiğiniz diziler için yeni filmler, bölümler ve sezonlar hakkında bildirimler alın.</string>
+  <string name="textSettingsShowsNotificationsRationale">Lütfen uygulamanın bildirim göstermesine izin verin.\n\nŞimdi yapmak ister misiniz?</string>
   <string name="textSettingsMisc">Çeşitli</string>
-  <string name="textSettingsContactDevsTitle">Geliştiriciler İle İletişime Geç</string>
-  <string name="textSettingsContactDevsSummary">Bir sorununuz mu var? Bize e-posta göndermek için dokunun (showlyapp@gmail.com).</string>
-  <string name="textSettingsRateAppTitle">Geri Bildirim Gönder</string>
-  <string name="textSettingsRateAppSummary">Showly uygulamasından keyif alıyor musunuz? PlayStore\'da yorum yapabilirsiniz. Teşekkürler!</string>
-  <string name="textSettingsDeleteCacheTitle">Görüntü Önbelleğini Temizle</string>
-  <string name="textSettingsDeleteCacheSummary">Yerel görüntü önbelleğini temizlemek için dokunun. Bu, dizi görüntülerinin doğru yüklenmediğinde yardımcı olabilir.</string>
+  <string name="textSettingsContactDevsTitle">Geliştiricilerle İletişime Geçin</string>
+  <string name="textSettingsContactDevsSummary">Bir sorununuz mu var? Bize e-posta göndermek için tıklayın (showlyapp@gmail.com).</string>
+  <string name="textSettingsRateAppTitle">Geri Bildirim Ver</string>
+  <string name="textSettingsRateAppSummary">Showly\'den memnun musunuz? PlayStore\'da bize bir yorum bırakın. Teşekkürler!</string>
+  <string name="textSettingsDeleteCacheTitle">Resim Önbelleğini Temizle</string>
+  <string name="textSettingsDeleteCacheSummary">Yerel resim önbelleğini temizlemek için tıklayın. Bu, dizi resimleri doğru yüklenmiyorsa yardımcı olabilir.</string>
   <string name="textSettingsMoviesEnabledTitle">Filmler</string>
-  <string name="textSettingsMoviesEnabledSummary">Film desteğini etkinleştirin/devre dışı bırakın. Uygulama yeniden başlatılacaktır.</string>
-  <string name="textSettingsWidgets">Widget’lar</string>
+  <string name="textSettingsMoviesEnabledSummary">Film desteğini etkinleştir/devre dışı bırak. Uygulama yeniden başlatılacaktır.</string>
+  <string name="textSettingsWidgets">Widget\'lar</string>
   <string name="textSettingsWidgetsLabelsTitle">Başlıklar</string>
-  <string name="textSettingsWidgetsLabelsSummary">Yarı saydam widget başlıklarını görüntüleyin.</string>
-  <string name="textSettingsStreamingsDisclaimer">Akış hizmetleri verileri tarafından sağlanır</string>
-  <string name="textSettingsStreamingServicesTitle">Yayın Servisleri</string>
-  <string name="textSettingsStreamingServicesMessage">Yayın hizmetleri verilerini görüntüleyin.</string>
+  <string name="textSettingsWidgetsLabelsSummary">Yarı şeffaf widget başlıklarını göster.</string>
+  <string name="textSettingsStreamingsDisclaimer">Akış hizmetleri verileri şu kuruluş tarafından sağlanmaktadır:</string>
+  <string name="textSettingsStreamingServicesTitle">Akış Hizmetleri</string>
+  <string name="textSettingsStreamingServicesMessage">Akış hizmetleri verilerini göster.</string>
   <string name="textSettingsProgressNextEpisodeTitle">Sonraki Bölüm</string>
-  <string name="textSettingsProgressNextEpisodeMessage">Sonraki bölümü hesaplamakta şunu kullan:</string>
-  <string name="textSettingsDateSelectionMessage">Varsayılan tarih seçme seçeneğini seçin.</string>
-  <string name="textSettingsTabletColumnsTitle">Sütun Sayısını Listeler</string>
+  <string name="textSettingsProgressNextEpisodeMessage">Sonraki bölümü şuna göre hesapla:</string>
+  <string name="textSettingsDateSelectionMessage">Varsayılan tarih seçimi seçeneğini belirleyin.</string>
+  <string name="textSettingsTabletColumnsTitle">Liste Sütun Sayısı</string>
   <string name="textSettingsTabletColumnsSummary">Listeler için tercih edilen sütun sayısını seçin.</string>
-  <string name="textSettingsBackup">Yedekleme ve Geri Yükleme</string>
+  <string name="textSettingsBackup"><![CDATA[Yedekle ve Geri Yükle]]></string>
   <string name="textSettingsBackupExportTitle">Dışa Aktar</string>
-  <string name="textSettingsBackupExportDescription">Yedek oluşturmak veya verilerinizi yeni bir cihaza aktarmak için verilerinizi dışa aktarın.</string>
+  <string name="textSettingsBackupExportDescription">Yedek oluşturmak veya yeni bir cihaza aktarmak için verilerinizi dışa aktarın.</string>
   <string name="textSettingsBackupImportTitle">İçe Aktar</string>
-  <string name="textSettingsBackupImportDescription">Bu cihazdaki verileri geri yüklemek için yedekleme dosyanızı içe aktarın.</string>
-  <string name="textSettingsSpoilers">Spoiler</string>
+  <string name="textSettingsBackupImportDescription">Verileri bu cihaza geri yüklemek için yedek dosyanızı içe aktarın.</string>
+  <string name="textSettingsSpoilers">Sürprizbozanlar</string>
   <string name="textSettingsSpoilersShows">Diziler</string>
-  <string name="textSettingsSpoilersShowsSummary">Diziler için spoiler ayarlarını yönet.</string>
+  <string name="textSettingsSpoilersShowsSummary">Diziler için sürprizbozan ayarlarını yönetin.</string>
   <string name="textSettingsSpoilersShowsOverviewsMyTitle">Dizilerim</string>
-  <string name="textSettingsSpoilersShowsOverviewsMyDescription">Dizilerim sekmesine eklenen diziler için
-  
-    <b>açıklamayı</b> gizle</string>
-  <string name="textSettingsSpoilersShowsRatingsMyDescription">Dizilerim sekmesine eklenen diziler için
-  
-    <b>derecelendirmeyi</b> gizle</string>
-  <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">İstek Listesi</string>
-  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">İzleme listesine eklenen diziler için
-  
-    <b>açıklamayı</b> gizle</string>
-  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">İzleme listesine eklenen diziler için
-  
-    <b>derecelendirmeyi</b> gizle</string>
-  <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Gizlenmiş</string>
-  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Gizli bölümüne eklenen diziler için
-  
-    <b>açıklamayı</b> gizle</string>
-  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Gizli bölümüne eklenen diziler için
-  
-    <b>derecelendirmeyi</b> gizle</string>
-  <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">Listelerinizde Olmayanlar</string>
-  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Listelerinizde olmayan diziler için
-  
-    <b>açıklamayı</b> gizle</string>
-  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Listelerinizde olmayan diziler için
-  
-    <b>derecelendirmeyi</b> gizle</string>
+  <string name="textSettingsSpoilersShowsOverviewsMyDescription">Dizilerim\'e eklenen dizilerin <b>açıklamasını</b> gizle</string>
+  <string name="textSettingsSpoilersShowsRatingsMyDescription">Dizilerim\'e eklenen dizilerin <b>puanını</b> gizle</string>
+  <string name="textSettingsSpoilersShowsOverviewsWatchlistTitle">İzleme Listesi</string>
+  <string name="textSettingsSpoilersShowsOverviewsWatchlistDescription">İzleme Listesi\'ne eklenen dizilerin <b>açıklamasını</b> gizle</string>
+  <string name="textSettingsSpoilersShowsRatingsWatchlistDescription">İzleme Listesi\'ne eklenen dizilerin <b>puanını</b> gizle</string>
+  <string name="textSettingsSpoilersShowsOverviewsHiddenTitle">Gizlenenler</string>
+  <string name="textSettingsSpoilersShowsOverviewsHiddenDescription">Gizlenenler\'e eklenen dizilerin <b>açıklamasını</b> gizle</string>
+  <string name="textSettingsSpoilersShowsRatingsHiddenDescription">Gizlenenler\'e eklenen dizilerin <b>puanını</b> gizle</string>
+  <string name="textSettingsSpoilersShowsOverviewsNotCollectedTitle">Koleksiyonda Olmayanlar</string>
+  <string name="textSettingsSpoilersShowsOverviewsNotCollectedDescription">Koleksiyonunuzda olmayan dizilerin <b>açıklamasını</b> gizle</string>
+  <string name="textSettingsSpoilersShowsRatingsNotCollectedDescription">Koleksiyonunuzda olmayan dizilerin <b>puanını</b> gizle</string>
   <string name="textSettingsSpoilersMovies">Filmler</string>
-  <string name="textSettingsSpoilersMoviesSummary">Filmler için spoiler ayarlarını yönet.</string>
-  <string name="textSettingsSpoilersMoviesOverviewsMyTitle">Tarih</string>
-  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Geçmişe eklenen filmlerin
-  
-    <b>açıklamasını</b> gizle</string>
-  <string name="textSettingsSpoilersMoviesRatingsMyDescription">Geçmişe eklenen filmlerin
-  
-    <b>puanını</b> gizle</string>
-  <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">İstek Listesi</string>
-  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">İzleme listesine eklenen filmler için
-  
-    <b>açıklamayı</b> gizle</string>
-  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">İzleme listesine eklenen filmler için
-  
-    <b>derecelendirmeyi</b> gizle</string>
-  <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Gizlenmiş</string>
-  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Gizli bölümüne eklenen filmler için
-  
-    <b>açıklamayı</b> gizle</string>
-  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Gizli bölümüne eklenen filmler için
-  
-    <b>derecelendirmeyi</b> gizle</string>
-  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">Listelerinizde Olmayanlar</string>
-  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Listelerinizde olmayan filmler için
-  
-    <b>açıklamayı</b> gizle</string>
-  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Listelerinizde olmayan filmler için
-  
-    <b>derecelendirmeyi</b> gizle</string>
-  <string name="textSettingsSpoilersEpisodes">Bölüm</string>
-  <string name="textSettingsSpoilersEpisodesSummary">Bölümler için spoiler ayarlarını yönet.</string>
-  <string name="textSettingsSpoilersEpisodesImage">Seyredilmemiş bölümlerin
-  
-    <b>görüntüsünü</b> saklayın.</string>
-  <string name="textSettingsSpoilersEpisodesTitle">Seyredilmemiş bölümlerin
-  
-    <b>başlığını</b> saklayın.</string>
-  <string name="textSettingsSpoilersEpisodesDescription">Seyredilmemiş bölümlerin
-  
-    <b>açıklamasını</b> saklayın.</string>
-  <string name="textSettingsSpoilersEpisodesRating">Seyredilmemiş bölümlerin
-  
-    <b>değerlendirmesini</b> saklayın.</string>
-  <string name="textSettingsSpoilersTapToRevealTitle">Göstermek için Dokunun</string>
-  <string name="textSettingsSpoilersTapToRevealDescription">Geçici olarak göstermek için gizlenen içeriğe dokunun.</string>
-  <string name="textNextEpisodeLastWatched">İzlenen son bölüm</string>
-  <string name="textNextEpisodeOldest">İzlenmeyen en eski bölüm</string>
+  <string name="textSettingsSpoilersMoviesSummary">Filmler için sürprizbozan ayarlarını yönetin. </string>
+  <string name="textSettingsSpoilersMoviesOverviewsMyTitle">Geçmiş</string>
+  <string name="textSettingsSpoilersMoviesOverviewsMyDescription">Geçmişe eklenen filmlerin <b>açıklamasını</b> gizle</string>
+  <string name="textSettingsSpoilersMoviesRatingsMyDescription">Geçmişe eklenen filmlerin <b>puanını</b> gizle</string>
+  <string name="textSettingsSpoilersMoviesOverviewsWatchlistTitle">İzleme Listesi</string>
+  <string name="textSettingsSpoilersMoviesOverviewsWatchlistDescription">İzleme Listesi\'ne eklenen filmlerin <b>açıklamasını</b> gizle</string>
+  <string name="textSettingsSpoilersMoviesRatingsWatchlistDescription">İzleme Listesi\'ne eklenen filmlerin <b>puanını</b> gizle</string>
+  <string name="textSettingsSpoilersMoviesOverviewsHiddenTitle">Gizlenenler</string>
+  <string name="textSettingsSpoilersMoviesOverviewsHiddenDescription">Gizlenenler\'e eklenen filmlerin <b>açıklamasını</b> gizle</string>
+  <string name="textSettingsSpoilersMoviesRatingsHiddenDescription">Gizlenenler\'e eklenen filmlerin <b>puanını</b> gizle</string>
+  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedTitle">Koleksiyonda Olmayanlar</string>
+  <string name="textSettingsSpoilersMoviesOverviewsNotCollectedDescription">Koleksiyonunuzda olmayan filmlerin <b>açıklamasını</b> gizle</string>
+  <string name="textSettingsSpoilersMoviesRatingsNotCollectedDescription">Koleksiyonunuzda olmayan filmlerin <b>puanını</b> gizle</string>
+  <string name="textSettingsSpoilersEpisodes">Bölümler</string>
+  <string name="textSettingsSpoilersEpisodesSummary">Bölümler için sürprizbozan ayarlarını yönetin.</string>
+  <string name="textSettingsSpoilersEpisodesImage">İzlenmemiş bölümlerin <b>resmini</b> gizle.</string>
+  <string name="textSettingsSpoilersEpisodesTitle">İzlenmemiş bölümlerin <b>başlığını</b> gizle.</string>
+  <string name="textSettingsSpoilersEpisodesDescription">İzlenmemiş bölümlerin <b>açıklamasını</b> gizle.</string>
+  <string name="textSettingsSpoilersEpisodesRating">İzlenmemiş bölümlerin <b>puanını</b> gizle.</string>
+  <string name="textSettingsSpoilersTapToRevealTitle">Görmek İçin Dokun</string>
+  <string name="textSettingsSpoilersTapToRevealDescription">Gizli içeriği geçici olarak görmek için dokunun.</string>
+  <string name="textNextEpisodeLastWatched">Son izlenen bölüm</string>
+  <string name="textNextEpisodeOldest">En eski izlenmemiş bölüm</string>
   <string name="textDateSelectionAsk">Her zaman sor</string>
   <string name="textDateSelectionNow">Her zaman \"Şimdi\"</string>
-  <string name="textTransparency100">Mat</string>
-  <string name="textLanguageEnglish" translatable="false">English</string>
-  <string name="textLanguagePolish" translatable="false">Polski</string>
-  <string name="textLanguageRomanian" translatable="false">Română</string>
-  <string name="textLanguageArabic" translatable="false">العربية</string>
-  <string name="textLanguageChinese" translatable="false">中文简体</string>
-  <string name="textLanguageSpanish" translatable="false">Español</string>
-  <string name="textLanguageItalian" translatable="false">Italiano</string>
-  <string name="textLanguageFrench" translatable="false">Français</string>
-  <string name="textLanguageDanish" translatable="false">Dansk</string>
-  <string name="textLanguagePortugalBrasil" translatable="false">Português brasileiro</string>
-  <string name="textLanguageTurkish" translatable="false">Türkçe</string>
-  <string name="textLanguageUkrainian" translatable="false">Українська</string>
-  <string name="textLanguageGerman" translatable="false">Deutsch</string>
-  <string name="textLanguageRussian" translatable="false">Pусский</string>
-  <string name="textLanguageFinnish" translatable="false">Suomi</string>
-  <string name="textTransparency0" translatable="false">100%</string>
-  <string name="textTransparency25" translatable="false">25%</string>
-  <string name="textTransparency50" translatable="false">50%</string>
-  <string name="textTransparency75" translatable="false">75%</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <string name="textTransparency100">Opak</string>
   <string name="textSettingsScrob">Scrob Senkronizasyonu</string>
   <string name="textSettingsScrobTitle">Scrob kimlik bilgileri</string>
-  <string name="textSettingsScrobDescription">Kendi barındırdığınız Scrob örneğinizle senkronize edin</string>
+  <string name="textSettingsScrobDescription">Kendi barındırdığınız Scrob örneğiyle senkronize edin</string>
   <string name="textSettingsScrobUrlHint">Scrob URL\'si</string>
   <string name="textSettingsScrobApiKeyHint">Scrob API anahtarı</string>
   <string name="textSettingsScrobDialogMessage">Scrob örneğinizin adresini ve kimlik bilgilerini girin.</string>
   <string name="textSettingsScrobPasswordSetHint">API anahtarı</string>
   <string name="textSettingsScrobNotConfigured">Yapılandırılmadı</string>
   <string name="textSettingsScrobSyncNowTitle">Şimdi senkronize et</string>
-  <string name="textSettingsScrobSyncNowSummary">İzleme geçmişini ve listeleri Scrob\'dan içe aktarın.</string>
+  <string name="textSettingsScrobSyncNowSummary">İzleme geçmişini ve listeleri Scrob\'dan içe aktar.</string>
   <string name="textScrobSyncStarted">Senkronizasyon başladı. Bu ekrandan güvenle ayrılabilirsiniz.</string>
-  <string name="textSettingsScrobWatchlistTitle">İzleme listesi</string>
+  <string name="textSettingsScrobWatchlistTitle">Watchlist list</string>
   <string name="textSettingsScrobWatchlistSummary">Bir Scrob listesini izleme listeniz olarak kullanın</string>
   <string name="textSettingsScrobWatchlistNotSelected">Seçilmedi</string>
-  <string name="textSettingsScrobWatchlistDialogTitle">İzleme listesini seçin</string>
+  <string name="textSettingsScrobWatchlistDialogTitle">İzleme listesi seç</string>
   <string name="textSettingsScrobWatchlistNone">Hiçbiri</string>
 </resources>

@@ -2,23 +2,23 @@
 <resources>
   <string name="menuLists">Listen</string>
   <string name="menuList">Liste</string>
-  <string name="textListsEmpty">Ihre Listensammlung ist derzeit leer.</string>
-  <string name="textListEmpty">Die Liste ist aktuell leer.</string>
+  <string name="textListsEmpty">Deine Listensammlung ist momentan leer.</string>
+  <string name="textListEmpty">Deine Liste ist momentan leer.</string>
   <string name="textCreateList">Liste erstellen</string>
-  <string name="textCreateListDescription">Erstelle eine neue Liste.</string>
+  <string name="textCreateListDescription">Erstelle eine neue benutzerdefinierte Liste.</string>
   <string name="textName">Name</string>
   <string name="textDescription">Beschreibung (optional)</string>
   <string name="textDeleteList">Liste löschen</string>
   <string name="textEditList">Liste bearbeiten</string>
-  <string name="textEditListDescription">Aktualisiere deine Liste.</string>
+  <string name="textEditListDescription">Deine benutzerdefinierte Liste aktualisieren.</string>
   <string name="textConfirmDeleteListTitle">Liste löschen</string>
   <string name="textConfirmDeleteListSubtitle">Bist du sicher, dass du diese Liste löschen möchtest?</string>
-  <string name="textChangeRanks">Ränge ändern</string>
-  <string name="textChangeRanksSubtitle">Ziehe ein Listenelement um seinen Rang zu ändern</string>
+  <string name="textChangeRanks">Reihenfolge ändern</string>
+  <string name="textChangeRanksSubtitle">Liste per Drag &amp; Drop verschieben, um die Reihenfolge zu ändern</string>
   <string name="textManageLists">Listen verwalten</string>
-  <string name="textManageListsShows">Verwalte deine Listen für diese Serie.</string>
-  <string name="textManageListsMovies">Verwalte deine Listen für diesen Film.</string>
-  <string name="errorCouldNotCreateList">Wir konnten derzeit keine neue Liste in deinem Trakt Konto erstellen.\nBitte überprüfe deine Internetverbindung und versuche es erneut.</string>
-  <string name="errorCouldNotUpdateList">Wir konnten diese Liste derzeit nicht in deinem Trakt Konto aktualisieren.\nBitte überprüfe deine Internetverbindung und versuche es erneut.</string>
-  <string name="errorCouldNotDeleteList">Wir konnten diese Liste momentan nicht von deinem Trakt Konto löschen.\nBitte überprüfe deine Internetverbindung und versuche es erneut.</string>
+  <string name="textManageListsShows">Deine Listen für diese Serie verwalten.</string>
+  <string name="textManageListsMovies">Deine Listen für diesen Film verwalten.</string>
+  <string name="errorCouldNotCreateList">Neue Liste konnte momentan nicht erstellt werden.</string>
+  <string name="errorCouldNotUpdateList">Liste konnte momentan nicht aktualisiert werden.</string>
+  <string name="errorCouldNotDeleteList">Liste konnte momentan nicht gelöscht werden.</string>
 </resources>

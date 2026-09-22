@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="tabMoviesCalendar">Kalenteri</string>
-  <string name="tabMoviesProgress">Katselutila</string>
+  <string name="tabMoviesProgress">Edistyminen</string>
   <string name="textMoviesCalendarEmpty">Uusia elokuvia ei ole tulossa.</string>
-  <string name="textMoviesCalendarRecentsEmpty">Hiljattain esitettyjä elokuvia ei ole.</string>
-  <string name="textDiscoverMovies">Etsi elokuvia</string>
-  <string name="textMoviesProgressEmpty">
-    <b>Katselutila</b> on tyhjä.\n\nLisää elokuvia
-  
-    <b>Etsi</b>-osiosta tai tuo Trakt.tv-kokoelmasi.</string>
+  <string name="textMoviesCalendarRecentsEmpty">Äskettäin esitettyjä elokuvia ei ole.</string>
+  <string name="textDiscoverMovies">Löydä elokuvia</string>
+  <string name="textMoviesProgressEmpty"><b>Edistymisesi</b> on tällä hetkellä tyhjä.\n\nKäy <b>Löydä</b>-välilehdellä lisätäksesi elokuvia tai tuodaksesi Trakt.tv-kokoelmasi.</string>
 </resources>

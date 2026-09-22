@@ -2,8 +2,8 @@
 <resources>
   <string name="menuMyShows">Meine Serien</string>
   <string name="menuWatchlist">Watchlist</string>
-  <string name="menuHidden">Versteckt</string>
-  <string name="textMyShowsEmpty">Deine Seriensammlung ist derzeit leer.\n\nGehe auf den <b>Entdecken</b>Tab um deine erste Serie hinzuzufügen.</string>
-  <string name="textWatchlistEmpty">Deine <b>Watchlist</b> ist zurzeit leer.\n\nGehe auf den <b>Entdecken</b> Tab um Serien hinzuzufügen, die du später anschauen möchtest.</string>
-  <string name="textHiddenEmpty">Deine <b>Versteckt</b> Liste ist derzeit leer.\n\n<b>Versteckt</b> ist eine Liste von Elementen, die dich nicht interessieren.\n\nVersteckte Elemente werden nicht mehr in <b>Fortschritt</b>, <b>Entdecke</b> und andere Abschnitte.</string>
+  <string name="menuHidden">Verborgen</string>
+  <string name="textMyShowsEmpty">Deine Seriensammlung ist momentan leer.\n\nBesuche den <b>Entdecken</b>-Reiter, um deine erste Serie hinzuzufügen.</string>
+  <string name="textWatchlistEmpty">Deine <b>Watchlist</b> ist momentan leer.\n\nBesuche den <b>Entdecken</b>-Reiter, um Serien hinzuzufügen, die du zukünftig sehen möchtest.</string>
+  <string name="textHiddenEmpty">Deine Liste <b>Verborgen</b> ist momentan leer.\n\n<b>Verborgen</b> ist eine Liste von Elementen, an denen du nicht interessiert bist.\n\nVerborgene Elemente erscheinen nicht mehr in <b>Fortschritt</b>, <b>Entdecken</b> und anderen Abschnitten.</string>
 </resources>

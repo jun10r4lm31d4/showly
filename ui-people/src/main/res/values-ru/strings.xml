@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textAge" comment="Person&apos;s age">Возраст:</string>
-  <string name="textBorn" comment="For example - Born: 12 January 1990">Рожден:</string>
-  <string name="textDied" comment="For example - Died: 12 January 2020">Умер:</string>
-  <string name="textEpisodes">Эпизоды</string>
-  <string name="textGalleryEmpty">Нет доступных изображений</string>
+  <string name="textAge">Возраст:</string>
+  <string name="textBorn">Родился:</string>
+  <string name="textDied">Умер:</string>
+  <string name="textEpisodes">Серии</string>
+  <string name="textGalleryEmpty">Изображения отсутствуют</string>
 </resources>

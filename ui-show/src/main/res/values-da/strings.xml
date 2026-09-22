@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textNextEpisode">Næste Afsnit:</string>
-  <string name="textInMyShows">Tilføjet til Mine Serier</string>
-  <string name="textInWatchlist">Tilføjet til Se Senere</string>
+  <string name="textNextEpisode">Næste episode:</string>
+  <string name="textInMyShows">Tilføjet til mine serier</string>
+  <string name="textInWatchlist">Tilføjet til watchlist</string>
   <string name="textInHidden">Skjult</string>
-  <string name="textShowQuickProgressTitle">Hurtig Fremskridt</string>
-  <string name="textShowQuickProgressSubTitle">Vælg sidst sete afsnit for hurtigt at opdatere dine fremskridt.</string>
-  <string name="textShowQuickProgressDone">Dine fremskridt er blevet opdateret.</string>
-  <string name="textEpisodeDate">Afsnit %1$d | %2$s</string>
-  <string name="textEpisodeTitle">S.%02d A.%02d - \'%s\'</string>
+  <string name="textShowQuickProgressTitle">Hurtigt fremskridt</string>
+  <string name="textShowQuickProgressSubTitle">Vælg sidst sete episode for hurtigt at opdatere dit fremskridt.</string>
+  <string name="textShowQuickProgressDone">Dit fremskridt er blevet opdateret.</string>
+  <string name="textEpisodeDate">Episode %1$d | %2$s</string>
+  <string name="textEpisodeTitle">S.%02d E.%02d - \'%s\'</string>
   <string name="textActorsEmpty">Skuespillere er ikke tilgængelige</string>
   <string name="textSeasons">Sæsoner:</string>
-  <string name="textSeasonsEmpty">Sæsoner er ikke tilgængelige.</string>
+  <string name="textSeasonsEmpty">Sæsoner ikke tilgængelige.</string>
   <string name="textTrailer">Trailer</string>
-  <string name="textYouMayAlsoLike">Du kan måske også lide</string>
-  <string name="textRuntimeLeftHours">~%st %sm tilbage</string>
+  <string name="textYouMayAlsoLike">Du vil måske også kunne lide</string>
+  <string name="textRuntimeLeftHours">~%sh %sm tilbage</string>
   <string name="textRuntimeLeftMinutes">~%sm tilbage</string>
-  <string name="textShowManageLists">Administrer Lister</string>
-  <string name="textShowManageListsCount">Administrer Lister (%d)</string>
+  <string name="textShowManageLists">Administrer lister</string>
+  <string name="textShowManageListsCount">Administrer lister (%d)</string>
 </resources>

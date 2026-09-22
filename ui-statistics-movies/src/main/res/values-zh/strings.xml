@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textStatisticsMovies">统计信息</string>
-  <string name="textStatisticsMoviesEmpty">必须在观看历史中至少有一部电影，
-才能显示统计信息。</string>
-  <string name="textStatisticsMoviesTotalTimeSpent">总观看时间</string>
-  <string name="textStatisticsMoviesTotalTimeItIs">相当于</string>
+  <string name="textStatisticsMovies">统计</string>
+  <string name="textStatisticsMoviesEmpty"><b>历史记录</b>中必须至少有一部电影\n才能显示统计数据。</string>
+  <string name="textStatisticsMoviesTotalTimeSpent">观看总时长</string>
+  <string name="textStatisticsMoviesTotalTimeItIs">约为</string>
   <string name="textStatisticsMoviesTotalTimeSpentHours">%s 小时</string>
   <string name="textStatisticsMoviesTotalTimeSpentMinutes">%s 分钟</string>
-  <string name="textStatisticsMoviesTotalTimeSpentDays">大约是 %s 天。</string>
-  <string name="textStatisticsMoviesTotalMovies">已观看的电影总数</string>
+  <string name="textStatisticsMoviesTotalTimeSpentDays">约为 %s 天。</string>
+  <string name="textStatisticsMoviesTotalMovies">观看电影总数</string>
   <string name="textStatisticsMoviesTotalMoviesCount">%s 部电影</string>
-  <string name="textStatisticsMoviesTopGenre">最爱类别</string>
-  <string name="textStatisticsMoviesTopGenreSubValue">似乎这正符合您的口味。点击查看更多。</string>
-  <string name="textStatisticsMoviesTopGenreSubValue2">似乎这正符合您的口味。</string>
+  <string name="textStatisticsMoviesTopGenre">热门类型</string>
+  <string name="textStatisticsMoviesTopGenreSubValue">似乎是您的最爱。点击查看更多。</string>
+  <string name="textStatisticsMoviesTopGenreSubValue2">似乎是您的最爱。</string>
   <string name="textStatisticsMoviesRatings">最近评分</string>
 </resources>

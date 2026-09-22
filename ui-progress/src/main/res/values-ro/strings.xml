@@ -3,19 +3,13 @@
   <string name="tabCalendar">Calendar</string>
   <string name="tabProgress">Progres</string>
   <string name="tabHistory">Istoric</string>
-  <string name="textCalendarEmpty">Nu urmează să apară episoade noi.</string>
+  <string name="textCalendarEmpty">Nu există episoade noi pe drum.</string>
   <string name="textRecentsEmpty">Nu există episoade difuzate recent.</string>
   <string name="textHistoryEmpty">Nu există nimic în istoricul tău.</string>
-  <string
-    name="textOnHold"
-    comment="This is a header for Progress subsection. It will contain pending shows marked by user."
-  >În așteptare</string>
-  <string name="textDiscoverShows">Descoperă emisiuni</string>
+  <string name="textOnHold">În așteptare</string>
+  <string name="textDiscoverShows">Descoperă seriale</string>
   <string name="textEpisodeInfo">Detalii</string>
-  <string name="textProgressEmpty">
-    <b>Progresul</b> este în prezent gol.\n\nVizitează
-  
-    <b>Descoperă</b> pentru a adăuga seriale sau pentru a importa colecţia Trakt.tv.</string>
-  <string name="textNewSeason">Premiera sezonului</string>
+  <string name="textProgressEmpty"><b>Progresul</b> tău este momentan gol.\n\nVizitează fila <b>Descoperă</b> pentru a adăuga seriale sau a importa colecția ta Trakt.tv.</string>
+  <string name="textNewSeason">Premieră de sezon</string>
   <string name="textPremieres">Premiere</string>
 </resources>

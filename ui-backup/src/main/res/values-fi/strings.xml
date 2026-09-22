@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore">Varmuuskopiointi ja palautus</string>
-  <string name="textBackupExport">Vie tietoja</string>
-  <string name="textBackupExportDescription">Vie sarjojesi ja elokuviesi tiedot tiedostoon varmuuskopioidaksesi tai siirtääksesi ne uuteen laitteeseen.</string>
-  <string name="textBackupImport">Tuo tietoja</string>
-  <string name="textBackupImportDescription">Palauta sarjojesi ja elokuviesi tiedot tuomalla aiemmin luotu varmuuskopio.\n\nNykyistä kokoelmaa ei tyhjennetä, vaan vain puuttuvat kohteet lisätään.</string>
-  <string name="textBackupExportSuccess">Tietojen vienti onnistui.</string>
-  <string name="textBackupImportSuccess">Tietojen tuonti onnistui.</string>
-  <string name="errorImportCancelled">Tietojen tuonti peruttiin.</string>
-  <string name="textBackupExportSchedule">Ajoitus</string>
-  <string name="textBackupExportOptionOff">Ei käytössä</string>
+  <string name="textBackupAndRestore"><![CDATA[Varmuuskopiointi & palautus]]></string>
+  <string name="textBackupExport">Vie tiedot</string>
+  <string name="textBackupExportDescription">Vie sarja- ja elokuvatiedot tiedostoon luodaksesi varmuuskopion tai siirtääksesi ne uuteen laitteeseen.</string>
+  <string name="textBackupImport">Tuo tiedot</string>
+  <string name="textBackupImportDescription">Tuo sarja- ja elokuvatiedot varmuuskopiotiedostosta.\n\nNykyistä kokoelmaasi ei poisteta, ja vain puuttuvat kohteet lisätään.</string>
+  <string name="textBackupExportSuccess">Tiedot viety onnistuneesti.</string>
+  <string name="textBackupImportSuccess">Tiedot tuotu onnistuneesti.</string>
+  <string name="errorImportCancelled">Tietojen tuonti peruutettu.</string>
+  <string name="textBackupExportSchedule">Aikataulu</string>
+  <string name="textBackupExportOptionOff">Pois päältä</string>
   <string name="textBackupExportOption6Hours">6 tunnin välein</string>
-  <string name="textBackupExportOptionDaily">Kerran päivässä</string>
+  <string name="textBackupExportOptionDaily">Joka päivä</string>
   <string name="textBackupExportOption3Day">3 päivän välein</string>
-  <string name="textBackupExportOptionWeekly">Kerran viikossa</string>
-  <string name="textBackupExportOptionOffMessage">Varmuuskopiointia ei suoriteta automaattisesti.</string>
+  <string name="textBackupExportOptionWeekly">Joka viikko</string>
+  <string name="textBackupExportOptionOffMessage">Varmuuskopiointi ei käynnisty automaattisesti.</string>
   <string name="textBackupExportOptionConfirmMessage">Automaattinen varmuuskopiointi on ajastettu.</string>
-  <string name="textBackupExportOption6HoursButton">Ajoitettu suoritettavaksi 6 tunnin välein</string>
-  <string name="textBackupExportOptionDailyButton">Ajoitettu suoritettavaksi kerran päivässä</string>
-  <string name="textBackupExportOption3DayButton">Ajoitettu suoritettavaksi 3 päivän välein</string>
-  <string name="textBackupExportOptionWeeklyButton">Ajoitettu suoritettavaksi kerran viikossa</string>
-  <string name="textBackupExportLastTimestamp">Viimeksi varmuuskopioitu: %s</string>
+  <string name="textBackupExportOption6HoursButton">Ajastettu suoritettavaksi 6 tunnin välein</string>
+  <string name="textBackupExportOptionDailyButton">Ajastettu suoritettavaksi joka päivä</string>
+  <string name="textBackupExportOption3DayButton">Ajastettu suoritettavaksi 3 päivän välein</string>
+  <string name="textBackupExportOptionWeeklyButton">Ajastettu suoritettavaksi joka viikko</string>
+  <string name="textBackupExportLastTimestamp">Viimeisin varmuuskopio: %s</string>
 </resources>

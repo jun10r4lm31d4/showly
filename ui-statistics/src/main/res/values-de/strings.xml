@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textStatistics">Statistik</string>
-  <string name="textStatisticsEmpty">Es muss mindestens eine <b>Serie</b>\n vorhanden sein, bevor deine Statistik angezeigt werden kann.</string>
-  <string name="textStatisticsMostWatchedShows">Meistgeschaute Serien</string>
-  <string name="textStatisticsTotalTimeSpent">Gesamtzeit</string>
-  <string name="textStatisticsTotalTimeItIs">und es ist</string>
+  <string name="textStatistics">Statistiken</string>
+  <string name="textStatisticsEmpty">Mindestens eine Serie muss unter <b>Meine Serien</b> vorhanden sein,\nbevor Statistiken angezeigt werden können.</string>
+  <string name="textStatisticsMostWatchedShows">Meistgesehene Serien</string>
+  <string name="textStatisticsTotalTimeSpent">Gesamte Sehzeit</string>
+  <string name="textStatisticsTotalTimeItIs">und es sind</string>
   <string name="textStatisticsTotalTimeSpentHours">%s Stunden</string>
   <string name="textStatisticsTotalTimeSpentMinutes">%s Minuten</string>
-  <string name="textStatisticsTotalTimeSpentDays">welches ist etwa %s Tage.</string>
-  <string name="textStatisticsTotalEpisodes">Insgesamt geschaute Folgen</string>
-  <string name="textStatisticsTotalEpisodesCount">%s Folgen</string>
-  <string name="textStatisticsTotalEpisodesShowsCount">über %s Serien verteilt.</string>
-  <string name="textStatisticsTopGenre">Top Genre</string>
-  <string name="textStatisticsTopGenreSubValue">Scheint eine Tasse Tee zu sein. Tippe hier für mehr Informationen.</string>
-  <string name="textStatisticsTopGenreSubValue2">Scheint eine Tasse Tee zu sein.</string>
-  <string name="textStatisticsShowMore">Mehr</string>
-  <string name="textStatisticsRatings">Zuletzt Bewertet</string>
+  <string name="textStatisticsTotalTimeSpentDays">was etwa %s Tagen entspricht.</string>
+  <string name="textStatisticsTotalEpisodes">Insgesamt gesehene Episoden</string>
+  <string name="textStatisticsTotalEpisodesCount">%s Episoden</string>
+  <string name="textStatisticsTotalEpisodesShowsCount">verteilt auf %s Serien.</string>
+  <string name="textStatisticsTopGenre">Top-Genres</string>
+  <string name="textStatisticsTopGenreSubValue">scheinen dein Ding zu sein. Tippe für mehr.</string>
+  <string name="textStatisticsTopGenreSubValue2">scheinen dein Ding zu sein.</string>
+  <string name="textStatisticsShowMore">Mehr anzeigen</string>
+  <string name="textStatisticsRatings">Zuletzt bewertet</string>
   <string name="textStatisticsHours">Stunden</string>
-  <string name="textStatisticsEpisodes">Folgen</string>
+  <string name="textStatisticsEpisodes">Episoden</string>
   <string name="textStatisticsSeasons">Staffeln</string>
 </resources>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textInMyMovies">Lisättiin historiaan</string>
+  <string name="textInMyMovies">Lisätty historiaan</string>
   <string name="textInMoviesWatchlist">Lisätty katselulistalle</string>
-  <string name="textInHidden">Piilotetut</string>
-  <string name="textMovieActorsEmpty">Näyttelijät eivät ole saatavilla</string>
+  <string name="textInHidden">Piilotettu</string>
+  <string name="textMovieActorsEmpty">Näyttelijöitä ei ole saatavilla</string>
   <string name="textMovieTrailer">Traileri</string>
-  <string name="textMovieRate">Arvioi</string>
+  <string name="textMovieRate">Arvostele</string>
   <string name="textMovieComments2">Kommentit</string>
-  <string name="textMovieYouMayAlsoLike">Saattaisit pitää myös näistä</string>
+  <string name="textMovieYouMayAlsoLike">Saatat pitää myös näistä</string>
   <string name="textMovieCollections">Kokoelmat</string>
   <string name="textMovieManageLists">Hallitse listoja</string>
   <string name="textMovieManageListsCount">Hallitse listoja (%d)</string>

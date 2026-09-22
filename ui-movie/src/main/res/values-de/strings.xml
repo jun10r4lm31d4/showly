@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textInMyMovies">Zum Verlauf hinzufügen</string>
-  <string name="textInMoviesWatchlist">Auf der Watchlist</string>
-  <string name="textInHidden">Versteckt</string>
-  <string name="textMovieActorsEmpty">Schauspieler sind nicht verfügbar.</string>
+  <string name="textInMyMovies">Zur Historie hinzugefügt</string>
+  <string name="textInMoviesWatchlist">Zur Watchlist hinzugefügt</string>
+  <string name="textInHidden">Verborgen</string>
+  <string name="textMovieActorsEmpty">Schauspieler nicht verfügbar</string>
   <string name="textMovieTrailer">Trailer</string>
   <string name="textMovieRate">Bewerten</string>
   <string name="textMovieComments2">Kommentare</string>
-  <string name="textMovieYouMayAlsoLike">Vielleicht magst du auch</string>
+  <string name="textMovieYouMayAlsoLike">Das könnte dir auch gefallen</string>
   <string name="textMovieCollections">Sammlungen</string>
   <string name="textMovieManageLists">Listen verwalten</string>
   <string name="textMovieManageListsCount">Listen verwalten (%d)</string>

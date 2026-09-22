@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="menuMyMovies">История</string>
-  <string name="menuWatchlistMovies">Буду смотреть</string>
-  <string name="menuHidden">Скрытое</string>
-  <string name="textMyMoviesEmpty">В настоящее время коллекция фильмов пуста.\n\nПосетите вкладку <b>Открытия</b> и добавьте свой первый фильм.</string>
-  <string name="textWatchlistMoviesEmpty">Ваш список <b>Буду смотреть</b> в настоящее время пуст.\n\nПосетите вкладку <b>Открытия</b>, чтобы добавить фильмы, которые вы хотите посмотреть в будущем.</string>
-  <string name="textHiddenEmpty">Ваш список <b>Скрытое</b> в настоящее время пуст.\n\n<b>Скрытое</b> это список элементов, которые вас больше не интересуют.\n\nСкрытые элементы не появятся в <b>Прогресс</b>, <b>Открытия</b> и других разделах.</string>
+  <string name="menuWatchlistMovies">Список ожидания</string>
+  <string name="menuHidden">Скрытые</string>
+  <string name="textMyMoviesEmpty">Ваша коллекция фильмов в данный момент пуста.\n\nПосетите вкладку <b>Обзор</b>, чтобы добавить свой первый фильм.</string>
+  <string name="textWatchlistMoviesEmpty">Ваш <b>Список ожидания</b> в данный момент пуст.\n\nПосетите вкладку <b>Обзор</b>, чтобы добавить фильмы, которые вы хотите посмотреть в будущем.</string>
+  <string name="textHiddenEmpty">Ваш список <b>Скрытых</b> в данный момент пуст.\n\n<b>Скрытые</b> — это список элементов, которые вам не интересны.\n\nСкрытые элементы больше не будут появляться в разделах <b>Прогресс</b>, <b>Обзор</b> и других.</string>
 </resources>

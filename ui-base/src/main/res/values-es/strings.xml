@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="textOk">OK</string>
-  <string name="textYes">Si</string>
+  <string name="textYes">Sí</string>
   <string name="textNo">No</string>
-  <string name="textApply">Aceptar</string>
+  <string name="textApply">Aplicar</string>
   <string name="textCancel">Cancelar</string>
   <string name="textClose">Cerrar</string>
   <string name="textShare">Compartir</string>
@@ -13,7 +13,7 @@
   <string name="textSelect">Seleccionar</string>
   <string name="textHide">Ocultar</string>
   <string name="textRemove">Eliminar</string>
-  <string name="textEmptyResults">No hay resultados...</string>
+  <string name="textEmptyResults">No hubo resultados…</string>
   <string name="textSearchFor">Buscar</string>
   <string name="textTip">Consejo:</string>
   <string name="textSeason">Temporada %1$d</string>
@@ -21,38 +21,40 @@
   <string name="textEpisode">Episodio %1$d</string>
   <string name="textSeasonEpisode">T.%02d E.%02d</string>
   <string name="textSortBy">Ordenar por:</string>
-  <string name="textSpoilersWarning">Este comentario contiene spoilers.\nTap para leer.</string>
+  <string name="textSpoilersWarning">Este comentario contiene spoilers.\nToque para leer.</string>
   <string name="textCommentedOn">Comentado por %s</string>
   <string name="textNetwork">%1$s (%2$s)</string>
-  <string name="textNetworks" comment="TV network like HBO, AMC, Showtime, Disney etc.">Cadena:</string>
+  <string name="textNetworks">Cadena:</string>
   <string name="textGenres">Géneros:</string>
+
   <string name="textShows">Series</string>
   <string name="textMovies">Películas</string>
   <string name="textLists">Listas</string>
   <string name="textMinutesShort">min</string>
-  <string name="textNoDescription">Resumen no disponible.</string>
-  <string name="textPleaseWait">Espera, por favor…</string>
-  <string name="textRate">Calificar</string>
+  <string name="textNoDescription">Sinopsis no disponible.</string>
+  <string name="textPleaseWait">Por favor, espere…</string>
+  <string name="textRate">Valorar</string>
   <string name="textLink">Enlace</string>
-  <string name="textDisabled">Deshabilitado</string>
-  <string name="textRateSaved">Tu calificación se ha guardado.</string>
-  <string name="textRateRemoved">Tu calificación ha sido eliminada.</string>
+  <string name="textDisabled">Desactivado</string>
+  <string name="textRateSaved">Tu valoración ha sido guardada.</string>
+  <string name="textRateRemoved">Tu valoración ha sido eliminada.</string>
+
   <string name="textDays">%1$d días</string>
-  <string name="textSelectDate">Seleccionar Fecha</string>
-  <string name="textDateSelectionTitle">Selección Fecha</string>
-  <string name="textDateSelectionDescription">¿Cuándo lo has visto?</string>
-  <string name="textFeedTrending">Tendencia</string>
+  <string name="textSelectDate">Seleccionar fecha</string>
+  <string name="textDateSelectionTitle">Selección de fecha</string>
+  <string name="textDateSelectionDescription">¿Cuándo lo viste?</string>
+  <string name="textFeedTrending">Tendencias</string>
   <string name="textFeedPopular">Popular</string>
-  <string name="textFeedAnticipated">Anticipado</string>
-  <plurals name="textEpisodesLeft" comment="Number of episodes left to see">
+  <string name="textFeedAnticipated">Anticipadas</string>
+  <plurals name="textEpisodesLeft">
     <item quantity="one">%d restante</item>
     <item quantity="other">%d restantes</item>
   </plurals>
-  <string name="textPeople">Reparto &amp; Equipo</string>
+  <string name="textPeople">Personas:</string>
   <string name="textDirecting">Dirección</string>
   <string name="textDirector">Director</string>
-  <string name="textWriting">Escritores</string>
-  <string name="textScreenplay">Guión</string>
+  <string name="textWriting">Guion</string>
+  <string name="textScreenplay">Guion</string>
   <string name="textMusic">Música</string>
   <string name="textActing">Actuación</string>
   <string name="textAiredAlready">Emitido</string>
@@ -71,51 +73,52 @@
   </plurals>
   <string name="textToday">Hoy</string>
   <string name="textTomorrow">Mañana</string>
-  <string name="textThisWeek">Esta Semana</string>
-  <string name="textNextWeek">La Próxima Semana</string>
-  <string name="textThisMonth">Este Mes</string>
-  <string name="textNextMonth">El Próximo Mes</string>
-  <string name="textThisYear">Este Año</string>
-  <string name="textLater">Más Tarde</string>
+  <string name="textThisWeek">Esta semana</string>
+  <string name="textNextWeek">Próxima semana</string>
+  <string name="textThisMonth">Este mes</string>
+  <string name="textNextMonth">Próximo mes</string>
+  <string name="textThisYear">Este año</string>
+  <string name="textLater">Más tarde</string>
   <string name="textYesterday">Ayer</string>
-  <string name="textLast7Days">Últimos 7 Días</string>
-  <string name="textLast30Days">Últimos 30 Días</string>
-  <string name="textLast90Days">Últimos 90 Días</string>
-  <string name="textNewEpisodeAvailable">Nuevo episodio disponible!</string>
-  <string name="textNewEpisodeAvailableSoon">¡Nuevo episodio disponible próximamente!</string>
-  <string name="textNewSeasonAvailable">Nueva temporada disponible!</string>
-  <string name="textNewSeasonAvailableSoon">¡Nuevo temporada disponible próximamente!</string>
+  <string name="textLast7Days">Últimos 7 días</string>
+  <string name="textLast30Days">Últimos 30 días</string>
+  <string name="textLast90Days">Últimos 90 días</string>
+  <string name="textNewEpisodeAvailable">¡Nuevo episodio disponible ahora!</string>
+  <string name="textNewEpisodeAvailableSoon">¡Nuevo episodio disponible pronto!</string>
+  <string name="textNewSeasonAvailable">¡Nueva temporada disponible ahora!</string>
+  <string name="textNewSeasonAvailableSoon">¡Nueva temporada disponible pronto!</string>
   <string name="textNewMovieAvailable">¡La película ha sido estrenada!</string>
   <string name="textAddToMyShows">Añadir a Mis Series</string>
   <string name="textAddToMyMovies">Añadir al Historial</string>
-  <string name="textAddToWatchlist">Añadir a Pendientes</string>
+  <string name="textAddToWatchlist">Añadir a Lista de seguimiento</string>
   <string name="textMoveToMyShows">Mover a Mis Series</string>
   <string name="textMoveToMyMovies">Mover al Historial</string>
-  <string name="textMoveToWatchlist">Mover a Pendientes</string>
+  <string name="textMoveToWatchlist">Mover a Lista de seguimiento</string>
   <string name="textMoveToHidden">Mover a Ocultos</string>
   <string name="textRemoveFromMyShows">Eliminar de Mis Series</string>
   <string name="textRemoveFromMyMovies">Eliminar del Historial</string>
-  <string name="textRemoveFromWatchlist">Eliminar de Pendientes</string>
+  <string name="textRemoveFromWatchlist">Eliminar de Lista de seguimiento</string>
   <string name="textRemoveFromHidden">Eliminar de Ocultos</string>
-  <string name="textWatchlist">Pendientes</string>
-  <string name="textWatchlistIncoming">Próximamente</string>
-  <string name="textNewAlwaysAtTop">Nuevos episodios siempre primero</string>
-  <string name="menuPin">Anclar a la parte superior</string>
-  <string name="menuUnpin">Desanclar de la parte superior</string>
-  <string name="menuAddOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Anclar a \"en espera\"</string>
-  <string name="menuRemoveOnHold" comment="This is a button for Progress subsection. It will contain pending shows marked by user.">Desanclar de \"en espera\"</string>
-  <string name="errorGeneral">Ups… Algo salió mal.\nPor favor, contáctanos si esto sigue sucediendo.</string>
-  <string name="errorSeasonsNotLoaded">Por favor, espera a que se carguen los datos de las temporadas.</string>
+  <string name="textWatchlist">Lista de seguimiento</string>
+  <string name="textWatchlistIncoming">Próximos</string>
+  <string name="textNewAlwaysAtTop">Episodios nuevos siempre primero</string>
+  <string name="menuPin">Fijar arriba</string>
+  <string name="menuUnpin">Desfijar de arriba</string>
+  <string name="menuAddOnHold">Fijar en \'En espera\'</string>
+  <string name="menuRemoveOnHold">Desfijar de \'En espera\'</string>
+  <string name="errorGeneral">Vaya… Algo salió mal.\nPor favor, contacte con nosotros si esto sigue ocurriendo.</string>
+  <string name="errorSeasonsNotLoaded">Por favor, espere a que se carguen los datos de las temporadas.</string>
   <string name="errorEpisodeNotAired">Este episodio aún no se ha emitido.</string>
-  <string name="errorCouldNotLoadDiscover">No pudimos cargar los resultados de la página descubrir en este momento.\nPor favor, contáctanos si esto sigue sucediendo.</string>
-  <string name="errorMalformedShow">Parece que esta serie ya no existe en la base de datos de Trakt.tv o está duplicada.\n\nPulsa \'OK\' para eliminarla de la aplicación.</string>
-  <string name="errorMalformedMovie">Parece que esta película ya no existe en la base de datos de Trakt.tv o está duplicada.\n\nPulsa \'OK\' para eliminarla de la aplicación.</string>
-  <string name="errorCouldNotLoadShow">No pudimos cargar los detalles de esta serie en este momento.\nPor favor, contáctanos si esto sigue sucediendo.</string>
-  <string name="errorCouldNotLoadMovie">No pudimos cargar los detalles de esta película en este momento.\nPor favor, contáctanos si esto sigue sucediendo.</string>
-  <string name="errorCouldNotLoadSearchResults">No pudimos cargar los resultados de la búsqueda en este momento.\nPor favor, contáctanos si esto sigue sucediendo.</string>
-  <string name="errorNoInternetConnection">Sin Internet. Por favor compruebe su conexión.</string>
-  <string name="textScrobSync">Sincronización de Scrob</string>
+  <string name="errorCouldNotLoadDiscover">No pudimos cargar la página de descubrimiento en este momento.\nPor favor, contacte con nosotros si esto sigue ocurriendo.</string>
+  <string name="errorMalformedShow">Parece que esta serie ya no existe en la base de datos de Trakt.tv o está duplicada.\n\nToque \'OK\' para eliminarla de la aplicación.</string>
+  <string name="errorMalformedMovie">Parece que esta película ya no existe en la base de datos de Trakt.tv o está duplicada.\n\nToque \'OK\' para eliminarla de la aplicación.</string>
+  <string name="errorCouldNotLoadShow">No pudimos cargar los detalles de esta serie en este momento.\nPor favor, contacte con nosotros si esto sigue ocurriendo.</string>
+  <string name="errorCouldNotLoadMovie">No pudimos cargar los detalles de esta película en este momento.\nPor favor, contacte con nosotros si esto sigue ocurriendo.</string>
+  <string name="errorCouldNotLoadSearchResults">No pudimos cargar los resultados de búsqueda en este momento.\nPor favor, contacte con nosotros si esto sigue ocurriendo.</string>
+  <string name="errorNoInternetConnection">Sin Internet. Por favor, compruebe su conexión.</string>
+
+  <string name="textScrobSync">Sincronización Scrob</string>
   <string name="textScrobSyncRunning">Sincronizando con Scrob…</string>
-  <string name="textScrobSyncComplete">Sincronización de Scrob completada</string>
-  <string name="errorScrobSyncFailed">Falló la sincronización de Scrob. Por favor, inténtalo de nuevo.</string>
+  <string name="textScrobSyncComplete">Sincronización Scrob completada</string>
+
 </resources>

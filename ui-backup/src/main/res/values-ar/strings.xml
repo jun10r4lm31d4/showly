@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textBackupAndRestore">نسخة احتياطية واستعادة</string>
+  <string name="textBackupAndRestore"><![CDATA[النسخ الاحتياطي والاستعادة]]></string>
   <string name="textBackupExport">تصدير البيانات</string>
-  <string name="textBackupExportDescription">قم بتصدير المسلسلات والأفلام الخاصة بك إلى ملف لإنشاء نسخة احتياطية أو نقلها إلى جهاز جديد.</string>
+  <string name="textBackupExportDescription">قم بتصدير بيانات المسلسلات والأفلام الخاصة بك إلى ملف لإنشاء نسخة احتياطية أو نقلها إلى جهاز جديد.</string>
   <string name="textBackupImport">استيراد البيانات</string>
-  <string name="textBackupImportDescription">استيراد المسلسلات والأفلام الخاصة بك من ملف النسخة الاحتياطية.\n\nلن يتم إزالة مجموعتك الحالية وسيتم إضافة العناصر المفقودة فقط.</string>
+  <string name="textBackupImportDescription">استيراد بيانات المسلسلات والأفلام الخاصة بك من ملف نسخة احتياطية.\n\nلن يتم حذف مجموعتك الحالية وسيتم إضافة العناصر المفقودة فقط.</string>
   <string name="textBackupExportSuccess">تم تصدير البيانات بنجاح.</string>
   <string name="textBackupImportSuccess">تم استيراد البيانات بنجاح.</string>
   <string name="errorImportCancelled">تم إلغاء استيراد البيانات.</string>
+  <string name="textBackupExportSchedule">الجدول الزمني</string>
+  <string name="textBackupExportOptionOff">إيقاف</string>
+  <string name="textBackupExportOption6Hours">كل 6 ساعات</string>
+  <string name="textBackupExportOptionDaily">كل يوم</string>
+  <string name="textBackupExportOption3Day">كل 3 أيام</string>
+  <string name="textBackupExportOptionWeekly">كل أسبوع</string>
+  <string name="textBackupExportOptionOffMessage">لن يتم تشغيل النسخ الاحتياطي تلقائياً.</string>
+  <string name="textBackupExportOptionConfirmMessage">تم جدولة النسخ الاحتياطي التلقائي.</string>
+  <string name="textBackupExportOption6HoursButton">مجدول للتشغيل كل 6 ساعات</string>
+  <string name="textBackupExportOptionDailyButton">مجدول للتشغيل كل يوم</string>
+  <string name="textBackupExportOption3DayButton">مجدول للتشغيل كل 3 أيام</string>
+  <string name="textBackupExportOptionWeeklyButton">مجدول للتشغيل كل أسبوع</string>
+  <string name="textBackupExportLastTimestamp">آخر نسخة احتياطية: %s</string>
 </resources>
