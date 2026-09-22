@@ -1,6 +1,5 @@
 package com.michaldrabik.data_remote.trakt.api.service
 
-import com.michaldrabik.data_remote.trakt.model.Comment
 import com.michaldrabik.data_remote.trakt.model.Movie
 import com.michaldrabik.data_remote.trakt.model.MovieCollection
 import com.michaldrabik.data_remote.trakt.model.MovieCollectionItem
@@ -45,13 +44,6 @@ interface TraktMoviesService {
     @Path("traktId") traktId: Long,
     @Query("limit") limit: Int,
   ): List<Movie>
-
-  @GET("movies/{traktId}/comments/newest?extended=full")
-  suspend fun fetchMovieComments(
-    @Path("traktId") traktId: Long,
-    @Query("limit") limit: Int,
-    @Query("timestamp") timestamp: Long,
-  ): List<Comment>
 
   @GET("movies/{traktId}/translations/{code}")
   suspend fun fetchMovieTranslations(

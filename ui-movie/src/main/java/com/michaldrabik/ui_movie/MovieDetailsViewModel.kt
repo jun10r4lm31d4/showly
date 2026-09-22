@@ -113,7 +113,6 @@ class MovieDetailsViewModel @Inject constructor(
         spoilersState.value = settingsRepository.spoilers.getAll()
         metaState.value = MovieDetailsMeta(
           dateFormat = dateFormatProvider.loadShortDayFormat(),
-          commentsDateFormat = dateFormatProvider.loadFullHourFormat(),
           watchedAtDateFormat = dateFormatProvider.loadFullHourFormat(),
         )
 

@@ -37,7 +37,6 @@ interface WatchlistShowsDao : WatchlistShowsLocalDataSource {
       "shows.status, " +
       "shows.rating, " +
       "shows.votes, " +
-      "shows.comment_count, " +
       "shows.genres, " +
       "shows.aired_episodes, " +
       "shows_see_later.updated_at, " +

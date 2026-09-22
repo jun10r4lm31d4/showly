@@ -1,7 +1,6 @@
 package com.michaldrabik.data_remote.trakt
 
 import com.michaldrabik.data_remote.tmdb.model.TmdbPerson
-import com.michaldrabik.data_remote.trakt.model.Comment
 import com.michaldrabik.data_remote.trakt.model.Episode
 import com.michaldrabik.data_remote.trakt.model.Ids
 import com.michaldrabik.data_remote.trakt.model.Movie
@@ -56,17 +55,6 @@ interface TraktRemoteDataSource {
 
   suspend fun fetchSeasons(traktId: Long): List<Season>
 
-  suspend fun fetchShowComments(
-    traktId: Long,
-    limit: Int,
-  ): List<Comment>
-
-  suspend fun fetchEpisodeComments(
-    traktId: Long,
-    seasonNumber: Int,
-    episodeNumber: Int,
-  ): List<Comment>
-
   suspend fun fetchSeasonTranslations(
     showTraktId: Long,
     seasonNumber: Int,
@@ -98,11 +86,6 @@ interface TraktRemoteDataSource {
     traktId: Long,
     addToLimit: Int,
   ): List<Movie>
-
-  suspend fun fetchMovieComments(
-    traktId: Long,
-    limit: Int,
-  ): List<Comment>
 
   suspend fun fetchMovieTranslations(
     traktId: Long,
@@ -141,8 +124,4 @@ interface TraktRemoteDataSource {
     idType: String,
     id: String,
   ): List<SearchResult>
-
-  // Misc
-
-  suspend fun fetchCommentReplies(commentId: Long): List<Comment>
 }

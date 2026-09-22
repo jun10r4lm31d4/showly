@@ -28,7 +28,6 @@ data class Show(
   @ColumnInfo(name = "status", defaultValue = "") val status: String,
   @ColumnInfo(name = "rating", defaultValue = "-1") val rating: Float,
   @ColumnInfo(name = "votes", defaultValue = "-1") val votes: Long,
-  @ColumnInfo(name = "comment_count", defaultValue = "-1") val commentCount: Long,
   @ColumnInfo(name = "genres", defaultValue = "") val genres: String,
   @ColumnInfo(name = "aired_episodes", defaultValue = "-1") val airedEpisodes: Int,
   @ColumnInfo(name = "created_at", defaultValue = "-1") val createdAt: Long,

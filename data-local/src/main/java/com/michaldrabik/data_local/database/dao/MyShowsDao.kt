@@ -37,7 +37,6 @@ interface MyShowsDao : MyShowsLocalDataSource {
       "shows.status, " +
       "shows.rating, " +
       "shows.votes, " +
-      "shows.comment_count, " +
       "shows.genres, " +
       "shows.aired_episodes, " +
       "shows_my_shows.last_watched_at AS updated_at, " +
@@ -71,7 +70,6 @@ interface MyShowsDao : MyShowsLocalDataSource {
       "shows.status, " +
       "shows.rating, " +
       "shows.votes, " +
-      "shows.comment_count, " +
       "shows.genres, " +
       "shows.aired_episodes, " +
       "shows_my_shows.last_watched_at AS updated_at, " +

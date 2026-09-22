@@ -21,8 +21,8 @@
   <string name="textEpisode">Episodio %1$d</string>
   <string name="textSeasonEpisode">T.%02d E.%02d</string>
   <string name="textSortBy">Ordenar por:</string>
-  <string name="textSpoilersWarning">Este comentario contiene spoilers.\nToque para leer.</string>
-  <string name="textCommentedOn">Comentado por %s</string>
+
+
   <string name="textNetwork">%1$s (%2$s)</string>
   <string name="textNetworks">Cadena:</string>
   <string name="textGenres">Géneros:</string>

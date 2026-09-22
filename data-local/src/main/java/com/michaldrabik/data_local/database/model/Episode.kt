@@ -39,7 +39,6 @@ data class Episode(
   @ColumnInfo(name = "episode_overview") val episodeOverview: String,
   @ColumnInfo(name = "episode_title") val title: String,
   @ColumnInfo(name = "first_aired") val firstAired: ZonedDateTime?,
-  @ColumnInfo(name = "comments_count") val commentsCount: Int,
   @ColumnInfo(name = "rating") val rating: Float,
   @ColumnInfo(name = "runtime") val runtime: Int,
   @ColumnInfo(name = "votes_count") val votesCount: Int,

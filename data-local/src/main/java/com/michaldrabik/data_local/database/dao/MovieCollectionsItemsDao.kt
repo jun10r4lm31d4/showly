@@ -33,7 +33,6 @@ interface MovieCollectionsItemsDao :
     movies.status,
     movies.rating,
     movies.votes,
-    movies.comment_count,
     movies.genres,
     movies_collections_items.updated_at AS updated_at,
     movies_collections_items.created_at AS created_at

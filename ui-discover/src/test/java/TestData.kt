@@ -41,7 +41,6 @@ object TestData {
       status = ShowStatus.UNKNOWN,
       rating = 0.0f,
       votes = 0,
-      commentCount = 0,
       genres = listOf(),
       airedEpisodes = 0,
       createdAt = 0,

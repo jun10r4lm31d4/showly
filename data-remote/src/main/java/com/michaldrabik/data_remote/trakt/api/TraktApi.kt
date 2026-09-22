@@ -3,12 +3,10 @@ package com.michaldrabik.data_remote.trakt.api
 import com.michaldrabik.data_remote.Config
 import com.michaldrabik.data_remote.tmdb.model.TmdbPerson
 import com.michaldrabik.data_remote.trakt.TraktRemoteDataSource
-import com.michaldrabik.data_remote.trakt.api.service.TraktCommentsService
 import com.michaldrabik.data_remote.trakt.api.service.TraktMoviesService
 import com.michaldrabik.data_remote.trakt.api.service.TraktPeopleService
 import com.michaldrabik.data_remote.trakt.api.service.TraktSearchService
 import com.michaldrabik.data_remote.trakt.api.service.TraktShowsService
-import com.michaldrabik.data_remote.trakt.model.Comment
 import com.michaldrabik.data_remote.trakt.model.Episode
 import com.michaldrabik.data_remote.trakt.model.Ids
 import com.michaldrabik.data_remote.trakt.model.Movie
@@ -20,7 +18,6 @@ import java.lang.System.currentTimeMillis
 internal class TraktApi(
   private val showsService: TraktShowsService,
   private val moviesService: TraktMoviesService,
-  private val commentsService: TraktCommentsService,
   private val searchService: TraktSearchService,
   private val peopleService: TraktPeopleService,
 ) : TraktRemoteDataSource {
@@ -138,19 +135,6 @@ internal class TraktApi(
       .fetchSeasons(traktId)
       .sortedByDescending { it.number }
 
-  override suspend fun fetchShowComments(
-    traktId: Long,
-    limit: Int,
-  ) = showsService.fetchShowComments(traktId, limit, currentTimeMillis())
-
-  override suspend fun fetchMovieComments(
-    traktId: Long,
-    limit: Int,
-  ) = moviesService.fetchMovieComments(traktId, limit, currentTimeMillis())
-
-  override suspend fun fetchCommentReplies(commentId: Long) =
-    commentsService.fetchCommentReplies(commentId, currentTimeMillis())
-
   override suspend fun fetchShowTranslations(
     traktId: Long,
     code: String,
@@ -166,17 +150,6 @@ internal class TraktApi(
     seasonNumber: Int,
     code: String,
   ) = showsService.fetchSeasonTranslations(showTraktId, seasonNumber, code)
-
-  override suspend fun fetchEpisodeComments(
-    traktId: Long,
-    seasonNumber: Int,
-    episodeNumber: Int,
-  ): List<Comment> =
-    try {
-      showsService.fetchEpisodeComments(traktId, seasonNumber, episodeNumber, currentTimeMillis())
-    } catch (t: Throwable) {
-      emptyList()
-    }
 
   override suspend fun fetchMovieCollections(traktId: Long): List<MovieCollection> {
     val lists = moviesService.fetchMovieCollections(traktId)

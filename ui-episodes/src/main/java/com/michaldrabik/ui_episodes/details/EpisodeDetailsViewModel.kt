@@ -6,7 +6,6 @@ import com.michaldrabik.common.Config
 import com.michaldrabik.common.errors.ErrorHelper
 import com.michaldrabik.common.errors.ShowlyError.CoroutineCancellation
 import com.michaldrabik.common.errors.ShowlyError.ResourceConflictError
-import com.michaldrabik.repository.CommentsRepository
 import com.michaldrabik.repository.RatingsRepository
 import com.michaldrabik.repository.TranslationsRepository
 import com.michaldrabik.repository.images.EpisodeImagesProvider
@@ -22,7 +21,6 @@ import com.michaldrabik.ui_base.viewmodel.DefaultChannelsDelegate
 import com.michaldrabik.ui_episodes.R
 import com.michaldrabik.ui_episodes.details.cases.EpisodeDetailsSeasonCase
 import com.michaldrabik.ui_episodes.details.cases.EpisodeDetailsWatchedCase
-import com.michaldrabik.ui_model.Comment
 import com.michaldrabik.ui_model.Episode
 import com.michaldrabik.ui_model.IdTmdb
 import com.michaldrabik.ui_model.IdTrakt
@@ -51,21 +49,17 @@ class EpisodeDetailsViewModel @Inject constructor(
   private val dateFormatProvider: DateFormatProvider,
   private val ratingsRepository: RatingsRepository,
   private val translationsRepository: TranslationsRepository,
-  private val commentsRepository: CommentsRepository,
 ) : ViewModel(),
   ChannelsDelegate by DefaultChannelsDelegate() {
 
   private val imageState = MutableStateFlow<Image?>(null)
   private val imageLoadingState = MutableStateFlow(false)
   private val episodesState = MutableStateFlow<List<Episode>?>(null)
-  private val commentsState = MutableStateFlow<List<Comment>?>(null)
-  private val commentsLoadingState = MutableStateFlow(false)
   private val signedInState = MutableStateFlow(false)
   private val ratingState = MutableStateFlow<RatingState?>(null)
   private val translationState = MutableStateFlow<Translation?>(null)
   private val lastWatchedAtState = MutableStateFlow<ZonedDateTime?>(null)
   private val dateFormatState = MutableStateFlow<DateTimeFormatter?>(null)
-  private val commentsDateFormatState = MutableStateFlow<DateTimeFormatter?>(null)
   private val spoilersState = MutableStateFlow<SpoilersSettings?>(null)
 
   init {
@@ -133,35 +127,6 @@ class EpisodeDetailsViewModel @Inject constructor(
     }
   }
 
-  fun loadComments(
-    idTrakt: IdTrakt,
-    season: Int,
-    episode: Int,
-  ) {
-    if (!commentsState.value.isNullOrEmpty()) {
-      return
-    }
-    viewModelScope.launch {
-      try {
-        commentsLoadingState.value = true
-
-        val comments = commentsRepository
-          .loadEpisodeComments(idTrakt, season, episode)
-          .map {
-            it.copy()
-          }.partition { it.isMe }
-
-        commentsState.value = comments.first + comments.second
-        commentsLoadingState.value = false
-        commentsDateFormatState.value = dateFormatProvider.loadFullHourFormat()
-      } catch (error: Throwable) {
-        Timber.w("Failed to load comments. ${error.message}")
-        commentsLoadingState.value = false
-        rethrowCancellation(error)
-      }
-    }
-  }
-
   fun loadRatings(episode: Episode) {
     viewModelScope.launch {
       try {
@@ -174,81 +139,27 @@ class EpisodeDetailsViewModel @Inject constructor(
     }
   }
 
-  fun loadCommentReplies(comment: Comment) {
-    var current = uiState.value.comments?.toMutableList() ?: mutableListOf()
-    if (current.any { it.parentId == comment.id }) return
-
-    viewModelScope.launch {
-      try {
-        val parent = current.find { it.id == comment.id }
-        parent?.let { p ->
-          val copy = p.copy(isLoading = true)
-          current.findReplace(copy) { it.id == p.id }
-          commentsState.value = current
-        }
-
-        val replies = commentsRepository
-          .loadReplies(comment.id)
-          .map {
-            it.copy()
-          }
-
-        current = uiState.value.comments?.toMutableList() ?: mutableListOf()
-        val parentIndex = current.indexOfFirst { it.id == comment.id }
-        if (parentIndex > -1) current.addAll(parentIndex + 1, replies)
-        parent?.let {
-          current.findReplace(parent.copy(isLoading = false, replies = 0)) { it.id == comment.id }
-        }
-        commentsState.value = current
-      } catch (t: Throwable) {
-        commentsState.value = current
-      }
-    }
-  }
-
-  fun addNewComment(comment: Comment) {
-    val current = uiState.value.comments?.toMutableList() ?: mutableListOf()
-    if (!comment.isReply()) {
-      current.add(0, comment)
-    } else {
-      val parentIndex = current.indexOfLast { it.id == comment.parentId }
-      if (parentIndex > -1) {
-        val parent = current[parentIndex]
-        current.add(parentIndex + 1, comment)
-        val repliesCount = current.count { it.parentId == parent.id }.toLong()
-        current.findReplace(parent.copy(replies = repliesCount)) { it.id == comment.parentId }
-      }
-    }
-    commentsState.value = current
-  }
-
   val uiState = combine(
     imageState,
     imageLoadingState,
     episodesState,
-    commentsState,
-    commentsLoadingState,
     signedInState,
     ratingState,
     translationState,
     dateFormatState,
-    commentsDateFormatState,
     spoilersState,
     lastWatchedAtState,
-  ) { s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12 ->
+  ) { s1, s2, s3, s4, s5, s6, s7, s8, s9 ->
     EpisodeDetailsUiState(
       image = s1,
       isImageLoading = s2,
       episodes = s3,
-      comments = s4,
-      isCommentsLoading = s5,
-      isSignedIn = s6,
-      rating = s7,
-      translation = s8,
-      dateFormat = s9,
-      commentsDateFormat = s10,
-      spoilers = s11,
-      lastWatchedAt = s12,
+      isSignedIn = s4,
+      rating = s5,
+      translation = s6,
+      dateFormat = s7,
+      spoilers = s8,
+      lastWatchedAt = s9,
     )
   }.stateIn(
     scope = viewModelScope,

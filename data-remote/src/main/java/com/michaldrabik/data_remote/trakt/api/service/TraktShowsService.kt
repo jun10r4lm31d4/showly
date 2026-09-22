@@ -1,6 +1,5 @@
 package com.michaldrabik.data_remote.trakt.api.service
 
-import com.michaldrabik.data_remote.trakt.model.Comment
 import com.michaldrabik.data_remote.trakt.model.Episode
 import com.michaldrabik.data_remote.trakt.model.Season
 import com.michaldrabik.data_remote.trakt.model.SeasonTranslation
@@ -61,13 +60,6 @@ interface TraktShowsService {
     @Path("traktId") traktId: Long,
   ): List<Season>
 
-  @GET("shows/{traktId}/comments/newest?extended=full")
-  suspend fun fetchShowComments(
-    @Path("traktId") traktId: Long,
-    @Query("limit") limit: Int,
-    @Query("timestamp") timestamp: Long,
-  ): List<Comment>
-
   @GET("shows/{traktId}/translations/{code}")
   suspend fun fetchShowTranslations(
     @Path("traktId") traktId: Long,
@@ -80,12 +72,4 @@ interface TraktShowsService {
     @Path("seasonNumber") seasonNumber: Int,
     @Query("translations") countryCode: String,
   ): List<SeasonTranslation>
-
-  @GET("shows/{traktId}/seasons/{seasonNumber}/episodes/{episodeNumber}/comments/newest?limit=50&extended=full")
-  suspend fun fetchEpisodeComments(
-    @Path("traktId") traktId: Long,
-    @Path("seasonNumber") seasonNumber: Int,
-    @Path("episodeNumber") episodeNumber: Int,
-    @Query("timestamp") timestamp: Long,
-  ): List<Comment>
 }

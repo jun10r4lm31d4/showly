@@ -101,7 +101,6 @@ dependencies {
   implementation project(':ui-discover')
   implementation project(':ui-discover-movies')
   implementation project(':ui-episodes')
-  implementation project(':ui-comments')
   implementation project(':ui-lists')
   implementation project(':ui-show')
   implementation project(':ui-movie')

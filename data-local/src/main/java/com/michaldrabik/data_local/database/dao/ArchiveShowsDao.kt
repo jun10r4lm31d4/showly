@@ -37,7 +37,6 @@ interface ArchiveShowsDao : ArchiveShowsLocalDataSource {
       "shows.status, " +
       "shows.rating, " +
       "shows.votes, " +
-      "shows.comment_count, " +
       "shows.genres, " +
       "shows.aired_episodes, " +
       "shows_archive.updated_at, " +
@@ -71,7 +70,6 @@ interface ArchiveShowsDao : ArchiveShowsLocalDataSource {
       "shows.status, " +
       "shows.rating, " +
       "shows.votes, " +
-      "shows.comment_count, " +
       "shows.genres, " +
       "shows.aired_episodes, " +
       "shows_archive.updated_at, " +

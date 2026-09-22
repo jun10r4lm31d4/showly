@@ -29,7 +29,6 @@ interface WatchlistMoviesDao : WatchlistMoviesLocalDataSource {
       "movies.status, " +
       "movies.rating, " +
       "movies.votes, " +
-      "movies.comment_count, " +
       "movies.genres, " +
       "movies_see_later.updated_at, " +
       "movies_see_later.created_at " +

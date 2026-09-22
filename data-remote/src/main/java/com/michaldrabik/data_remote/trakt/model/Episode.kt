@@ -8,7 +8,6 @@ data class Episode(
   val overview: String?,
   val rating: Float?,
   val votes: Int?,
-  val comment_count: Int?,
   val first_aired: String?,
   val runtime: Int?,
   val number_abs: Int?,

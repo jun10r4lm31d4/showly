@@ -38,7 +38,6 @@ interface PeopleCreditsDao : BaseDao<PersonCredits>, PeopleCreditsLocalDataSourc
     shows.status,
     shows.rating,
     shows.votes,
-    shows.comment_count,
     shows.genres,
     shows.aired_episodes,
     people_credits.created_at AS created_at,
@@ -69,7 +68,6 @@ interface PeopleCreditsDao : BaseDao<PersonCredits>, PeopleCreditsLocalDataSourc
     movies.status,
     movies.rating,
     movies.votes,
-    movies.comment_count,
     movies.genres,
     people_credits.updated_at AS updated_at,
     people_credits.created_at AS created_at

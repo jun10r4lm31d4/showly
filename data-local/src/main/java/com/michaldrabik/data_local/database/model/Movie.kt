@@ -22,7 +22,6 @@ data class Movie(
   @ColumnInfo(name = "status", defaultValue = "") val status: String,
   @ColumnInfo(name = "rating", defaultValue = "-1") val rating: Float,
   @ColumnInfo(name = "votes", defaultValue = "-1") val votes: Long,
-  @ColumnInfo(name = "comment_count", defaultValue = "-1") val commentCount: Long,
   @ColumnInfo(name = "genres", defaultValue = "") val genres: String,
   @ColumnInfo(name = "updated_at", defaultValue = "-1") val updatedAt: Long,
   @ColumnInfo(name = "created_at", defaultValue = "-1") val createdAt: Long,

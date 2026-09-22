@@ -21,8 +21,8 @@
   <string name="textEpisode">Bölüm %1$d</string>
   <string name="textSeasonEpisode">S.%02d E.%02d</string>
   <string name="textSortBy">Sırala:</string>
-  <string name="textSpoilersWarning">Bu yorum sürprizbozan (spoiler) içeriyor.\nOkumak için dokunun.</string>
-  <string name="textCommentedOn">%s tarafından yorumlandı</string>
+
+
   <string name="textNetwork">%1$s (%2$s)</string>
   <string name="textNetworks">Kanal:</string>
   <string name="textGenres">Türler:</string>

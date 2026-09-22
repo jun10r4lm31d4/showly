@@ -31,7 +31,6 @@ interface ArchiveMoviesDao : ArchiveMoviesLocalDataSource {
       "movies.status, " +
       "movies.rating, " +
       "movies.votes, " +
-      "movies.comment_count, " +
       "movies.genres, " +
       "movies_archive.updated_at, " +
       "movies_archive.created_at " +
@@ -58,7 +57,6 @@ interface ArchiveMoviesDao : ArchiveMoviesLocalDataSource {
       "movies.status, " +
       "movies.rating, " +
       "movies.votes, " +
-      "movies.comment_count, " +
       "movies.genres, " +
       "movies_archive.updated_at, " +
       "movies_archive.created_at " +

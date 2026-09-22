@@ -5,7 +5,7 @@ import android.content.Context.MODE_PRIVATE
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-const val DATABASE_VERSION = 44
+const val DATABASE_VERSION = 45
 const val DATABASE_NAME = "SHOWLY2_DB_2"
 
 class Migrations(
@@ -163,7 +163,6 @@ class Migrations(
           "`status` TEXT NOT NULL DEFAULT '', " +
           "`rating` REAL NOT NULL DEFAULT -1, " +
           "`votes` INTEGER NOT NULL DEFAULT -1, " +
-          "`comment_count` INTEGER NOT NULL DEFAULT -1, " +
           "`genres` TEXT NOT NULL DEFAULT '', " +
           "`updated_at` INTEGER NOT NULL DEFAULT -1)",
       )
@@ -343,14 +342,12 @@ class Migrations(
             "`description` TEXT, " +
             "`privacy` TEXT NOT NULL, " +
             "`display_numbers` INTEGER NOT NULL, " +
-            "`allow_comments` INTEGER NOT NULL, " +
             "`sort_by` TEXT NOT NULL, " +
             "`sort_how` TEXT NOT NULL, " +
             "`sort_by_local` TEXT NOT NULL, " +
             "`sort_how_local` TEXT NOT NULL, " +
             "`filter_type_local` TEXT NOT NULL, " +
             "`item_count` INTEGER NOT NULL, " +
-            "`comment_count` INTEGER NOT NULL, " +
             "`likes` INTEGER NOT NULL, " +
             "`created_at` INTEGER NOT NULL, " +
             "`updated_at` INTEGER NOT NULL" +
@@ -823,6 +820,18 @@ class Migrations(
     }
   }
 
+  private val migration45 = object : Migration(44, 45) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+      with(database) {
+        execSQL("ALTER TABLE custom_lists DROP COLUMN IF EXISTS allow_comments")
+        execSQL("ALTER TABLE custom_lists DROP COLUMN IF EXISTS comment_count")
+        execSQL("ALTER TABLE episodes DROP COLUMN IF EXISTS comments_count")
+        execSQL("ALTER TABLE movies DROP COLUMN IF EXISTS comment_count")
+        execSQL("ALTER TABLE shows DROP COLUMN IF EXISTS comment_count")
+      }
+    }
+  }
+
   fun getAll() =
     listOf(
       migration2,
@@ -868,5 +877,6 @@ class Migrations(
       migration42,
       migration43,
       migration44,
+      migration45,
     )
 }

@@ -54,7 +54,6 @@ import com.michaldrabik.ui_base.utilities.extensions.visibleIf
 import com.michaldrabik.ui_base.utilities.extensions.withFailListener
 import com.michaldrabik.ui_base.utilities.extensions.withSuccessListener
 import com.michaldrabik.ui_base.utilities.viewBinding
-import com.michaldrabik.ui_comments.fragment.CommentsFragment
 import com.michaldrabik.ui_model.Genre
 import com.michaldrabik.ui_model.IdTrakt
 import com.michaldrabik.ui_model.Image
@@ -204,10 +203,6 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
               .isNotBlank()
             alpha = if (isEnabled) 1.0F else 0.35F
             onClick { openShareSheet(show) }
-          }
-          showDetailsActions.commentsChip.onClick {
-            val bundle = CommentsFragment.createBundle(show)
-            navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionShowDetailsFragmentToComments, bundle)
           }
           showDetailsAddButton.isEnabled = true
         }

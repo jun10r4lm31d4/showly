@@ -16,7 +16,6 @@ data class Show(
   val status: String?,
   val rating: Float?,
   val votes: Long?,
-  val comment_count: Long?,
   val genres: List<String>?,
   val aired_episodes: Int?,
 )

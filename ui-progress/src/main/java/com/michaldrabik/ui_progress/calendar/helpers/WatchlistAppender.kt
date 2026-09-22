@@ -72,7 +72,6 @@ class WatchlistAppender @Inject constructor() {
     episodeOverview = "",
     title = "",
     firstAired = show.firstAired.toZonedDateTime(),
-    commentsCount = 0,
     rating = 0.0f,
     runtime = 0,
     votesCount = 0,

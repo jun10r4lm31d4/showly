@@ -29,7 +29,6 @@ interface MyMoviesDao : MyMoviesLocalDataSource {
       "movies.status, " +
       "movies.rating, " +
       "movies.votes, " +
-      "movies.comment_count, " +
       "movies.genres, " +
       "movies_my_movies.updated_at, " +
       "movies_my_movies.created_at " +
@@ -56,7 +55,6 @@ interface MyMoviesDao : MyMoviesLocalDataSource {
       "movies.status, " +
       "movies.rating, " +
       "movies.votes, " +
-      "movies.comment_count, " +
       "movies.genres, " +
       "movies.created_at, " +
       "movies_my_movies.updated_at " +
@@ -92,7 +90,6 @@ interface MyMoviesDao : MyMoviesLocalDataSource {
       "movies.status, " +
       "movies.rating, " +
       "movies.votes, " +
-      "movies.comment_count, " +
       "movies.genres, " +
       "movies.created_at, " +
       "movies_my_movies.updated_at " +

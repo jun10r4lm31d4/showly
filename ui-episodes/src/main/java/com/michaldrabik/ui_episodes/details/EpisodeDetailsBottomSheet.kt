@@ -43,11 +43,9 @@ import com.michaldrabik.ui_base.utilities.extensions.visible
 import com.michaldrabik.ui_base.utilities.extensions.visibleIf
 import com.michaldrabik.ui_base.utilities.extensions.withFailListener
 import com.michaldrabik.ui_base.utilities.viewBinding
-import com.michaldrabik.ui_comments.CommentView
 import com.michaldrabik.ui_episodes.R
 import com.michaldrabik.ui_episodes.databinding.ViewEpisodeDetailsBinding
 import com.michaldrabik.ui_episodes.details.links.EpisodeLinksBottomSheet
-import com.michaldrabik.ui_model.Comment
 import com.michaldrabik.ui_model.Episode
 import com.michaldrabik.ui_model.Ids
 import com.michaldrabik.ui_model.Image
@@ -144,14 +142,6 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
       episodeDetailsWatchedAt.visibleIf(episode.lastWatchedAt != null || isWatched)
       if (!showTabs) episodeDetailsTabs.gone()
       episodeDetailsRating.text = String.format(ENGLISH, getString(R.string.textVotes), episode.rating, episode.votes)
-      episodeDetailsCommentsButton.text = String.format(
-        ENGLISH,
-        getString(R.string.textLoadCommentsCount),
-        episode.commentCount,
-      )
-      episodeDetailsCommentsButton.onClick {
-        viewModel.loadComments(showIds.trakt, episode.season, episode.number)
-      }
       episodeDetailsLinksButton.onClick { openLinksSheet() }
     }
   }
@@ -181,26 +171,6 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
         isImageLoading.let { episodeDetailsProgress.visibleIf(it) }
         image?.let { renderImage(it, spoilers) }
         episodes?.let { renderEpisodes(it) }
-        comments?.let { comments ->
-          episodeDetailsComments.removeAllViews()
-          comments.forEach {
-            val view = CommentView(requireContext()).apply {
-              bind(it, commentsDateFormat)
-              if (it.replies > 0) {
-                onRepliesClickListener = { comment -> viewModel.loadCommentReplies(comment) }
-              }
-            }
-            episodeDetailsComments.addView(view)
-          }
-          episodeDetailsComments.fadeIf(comments.isNotEmpty())
-          episodeDetailsCommentsEmpty.fadeIf(comments.isEmpty())
-          episodeDetailsCommentsButton.isEnabled = false
-          episodeDetailsCommentsButton.text = String.format(
-            ENGLISH,
-            getString(R.string.textLoadCommentsCount),
-            comments.size,
-          )
-        }
         rating?.let { state ->
           episodeDetailsRateProgress.visibleIf(state.rateLoading == true)
           episodeDetailsRateButton.visibleIf(state.rateLoading == false, gone = false)
@@ -213,12 +183,6 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
           }
         }
         spoilers?.let { renderRating(it) }
-        isCommentsLoading.let {
-          episodeDetailsCommentsProgress.visibleIf(it)
-          episodeDetailsCommentsButton.visibleIf(!it, gone = false)
-          episodeDetailsCommentsButton.isEnabled = !it
-          episodeDetailsRateButton.isEnabled = !it
-        }
         renderTitle(translation, spoilers)
         renderDescription(translation, spoilers)
         renderWatchedAt(lastWatchedAt, dateFormat)
