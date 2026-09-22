@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="textComment">评论</string>
   <string name="textComments2">评论</string>
   <string name="textNoComments">暂无评论。</string>
 </resources>
