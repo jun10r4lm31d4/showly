@@ -8,21 +8,11 @@ package com.michaldrabik.data_remote.scrob
 interface ScrobProvider {
   fun getActivityScrobHistorySyncedAt(): Long
 
-  fun setActivityScrobHistorySyncedAt(key: Long)
-
-  /**
-   * Wall-clock time (epoch millis) of the last FULL history snapshot import.
-   * Used to throttle full reconciliations to ~1x/day while daily runs use the
-   * cheap incremental path based on [getActivityScrobHistorySyncedAt].
-   * 0 means no full sync has run yet.
-   */
-  fun getFullHistorySyncedAt(): Long
-
-  fun setFullHistorySyncedAt(value: Long)
-
   fun getApiKey(): String
 
   fun getUrl(): String
+
+  fun setActivityScrobHistorySyncedAt(key: Long)
 
   fun setApiKey(key: String)
 

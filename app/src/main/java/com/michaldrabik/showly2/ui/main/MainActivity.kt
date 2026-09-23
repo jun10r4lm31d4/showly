@@ -26,7 +26,6 @@ import com.michaldrabik.common.Config
 import com.michaldrabik.common.Mode
 import com.michaldrabik.common.Mode.MOVIES
 import com.michaldrabik.common.Mode.SHOWS
-import com.michaldrabik.data_remote.scrob.ScrobProvider
 import com.michaldrabik.repository.settings.SettingsRepository
 import com.michaldrabik.showly2.R
 import com.michaldrabik.showly2.databinding.ActivityMainBinding
@@ -42,7 +41,6 @@ import com.michaldrabik.ui_base.events.Event
 import com.michaldrabik.ui_base.events.EventsManager
 import com.michaldrabik.ui_base.events.ShowsMoviesSyncComplete
 import com.michaldrabik.ui_base.network.NetworkStatusProvider
-import com.michaldrabik.ui_base.scrob.sync.ScrobSyncWorker
 import com.michaldrabik.ui_base.sync.ShowsMoviesSyncWorker
 import com.michaldrabik.ui_base.utilities.ModeHost
 import com.michaldrabik.ui_base.utilities.MoviesStatusHost
@@ -92,7 +90,6 @@ class MainActivity :
   @Inject lateinit var deepLinkResolver: DeepLinkResolver
   @Inject lateinit var settingsRepository: SettingsRepository
   @Inject lateinit var networkStatusProvider: NetworkStatusProvider
-  @Inject lateinit var scrobProvider: ScrobProvider
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -118,12 +115,6 @@ class MainActivity :
   override fun onStart() {
     super.onStart()
     ShowsMoviesSyncWorker.schedule(workManager)
-    // Silent incremental Scrob import on app open. Skipped when Scrob is not
-    // configured so we never surface auth errors for users that don't use it.
-    if (scrobProvider.isConfigured()) {
-      ScrobSyncWorker.scheduleHistoryAuto(workManager)
-      ScrobSyncWorker.scheduleListsAuto(workManager)
-    }
   }
 
   override fun onResume() {

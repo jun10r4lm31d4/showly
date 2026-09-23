@@ -44,8 +44,6 @@ class ScrobSyncWorker @AssistedInject constructor(
   companion object {
     internal const val KEY_IMPORT_HISTORY = "KEY_IMPORT_HISTORY"
     internal const val KEY_IMPORT_LISTS = "KEY_IMPORT_LISTS"
-    internal const val KEY_FORCE_FULL = "KEY_FORCE_FULL"
-    internal const val KEY_SILENT = "KEY_SILENT"
 
     const val TAG_HISTORY = "SCROB_SYNC_WORK_HISTORY"
     const val TAG_LISTS = "SCROB_SYNC_WORK_LISTS"
@@ -59,19 +57,16 @@ class ScrobSyncWorker @AssistedInject constructor(
 
     private const val NOTIFICATION_CHANNEL_ID = "Showly Scrob Sync Service"
 
-    fun scheduleHistory(
-      workManager: WorkManager,
-      forceFull: Boolean = false,
-    ) {
+    fun scheduleHistory(workManager: WorkManager) {
       val request = OneTimeWorkRequestBuilder<ScrobSyncWorker>()
         .setConstraints(
           Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build(),
-        ).setInputData(workDataOf(KEY_IMPORT_HISTORY to true, KEY_FORCE_FULL to forceFull))
+        ).setInputData(workDataOf(KEY_IMPORT_HISTORY to true))
         .addTag(TAG_HISTORY)
         .build()
 
       workManager.enqueueUniqueWork(TAG_HISTORY, ExistingWorkPolicy.REPLACE, request)
-      Timber.i("Scrob history sync scheduled. forceFull=$forceFull")
+      Timber.i("Scrob history sync scheduled.")
     }
 
     fun scheduleLists(workManager: WorkManager) {
@@ -86,35 +81,6 @@ class ScrobSyncWorker @AssistedInject constructor(
       Timber.i("Scrob lists sync scheduled.")
     }
 
-    /**
-     * Silent auto-sync for app open. Uses KEEP so it never cancels an already
-     * running manual sync, and posts no progress/success notifications.
-     * History runs incremental inside the runner (full 1x/day or when forced).
-     */
-    fun scheduleHistoryAuto(workManager: WorkManager) {
-      val request = OneTimeWorkRequestBuilder<ScrobSyncWorker>()
-        .setConstraints(
-          Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build(),
-        ).setInputData(workDataOf(KEY_IMPORT_HISTORY to true, KEY_FORCE_FULL to false, KEY_SILENT to true))
-        .addTag(TAG_HISTORY)
-        .build()
-
-      workManager.enqueueUniqueWork(TAG_HISTORY, ExistingWorkPolicy.KEEP, request)
-      Timber.i("Scrob history auto-sync scheduled.")
-    }
-
-    fun scheduleListsAuto(workManager: WorkManager) {
-      val request = OneTimeWorkRequestBuilder<ScrobSyncWorker>()
-        .setConstraints(
-          Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build(),
-        ).setInputData(workDataOf(KEY_IMPORT_LISTS to true, KEY_SILENT to true))
-        .addTag(TAG_LISTS)
-        .build()
-
-      workManager.enqueueUniqueWork(TAG_LISTS, ExistingWorkPolicy.KEEP, request)
-      Timber.i("Scrob lists auto-sync scheduled.")
-    }
-
     fun cancelPending(workManager: WorkManager) {
       workManager.cancelUniqueWork(TAG_HISTORY)
       workManager.cancelUniqueWork(TAG_LISTS)
@@ -126,7 +92,6 @@ class ScrobSyncWorker @AssistedInject constructor(
 
     val isImportHistory = inputData.getBoolean(KEY_IMPORT_HISTORY, false)
     val isImportLists = inputData.getBoolean(KEY_IMPORT_LISTS, false)
-    val isSilent = inputData.getBoolean(KEY_SILENT, false)
 
     // No export sync exists, so the history import must never run while local
     // watched-state pushes are still queued: the remote snapshot would miss them
@@ -142,17 +107,15 @@ class ScrobSyncWorker @AssistedInject constructor(
     }
 
     try {
-      if (isImportHistory) runImportWatched(isSilent)
-      if (isImportLists) runImportLists(isSilent)
+      if (isImportHistory) runImportWatched()
+      if (isImportLists) runImportLists()
 
       val notifId = when {
         isImportHistory -> NOTIFICATION_HISTORY_ID
         isImportLists -> NOTIFICATION_LISTS_ID
         else -> return Result.success()
       }
-      if (!isSilent) {
-        notificationManager().notify(notifId, createSuccessNotification())
-      }
+      notificationManager().notify(notifId, createSuccessNotification())
     } catch (error: Throwable) {
       if (error !is ScrobAuthException) rethrowCancellation(error)
 
@@ -172,14 +135,13 @@ class ScrobSyncWorker @AssistedInject constructor(
 
   private suspend fun hasPendingPushes(): Boolean = localSource.scrobPendingOps.count() > 0
 
-  private suspend fun runImportWatched(silent: Boolean = false) {
-    if (!silent) setProgressNotification("Syncing progress…")
-    val forceFull = inputData.getBoolean(KEY_FORCE_FULL, false)
-    importWatchedRunner.run(forceFull)
+  private suspend fun runImportWatched() {
+    setProgressNotification("Syncing progress…")
+    importWatchedRunner.run()
   }
 
-  private suspend fun runImportLists(silent: Boolean = false) {
-    if (!silent) setProgressNotification("Syncing lists…")
+  private suspend fun runImportLists() {
+    setProgressNotification("Syncing lists…")
     importListsRunner.run()
   }
 
