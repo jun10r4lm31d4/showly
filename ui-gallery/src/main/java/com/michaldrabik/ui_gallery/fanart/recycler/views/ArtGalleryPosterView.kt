@@ -14,7 +14,6 @@ import com.michaldrabik.ui_base.utilities.extensions.onClick
 import com.michaldrabik.ui_base.utilities.extensions.visible
 import com.michaldrabik.ui_base.utilities.extensions.withFailListener
 import com.michaldrabik.ui_base.utilities.extensions.withSuccessListener
-import com.michaldrabik.ui_gallery.R
 import com.michaldrabik.ui_gallery.databinding.ViewGalleryPosterImageBinding
 import com.michaldrabik.ui_model.Image
 

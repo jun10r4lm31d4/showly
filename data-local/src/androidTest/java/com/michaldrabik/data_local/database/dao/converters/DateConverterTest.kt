@@ -2,8 +2,8 @@
 
 package com.michaldrabik.data_local.database.dao.converters
 
-import com.google.common.truth.Truth.assertThat
 import androidx.test.runner.AndroidJUnit4
+import com.google.common.truth.Truth.assertThat
 import com.michaldrabik.data_local.database.converters.DateConverter
 import org.junit.Before
 import org.junit.Test

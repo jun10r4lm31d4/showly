@@ -9,7 +9,6 @@ import android.widget.FrameLayout
 import com.michaldrabik.ui_base.utilities.extensions.colorFromAttr
 import com.michaldrabik.ui_base.utilities.extensions.onClick
 import com.michaldrabik.ui_model.Episode
-import com.michaldrabik.ui_show.R
 import com.michaldrabik.ui_show.databinding.ViewQuickSetupItemBinding
 import java.util.Locale.ENGLISH
 

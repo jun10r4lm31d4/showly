@@ -13,7 +13,6 @@ import com.michaldrabik.ui_base.utilities.extensions.rethrowCancellation
 import com.michaldrabik.ui_base.viewmodel.ChannelsDelegate
 import com.michaldrabik.ui_base.viewmodel.DefaultChannelsDelegate
 import com.michaldrabik.ui_model.Person
-import com.michaldrabik.ui_people.R
 import com.michaldrabik.ui_people.details.cases.PersonDetailsCreditsCase
 import com.michaldrabik.ui_people.details.cases.PersonDetailsImagesCase
 import com.michaldrabik.ui_people.details.cases.PersonDetailsLoadCase

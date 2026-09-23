@@ -21,7 +21,6 @@ import com.michaldrabik.ui_base.utilities.extensions.setOutboundRipple
 import com.michaldrabik.ui_base.utilities.extensions.visible
 import com.michaldrabik.ui_base.utilities.extensions.visibleIf
 import com.michaldrabik.ui_model.SortOrder
-import com.michaldrabik.ui_my_movies.R
 import com.michaldrabik.ui_my_movies.databinding.ViewCollectionMovieBinding
 import com.michaldrabik.ui_my_movies.mymovies.recycler.MyMoviesItem
 import java.util.Locale.ENGLISH

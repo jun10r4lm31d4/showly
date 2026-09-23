@@ -12,7 +12,6 @@ import androidx.core.widget.ImageViewCompat
 import com.michaldrabik.ui_base.utilities.extensions.colorFromAttr
 import com.michaldrabik.ui_base.utilities.extensions.expandTouch
 import com.michaldrabik.ui_base.utilities.extensions.onClick
-import com.michaldrabik.ui_show.R
 import com.michaldrabik.ui_show.databinding.ViewSeasonBinding
 import java.util.Locale.ENGLISH
 import kotlin.math.floor

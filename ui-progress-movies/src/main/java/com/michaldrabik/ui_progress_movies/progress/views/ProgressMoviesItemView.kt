@@ -24,7 +24,6 @@ import com.michaldrabik.ui_base.utilities.extensions.visibleIf
 import com.michaldrabik.ui_model.SortOrder.RATING
 import com.michaldrabik.ui_model.SortOrder.RUNTIME
 import com.michaldrabik.ui_model.SortOrder.USER_RATING
-import com.michaldrabik.ui_progress_movies.R
 import com.michaldrabik.ui_progress_movies.databinding.ViewProgressMoviesMainItemBinding
 import com.michaldrabik.ui_progress_movies.progress.recycler.ProgressMovieListItem
 import java.util.Locale

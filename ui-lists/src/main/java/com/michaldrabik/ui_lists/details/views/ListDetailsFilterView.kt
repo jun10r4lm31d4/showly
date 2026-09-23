@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.forEach
 import com.michaldrabik.common.Mode
 import com.michaldrabik.ui_base.utilities.extensions.onClick
-import com.michaldrabik.ui_lists.R
 import com.michaldrabik.ui_lists.databinding.ViewListDetailsFiltersBinding
 import com.michaldrabik.ui_model.SortOrder
 import com.michaldrabik.ui_model.SortType

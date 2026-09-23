@@ -13,7 +13,6 @@ import com.michaldrabik.ui_base.utilities.extensions.dimenToPx
 import com.michaldrabik.ui_base.utilities.extensions.onClick
 import com.michaldrabik.ui_base.utilities.extensions.visibleIf
 import com.michaldrabik.ui_model.MyShowsSection
-import com.michaldrabik.ui_my_shows.R
 import com.michaldrabik.ui_my_shows.databinding.ViewMyShowsTypeFilterItemBinding
 
 class MyShowsFilterItemView : ConstraintLayout {

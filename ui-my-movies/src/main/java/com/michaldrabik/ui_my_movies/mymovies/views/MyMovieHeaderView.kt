@@ -15,7 +15,6 @@ import com.michaldrabik.ui_model.MyMoviesSection.ALL
 import com.michaldrabik.ui_model.MyMoviesSection.RECENTS
 import com.michaldrabik.ui_model.SortOrder
 import com.michaldrabik.ui_model.SortType
-import com.michaldrabik.ui_my_movies.R
 import com.michaldrabik.ui_my_movies.databinding.ViewMyMoviesHeaderBinding
 import com.michaldrabik.ui_my_movies.mymovies.recycler.MyMoviesItem
 import java.util.Locale.ENGLISH

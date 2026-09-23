@@ -4,8 +4,8 @@ import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.michaldrabik.common.Mode
 import com.michaldrabik.repository.utilities.EnumPreference
-import com.michaldrabik.ui_model.CalendarMode
 import com.michaldrabik.ui_model.AppTheme
+import com.michaldrabik.ui_model.CalendarMode
 import javax.inject.Inject
 import javax.inject.Named
 import javax.inject.Singleton

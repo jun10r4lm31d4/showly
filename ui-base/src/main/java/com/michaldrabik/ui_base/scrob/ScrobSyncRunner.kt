@@ -2,12 +2,12 @@ package com.michaldrabik.ui_base.scrob
 
 import com.michaldrabik.common.errors.ShowlyError
 import com.michaldrabik.data_remote.scrob.ScrobRemoteDataSource
-import java.util.concurrent.atomic.AtomicInteger
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.OffsetDateTime
 import java.time.ZoneOffset
 import java.time.ZonedDateTime
+import java.util.concurrent.atomic.AtomicInteger
 
 abstract class ScrobSyncRunner(
   private val scrobRemoteSource: ScrobRemoteDataSource,

@@ -7,7 +7,6 @@ import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.FrameLayout
 import com.michaldrabik.ui_model.Person
-import com.michaldrabik.ui_people.R
 import com.michaldrabik.ui_people.databinding.ViewPeopleListHeaderBinding
 import com.michaldrabik.ui_people.list.recycler.PeopleListItem
 

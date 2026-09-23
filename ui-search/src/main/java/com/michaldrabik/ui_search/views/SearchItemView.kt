@@ -16,7 +16,6 @@ import com.michaldrabik.ui_base.utilities.extensions.gone
 import com.michaldrabik.ui_base.utilities.extensions.onClick
 import com.michaldrabik.ui_base.utilities.extensions.onLongClick
 import com.michaldrabik.ui_base.utilities.extensions.visibleIf
-import com.michaldrabik.ui_search.R
 import com.michaldrabik.ui_search.databinding.ViewShowSearchBinding
 import com.michaldrabik.ui_search.recycler.SearchListItem
 

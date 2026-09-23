@@ -11,7 +11,6 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.michaldrabik.ui_base.utilities.extensions.dimenToPx
 import com.michaldrabik.ui_base.utilities.extensions.onClick
 import com.michaldrabik.ui_model.Image
-import com.michaldrabik.ui_people.R
 import com.michaldrabik.ui_people.databinding.ViewPersonGalleryImageBinding
 
 class PersonGalleryImageView : ConstraintLayout {

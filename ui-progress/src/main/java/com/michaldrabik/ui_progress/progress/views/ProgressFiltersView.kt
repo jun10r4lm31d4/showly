@@ -11,7 +11,6 @@ import com.michaldrabik.ui_base.utilities.extensions.onClick
 import com.michaldrabik.ui_base.utilities.extensions.visibleIf
 import com.michaldrabik.ui_model.SortType.ASCENDING
 import com.michaldrabik.ui_model.SortType.DESCENDING
-import com.michaldrabik.ui_progress.R
 import com.michaldrabik.ui_progress.databinding.ViewProgressFiltersBinding
 import com.michaldrabik.ui_progress.progress.recycler.ProgressListItem
 

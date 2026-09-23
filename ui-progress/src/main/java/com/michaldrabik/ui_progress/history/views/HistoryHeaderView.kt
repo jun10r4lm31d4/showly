@@ -11,7 +11,6 @@ import com.michaldrabik.common.extensions.nowUtc
 import com.michaldrabik.common.extensions.toLocalZone
 import com.michaldrabik.ui_base.utilities.extensions.capitalizeWords
 import com.michaldrabik.ui_base.utilities.extensions.dimenToPx
-import com.michaldrabik.ui_progress.R
 import com.michaldrabik.ui_progress.databinding.ViewHistoryHeaderBinding
 import com.michaldrabik.ui_progress.history.entities.HistoryListItem
 import java.time.format.DateTimeFormatter

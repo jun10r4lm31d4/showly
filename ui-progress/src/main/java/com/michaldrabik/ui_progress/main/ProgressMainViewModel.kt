@@ -13,7 +13,6 @@ import com.michaldrabik.ui_model.CalendarMode
 import com.michaldrabik.ui_model.Episode
 import com.michaldrabik.ui_model.EpisodeBundle
 import com.michaldrabik.ui_model.Show
-import com.michaldrabik.ui_progress.R
 import com.michaldrabik.ui_progress.main.cases.ProgressMainEpisodesCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

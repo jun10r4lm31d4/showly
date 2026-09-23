@@ -14,13 +14,13 @@ import com.michaldrabik.repository.utilities.BooleanPreference
 import com.michaldrabik.repository.utilities.EnumPreference
 import com.michaldrabik.repository.utilities.LongPreference
 import com.michaldrabik.repository.utilities.StringPreference
+import com.michaldrabik.ui_model.AppTheme
 import com.michaldrabik.ui_model.ProgressDateSelectionType
 import com.michaldrabik.ui_model.ProgressDateSelectionType.ALWAYS_ASK
 import com.michaldrabik.ui_model.ProgressNextEpisodeType
 import com.michaldrabik.ui_model.ProgressNextEpisodeType.LAST_WATCHED
 import com.michaldrabik.ui_model.ProgressType
 import com.michaldrabik.ui_model.Settings
-import com.michaldrabik.ui_model.AppTheme
 import kotlinx.coroutines.withContext
 import java.util.UUID
 import javax.inject.Inject

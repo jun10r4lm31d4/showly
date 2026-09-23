@@ -1,11 +1,6 @@
 package com.michaldrabik.data_remote.di.module
 
 import android.content.SharedPreferences
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
-import retrofit2.Retrofit
 import com.michaldrabik.common.security.SecretCipher
 import com.michaldrabik.data_remote.scrob.PreferencesScrobProvider
 import com.michaldrabik.data_remote.scrob.ScrobProvider
@@ -14,6 +9,11 @@ import com.michaldrabik.data_remote.scrob.api.ScrobApi
 import com.michaldrabik.data_remote.scrob.api.service.ScrobSyncService
 import com.michaldrabik.data_remote.scrob.interceptors.ScrobApiKeyInterceptor
 import com.michaldrabik.data_remote.scrob.interceptors.ScrobBaseUrlInterceptor
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import retrofit2.Retrofit
 import javax.inject.Named
 import javax.inject.Singleton
 

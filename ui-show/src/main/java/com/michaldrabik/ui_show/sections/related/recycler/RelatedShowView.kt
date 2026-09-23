@@ -17,7 +17,6 @@ import com.michaldrabik.ui_base.utilities.extensions.visible
 import com.michaldrabik.ui_base.utilities.extensions.visibleIf
 import com.michaldrabik.ui_model.ImageStatus.AVAILABLE
 import com.michaldrabik.ui_model.ImageStatus.UNAVAILABLE
-import com.michaldrabik.ui_show.R
 import com.michaldrabik.ui_show.databinding.ViewRelatedShowBinding
 
 class RelatedShowView : ShowView<RelatedListItem> {

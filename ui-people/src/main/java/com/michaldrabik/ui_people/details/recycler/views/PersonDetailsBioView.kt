@@ -9,7 +9,6 @@ import android.widget.FrameLayout
 import com.michaldrabik.ui_base.utilities.extensions.copyToClipboard
 import com.michaldrabik.ui_base.utilities.extensions.onLongClick
 import com.michaldrabik.ui_base.utilities.extensions.showInfoSnackbar
-import com.michaldrabik.ui_people.R
 import com.michaldrabik.ui_people.databinding.ViewPersonDetailsBioBinding
 import com.michaldrabik.ui_people.details.recycler.PersonDetailsItem
 

@@ -10,11 +10,11 @@ import com.michaldrabik.ui_base.common.AppCountry
 import com.michaldrabik.ui_base.dates.AppDateFormat
 import com.michaldrabik.ui_base.utilities.extensions.SUBSCRIBE_STOP_TIMEOUT
 import com.michaldrabik.ui_base.utilities.extensions.combine
+import com.michaldrabik.ui_model.AppTheme
 import com.michaldrabik.ui_model.ProgressDateSelectionType
 import com.michaldrabik.ui_model.ProgressNextEpisodeType
 import com.michaldrabik.ui_model.Settings
 import com.michaldrabik.ui_settings.helpers.AppLanguage
-import com.michaldrabik.ui_model.AppTheme
 import com.michaldrabik.ui_settings.sections.general.cases.SettingsGeneralMainCase
 import com.michaldrabik.ui_settings.sections.general.cases.SettingsGeneralStreamingsCase
 import dagger.hilt.android.lifecycle.HiltViewModel

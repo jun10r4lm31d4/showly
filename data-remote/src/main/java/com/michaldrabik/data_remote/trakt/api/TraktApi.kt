@@ -13,7 +13,6 @@ import com.michaldrabik.data_remote.trakt.model.Movie
 import com.michaldrabik.data_remote.trakt.model.MovieCollection
 import com.michaldrabik.data_remote.trakt.model.PersonCredit
 import com.michaldrabik.data_remote.trakt.model.Show
-import java.lang.System.currentTimeMillis
 
 internal class TraktApi(
   private val showsService: TraktShowsService,

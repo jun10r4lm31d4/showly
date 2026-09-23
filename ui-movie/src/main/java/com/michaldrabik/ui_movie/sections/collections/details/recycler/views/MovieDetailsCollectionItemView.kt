@@ -26,7 +26,6 @@ import com.michaldrabik.ui_base.utilities.extensions.visibleIf
 import com.michaldrabik.ui_base.utilities.extensions.withFailListener
 import com.michaldrabik.ui_base.utilities.extensions.withSuccessListener
 import com.michaldrabik.ui_model.ImageStatus
-import com.michaldrabik.ui_movie.R
 import com.michaldrabik.ui_movie.databinding.ViewMovieCollectionListItemBinding
 import com.michaldrabik.ui_movie.sections.collections.details.recycler.MovieDetailsCollectionItem
 import com.michaldrabik.ui_movie.sections.collections.details.recycler.MovieDetailsCollectionItem.MovieItem

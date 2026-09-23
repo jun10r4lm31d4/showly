@@ -17,8 +17,8 @@ import android.widget.RemoteViews
 import com.michaldrabik.common.Config
 import com.michaldrabik.common.Mode
 import com.michaldrabik.ui_base.utilities.extensions.dimenToPx
-import com.michaldrabik.ui_model.CalendarMode
 import com.michaldrabik.ui_model.AppTheme
+import com.michaldrabik.ui_model.CalendarMode
 import com.michaldrabik.ui_widgets.BaseWidgetProvider
 import com.michaldrabik.ui_widgets.R
 import dagger.hilt.android.AndroidEntryPoint

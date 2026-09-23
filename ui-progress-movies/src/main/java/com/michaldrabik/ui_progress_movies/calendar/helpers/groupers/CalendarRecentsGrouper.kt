@@ -2,7 +2,6 @@ package com.michaldrabik.ui_progress_movies.calendar.helpers.groupers
 
 import com.michaldrabik.common.extensions.toLocalZone
 import com.michaldrabik.ui_model.CalendarMode
-import com.michaldrabik.ui_progress_movies.R
 import com.michaldrabik.ui_progress_movies.calendar.recycler.CalendarMovieListItem
 import java.time.ZonedDateTime
 import javax.inject.Inject

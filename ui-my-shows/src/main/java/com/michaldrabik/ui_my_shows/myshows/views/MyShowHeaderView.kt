@@ -16,7 +16,6 @@ import com.michaldrabik.ui_model.MyShowsSection.ALL
 import com.michaldrabik.ui_model.MyShowsSection.RECENTS
 import com.michaldrabik.ui_model.SortOrder
 import com.michaldrabik.ui_model.SortType
-import com.michaldrabik.ui_my_shows.R
 import com.michaldrabik.ui_my_shows.databinding.ViewMyShowsHeaderBinding
 import com.michaldrabik.ui_my_shows.myshows.recycler.MyShowsItem
 import java.util.Locale.ENGLISH

@@ -19,7 +19,6 @@ import androidx.core.view.forEach
 import androidx.core.view.updateLayoutParams
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.michaldrabik.common.Mode
-import com.michaldrabik.showly2.R
 import com.michaldrabik.showly2.databinding.ViewBottomMenuBinding
 import com.michaldrabik.ui_base.utilities.extensions.add
 import com.michaldrabik.ui_base.utilities.extensions.colorFromAttr

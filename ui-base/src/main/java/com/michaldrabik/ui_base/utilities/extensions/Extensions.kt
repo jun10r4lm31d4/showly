@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import androidx.work.CoroutineWorker
-import com.michaldrabik.ui_base.R
 import com.michaldrabik.ui_base.common.SafeOnClickListener
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job

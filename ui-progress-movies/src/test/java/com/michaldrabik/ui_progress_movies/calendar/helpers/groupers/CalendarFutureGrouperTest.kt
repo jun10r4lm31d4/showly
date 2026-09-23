@@ -2,7 +2,6 @@ package com.michaldrabik.ui_progress_movies.calendar.helpers.groupers
 
 import com.google.common.truth.Truth.assertThat
 import com.michaldrabik.ui_progress_movies.BaseMockTest
-import com.michaldrabik.ui_progress_movies.R
 import com.michaldrabik.ui_progress_movies.calendar.recycler.CalendarMovieListItem
 import io.mockk.every
 import io.mockk.mockk
