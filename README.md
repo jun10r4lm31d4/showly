@@ -1,5 +1,5 @@
-![Version](https://img.shields.io/github/v/tag/michaldrabik/showly-2.0?label=version)
-![Build](https://img.shields.io/github/actions/workflow/status/michaldrabik/showly-2.0/android.yml?branch=master)
+![Version](https://img.shields.io/github/v/tag/trakt/showly?label=version)
+![Build](https://img.shields.io/github/actions/workflow/status/trakt/showly/android.yml?branch=master)
 [![RB Shield](https://shields.rbtlog.dev/simple/com.michaldrabik.showly2)](https://shields.rbtlog.dev/com.michaldrabik.showly2)
 [![Crowdin](https://badges.crowdin.net/showly-android-app/localized.svg)](https://crowdin.com/project/showly-android-app)
 [![Crowdin](https://badges.crowdin.net/showly-ios-app/localized.svg)](https://crowdin.com/project/showly-ios-app)
@@ -59,13 +59,12 @@ The OSS version for Android available in this repo is completely free of all Goo
    storePassword=github
    ```
 
-4. Add your [Trakt.tv](https://trakt.tv/oauth/applications), [TMDB](https://developers.themoviedb.org/3/), [OMDB](http://www.omdbapi.com) API keys as
+4. Add your [Trakt.tv](https://trakt.tv/oauth/applications), [TMDB](https://developers.themoviedb.org/3/) API keys as
    following properties into your `local.properties` file located in the root directory of the project:
 
    ```ini
    traktClientId="your trakt client id"
    tmdbApiKey="your tmdb api key (v4)"
-   omdbApiKey="your omdb api key"
    scrobApiKey="your personal Scrob X-Api-Key (optional, only needed to use Scrob as a watched history/lists source)"
    ```
 
@@ -73,9 +72,9 @@ The OSS version for Android available in this repo is completely free of all Goo
 
 ## Issues & Contributions
 
-Feel free to post problems with the app as Github [Issues](https://github.com/michaldrabik/showly-2.0/issues).
+Feel free to post problems with the app as GitHub [Issues](https://github.com/trakt/showly/issues).
 
-Features ideas should be posted as new GIthub [Discussion](https://github.com/michaldrabik/showly-2.0/discussions).
+Features ideas should be posted as new GitHub [Discussion](https://github.com/trakt/showly/discussions).
 
 Pull requests are welcome. Remember about leaving a comment in the relevant issue if you are working on something.
 

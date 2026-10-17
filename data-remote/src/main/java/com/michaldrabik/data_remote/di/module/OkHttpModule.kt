@@ -1,7 +1,6 @@
 package com.michaldrabik.data_remote.di.module
 
 import com.michaldrabik.data_remote.BuildConfig
-import com.michaldrabik.data_remote.omdb.OmdbInterceptor
 import com.michaldrabik.data_remote.scrob.interceptors.ScrobApiKeyInterceptor
 import com.michaldrabik.data_remote.scrob.interceptors.ScrobBaseUrlInterceptor
 import com.michaldrabik.data_remote.tmdb.TmdbInterceptor
@@ -50,17 +49,6 @@ object OkHttpModule {
     tmdbInterceptor: TmdbInterceptor,
   ) = createBaseOkHttpClient()
     .addInterceptor(tmdbInterceptor)
-    .addInterceptor(httpLoggingInterceptor)
-    .build()
-
-  @Provides
-  @Singleton
-  @Named("okHttpOmdb")
-  fun providesOmdbOkHttp(
-    httpLoggingInterceptor: HttpLoggingInterceptor,
-    omdbInterceptor: OmdbInterceptor,
-  ) = createBaseOkHttpClient()
-    .addInterceptor(omdbInterceptor)
     .addInterceptor(httpLoggingInterceptor)
     .build()
 
