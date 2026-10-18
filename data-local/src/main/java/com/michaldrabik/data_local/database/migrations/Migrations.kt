@@ -823,11 +823,11 @@ class Migrations(
   private val migration45 = object : Migration(44, 45) {
     override fun migrate(database: SupportSQLiteDatabase) {
       with(database) {
-        execSQL("ALTER TABLE custom_lists DROP COLUMN IF EXISTS allow_comments")
-        execSQL("ALTER TABLE custom_lists DROP COLUMN IF EXISTS comment_count")
-        execSQL("ALTER TABLE episodes DROP COLUMN IF EXISTS comments_count")
-        execSQL("ALTER TABLE movies DROP COLUMN IF EXISTS comment_count")
-        execSQL("ALTER TABLE shows DROP COLUMN IF EXISTS comment_count")
+        execSQL("ALTER TABLE custom_lists DROP COLUMN allow_comments")
+        execSQL("ALTER TABLE custom_lists DROP COLUMN comment_count")
+        execSQL("ALTER TABLE episodes DROP COLUMN comments_count")
+        execSQL("ALTER TABLE movies DROP COLUMN comment_count")
+        execSQL("ALTER TABLE shows DROP COLUMN comment_count")
       }
     }
   }
