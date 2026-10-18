@@ -397,7 +397,6 @@ class ScrobQuickSyncManager @Inject constructor(
   suspend fun remoteListId(localListId: Long): Long? {
     val row = localSource.customLists.getById(localListId) ?: return null
     row.idScrob?.let { return it }
-    if (row.idSlug.startsWith(ScrobImportListsRunner.SCROB_LIST_SLUG_PREFIX)) return row.id
     return null
   }
 

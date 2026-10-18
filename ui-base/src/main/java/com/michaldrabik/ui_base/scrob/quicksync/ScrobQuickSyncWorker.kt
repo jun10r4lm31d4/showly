@@ -287,7 +287,6 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
   private suspend fun resolveRemoteListId(op: ScrobPendingOp): Long {
     localSource.customLists.getById(op.listId)?.let { row ->
       row.idScrob?.let { return it }
-      if (row.idSlug.startsWith(ScrobImportListsRunner.SCROB_LIST_SLUG_PREFIX)) return row.id
       return -1
     }
     // No local row (e.g. watchlist ops enqueued by remote id, or deleted lists):

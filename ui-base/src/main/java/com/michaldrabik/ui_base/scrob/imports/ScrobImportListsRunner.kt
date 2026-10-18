@@ -41,10 +41,6 @@ class ScrobImportListsRunner @Inject constructor(
   private val dispatchers: CoroutineDispatchers,
 ) : ScrobSyncRunner(scrobRemoteSource) {
 
-  companion object {
-    internal const val SCROB_LIST_SLUG_PREFIX = "scrob-"
-  }
-
   override suspend fun run(): Int {
     Timber.d("Initialized.")
     checkAuthorization()
@@ -118,8 +114,6 @@ class ScrobImportListsRunner @Inject constructor(
       .filter { it.id !in pendingCreates }
       .mapNotNull { list ->
         val remoteId = list.idScrob
-          ?: list.idSlug.removePrefix(SCROB_LIST_SLUG_PREFIX).toLongOrNull()
-            ?.takeIf { list.idSlug.startsWith(SCROB_LIST_SLUG_PREFIX) }
           ?: return@mapNotNull null
         list to remoteId
       }
@@ -146,7 +140,6 @@ class ScrobImportListsRunner @Inject constructor(
     if (local == null) {
       Timber.d("Local list not found. Creating...")
       val list = CustomList.create().copy(
-        idSlug = "$SCROB_LIST_SLUG_PREFIX${remoteList.id}",
         name = remoteList.name,
         description = remoteList.description,
         privacy = if (remoteList.privacyLevel == "public") "public" else "private",
