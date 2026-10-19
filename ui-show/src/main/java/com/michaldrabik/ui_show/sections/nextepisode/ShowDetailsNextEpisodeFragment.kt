@@ -100,6 +100,7 @@ class ShowDetailsNextEpisodeFragment :
     val (show, episode) = episodeBundle.nextEpisode
     val bundle = EpisodeDetailsBottomSheet.createBundle(
       showIds = show.ids,
+      showTitle = show.title,
       episode = episode,
       seasonEpisodesIds = null,
       isWatched = episodeBundle.isWatched,

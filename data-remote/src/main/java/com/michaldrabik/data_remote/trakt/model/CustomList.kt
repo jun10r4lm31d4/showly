@@ -15,6 +15,6 @@ data class CustomList(
 ) {
 
   data class Ids(
-    val trakt: Long,
+    val scrob: Long,
   )
 }

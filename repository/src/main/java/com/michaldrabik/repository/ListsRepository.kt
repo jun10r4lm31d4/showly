@@ -20,10 +20,10 @@ class ListsRepository @Inject constructor(
   suspend fun createList(
     name: String,
     description: String?,
-    idTrakt: Long?,
+    idScrob: Long?,
   ): CustomList {
     val list = CustomList.create().copy(
-      idTrakt = idTrakt,
+      idScrob = idScrob ?: -1,
       name = name.trim(),
       description = description?.trim(),
     )
@@ -34,14 +34,14 @@ class ListsRepository @Inject constructor(
 
   suspend fun updateList(
     id: Long,
-    idTrakt: Long?,
+    idScrob: Long?,
     name: String,
     description: String?,
   ): CustomList {
     val listDb = localSource.customLists.getById(id)!!
     val updated = listDb.copy(
       name = name,
-      idTrakt = idTrakt ?: listDb.idTrakt,
+      idScrob = idScrob ?: listDb.idScrob,
       description = description,
       updatedAt = nowUtcMillis(),
     )

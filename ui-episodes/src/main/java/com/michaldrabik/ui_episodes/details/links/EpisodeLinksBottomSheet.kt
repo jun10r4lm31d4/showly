@@ -26,6 +26,7 @@ class EpisodeLinksBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_li
   @Parcelize
   data class Options(
     val showIds: Ids,
+    val showTitle: String,
     val ids: Ids,
     val season: Int,
     val episodeNumber: Int,
@@ -34,10 +35,12 @@ class EpisodeLinksBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_li
   companion object {
     fun createBundle(
       showIds: Ids,
+      showTitle: String,
       episode: Episode,
     ): Bundle {
       val options = Options(
         showIds = showIds,
+        showTitle = showTitle,
         ids = episode.ids,
         season = episode.season,
         episodeNumber = episode.number,
@@ -50,6 +53,7 @@ class EpisodeLinksBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_li
 
   private val options by lazy { requireParcelable<Options>(NavigationArgs.ARG_OPTIONS) }
   private val showIds by lazy { options.showIds }
+  private val showTitle by lazy { options.showTitle }
   private val ids by lazy { options.ids }
   private val season by lazy { options.season }
   private val episodeNumber by lazy { options.episodeNumber }
@@ -66,7 +70,7 @@ class EpisodeLinksBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_li
 
   private fun setupView() {
     with(binding) {
-      val searchQuery = "${showIds.slug.id} season $season episode $episodeNumber"
+      val searchQuery = "$showTitle season $season episode $episodeNumber"
       viewEpisodeLinksGoogle.onClick {
         openWebUrl("https://www.google.com/search?q=$searchQuery")
       }

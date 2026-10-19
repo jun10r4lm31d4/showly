@@ -45,7 +45,7 @@ internal class BackupExportListsRunner @Inject constructor(
           BackupListItem(
             id = it.id,
             listId = list.id,
-            traktId = it.idTrakt,
+            scrobId = it.idScrobItem,
             tmdbId = when (it.type) {
               "show" -> localShowTmdbIds.getOrDefault(it.idTrakt, -1)
               "movie" -> localMovieTmdbIds.getOrDefault(it.idTrakt, -1)
@@ -61,7 +61,7 @@ internal class BackupExportListsRunner @Inject constructor(
 
         val backupList = BackupList(
           id = list.id,
-          traktId = list.idTrakt,
+          scrobId = list.idScrob,
           name = list.name,
           description = list.description,
           privacy = list.privacy,

@@ -19,7 +19,7 @@ class CustomListMapper @Inject constructor() {
   fun fromNetwork(list: CustomListNetwork) =
     CustomList(
       id = 0,
-      idTrakt = list.ids.trakt,
+      idScrob = list.ids.scrob,
       name = list.name,
       description = list.description,
       privacy = list.privacy,
@@ -38,7 +38,7 @@ class CustomListMapper @Inject constructor() {
   fun fromDatabase(list: CustomListDb) =
     CustomList(
       id = list.id,
-      idTrakt = list.idTrakt,
+      idScrob = list.idScrob,
       name = list.name,
       description = list.description,
       privacy = list.privacy,
@@ -55,13 +55,11 @@ class CustomListMapper @Inject constructor() {
       likes = list.likes,
       createdAt = ZonedDateTime.ofInstant(Instant.ofEpochMilli(list.createdAt), ZoneId.of("UTC")),
       updatedAt = ZonedDateTime.ofInstant(Instant.ofEpochMilli(list.updatedAt), ZoneId.of("UTC")),
-      idScrob = list.idScrob,
     )
 
   fun toDatabase(list: CustomList) =
     CustomListDb(
       id = list.id,
-      idTrakt = list.idTrakt,
       idScrob = list.idScrob,
       name = list.name,
       description = list.description,
@@ -81,7 +79,7 @@ class CustomListMapper @Inject constructor() {
   fun toNetwork(list: CustomList) =
     CustomListNetwork(
       ids = IdsList(
-        trakt = list.idTrakt ?: -1,
+        scrob = list.idScrob ?: -1,
       ),
       name = list.name,
       description = list.description,

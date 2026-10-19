@@ -9,7 +9,7 @@ import java.time.ZonedDateTime
 @Parcelize
 data class CustomList(
   val id: Long,
-  val idTrakt: Long?,
+  val idScrob: Long? = -1,
   val name: String,
   val description: String?,
   val privacy: String,
@@ -23,14 +23,13 @@ data class CustomList(
   val likes: Long,
   val createdAt: ZonedDateTime,
   val updatedAt: ZonedDateTime,
-  val idScrob: Long? = null,
 ) : Parcelable {
 
   companion object {
     fun create() =
       CustomList(
         id = 0,
-        idTrakt = null,
+        idScrob = -1,
         name = "",
         description = null,
         privacy = "private",
@@ -44,7 +43,6 @@ data class CustomList(
         likes = 0,
         createdAt = nowUtc(),
         updatedAt = nowUtc(),
-        idScrob = null,
       )
   }
 }

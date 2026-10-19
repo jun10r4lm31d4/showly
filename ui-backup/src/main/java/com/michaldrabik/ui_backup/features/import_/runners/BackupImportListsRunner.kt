@@ -43,7 +43,7 @@ internal class BackupImportListsRunner @Inject constructor(
         statusListener?.invoke(Importing(backupList.name))
 
         val idCheck = localLists.any { it.id == backupList.id }
-        val traktIdCheck = backupList.traktId != null && localLists.any { it.idTrakt == backupList.traktId }
+        val traktIdCheck = backupList.scrobId != null && localLists.any { it.idScrob == backupList.scrobId }
 
         if (traktIdCheck || idCheck) {
           // Custom lists already exists locally
@@ -58,7 +58,7 @@ internal class BackupImportListsRunner @Inject constructor(
 
   private suspend fun importNewCustomList(backupList: BackupList) {
     val list = CustomList.create().copy(
-      idTrakt = backupList.traktId,
+      idScrob = backupList.scrobId,
       name = backupList.name,
       description = backupList.description,
     )
@@ -70,7 +70,7 @@ internal class BackupImportListsRunner @Inject constructor(
       importDetails(item)
       listsRepository.addToList(
         listId = listId,
-        itemTraktId = IdTrakt(item.traktId),
+        itemTraktId = IdTrakt(item.scrobId),
         itemType = item.type,
         listedAt = item.listedAt.toUtcDateTime()?.toMillis() ?: nowUtcMillis(),
         createdAt = item.createdAt.toUtcDateTime()?.toMillis() ?: nowUtcMillis(),
@@ -84,7 +84,7 @@ internal class BackupImportListsRunner @Inject constructor(
     val localListItems = listsRepository.loadListItemsForId(localList.id)
 
     for (backupItem in backupList.items) {
-      val itemExists = localListItems.any { it.idTrakt == backupItem.traktId && it.type == backupItem.type }
+      val itemExists = localListItems.any { it.idTrakt == backupItem.scrobId && it.type == backupItem.type }
       if (itemExists) {
         continue
       }
@@ -93,7 +93,7 @@ internal class BackupImportListsRunner @Inject constructor(
 
       listsRepository.addToList(
         listId = localList.id,
-        itemTraktId = IdTrakt(backupItem.traktId),
+        itemTraktId = IdTrakt(backupItem.scrobId),
         itemType = backupItem.type,
         listedAt = backupItem.listedAt.toUtcDateTime()?.toMillis() ?: nowUtcMillis(),
         createdAt = backupItem.createdAt.toUtcDateTime()?.toMillis() ?: nowUtcMillis(),
@@ -104,9 +104,9 @@ internal class BackupImportListsRunner @Inject constructor(
 
   private suspend fun importDetails(backupItem: BackupListItem) {
     if (backupItem.type == "show") {
-      showsRepository.detailsShow.load(IdTrakt(backupItem.traktId))
+      showsRepository.detailsShow.load(IdTrakt(backupItem.scrobId))
     } else if (backupItem.type == "movie") {
-      moviesRepository.movieDetails.load(IdTrakt(backupItem.traktId))
+      moviesRepository.movieDetails.load(IdTrakt(backupItem.scrobId))
     }
   }
 }

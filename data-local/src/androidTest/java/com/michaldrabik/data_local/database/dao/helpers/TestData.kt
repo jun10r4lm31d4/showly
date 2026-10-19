@@ -60,9 +60,6 @@ object TestData {
       discoverFilterGenres = "",
       discoverFilterNetworks = "",
       discoverFilterFeed = "",
-      traktSyncSchedule = "",
-      traktQuickSyncEnabled = false,
-      traktQuickRemoveEnabled = false,
       watchlistSortBy = "",
       archiveShowsSortBy = "",
       archiveShowsIncludeStatistics = false,
@@ -77,7 +74,6 @@ object TestData {
       showCollectionMovies = false,
       widgetsShowLabel = false,
       myMoviesRecentIsEnabled = false,
-      quickRateEnabled = false,
       listsSortBy = "",
       progressUpcomingEnabled = false,
     )

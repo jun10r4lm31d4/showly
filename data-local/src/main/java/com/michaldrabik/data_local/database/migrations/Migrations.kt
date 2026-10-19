@@ -842,6 +842,15 @@ class Migrations(
     }
   }
 
+  private val migration47 = object : Migration(46, 47) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+      with(database) {
+        execSQL("DROP INDEX IF EXISTS index_custom_lists_id_trakt")
+        execSQL("ALTER TABLE custom_lists DROP COLUMN id_trakt")
+      }
+    }
+  }
+
   fun getAll() =
     listOf(
       migration2,
@@ -889,5 +898,6 @@ class Migrations(
       migration44,
       migration45,
       migration46,
+      migration47,
     )
 }

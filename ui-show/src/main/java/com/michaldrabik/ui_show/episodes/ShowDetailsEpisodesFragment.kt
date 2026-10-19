@@ -246,6 +246,7 @@ class ShowDetailsEpisodesFragment :
 
     val bundle = EpisodeDetailsBottomSheet.createBundle(
       showIds = show.ids,
+      showTitle = show.title,
       episode = episode,
       seasonEpisodesIds = season.episodes.map { it.number },
       isWatched = isWatched,

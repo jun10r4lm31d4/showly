@@ -8,13 +8,11 @@ import androidx.room.PrimaryKey
 @Entity(
   tableName = "custom_lists",
   indices = [
-    Index(value = ["id_trakt"], unique = true),
     Index(value = ["id_scrob"], unique = true),
   ],
 )
 data class CustomList(
   @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Long = 0,
-  @ColumnInfo(name = "id_trakt") val idTrakt: Long?,
   @ColumnInfo(name = "id_scrob") val idScrob: Long? = null,
   @ColumnInfo(name = "name") val name: String,
   @ColumnInfo(name = "description") val description: String?,

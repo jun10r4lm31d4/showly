@@ -106,7 +106,7 @@ internal object BackupMigrationV1 {
         lists = scheme.lists.lists.map {
           BackupList(
             id = it.id,
-            traktId = it.traktId,
+            scrobId = it.scrobId,
             name = it.name,
             description = it.description,
             privacy = it.privacy,
@@ -117,7 +117,7 @@ internal object BackupMigrationV1 {
               BackupListItem(
                 id = item.id,
                 listId = item.listId,
-                traktId = item.traktId,
+                scrobId = item.scrobId,
                 tmdbId = -1,
                 type = item.type,
                 rank = item.rank,

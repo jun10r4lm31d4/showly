@@ -12,13 +12,6 @@ interface CustomListsLocalDataSource {
 
   suspend fun getById(id: Long): CustomList?
 
-  suspend fun updateTraktId(
-    id: Long,
-    idTrakt: Long,
-    idSlug: String,
-    timestamp: Long,
-  )
-
   suspend fun updateTimestamp(
     id: Long,
     timestamp: Long,

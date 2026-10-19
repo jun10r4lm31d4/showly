@@ -65,6 +65,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
   companion object {
     fun createBundle(
       showIds: Ids,
+      showTitle: String,
       episode: Episode,
       seasonEpisodesIds: List<Int>?,
       isWatched: Boolean,
@@ -72,6 +73,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
     ): Bundle {
       val options = Options(
         showIds = showIds,
+        showTitle = showTitle,
         episode = episode,
         seasonEpisodesIds = seasonEpisodesIds,
         isWatched = isWatched,
@@ -105,7 +107,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
         { uiState.collect { render(it) } },
         { messageFlow.collect { renderSnackbar(it) } },
         doAfterLaunch = {
-          val (ids, episode, seasonEpisodes) = options
+          val (ids, _, episode, seasonEpisodes) = options
           loadLastWatchedAt(ids.trakt, episode)
           loadSeason(ids.trakt, episode, seasonEpisodes?.toIntArray())
           loadImage(ids.tmdb, episode)
@@ -118,7 +120,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
 
   private fun setupView() {
     binding.run {
-      val (showIds, episode, _, isWatched, showTabs) = options
+      val (showIds, _, episode, _, isWatched, showTabs) = options
       episodeDetailsTitle.text = when (episode.title) {
         "Episode ${episode.number}" -> String.format(
           ENGLISH,
@@ -379,6 +381,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
   private fun openLinksSheet() {
     val bundle = EpisodeLinksBottomSheet.createBundle(
       showIds = options.showIds,
+      showTitle = options.showTitle,
       episode = options.episode,
     )
     navigateTo(com.michaldrabik.ui_navigation.R.id.actionEpisodeDetailsDialogToLink, bundle)
@@ -399,6 +402,7 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
   @Parcelize
   private data class Options(
     val showIds: Ids,
+    val showTitle: String,
     val episode: Episode,
     val seasonEpisodesIds: List<Int>?,
     val isWatched: Boolean,
