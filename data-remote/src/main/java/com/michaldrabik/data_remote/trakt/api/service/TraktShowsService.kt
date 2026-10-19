@@ -19,11 +19,6 @@ interface TraktShowsService {
     @Path("traktId") traktId: Long,
   ): Show
 
-  @GET("shows/{traktSlug}?extended=full")
-  suspend fun fetchShow(
-    @Path("traktSlug") traktSlug: String,
-  ): Show
-
   @GET("shows/popular?extended=full")
   suspend fun fetchPopularShows(
     @Query("genres") genres: String,

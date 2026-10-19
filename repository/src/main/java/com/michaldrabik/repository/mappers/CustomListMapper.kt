@@ -20,7 +20,6 @@ class CustomListMapper @Inject constructor() {
     CustomList(
       id = 0,
       idTrakt = list.ids.trakt,
-      idSlug = list.ids.slug,
       name = list.name,
       description = list.description,
       privacy = list.privacy,
@@ -40,7 +39,6 @@ class CustomListMapper @Inject constructor() {
     CustomList(
       id = list.id,
       idTrakt = list.idTrakt,
-      idSlug = list.idSlug,
       name = list.name,
       description = list.description,
       privacy = list.privacy,
@@ -65,7 +63,6 @@ class CustomListMapper @Inject constructor() {
       id = list.id,
       idTrakt = list.idTrakt,
       idScrob = list.idScrob,
-      idSlug = list.idSlug,
       name = list.name,
       description = list.description,
       privacy = list.privacy,
@@ -85,7 +82,6 @@ class CustomListMapper @Inject constructor() {
     CustomListNetwork(
       ids = IdsList(
         trakt = list.idTrakt ?: -1,
-        slug = list.idSlug,
       ),
       name = list.name,
       description = list.description,

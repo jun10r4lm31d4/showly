@@ -16,13 +16,13 @@ class CreateListCase @Inject constructor(
     name: String,
     description: String?,
   ): CustomList {
-    val list = listsRepository.createList(name, description, null, null)
+    val list = listsRepository.createList(name, description, null)
     scrobQuickSyncManager.scheduleListCreate(list.id)
     return list
   }
 
   suspend fun updateList(list: CustomList): CustomList {
-    val updated = listsRepository.updateList(list.id, null, null, list.name, list.description)
+    val updated = listsRepository.updateList(list.id, null, list.name, list.description)
     scrobQuickSyncManager.scheduleListRename(list.id)
     return updated
   }

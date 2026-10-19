@@ -59,7 +59,6 @@ internal class BackupImportListsRunner @Inject constructor(
   private suspend fun importNewCustomList(backupList: BackupList) {
     val list = CustomList.create().copy(
       idTrakt = backupList.traktId,
-      idSlug = backupList.slugId,
       name = backupList.name,
       description = backupList.description,
     )

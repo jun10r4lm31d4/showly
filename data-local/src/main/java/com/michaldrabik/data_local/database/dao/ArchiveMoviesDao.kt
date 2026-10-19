@@ -18,7 +18,6 @@ interface ArchiveMoviesDao : ArchiveMoviesLocalDataSource {
       "movies.id_trakt, " +
       "movies.id_tmdb, " +
       "movies.id_imdb, " +
-      "movies.id_slug, " +
       "movies.title, " +
       "movies.year, " +
       "movies.overview, " +
@@ -44,7 +43,6 @@ interface ArchiveMoviesDao : ArchiveMoviesLocalDataSource {
       "movies.id_trakt, " +
       "movies.id_tmdb, " +
       "movies.id_imdb, " +
-      "movies.id_slug, " +
       "movies.title, " +
       "movies.year, " +
       "movies.overview, " +

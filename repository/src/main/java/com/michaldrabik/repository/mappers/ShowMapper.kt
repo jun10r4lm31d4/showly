@@ -94,7 +94,6 @@ class ShowMapper @Inject constructor(
       show.ids.tvdb.id,
       show.ids.tmdb.id,
       show.ids.imdb.id,
-      show.ids.slug.id,
       show.ids.tvrage.id,
       show.title,
       show.year,

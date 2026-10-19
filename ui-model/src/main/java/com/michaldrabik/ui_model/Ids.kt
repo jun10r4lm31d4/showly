@@ -6,7 +6,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Ids(
   val trakt: IdTrakt,
-  val slug: IdSlug,
   val tvdb: IdTvdb,
   val imdb: IdImdb,
   val tmdb: IdTmdb,
@@ -16,7 +15,6 @@ data class Ids(
   companion object {
     val EMPTY = Ids(
       IdTrakt(),
-      IdSlug(),
       IdTvdb(),
       IdImdb(),
       IdTmdb(),
@@ -55,10 +53,4 @@ value class IdTmdb(
 @Parcelize
 value class IdTvRage(
   val id: Long = -1,
-) : Id
-
-@JvmInline
-@Parcelize
-value class IdSlug(
-  val id: String = "",
 ) : Id

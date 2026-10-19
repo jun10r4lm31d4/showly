@@ -17,11 +17,6 @@ interface TraktMoviesService {
     @Path("traktId") traktId: Long,
   ): Movie
 
-  @GET("movies/{traktSlug}?extended=full")
-  suspend fun fetchMovie(
-    @Path("traktSlug") traktSlug: String,
-  ): Movie
-
   @GET("movies/popular?extended=full")
   suspend fun fetchPopularMovies(
     @Query("genres") genres: String,

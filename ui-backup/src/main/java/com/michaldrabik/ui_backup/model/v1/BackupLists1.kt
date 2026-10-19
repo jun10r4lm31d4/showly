@@ -9,7 +9,6 @@ data class BackupLists1(
 data class BackupList1(
   @Json(name = "id") val id: Long,
   @Json(name = "tId") val traktId: Long?,
-  @Json(name = "sId") val slugId: String,
   @Json(name = "n") val name: String,
   @Json(name = "d") val description: String?,
   @Json(name = "p") val privacy: String,

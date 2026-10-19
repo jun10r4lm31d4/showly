@@ -2,7 +2,6 @@ package com.michaldrabik.repository.mappers
 
 import com.michaldrabik.data_local.database.model.Movie
 import com.michaldrabik.ui_model.IdImdb
-import com.michaldrabik.ui_model.IdSlug
 import com.michaldrabik.ui_model.IdTmdb
 import com.michaldrabik.ui_model.IdTrakt
 import com.michaldrabik.ui_model.IdTvRage
@@ -17,7 +16,6 @@ class IdsMapper @Inject constructor() {
   fun fromNetwork(ids: IdsNetwork?) =
     Ids(
       IdTrakt(ids?.trakt ?: -1),
-      IdSlug(ids?.slug ?: ""),
       IdTvdb(ids?.tvdb ?: -1),
       IdImdb(ids?.imdb ?: ""),
       IdTmdb(ids?.tmdb ?: -1),
@@ -27,7 +25,6 @@ class IdsMapper @Inject constructor() {
   fun toNetwork(ids: Ids?) =
     IdsNetwork(
       trakt = ids?.trakt?.id,
-      slug = ids?.slug?.id,
       tvdb = ids?.tvdb?.id,
       imdb = ids?.imdb?.id,
       tmdb = ids?.tmdb?.id,
@@ -37,7 +34,6 @@ class IdsMapper @Inject constructor() {
   fun fromDatabase(show: ShowDb?) =
     Ids(
       IdTrakt(show?.idTrakt ?: -1),
-      IdSlug(show?.idSlug ?: ""),
       IdTvdb(show?.idTvdb ?: -1),
       IdImdb(show?.idImdb ?: ""),
       IdTmdb(show?.idTmdb ?: -1),
@@ -47,7 +43,6 @@ class IdsMapper @Inject constructor() {
   fun fromDatabase(movie: Movie?) =
     Ids(
       IdTrakt(movie?.idTrakt ?: -1),
-      IdSlug(movie?.idSlug ?: ""),
       IdTvdb(-1),
       IdImdb(movie?.idImdb ?: ""),
       IdTmdb(movie?.idTmdb ?: -1),

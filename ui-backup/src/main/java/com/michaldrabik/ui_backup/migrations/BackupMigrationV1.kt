@@ -107,7 +107,6 @@ internal object BackupMigrationV1 {
           BackupList(
             id = it.id,
             traktId = it.traktId,
-            slugId = it.slugId,
             name = it.name,
             description = it.description,
             privacy = it.privacy,

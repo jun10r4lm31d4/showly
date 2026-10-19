@@ -16,7 +16,6 @@ data class CustomList(
   @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Long = 0,
   @ColumnInfo(name = "id_trakt") val idTrakt: Long?,
   @ColumnInfo(name = "id_scrob") val idScrob: Long? = null,
-  @ColumnInfo(name = "id_slug") val idSlug: String,
   @ColumnInfo(name = "name") val name: String,
   @ColumnInfo(name = "description") val description: String?,
   @ColumnInfo(name = "privacy") val privacy: String,

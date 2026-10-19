@@ -75,7 +75,6 @@ class MovieMapper @Inject constructor(
       movie.ids.trakt.id,
       movie.ids.tmdb.id,
       movie.ids.imdb.id,
-      movie.ids.slug.id,
       movie.title,
       movie.year,
       movie.overview,

@@ -13,7 +13,6 @@ object TestData {
       idTvdb = 1,
       idTmdb = 1,
       idImdb = "idImdb",
-      idSlug = "idSlug",
       idTvrage = 1,
       title = "Title",
       year = 2000,

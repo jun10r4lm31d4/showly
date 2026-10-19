@@ -7,7 +7,6 @@ import com.michaldrabik.data_local.database.model.MoviesSyncLog
 import com.michaldrabik.data_remote.RemoteDataSource
 import com.michaldrabik.repository.mappers.Mappers
 import com.michaldrabik.ui_model.IdImdb
-import com.michaldrabik.ui_model.IdSlug
 import com.michaldrabik.ui_model.IdTmdb
 import com.michaldrabik.ui_model.IdTrakt
 import com.michaldrabik.ui_model.Movie
@@ -44,14 +43,6 @@ class MovieDetailsRepository @Inject constructor(
 
   suspend fun find(idTmdb: IdTmdb): Movie? {
     val localMovie = localSource.movies.getByTmdbId(idTmdb.id)
-    if (localMovie != null) {
-      return mappers.movie.fromDatabase(localMovie)
-    }
-    return null
-  }
-
-  suspend fun find(idSlug: IdSlug): Movie? {
-    val localMovie = localSource.movies.getBySlug(idSlug.id)
     if (localMovie != null) {
       return mappers.movie.fromDatabase(localMovie)
     }

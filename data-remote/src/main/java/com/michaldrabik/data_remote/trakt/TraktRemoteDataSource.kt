@@ -22,8 +22,6 @@ interface TraktRemoteDataSource {
 
   suspend fun fetchShow(traktId: Long): Show
 
-  suspend fun fetchShow(traktSlug: String): Show
-
   suspend fun fetchPopularShows(
     genres: String,
     networks: String,
@@ -67,8 +65,6 @@ interface TraktRemoteDataSource {
   // Movies
 
   suspend fun fetchMovie(traktId: Long): Movie
-
-  suspend fun fetchMovie(traktSlug: String): Movie
 
   suspend fun fetchPopularMovies(
     genres: String,

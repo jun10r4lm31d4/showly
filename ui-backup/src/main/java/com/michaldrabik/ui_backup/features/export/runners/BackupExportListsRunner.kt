@@ -62,7 +62,6 @@ internal class BackupExportListsRunner @Inject constructor(
         val backupList = BackupList(
           id = list.id,
           traktId = list.idTrakt,
-          slugId = list.idSlug,
           name = list.name,
           description = list.description,
           privacy = list.privacy,

@@ -24,11 +24,7 @@ internal class TraktApi(
 
   override suspend fun fetchShow(traktId: Long) = showsService.fetchShow(traktId)
 
-  override suspend fun fetchShow(traktSlug: String) = showsService.fetchShow(traktSlug)
-
   override suspend fun fetchMovie(traktId: Long) = moviesService.fetchMovie(traktId)
-
-  override suspend fun fetchMovie(traktSlug: String) = moviesService.fetchMovie(traktSlug)
 
   override suspend fun fetchPopularShows(
     genres: String,

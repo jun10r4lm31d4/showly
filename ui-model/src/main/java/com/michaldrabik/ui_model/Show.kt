@@ -32,7 +32,6 @@ data class Show(
     val EMPTY = Show(
       ids = Ids(
         trakt = IdTrakt(id = 0),
-        slug = IdSlug(id = ""),
         tvdb = IdTvdb(id = 0),
         imdb = IdImdb(id = ""),
         tmdb = IdTmdb(id = 0),

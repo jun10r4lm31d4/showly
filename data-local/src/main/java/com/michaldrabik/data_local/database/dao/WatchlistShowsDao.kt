@@ -19,7 +19,6 @@ interface WatchlistShowsDao : WatchlistShowsLocalDataSource {
       "shows.id_tvdb, " +
       "shows.id_tmdb, " +
       "shows.id_imdb, " +
-      "shows.id_slug, " +
       "shows.id_tvrage, " +
       "shows.title, " +
       "shows.year, " +
