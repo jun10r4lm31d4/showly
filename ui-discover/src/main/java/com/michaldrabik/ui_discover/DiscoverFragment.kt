@@ -157,12 +157,7 @@ internal class DiscoverFragment :
   private fun setupRecycler() {
     layoutManager = DiscoverLayoutManagerProvider.provideLayoutManager(requireContext())
     adapter = DiscoverAdapter(
-      itemClickListener = {
-        when (it.image.type) {
-          ImageType.TWITTER -> openWebUrl(Config.TWITTER_URL)
-          else -> openDetails(it)
-        }
-      },
+      itemClickListener = { openDetails(it) },
       itemLongClickListener = { item -> openShowMenu(item.show) },
       missingImageListener = { ids, force -> viewModel.loadMissingImage(ids, force) },
       listChangeListener = { binding.discoverRecycler.scrollToPosition(0) },

@@ -44,7 +44,6 @@ class SettingsMiscFragment : BaseFragment<SettingsMiscViewModel>(R.layout.fragme
       settingsRateApp.onClick { PlayStoreHelper.openPlayStorePage(requireActivity()) }
       settingsDeleteCache.onClick { viewModel.deleteImagesCache(requireAppContext()) }
 
-      settingsTwitterIcon.onClick { openWebLink(Config.TWITTER_URL) }
       settingsTraktIcon.onClick { openWebLink(Config.TRAKT_URL) }
       settingsTmdbIcon.onClick { openWebLink(Config.TMDB_URL) }
       settingsInstagramIcon.onClick { openWebLink(Config.INSTAGRAM_URL) }

@@ -467,7 +467,6 @@ class MainActivity :
       .setView(WhatsNewView(this))
       .setCancelable(false)
       .setPositiveButton(com.michaldrabik.ui_base.R.string.textClose) { _, _ -> }
-      .setNeutralButton("Twitter") { _, _ -> openWebUrl(Config.TWITTER_URL) }
       .show()
   }
 

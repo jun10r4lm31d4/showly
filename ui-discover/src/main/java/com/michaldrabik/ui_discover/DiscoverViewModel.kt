@@ -17,7 +17,6 @@ import com.michaldrabik.ui_base.viewmodel.ChannelsDelegate
 import com.michaldrabik.ui_base.viewmodel.DefaultChannelsDelegate
 import com.michaldrabik.ui_discover.cases.DiscoverFiltersCase
 import com.michaldrabik.ui_discover.cases.DiscoverShowsCase
-import com.michaldrabik.ui_discover.cases.DiscoverTwitterCase
 import com.michaldrabik.ui_discover.recycler.DiscoverListItem
 import com.michaldrabik.ui_model.DiscoverFilters
 import com.michaldrabik.ui_model.Image
@@ -38,7 +37,6 @@ import javax.inject.Inject
 internal class DiscoverViewModel @Inject constructor(
   private val showsCase: DiscoverShowsCase,
   private val filtersCase: DiscoverFiltersCase,
-  private val twitterCase: DiscoverTwitterCase,
   private val imagesProvider: ShowImagesProvider,
   workManager: WorkManager,
 ) : ViewModel(),
@@ -139,11 +137,6 @@ internal class DiscoverViewModel @Inject constructor(
         loadingJob.cancel()
       }
     }
-  }
-
-  fun cancelTwitterAd() {
-    twitterCase.cancelTwitterAd()
-    loadShows()
   }
 
   fun toggleCollection() {
