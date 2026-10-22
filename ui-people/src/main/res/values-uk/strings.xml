@@ -3,6 +3,7 @@
   <string name="textAge">Вік:</string>
   <string name="textBorn">Народився:</string>
   <string name="textDied">Помер:</string>
+  <string name="textCredits" comment="List of shows and movies the person appears on">Фільмографія</string>
   <string name="textEpisodes">Серії</string>
   <string name="textGalleryEmpty">Зображення відсутні</string>
 </resources>

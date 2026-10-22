@@ -3,6 +3,7 @@
   <string name="textAge">Wiek:</string>
   <string name="textBorn">Urodzony:</string>
   <string name="textDied">Zmarł:</string>
+  <string name="textCredits" comment="List of shows and movies the person appears on">Produkcje</string>
   <string name="textEpisodes">Odcinki</string>
   <string name="textGalleryEmpty">Brak dostępnych obrazów</string>
 </resources>

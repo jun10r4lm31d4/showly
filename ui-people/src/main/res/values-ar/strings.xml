@@ -3,6 +3,7 @@
   <string name="textAge">العمر:</string>
   <string name="textBorn">ولد في:</string>
   <string name="textDied">توفي في:</string>
+  <string name="textCredits" comment="List of shows and movies the person appears on">الأعمال</string>
   <string name="textEpisodes">حلقات</string>
   <string name="textGalleryEmpty">لا توجد صور متاحة</string>
 </resources>

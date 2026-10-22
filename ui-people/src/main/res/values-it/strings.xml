@@ -3,6 +3,7 @@
   <string name="textAge">Età:</string>
   <string name="textBorn">Nato:</string>
   <string name="textDied">Morto:</string>
+  <string name="textCredits" comment="List of shows and movies the person appears on">Crediti</string>
   <string name="textEpisodes">Episodi</string>
   <string name="textGalleryEmpty">Nessuna immagine disponibile</string>
 </resources>

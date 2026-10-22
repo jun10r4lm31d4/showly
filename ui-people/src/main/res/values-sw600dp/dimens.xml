@@ -12,5 +12,6 @@
   <dimen name="personCreditsImageGuide">83dp</dimen>
   <dimen name="personCreditsHeaderTextSize">22sp</dimen>
 
-    <item name="personGalleryImageRatio" format="float" type="dimen">0.67</item>
+  <dimen name="personGalleryBackArrowMargin">8dp</dimen>
+  <item name="personGalleryImageRatio" format="float" type="dimen">0.67</item>
 </resources>

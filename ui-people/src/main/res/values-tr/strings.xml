@@ -3,6 +3,7 @@
   <string name="textAge">Yaş:</string>
   <string name="textBorn">Doğum:</string>
   <string name="textDied">Ölüm:</string>
+  <string name="textCredits" comment="List of shows and movies the person appears on">Katkıda Bulunanlar</string>
   <string name="textEpisodes">Bölümler</string>
   <string name="textGalleryEmpty">Resim mevcut değil</string>
 </resources>

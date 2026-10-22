@@ -3,6 +3,7 @@
   <string name="textAge">年龄：</string>
   <string name="textBorn">出生：</string>
   <string name="textDied">去世：</string>
+  <string name="textCredits" comment="List of shows and movies the person appears on">出演影视</string>
   <string name="textEpisodes">剧集</string>
   <string name="textGalleryEmpty">暂无图片</string>
 </resources>

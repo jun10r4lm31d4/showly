@@ -3,6 +3,7 @@
   <string name="textAge">Ikä:</string>
   <string name="textBorn">Syntynyt:</string>
   <string name="textDied">Kuollut:</string>
+  <string name="textCredits" comment="List of shows and movies the person appears on">Työt</string>
   <string name="textEpisodes">Jaksot</string>
   <string name="textGalleryEmpty">Ei kuvia saatavilla</string>
 </resources>

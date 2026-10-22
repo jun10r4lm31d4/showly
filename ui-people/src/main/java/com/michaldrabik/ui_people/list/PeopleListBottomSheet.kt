@@ -98,6 +98,8 @@ class PeopleListBottomSheet : BaseBottomSheetFragment(R.layout.view_people_list)
       onItemClickListener = { openDetails(it) },
     )
     with(binding.viewPeopleListRecycler) {
+      adapter = this@PeopleListBottomSheet.adapter
+      layoutManager = this@PeopleListBottomSheet.layoutManager
       (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
     }
   }

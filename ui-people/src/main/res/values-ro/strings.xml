@@ -3,6 +3,7 @@
   <string name="textAge">Vârstă:</string>
   <string name="textBorn">Născut:</string>
   <string name="textDied">Decedat:</string>
+  <string name="textCredits" comment="List of shows and movies the person appears on">Credite</string>
   <string name="textEpisodes">Episoade</string>
   <string name="textGalleryEmpty">Nu există imagini disponibile</string>
 </resources>

@@ -3,6 +3,7 @@
   <string name="textAge">Возраст:</string>
   <string name="textBorn">Родился:</string>
   <string name="textDied">Умер:</string>
+  <string name="textCredits" comment="List of shows and movies the person appears on">Авторство</string>
   <string name="textEpisodes">Серии</string>
   <string name="textGalleryEmpty">Изображения отсутствуют</string>
 </resources>
