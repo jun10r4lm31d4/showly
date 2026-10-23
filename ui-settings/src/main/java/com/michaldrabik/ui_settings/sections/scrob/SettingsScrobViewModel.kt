@@ -125,7 +125,7 @@ class SettingsScrobViewModel
       if (watchlistListId <= 0) return ""
       return localSource.customLists
         .getAll()
-        .firstOrNull { it.id == watchlistListId }
+        .firstOrNull { it.idScrob == watchlistListId }
         ?.name
         .orEmpty()
     }

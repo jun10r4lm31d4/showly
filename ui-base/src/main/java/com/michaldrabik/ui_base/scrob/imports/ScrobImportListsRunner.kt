@@ -146,7 +146,7 @@ class ScrobImportListsRunner @Inject constructor(
         itemCount = remoteList.itemCount.toLong(),
         createdAt = nowUtc(),
         updatedAt = nowUtc(),
-        id = remoteList.id,
+        idScrob = remoteList.id,
       )
       return localSource.customLists.insert(listOf(mappers.customList.toDatabase(list))).first()
     }
