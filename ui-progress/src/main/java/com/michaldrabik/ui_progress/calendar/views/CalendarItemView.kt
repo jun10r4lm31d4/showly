@@ -91,7 +91,11 @@ class CalendarItemView : ShowView<CalendarListItem.Episode> {
 
       val isNewSeason = item.episode.number == 1
       if (isNewSeason) {
-        val title = String.format(ENGLISH, context.getString(com.michaldrabik.ui_base.R.string.textSeason), item.episode.season)
+        val title = String.format(
+          ENGLISH,
+          context.getString(com.michaldrabik.ui_base.R.string.textSeason),
+          item.episode.season,
+        )
         calendarItemSubtitle.text = context.getString(R.string.textNewSeason)
         calendarItemSubtitle2.text =
           if (item.isSpoilerHidden && item.spoilers?.isEpisodeTitleHidden == true) {

@@ -106,7 +106,9 @@ class HiddenFragment :
       adapter = this@HiddenFragment.adapter
       layoutManager = this@HiddenFragment.layoutManager
       (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
-      addItemDecoration(CollectionMovieListItemDecoration(requireContext(), com.michaldrabik.ui_base.R.dimen.spaceSmall))
+      addItemDecoration(
+        CollectionMovieListItemDecoration(requireContext(), com.michaldrabik.ui_base.R.dimen.spaceSmall),
+      )
     }
   }
 

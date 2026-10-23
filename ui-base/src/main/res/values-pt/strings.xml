@@ -60,15 +60,15 @@
   <string name="textAiredAlready">Exibido</string>
   <string name="textAirsNow">Passando Agora</string>
   <plurals name="textDaysToAir">
-    <item quantity="one">Exibe amanhã</item>
+    <item quantity="one">Exibe em %d dia</item>
     <item quantity="other">Exibe em %d dias</item>
   </plurals>
   <plurals name="textHoursToAir">
-    <item quantity="one">Exibe em 1 hora</item>
+    <item quantity="one">Exibe em %d hora</item>
     <item quantity="other">Exibe em %d horas</item>
   </plurals>
   <plurals name="textMinutesToAir">
-    <item quantity="one">Exibe agora</item>
+    <item quantity="one">Exibe em %d minuto</item>
     <item quantity="other">Exibe em %d minutos</item>
   </plurals>
   <string name="textToday">Hoje</string>

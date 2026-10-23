@@ -80,9 +80,18 @@ class MyShowHeaderView : FrameLayout {
         myShowsNetworksChip.isSelected = networks.isNotEmpty()
         myShowsNetworksChip.onClick { networksClickListener?.invoke() }
         myShowsNetworksChip.text = when {
-          networks.isEmpty() -> context.getString(com.michaldrabik.ui_base.R.string.textNetworks).filter { it.isLetter() }
-          networks.size == 1 -> networks[0].channels.first()
-          else -> throw IllegalStateException()
+          networks.isEmpty() -> {
+            context
+              .getString(
+                com.michaldrabik.ui_base.R.string.textNetworks,
+              ).filter { it.isLetter() }
+          }
+          networks.size == 1 -> {
+            networks[0].channels.first()
+          }
+          else -> {
+            throw IllegalStateException()
+          }
         }
       }
 

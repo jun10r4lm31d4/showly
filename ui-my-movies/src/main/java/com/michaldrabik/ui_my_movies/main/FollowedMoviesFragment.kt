@@ -150,10 +150,16 @@ class FollowedMoviesFragment :
       followedMoviesRoot.doOnApplyWindowInsets { _, insets, _, _ ->
         val tabletOffset = if (isTablet) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) else 0
         val statusBarSize = insets.getInsets(WindowInsetsCompat.Type.systemBars()).top + tabletOffset
-        followedMoviesSearchView.applyWindowInsetBehaviour(dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal) + statusBarSize)
-        followedMoviesSearchView.updateTopMargin(dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) + statusBarSize)
+        followedMoviesSearchView.applyWindowInsetBehaviour(
+          dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal) + statusBarSize,
+        )
+        followedMoviesSearchView.updateTopMargin(
+          dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) + statusBarSize,
+        )
         followedMoviesTabs.updateTopMargin(dimenToPx(R.dimen.myMoviesSearchViewPadding) + statusBarSize)
-        followedMoviesModeTabs.updateTopMargin(dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionTabsMargin) + statusBarSize)
+        followedMoviesModeTabs.updateTopMargin(
+          dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionTabsMargin) + statusBarSize,
+        )
         followedMoviesIcons.updateTopMargin(dimenToPx(R.dimen.myMoviesSearchViewPadding) + statusBarSize)
         followedMoviesSearchLocalView.updateTopMargin(dimenToPx(R.dimen.myMoviesSearchLocalViewPadding) + statusBarSize)
       }

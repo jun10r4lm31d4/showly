@@ -79,8 +79,12 @@ class SearchFragment :
   private var layoutManager: LayoutManager? = null
   private var suggestionsLayoutManager: LayoutManager? = null
 
-  private val swipeRefreshEndOffset by lazy { requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshEndOffset) }
-  private val swipeRefreshStartOffset by lazy { requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshStartOffset) }
+  private val swipeRefreshEndOffset by lazy {
+    requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshEndOffset)
+  }
+  private val swipeRefreshStartOffset by lazy {
+    requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshStartOffset)
+  }
 
   private var headerTranslation = 0F
 
@@ -213,7 +217,9 @@ class SearchFragment :
       searchSwipeRefresh.apply {
         isEnabled = false
         val color = requireContext().colorFromAttr(androidx.appcompat.R.attr.colorAccent)
-        setProgressBackgroundColorSchemeColor(requireContext().colorFromAttr(com.michaldrabik.ui_base.R.attr.colorSearchViewBackground))
+        setProgressBackgroundColorSchemeColor(
+          requireContext().colorFromAttr(com.michaldrabik.ui_base.R.attr.colorSearchViewBackground),
+        )
         setColorSchemeColors(color, color, color)
         setProgressViewOffset(false, swipeRefreshStartOffset, swipeRefreshEndOffset)
       }

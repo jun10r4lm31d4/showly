@@ -60,15 +60,15 @@
   <string name="textAiredAlready">Diffusé</string>
   <string name="textAirsNow">Diffusé maintenant</string>
   <plurals name="textDaysToAir">
-    <item quantity="one">Diffusé demain</item>
+    <item quantity="one">Diffusé dans %d jour</item>
     <item quantity="other">Diffusé dans %d jours</item>
   </plurals>
   <plurals name="textHoursToAir">
-    <item quantity="one">Diffusé dans 1 heure</item>
+    <item quantity="one">Diffusé dans %d heure</item>
     <item quantity="other">Diffusé dans %d heures</item>
   </plurals>
   <plurals name="textMinutesToAir">
-    <item quantity="one">Diffusé maintenant</item>
+    <item quantity="one">Diffusé dans %d minute</item>
     <item quantity="other">Diffusé dans %d minutes</item>
   </plurals>
   <string name="textToday">Aujourd\'hui</string>

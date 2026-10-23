@@ -88,7 +88,8 @@ class MyMovieAllView : MovieView<MyMoviesItem> {
       if (item.movie.runtime > 0 && item.sortOrder == SortOrder.RUNTIME) {
         collectionMovieRuntimeIcon.visible()
         collectionMovieRuntime.visible()
-        collectionMovieRuntime.text = "${item.movie.runtime} ${context.getString(com.michaldrabik.ui_base.R.string.textMinutesShort)}"
+        collectionMovieRuntime.text =
+          "${item.movie.runtime} ${context.getString(com.michaldrabik.ui_base.R.string.textMinutesShort)}"
       }
     }
     loadImage(item)

@@ -104,10 +104,18 @@ internal class DiscoverFiltersNetworksBottomSheet : BaseBottomSheetFragment(R.la
           setEnsureMinTouchTargetSize(false)
           setChipIconResource(icon)
           chipBackgroundColor =
-            ContextCompat.getColorStateList(requireContext(), com.michaldrabik.ui_base.R.color.selector_discover_chip_background)
+            ContextCompat.getColorStateList(
+              requireContext(),
+              com.michaldrabik.ui_base.R.color.selector_discover_chip_background,
+            )
           setChipStrokeColorResource(com.michaldrabik.ui_base.R.color.selector_discover_chip_stroke)
           setChipStrokeWidthResource(com.michaldrabik.ui_base.R.dimen.discoverFilterChipStroke)
-          setTextColor(ContextCompat.getColorStateList(requireContext(), com.michaldrabik.ui_base.R.color.selector_discover_chip_text))
+          setTextColor(
+            ContextCompat.getColorStateList(
+              requireContext(),
+              com.michaldrabik.ui_base.R.color.selector_discover_chip_text,
+            ),
+          )
           isChecked = network.name in networksNames
         }
         binding.networksChipGroup.addView(chip)

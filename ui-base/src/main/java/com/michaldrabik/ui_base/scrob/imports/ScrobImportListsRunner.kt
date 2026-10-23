@@ -116,8 +116,7 @@ class ScrobImportListsRunner @Inject constructor(
         val remoteId = list.idScrob
           ?: return@mapNotNull null
         list to remoteId
-      }
-      .filter { (_, remoteId) -> remoteId !in remoteIds }
+      }.filter { (_, remoteId) -> remoteId !in remoteIds }
       .map { (list, _) -> list }
     if (toRemove.isEmpty()) {
       Timber.d("Scrob lists reconciliation: nothing to remove.")
@@ -181,7 +180,10 @@ class ScrobImportListsRunner @Inject constructor(
         when {
           item.media.isMovie() && moviesEnabled -> {
             val tmdbId = item.media.tmdbId ?: return@forEach
-            val remoteMovie = resolveMovie(tmdbId) ?: run { hadUnresolvedItems = true; return@forEach }
+            val remoteMovie = resolveMovie(tmdbId) ?: run {
+              hadUnresolvedItems = true
+              return@forEach
+            }
 
             val movie = mappers.movie.fromNetwork(remoteMovie)
             remoteKeys += movie.traktId to Mode.MOVIES.type
@@ -211,7 +213,10 @@ class ScrobImportListsRunner @Inject constructor(
 
           item.media.isEpisode() || item.media.isShowLevel() -> {
             val showTmdbId = item.media.showTmdbId ?: item.media.tmdbId ?: return@forEach
-            val remoteShow = resolveShow(showTmdbId) ?: run { hadUnresolvedItems = true; return@forEach }
+            val remoteShow = resolveShow(showTmdbId) ?: run {
+              hadUnresolvedItems = true
+              return@forEach
+            }
 
             val show = mappers.show.fromNetwork(remoteShow)
             remoteKeys += show.traktId to Mode.SHOWS.type

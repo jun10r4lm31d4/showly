@@ -95,7 +95,9 @@ class MainActivity :
     super.onCreate(savedInstanceState)
     enableEdgeToEdge(
       statusBarStyle = SystemBarStyle.auto(TRANSPARENT, TRANSPARENT),
-      navigationBarStyle = SystemBarStyle.dark(ContextCompat.getColor(this, com.michaldrabik.ui_base.R.color.colorBlackTranslucentMedium)),
+      navigationBarStyle = SystemBarStyle.dark(
+        ContextCompat.getColor(this, com.michaldrabik.ui_base.R.color.colorBlackTranslucentMedium),
+      ),
     )
 
     binding = ActivityMainBinding.inflate(layoutInflater)
@@ -449,8 +451,12 @@ class MainActivity :
           binding.bottomMenuView.binding.bottomNavigationView.selectedItemId = R.id.menuDiscover
         }
         when (currentDestination?.id) {
-          com.michaldrabik.ui_navigation.R.id.discoverFragment -> navigate(com.michaldrabik.ui_navigation.R.id.actionDiscoverFragmentToSearchFragment)
-          com.michaldrabik.ui_navigation.R.id.discoverMoviesFragment -> navigate(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToSearchFragment)
+          com.michaldrabik.ui_navigation.R.id.discoverFragment -> navigate(
+            com.michaldrabik.ui_navigation.R.id.actionDiscoverFragmentToSearchFragment,
+          )
+          com.michaldrabik.ui_navigation.R.id.discoverMoviesFragment -> navigate(
+            com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToSearchFragment,
+          )
         }
         bundle?.clear()
       } catch (error: Throwable) {

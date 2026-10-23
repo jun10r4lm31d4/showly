@@ -40,7 +40,15 @@ class CalendarMoviesHeaderView : LinearLayout {
       calendarMoviesHeaderText.setText(item.textResId)
     }
     updatePadding(
-      top = context.dimenToPx(if (position == 1) com.michaldrabik.ui_base.R.dimen.spaceMedium else com.michaldrabik.ui_base.R.dimen.spaceBig),
+      top = context.dimenToPx(
+        if (position ==
+          1
+        ) {
+          com.michaldrabik.ui_base.R.dimen.spaceMedium
+        } else {
+          com.michaldrabik.ui_base.R.dimen.spaceBig
+        },
+      ),
     )
   }
 }

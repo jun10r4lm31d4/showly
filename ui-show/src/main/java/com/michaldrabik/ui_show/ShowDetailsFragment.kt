@@ -168,7 +168,10 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
           showDetailsMainLayout
             .updatePadding(top = inset.top)
         }
-        showDetailsMainContent.updatePadding(bottom = inset.bottom + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal))
+        showDetailsMainContent.updatePadding(
+          bottom =
+            inset.bottom + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal),
+        )
         (showDetailsBackArrow.layoutParams as MarginLayoutParams).updateMargins(top = inset.top)
       }
     }
@@ -191,7 +194,8 @@ class ShowDetailsFragment : BaseFragment<ShowDetailsViewModel>(R.layout.fragment
             isEnabled = show.trailer.isNotBlank()
             alpha = if (isEnabled) 1.0F else 0.35F
             onClick {
-              openWebUrl(show.trailer) ?: showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorCouldNotFindApp))
+              openWebUrl(show.trailer)
+                ?: showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorCouldNotFindApp))
             }
           }
           showDetailsActions.linksChip.onClick {

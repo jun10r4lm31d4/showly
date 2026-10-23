@@ -110,7 +110,8 @@ class CollectionMovieView : MovieView<CollectionListItem.MovieItem> {
       if (item.movie.runtime > 0 && item.sortOrder == RUNTIME) {
         collectionMovieRuntimeIcon.visible()
         collectionMovieRuntime.visible()
-        collectionMovieRuntime.text = "${item.movie.runtime} ${context.getString(com.michaldrabik.ui_base.R.string.textMinutesShort)}"
+        collectionMovieRuntime.text =
+          "${item.movie.runtime} ${context.getString(com.michaldrabik.ui_base.R.string.textMinutesShort)}"
       }
     }
 

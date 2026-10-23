@@ -369,7 +369,13 @@ class ListDetailsFragment :
             fragmentListDetailsRecycler.doOnApplyWindowInsets { view, insets, _, _ ->
               val inset = insets.getInsets(WindowInsetsCompat.Type.systemBars())
               view.updatePadding(
-                top = if (layoutManager is GridLayoutManager) dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceTiny) else 0,
+                top = if (layoutManager is GridLayoutManager) {
+                  dimenToPx(
+                    com.michaldrabik.ui_base.R.dimen.spaceTiny,
+                  )
+                } else {
+                  0
+                },
                 bottom = inset.bottom + recyclerPaddingBottom,
               )
             }

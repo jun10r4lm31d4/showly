@@ -37,7 +37,15 @@ class ScrobQuickSyncManager @Inject constructor(
     if (!ensureLogged()) return
     val ops = moviesTmdbIds
       .filter { it > 0 }
-      .map { ScrobPendingOp(op = Op.MOVIE.slug, watched = true, tmdbId = it, watchedAtMillis = timestamp(customDate), createdAt = nowUtcMillis()) }
+      .map {
+        ScrobPendingOp(
+          op = Op.MOVIE.slug,
+          watched = true,
+          tmdbId = it,
+          watchedAtMillis = timestamp(customDate),
+          createdAt = nowUtcMillis(),
+        )
+      }
     enqueue(ops)
   }
 
@@ -45,7 +53,15 @@ class ScrobQuickSyncManager @Inject constructor(
     if (!ensureLogged()) return
     val ops = moviesTmdbIds
       .filter { it > 0 }
-      .map { ScrobPendingOp(op = Op.MOVIE.slug, watched = false, tmdbId = it, watchedAtMillis = nowUtcMillis(), createdAt = nowUtcMillis()) }
+      .map {
+        ScrobPendingOp(
+          op = Op.MOVIE.slug,
+          watched = false,
+          tmdbId = it,
+          watchedAtMillis = nowUtcMillis(),
+          createdAt = nowUtcMillis(),
+        )
+      }
     enqueue(ops)
   }
 
@@ -120,7 +136,15 @@ class ScrobQuickSyncManager @Inject constructor(
     }
     enqueue(
       listOf(
-        ScrobPendingOp(op = Op.SEASON.slug, watched = true, tmdbId = showTmdbId, showTmdbId = showTmdbId, seasonNumber = seasonNumber, watchedAtMillis = timestamp(customDate), createdAt = nowUtcMillis()),
+        ScrobPendingOp(
+          op = Op.SEASON.slug,
+          watched = true,
+          tmdbId = showTmdbId,
+          showTmdbId = showTmdbId,
+          seasonNumber = seasonNumber,
+          watchedAtMillis = timestamp(customDate),
+          createdAt = nowUtcMillis(),
+        ),
       ),
     )
   }
@@ -136,7 +160,15 @@ class ScrobQuickSyncManager @Inject constructor(
     }
     enqueue(
       listOf(
-        ScrobPendingOp(op = Op.SEASON.slug, watched = false, tmdbId = showTmdbId, showTmdbId = showTmdbId, seasonNumber = seasonNumber, watchedAtMillis = nowUtcMillis(), createdAt = nowUtcMillis()),
+        ScrobPendingOp(
+          op = Op.SEASON.slug,
+          watched = false,
+          tmdbId = showTmdbId,
+          showTmdbId = showTmdbId,
+          seasonNumber = seasonNumber,
+          watchedAtMillis = nowUtcMillis(),
+          createdAt = nowUtcMillis(),
+        ),
       ),
     )
   }
@@ -152,7 +184,14 @@ class ScrobQuickSyncManager @Inject constructor(
     }
     enqueue(
       listOf(
-        ScrobPendingOp(op = Op.SHOW.slug, watched = true, tmdbId = showTmdbId, showTmdbId = showTmdbId, watchedAtMillis = timestamp(customDate), createdAt = nowUtcMillis()),
+        ScrobPendingOp(
+          op = Op.SHOW.slug,
+          watched = true,
+          tmdbId = showTmdbId,
+          showTmdbId = showTmdbId,
+          watchedAtMillis = timestamp(customDate),
+          createdAt = nowUtcMillis(),
+        ),
       ),
     )
   }
@@ -165,7 +204,14 @@ class ScrobQuickSyncManager @Inject constructor(
     }
     enqueue(
       listOf(
-        ScrobPendingOp(op = Op.SHOW.slug, watched = false, tmdbId = showTmdbId, showTmdbId = showTmdbId, watchedAtMillis = nowUtcMillis(), createdAt = nowUtcMillis()),
+        ScrobPendingOp(
+          op = Op.SHOW.slug,
+          watched = false,
+          tmdbId = showTmdbId,
+          showTmdbId = showTmdbId,
+          watchedAtMillis = nowUtcMillis(),
+          createdAt = nowUtcMillis(),
+        ),
       ),
     )
   }
@@ -349,8 +395,12 @@ class ScrobQuickSyncManager @Inject constructor(
     if (!ensureListPushed(localListId)) return
     val mediaType =
       when (type) {
-        "movie" -> MEDIA_TYPE_MOVIE
-        "show" -> MEDIA_TYPE_SERIES
+        "movie" -> {
+          MEDIA_TYPE_MOVIE
+        }
+        "show" -> {
+          MEDIA_TYPE_SERIES
+        }
         else -> {
           Timber.d("Skipped Scrob list push. Unknown type '$type'.")
           return

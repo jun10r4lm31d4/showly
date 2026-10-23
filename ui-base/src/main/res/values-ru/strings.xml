@@ -62,19 +62,19 @@
   <string name="textAiredAlready">Вышло</string>
   <string name="textAirsNow">Идет сейчас</string>
   <plurals name="textDaysToAir">
-    <item quantity="one">Выходит завтра</item>
+    <item quantity="one">Выходит через %d день</item>
     <item quantity="few">Выходит через %d дня</item>
     <item quantity="many">Выходит через %d дней</item>
     <item quantity="other">Выходит через %d дней</item>
   </plurals>
   <plurals name="textHoursToAir">
-    <item quantity="one">Выходит через 1 час</item>
+    <item quantity="one">Выходит через %d час</item>
     <item quantity="few">Выходит через %d часа</item>
     <item quantity="many">Выходит через %d часов</item>
     <item quantity="other">Выходит через %d часов</item>
   </plurals>
   <plurals name="textMinutesToAir">
-    <item quantity="one">Выходит сейчас</item>
+    <item quantity="one">Выходит через %d минуту</item>
     <item quantity="few">Выходит через %d минуты</item>
     <item quantity="many">Выходит через %d минут</item>
     <item quantity="other">Выходит через %d минут</item>

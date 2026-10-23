@@ -71,9 +71,7 @@ class CreateListViewModel @Inject constructor(
     }
   }
 
-  private suspend fun handleError(
-    defaultErrorMessage: Int,
-  ) {
+  private suspend fun handleError(defaultErrorMessage: Int) {
     messageChannel.send(MessageEvent.Error(defaultErrorMessage))
   }
 

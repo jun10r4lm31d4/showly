@@ -2,6 +2,7 @@ package com.michaldrabik.showly2.ui.views
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -48,7 +49,9 @@ class BottomMenuView : FrameLayout {
 
   private val screenWidth by lazy { screenWidth() }
   private val itemIdleColor by lazy { context.colorFromAttr(com.michaldrabik.ui_base.R.attr.colorBottomMenuItem) }
-  private val itemSelectedColor by lazy { context.colorFromAttr(com.michaldrabik.ui_base.R.attr.colorBottomMenuItemChecked) }
+  private val itemSelectedColor by lazy {
+    context.colorFromAttr(com.michaldrabik.ui_base.R.attr.colorBottomMenuItemChecked)
+  }
   private val animations = mutableListOf<ViewPropertyAnimator?>()
 
   private var touchX = 0F
@@ -140,6 +143,7 @@ class BottomMenuView : FrameLayout {
     }
   }
 
+  @SuppressLint("RestrictedApi")
   private fun disableTooltips() {
     val content = binding.bottomNavigationView.getChildAt(0)
     if (content is ViewGroup) {

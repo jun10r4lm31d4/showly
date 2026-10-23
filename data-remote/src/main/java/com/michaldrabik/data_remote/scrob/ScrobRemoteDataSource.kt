@@ -82,7 +82,7 @@ interface ScrobRemoteDataSource {
   suspend fun removeShowFromHistory(seriesTmdbId: Long)
 
   /** Returns true if the user has configured the Scrob server connection. */
-  //TODO: change function to test connection with apk and url
+  // TODO: change function to test connection with apk and url
   fun isLogged(): Boolean
 }
 

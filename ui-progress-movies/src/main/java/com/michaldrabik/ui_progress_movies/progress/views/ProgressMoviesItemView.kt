@@ -152,7 +152,8 @@ class ProgressMoviesItemView : MovieView<ProgressMovieListItem.MovieItem> {
 
       progressMovieItemRuntimeIcon.visible()
       progressMovieItemRuntime.visible()
-      progressMovieItemRuntime.text = "${item.movie.runtime} ${context.getString(com.michaldrabik.ui_base.R.string.textMinutesShort)}"
+      progressMovieItemRuntime.text =
+        "${item.movie.runtime} ${context.getString(com.michaldrabik.ui_base.R.string.textMinutesShort)}"
     }
   }
 

@@ -54,20 +54,8 @@ internal class ScrobApi @Inject constructor(
   }
 
   override suspend fun deleteList(listId: Long) {
-    if (!isLogged()) {
-      throw ScrobAuthException("Not logged in to Scrob.")
-    }
-    try {
+    runCatchingSession {
       syncService.deleteList(listId)
-    } catch (e: HttpException) {
-      // Already gone remotely counts as applied, keeping retries idempotent.
-      if (e.code() == 404) return
-      if (e.code() == 401) {
-        throw ScrobAuthException("Scrob session expired. Please log in again.")
-      }
-      throw ScrobAuthException("Scrob request failed (${e.code()}).")
-    } catch (e: IOException) {
-      throw ScrobAuthException("Could not reach the Scrob server. $e")
     }
   }
 
@@ -88,20 +76,8 @@ internal class ScrobApi @Inject constructor(
     listId: Long,
     itemId: Long,
   ) {
-    if (!isLogged()) {
-      throw ScrobAuthException("Not logged in to Scrob.")
-    }
-    try {
+    runCatchingSession {
       syncService.removeListItem(listId, itemId)
-    } catch (e: HttpException) {
-      // Already gone remotely counts as applied, keeping retries idempotent.
-      if (e.code() == 404) return
-      if (e.code() == 401) {
-        throw ScrobAuthException("Scrob session expired. Please log in again.")
-      }
-      throw ScrobAuthException("Scrob request failed (${e.code()}).")
-    } catch (e: IOException) {
-      throw ScrobAuthException("Could not reach the Scrob server. $e")
     }
   }
 

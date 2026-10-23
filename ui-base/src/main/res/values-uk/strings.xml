@@ -62,19 +62,19 @@
   <string name="textAiredAlready">Вийшло</string>
   <string name="textAirsNow">Йде зараз</string>
   <plurals name="textDaysToAir">
-    <item quantity="one">Виходить завтра</item>
+    <item quantity="one">Виходить через %d день</item>
     <item quantity="few">Виходить через %d дні</item>
     <item quantity="many">Виходить через %d днів</item>
     <item quantity="other">Виходить через %d днів</item>
   </plurals>
   <plurals name="textHoursToAir">
-    <item quantity="one">Виходить через 1 годину</item>
+    <item quantity="one">Виходить через %d годину</item>
     <item quantity="few">Виходить через %d години</item>
     <item quantity="many">Виходить через %d годин</item>
     <item quantity="other">Виходить через %d годин</item>
   </plurals>
   <plurals name="textMinutesToAir">
-    <item quantity="one">Виходить зараз</item>
+    <item quantity="one">Виходить через %d хвилину</item>
     <item quantity="few">Виходить через %d хвилини</item>
     <item quantity="many">Виходить через %d хвилин</item>
     <item quantity="other">Виходить через %d хвилин</item>

@@ -5,7 +5,7 @@ import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.Interceptor
 import okhttp3.Response
 
-class ScrobBaseUrlInterceptor (
+class ScrobBaseUrlInterceptor(
   private val scrobProvider: ScrobProvider,
 ) : Interceptor {
 

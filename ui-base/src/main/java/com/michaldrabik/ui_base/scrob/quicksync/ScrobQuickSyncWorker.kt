@@ -132,7 +132,9 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
   private fun retryOrFail(): Result =
     when {
       runAttemptCount < MAX_RETRY_COUNT -> Result.retry()
-      else -> Result.failure().also { Timber.w("Scrob QuickSync failed after $runAttemptCount attempts. Queue kept for next drain.") }
+      else -> Result.failure().also {
+        Timber.w("Scrob QuickSync failed after $runAttemptCount attempts. Queue kept for next drain.")
+      }
     }
 
   private suspend fun drainLegacyPayload(): Result? {
@@ -177,8 +179,10 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
   private suspend fun applyOp(op: ScrobPendingOp) {
     val watchedAt = dateIsoStringFromMillis(op.watchedAtMillis)
     when (parseOp(op.op)) {
-      Operation.MOVIE -> applyMovie(op.tmdbId, op.watched, watchedAt)
-      Operation.EPISODE ->
+      Operation.MOVIE -> {
+        applyMovie(op.tmdbId, op.watched, watchedAt)
+      }
+      Operation.EPISODE -> {
         applyEpisode(
           showTmdbId = op.showTmdbId,
           seasonNumber = op.seasonNumber,
@@ -187,13 +191,28 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
           watched = op.watched,
           watchedAt = watchedAt,
         )
-      Operation.SEASON -> applySeason(op.showTmdbId, op.seasonNumber, op.watched, watchedAt)
-      Operation.SHOW -> applyShow(op.showTmdbId, op.watched, watchedAt)
-      Operation.LIST_ADD -> applyListAdd(op)
-      Operation.LIST_REMOVE -> applyListRemove(op)
-      Operation.LIST_CREATE -> applyListCreate(op)
-      Operation.LIST_RENAME -> applyListRename(op)
-      Operation.LIST_DELETE -> applyListDelete(op)
+      }
+      Operation.SEASON -> {
+        applySeason(op.showTmdbId, op.seasonNumber, op.watched, watchedAt)
+      }
+      Operation.SHOW -> {
+        applyShow(op.showTmdbId, op.watched, watchedAt)
+      }
+      Operation.LIST_ADD -> {
+        applyListAdd(op)
+      }
+      Operation.LIST_REMOVE -> {
+        applyListRemove(op)
+      }
+      Operation.LIST_CREATE -> {
+        applyListCreate(op)
+      }
+      Operation.LIST_RENAME -> {
+        applyListRename(op)
+      }
+      Operation.LIST_DELETE -> {
+        applyListDelete(op)
+      }
     }
   }
 
@@ -204,7 +223,14 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
     val parts = operation.split("|")
     when (Operation.valueOf(parts[0])) {
       Operation.MOVIE -> applyMovie(parts[2].toLong(), parts[1] == "1", watchedAt)
-      Operation.EPISODE -> applyEpisode(parts[2].toLong(), parts[3].toInt(), parts[4].toInt(), parts[5].toLong(), parts[1] == "1", watchedAt)
+      Operation.EPISODE -> applyEpisode(
+        parts[2].toLong(),
+        parts[3].toInt(),
+        parts[4].toInt(),
+        parts[5].toLong(),
+        parts[1] == "1",
+        watchedAt,
+      )
       Operation.SEASON -> applySeason(parts[2].toLong(), parts[3].toInt(), parts[1] == "1", watchedAt)
       Operation.SHOW -> applyShow(parts[2].toLong(), parts[1] == "1", watchedAt)
       Operation.LIST_ADD, Operation.LIST_REMOVE,
@@ -327,7 +353,9 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
     }
 
     val itemId = localItemId(op).takeIf { it > 0 }
-      ?: remoteListItems(remoteListId).firstOrNull { matchesMedia(it, op.tmdbId, op.mediaType) }?.id
+      ?: remoteListItems(remoteListId)
+        .firstOrNull { matchesMedia(it, op.tmdbId, op.mediaType) }
+        ?.id
         ?.also { backfillLocalItemId(op, it) }
       ?: return // Already gone remotely - counts as applied.
 
@@ -385,7 +413,8 @@ class ScrobQuickSyncWorker @AssistedInject constructor(
   ): Boolean =
     when (mediaType) {
       ScrobQuickSyncManager.MEDIA_TYPE_MOVIE -> item.media.isMovie() && item.media.tmdbId == tmdbId
-      ScrobQuickSyncManager.MEDIA_TYPE_SERIES -> item.media.isShowLevel() && (item.media.tmdbId == tmdbId || item.media.showTmdbId == tmdbId)
+      ScrobQuickSyncManager.MEDIA_TYPE_SERIES -> item.media.isShowLevel() &&
+        (item.media.tmdbId == tmdbId || item.media.showTmdbId == tmdbId)
       else -> false
     }
 

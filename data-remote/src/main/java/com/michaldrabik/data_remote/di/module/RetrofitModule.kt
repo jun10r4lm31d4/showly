@@ -55,7 +55,7 @@ object RetrofitModule {
   fun providesScrobRetrofit(
     @Named("okHttpScrob") okHttpClient: OkHttpClient,
     moshi: Moshi,
-    scrobProvider: ScrobProvider
+    scrobProvider: ScrobProvider,
   ): Retrofit =
     Retrofit
       .Builder()

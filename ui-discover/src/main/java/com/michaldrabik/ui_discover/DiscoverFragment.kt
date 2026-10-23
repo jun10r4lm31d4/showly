@@ -58,8 +58,12 @@ internal class DiscoverFragment :
   override val viewModel by viewModels<DiscoverViewModel>()
   private val binding by viewBinding(FragmentDiscoverBinding::bind)
 
-  private val swipeRefreshStartOffset by lazy { requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshStartOffset) }
-  private val swipeRefreshEndOffset by lazy { requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshEndOffset) }
+  private val swipeRefreshStartOffset by lazy {
+    requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshStartOffset)
+  }
+  private val swipeRefreshEndOffset by lazy {
+    requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshEndOffset)
+  }
 
   private var adapter: DiscoverAdapter? = null
   private var layoutManager: GridLayoutManager? = null
@@ -146,8 +150,10 @@ internal class DiscoverFragment :
       }
       discoverFiltersView.run {
         translationY = filtersViewPosition
-        onGenresChipClick = { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverFragmentToFiltersGenres) }
-        onNetworksChipClick = { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverFragmentToFiltersNetworks) }
+        onGenresChipClick =
+          { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverFragmentToFiltersGenres) }
+        onNetworksChipClick =
+          { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverFragmentToFiltersNetworks) }
         onFeedChipClick = { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverFragmentToFiltersFeed) }
         onHideCollectionChipClick = { viewModel.toggleCollection() }
       }
@@ -175,7 +181,9 @@ internal class DiscoverFragment :
   private fun setupSwipeRefresh() {
     binding.discoverSwipeRefresh.apply {
       val color = requireContext().colorFromAttr(androidx.appcompat.R.attr.colorAccent)
-      setProgressBackgroundColorSchemeColor(requireContext().colorFromAttr(com.michaldrabik.ui_base.R.attr.colorSearchViewBackground))
+      setProgressBackgroundColorSchemeColor(
+        requireContext().colorFromAttr(com.michaldrabik.ui_base.R.attr.colorSearchViewBackground),
+      )
       setColorSchemeColors(color, color, color)
       setOnRefreshListener {
         searchViewPosition = 0F

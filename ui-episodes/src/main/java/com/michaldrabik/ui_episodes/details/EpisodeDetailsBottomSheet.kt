@@ -129,7 +129,8 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
         )
         else -> episode.title
       }
-      episodeDetailsOverview.text = episode.overview.ifBlank { getString(com.michaldrabik.ui_base.R.string.textNoDescription) }
+      episodeDetailsOverview.text =
+        episode.overview.ifBlank { getString(com.michaldrabik.ui_base.R.string.textNoDescription) }
       episodeDetailsRatingLayout.visibleIf(episode.votes > 0)
       episodeDetailsWatchedAt.visibleIf(episode.lastWatchedAt != null || isWatched)
       if (!showTabs) episodeDetailsTabs.gone()
@@ -193,7 +194,11 @@ class EpisodeDetailsBottomSheet : BaseBottomSheetFragment(R.layout.view_episode_
         } else if (episodeDetailsTitle.text.isBlank()) {
           when (options.episode.title) {
             "Episode ${options.episode.number}" -> {
-              String.format(ENGLISH, requireContext().getString(com.michaldrabik.ui_base.R.string.textEpisode), options.episode.number)
+              String.format(
+                ENGLISH,
+                requireContext().getString(com.michaldrabik.ui_base.R.string.textEpisode),
+                options.episode.number,
+              )
             }
             else -> {
               options.episode.title

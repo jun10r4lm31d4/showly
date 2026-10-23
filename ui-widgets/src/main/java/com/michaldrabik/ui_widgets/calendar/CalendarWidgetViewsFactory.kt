@@ -72,7 +72,10 @@ class CalendarWidgetViewsFactory(
 
     if (showIcon) {
       when (mode) {
-        PRESENT_FUTURE -> setImageViewResource(R.id.progressWidgetHeaderIcon, com.michaldrabik.ui_base.R.drawable.ic_history)
+        PRESENT_FUTURE -> setImageViewResource(
+          R.id.progressWidgetHeaderIcon,
+          com.michaldrabik.ui_base.R.drawable.ic_history,
+        )
         RECENTS -> setImageViewResource(R.id.progressWidgetHeaderIcon, com.michaldrabik.ui_base.R.drawable.ic_calendar)
       }
       setViewVisibility(R.id.progressWidgetHeaderIcon, VISIBLE)
@@ -106,9 +109,16 @@ class CalendarWidgetViewsFactory(
       if (isNewSeason) {
         setTextViewText(
           R.id.calendarWidgetItemOverview,
-          String.format(Locale.ENGLISH, context.getString(com.michaldrabik.ui_base.R.string.textSeason), item.episode.season),
+          String.format(
+            Locale.ENGLISH,
+            context.getString(com.michaldrabik.ui_base.R.string.textSeason),
+            item.episode.season,
+          ),
         )
-        setTextViewText(R.id.calendarWidgetItemBadge, context.getString(com.michaldrabik.ui_progress.R.string.textNewSeason))
+        setTextViewText(
+          R.id.calendarWidgetItemBadge,
+          context.getString(com.michaldrabik.ui_progress.R.string.textNewSeason),
+        )
       } else {
         val episodeTitle = when {
           item.episode.title.isBlank() -> context.getString(com.michaldrabik.ui_base.R.string.textTba)

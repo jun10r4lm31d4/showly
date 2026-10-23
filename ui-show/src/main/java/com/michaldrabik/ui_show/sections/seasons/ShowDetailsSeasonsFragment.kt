@@ -168,7 +168,9 @@ class ShowDetailsSeasonsFragment : BaseFragment<ShowDetailsSeasonsViewModel>(R.l
     MaterialAlertDialogBuilder(context, com.michaldrabik.ui_base.R.style.AlertDialog)
       .setBackground(ContextCompat.getDrawable(context, com.michaldrabik.ui_base.R.drawable.bg_dialog))
       .setView(view)
-      .setPositiveButton(com.michaldrabik.ui_base.R.string.textSelect) { _, _ -> viewModel.onQuickProgressSelected(view.getSelectedItem()) }
+      .setPositiveButton(
+        com.michaldrabik.ui_base.R.string.textSelect,
+      ) { _, _ -> viewModel.onQuickProgressSelected(view.getSelectedItem()) }
       .setNegativeButton(com.michaldrabik.ui_base.R.string.textCancel) { _, _ -> }
       .show()
   }

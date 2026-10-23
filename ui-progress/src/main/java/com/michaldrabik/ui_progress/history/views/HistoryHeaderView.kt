@@ -55,7 +55,15 @@ internal class HistoryHeaderView : FrameLayout {
         item.date.format(dateFormat).capitalizeWords()
       }
       updatePadding(
-        top = context.dimenToPx(if (position == 1) com.michaldrabik.ui_base.R.dimen.spaceMedium else com.michaldrabik.ui_base.R.dimen.spaceBig),
+        top = context.dimenToPx(
+          if (position ==
+            1
+          ) {
+            com.michaldrabik.ui_base.R.dimen.spaceMedium
+          } else {
+            com.michaldrabik.ui_base.R.dimen.spaceBig
+          },
+        ),
       )
     }
   }

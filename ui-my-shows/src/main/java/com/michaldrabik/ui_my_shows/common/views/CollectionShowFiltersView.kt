@@ -62,19 +62,39 @@ class CollectionShowFiltersView : FrameLayout {
 
       followedShowsNetworksChip.isSelected = item.networks.isNotEmpty()
       followedShowsNetworksChip.text = when {
-        item.networks.isEmpty() -> context.getString(com.michaldrabik.ui_base.R.string.textNetworks).filter { it.isLetter() }
-        item.networks.size == 1 -> item.networks[0].channels.first()
-        else -> throw IllegalStateException()
+        item.networks.isEmpty() -> {
+          context
+            .getString(
+              com.michaldrabik.ui_base.R.string.textNetworks,
+            ).filter { it.isLetter() }
+        }
+        item.networks.size == 1 -> {
+          item.networks[0].channels.first()
+        }
+        else -> {
+          throw IllegalStateException()
+        }
       }
 
       followedShowsGenresChip.isSelected = item.genres.isNotEmpty()
       followedShowsGenresChip.text = when {
-        item.genres.isEmpty() -> context.getString(com.michaldrabik.ui_base.R.string.textGenres).filter { it.isLetter() }
-        item.genres.size == 1 -> context.getString(item.genres.first().displayName)
-        item.genres.size == 2 -> "${context.getString(item.genres[0].displayName)}, " +
-          context.getString(item.genres[1].displayName)
-        else -> "${context.getString(item.genres[0].displayName)}, " +
-          "${context.getString(item.genres[1].displayName)} + ${item.genres.size - 2}"
+        item.genres.isEmpty() -> {
+          context
+            .getString(
+              com.michaldrabik.ui_base.R.string.textGenres,
+            ).filter { it.isLetter() }
+        }
+        item.genres.size == 1 -> {
+          context.getString(item.genres.first().displayName)
+        }
+        item.genres.size == 2 -> {
+          "${context.getString(item.genres[0].displayName)}, " +
+            context.getString(item.genres[1].displayName)
+        }
+        else -> {
+          "${context.getString(item.genres[0].displayName)}, " +
+            "${context.getString(item.genres[1].displayName)} + ${item.genres.size - 2}"
+        }
       }
 
       followedShowsUpcomingChip.isChecked = item.upcoming.isActive()

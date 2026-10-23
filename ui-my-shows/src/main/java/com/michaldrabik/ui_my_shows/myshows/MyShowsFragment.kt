@@ -96,7 +96,9 @@ class MyShowsFragment :
       itemClickListener = { openShowDetails(it.show) },
       itemLongClickListener = { item -> openShowMenu(item.show) },
       onSortOrderClickListener = { section, order, type -> openSortOrderDialog(section, order, type) },
-      onTypeClickListener = { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToMyShowsFilters) },
+      onTypeClickListener = {
+        navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionFollowedShowsFragmentToMyShowsFilters)
+      },
       onListViewModeClickListener = {},
       onNetworksClickListener = ::openNetworksDialog,
       onGenresClickListener = ::openGenresDialog,

@@ -50,11 +50,5 @@ class CollectionItemDiffCallback : DiffUtil.ItemCallback<CollectionListItem>() {
   private fun areContentsTheSame(
     oldItem: CollectionListItem.FiltersItem,
     newItem: CollectionListItem.FiltersItem,
-  ): Boolean =
-    oldItem.upcoming == newItem.upcoming &&
-      oldItem.networks == newItem.networks &&
-      oldItem.genres == newItem.genres &&
-      oldItem.sortOrder == newItem.sortOrder &&
-      oldItem.sortType == newItem.sortType &&
-      oldItem.count == newItem.count
+  ): Boolean = oldItem == newItem
 }

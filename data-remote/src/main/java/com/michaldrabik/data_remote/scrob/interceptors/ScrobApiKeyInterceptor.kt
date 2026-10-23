@@ -4,7 +4,7 @@ import com.michaldrabik.data_remote.scrob.ScrobProvider
 import okhttp3.Interceptor
 import okhttp3.Response
 
-class ScrobApiKeyInterceptor (
+class ScrobApiKeyInterceptor(
   private val scrobProvider: ScrobProvider,
 ) : Interceptor {
   override fun intercept(chain: Interceptor.Chain): Response {

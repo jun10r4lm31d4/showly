@@ -86,7 +86,8 @@ internal class HistoryItemView : ShowView<HistoryListItem.Episode> {
       val isNewSeason = item.episode.number == 1
       if (isNewSeason) {
         itemSubtitle.text = context.getString(R.string.textNewSeason)
-        itemDescription.text = String.format(ENGLISH, context.getString(com.michaldrabik.ui_base.R.string.textSeason), item.episode.season)
+        itemDescription.text =
+          String.format(ENGLISH, context.getString(com.michaldrabik.ui_base.R.string.textSeason), item.episode.season)
       } else {
         itemSubtitle.text = String
           .format(

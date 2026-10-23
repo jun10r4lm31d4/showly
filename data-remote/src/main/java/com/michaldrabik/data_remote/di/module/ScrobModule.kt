@@ -31,16 +31,14 @@ object ScrobModule {
   @Singleton
   fun providesScrobApi(
     @Named("retrofitScrob") retrofit: Retrofit,
-    scrobProvider: ScrobProvider
+    scrobProvider: ScrobProvider,
   ): ScrobRemoteDataSource = ScrobApi(retrofit.create(ScrobSyncService::class.java), scrobProvider)
 
   @Provides
   @Singleton
-  fun providesScrobBaseUrlInterceptor(scrobProvider: ScrobProvider) =
-    ScrobBaseUrlInterceptor(scrobProvider)
+  fun providesScrobBaseUrlInterceptor(scrobProvider: ScrobProvider) = ScrobBaseUrlInterceptor(scrobProvider)
 
   @Provides
   @Singleton
-  fun providesScrobApiKeyInterceptor(scrobProvider: ScrobProvider) =
-    ScrobApiKeyInterceptor(scrobProvider)
+  fun providesScrobApiKeyInterceptor(scrobProvider: ScrobProvider) = ScrobApiKeyInterceptor(scrobProvider)
 }

@@ -67,8 +67,12 @@ class SearchItemView : ShowView<SearchListItem> {
       showSearchBadge.visibleIf(item.isFollowed)
       showSearchWatchlistBadge.visibleIf(item.isWatchlist)
 
-      showSearchPlaceholder.setImageResource(if (item.isMovie) com.michaldrabik.ui_base.R.drawable.ic_film else com.michaldrabik.ui_base.R.drawable.ic_television)
-      showSearchIcon.setImageResource(if (item.isMovie) com.michaldrabik.ui_base.R.drawable.ic_film else com.michaldrabik.ui_base.R.drawable.ic_television)
+      showSearchPlaceholder.setImageResource(
+        if (item.isMovie) com.michaldrabik.ui_base.R.drawable.ic_film else com.michaldrabik.ui_base.R.drawable.ic_television,
+      )
+      showSearchIcon.setImageResource(
+        if (item.isMovie) com.michaldrabik.ui_base.R.drawable.ic_film else com.michaldrabik.ui_base.R.drawable.ic_television,
+      )
       showSearchNetwork.translationY = if (item.isMovie) 0F else spaceNano
       loadImage(item)
     }

@@ -53,8 +53,12 @@ internal class DiscoverMoviesFragment :
   override val viewModel by viewModels<DiscoverMoviesViewModel>()
   override val navigationId = com.michaldrabik.ui_navigation.R.id.discoverMoviesFragment
 
-  private val swipeRefreshStartOffset by lazy { requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshStartOffset) }
-  private val swipeRefreshEndOffset by lazy { requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshEndOffset) }
+  private val swipeRefreshStartOffset by lazy {
+    requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshStartOffset)
+  }
+  private val swipeRefreshEndOffset by lazy {
+    requireContext().dimenToPx(com.michaldrabik.ui_base.R.dimen.swipeRefreshEndOffset)
+  }
 
   private var adapter: DiscoverMoviesAdapter? = null
   private var layoutManager: GridLayoutManager? = null
@@ -134,8 +138,10 @@ internal class DiscoverMoviesFragment :
       }
       discoverMoviesFiltersView.run {
         translationY = filtersViewPosition
-        onGenresChipClick = { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToFiltersGenres) }
-        onFeedChipClick = { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToFiltersFeed) }
+        onGenresChipClick =
+          { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToFiltersGenres) }
+        onFeedChipClick =
+          { navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToFiltersFeed) }
         onHideCollectionChipClick = { viewModel.toggleCollection() }
       }
     }
@@ -182,7 +188,9 @@ internal class DiscoverMoviesFragment :
   private fun setupSwipeRefresh() {
     binding.discoverMoviesSwipeRefresh.apply {
       val color = requireContext().colorFromAttr(androidx.appcompat.R.attr.colorAccent)
-      setProgressBackgroundColorSchemeColor(requireContext().colorFromAttr(com.michaldrabik.ui_base.R.attr.colorSearchViewBackground))
+      setProgressBackgroundColorSchemeColor(
+        requireContext().colorFromAttr(com.michaldrabik.ui_base.R.attr.colorSearchViewBackground),
+      )
       setColorSchemeColors(color, color, color)
       setOnRefreshListener {
         searchViewPosition = 0F
@@ -259,7 +267,10 @@ internal class DiscoverMoviesFragment :
           endAction = {
             if (!isResumed) return@fadeOut
             val bundle = Bundle().apply { putLong(NavigationArgs.ARG_MOVIE_ID, item.movie.traktId) }
-            navigateToSafe(com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToMovieDetailsFragment, bundle)
+            navigateToSafe(
+              com.michaldrabik.ui_navigation.R.id.actionDiscoverMoviesFragmentToMovieDetailsFragment,
+              bundle,
+            )
           },
         ).add(animations)
     }

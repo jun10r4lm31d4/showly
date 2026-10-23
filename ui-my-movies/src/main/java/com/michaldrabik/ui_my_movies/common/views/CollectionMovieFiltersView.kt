@@ -70,12 +70,23 @@ class CollectionMovieFiltersView : FrameLayout {
 
       followedMoviesGenresChip.isSelected = item.genres.isNotEmpty()
       followedMoviesGenresChip.text = when {
-        item.genres.isEmpty() -> context.getString(com.michaldrabik.ui_base.R.string.textGenres).filter { it.isLetter() }
-        item.genres.size == 1 -> context.getString(item.genres.first().displayName)
-        item.genres.size == 2 -> "${context.getString(item.genres[0].displayName)}, " +
-          context.getString(item.genres[1].displayName)
-        else -> "${context.getString(item.genres[0].displayName)}, " +
-          "${context.getString(item.genres[1].displayName)} + ${item.genres.size - 2}"
+        item.genres.isEmpty() -> {
+          context
+            .getString(
+              com.michaldrabik.ui_base.R.string.textGenres,
+            ).filter { it.isLetter() }
+        }
+        item.genres.size == 1 -> {
+          context.getString(item.genres.first().displayName)
+        }
+        item.genres.size == 2 -> {
+          "${context.getString(item.genres[0].displayName)}, " +
+            context.getString(item.genres[1].displayName)
+        }
+        else -> {
+          "${context.getString(item.genres[0].displayName)}, " +
+            "${context.getString(item.genres[1].displayName)} + ${item.genres.size - 2}"
+        }
       }
 
       followedMoviesGenresChip.onClick { onGenreChipClicked?.invoke() }

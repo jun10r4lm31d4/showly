@@ -172,7 +172,10 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
           movieDetailsMainLayout
             .updatePadding(top = inset.top)
         }
-        movieDetailsMainContent.updatePadding(bottom = inset.bottom + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal))
+        movieDetailsMainContent.updatePadding(
+          bottom =
+            inset.bottom + dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal),
+        )
         (movieDetailsBackArrow.layoutParams as ViewGroup.MarginLayoutParams).updateMargins(top = inset.top)
       }
     }
@@ -189,7 +192,8 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
             isEnabled = movie.trailer.isNotBlank()
             alpha = if (isEnabled) 1.0F else 0.35F
             onClick {
-              openWebUrl(movie.trailer) ?: showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorCouldNotFindApp))
+              openWebUrl(movie.trailer)
+                ?: showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorCouldNotFindApp))
             }
           }
           movieDetailsActions.linksChip.run {
@@ -281,7 +285,8 @@ class MovieDetailsFragment : BaseFragment<MovieDetailsViewModel>(R.layout.fragme
       }
 
       movieDetailsTitle.text = title
-      movieDetailsDescription.text = description.ifBlank { getString(com.michaldrabik.ui_base.R.string.textNoDescription) }
+      movieDetailsDescription.text =
+        description.ifBlank { getString(com.michaldrabik.ui_base.R.string.textNoDescription) }
     }
   }
 

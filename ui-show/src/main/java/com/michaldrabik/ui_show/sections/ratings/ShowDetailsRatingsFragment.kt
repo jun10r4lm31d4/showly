@@ -71,7 +71,8 @@ class ShowDetailsRatingsFragment : BaseFragment<ShowDetailsRatingsViewModel>(R.l
     if (link == ShowLink.IMDB) {
       openImdbUrl(IdImdb(id)) ?: showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorCouldNotFindApp))
     } else {
-      openWebUrl(link.getUri(id, country)) ?: showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorCouldNotFindApp))
+      openWebUrl(link.getUri(id, country))
+        ?: showSnack(MessageEvent.Info(com.michaldrabik.ui_base.R.string.errorCouldNotFindApp))
     }
   }
 

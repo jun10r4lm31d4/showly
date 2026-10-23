@@ -177,9 +177,13 @@ class ListsFragment :
             top = statusBarSize + dimenToPx(R.dimen.listsRecyclerPaddingTop),
             bottom = inset.bottom + dimenToPx(R.dimen.listsBottomPadding),
           )
-        fragmentListsSearchView.applyWindowInsetBehaviour(dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal) + statusBarSize)
+        fragmentListsSearchView.applyWindowInsetBehaviour(
+          dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceNormal) + statusBarSize,
+        )
         fragmentListsSearchView.updateTopMargin(dimenToPx(com.michaldrabik.ui_base.R.dimen.spaceMedium) + statusBarSize)
-        fragmentListsModeTabs.updateTopMargin(dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionTabsMargin) + statusBarSize)
+        fragmentListsModeTabs.updateTopMargin(
+          dimenToPx(com.michaldrabik.ui_base.R.dimen.collectionTabsMargin) + statusBarSize,
+        )
         fragmentListsIcons.updateTopMargin(dimenToPx(R.dimen.listsIconsPadding) + statusBarSize)
         fragmentListsSearchLocalView.updateTopMargin(dimenToPx(R.dimen.listsSearchLocalViewPadding) + statusBarSize)
         fragmentListsEmptyView.root.updateTopMargin(statusBarSize)

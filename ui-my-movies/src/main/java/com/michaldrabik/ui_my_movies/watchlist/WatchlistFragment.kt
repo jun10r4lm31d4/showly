@@ -109,7 +109,9 @@ class WatchlistFragment :
       adapter = this@WatchlistFragment.adapter
       layoutManager = this@WatchlistFragment.layoutManager
       (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
-      addItemDecoration(CollectionMovieListItemDecoration(requireContext(), com.michaldrabik.ui_base.R.dimen.spaceSmall))
+      addItemDecoration(
+        CollectionMovieListItemDecoration(requireContext(), com.michaldrabik.ui_base.R.dimen.spaceSmall),
+      )
     }
   }
 

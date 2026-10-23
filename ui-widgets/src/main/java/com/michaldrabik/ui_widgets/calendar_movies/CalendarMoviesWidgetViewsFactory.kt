@@ -69,8 +69,14 @@ class CalendarMoviesWidgetViewsFactory(
 
     if (showIcon) {
       when (mode) {
-        CalendarMode.PRESENT_FUTURE -> setImageViewResource(R.id.progressWidgetHeaderIcon, com.michaldrabik.ui_base.R.drawable.ic_history)
-        CalendarMode.RECENTS -> setImageViewResource(R.id.progressWidgetHeaderIcon, com.michaldrabik.ui_base.R.drawable.ic_calendar)
+        CalendarMode.PRESENT_FUTURE -> setImageViewResource(
+          R.id.progressWidgetHeaderIcon,
+          com.michaldrabik.ui_base.R.drawable.ic_history,
+        )
+        CalendarMode.RECENTS -> setImageViewResource(
+          R.id.progressWidgetHeaderIcon,
+          com.michaldrabik.ui_base.R.drawable.ic_calendar,
+        )
       }
       setViewVisibility(R.id.progressWidgetHeaderIcon, VISIBLE)
       val fillIntent = Intent().apply {
