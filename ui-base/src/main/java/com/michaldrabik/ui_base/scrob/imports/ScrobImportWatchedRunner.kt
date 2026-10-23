@@ -106,7 +106,12 @@ class ScrobImportWatchedRunner @Inject constructor(
     }
 
     val remoteMovieTmdbIds = movieEvents.mapNotNullTo(mutableSetOf()) { it.media.tmdbId }
-    val showLevelWatchedIds = episodeEvents.filter { it.media.isShowLevel() }.mapNotNull { it.media.showTmdbId ?: it.media.tmdbId }.toSet()
+    val showLevelWatchedIds = episodeEvents
+      .filter { it.media.isShowLevel() }
+      .mapNotNull {
+        it.media.showTmdbId
+          ?: it.media.tmdbId
+      }.toSet()
     val remoteEpisodes = sortedMapOf<Long, MutableSet<Pair<Int, Int>>>()
     episodeEvents.forEach { event ->
       val showTmdbId = event.media.showTmdbId ?: event.media.tmdbId ?: return@forEach
@@ -206,10 +211,19 @@ class ScrobImportWatchedRunner @Inject constructor(
         val showExists = showTraktId in myShowsIds
         val localEpisodes = if (showExists) localSource.episodes.getAllByShowId(showTraktId) else emptyList()
 
-        val needsMetadata = !showExists || hasShowLevelWatch || watchedByEpisode.keys.any { key ->
-          val local = localEpisodes.find { it.seasonNumber == key.first && it.episodeNumber == key.second }
-          local == null || !local.isWatched
+        val hasIncompleteEpisodes = if (show.airedEpisodes > 0) {
+          localEpisodes.size < show.airedEpisodes
+        } else {
+          localEpisodes.none { !it.isWatched }
         }
+
+        val needsMetadata = !showExists ||
+          hasShowLevelWatch ||
+          hasIncompleteEpisodes ||
+          watchedByEpisode.keys.any { key ->
+            val local = localEpisodes.find { it.seasonNumber == key.first && it.episodeNumber == key.second }
+            local == null || !local.isWatched
+          }
 
         if (!needsMetadata) {
           localSource.myShows.updateWatchedAt(showTraktId, newestWatchedMillis)
@@ -221,25 +235,34 @@ class ScrobImportWatchedRunner @Inject constructor(
 
         val episodesDb = remoteSeasons.flatMap { remoteSeason ->
           val season = seasons.first { it.number == remoteSeason.number }
-          remoteSeason.episodes.orEmpty().mapNotNull { remoteEpisode ->
+          remoteSeason.episodes.orEmpty().map { remoteEpisode ->
             val key = remoteSeason.number to remoteEpisode.number
             val isWatched = hasShowLevelWatch || watchedByEpisode.containsKey(key)
-            if (!isWatched) return@mapNotNull null
+            val watchedAtMillis = if (isWatched) {
+              watchedByEpisode[key] ?: newestWatchedMillis
+            } else {
+              null
+            }
 
-            val watchedAtMillis = watchedByEpisode[key] ?: newestWatchedMillis
             val episode = mappers.episode.fromNetwork(remoteEpisode)
             mappers.episode.toDatabase(
               episode = episode,
               season = season,
               showId = IdTrakt(showTraktId),
-              isWatched = true,
+              isWatched = isWatched,
               lastExportedAt = null,
-              lastWatchedAt = watchedAtMillis.let { millisToZonedDateTime(it) },
+              lastWatchedAt = watchedAtMillis?.let { millisToZonedDateTime(it) },
             )
           }
         }
 
         if (episodesDb.isEmpty()) return@forEach
+
+        val showWithEpisodeCount = if (show.airedEpisodes > 0) {
+          show
+        } else {
+          show.copy(airedEpisodes = remoteSeasons.sumOf { it.episodes?.size ?: 0 })
+        }
 
         val seasonsDb = remoteSeasons.map { remoteSeason ->
           val season = seasons.first { it.number == remoteSeason.number }
@@ -255,7 +278,7 @@ class ScrobImportWatchedRunner @Inject constructor(
         }
 
         transactions.withTransaction {
-          localSource.shows.upsert(listOf(mappers.show.toDatabase(show)))
+          localSource.shows.upsert(listOf(mappers.show.toDatabase(showWithEpisodeCount)))
           localSource.seasons.upsert(seasonsDb)
           localSource.episodes.upsert(episodesDb)
 
@@ -278,8 +301,6 @@ class ScrobImportWatchedRunner @Inject constructor(
       delay(SCROB_LOOKUP_DELAY_MS)
     }
   }
-
-
 
   /**
    * Removes movies from the local "My Movies" collection when they are no longer present

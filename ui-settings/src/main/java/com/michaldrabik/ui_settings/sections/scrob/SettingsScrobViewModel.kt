@@ -83,9 +83,7 @@ class SettingsScrobViewModel
         scrobProvider.setUrl(trimmedUrl)
         scrobProvider.setApiKey(trimmedApiKey)
 
-        ScrobSyncWorker.scheduleHistory(workManager)
-        ScrobSyncWorker.scheduleLists(workManager)
-        ScrobQuickSyncWorker.scheduleDrain(workManager)
+        syncNow()
       }
       refresh()
     }
@@ -94,6 +92,7 @@ class SettingsScrobViewModel
       if (!scrobProvider.isConfigured() || state.value.isSyncing) return
       ScrobSyncWorker.scheduleHistory(workManager)
       ScrobSyncWorker.scheduleLists(workManager)
+      ScrobQuickSyncWorker.scheduleDrain(workManager)
       sendSyncStartedMessage()
     }
 
@@ -101,10 +100,7 @@ class SettingsScrobViewModel
 
     fun saveWatchlistList(id: Long) {
       scrobProvider.setWatchlistListId(id)
-      // Lists import mirrors the selected list into the local watchlist.
-      ScrobSyncWorker.scheduleLists(workManager)
       refresh()
-      sendSyncStartedMessage()
     }
 
     private fun sendSyncStartedMessage() {
